@@ -1,10 +1,11 @@
-import { Fragment, StrictMode } from "react";
+import { Fragment, StrictMode, Suspense, lazy } from "react";
 
 import BrandingThemeProvider from "components/BrandingThemeProvider";
 import { CssBaseline } from "@mui/material";
-import PWASnackbar from "features/PWASnackbar";
 import { Provider } from "react-redux";
 import store from "store";
+
+const PWASnackbar = lazy(() => import("features/PWASnackbar"));
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
@@ -20,6 +21,8 @@ export const wrapRootElement = ({ element }) => (
 export const wrapPageElement = ({ element }) => (
   <Fragment>
     {element}
-    <PWASnackbar />
+    <Suspense fallback={null}>
+      <PWASnackbar />
+    </Suspense>
   </Fragment>
 );
