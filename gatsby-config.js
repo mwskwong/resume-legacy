@@ -44,7 +44,7 @@ module.exports = {
         }
       }
     },
-    "gatsby-plugin-emotion",
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
