@@ -1,10 +1,12 @@
 import { Container, Toolbar } from "@mui/material";
+import { Suspense, lazy } from "react";
 
 import DownloadResumeButton from "./DownloadResumeButton";
 import { HOME } from "constants/nav";
 import SocialMedia from "components/SocialMedia";
-import Title from "./Title";
 import useSx from "./useLandingSx";
+
+const Title = lazy(() => import("./Title"));
 
 const Landing = () => {
   const sx = useSx();
@@ -12,7 +14,9 @@ const Landing = () => {
   return (
     <Container component="section" sx={sx.container} id={HOME.id}>
       <Toolbar />
-      <Title />
+      <Suspense fallback={null}>
+        <Title />
+      </Suspense>
       <SocialMedia sx={sx.socialMedia} />
       <DownloadResumeButton sx={sx.downloadResumeButton} />
     </Container>
