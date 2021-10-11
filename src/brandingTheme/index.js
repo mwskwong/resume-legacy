@@ -6,13 +6,12 @@ import "@fontsource/rubik/latin-800.css";
 import "./azonix.css";
 
 import { createTheme } from "@mui/material";
-// import { deepmerge } from "@mui/utils";
+import { deepmerge } from "@mui/utils";
 import getDesignTokens from "./getDesignTokens";
 import getThemedComponents from "./getThemedComponents";
-import merge from "lodash/merge";
 
 const lightTheme = createTheme(getDesignTokens("light"));
-export const brandingLightTheme = merge(lightTheme, getThemedComponents(lightTheme));
+export const brandingLightTheme = deepmerge(lightTheme, getThemedComponents(lightTheme));
 
 const darkTheme = createTheme(getDesignTokens("dark"));
-export const brandingDarkTheme = merge(darkTheme, getThemedComponents(darkTheme));
+export const brandingDarkTheme = deepmerge(darkTheme, getThemedComponents(darkTheme));
