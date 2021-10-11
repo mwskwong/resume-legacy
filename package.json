@@ -19,6 +19,7 @@
     "@mui/lab": "^5.0.0-alpha.50",
     "@mui/material": "^5.0.3",
     "@mui/styled-engine-sc": "^5.0.3",
+    "@reduxjs/toolkit": "^1.6.2",
     "emailjs-com": "^3.2.0",
     "gatsby": "next",
     "gatsby-plugin-image": "next",
@@ -35,6 +36,8 @@
     "react": "alpha",
     "react-dom": "alpha",
     "react-helmet": "^6.1.0",
+    "react-redux": "^7.2.5",
+    "redux": "^4.1.1",
     "styled-components": "^5.3.1",
     "typewriter-effect": "^2.18.2"
   },
