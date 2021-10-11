@@ -1,6 +1,6 @@
-import * as nav from "constants/nav";
-
 import { startTransition, useEffect, useState } from "react";
+
+import nav from "constants/nav";
 
 const useActiveSectionId = () => {
   const [activeSectionId, setActiveSectionId] = useState(nav.HOME.id);

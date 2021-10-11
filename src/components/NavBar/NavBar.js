@@ -1,5 +1,3 @@
-import * as nav from "constants/nav";
-
 import { AppBar, Box, Collapse, Container, IconButton, List, Stack, Toolbar, useMediaQuery } from "@mui/material";
 import { useEffect, useState } from "react";
 
@@ -7,6 +5,7 @@ import Logo from "./Logo";
 import { MenuOutlined } from "@mui/icons-material";
 import NavButton from "./NavButton";
 import NavListItem from "./NavListItem";
+import  nav from "constants/nav";
 import useActiveSectionId from "hooks/useActiveSectionId";
 import useSx from "./useNavBarSx";
 

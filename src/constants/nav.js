@@ -5,3 +5,13 @@ export const EDUCATION = { "id": "education", "name": "education" };
 export const PROJECT = { "id": "project", "name": "project" };
 export const TESTIMONIAL = { "id": "testimonial", "name": "testimonial" };
 export const CONTACT = { "id": "contact", "name": "contact" };
+
+export default {
+  HOME,
+  ABOUT,
+  WORK,
+  EDUCATION,
+  PROJECT,
+  TESTIMONIAL,
+  CONTACT
+};
