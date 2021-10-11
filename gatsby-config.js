@@ -52,14 +52,22 @@ module.exports = {
         background_color: "#ffffff",
         cache_busting_mode: "none",
         categories: ["resume", "personalization"],
-        description: "Matthew's Personal Resume Website",
+        description: "Dynamic and motivated System DBA and Front-End Developer with vast IT experience. Skilled in maintaining databases, front-end development, analytical thinking and creative problem-solving. Adaptable and transformational team player with an ability to work independently and a willingness to go the extra mile.",
         display: "standalone",
         icon: "src/images/icon.png",
         lang: "en",
         name: "Matthew Kwong - System DBA & Front-End Developer",
         short_name: "Matthew Kwong",
         start_url: ".",
-        theme_color: "#ffffff"
+        theme_color: "#88C0D0"
+      }
+    },
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**icon-*"]
+        }
       }
     },
     "gatsby-plugin-sharp",
