@@ -1,0 +1,44 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Resume",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@fontsource/rubik": "^4.5.0",
+    "@mui/icons-material": "^5.0.3",
+    "@mui/lab": "^5.0.0-alpha.50",
+    "@mui/material": "^5.0.3",
+    "@mui/styled-engine-sc": "^5.0.3",
+    "emailjs-com": "^3.2.0",
+    "gatsby": "next",
+    "gatsby-plugin-image": "next",
+    "gatsby-plugin-manifest": "next",
+    "gatsby-plugin-react-helmet": "next",
+    "gatsby-plugin-sharp": "next",
+    "gatsby-plugin-sitemap": "next",
+    "gatsby-plugin-styled-components": "next",
+    "gatsby-source-contentful": "next",
+    "gatsby-source-filesystem": "next",
+    "gatsby-transformer-sharp": "next",
+    "lodash": "^4.17.21",
+    "react": "alpha",
+    "react-dom": "alpha",
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.1",
+    "typewriter-effect": "^2.18.2"
+  },
+  "devDependencies": {
+    "@welldone-software/why-did-you-render": "^6.2.1",
+    "babel-plugin-styled-components": "^1.13.2"
+  }
+}
