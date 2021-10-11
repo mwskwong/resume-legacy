@@ -19,33 +19,48 @@ module.exports = {
     description: "Dynamic and motivated System DBA and Front-End Developer with vast IT experience. Skilled in maintaining databases, front-end development, analytical thinking and creative problem-solving. Adaptable and transformational team player with an ability to work independently and a willingness to go the extra mile.",
     shortTitle: "Matthew Kwong",
     siteUrl,
-    themeColor: "#ffffff",
+    themeColor: "#88C0D0",
     title: "Matthew Kwong - System DBA & Front-End Developer"
   },
   flags: {
     FAST_DEV: true,
-    PARALLEL_SOURCING: true
+    PARALLEL_SOURCING: true,
+    LMDB_STORE: true
   },
   plugins: [
-    // {
-    //   resolve: "gatsby-source-contentful",
-    //   options: {
-    //     accessToken: CONTENTFUL_ACCESS_TOKEN,
-    //     spaceId: "zz9cwhc5t97i",
-    //     proxy: {
-    //       host: HA_PROXY_HOST,
-    //       port: HA_PROXY_PORT,
-    //       auth: {
-    //         username: HA_PROXY_USER,
-    //         password: HA_PROXY_PASSWORD
-    //       }
-    //     }
-    //   }
-    // },
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        accessToken: CONTENTFUL_ACCESS_TOKEN,
+        spaceId: "zz9cwhc5t97i",
+        proxy: HA_PROXY_HOST && {
+          host: HA_PROXY_HOST,
+          port: HA_PROXY_PORT,
+          auth: {
+            username: HA_PROXY_USER,
+            password: HA_PROXY_PASSWORD
+          }
+        }
+      }
+    },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        resolveEnv: () => CF_PAGES_BRANCH,
+        env: {
+          main: {
+            policy: [{ userAgent: "*", allow: "/" }]
+          },
+          next: {
+            policy: [{ userAgent: "*", disallow: "/" }]
+          }
+        }
+      }
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -79,6 +94,7 @@ module.exports = {
         path: "./src/images/"
       },
       __key: "images"
-    }
+    },
+    "gatsby-plugin-webpack-bundle-analyser-v2"
   ]
 };

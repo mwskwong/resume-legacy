@@ -1,53 +1,48 @@
+import { Button, Container, Typography } from "@mui/material";
+
 import { Link } from "gatsby";
+import SEO from "components/SEO";
+import { useMemo } from "react";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif"
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320
-};
+const useSx = () => useMemo(() => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh"
+  },
+  noMatch: {
+    fontFamily: "Azonix, sans-serif",
+    textAlign: "center",
+    mb: 4,
+    color: "primary.main"
+  },
+  noMatchMessage: {
+    textAlign: "center",
+    mb: 4
+  }
+}), []);
 
-const paragraphStyles = {
-  marginBottom: 48
-};
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4
-};
-
-// markup
 const NotFoundPage = () => {
+  const sx = useSx();
+
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Container component="main" sx={sx.root}>
+      <SEO title="Not Found" />
+      <Typography variant="h1" sx={sx.noMatch}>
+        404
+      </Typography>
+      <Typography variant="h5" sx={sx.noMatchMessage}>
+        The page you were looking for does not exist.
+      </Typography>
+      <Button variant="contained" color="secondary" size="large" component={Link} to="/">
+        go back to home
+      </Button>
+    </Container>
   );
 };
+
+NotFoundPage.whyDidYouRender = true;
 
 export default NotFoundPage;

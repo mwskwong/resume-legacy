@@ -1,7 +1,7 @@
 import { Fab, Zoom } from "@mui/material";
 
+import { HOME } from "constants/nav";
 import { KeyboardArrowUpOutlined } from "@mui/icons-material";
-import nav from "contents/nav";
 import useShowScrollToTopFab from "hooks/useShowScrollToTopFab";
 
 const ScrollToTopFab = () => {
@@ -10,10 +10,9 @@ const ScrollToTopFab = () => {
   return (
     <Zoom in={show} mountOnEnter unmountOnExit>
       <Fab
-        color="secondary"
         component="a"
         aria-label="scroll to top"
-        href={`#${nav.home.id}`}
+        href={`#${HOME.id}`}
       >
         <KeyboardArrowUpOutlined />
       </Fab>

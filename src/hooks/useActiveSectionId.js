@@ -1,9 +1,9 @@
+import * as nav from "constants/nav";
+
 import { startTransition, useEffect, useState } from "react";
 
-import nav from "contents/nav";
-
 const useActiveSectionId = () => {
-  const [activeSectionId, setActiveSectionId] = useState(nav.home.id);
+  const [activeSectionId, setActiveSectionId] = useState(nav.HOME.id);
 
   const isScrollToBottom = () => window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
