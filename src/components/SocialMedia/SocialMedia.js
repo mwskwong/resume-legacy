@@ -16,7 +16,7 @@ const Icons = {
 const SocialMedia = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
   const { allContentfulSocialMedia } = useStaticQuery(graphql`{
-    allContentfulSocialMedia {
+    allContentfulSocialMedia(sort: {fields: name}) {
       edges {
         node {
           name

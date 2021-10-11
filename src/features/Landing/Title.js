@@ -9,7 +9,7 @@ const Title = () => {
   const sx = useSx();
   const typewriterRef = useRef();
   const { allContentfulOccupation } = useStaticQuery(graphql`{
-    allContentfulOccupation {
+    allContentfulOccupation(sort: {fields: title}) {
       edges {
         node {
           title

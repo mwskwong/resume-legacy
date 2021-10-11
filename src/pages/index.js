@@ -1,3 +1,4 @@
+import Contact from "features/Contact";
 import Footer from "features/Footer";
 import { Fragment } from "react";
 import Landing from "features/Landing";
@@ -12,6 +13,7 @@ const IndexPage = () => {
       <NavBar />
       <main>
         <Landing />
+        <Contact />
         <Footer />
       </main>
       <ScrollToTopFab />
