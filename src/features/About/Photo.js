@@ -22,14 +22,12 @@ const Photo = () => {
   const image = getImage(photo);
 
   return (
-    <div>
-      <Box
-        component={GatsbyImage}
-        sx={sx.root}
-        image={image}
-        alt={name.firstName}
-      />
-    </div>
+    <Box
+      component={GatsbyImage}
+      sx={sx.root}
+      image={image}
+      alt={name.firstName}
+    />
   );
 };
 
