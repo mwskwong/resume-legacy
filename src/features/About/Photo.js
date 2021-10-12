@@ -8,10 +8,15 @@ const Photo = () => {
   const sx = useSx();
   const { photo, name } = useStaticQuery(graphql`{
     photo: contentfulAsset(title: {eq: "Personal Photo"}) {
-      gatsbyImageData(width: 200, aspectRatio: 1)
+      gatsbyImageData(
+        width: 200
+        aspectRatio: 1
+        cornerRadius: -1
+        placeholder: TRACED_SVG
+      )
     }
     name: contentfulName {
-      firstName      
+      firstName
     }
   }`);
   const image = getImage(photo);
