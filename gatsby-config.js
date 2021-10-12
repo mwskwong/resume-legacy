@@ -97,7 +97,7 @@ module.exports = {
       __key: "images"
     },
     "gatsby-plugin-webpack-bundle-analyser-v2",
-    "gatsby-plugin-perf-budgets",
+    // "gatsby-plugin-perf-budgets",
     {
       resolve: "gatsby-plugin-loadable-components-ssr",
       options: {
