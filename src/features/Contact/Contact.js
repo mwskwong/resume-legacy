@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container, Grid, Stack } from "@mui/material";
 
 import { CONTACT } from "constants/nav";
 import HexSlice6 from "components/icons/HexSlice6";
@@ -15,20 +15,22 @@ const Contact = () => {
   return (
     <Box sx={sx.root} component="section" id={CONTACT.id}>
       <Container>
-        <SectionHeader
-          heading="Get In Touch"
-          Icon={HexSlice6}
-        />
-        <Box sx={sx.gridContainer}>
-          <Grid container spacing={2}>
-            <Grid item md={4} xs={12}>
-              <PersonalInfo />
+        <Stack spacing={5}>
+          <SectionHeader
+            heading="Get In Touch"
+            Icon={HexSlice6}
+          />
+          <div>
+            <Grid container spacing={2}>
+              <Grid item md={4} xs={12}>
+                <PersonalInfo />
+              </Grid>
+              <Grid item md xs={12}>
+                <ContactForm />
+              </Grid>
             </Grid>
-            <Grid item md xs={12}>
-              <ContactForm />
-            </Grid>
-          </Grid>
-        </Box>
+          </div>
+        </Stack>
       </Container>
     </Box>
   );

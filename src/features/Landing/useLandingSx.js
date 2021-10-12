@@ -9,11 +9,8 @@ const useSx = () => useMemo(() => ({
     flex: 1,
     minHeight: "100vh"
   },
-  socialMedia: {
-    mt: 3
-  },
-  downloadResumeButton: {
-    mt: 4
+  stack: {
+    alignItems: "center"
   }
 }), []);
 

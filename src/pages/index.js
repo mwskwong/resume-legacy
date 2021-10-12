@@ -1,3 +1,4 @@
+import About from "features/About";
 import Contact from "features/Contact";
 import Footer from "features/Footer";
 import { Fragment } from "react";
@@ -13,6 +14,7 @@ const IndexPage = () => {
       <NavBar />
       <main>
         <Landing />
+        <About />
         <Contact />
         <Footer />
       </main>

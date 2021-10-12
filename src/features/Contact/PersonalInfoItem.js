@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 
 import PropTypes from "prop-types";
 import useSx from "./usePersonalInfoItemSx";
@@ -7,15 +7,17 @@ const PersonalInfoItem = ({ Icon, title, value }) => {
   const sx = useSx();
 
   return (
-    <Box sx={sx.root}>
+    <Stack sx={sx.root} spacing={2}>
       <Icon fontSize="large" color="action" />
-      <Typography sx={sx.title} gutterBottom>
-        {title}
-      </Typography>
-      <Typography sx={sx.value} gutterBottom>
-        {value}
-      </Typography>
-    </Box>
+      <Stack spacing={.5}>
+        <Typography sx={sx.title}>
+          {title}
+        </Typography>
+        <Typography sx={sx.value}>
+          {value}
+        </Typography>
+      </Stack>
+    </Stack>
   );
 };
 
