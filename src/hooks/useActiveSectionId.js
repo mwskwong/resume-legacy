@@ -1,4 +1,4 @@
-import { startTransition, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import nav from "constants/nav";
 
@@ -16,12 +16,12 @@ const useActiveSectionId = () => {
 
     const handleScroll = () => {
       if (isScrollToBottom()) {
-        startTransition(() => setActiveSectionId(sectionIds[0]));
+        setTimeout(() => setActiveSectionId(sectionIds[0]));
       } else {
         for (const sectionId of sectionIds) {
           const section = document.getElementById(sectionId);
           if (isSectionActive(section)) {
-            startTransition(() => setActiveSectionId(sectionId));
+            setTimeout(() => setActiveSectionId(sectionId));
             break;
           }
         }
