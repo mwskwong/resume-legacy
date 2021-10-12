@@ -4,10 +4,26 @@ import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 
 const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = [] }) => {
-  const { site, ogImage } = useStaticQuery(graphql`{
+  const { site, name, occupationsQuery, descriptionQuery, ogImage } = useStaticQuery(graphql`{
     site {
       siteMetadata {
         siteUrl
+      }
+    }
+    name: contentfulName {
+      firstName
+      lastName
+    },
+    occupationsQuery: allContentfulOccupation(sort: {fields: title}) {
+      edges {
+        node {
+          title
+        }
+      }
+    }
+    descriptionQuery: contentfulSelfIntroduction {
+      content {
+        content
       }
     }
     ogImage: contentfulAsset(title: {eq: "Open Graph Image"}) {
@@ -17,11 +33,11 @@ const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = 
     }
   }`);
 
-  // TODO query name (first and last), occupation and description from Contentful
-
-  const title = titleProp || site.siteMetadata?.title;
-  const description = descriptionProp || site.siteMetadata?.description;
+  const description = descriptionQuery.content.content;
+  const occupations = occupationsQuery.edges.map(({ node: { title } }) => title);
   const ogImageUrl = ogImage.file.url;
+  const title = titleProp || `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
+  const titleTemplate = titleProp ? `%s | ${name.firstName} ${name.lastName}` : null;
 
   const meta = [
     {
@@ -54,7 +70,7 @@ const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = 
   return (
     <Helmet
       title={title}
-      titleTemplate={titleProp ? `%s | ${site.siteMetadata?.shortTitle}` : null}
+      titleTemplate={titleTemplate}
       meta={meta}
     />
   );
