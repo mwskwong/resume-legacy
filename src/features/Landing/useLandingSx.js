@@ -10,7 +10,7 @@ const useSx = () => useMemo(() => ({
     minHeight: "100vh"
   },
   stack: {
-    alignItems: "center"
+    mt: 3
   }
 }), []);
 

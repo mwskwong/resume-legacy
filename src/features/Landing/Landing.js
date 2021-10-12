@@ -14,9 +14,9 @@ const Landing = () => {
   return (
     <Container component="section" sx={sx.container} id={HOME.id}>
       <Toolbar />
-      <Stack spacing={3} sx={sx.stack}>
-        <Title />
-        <div><SocialMedia /></div>
+      <Title />
+      <Stack spacing={4} sx={sx.stack}>
+        <SocialMedia />
         <DownloadResumeButton />
       </Stack>
     </Container>
