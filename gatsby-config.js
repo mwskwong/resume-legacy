@@ -27,7 +27,8 @@ module.exports = {
     FAST_DEV: true,
     PARALLEL_SOURCING: true,
     LMDB_STORE: true,
-    PARALLEL_QUERY_RUNNING: true
+    PARALLEL_QUERY_RUNNING: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true
   },
   plugins: [
     {
@@ -97,13 +98,15 @@ module.exports = {
       },
       __key: "images"
     },
-    ANALYZE_BUNDLE === "true" && "gatsby-plugin-webpack-bundle-analyser-v2",
-    ANALYZE_BUNDLE === "true" && "gatsby-plugin-perf-budgets",
     {
       resolve: "gatsby-plugin-loadable-components-ssr",
       options: {
         useHydrate: true
       }
-    }
+    },
+    ...(ANALYZE_BUNDLE === "true" && [
+      "gatsby-plugin-webpack-bundle-analyser-v2",
+      "gatsby-plugin-perf-budgets"
+    ])
   ]
 };
