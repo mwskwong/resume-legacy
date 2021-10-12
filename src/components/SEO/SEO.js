@@ -7,10 +7,6 @@ const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = 
   const { site, ogImage } = useStaticQuery(graphql`{
     site {
       siteMetadata {
-        title
-        shortTitle
-        description
-        themeColor
         siteUrl
       }
     }
@@ -21,9 +17,10 @@ const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = 
     }
   }`);
 
+  // TODO query name (first and last), occupation and description from Contentful
+
   const title = titleProp || site.siteMetadata?.title;
   const description = descriptionProp || site.siteMetadata?.description;
-  const htmlAttributes = { lang: "en" };
   const ogImageUrl = ogImage.file.url;
 
   const meta = [
@@ -58,7 +55,6 @@ const SEO = ({ title: titleProp, description: descriptionProp, meta: metaProp = 
     <Helmet
       title={title}
       titleTemplate={titleProp ? `%s | ${site.siteMetadata?.shortTitle}` : null}
-      htmlAttributes={htmlAttributes}
       meta={meta}
     />
   );

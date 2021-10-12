@@ -68,3 +68,5 @@ Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cl
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
 
 ## To do
+1. Query name, occupation and description from Contentful in `SEO` and `Footer`
+2. Add `ANALYZE_BUNDLE=true` to .env.production

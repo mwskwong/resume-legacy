@@ -18,7 +18,7 @@ const useSx = () => {
         sm: "unset"
       }),
       bottom: theme => ({
-        xs: showScrollToTopFab ? theme.spacing(9) : theme.spacing(1), // TODO 
+        xs: showScrollToTopFab ? theme.spacing(9) : theme.spacing(1),
         sm: theme.spacing(3)
       })
     }
