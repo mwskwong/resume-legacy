@@ -8,7 +8,8 @@ const {
   HA_PROXY_HOST,
   HA_PROXY_PORT,
   HA_PROXY_USER,
-  HA_PROXY_PASSWORD
+  HA_PROXY_PASSWORD,
+  ANALYZE_BUNDLE
 } = process.env;
 const siteUrl = CF_PAGES_BRANCH === "main" || CF_PAGES_BRANCH === "master"
   ? "https://mwskwong.com"
@@ -96,8 +97,8 @@ module.exports = {
       },
       __key: "images"
     },
-    "gatsby-plugin-webpack-bundle-analyser-v2",
-    // "gatsby-plugin-perf-budgets",
+    ANALYZE_BUNDLE === "true" && "gatsby-plugin-webpack-bundle-analyser-v2",
+    ANALYZE_BUNDLE === "true" && "gatsby-plugin-perf-budgets",
     {
       resolve: "gatsby-plugin-loadable-components-ssr",
       options: {
