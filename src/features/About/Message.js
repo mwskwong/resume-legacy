@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Fragment } from "react";
@@ -27,20 +27,15 @@ const Message = () => {
 
   const occupations = occupationNodes.edges.map(({ node: { title } }) => title);
 
-  const occupationDirection = {
-    xs: "column",
-    sm: "row"
-  };
-
   return (
-    <Box sx={sx.root}>
+    <div>
       <Typography sx={sx.hello} variant="h3" gutterBottom>
         {"Hello! "}
         <Box sx={sx.name} component="span">
           {`I'm ${name.firstName} ${name.lastName}.`}
         </Box>
       </Typography>
-      <Stack sx={sx.occupationContainer} spacing={2} direction={occupationDirection}>
+      <Box sx={sx.occupationContainer}>
         {occupations.map((occupation, index) => (
           <Fragment key={occupation}>
             {index !== 0 && <Box sx={sx.dot} />}
@@ -49,11 +44,11 @@ const Message = () => {
             </Typography>
           </Fragment>
         ))}
-      </Stack>
+      </Box>
       <Typography sx={sx.intro}>
         {introNode.content.content}
       </Typography>
-    </Box>
+    </div>
   );
 };
 

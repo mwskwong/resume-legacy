@@ -43,7 +43,7 @@ const getThemedComponents = theme => ({
           "@media (min-width: 0px) and (orientation: landscape)": {
             scrollMarginTop: "48px"
           },
-          [`@media (min-width: ${theme.breakpoints.values.xs}px)`]: {
+          [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
             scrollMarginTop: "64px"
           },
           scrollMarginTop: "56px",
@@ -111,7 +111,7 @@ const getThemedComponents = theme => ({
           "@media (min-width: 0px) and (orientation: landscape)": {
             scrollMarginTop: "72px"
           },
-          [`@media (min-width: ${theme.breakpoints.values.xs}px)`]: {
+          [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
             scrollMarginTop: "88px"
           },
           scrollMarginTop: "80px"

@@ -1,4 +1,4 @@
-import { Container, Stack, Toolbar } from "@mui/material";
+import { Container, Toolbar } from "@mui/material";
 
 import DownloadResumeButton from "./DownloadResumeButton";
 import { HOME } from "constants/nav";
@@ -15,10 +15,8 @@ const Landing = () => {
     <Container component="section" sx={sx.container} id={HOME.id}>
       <Toolbar />
       <Title />
-      <Stack spacing={4} sx={sx.stack}>
-        <SocialMedia />
-        <DownloadResumeButton />
-      </Stack>
+      <SocialMedia sx={sx.socialMedia} />
+      <DownloadResumeButton sx={sx.downloadButton} />
     </Container>
   );
 };

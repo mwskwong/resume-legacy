@@ -12,7 +12,7 @@ const About = () => {
   const sx = useSx();
 
   return (
-    <Box sx={sx.root} component="section" d={ABOUT.id}>
+    <Box sx={sx.root} component="section" id={ABOUT.id}>
       <Container>
         <Stack sx={sx.stack} spacing={5}>
           <SectionHeader

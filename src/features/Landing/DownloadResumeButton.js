@@ -20,7 +20,6 @@ const DownloadResumeButton = ({ sx }) => {
       size="large"
       component="a"
       href={resume.file.url}
-      data-native
     >
       Download Resume
     </Button>

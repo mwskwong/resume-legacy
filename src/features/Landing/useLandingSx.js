@@ -9,8 +9,11 @@ const useSx = () => useMemo(() => ({
     flex: 1,
     minHeight: "100vh"
   },
-  stack: {
+  socialMedia: {
     mt: 3
+  },
+  downloadButton: {
+    mt: 4
   }
 }), []);
 

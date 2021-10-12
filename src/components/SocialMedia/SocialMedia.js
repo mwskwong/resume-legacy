@@ -30,19 +30,11 @@ const SocialMedia = ({ sx: sxProp }) => {
 
   return (
     <Stack spacing={1} direction="row" sx={sx.root}>
-      {socialMedia.map(({ name, link }, index) => {
+      {socialMedia.map(({ name, link }) => {
         const Icon = Icons[camelCase(name)];
 
         return (
-          <IconButton
-            key={name}
-            color="inherit"
-            aria-label={name}
-            component="a"
-            href={link}
-            data-native
-            edge={index === 0 ? "start" : index === socialMedia.length - 1 ? "end" : false}
-          >
+          <IconButton key={name} color="inherit" aria-label={name} component="a" href={link}>
             <Icon />
           </IconButton>
         );

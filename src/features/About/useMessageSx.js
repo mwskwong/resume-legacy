@@ -1,11 +1,6 @@
 import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-  },
   hello: {
     textAlign: "center"
   },
@@ -13,14 +8,22 @@ const useSx = () => useMemo(() => ({
     color: "primary.main"
   },
   occupationContainer: {
+    display: "flex",
+    flexDirection: {
+      xs: "column",
+      sm: "row"
+    },
     alignItems: "center",
+    justifyContent: "center",
     mb: 4
   },
   dot: {
     height: 5,
     width: 5,
     borderRadius: "50%",
-    bgcolor: "text.primary"
+    bgcolor: "text.primary",
+    mx: 2,
+    my: 1
   },
   intro: {
     textAlign: "center"
