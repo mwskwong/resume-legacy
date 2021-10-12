@@ -69,4 +69,3 @@ Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cl
 
 ## To do
 1. Query name, occupation and description from Contentful in `SEO` and `Footer`
-2. Add `ANALYZE_BUNDLE=true` to .env.production

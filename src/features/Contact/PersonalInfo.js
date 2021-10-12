@@ -24,19 +24,13 @@ const contactTemplate = {
 
 const PersonalInfo = () => {
   const sx = useSx();
-  const { allContentfulContact } = useStaticQuery(graphql`{
-    allContentfulContact {
-      edges {
-        node {
-          email
-          phone
-          address
-        }
-      }
+  const { contact } = useStaticQuery(graphql`{
+    contact: contentfulContact {
+      address
+      email
+      phone
     }
   }`);
-
-  const contact = allContentfulContact.edges[0].node;
 
   return (
     <Stack spacing={3} sx={sx.root}>
