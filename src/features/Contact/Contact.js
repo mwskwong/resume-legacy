@@ -1,13 +1,13 @@
 import { Box, Container, Grid } from "@mui/material";
-import { Suspense, lazy } from "react";
 
 import { CONTACT } from "constants/nav";
 import HexSlice6 from "components/icons/HexSlice6";
 import PersonalInfo from "./PersonalInfo";
 import SectionHeader from "components/SectionHeader";
+import loadable from "@loadable/component";
 import useSx from "./useContactSx";
 
-const ContactForm = lazy(() => import("./ContactForm"));
+const ContactForm = loadable(() => import("./ContactForm"));
 
 const Contact = () => {
   const sx = useSx();
@@ -25,9 +25,7 @@ const Contact = () => {
               <PersonalInfo />
             </Grid>
             <Grid item md xs={12}>
-              <Suspense fallback={null}>
-                <ContactForm />
-              </Suspense>
+              <ContactForm />
             </Grid>
           </Grid>
         </Box>
