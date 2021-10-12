@@ -104,9 +104,13 @@ module.exports = {
         useHydrate: true
       }
     },
-    ...(ANALYZE_BUNDLE === "true" && [
-      "gatsby-plugin-webpack-bundle-analyser-v2",
-      "gatsby-plugin-perf-budgets"
-    ])
+    ...(
+      ANALYZE_BUNDLE === "true"
+        ? [
+          "gatsby-plugin-webpack-bundle-analyser-v2",
+          "gatsby-plugin-perf-budgets"
+        ]
+        : []
+    )
   ]
 };
