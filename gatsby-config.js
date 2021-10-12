@@ -82,7 +82,7 @@ module.exports = {
       }
     },
     ...(
-      ANALYZE_BUNDLE === "true"
+      ANALYZE_BUNDLE
         ? [
           "gatsby-plugin-webpack-bundle-analyser-v2",
           "gatsby-plugin-perf-budgets"
