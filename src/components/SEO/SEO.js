@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 
 const SEO = ({ title: titleProp }) => {
-  const { site, name, occupationsQuery, descriptionQuery, ogImage } = useStaticQuery(graphql`{
+  const { site, name, occupationNodes, descriptionNode, ogImage } = useStaticQuery(graphql`{
     site {
       siteMetadata {
         siteUrl
@@ -14,14 +14,14 @@ const SEO = ({ title: titleProp }) => {
       firstName
       lastName
     },
-    occupationsQuery: allContentfulOccupation(sort: {fields: title}) {
+    occupationNodes: allContentfulOccupation(sort: {fields: title}) {
       edges {
         node {
           title
         }
       }
     }
-    descriptionQuery: contentfulSelfIntroduction {
+    descriptionNode: contentfulSelfIntroduction {
       content {
         content
       }
@@ -33,8 +33,8 @@ const SEO = ({ title: titleProp }) => {
     }
   }`);
 
-  const description = descriptionQuery.content.content;
-  const occupations = occupationsQuery.edges.map(({ node: { title } }) => title);
+  const description = descriptionNode.content.content;
+  const occupations = occupationNodes.edges.map(({ node: { title } }) => title);
   const ogImageUrl = ogImage.file.url;
   const title = titleProp || `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
   const titleTemplate = titleProp ? `%s | ${name.firstName} ${name.lastName}` : null;

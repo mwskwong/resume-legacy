@@ -8,8 +8,12 @@ import useSx from "./useTitleSx";
 const Title = () => {
   const sx = useSx();
   const typewriterRef = useRef();
-  const { allContentfulOccupation } = useStaticQuery(graphql`{
-    allContentfulOccupation(sort: {fields: title}) {
+  const { name, occupationNodes } = useStaticQuery(graphql`{
+    name: contentfulName {
+      firstName
+      lastName
+    }
+    occupationNodes: allContentfulOccupation(sort: {fields: title}) {
       edges {
         node {
           title
@@ -18,18 +22,18 @@ const Title = () => {
     }
   }`);
 
-  const occupations = allContentfulOccupation.edges.map(({ node: { title } }) => title);
+  const occupations = occupationNodes.edges.map(({ node: { title } }) => title);
 
   useEffect(() => {
     new Typewriter(typewriterRef.current, {
       strings: [
-        "Matthew Kwong",
+        `${name.firstName} ${name.lastName}`,
         ...occupations.map(occupation => `a ${occupation}`)
       ],
       loop: true,
       autoStart: true
     });
-  }, [occupations]);
+  }, [name.firstName, name.lastName, occupations]);
 
   return (
     <Box sx={sx.root}>

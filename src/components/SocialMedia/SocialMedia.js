@@ -15,8 +15,8 @@ const Icons = {
 
 const SocialMedia = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
-  const { allContentfulSocialMedia } = useStaticQuery(graphql`{
-    allContentfulSocialMedia(sort: {fields: name}) {
+  const { socialMediaNodes } = useStaticQuery(graphql`{
+    socialMediaNodes: allContentfulSocialMedia(sort: {fields: name}) {
       edges {
         node {
           name
@@ -26,7 +26,7 @@ const SocialMedia = ({ sx: sxProp }) => {
     }
   }`);
 
-  const socialMedia = allContentfulSocialMedia.edges.map(({ node: { name, link } }) => ({ name, link }));
+  const socialMedia = socialMediaNodes.edges.map(({ node: { name, link } }) => ({ name, link }));
 
   return (
     <Stack spacing={1} direction="row" sx={sx.root}>

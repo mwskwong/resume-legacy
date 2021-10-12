@@ -51,7 +51,7 @@ module.exports = {
         cache_busting_mode: "none",
         display: "standalone",
         icon: "src/images/icon.png",
-        name: "Matthew Kwong",
+        name: "Matthew",
         short_name: "Matthew",
         start_url: ".",
         theme_color: "#ffffff"
