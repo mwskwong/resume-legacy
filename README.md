@@ -7,6 +7,20 @@
   Gatsby minimal starter
 </h1>
 
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fmwskwong.com)
+![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fmwskwong.com)
+![Chromium HSTS preload](https://img.shields.io/hsts/preload/mwskwong.com)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/mwskwong/resume/next)
+![Maintenance](https://img.shields.io/maintenance/yes/2021)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/mwskwong/resume/next)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/mwskwong/resume/next)
+![GitHub language count](https://img.shields.io/github/languages/count/mwskwong/resume)
+![GitHub top language](https://img.shields.io/github/languages/top/mwskwong/resume)
+![GitHub repo size](https://img.shields.io/github/repo-size/mwskwong/resume)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/react/next)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/gatsby/next)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/@mui/material/next)
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
@@ -54,4 +68,3 @@ Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cl
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
 
 ## To do
-1. Add `GATSBY_CONTENTFUL_OFFLINE=true` and `CONTENTFUL_ACCESS_TOKEN` to production env
