@@ -3,18 +3,19 @@ import PaginationItem from "./PaginationItem";
 import PropTypes from "prop-types";
 import useSx from "./usePaginationSx";
 
-const Pagination = ({ count = 1, onChangeIndex, index }) => {
+const Pagination = ({ references, onChangeIndex, index }) => {
   const sx = useSx();
-  const handleSelectIndex = idx => () => onChangeIndex && onChangeIndex(idx);
+  const handleChangeIndex = index => () => onChangeIndex && onChangeIndex(index);
 
   return (
     <Box sx={sx.root}>
-      {[...Array(count)].map((_, currentIndex) => (
+      {references.map(({ name }, itemIndex) => (
         <PaginationItem
-          key={currentIndex}
-          active={currentIndex === index}
-          onClick={handleSelectIndex(currentIndex)}
-          index={currentIndex}
+          key={name}
+          active={itemIndex === index}
+          onClick={handleChangeIndex(itemIndex)}
+          index={itemIndex}
+          aria-label={`Testimonial from ${name}`}
         />
       ))}
     </Box>
@@ -22,7 +23,7 @@ const Pagination = ({ count = 1, onChangeIndex, index }) => {
 };
 
 Pagination.propTypes = {
-  count: PropTypes.number,
+  references: PropTypes.array,
   onChangeIndex: PropTypes.func,
   index: PropTypes.number
 };

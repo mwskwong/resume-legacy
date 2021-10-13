@@ -55,7 +55,7 @@ const Carousel = () => {
           </IconButton>
         </Stack>
         <Pagination
-          count={references.length}
+          references={references}
           onChangeIndex={handleChangeIndex}
           index={index}
         />

@@ -2,14 +2,14 @@ import { ButtonBase } from "@mui/material";
 import PropTypes from "prop-types";
 import useSx from "./usePaginationItemSx";
 
-const PaginationItem = ({ active = false, onClick, index }) => {
+const PaginationItem = ({ active = false, onClick, ...props }) => {
   const sx = useSx({ active });
 
   return (
     <ButtonBase
       sx={sx.root}
       onClick={onClick}
-      aria-label={"go to page " + index}
+      {...props}
     />
   );
 };
