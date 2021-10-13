@@ -22,7 +22,7 @@ const Carousel = () => {
               width: 58
               aspectRatio: 1
               cornerRadius: -1
-              placeholder: BLURRED
+              placeholder: TRACED_SVG
             )
           }
           company
