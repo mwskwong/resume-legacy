@@ -17,7 +17,7 @@ const SkillRating = ({ name, rating }) => {
           {`${value}%`}
         </Typography>
       </Box>
-      <LinearProgress variant="determinate" value={value} />
+      <LinearProgress variant="determinate" value={value} aria-hidden />
     </Box>
   );
 };
