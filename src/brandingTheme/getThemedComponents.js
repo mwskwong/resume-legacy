@@ -63,7 +63,10 @@ const getThemedComponents = theme => ({
           bottom: 20,
           right: 20,
           borderRadius: 10,
-          boxShadow: "none"
+          boxShadow: "none",
+          "&:active": {
+            boxShadow: "none"
+          }
         }
       }
     },
