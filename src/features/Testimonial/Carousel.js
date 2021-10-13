@@ -70,7 +70,7 @@ const Carousel = () => {
           index={index}
         />
       </Box>
-      <SwipeableViews resistance index={index} onChangeIndex={handleChangeIndex}>
+      <SwipeableViews resistance disableLazyLoading index={index} onChangeIndex={handleChangeIndex}>
         {references.map(({ name, jobTitle, refereePicture, company, comment }) => (
           <Reference
             key={name}
