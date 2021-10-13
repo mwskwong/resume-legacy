@@ -7,7 +7,7 @@ import { Stack } from "@mui/material";
 import loadable from "@loadable/component";
 import useSx from "./useEducationSx";
 
-const EducationTimeline = loadable(() => import("features/EducationTimeline"));
+const EducationTimeline = loadable(() => import("./EducationTimeline"));
 
 const Education = () => {
   const sx = useSx();
