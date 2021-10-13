@@ -1,5 +1,5 @@
 import { KeyboardArrowLeftRounded as ArrowLeft, KeyboardArrowRightRounded as ArrowRight } from "@mui/icons-material";
-import { Box, IconButton, Stack } from "@mui/material";
+import { Box, Grid, IconButton, Stack } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Pagination from "./Pagination";
@@ -22,7 +22,7 @@ const Carousel = () => {
               width: 58
               aspectRatio: 1
               cornerRadius: -1
-              placeholder: TRACED_SVG
+              placeholder: BLURRED
             )
           }
           company
@@ -44,7 +44,7 @@ const Carousel = () => {
   const handleNext = () => setIndex(index => index + 1);
 
   return (
-    <div>
+    <Grid item md={6} xs={12}>
       <Box sx={sx.actionContainer}>
         <Stack direction="row" spacing={2}>
           <IconButton
@@ -82,7 +82,7 @@ const Carousel = () => {
           />
         ))}
       </SwipeableViews>
-    </div>
+    </Grid>
   );
 };
 

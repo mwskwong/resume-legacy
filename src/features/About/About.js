@@ -14,7 +14,7 @@ const About = () => {
   return (
     <Box sx={sx.root} component="section" id={ABOUT.id}>
       <Container>
-        <Stack sx={sx.stack} spacing={5}>
+        <Stack sx={sx.stack} spacing={6}>
           <SectionHeader
             heading="About Me"
             Icon={HexSlice1}

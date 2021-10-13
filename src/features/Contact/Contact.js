@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <Box sx={sx.root} component="section" id={CONTACT.id}>
       <Container>
-        <Stack spacing={5}>
+        <Stack spacing={6}>
           <SectionHeader
             heading="Get In Touch"
             Icon={HexSlice6}

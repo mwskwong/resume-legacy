@@ -1,6 +1,7 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container, Grid, Stack } from "@mui/material";
 
 import BrandingThemeProvider from "components/BrandingThemeProvider";
+import FunFacts from "./FunFacts";
 import HexSlice5 from "components/icons/HexSlice5";
 import SectionHeader from "components/SectionHeader";
 import { TESTIMONIAL } from "constants/nav";
@@ -16,20 +17,18 @@ const Testimonial = () => {
     <BrandingThemeProvider mode="dark">
       <Box component="section" sx={sx.root} id={TESTIMONIAL.id}>
         <Container>
-          <SectionHeader
-            heading="What People Say"
-            Icon={HexSlice5}
-          />
-          <Box sx={sx.contentContainer}>
-            <Grid container spacing={3}>
-              <Grid item md={6} xs={12}>
+          <Stack spacing={6}>
+            <SectionHeader
+              heading="What People Say"
+              Icon={HexSlice5}
+            />
+            <div>
+              <Grid container spacing={6} sx={sx.contentGrid}>
                 <Carousel />
+                <FunFacts />
               </Grid>
-              <Grid item md={6} xs={12}>
-
-              </Grid>
-            </Grid>
-          </Box>
+            </div>
+          </Stack>
         </Container>
       </Box>
     </BrandingThemeProvider>

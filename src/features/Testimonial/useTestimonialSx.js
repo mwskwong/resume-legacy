@@ -6,6 +6,9 @@ const useSx = () => useMemo(() => ({
   },
   contentContainer: {
     mt: 5
+  },
+  contentGrid: {
+    alignItems:"center"
   }
 }), []);
 
