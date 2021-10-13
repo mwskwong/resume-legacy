@@ -4,20 +4,20 @@ import { Button } from "@mui/material";
 import { FileDownloadOutlined as Download } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import { Typography } from "@mui/material";
+import dayjs from "dayjs";
 import useSx from "./useTImelineItemSx";
 
 const TimelineItem = ({ data }) => {
   const sx = useSx();
-  const period = `${data.from} — ${data.to}`;
+  const from = dayjs(data.from).format("MMM YYYY");
+  const to = dayjs(data.to).format("MMM YYYY");
+  const period = `${from} — ${to}`;
 
   return (
     <MuiTimelineItem>
       <TimelineOppositeContent sx={sx.periodDesktop} variant="body2">
         {period}
       </TimelineOppositeContent>
-      {/* <TimelineOppositeContent color="text.secondary">
-        09:30 am
-      </TimelineOppositeContent> */}
       <TimelineSeparator>
         <TimelineDot color="primary" />
         <TimelineConnector />

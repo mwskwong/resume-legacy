@@ -1,7 +1,8 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-import Timeline from "components/Timeline";
-import dayjs from "dayjs";
+import loadable from "@loadable/component";
+
+const Timeline = loadable(() => import("components/Timeline"));
 
 const EducationTimeline = () => {
   const { educationNodes } = useStaticQuery(graphql`{
@@ -25,9 +26,7 @@ const EducationTimeline = () => {
 
 
   const educations = educationNodes.edges
-    .map(({ node: { from, to, institution, document, ...node } }) => ({
-      from: dayjs(from).format("MMM YYYY"),
-      to: dayjs(to).format("MMM YYYY"),
+    .map(({ node: { institution, document, ...node } }) => ({
       subtitle: institution,
       fileUrl: document.file.url,
       ...node
