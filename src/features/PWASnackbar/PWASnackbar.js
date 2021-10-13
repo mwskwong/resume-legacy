@@ -36,6 +36,6 @@ const PWASnackbar = () => {
   );
 };
 
-PWASnackbar.whyDIdYouRender = true;
+PWASnackbar.whyDidYouRender = true;
 
 export default PWASnackbar;

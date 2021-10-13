@@ -6,7 +6,7 @@ const StackOverflow = props => (
   </SvgIcon>
 );
 
-StackOverflow.whyDIdYouRender = true;
+StackOverflow.whyDidYouRender = true;
 StackOverflow.muiName = SvgIcon.muiName;
 
 export default StackOverflow;

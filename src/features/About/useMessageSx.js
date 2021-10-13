@@ -15,7 +15,7 @@ const useSx = () => useMemo(() => ({
     },
     alignItems: "center",
     justifyContent: "center",
-    mb: 4
+    my: 2
   },
   dot: {
     height: 5,

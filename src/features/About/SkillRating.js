@@ -5,24 +5,19 @@ import useSx from "./useSkillRatingSx";
 
 const SkillRating = ({ name, rating }) => {
   const sx = useSx();
+  const value = rating * 100 / 5;
 
   return (
     <Box>
       <Box sx={sx.ratingContainer}>
-        <Typography sx={sx.skillName}>
+        <Typography sx={sx.skillName} variant="subtitle2">
           {name}
         </Typography>
-        <Typography sx={sx.ratingText}>
-          {Math.round(rating) + "%"}
+        <Typography>
+          {`${value}%`}
         </Typography>
       </Box>
-      <LinearProgress
-        aria-hidden
-        sx={sx.rating}
-        variant="determinate"
-        color="primary"
-        value={rating}
-      />
+      <LinearProgress variant="determinate" value={value} />
     </Box>
   );
 };

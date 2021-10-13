@@ -5,7 +5,7 @@ import Logo from "./Logo";
 import { MenuOutlined } from "@mui/icons-material";
 import NavButton from "./NavButton";
 import NavListItem from "./NavListItem";
-import  nav from "constants/nav";
+import nav from "constants/nav";
 import useActiveSectionId from "hooks/useActiveSectionId";
 import useSx from "./useNavBarSx";
 

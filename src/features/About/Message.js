@@ -29,7 +29,7 @@ const Message = () => {
 
   return (
     <div>
-      <Typography sx={sx.hello} variant="h3" gutterBottom>
+      <Typography sx={sx.hello} variant="h3">
         {"Hello! "}
         <Box sx={sx.name} component="span">
           {`I'm ${name.firstName} ${name.lastName}.`}

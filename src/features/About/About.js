@@ -5,7 +5,7 @@ import HexSlice1 from "components/icons/HexSlice1";
 import Message from "./Message";
 import Photo from "./Photo";
 import SectionHeader from "components/SectionHeader";
-// import SkillSet from "./SkillSet";
+import SkillSet from "./SkillSet";
 import useSx from "./useAboutSx";
 
 const About = () => {
@@ -19,9 +19,9 @@ const About = () => {
             heading="About Me"
             Icon={HexSlice1}
           />
-          <Message />
           <Photo />
-          {/* <SkillSet /> */}
+          <Message />
+          <SkillSet />
         </Stack>
       </Container>
     </Box>

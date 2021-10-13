@@ -66,11 +66,14 @@ const SEO = ({ title: titleProp }) => {
     }
   ];
 
+  const htmlAttributes = { lang: "en" };
+
   return (
     <Helmet
       title={title}
       titleTemplate={titleTemplate}
       meta={meta}
+      htmlAttributes={htmlAttributes}
     />
   );
 };
