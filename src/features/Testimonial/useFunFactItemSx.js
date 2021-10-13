@@ -7,7 +7,7 @@ const useSx = () => useMemo(() => ({
     p: 1,
     pl: 2,
     borderLeft: "4px solid",
-    borderColor: theme => darken(theme.palette.primary.main, 0.5)
+    borderColor: theme => darken(theme.palette.primary.main, .5)
   },
   value: {
     color: "primary.main",
