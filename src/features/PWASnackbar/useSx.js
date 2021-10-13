@@ -7,14 +7,11 @@ const useSx = () => {
   return useMemo(() => ({
     root: {
       transition: theme => ({
-        xs: theme.transitions.create(
-          ["bottom"],
-          {
-            duration: showScrollToTopFab
-              ? theme.transitions.duration.enteringScreen
-              : theme.transitions.duration.leavingScreen
-          }
-        ),
+        xs: theme.transitions.create("bottom", {
+          duration: showScrollToTopFab
+            ? theme.transitions.duration.enteringScreen
+            : theme.transitions.duration.leavingScreen
+        }),
         sm: "unset"
       }),
       bottom: theme => ({

@@ -7,13 +7,11 @@ const useSx = () => useMemo(() => ({
     alignItems: "center"
   },
   greetings: {
-    textTransform: "capitalize",
-    color: "text.primary"
+    textTransform: "capitalize"
   },
   title: {
     textTransform: "capitalize",
     textAlign: "center",
-    color: "text.primary",
     "@media (max-width: 742px)": {
       height: theme => `${theme.typography.h1.lineHeight * 2}em`
     },

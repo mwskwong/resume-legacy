@@ -2,7 +2,7 @@ import { AppBar, Box, Collapse, Container, IconButton, List, Stack, Toolbar, use
 import { useEffect, useState } from "react";
 
 import Logo from "./Logo";
-import { MenuOutlined } from "@mui/icons-material";
+import { MenuRounded as Menu } from "@mui/icons-material";
 import NavButton from "./NavButton";
 import NavListItem from "./NavListItem";
 import nav from "constants/nav";
@@ -49,7 +49,7 @@ const NavBar = () => {
             onClick={handleMenuToggle}
             aria-label="toggle menu"
           >
-            <MenuOutlined />
+            <Menu />
           </IconButton>
         </Toolbar>
         <Collapse in={menuOpen} timeout="auto" unmountOnExit>

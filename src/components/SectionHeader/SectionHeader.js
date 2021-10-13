@@ -7,7 +7,7 @@ const SectionHeader = ({ heading, Icon }) => {
   const sx = useSx();
 
   return (
-    <header>
+    <Box component="header" sx={sx.root}>
       <Typography sx={sx.heading} variant="h2" gutterBottom>
         {heading}
       </Typography>
@@ -16,7 +16,7 @@ const SectionHeader = ({ heading, Icon }) => {
         <Icon />
         <Divider sx={sx.divider} />
       </Box>
-    </header>
+    </Box>
   );
 };
 

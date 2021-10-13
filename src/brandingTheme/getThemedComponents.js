@@ -120,6 +120,11 @@ const getThemedComponents = theme => ({
           scrollMarginTop: "80px"
         }
       }
+    },
+    MuiTypography: {
+      defaultProps: {
+        color: "text.primary"
+      }
     }
   }
 });

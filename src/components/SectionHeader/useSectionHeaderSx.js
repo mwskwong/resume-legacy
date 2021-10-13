@@ -1,9 +1,11 @@
 import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
+  root: {
+    color: "text.primary"
+  },
   heading: {
     textAlign: "center",
-    color: "text.primary",
     textTransform: "capitalize"
   },
   divider: {

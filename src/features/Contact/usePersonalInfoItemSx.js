@@ -13,7 +13,6 @@ const useSx = () => useMemo(() => ({
     mt: 2
   },
   value: {
-    color: "text.primary",
     textAlign: "center"
   }
 }), []);
