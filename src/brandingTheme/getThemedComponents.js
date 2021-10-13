@@ -94,17 +94,10 @@ const getThemedComponents = theme => ({
         }
       }
     },
-    MuiTimelineItem: {
+    MuiTimelineDot: {
       styleOverrides: {
-        positionRight: {
-          "&.MuiTimelineItem-missingOppositeContent": {
-            "&::before": {
-              display: "none"
-            }
-          },
-          "& > .MuiTimelineContent-positionRight": {
-            paddingRight: 0
-          }
+        root: {
+          boxShadow: "none"
         }
       }
     },

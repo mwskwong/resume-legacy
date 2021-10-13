@@ -9,9 +9,9 @@ export const CONTACT = { "id": "contact", "name": "contact" };
 export default {
   HOME,
   ABOUT,
+  TESTIMONIAL,
   WORK,
   EDUCATION,
   PROJECT,
-  TESTIMONIAL,
   CONTACT
 };
