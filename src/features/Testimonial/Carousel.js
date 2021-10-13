@@ -21,7 +21,6 @@ const Carousel = () => {
             gatsbyImageData(
               width: 58
               aspectRatio: 1
-              cornerRadius: -1
               placeholder: BLURRED
             )
           }

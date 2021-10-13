@@ -11,7 +11,6 @@ const Photo = () => {
       gatsbyImageData(
         width: 200
         aspectRatio: 1
-        cornerRadius: -1
         placeholder: TRACED_SVG
       )
     }
