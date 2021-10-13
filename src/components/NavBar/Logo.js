@@ -15,7 +15,7 @@ const Logo = ({ sx: sxProp, onClick }) => {
   }`);
 
   return (
-    <Button color="inherit" sx={sx.root} component="a" href={`#${HOME.id}`} onClick={onClick}>
+    <Button color="inherit" sx={sx.root} href={`#${HOME.id}`} onClick={onClick}>
       <Typography sx={sx.text} variant="h5">
         {name.firstName}
       </Typography>

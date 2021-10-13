@@ -34,7 +34,7 @@ const SocialMedia = ({ sx: sxProp }) => {
         const Icon = Icons[camelCase(name)];
 
         return (
-          <IconButton key={name} color="inherit" aria-label={name} component="a" href={link}>
+          <IconButton key={name} color="inherit" aria-label={name} href={link}>
             <Icon />
           </IconButton>
         );

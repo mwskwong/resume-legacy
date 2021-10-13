@@ -9,11 +9,7 @@ const ScrollToTopFab = () => {
 
   return (
     <Zoom in={show} mountOnEnter unmountOnExit>
-      <Fab
-        component="a"
-        aria-label="scroll to top"
-        href={`#${HOME.id}`}
-      >
+      <Fab aria-label="scroll to top" href={`#${HOME.id}`}>
         <KeyboardArrowUpOutlined />
       </Fab>
     </Zoom>
