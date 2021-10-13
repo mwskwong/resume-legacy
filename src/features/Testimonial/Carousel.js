@@ -47,10 +47,20 @@ const Carousel = () => {
     <div>
       <Box sx={sx.actionContainer}>
         <Stack direction="row" spacing={2}>
-          <IconButton size="small" onClick={handlePrev} disabled={index === 0}>
+          <IconButton
+            size="small"
+            onClick={handlePrev}
+            disabled={index === 0}
+            aria-label={"previous testimonial"}
+          >
             <ArrowLeft fontSize="small" />
           </IconButton>
-          <IconButton size="small" onClick={handleNext} disabled={index === references.length - 1}>
+          <IconButton
+            size="small"
+            onClick={handleNext}
+            disabled={index === references.length - 1}
+            aria-label={"next testimonial"}
+          >
             <ArrowRight fontSize="small" />
           </IconButton>
         </Stack>
