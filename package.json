@@ -30,6 +30,7 @@
     "gatsby-plugin-loadable-components-ssr": "^3.4.0",
     "gatsby-plugin-manifest": "^3.14.0",
     "gatsby-plugin-offline": "^4.14.0",
+    "gatsby-plugin-preconnect": "^1.2.1",
     "gatsby-plugin-react-helmet": "^4.14.0",
     "gatsby-plugin-robots-txt": "^1.6.10",
     "gatsby-plugin-sharp": "^3.14.1",

@@ -58,6 +58,12 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-plugin-preconnect",
+      options: {
+        domains: ["http://images.ctfassets.net"]
+      }
+    },
+    {
       resolve: "gatsby-plugin-offline",
       options: {
         workboxConfig: {
