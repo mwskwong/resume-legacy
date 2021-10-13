@@ -45,14 +45,6 @@ const SEO = ({ title: titleProp }) => {
       content: description
     },
     {
-      property: "og:title",
-      content: title
-    },
-    {
-      property: "og:description",
-      content: description
-    },
-    {
       property: "og:type",
       content: "website"
     },
@@ -61,7 +53,35 @@ const SEO = ({ title: titleProp }) => {
       content: site.siteMetadata.siteUrl
     },
     {
+      property: "og:title",
+      content: title
+    },
+    {
+      property: "og:description",
+      content: description
+    },
+    {
       property: "og:image",
+      content: ogImageUrl
+    },
+    {
+      property: "twitter:card",
+      content: "summary_large_image"
+    },
+    {
+      property: "twitter:url",
+      content: site.siteMetadata.siteUrl
+    },
+    {
+      property: "twitter:title",
+      content: title
+    },
+    {
+      property: "twitter:description",
+      content: description
+    },
+    {
+      property: "twitter:image",
       content: ogImageUrl
     }
   ];
