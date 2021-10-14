@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
+import { memo } from "react";
 
 const SEO = ({ title: titleProp }) => {
   const { site, name, occupationNodes, descriptionNode, ogImage } = useStaticQuery(graphql`{
@@ -102,4 +103,4 @@ SEO.propTypes = {
 
 SEO.whyDidYouRender = true;
 
-export default SEO;
+export default memo(SEO);

@@ -1,5 +1,5 @@
 import { AppBar, Box, Collapse, Container, IconButton, List, Stack, Toolbar, useMediaQuery } from "@mui/material";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 import Logo from "./Logo";
 import { MenuRounded as Menu } from "@mui/icons-material";
@@ -71,4 +71,4 @@ const NavBar = () => {
 
 NavBar.whyDidYouRender = true;
 
-export default NavBar;
+export default memo(NavBar);

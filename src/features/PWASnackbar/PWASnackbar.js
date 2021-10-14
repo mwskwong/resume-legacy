@@ -1,6 +1,6 @@
 import { Button, Snackbar } from "@mui/material";
+import { memo, useEffect, useState } from "react";
 import { selectServiceWorkerStatus, serviceWorkerStatus } from "./serviceWorkerStatusSlice";
-import { useEffect, useState } from "react";
 
 import { useSelector } from "react-redux";
 import useSx from "./useSx";
@@ -38,4 +38,4 @@ const PWASnackbar = () => {
 
 PWASnackbar.whyDidYouRender = true;
 
-export default PWASnackbar;
+export default memo(PWASnackbar);

@@ -5,6 +5,7 @@ import HexSlice6 from "components/icons/HexSlice6";
 import PersonalInfo from "./PersonalInfo";
 import SectionHeader from "components/SectionHeader";
 import loadable from "@loadable/component";
+import { memo } from "react";
 import useSx from "./useContactSx";
 
 const ContactForm = loadable(() => import("./ContactForm"));
@@ -38,4 +39,4 @@ const Contact = () => {
 
 Contact.whyDidYouRender = true;
 
-export default Contact;
+export default memo(Contact);

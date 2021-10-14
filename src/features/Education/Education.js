@@ -1,11 +1,11 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
 
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import HexSlice4 from "components/icons/HexSlice4";
 import SectionHeader from "components/SectionHeader";
-import { Stack } from "@mui/material";
+import { memo } from "react";
 import useSx from "./useEducationSx";
 
 const Education = () => {
@@ -29,4 +29,4 @@ const Education = () => {
 
 Education.whyDidYouRender = true;
 
-export default Education;
+export default memo(Education);

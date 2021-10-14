@@ -1,7 +1,7 @@
 import { Container, Divider, Grid } from "@mui/material";
+import { Fragment, memo } from "react";
 
 import CopyrightStatement from "./CopyrightStatement";
-import { Fragment } from "react";
 import SocialMedia from "components/SocialMedia";
 import useSx from "./useFooterSx";
 
@@ -27,4 +27,4 @@ const Footer = () => {
 
 Footer.whyDidYouRender = true;
 
-export default Footer;
+export default memo(Footer);

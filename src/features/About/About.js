@@ -6,6 +6,7 @@ import Message from "./Message";
 import Photo from "./Photo";
 import SectionHeader from "components/SectionHeader";
 import SkillSet from "./SkillSet";
+import { memo } from "react";
 import useSx from "./useAboutSx";
 
 const About = () => {
@@ -31,4 +32,4 @@ const About = () => {
 
 About.whyDidYouRender = true;
 
-export default About;
+export default memo(About);

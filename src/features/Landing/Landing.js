@@ -4,6 +4,7 @@ import DownloadResumeButton from "./DownloadResumeButton";
 import { HOME } from "constants/nav";
 import SocialMedia from "components/SocialMedia";
 import loadable from "@loadable/component";
+import { memo } from "react";
 import useSx from "./useLandingSx";
 
 const Title = loadable(() => import("./Title"));
@@ -23,4 +24,4 @@ const Landing = () => {
 
 Landing.whyDidYouRender = true;
 
-export default Landing;
+export default memo(Landing);

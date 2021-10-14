@@ -6,6 +6,7 @@ import HexSlice2 from "components/icons/HexSlice2";
 import SectionHeader from "components/SectionHeader";
 import { TESTIMONIAL } from "constants/nav";
 import loadable from "@loadable/component";
+import { memo } from "react";
 import useSx from "./useTestimonialSx";
 
 const Carousel = loadable(() => import("./Carousel"));
@@ -37,4 +38,4 @@ const Testimonial = () => {
 
 Testimonial.whyDidYouRender = true;
 
-export default Testimonial;
+export default memo(Testimonial);

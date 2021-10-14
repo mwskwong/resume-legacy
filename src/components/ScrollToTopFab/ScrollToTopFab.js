@@ -2,6 +2,7 @@ import { Fab, Zoom } from "@mui/material";
 
 import { KeyboardArrowUpRounded as ArrowUp } from "@mui/icons-material";
 import { HOME } from "constants/nav";
+import { memo } from "react";
 import useShowScrollToTopFab from "hooks/useShowScrollToTopFab";
 
 const ScrollToTopFab = () => {
@@ -18,4 +19,4 @@ const ScrollToTopFab = () => {
 
 ScrollToTopFab.whyDidYouRender = true;
 
-export default ScrollToTopFab;
+export default memo(ScrollToTopFab);
