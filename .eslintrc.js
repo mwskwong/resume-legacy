@@ -2,19 +2,13 @@ module.exports = {
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true,
-    "commonjs": true
+    "node": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended"
   ],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -35,9 +29,7 @@ module.exports = {
     "indent": [
       "error",
       2,
-      {
-        "SwitchCase": 1
-      }
+      { "SwitchCase": 1 }
     ],
     "linebreak-style": [
       "error",
