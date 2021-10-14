@@ -21,7 +21,7 @@ Timeline.propTypes = {
     to: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string,
-    content: PropTypes.string,
+    contents: PropTypes.arrayOf(PropTypes.string),
     fileUrl: PropTypes.string
   }))
 };

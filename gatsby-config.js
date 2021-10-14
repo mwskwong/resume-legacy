@@ -12,7 +12,7 @@ module.exports = {
     siteUrl
   },
   flags: {
-    FAST_DEV: true,
+    // FAST_DEV: true,
     PARALLEL_SOURCING: true,
     LMDB_STORE: true,
     PARALLEL_QUERY_RUNNING: true,

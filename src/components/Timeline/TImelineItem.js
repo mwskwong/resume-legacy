@@ -1,6 +1,13 @@
-import { TimelineItem as MuiTimelineItem, TimelineConnector, TimelineContent, TimelineDot, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
+import { Button, List, ListItem, ListItemText } from "@mui/material";
+import {
+  TimelineItem as MuiTimelineItem,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineOppositeContent,
+  TimelineSeparator
+} from "@mui/lab";
 
-import { Button } from "@mui/material";
 import { FileDownloadOutlined as Download } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import { Typography } from "@mui/material";
@@ -11,8 +18,9 @@ import useSx from "./useTImelineItemSx";
 const TimelineItem = ({ data }) => {
   const sx = useSx();
   const from = dayjs(data.from).format("MMM YYYY");
-  const to = dayjs(data.to).format("MMM YYYY");
+  const to = data.to ? dayjs(data.to).format("MMM YYYY") : "Present";
   const period = `${from} — ${to}`;
+  const contents = data.contents || [];
 
   return (
     <MuiTimelineItem>
@@ -23,7 +31,7 @@ const TimelineItem = ({ data }) => {
         <TimelineDot color="primary" />
         <TimelineConnector />
       </TimelineSeparator>
-      <TimelineContent>
+      <TimelineContent sx={sx.timelineContent}>
         <Typography sx={sx.periodMobile} component="div" variant="body2" gutterBottom>
           {period}
         </Typography>
@@ -33,12 +41,16 @@ const TimelineItem = ({ data }) => {
         <Typography sx={sx.subtitle} component="div" gutterBottom>
           {data.subtitle}
         </Typography>
-        <Typography component="div" gutterBottom>
-          {data.content}
-        </Typography>
+        <List dense>
+          {contents.map((content, index) => (
+            <ListItem key={index} sx={sx.contentListItem}>
+              <ListItemText primary={content} />
+            </ListItem>
+          ))}
+        </List>
         {data.fileUrl && (
           <Button
-            sx={sx.button}
+            sx={sx.downloadButton}
             variant="outlined"
             size="small"
             endIcon={<Download fontSize="small" />}
@@ -58,7 +70,7 @@ TimelineItem.propTypes = {
     to: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string,
-    content: PropTypes.string,
+    contents: PropTypes.arrayOf(PropTypes.string),
     fileUrl: PropTypes.string
   })
 };

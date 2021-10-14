@@ -7,16 +7,14 @@ const Timeline = loadable(() => import("components/Timeline"));
 const EducationTimeline = () => {
   const { educationNodes } = useStaticQuery(graphql`{
     educationNodes: allContentfulEducation(sort: {fields: from, order: DESC}) {
-      edges {
-        node {
-          from
-          to
-          title
-          institution
-          document {
-            file {
-              url
-            }
+      nodes {
+        from
+        to
+        title
+        institution
+        document {
+          file {
+            url
           }
         }
       }
@@ -25,8 +23,8 @@ const EducationTimeline = () => {
 
 
 
-  const educations = educationNodes.edges
-    .map(({ node: { institution, document, ...node } }) => ({
+  const educations = educationNodes.nodes
+    .map(({ institution, document, ...node }) => ({
       subtitle: institution,
       fileUrl: document?.file?.url,
       ...node

@@ -14,15 +14,13 @@ const Title = () => {
       lastName
     }
     occupationNodes: allContentfulOccupation(sort: {fields: title}) {
-      edges {
-        node {
-          title
-        }
+      nodes {
+        title
       }
     }
   }`);
 
-  const occupations = occupationNodes.edges.map(({ node: { title } }) => title);
+  const occupations = occupationNodes.nodes.map(({ title }) => title);
 
   useEffect(() => {
     new Typewriter(typewriterRef.current, {

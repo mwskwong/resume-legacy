@@ -8,6 +8,7 @@ import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
 import Testimonial from "features/Testimonial";
+import Work from "features/Work";
 
 const IndexPage = () => {
   return (
@@ -18,6 +19,7 @@ const IndexPage = () => {
         <Landing />
         <About />
         <Testimonial />
+        <Work />
         <Education />
         <Contact />
         <Footer />

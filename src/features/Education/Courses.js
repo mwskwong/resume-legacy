@@ -17,21 +17,19 @@ const Courses = () => {
   const sx = useSx();
   const { courseNodes } = useStaticQuery(graphql`{
     courseNodes: allContentfulCourse(sort: {fields: name}) {
-      edges {
-        node {
-          name
-          institution
-          certification {
-            file {
-              url
-            }
+      nodes {
+        name
+        institution
+        certification {
+          file {
+            url
           }
         }
       }
     }
   }`);
 
-  const courses = courseNodes.edges.map(({ node: { certification, ...node } }) => ({
+  const courses = courseNodes.nodes.map(({ certification, ...node }) => ({
     fileUrl: certification?.file?.url,
     ...node
   }));

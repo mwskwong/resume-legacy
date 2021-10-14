@@ -12,10 +12,8 @@ const Message = () => {
       lastName
     }
     occupationNodes: allContentfulOccupation(sort: {fields: title}) {
-      edges {
-        node {
-          title
-        }
+      nodes {
+        title
       }
     },
     introNode: contentfulSelfIntroduction {
@@ -25,7 +23,7 @@ const Message = () => {
     }
   }`);
 
-  const occupations = occupationNodes.edges.map(({ node: { title } }) => title);
+  const occupations = occupationNodes.nodes.map(({ title }) => title);
 
   return (
     <div>

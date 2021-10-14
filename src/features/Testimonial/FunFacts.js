@@ -6,16 +6,14 @@ import { Grid } from "@mui/material";
 const FunFacts = () => {
   const { funFactNodes } = useStaticQuery(graphql`{
     funFactNodes: allContentfulFunFact(sort: {fields: title}) {
-      edges {
-        node {
-          title
-          value
-        }
+      nodes {
+        title
+        value
       }
     }
   }`);
 
-  const funFacts = funFactNodes.edges.map(({ node }) => node);
+  const funFacts = funFactNodes.nodes;
 
   return (
     <Grid item container spacing={2} md={6} xs={12}>

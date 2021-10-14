@@ -13,23 +13,21 @@ const Carousel = () => {
   const [index, setIndex] = useState(0);
   const { referenceNodes } = useStaticQuery(graphql`{
     referenceNodes: allContentfulTestimonial(sort: {fields: name}) {
-      edges {
-        node {
-          name
-          jobTitle
-          refereePicture {
-            gatsbyImageData(width: 60, aspectRatio: 1, placeholder: BLURRED)
-          }
-          company
-          comment {
-            comment
-          }
+      nodes {
+        name
+        jobTitle
+        refereePicture {
+          gatsbyImageData(width: 60, aspectRatio: 1, placeholder: BLURRED)
+        }
+        company
+        comment {
+          comment
         }
       }
     }
   }`);
 
-  const references = referenceNodes.edges.map(({ node: { comment, ...node } }) => ({
+  const references = referenceNodes.nodes.map(({ comment, ...node }) => ({
     ...node,
     comment: comment.comment
   }));

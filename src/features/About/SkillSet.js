@@ -6,16 +6,14 @@ import SkillRating from "./SkillRating";
 const SkillSet = () => {
   const { skillNodes } = useStaticQuery(graphql`{
     skillNodes: allContentfulSkill(sort: {fields: name}) {
-      edges {
-        node {
-          name
-          rating
-        }
+      nodes {
+        name
+        rating
       }
     }
   }`);
 
-  const skills = skillNodes.edges.map(({ node: { name, rating } }) => ({ name, rating }));
+  const skills = skillNodes.nodes;
 
   return (
     <div>

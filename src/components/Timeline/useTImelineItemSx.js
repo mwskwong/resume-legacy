@@ -8,6 +8,9 @@ const useSx = () => useMemo(() => ({
       md: "initial"
     }
   },
+  timelineContent: {
+    mb: 2
+  },
   periodMobile: {
     color: "text.secondary",
     display: {
@@ -17,9 +20,11 @@ const useSx = () => useMemo(() => ({
   subtitle: {
     color: "primary.main"
   },
-  button: {
-    mt: 1,
-    mb: 2
+  contentListItem: {
+    textAlign: "inherit"
+  },
+  downloadButton: {
+    mt: 1
   }
 }), []);
 

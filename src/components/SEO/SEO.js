@@ -15,10 +15,8 @@ const SEO = ({ title: titleProp }) => {
       lastName
     },
     occupationNodes: allContentfulOccupation(sort: {fields: title}) {
-      edges {
-        node {
-          title
-        }
+      nodes {
+        title
       }
     }
     descriptionNode: contentfulSelfIntroduction {
@@ -34,7 +32,7 @@ const SEO = ({ title: titleProp }) => {
   }`);
 
   const description = descriptionNode.content.content;
-  const occupations = occupationNodes.edges.map(({ node: { title } }) => title);
+  const occupations = occupationNodes.nodes.map(({ title }) => title);
   const ogImageUrl = ogImage.file.url;
   const title = titleProp || `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
   const titleTemplate = titleProp ? `%s | ${name.firstName} ${name.lastName}` : null;

@@ -17,16 +17,14 @@ const SocialMedia = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
   const { socialMediaNodes } = useStaticQuery(graphql`{
     socialMediaNodes: allContentfulSocialMedia(sort: {fields: name}) {
-      edges {
-        node {
-          name
-          link
-        }
+      nodes {
+        name
+        link
       }
     }
   }`);
 
-  const socialMedia = socialMediaNodes.edges.map(({ node: { name, link } }) => ({ name, link }));
+  const socialMedia = socialMediaNodes.nodes;
 
   return (
     <Stack spacing={1} direction="row" sx={sx.root}>
