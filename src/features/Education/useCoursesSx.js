@@ -3,13 +3,13 @@ import { useMemo } from "react";
 const useSx = () => useMemo(() => ({
   root: {
     display: "flex",
-    justifyContent: "center"
-  },
-  contentContainer: {
-    maxWidth: 700
+    flexDirection: "column",
+    alignItems: "center",
+    mx: "auto"
   },
   title: {
-    color: "primary.main"
+    color: "primary.main",
+    textAlign: "center"
   }
 }), []);
 

@@ -1,4 +1,4 @@
-import { Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Microsoft from "components/icons/Mircosoft";
@@ -38,32 +38,27 @@ const Courses = () => {
 
   return (
     <div>
-      <Grid container spacing={3} alignItems="center">
-        <Grid item md={6} xs={12}>
-          <Typography sx={sx.title} variant="subtitle2">
-            Courses
-          </Typography>
-          <List dense>
-            {courses.map(({ name, institution, fileUrl }, index) => {
-              const Icon = Icons[camelCase(institution)];
-              const Item = fileUrl ? ListItemButton : ListItem;
-              const last = index === courses.length - 1;
+      <Box sx={sx.root}>
+        <Typography sx={sx.title} variant="subtitle2">
+          Courses
+        </Typography>
+        <List>
+          {courses.map(({ name, institution, fileUrl }, index) => {
+            const Icon = Icons[camelCase(institution)];
+            const Item = fileUrl ? ListItemButton : ListItem;
+            const last = index === courses.length - 1;
 
-              return (
-                <Item key={name} divider={!last} component={fileUrl && "a"} href={fileUrl}>
-                  <ListItemIcon>
-                    <Icon />
-                  </ListItemIcon>
-                  <ListItemText primary={name} />
-                </Item>
-              );
-            })}
-          </List>
-        </Grid>
-        <Grid item md={6} xs={12}>
-        
-        </Grid>
-      </Grid>
+            return (
+              <Item key={name} divider={!last} component={fileUrl && "a"} href={fileUrl}>
+                <ListItemIcon>
+                  <Icon />
+                </ListItemIcon>
+                <ListItemText primary={name} />
+              </Item>
+            );
+          })}
+        </List>
+      </Box>
     </div>
   );
 };

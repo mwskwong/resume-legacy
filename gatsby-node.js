@@ -13,7 +13,6 @@ exports.onCreateBabelConfig = ({ actions }) => {
     name: "babel-preset-gatsby",
     options: {
       reactRuntime: "automatic",
-      development: process.env.NODE_ENV === "development",
       reactImportSource: "@welldone-software/why-did-you-render"
     }
   });
