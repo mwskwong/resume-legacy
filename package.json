@@ -1,6 +1,6 @@
 {
   "name": "resume",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "private": true,
   "description": "Resume",
   "keywords": [
@@ -14,31 +14,49 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
     "@fontsource/rubik": "^4.5.0",
+    "@loadable/component": "^5.15.0",
     "@mui/icons-material": "^5.0.3",
     "@mui/lab": "^5.0.0-alpha.50",
     "@mui/material": "^5.0.3",
-    "@mui/styled-engine-sc": "^5.0.3",
+    "@reduxjs/toolkit": "^1.6.2",
+    "dayjs": "^1.10.7",
     "emailjs-com": "^3.2.0",
-    "gatsby": "next",
-    "gatsby-plugin-image": "next",
-    "gatsby-plugin-manifest": "next",
-    "gatsby-plugin-react-helmet": "next",
-    "gatsby-plugin-sharp": "next",
-    "gatsby-plugin-sitemap": "next",
-    "gatsby-plugin-styled-components": "next",
-    "gatsby-source-contentful": "next",
-    "gatsby-source-filesystem": "next",
-    "gatsby-transformer-sharp": "next",
+    "gatsby": "^3.14.2",
+    "gatsby-plugin-emotion": "^6.14.0",
+    "gatsby-plugin-image": "^1.14.1",
+    "gatsby-plugin-loadable-components-ssr": "^3.4.0",
+    "gatsby-plugin-manifest": "^3.14.0",
+    "gatsby-plugin-offline": "^4.14.0",
+    "gatsby-plugin-preconnect": "^1.2.1",
+    "gatsby-plugin-react-helmet": "^4.14.0",
+    "gatsby-plugin-robots-txt": "^1.6.10",
+    "gatsby-plugin-sharp": "^3.14.1",
+    "gatsby-plugin-sitemap": "^4.10.0",
+    "gatsby-source-contentful": "^5.14.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-sharp": "^3.14.0",
     "lodash": "^4.17.21",
-    "react": "alpha",
-    "react-dom": "alpha",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.3.1",
+    "react-redux": "^7.2.5",
+    "react-swipeable-views": "^0.14.0",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^6.2.1",
-    "babel-plugin-styled-components": "^1.13.2"
-  }
+    "gatsby-plugin-perf-budgets": "^0.0.18",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
+    "lmdb-store": "^1.6.8"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "not IE 11"
+  ]
 }
