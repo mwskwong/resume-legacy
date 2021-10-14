@@ -40,7 +40,7 @@ const Courses = () => {
         <Typography sx={sx.title} variant="subtitle2">
           Courses
         </Typography>
-        <List>
+        <List dense>
           {courses.map(({ name, institution, fileUrl }, index) => {
             const Icon = Icons[camelCase(institution)];
             const Item = fileUrl ? ListItemButton : ListItem;
