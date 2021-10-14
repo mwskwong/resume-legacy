@@ -69,11 +69,7 @@ const getThemedComponents = theme => ({
           position: "fixed",
           bottom: 20,
           right: 20,
-          borderRadius: 10,
-          boxShadow: "none",
-          "&:active": {
-            boxShadow: "none"
-          }
+          borderRadius: 10
         }
       }
     },
@@ -88,8 +84,7 @@ const getThemedComponents = theme => ({
       styleOverrides: {
         root: {
           backgroundColor: theme.palette.mode === "light" ? theme.palette.common.black : theme.palette.common.white,
-          color: theme.palette.mode === "light" ? nord6 : nord3,
-          boxShadow: "none"
+          color: theme.palette.mode === "light" ? nord6 : nord3
         }
       }
     },
