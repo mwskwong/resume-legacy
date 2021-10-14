@@ -1,9 +1,8 @@
+import nav, { HOME } from "constants/nav";
 import { useEffect, useState } from "react";
 
-import nav from "constants/nav";
-
 const useActiveSectionId = () => {
-  const [activeSectionId, setActiveSectionId] = useState(nav.HOME.id);
+  const [activeSectionId, setActiveSectionId] = useState(HOME.id);
 
   const isScrollToBottom = () => window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
@@ -12,6 +11,9 @@ const useActiveSectionId = () => {
     + document.documentElement.clientHeight / 8;
 
   useEffect(() => {
+    const initId = window.location.hash?.slice(1);
+    if (initId) setActiveSectionId(initId);
+
     const sectionIds = Object.values(nav).map(({ id }) => id).reverse();
 
     const handleScroll = () => {
