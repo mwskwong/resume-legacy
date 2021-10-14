@@ -12,7 +12,7 @@ const getDesignTokens = mode => ({
     },
     primary: {
       main: nord8,
-      contrastText: nord6
+      contrastText: nord3
     },
     secondary: {
       main: nord0,

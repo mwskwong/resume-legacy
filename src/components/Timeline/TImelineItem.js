@@ -5,6 +5,7 @@ import { FileDownloadOutlined as Download } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import { Typography } from "@mui/material";
 import dayjs from "dayjs";
+import { memo } from "react";
 import useSx from "./useTImelineItemSx";
 
 const TimelineItem = ({ data }) => {
@@ -23,16 +24,16 @@ const TimelineItem = ({ data }) => {
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent>
-        <Typography sx={sx.periodMobile} variant="body2" gutterBottom>
+        <Typography sx={sx.periodMobile} component="div" variant="body2" gutterBottom>
           {period}
         </Typography>
-        <Typography variant="subtitle1" gutterBottom>
+        <Typography variant="subtitle1" component="div" gutterBottom>
           {data.title}
         </Typography>
-        <Typography sx={sx.subtitle} gutterBottom>
+        <Typography sx={sx.subtitle} component="div" gutterBottom>
           {data.subtitle}
         </Typography>
-        <Typography gutterBottom>
+        <Typography component="div" gutterBottom>
           {data.content}
         </Typography>
         {data.fileUrl && (
@@ -63,4 +64,4 @@ TimelineItem.propTypes = {
 };
 TimelineItem.whyDidYouRender = true;
 
-export default TimelineItem;
+export default memo(TimelineItem);

@@ -27,8 +27,8 @@ const Title = () => {
   useEffect(() => {
     new Typewriter(typewriterRef.current, {
       strings: [
-        `${name.firstName} ${name.lastName}`,
-        ...occupations.map(occupation => `a ${occupation}`)
+        `${name.firstName} ${name.lastName}.`,
+        ...occupations.map(occupation => `a ${occupation}.`)
       ],
       loop: true,
       autoStart: true

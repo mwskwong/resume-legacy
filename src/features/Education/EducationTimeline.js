@@ -28,12 +28,14 @@ const EducationTimeline = () => {
   const educations = educationNodes.edges
     .map(({ node: { institution, document, ...node } }) => ({
       subtitle: institution,
-      fileUrl: document.file.url,
+      fileUrl: document?.file?.url,
       ...node
     }));
 
   return (
-    <Timeline data={educations} />
+    <div>
+      <Timeline data={educations} />
+    </div>
   );
 };
 

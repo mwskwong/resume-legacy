@@ -27,6 +27,13 @@ const getThemedComponents = theme => ({
         }
       }
     },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          borderRadius: theme.shape.borderRadius
+        }
+      }
+    },
     MuiCssBaseline: {
       styleOverrides: {
         "::selection": {
