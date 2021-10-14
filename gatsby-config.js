@@ -12,7 +12,7 @@ module.exports = {
     siteUrl
   },
   flags: {
-    // FAST_DEV: true,
+    FAST_DEV: true,
     PARALLEL_SOURCING: true,
     LMDB_STORE: true,
     PARALLEL_QUERY_RUNNING: true,
@@ -60,7 +60,10 @@ module.exports = {
     {
       resolve: "gatsby-plugin-preconnect",
       options: {
-        domains: ["http://images.ctfassets.net"]
+        domains: [
+          "http://images.ctfassets.net",
+          "http://assets.ctfassets.net"
+        ]
       }
     },
     {
