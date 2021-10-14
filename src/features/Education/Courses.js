@@ -1,12 +1,10 @@
 import { Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
-import ArcticOceanFractal from "arctic-ocean-fractal";
 import Microsoft from "components/icons/Mircosoft";
 import Oracle from "components/icons/Oracle";
 import Udemy from "components/icons/Udemy";
 import camelCase from "lodash/camelCase";
-import { useInView } from "react-intersection-observer";
 import useSx from "./useCoursesSx";
 
 const Icons = {
@@ -16,7 +14,6 @@ const Icons = {
 };
 
 const Courses = () => {
-  const { ref, inView } = useInView({ triggerOnce: true });
   const sx = useSx();
   const { courseNodes } = useStaticQuery(graphql`{
     courseNodes: allContentfulCourse(sort: {fields: name}) {
@@ -64,9 +61,7 @@ const Courses = () => {
           </List>
         </Grid>
         <Grid item md={6} xs={12}>
-          <div ref={ref}>
-            <ArcticOceanFractal pose={inView ? "show" : "hide"} />
-          </div>
+        
         </Grid>
       </Grid>
     </div>

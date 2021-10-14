@@ -1,14 +1,12 @@
 import { Box, Container } from "@mui/material";
 
+import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import HexSlice4 from "components/icons/HexSlice4";
 import SectionHeader from "components/SectionHeader";
 import { Stack } from "@mui/material";
-import loadable from "@loadable/component";
 import useSx from "./useEducationSx";
-
-const Courses = loadable(() => import("./Courses"));
 
 const Education = () => {
   const sx = useSx();
