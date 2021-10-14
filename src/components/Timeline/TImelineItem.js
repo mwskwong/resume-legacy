@@ -67,7 +67,7 @@ const TimelineItem = ({ data }) => {
 TimelineItem.propTypes = {
   data: PropTypes.shape({
     from: PropTypes.string.isRequired,
-    to: PropTypes.string.isRequired,
+    to: PropTypes.string,
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string,
     contents: PropTypes.arrayOf(PropTypes.string),
