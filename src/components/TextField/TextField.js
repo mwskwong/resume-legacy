@@ -25,18 +25,18 @@ const TextField = forwardRef(({
       fullWidth={fullWidth}
       required={required}
     >
-      <InputLabel htmlFor="input">{label}</InputLabel>
+      <InputLabel htmlFor={name}>{label}</InputLabel>
       <OutlinedInput
-        id="input"
+        id={name}
         name={name}
         onChange={onChange}
         label={label}
         autoComplete={autoComplete}
-        aria-describedby="helper-text"
+        aria-describedby={`${name}-helper-text`}
         multiline={multiline}
         rows={rows}
       />
-      <FormHelperText id="helper-text">
+      <FormHelperText id={`${name}-helper-text`}>
         {helperText}
       </FormHelperText>
     </FormControl>
