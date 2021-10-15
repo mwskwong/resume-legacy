@@ -89,12 +89,12 @@ module.exports = {
       },
       __key: "images"
     },
-    // {
-    //   resolve: "gatsby-plugin-loadable-components-ssr",
-    //   options: {
-    //     useHydrate: true
-    //   }
-    // },
+    {
+      resolve: "gatsby-plugin-loadable-components-ssr",
+      options: {
+        useHydrate: true
+      }
+    },
     ...(
       ANALYZE_BUNDLE
         ? [

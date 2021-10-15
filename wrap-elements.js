@@ -2,13 +2,11 @@ import { Fragment, StrictMode } from "react";
 
 import BrandingThemeProvider from "components/BrandingThemeProvider";
 import { CssBaseline } from "@mui/material";
-import PWASnackbar from "features/PWASnackbar";
 import { Provider } from "react-redux";
-// import loadable from "@loadable/component";
+import loadable from "@loadable/component";
 import store from "store";
 
-// const PWASnackbar = loadable(() => import("features/PWASnackbar"));
-
+const PWASnackbar = loadable(() => import("features/PWASnackbar"));
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>

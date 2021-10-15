@@ -1,16 +1,14 @@
 import { Box, Container, Grid, Stack } from "@mui/material";
 
 import { CONTACT } from "constants/nav";
-import ContactForm from "./ContactForm";
 import HexSlice6 from "components/icons/HexSlice6";
 import PersonalInfo from "./PersonalInfo";
 import SectionHeader from "components/SectionHeader";
-// import loadable from "@loadable/component";
+import loadable from "@loadable/component";
 import { memo } from "react";
 import useSx from "./useContactSx";
 
-// const ContactForm = loadable(() => import("./ContactForm"));
-
+const ContactForm = loadable(() => import("./ContactForm"));
 
 const Contact = () => {
   const sx = useSx();
