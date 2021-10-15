@@ -1,7 +1,7 @@
 import {
-  ErrorOutlineRounded as Error,
+  ErrorRounded as Error,
   SendRounded as Send,
-  CheckCircleOutlineRounded as Success
+  CheckCircleRounded as Success
 } from "@mui/icons-material";
 import { Grid, TextField, useMediaQuery } from "@mui/material";
 import { isEmailValid, isValueEmpty } from "helpers";
