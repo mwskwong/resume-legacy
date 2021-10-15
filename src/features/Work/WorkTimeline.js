@@ -1,8 +1,11 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-import loadable from "@loadable/component";
+import Timeline from "components/Timeline";
 
-const Timeline = loadable(() => import("components/Timeline"));
+// import loadable from "@loadable/component";
+
+// const Timeline = loadable(() => import("components/Timeline"));
+
 
 const WorkTimeline = () => {
   const { workNodes } = useStaticQuery(graphql`{
