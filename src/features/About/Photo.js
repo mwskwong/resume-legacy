@@ -12,6 +12,7 @@ const Photo = () => {
     }
     name: contentfulName {
       firstName
+      lastName
     }
   }`);
   const image = getImage(photo);
@@ -22,7 +23,7 @@ const Photo = () => {
         component={GatsbyImage}
         sx={sx.root}
         image={image}
-        alt={name.firstName}
+        alt={`Photo of ${name.firstName} ${name.lastName}`}
       />
     </div>
   );

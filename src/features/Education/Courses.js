@@ -44,20 +44,32 @@ const Courses = () => {
         <List dense>
           {courses.map(({ name, institution, fileUrl }, index) => {
             const Icon = Icons[camelCase(institution)];
-            const Item = fileUrl ? ListItemButton : ListItem;
-            const Wrapper = fileUrl ? ListItem : Fragment;
             const last = index === courses.length - 1;
 
-            return (
-              <Wrapper key={name} disablePadding={Boolean(fileUrl)}>
-                <Item divider={!last} component={fileUrl && "a"} href={fileUrl}>
-                  <ListItemIcon>
-                    <Icon />
-                  </ListItemIcon>
-                  <ListItemText primary={name} />
-                </Item>
-              </Wrapper>
+            const content = (
+              <Fragment>
+                <ListItemIcon>
+                  <Icon />
+                </ListItemIcon>
+                <ListItemText primary={name} />
+              </Fragment>
             );
+
+            if (fileUrl) {
+              return (
+                <ListItem key={name} disablePadding>
+                  <ListItemButton divider={!last} component="a" href={fileUrl}>
+                    {content}
+                  </ListItemButton>
+                </ListItem>
+              );
+            } else {
+              return (
+                <ListItem key={name} divider={!last}>
+                  {content}
+                </ListItem>
+              );
+            }
           })}
         </List>
       </Box>
