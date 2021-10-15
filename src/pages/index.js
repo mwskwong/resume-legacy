@@ -5,6 +5,7 @@ import Footer from "features/Footer";
 import { Fragment } from "react";
 import Landing from "features/Landing";
 import NavBar from "components/NavBar";
+import Project from "features/Project";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
 import Testimonial from "features/Testimonial";
@@ -21,6 +22,7 @@ const IndexPage = () => {
         <Testimonial />
         <Work />
         <Education />
+        <Project />
         <Contact />
         <Footer />
       </main>
