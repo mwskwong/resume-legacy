@@ -32,6 +32,11 @@ const Carousel = () => {
     comment: comment.comment
   }));
 
+  // Workaround of the first mount doesn't animate index change
+  const swipeableViewsContainerStyle = {
+    transition: "transform 0.35s cubic-bezier(0.15, 0.3, 0.25, 1) 0s"
+  };
+
   const handleChangeIndex = index => setIndex(index);
   const handlePrev = () => setIndex(index => index - 1);
   const handleNext = () => setIndex(index => index + 1);
@@ -63,7 +68,13 @@ const Carousel = () => {
           index={index}
         />
       </Box>
-      <SwipeableViews resistance disableLazyLoading index={index} onChangeIndex={handleChangeIndex}>
+      <SwipeableViews
+        resistance
+        disableLazyLoading
+        index={index}
+        onChangeIndex={handleChangeIndex}
+        containerStyle={swipeableViewsContainerStyle}
+      >
         {references.map(({ name, jobTitle, refereePicture, company, comment }) => (
           <Reference
             key={name}
