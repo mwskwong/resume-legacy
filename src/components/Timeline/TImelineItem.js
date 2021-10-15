@@ -43,7 +43,7 @@ const TimelineItem = ({ data }) => {
         </Typography>
         <List dense>
           {contents.map((content, index) => (
-            <ListItem key={index} sx={sx.contentListItem}>
+            <ListItem key={index} sx={sx.contentListItem} disablePadding>
               <ListItemText primary={content} />
             </ListItem>
           ))}

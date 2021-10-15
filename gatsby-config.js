@@ -82,14 +82,6 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/"
-      },
-      __key: "images"
-    },
-    {
       resolve: "gatsby-plugin-loadable-components-ssr",
       options: {
         useHydrate: true

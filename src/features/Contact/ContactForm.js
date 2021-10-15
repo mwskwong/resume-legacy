@@ -1,13 +1,10 @@
-import {
-  ErrorOutlineRounded as Error,
-  SendRounded as Send,
-  CheckCircleOutlineRounded as Success
-} from "@mui/icons-material";
-import { Grid, TextField, useMediaQuery } from "@mui/material";
+import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
+import { Grid, useMediaQuery } from "@mui/material";
 import { isEmailValid, isValueEmpty } from "helpers";
 import { useRef, useState } from "react";
 
 import { LoadingButton } from "@mui/lab";
+import TextField from "components/TextField";
 import { sendEmail } from "api";
 import useSx from "./useContactFormSx";
 
@@ -45,10 +42,14 @@ const ContactForm = () => {
       setEmailInputErrorMessage(validateEmail(event.target.value));
     }
 
-    setMessageData({
-      ...messageData,
-      [event.target.id]: event.target.value
-    });
+    setMessageData(messageData =>
+      messageData[event.target.id] === event.target.value
+        ? {
+          ...messageData,
+          [event.target.id]: event.target.value
+        }
+        : messageData
+    );
   };
 
   const handleSubmit = event => {
@@ -81,7 +82,6 @@ const ContactForm = () => {
       <Grid container spacing={4}>
         <Grid item sm={6} xs={12}>
           <TextField
-            id="name"
             name="name"
             color="secondary"
             fullWidth
@@ -93,7 +93,6 @@ const ContactForm = () => {
         <Grid item sm={6} xs={12}>
           <TextField
             ref={emailInputRef}
-            id="email"
             name="from"
             color="secondary"
             fullWidth
@@ -107,7 +106,6 @@ const ContactForm = () => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="subject"
             name="subject"
             color="secondary"
             fullWidth
@@ -117,7 +115,6 @@ const ContactForm = () => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="message"
             name="body"
             color="secondary"
             fullWidth

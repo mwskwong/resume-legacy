@@ -1,6 +1,7 @@
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
+import { Fragment } from "react";
 import Microsoft from "components/icons/Mircosoft";
 import Oracle from "components/icons/Oracle";
 import Udemy from "components/icons/Udemy";
@@ -43,17 +44,32 @@ const Courses = () => {
         <List dense>
           {courses.map(({ name, institution, fileUrl }, index) => {
             const Icon = Icons[camelCase(institution)];
-            const Item = fileUrl ? ListItemButton : ListItem;
             const last = index === courses.length - 1;
 
-            return (
-              <Item key={name} divider={!last} component={fileUrl && "a"} href={fileUrl}>
+            const content = (
+              <Fragment>
                 <ListItemIcon>
                   <Icon />
                 </ListItemIcon>
                 <ListItemText primary={name} />
-              </Item>
+              </Fragment>
             );
+
+            if (fileUrl) {
+              return (
+                <ListItem key={name} disablePadding>
+                  <ListItemButton divider={!last} component="a" href={fileUrl}>
+                    {content}
+                  </ListItemButton>
+                </ListItem>
+              );
+            } else {
+              return (
+                <ListItem key={name} divider={!last}>
+                  {content}
+                </ListItem>
+              );
+            }
           })}
         </List>
       </Box>
