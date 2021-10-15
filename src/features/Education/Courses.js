@@ -1,6 +1,7 @@
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
+import { Fragment } from "react";
 import Microsoft from "components/icons/Mircosoft";
 import Oracle from "components/icons/Oracle";
 import Udemy from "components/icons/Udemy";
@@ -44,15 +45,18 @@ const Courses = () => {
           {courses.map(({ name, institution, fileUrl }, index) => {
             const Icon = Icons[camelCase(institution)];
             const Item = fileUrl ? ListItemButton : ListItem;
+            const Wrapper = fileUrl ? ListItem : Fragment;
             const last = index === courses.length - 1;
 
             return (
-              <Item key={name} divider={!last} component={fileUrl && "a"} href={fileUrl}>
-                <ListItemIcon>
-                  <Icon />
-                </ListItemIcon>
-                <ListItemText primary={name} />
-              </Item>
+              <Wrapper key={name} disablePadding={Boolean(fileUrl)}>
+                <Item divider={!last} component={fileUrl && "a"} href={fileUrl}>
+                  <ListItemIcon>
+                    <Icon />
+                  </ListItemIcon>
+                  <ListItemText primary={name} />
+                </Item>
+              </Wrapper>
             );
           })}
         </List>
