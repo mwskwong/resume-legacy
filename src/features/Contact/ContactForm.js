@@ -7,22 +7,15 @@ import { LoadingButton } from "@mui/lab";
 import { sendEmail } from "api";
 import useSx from "./useContactFormSx";
 
-const defaultMessageData = {
-  name: "",
-  email: "",
-  subject: "",
-  message: ""
-};
-
 const ContactForm = () => {
   const sx = useSx();
   const smDown = useMediaQuery(theme => theme.breakpoints.down("sm"));
+  const formRef = useRef();
   const emailInputRef = useRef(null);
   const [emailInputErrorMessage, setEmailInputErrorMessage] = useState(null);
   const invalidEmail = Boolean(emailInputErrorMessage);
   const [emailSending, setEmailSending] = useState(false);
   const [emailSendSuccess, setEmailSendSuccess] = useState(undefined);
-  const [messageData, setMessageData] = useState(defaultMessageData);
 
   const validateEmail = value => {
     if (isValueEmpty(value)) {
@@ -36,21 +29,18 @@ const ContactForm = () => {
     return null;
   };
 
-  const handleChange = useCallback(event => {
-    if (event.target.id === "email") {
-      setEmailInputErrorMessage(validateEmail(event.target.value));
-    }
-
-    setMessageData(messageData => ({
-      ...messageData,
-      [event.target.id]: event.target.value
-    }));
-  }, []);
+  const handleEmailChange = useCallback(event => setEmailInputErrorMessage(validateEmail(event.target.value)), []);
 
   const handleSubmit = event => {
     event.preventDefault();
 
-    const emailErrorMessage = validateEmail(messageData.email);
+    const formData = new FormData(formRef.current);
+    const emailData = {};
+    for (const [key, value] of formData.entries()) {
+      emailData[key] = value;
+    }
+
+    const emailErrorMessage = validateEmail(emailData.email);
     const invalidEmail = Boolean(emailErrorMessage);
     if (invalidEmail) {
       setEmailInputErrorMessage(emailErrorMessage);
@@ -61,19 +51,14 @@ const ContactForm = () => {
 
     setEmailSending(true);
     setEmailSendSuccess(undefined);
-    sendEmail(messageData)
-      .then(() => {
-        setEmailSendSuccess(true);
-      })
-      .catch(() => {
-        setEmailSendSuccess(false);
-      }).finally(() => {
-        setEmailSending(false);
-      });
+    sendEmail(emailData)
+      .then(() => setEmailSendSuccess(true))
+      .catch(() => setEmailSendSuccess(false))
+      .finally(() => setEmailSending(false));
   };
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
+    <form ref={formRef} onSubmit={handleSubmit} noValidate>
       <Grid container spacing={4}>
         <Grid item sm={6} xs={12}>
           <TextField
@@ -82,8 +67,6 @@ const ContactForm = () => {
             fullWidth
             label="Name"
             autoComplete="name"
-            value={messageData.name}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item sm={6} xs={12}>
@@ -95,8 +78,7 @@ const ContactForm = () => {
             required
             label="Email"
             autoComplete="email"
-            value={messageData.email}
-            onChange={handleChange}
+            onChange={handleEmailChange}
             error={invalidEmail}
             helperText={invalidEmail ? emailInputErrorMessage : "*Required"}
           />
@@ -107,8 +89,6 @@ const ContactForm = () => {
             color="secondary"
             fullWidth
             label="Subject"
-            value={messageData.subject}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={12}>
@@ -117,8 +97,6 @@ const ContactForm = () => {
             color="secondary"
             fullWidth
             label="Message"
-            value={messageData.message}
-            onChange={handleChange}
             multiline
             rows={9}
           />
