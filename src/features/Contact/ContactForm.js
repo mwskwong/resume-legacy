@@ -1,7 +1,7 @@
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
 import { Grid, useMediaQuery } from "@mui/material";
 import { isEmailValid, isValueEmpty } from "helpers";
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 import { LoadingButton } from "@mui/lab";
 import TextField from "components/TextField";
@@ -37,20 +37,16 @@ const ContactForm = () => {
     return null;
   };
 
-  const handleChange = event => {
+  const handleChange = useCallback(event => {
     if (event.target.id === "email") {
       setEmailInputErrorMessage(validateEmail(event.target.value));
     }
 
-    setMessageData(messageData =>
-      messageData[event.target.id] === event.target.value
-        ? {
-          ...messageData,
-          [event.target.id]: event.target.value
-        }
-        : messageData
-    );
-  };
+    setMessageData(messageData => ({
+      ...messageData,
+      [event.target.id]: event.target.value
+    }));
+  }, []);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -87,18 +83,20 @@ const ContactForm = () => {
             fullWidth
             label="Name"
             autoComplete="name"
+            value={messageData.name}
             onChange={handleChange}
           />
         </Grid>
         <Grid item sm={6} xs={12}>
           <TextField
             ref={emailInputRef}
-            name="from"
+            name="email"
             color="secondary"
             fullWidth
             required
             label="Email"
             autoComplete="email"
+            value={messageData.email}
             onChange={handleChange}
             error={invalidEmail}
             helperText={invalidEmail ? emailInputErrorMessage : "*Required"}
@@ -110,15 +108,17 @@ const ContactForm = () => {
             color="secondary"
             fullWidth
             label="Subject"
+            value={messageData.subject}
             onChange={handleChange}
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
-            name="body"
+            name="message"
             color="secondary"
             fullWidth
             label="Message"
+            value={messageData.message}
             onChange={handleChange}
             multiline
             rows={9}
