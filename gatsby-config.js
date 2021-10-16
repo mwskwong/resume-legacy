@@ -87,7 +87,6 @@ module.exports = {
         useHydrate: true
       }
     },
-    "gatsby-plugin-preact",
     ...(
       ANALYZE_BUNDLE
         ? [
