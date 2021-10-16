@@ -1,9 +1,8 @@
 import { FormControl, FormHelperText, InputLabel, OutlinedInput } from "@mui/material";
+import { forwardRef, memo } from "react";
 
 import PropTypes from "prop-types";
-import { forwardRef } from "react";
 
-// eslint-disable-next-line react/display-name
 const TextField = forwardRef(({
   name,
   color,
@@ -15,7 +14,8 @@ const TextField = forwardRef(({
   helperText,
   required,
   multiline,
-  rows
+  rows,
+  value
 }, ref) => {
   return (
     <FormControl
@@ -35,6 +35,7 @@ const TextField = forwardRef(({
         aria-describedby={`${name}-helper-text`}
         multiline={multiline}
         rows={rows}
+        value={value}
       />
       <FormHelperText id={`${name}-helper-text`}>
         {helperText}
@@ -54,9 +55,11 @@ TextField.propTypes = {
   helperText: PropTypes.string,
   required: PropTypes.bool,
   multiline: PropTypes.bool,
-  rows: PropTypes.number
+  rows: PropTypes.number,
+  value: PropTypes.string
 };
 
 TextField.whyDidYouRender = true;
+TextField.displayName = "TextField";
 
-export default TextField;
+export default memo(TextField);
