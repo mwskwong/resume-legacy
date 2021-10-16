@@ -17,7 +17,7 @@ const Carousel = () => {
         name
         jobTitle
         refereePicture {
-          gatsbyImageData(width: 60, aspectRatio: 1, placeholder: BLURRED)
+          gatsbyImageData(layout: FIXED, width: 60, aspectRatio: 1, placeholder: BLURRED)
         }
         company
         comment {

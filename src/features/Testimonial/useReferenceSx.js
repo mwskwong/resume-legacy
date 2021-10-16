@@ -9,7 +9,8 @@ const useSx = () => useMemo(() => ({
     alignItems: "center"
   },
   avatar: {
-    borderRadius: "50%"
+    borderRadius: "50%",
+    minWidth: 60
   },
   refereeInfoContainer: {
     ml: 2
