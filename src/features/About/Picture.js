@@ -4,10 +4,10 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Box } from "@mui/material";
 import useSx from "./usePhotoSx";
 
-const Photo = () => {
+const Picture = () => {
   const sx = useSx();
-  const { photo, name } = useStaticQuery(graphql`{
-    photo: contentfulAsset(title: {eq: "Personal Photo"}) {
+  const { picture, name } = useStaticQuery(graphql`{
+    picture: contentfulAsset(title: {eq: "Personal Photo"}) {
       gatsbyImageData(width: 200, aspectRatio: 1, placeholder: BLURRED)
     }
     name: contentfulName {
@@ -15,7 +15,7 @@ const Photo = () => {
       lastName
     }
   }`);
-  const image = getImage(photo);
+  const image = getImage(picture);
 
   return (
     <div>
@@ -23,12 +23,12 @@ const Photo = () => {
         component={GatsbyImage}
         sx={sx.root}
         image={image}
-        alt={`Photo of ${name.firstName} ${name.lastName}`}
+        alt={`Picture of ${name.firstName} ${name.lastName}`}
       />
     </div>
   );
 };
 
-Photo.whyDidYouRender = true;
+Picture.whyDidYouRender = true;
 
-export default Photo;
+export default Picture;

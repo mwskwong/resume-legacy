@@ -3,7 +3,7 @@ import { Box, Container, Stack } from "@mui/material";
 import { ABOUT } from "constants/nav";
 import HexSlice1 from "components/icons/HexSlice1";
 import Message from "./Message";
-import Photo from "./Photo";
+import Picture from "./Picture";
 import SectionHeader from "components/SectionHeader";
 import SkillSet from "./SkillSet";
 import { memo } from "react";
@@ -20,7 +20,7 @@ const About = () => {
             heading="About Me"
             Icon={HexSlice1}
           />
-          <Photo />
+          <Picture />
           <Message />
           <SkillSet />
         </Stack>
