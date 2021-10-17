@@ -4,7 +4,8 @@ const useSx = () => useMemo(() => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    width: "100%"
   },
   greetings: {
     textTransform: "capitalize"
@@ -20,7 +21,8 @@ const useSx = () => useMemo(() => ({
     },
     "& .Typewriter__cursor": {
       color: "text.primary"
-    }
+    },
+    width: "100%"
   },
   importantText: {
     color: "primary.main"
