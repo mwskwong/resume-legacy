@@ -73,19 +73,6 @@ const getThemedComponents = theme => ({
         }
       }
     },
-    MuiFormControl: {
-      styleOverrides: {
-        root: {
-          "@media (min-width: 0px) and (orientation: landscape)": {
-            scrollMarginTop: "72px"
-          },
-          [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
-            scrollMarginTop: "88px"
-          },
-          scrollMarginTop: "80px"
-        }
-      }
-    },
     MuiInputLabel: {
       styleOverrides: {
         root: {
@@ -98,6 +85,19 @@ const getThemedComponents = theme => ({
         root: {
           backgroundColor: theme.palette.mode === "light" ? theme.palette.common.black : theme.palette.common.white,
           color: theme.palette.mode === "light" ? nord6 : nord3
+        }
+      }
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "@media (min-width: 0px) and (orientation: landscape)": {
+            scrollMarginTop: "72px"
+          },
+          [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
+            scrollMarginTop: "88px"
+          },
+          scrollMarginTop: "80px"
         }
       }
     },
