@@ -1,9 +1,10 @@
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
-import { Grid, TextField, useMediaQuery } from "@mui/material";
+import { Grid, useMediaQuery } from "@mui/material";
 import { isEmailValid, isValueEmpty } from "helpers";
 import { useCallback, useRef, useState } from "react";
 
 import { LoadingButton } from "@mui/lab";
+import TextField from "./TextField";
 import { sendEmail } from "api";
 import useSx from "./useContactFormSx";
 
@@ -71,7 +72,7 @@ const ContactForm = () => {
         <Grid item sm={6} xs={12}>
           <TextField
             ref={emailInputRef}
-            name="email"     
+            name="email"
             fullWidth
             required
             label="Email"
@@ -83,14 +84,14 @@ const ContactForm = () => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            name="subject"        
+            name="subject"
             fullWidth
             label="Subject"
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
-            name="message"      
+            name="message"
             fullWidth
             label="Message"
             multiline
