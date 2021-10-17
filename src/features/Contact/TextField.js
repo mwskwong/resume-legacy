@@ -12,8 +12,9 @@ const TextField = forwardRef((
   ref
 ) => (
   <FormControl ref={ref} fullWidth={fullWidth} required={required} error={error}>
-    <InputLabel>{label}</InputLabel>
+    <InputLabel htmlFor={name}>{label}</InputLabel>
     <FilledInput
+      id={name}
       name={name}
       autoComplete={autoComplete}
       onChange={onChange}
