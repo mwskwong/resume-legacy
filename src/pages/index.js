@@ -23,9 +23,9 @@ const IndexPage = () => {
         <Work />
         <Education />
         <Project />
-        <Contact />
-        <Footer />
+        <Contact />        
       </main>
+      <Footer />
       <ScrollToTopFab />
     </Fragment>
   );

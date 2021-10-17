@@ -76,9 +76,9 @@ const getThemedComponents = theme => ({
     MuiFilledInput: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: theme.palette.background.sectionSecondary,
           "&:hover": {
-            backgroundColor: theme.palette.background.default
+            backgroundColor: theme.palette.background.sectionSecondary
           }
         }
       }
