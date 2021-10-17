@@ -73,22 +73,17 @@ const getThemedComponents = theme => ({
         }
       }
     },
-    MuiInputLabel: {
+    MuiFilledInput: {
       styleOverrides: {
         root: {
-          textTransform: "capitalize"
+          backgroundColor: theme.palette.background.default,
+          "&:hover": {
+            backgroundColor: theme.palette.background.default
+          }
         }
       }
     },
-    MuiSnackbarContent: {
-      styleOverrides: {
-        root: {
-          backgroundColor: theme.palette.mode === "light" ? theme.palette.common.black : theme.palette.common.white,
-          color: theme.palette.mode === "light" ? nord6 : nord3
-        }
-      }
-    },
-    MuiTextField: {
+    MuiFormControl: {
       defaultProps: {
         variant: "filled",
         color: "secondary"
@@ -101,13 +96,22 @@ const getThemedComponents = theme => ({
           [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
             scrollMarginTop: "88px"
           },
-          scrollMarginTop: "80px",
-          "& .MuiFilledInput-root": {
-            backgroundColor: theme.palette.background.default,
-            "&:hover": {
-              backgroundColor: theme.palette.background.default
-            }
-          }
+          scrollMarginTop: "80px"
+        }
+      }
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          textTransform: "capitalize"
+        }
+      }
+    },
+    MuiSnackbarContent: {
+      styleOverrides: {
+        root: {
+          backgroundColor: theme.palette.mode === "light" ? theme.palette.common.black : theme.palette.common.white,
+          color: theme.palette.mode === "light" ? nord6 : nord3
         }
       }
     },
