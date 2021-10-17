@@ -6,9 +6,10 @@ import PersonalInfo from "./PersonalInfo";
 import SectionHeader from "components/SectionHeader";
 import loadable from "@loadable/component";
 import { memo } from "react";
+import pMinDelay from "p-min-delay";
 import useSx from "./useContactSx";
 
-const ContactForm = loadable(() => import("./ContactForm"));
+const ContactForm = loadable(() => pMinDelay(import("./ContactForm"), 200));
 
 const Contact = () => {
   const sx = useSx();

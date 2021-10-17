@@ -7,9 +7,10 @@ import SectionHeader from "components/SectionHeader";
 import { TESTIMONIAL } from "constants/nav";
 import loadable from "@loadable/component";
 import { memo } from "react";
+import pMinDelay from "p-min-delay";
 import useSx from "./useTestimonialSx";
 
-const Carousel = loadable(() => import("./Carousel"));
+const Carousel = loadable(() => pMinDelay(import("./Carousel"), 200));
 
 const Testimonial = () => {
   const sx = useSx();

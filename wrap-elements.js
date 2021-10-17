@@ -4,9 +4,10 @@ import BrandingThemeProvider from "components/BrandingThemeProvider";
 import { CssBaseline } from "@mui/material";
 import { Provider } from "react-redux";
 import loadable from "@loadable/component";
+import pMinDelay from "p-min-delay";
 import store from "store";
 
-const PWASnackbar = loadable(() => import("features/PWASnackbar"));
+const PWASnackbar = loadable(() => pMinDelay(import("features/PWASnackbar"), 200));
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
