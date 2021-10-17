@@ -1,5 +1,5 @@
 import About from "features/About";
-import Contact from "features/Contact";
+// import Contact from "features/Contact";
 import Education from "features/Education";
 import Footer from "features/Footer";
 import { Fragment } from "react";
@@ -23,7 +23,7 @@ const IndexPage = () => {
         <Work />
         <Education />
         <Project />
-        <Contact />
+        {/* <Contact /> */}
         <Footer />
       </main>
       <ScrollToTopFab />
