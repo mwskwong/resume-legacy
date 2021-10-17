@@ -63,7 +63,6 @@ const ContactForm = () => {
         <Grid item sm={6} xs={12}>
           <TextField
             name="name"
-            color="secondary"
             fullWidth
             label="Name"
             autoComplete="name"
@@ -72,8 +71,7 @@ const ContactForm = () => {
         <Grid item sm={6} xs={12}>
           <TextField
             ref={emailInputRef}
-            name="email"
-            color="secondary"
+            name="email"     
             fullWidth
             required
             label="Email"
@@ -85,16 +83,14 @@ const ContactForm = () => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            name="subject"
-            color="secondary"
+            name="subject"        
             fullWidth
             label="Subject"
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
-            name="message"
-            color="secondary"
+            name="message"      
             fullWidth
             label="Message"
             multiline

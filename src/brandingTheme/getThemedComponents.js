@@ -89,6 +89,10 @@ const getThemedComponents = theme => ({
       }
     },
     MuiTextField: {
+      defaultProps: {
+        variant: "filled",
+        color: "secondary"
+      },
       styleOverrides: {
         root: {
           "@media (min-width: 0px) and (orientation: landscape)": {
@@ -97,7 +101,13 @@ const getThemedComponents = theme => ({
           [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
             scrollMarginTop: "88px"
           },
-          scrollMarginTop: "80px"
+          scrollMarginTop: "80px",
+          "& .MuiFilledInput-root": {
+            backgroundColor: theme.palette.background.default,
+            "&:hover": {
+              backgroundColor: theme.palette.background.default
+            }
+          }
         }
       }
     },
