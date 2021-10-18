@@ -25,7 +25,7 @@ const NotFoundPage = () => {
   const sx = useSx();
 
   return (
-    <Container component="main">
+    <Container component="main" sx={sx.root}>
       <SEO title="Not Found" />
       <Typography variant="h1" sx={sx[404]}>
         404
