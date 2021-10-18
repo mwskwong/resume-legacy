@@ -1,17 +1,23 @@
-import { Button, Container, Stack, Typography } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 
 import { Link } from "gatsby";
 import SEO from "components/SEO";
 import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
-  content: {
+  root: {
+    display: "flex",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     height: "100vh"
   },
   404: {
+    fontFamily: "Azonix, sans-serif",
     color: "primary.main"
+  },
+  notFound: {
+    my: 4
   }
 }), []);
 
@@ -19,21 +25,17 @@ const NotFoundPage = () => {
   const sx = useSx();
 
   return (
-    <Container component="main">
+    <Container component="main" sx={sx.root}>
       <SEO title="Not Found" />
-      <div>
-        <Stack spacing={4} sx={sx.content}>
-          <Typography variant="h1" sx={sx[404]}>
-            404
-          </Typography>
-          <Typography variant="h5">
-            The page you were looking for does not exist.
-          </Typography>
-          <Button variant="contained" color="secondary" size="large" component={Link} to="/">
-            go back to home
-          </Button>
-        </Stack>
-      </div>
+      <Typography variant="h1" sx={sx[404]}>
+        404
+      </Typography>
+      <Typography variant="h5" sx={sx.notFound}>
+        The page you were looking for does not exist.
+      </Typography>
+      <Button variant="contained" color="secondary" size="large" component={Link} to="/">
+        go back to home
+      </Button>
     </Container>
   );
 };
