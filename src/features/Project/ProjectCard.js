@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import PropTypes from "prop-types";
@@ -11,14 +11,14 @@ const ProjectCard = ({ project }) => {
   const to = project.to ? dayjs(project.to).format("MMM YYYY") : "Present";
   const period = from === to ? from : `${from} — ${to}`;
   const image = getImage(project.screenshot);
+  const screenshotStyle = { height: 230 };
 
   return (
     <Card variant="outlined" sx={sx.root}>
-      <Box
-        component={GatsbyImage}
-        sx={sx.image}
+      <GatsbyImage
         image={image}
         alt={`Screenshot of ${project.name}`}
+        style={screenshotStyle}
       />
       <CardContent sx={sx.cardContent}>
         <Typography variant="subtitle1" component="div" gutterBottom>
