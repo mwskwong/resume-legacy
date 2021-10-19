@@ -1,11 +1,7 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { Box } from "@mui/material";
-import useSx from "./usePhotoSx";
-
 const Picture = () => {
-  const sx = useSx();
   const { picture, name } = useStaticQuery(graphql`{
     picture: contentfulAsset(title: {eq: "Personal Photo"}) {
       gatsbyImageData(layout: FIXED, width: 200, aspectRatio: 1, placeholder: BLURRED)
@@ -16,14 +12,14 @@ const Picture = () => {
     }
   }`);
   const image = getImage(picture);
+  const style = { borderRadius: "50%" };
 
   return (
     <div>
-      <Box
-        component={GatsbyImage}
-        sx={sx.root}
+      <GatsbyImage
         image={image}
         alt={`Picture of ${name.firstName} ${name.lastName}`}
+        style={style}
       />
     </div>
   );
