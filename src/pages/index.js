@@ -4,7 +4,7 @@ import Education from "features/Education";
 import Footer from "features/Footer";
 import { Fragment } from "react";
 import Landing from "features/Landing";
-import LazyHydrate from "react-lazy-hydration";
+import { LazyHydrate } from "react-storefront";
 import NavBar from "components/NavBar";
 import Project from "features/Project";
 import SEO from "components/SEO";
@@ -18,29 +18,29 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <LazyHydrate whenVisible>
+        <LazyHydrate id="lazy-landing">
           <Landing />
         </LazyHydrate>
-        <LazyHydrate whenVisible>
+        <LazyHydrate id="lazy-about">
           <About />
         </LazyHydrate>
-        <LazyHydrate whenVisible>
+        <LazyHydrate id="lazy-testimonial">
           <Testimonial />
         </LazyHydrate>
-        <LazyHydrate whenVisible>
+        <LazyHydrate id="lazy-work">
           <Work />
         </LazyHydrate>
-        <LazyHydrate whenVisible>
+        <LazyHydrate id="lazy-education">
           <Education />
         </LazyHydrate>
-        <LazyHydrate whenVisible>
+        <LazyHydrate id="lazy-project">
           <Project />
         </LazyHydrate>
-        <LazyHydrate whenVisible>
+        <LazyHydrate id="lazy-contact">
           <Contact />
         </LazyHydrate>
       </main>
-      <LazyHydrate whenVisible>
+      <LazyHydrate id="lazy-footer">
         <Footer />
       </LazyHydrate>
       <ScrollToTopFab />
