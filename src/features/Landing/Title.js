@@ -41,7 +41,7 @@ const Title = () => {
       <Typography sx={sx.greetings} variant="h4" gutterBottom>
         Greetings
       </Typography>
-      <Typography sx={sx.title} variant="h1" aria-hidden>
+      <Typography sx={sx.title} variant="h1" component="div" aria-hidden>
         {"I Am "}
         <Box component="span" ref={typewriterRef} sx={sx.importantText} />
       </Typography>
