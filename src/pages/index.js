@@ -18,9 +18,7 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <LazyHydrate whenVisible>
-          <Landing />
-        </LazyHydrate>
+        <Landing />
         <LazyHydrate whenVisible>
           <About />
         </LazyHydrate>
