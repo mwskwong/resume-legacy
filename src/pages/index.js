@@ -4,7 +4,6 @@ import Education from "features/Education";
 import Footer from "features/Footer";
 import { Fragment } from "react";
 import Landing from "features/Landing";
-import LazyHydrate from "react-lazy-hydration";
 import NavBar from "components/NavBar";
 import Project from "features/Project";
 import SEO from "components/SEO";
@@ -19,28 +18,14 @@ const IndexPage = () => {
       <NavBar />
       <main>
         <Landing />
-        <LazyHydrate whenVisible>
-          <About />
-        </LazyHydrate>
-        <LazyHydrate whenVisible>
-          <Testimonial />
-        </LazyHydrate>
-        <LazyHydrate whenVisible>
-          <Work />
-        </LazyHydrate>
-        <LazyHydrate whenVisible>
-          <Education />
-        </LazyHydrate>
-        <LazyHydrate whenVisible>
-          <Project />
-        </LazyHydrate>
-        <LazyHydrate whenVisible>
-          <Contact />
-        </LazyHydrate>
+        <About />
+        <Testimonial />
+        <Work />
+        <Education />
+        <Project />
+        <Contact />
       </main>
-      <LazyHydrate whenVisible>
-        <Footer />
-      </LazyHydrate>
+      <Footer />
       <ScrollToTopFab />
     </Fragment>
   );
