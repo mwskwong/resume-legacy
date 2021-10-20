@@ -76,7 +76,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-preconnect",
       options: {
-        domains: ["https://images.ctfassets.net"]
+        domains: [{ domain: "https://images.ctfassets.net", crossOrigin: false }]
       }
     },
     {
