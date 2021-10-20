@@ -21,9 +21,7 @@ const IndexPage = () => {
       <NavBar />
       <main>
         <Landing />
-        <Suspense fallback={null}>
-          <About />
-        </Suspense>
+        <About />
         <Testimonial />
         <Work />
         <Education />
