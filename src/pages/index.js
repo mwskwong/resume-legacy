@@ -19,26 +19,26 @@ const IndexPage = () => {
       <NavBar />
       <main>
         <Landing />
-        <LazyHydrate whenIdle>
+        <LazyHydrate whenVisible>
           <About />
         </LazyHydrate>
-        <LazyHydrate whenIdle>
+        <LazyHydrate whenVisible>
           <Testimonial />
         </LazyHydrate>
-        <LazyHydrate whenIdle>
+        <LazyHydrate whenVisible>
           <Work />
         </LazyHydrate>
-        <LazyHydrate whenIdle>
+        <LazyHydrate whenVisible>
           <Education />
         </LazyHydrate>
-        <LazyHydrate whenIdle>
+        <LazyHydrate whenVisible>
           <Project />
         </LazyHydrate>
-        <LazyHydrate whenIdle>
+        <LazyHydrate whenVisible>
           <Contact />
         </LazyHydrate>
       </main>
-      <LazyHydrate whenIdle>
+      <LazyHydrate whenVisible>
         <Footer />
       </LazyHydrate>
       <ScrollToTopFab />
