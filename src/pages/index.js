@@ -40,7 +40,9 @@ const IndexPage = () => {
           <Contact />
         </LazyHydrate>
       </main>
-      <Footer />
+      <LazyHydrate whenVisible>
+        <Footer />
+      </LazyHydrate>
       <ScrollToTopFab />
     </Fragment>
   );
