@@ -13,7 +13,13 @@ const DownloadResumeButton = ({ sx }) => {
   }`);
 
   return (
-    <Button sx={sx} variant="contained" color="secondary" size="large" href={resume.file.url}>
+    <Button
+      sx={sx}
+      variant="contained"
+      color="secondary"
+      size="large"
+      href={`https${resume.file.url}`}
+    >
       Download Resume
     </Button>
   );
