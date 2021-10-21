@@ -34,7 +34,7 @@ const SEO = ({ title: titleProp }) => {
 
   const description = descriptionNode.content.content;
   const occupations = occupationNodes.nodes.map(({ title }) => title);
-  const ogImageUrl = `https${ogImage.file.url}`;
+  const ogImageUrl = `https:${ogImage.file.url}`;
   const title = titleProp || `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
   const titleTemplate = titleProp ? `%s | ${name.firstName} ${name.lastName}` : null;
 
