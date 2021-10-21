@@ -24,7 +24,7 @@ const EducationTimeline = () => {
   const educations = educationNodes.nodes
     .map(({ institution, document, ...node }) => ({
       subtitle: institution,
-      fileUrl: document?.file?.url && `https${document?.file?.url}`,
+      fileUrl: document?.file?.url,
       ...node
     }));
 
