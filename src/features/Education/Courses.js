@@ -31,7 +31,7 @@ const Courses = () => {
   }`);
 
   const courses = courseNodes.nodes.map(({ certification, ...node }) => ({
-    fileUrl: certification?.file?.url,
+    fileUrl: certification?.file?.url && `https:${certification?.file?.url}`,
     ...node
   }));
 
