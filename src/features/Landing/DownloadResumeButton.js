@@ -11,9 +11,10 @@ const DownloadResumeButton = ({ sx }) => {
       }
     }
   }`);
+  const resumeUrl = resume?.file?.url && `https:${resume?.file?.url}`;
 
   return (
-    <Button sx={sx} variant="contained" color="secondary" size="large" href={resume.file.url}>
+    <Button sx={sx} variant="contained" color="secondary" size="large" href={resumeUrl}>
       Download Resume
     </Button>
   );
