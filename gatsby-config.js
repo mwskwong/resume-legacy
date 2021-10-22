@@ -35,7 +35,7 @@ module.exports = {
         }
       }
     },
-    "gatsby-transformer-sharp",
+    // "gatsby-transformer-sharp",
     {
       resolve: "gatsby-plugin-loadable-components-ssr",
       options: {
