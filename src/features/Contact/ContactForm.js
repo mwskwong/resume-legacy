@@ -1,11 +1,12 @@
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
 import { Grid, useMediaQuery } from "@mui/material";
-import { isEmailValid, isValueEmpty } from "helpers";
 import { useCallback, useRef, useState } from "react";
 
 import { LoadingButton } from "@mui/lab";
 import TextField from "./TextField";
-import { sendEmail } from "api";
+import isEmailValid from "utils/isEmailValid";
+import isEmpty from "utils/isEmpty";
+import sendEmail from "utils/sendEmail";
 import useSx from "./useContactFormSx";
 
 const ContactForm = () => {
@@ -19,7 +20,7 @@ const ContactForm = () => {
   const [emailSendSuccess, setEmailSendSuccess] = useState(undefined);
 
   const validateEmail = value => {
-    if (isValueEmpty(value)) {
+    if (isEmpty(value)) {
       return "Email can't be empty";
     }
 
