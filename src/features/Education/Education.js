@@ -4,7 +4,6 @@ import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import HexSlice4 from "components/icons/HexSlice4";
-import LazyHydrate from "react-lazy-hydration";
 import SectionHeader from "components/SectionHeader";
 import { memo } from "react";
 import useSx from "./useEducationSx";
@@ -14,19 +13,16 @@ const Education = () => {
 
   return (
     <Box sx={sx.root} component="section" id={EDUCATION.id}>
-      <LazyHydrate whenVisible>
-        <Container>
-          <Stack spacing={6}>
-            <SectionHeader
-              heading="Education"
-              Icon={HexSlice4}
-            />
-            <EducationTimeline />
-            <Courses />
-          </Stack>
-        </Container>
-      </LazyHydrate>
-
+      <Container>
+        <Stack spacing={6}>
+          <SectionHeader
+            heading="Education"
+            Icon={HexSlice4}
+          />
+          <EducationTimeline />
+          <Courses />
+        </Stack>
+      </Container>
     </Box>
   );
 };

@@ -2,7 +2,6 @@ import { Box, Container, Grid, Stack } from "@mui/material";
 
 import { CONTACT } from "constants/nav";
 import HexSlice6 from "components/icons/HexSlice6";
-import LazyHydrate from "react-lazy-hydration";
 import PersonalInfo from "./PersonalInfo";
 import SectionHeader from "components/SectionHeader";
 import loadable from "@loadable/component";
@@ -15,27 +14,24 @@ const Contact = () => {
 
   return (
     <Box sx={sx.root} component="section" id={CONTACT.id}>
-      <LazyHydrate whenVisible>
-        <Container>
-          <Stack spacing={6}>
-            <SectionHeader
-              heading="Get In Touch"
-              Icon={HexSlice6}
-            />
-            <div>
-              <Grid container spacing={2}>
-                <Grid item md={4} xs={12}>
-                  <PersonalInfo />
-                </Grid>
-                <Grid item md xs={12}>
-                  <ContactForm />
-                </Grid>
+      <Container>
+        <Stack spacing={6}>
+          <SectionHeader
+            heading="Get In Touch"
+            Icon={HexSlice6}
+          />
+          <div>
+            <Grid container spacing={2}>
+              <Grid item md={4} xs={12}>
+                <PersonalInfo />
               </Grid>
-            </div>
-          </Stack>
-        </Container>
-      </LazyHydrate>
-
+              <Grid item md xs={12}>
+                <ContactForm />
+              </Grid>
+            </Grid>
+          </div>
+        </Stack>
+      </Container>
     </Box>
   );
 };
