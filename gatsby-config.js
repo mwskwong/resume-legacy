@@ -78,15 +78,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-csp",
-      options: {
-        directives: {
-          "script-src": "'self' static.cloudflareinsights.com",
-          "img-src": "'self' data: images.ctfassets.net"
-        }
-      }
-    },
-    {
       resolve: "gatsby-plugin-offline",
       options: {
         workboxConfig: {
