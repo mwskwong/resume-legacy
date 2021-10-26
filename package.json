@@ -14,16 +14,18 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
     "@fontsource/rubik": "^4.5.0",
     "@loadable/component": "^5.15.0",
     "@mui/icons-material": "^5.0.4",
     "@mui/lab": "5.0.0-alpha.51",
     "@mui/material": "^5.0.4",
-    "@mui/styled-engine-sc": "^5.0.3",
     "@reduxjs/toolkit": "^1.6.2",
     "dayjs": "^1.10.7",
     "emailjs-com": "^3.2.0",
     "gatsby": "^4.0.1",
+    "gatsby-plugin-emotion": "^7.0.0",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-loadable-components-ssr": "^3.4.0",
     "gatsby-plugin-manifest": "^4.0.0",
@@ -33,7 +35,6 @@
     "gatsby-plugin-robots-txt": "^1.6.13",
     "gatsby-plugin-sharp": "^4.0.0",
     "gatsby-plugin-sitemap": "^5.0.0",
-    "gatsby-plugin-styled-components": "^5.0.0",
     "gatsby-source-contentful": "^6.0.0",
     "gatsby-transformer-sharp": "^4.0.0",
     "lodash": "^4.17.21",
@@ -42,12 +43,10 @@
     "react-helmet": "^6.1.0",
     "react-redux": "^7.2.6",
     "react-swipeable-views": "^0.14.0",
-    "styled-components": "^5.3.3",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^6.2.1",
-    "babel-plugin-styled-components": "^1.13.3",
     "gatsby-plugin-perf-budgets": "^0.0.18",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "lmdb-store": "^1.6.10"
