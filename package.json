@@ -24,7 +24,7 @@
     "@reduxjs/toolkit": "^1.6.2",
     "dayjs": "^1.10.7",
     "emailjs-com": "^3.2.0",
-    "gatsby": "^4.0.0",
+    "gatsby": "^4.0.1",
     "gatsby-plugin-emotion": "^7.0.0",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-loadable-components-ssr": "^3.4.0",
@@ -41,7 +41,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-redux": "^7.2.5",
+    "react-redux": "^7.2.6",
     "react-swipeable-views": "^0.14.0",
     "typewriter-effect": "^2.18.2"
   },
@@ -49,7 +49,7 @@
     "@welldone-software/why-did-you-render": "^6.2.1",
     "gatsby-plugin-perf-budgets": "^0.0.18",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
-    "lmdb-store": "^1.6.11"
+    "lmdb-store": "^1.6.10"
   },
   "browserslist": [
     "> 0.5%",
