@@ -3,9 +3,10 @@ require("dotenv").config({
 });
 
 const { CF_PAGES_BRANCH = "main", CONTENTFUL_ACCESS_TOKEN, ANALYZE_BUNDLE } = process.env;
+const isProd = CF_PAGES_BRANCH === "main";
 const PROD_URL = "https://mwskwong.com";
 const PREVIEW_URL = `https://${CF_PAGES_BRANCH}.mwskwong.com`;
-const siteUrl = CF_PAGES_BRANCH === "main" ? PROD_URL : PREVIEW_URL;
+const siteUrl = isProd ? PROD_URL : PREVIEW_URL;
 
 module.exports = {
   siteMetadata: {
@@ -73,9 +74,11 @@ module.exports = {
           "https://:project.pages.dev/*": [
             `Link: <${PROD_URL}/:splat>; rel=canonical`
           ],
-          [`https://${CF_PAGES_BRANCH}.:project.pages.dev/*`]: [
-            `Link: <${PREVIEW_URL}/:splat>; rel=canonical`
-          ],
+          ...(!isProd && {
+            [`https://${CF_PAGES_BRANCH}.:project.pages.dev/*`]: [
+              `Link: <${PREVIEW_URL}/:splat>; rel=canonical`
+            ]
+          }),
           "https://:commit.:project.pages.dev/*": [
             "X-Robots-Tag: noindex"
           ]
@@ -114,13 +117,9 @@ module.exports = {
         }
       }
     },
-    ...(
-      ANALYZE_BUNDLE
-        ? [
-          "gatsby-plugin-webpack-bundle-analyser-v2",
-          "gatsby-plugin-perf-budgets"
-        ]
-        : []
-    )
+    ...(ANALYZE_BUNDLE && [
+      "gatsby-plugin-webpack-bundle-analyser-v2",
+      "gatsby-plugin-perf-budgets"
+    ])
   ]
 };
