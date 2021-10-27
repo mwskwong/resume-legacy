@@ -3,9 +3,9 @@ require("dotenv").config({
 });
 
 const { CF_PAGES_BRANCH = "main", CONTENTFUL_ACCESS_TOKEN, ANALYZE_BUNDLE } = process.env;
-const siteUrl = CF_PAGES_BRANCH === "main" || CF_PAGES_BRANCH === "master"
-  ? "https://mwskwong.com"
-  : `https://${CF_PAGES_BRANCH}.mwskwong.com`;
+const PROD_URL = "https://mwskwong.com";
+const PREVIEW_URL = `https://${CF_PAGES_BRANCH}.mwskwong.com`;
+const siteUrl = CF_PAGES_BRANCH === "main" ? PROD_URL : PREVIEW_URL;
 
 module.exports = {
   siteMetadata: {
@@ -45,20 +45,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        resolveEnv: () => CF_PAGES_BRANCH,
-        env: {
-          main: {
-            policy: [{ userAgent: "*", allow: "/" }]
-          },
-          next: {
-            policy: [{ userAgent: "*", disallow: "/" }]
-          }
-        }
-      }
-    },
-    {
       resolve: "gatsby-plugin-manifest",
       options: {
         background_color: "#ffffff",
@@ -75,6 +61,25 @@ module.exports = {
       resolve: "gatsby-plugin-preconnect",
       options: {
         domains: [{ domain: "https://images.ctfassets.net", crossOrigin: false }]
+      }
+    },
+    {
+      resolve: "gatsby-plugin-netlify",
+      options: {
+        headers: {
+          "/*": [
+            "Link: <https://images.ctfassets.net>; rel=preconnect"
+          ],
+          "https://:project.pages.dev/:path": [
+            `Link: <${PROD_URL}/:path>; rel=canonical`
+          ],
+          [`https://${CF_PAGES_BRANCH}.:project.pages.dev/:path`]: [
+            `Link: <${PREVIEW_URL}/:path>; rel=canonical`
+          ],
+          "https://:commit.:project.pages.dev/:path": [
+            "X-Robots-Tag: noindex"
+          ]
+        }
       }
     },
     {
