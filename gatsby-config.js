@@ -74,11 +74,15 @@ module.exports = {
           "https://:project.pages.dev/*": [
             `Link: <${PROD_URL}/:splat>; rel=canonical`
           ],
-          ...(!isProd && {
-            [`https://${CF_PAGES_BRANCH}.:project.pages.dev/*`]: [
-              `Link: <${PREVIEW_URL}/:splat>; rel=canonical`
-            ]
-          }),
+          ...(
+            isProd
+              ? {}
+              : {
+                [`https://${CF_PAGES_BRANCH}.:project.pages.dev/*`]: [
+                  `Link: <${PREVIEW_URL}/:splat>; rel=canonical`
+                ]
+              }
+          ),
           "https://:commit.:project.pages.dev/*": [
             "X-Robots-Tag: noindex"
           ]
@@ -117,9 +121,13 @@ module.exports = {
         }
       }
     },
-    ...(ANALYZE_BUNDLE && [
-      "gatsby-plugin-webpack-bundle-analyser-v2",
-      "gatsby-plugin-perf-budgets"
-    ])
+    ...(
+      ANALYZE_BUNDLE
+        ? [
+          "gatsby-plugin-webpack-bundle-analyser-v2",
+          "gatsby-plugin-perf-budgets"
+        ]
+        : []
+    )
   ]
 };
