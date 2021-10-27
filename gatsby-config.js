@@ -70,13 +70,13 @@ module.exports = {
           "/*": [
             "Link: <https://images.ctfassets.net>; rel=preconnect"
           ],
-          "https://:project.pages.dev/:path": [
-            `Link: <${PROD_URL}/:path>; rel=canonical`
+          "https://:project.pages.dev/*": [
+            `Link: <${PROD_URL}/:splat>; rel=canonical`
           ],
-          [`https://${CF_PAGES_BRANCH}.:project.pages.dev/:path`]: [
-            `Link: <${PREVIEW_URL}/:path>; rel=canonical`
+          [`https://${CF_PAGES_BRANCH}.:project.pages.dev/*`]: [
+            `Link: <${PREVIEW_URL}/:splat>; rel=canonical`
           ],
-          "https://:commit.:project.pages.dev/:path": [
+          "https://:commit.:project.pages.dev/*": [
             "X-Robots-Tag: noindex"
           ]
         }
