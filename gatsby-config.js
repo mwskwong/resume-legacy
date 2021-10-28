@@ -71,12 +71,13 @@ module.exports = {
           "/*": [
             "Link: <https://images.ctfassets.net>; rel=preconnect"
           ],
-          "https://:project.pages.dev/*": [
-            `Link: <${PROD_URL}/:splat>; rel=canonical`
-          ],
           ...(
             isProd
-              ? {}
+              ? {
+                "https://:project.pages.dev/*": [
+                  `Link: <${PROD_URL}/:splat>; rel=canonical`
+                ]
+              }
               : {
                 [`https://${CF_PAGES_BRANCH}.:project.pages.dev/*`]: [
                   `Link: <${PREVIEW_URL}/:splat>; rel=canonical`
