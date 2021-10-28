@@ -13,7 +13,8 @@ const useSx = () => useMemo(() => ({
     height: "100vh"
   },
   404: {
-    fontFamily: "Azonix, sans-serif",
+    // Prevent RubikVariable being used
+    fontFamily: "Azonix, sans-serif !important",
     color: "primary.main"
   },
   notFound: {
