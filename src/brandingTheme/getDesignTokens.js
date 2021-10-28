@@ -142,6 +142,11 @@ const getDesignTokens = mode => ({
         fontVariationSettings: "'wght' 500"
       }
     },
+    subtitle2: {
+      "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(",")
+      }
+    },
     body1: {
       fontSize: defaultTheme.typography.pxToRem(16),
       lineHeight: 24 / 16,
@@ -167,6 +172,11 @@ const getDesignTokens = mode => ({
       "@supports (font-variation-settings: normal)": {
         fontFamily: variableSystemFonts.join(","),
         fontVariationSettings: "'wght' 700"
+      }
+    },
+    overline: {
+      "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(",")
       }
     }
   }
