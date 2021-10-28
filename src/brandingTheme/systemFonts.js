@@ -1,9 +1,9 @@
-export const fallback = [
-  "Rubik",
+export const variable = [
+  "RubikVariable",
   "sans-serif"
 ];
 
 export default [
-  "RubikVariable",
+  "Rubik",
   "sans-serif"
 ];
