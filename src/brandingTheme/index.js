@@ -1,8 +1,8 @@
-import "@fontsource/rubik/latin-300.css";
 import "@fontsource/rubik/latin-400.css";
 import "@fontsource/rubik/latin-500.css";
 import "@fontsource/rubik/latin-700.css";
 import "@fontsource/rubik/latin-800.css";
+import "@fontsource/rubik/variable.css";
 import "./azonix.css";
 
 import { createTheme } from "@mui/material";
