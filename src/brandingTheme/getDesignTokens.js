@@ -1,8 +1,8 @@
 import { alpha, darken, lighten } from "@mui/system";
 import { nord0, nord1, nord11, nord13, nord14, nord3, nord4, nord5, nord6, nord8 } from "./nord";
+import systemFonts, { variable as variableSystemFonts } from "./systemFonts";
 
 import defaultTheme from "./defaultTheme";
-import systemFonts from "./systemFonts";
 
 const getDesignTokens = mode => ({
   palette: {
@@ -78,6 +78,7 @@ const getDesignTokens = mode => ({
       fontWeight: 800,
       lineHeight: 78 / 70,
       "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(","),
         fontVariationSettings: "'wght' 800"
       }
     },
@@ -86,34 +87,48 @@ const getDesignTokens = mode => ({
       fontWeight: 800,
       lineHeight: 44 / 36,
       "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(","),
         fontVariationSettings: "'wght' 800"
       }
     },
     h3: {
       fontSize: defaultTheme.typography.pxToRem(36),
       lineHeight: 44 / 36,
-      letterSpacing: 0
+      letterSpacing: 0,
+      "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(",")
+      }
     },
     h4: {
       fontSize: defaultTheme.typography.pxToRem(28),
       lineHeight: 42 / 28,
-      letterSpacing: 0
+      letterSpacing: 0,
+      "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(",")
+      }
     },
     h5: {
       fontSize: defaultTheme.typography.pxToRem(24),
       lineHeight: 36 / 24,
-      letterSpacing: 0
+      letterSpacing: 0,
+      "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(",")
+      }
     },
     h6: {
       fontSize: defaultTheme.typography.pxToRem(20),
       lineHeight: 30 / 20,
-      letterSpacing: 0
+      letterSpacing: 0,
+      "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(",")
+      }
     },
     button: {
       textTransform: "capitalize",
       fontWeight: 700,
       letterSpacing: 0,
       "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(","),
         fontVariationSettings: "'wght' 700"
       }
     },
@@ -123,18 +138,30 @@ const getDesignTokens = mode => ({
       letterSpacing: 0,
       fontWeight: 500,
       "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(","),
         fontVariationSettings: "'wght' 500"
+      }
+    },
+    subtitle2: {
+      "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(",")
       }
     },
     body1: {
       fontSize: defaultTheme.typography.pxToRem(16),
       lineHeight: 24 / 16,
-      letterSpacing: 0
+      letterSpacing: 0,
+      "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(",")
+      }
     },
     body2: {
       fontSize: defaultTheme.typography.pxToRem(14),
       lineHeight: 21 / 14,
-      letterSpacing: 0
+      letterSpacing: 0,
+      "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(",")
+      }
     },
     caption: {
       display: "inline-block",
@@ -143,7 +170,13 @@ const getDesignTokens = mode => ({
       letterSpacing: 0,
       fontWeight: 700,
       "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(","),
         fontVariationSettings: "'wght' 700"
+      }
+    },
+    overline: {
+      "@supports (font-variation-settings: normal)": {
+        fontFamily: variableSystemFonts.join(",")
       }
     }
   }

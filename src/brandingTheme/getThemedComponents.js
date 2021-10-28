@@ -1,7 +1,6 @@
 import { nord3, nord6 } from "./nord";
 
 import { alpha } from "@mui/system";
-import { variable as variableSystemFonts } from "./systemFonts";
 
 const getThemedComponents = theme => ({
   components: {
@@ -45,11 +44,6 @@ const getThemedComponents = theme => ({
           scrollBehavior: "smooth",
           "@media (prefers-reduced-motion)": {
             scrollBehavior: "auto"
-          }
-        },
-        body: {
-          "@supports (font-variation-settings: normal)": {
-            fontFamily: variableSystemFonts.join(",")
           }
         },
         section: {
