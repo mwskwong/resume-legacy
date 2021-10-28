@@ -1,8 +1,8 @@
 import { alpha, darken, lighten } from "@mui/system";
 import { nord0, nord1, nord11, nord13, nord14, nord3, nord4, nord5, nord6, nord8 } from "./nord";
+import systemFonts, { fallback as fallbackSystemFonts } from "./systemFonts";
 
 import defaultTheme from "./defaultTheme";
-import systemFonts from "./systemFonts";
 
 const getDesignTokens = mode => ({
   palette: {
@@ -71,14 +71,14 @@ const getDesignTokens = mode => ({
     borderRadius: 10
   },
   typography: {
-    fontFamily: systemFonts.join(","),
+    fontFamily: fallbackSystemFonts.join(","),
     fontWeightExtraBold: 800,
     h1: {
       fontSize: "clamp(2.625rem, 1.2857rem + 3.5714vw, 4rem)",
       fontWeight: 800,
       lineHeight: 78 / 70,
       "@supports (font-variation-settings: normal)": {
-        fontFamily: "RubikVariable",
+        fontFamily: systemFonts.join(","),
         fontVariationSettings: "'wght' 800"
       }
     },
@@ -87,7 +87,7 @@ const getDesignTokens = mode => ({
       fontWeight: 800,
       lineHeight: 44 / 36,
       "@supports (font-variation-settings: normal)": {
-        fontFamily: "RubikVariable",
+        fontFamily: systemFonts.join(","),
         fontVariationSettings: "'wght' 800"
       }
     },
@@ -96,7 +96,7 @@ const getDesignTokens = mode => ({
       lineHeight: 44 / 36,
       letterSpacing: 0,
       "@supports (font-variation-settings: normal)": {
-        fontFamily: "RubikVariable"
+        fontFamily: systemFonts.join(",")
       }
     },
     h4: {
@@ -104,7 +104,7 @@ const getDesignTokens = mode => ({
       lineHeight: 42 / 28,
       letterSpacing: 0,
       "@supports (font-variation-settings: normal)": {
-        fontFamily: "RubikVariable"
+        fontFamily: systemFonts.join(",")
       }
     },
     h5: {
@@ -112,7 +112,7 @@ const getDesignTokens = mode => ({
       lineHeight: 36 / 24,
       letterSpacing: 0,
       "@supports (font-variation-settings: normal)": {
-        fontFamily: "RubikVariable"
+        fontFamily: systemFonts.join(",")
       }
     },
     h6: {
@@ -120,7 +120,7 @@ const getDesignTokens = mode => ({
       lineHeight: 30 / 20,
       letterSpacing: 0,
       "@supports (font-variation-settings: normal)": {
-        fontFamily: "RubikVariable"
+        fontFamily: systemFonts.join(",")
       }
     },
     button: {
@@ -128,7 +128,7 @@ const getDesignTokens = mode => ({
       fontWeight: 700,
       letterSpacing: 0,
       "@supports (font-variation-settings: normal)": {
-        fontFamily: "RubikVariable",
+        fontFamily: systemFonts.join(","),
         fontVariationSettings: "'wght' 700"
       }
     },
@@ -138,7 +138,7 @@ const getDesignTokens = mode => ({
       letterSpacing: 0,
       fontWeight: 500,
       "@supports (font-variation-settings: normal)": {
-        fontFamily: "RubikVariable",
+        fontFamily: systemFonts.join(","),
         fontVariationSettings: "'wght' 500"
       }
     },
@@ -147,7 +147,7 @@ const getDesignTokens = mode => ({
       lineHeight: 24 / 16,
       letterSpacing: 0,
       "@supports (font-variation-settings: normal)": {
-        fontFamily: "RubikVariable"
+        fontFamily: systemFonts.join(",")
       }
     },
     body2: {
@@ -155,7 +155,7 @@ const getDesignTokens = mode => ({
       lineHeight: 21 / 14,
       letterSpacing: 0,
       "@supports (font-variation-settings: normal)": {
-        fontFamily: "RubikVariable"
+        fontFamily: systemFonts.join(",")
       }
     },
     caption: {
@@ -165,7 +165,7 @@ const getDesignTokens = mode => ({
       letterSpacing: 0,
       fontWeight: 700,
       "@supports (font-variation-settings: normal)": {
-        fontFamily: "RubikVariable",
+        fontFamily: systemFonts.join(","),
         fontVariationSettings: "'wght' 700"
       }
     }

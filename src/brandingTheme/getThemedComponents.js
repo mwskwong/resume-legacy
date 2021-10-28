@@ -23,7 +23,7 @@ const getThemedComponents = theme => ({
           padding: "1rem 1.25rem",
           ...theme.typography.body1,
           lineHeight: 21 / 16,
-          fontWeight: 700
+          fontWeight: theme.typography.fontWeightBold
         }
       }
     },

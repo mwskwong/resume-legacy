@@ -11,7 +11,10 @@ const useSx = () => useMemo(() => ({
   },
   value: {
     color: "primary.main",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    "@supports (font-variation-settings: normal)": theme => ({
+      fontVariationSettings: `'wght' ${theme.typography.fontWeightBold}`
+    })
   },
   title: {
     color: "text.secondary"

@@ -16,11 +16,17 @@ const useSx = () => useMemo(() => ({
     ml: 2
   },
   name: {
-    fontWeight: "bold"
+    fontWeight: "bold",
+    "@supports (font-variation-settings: normal)": theme => ({
+      fontVariationSettings: `'wght' ${theme.typography.fontWeightBold}`
+    })
   },
   jobTitle: {
     color: "text.secondary",
-    fontWeight: "regular"
+    fontWeight: "regular",
+    "@supports (font-variation-settings: normal)": theme => ({
+      fontVariationSettings: `'wght' ${theme.typography.fontWeightBold}`
+    })
   },
   company: {
     color: "primary.main"
