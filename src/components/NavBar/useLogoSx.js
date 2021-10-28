@@ -5,7 +5,7 @@ const useSx = ({ sxProp }) => useMemo(() => ({
   text: {
     fontFamily: "Azonix, sans-serif",
     // Prevent RubikVariable being used
-    "@supports (font-variation-settings: normal)": {}
+    "@supports (font-variation-settings: normal)": "unset"
   }
 }), [sxProp]);
 
