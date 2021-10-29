@@ -51,9 +51,8 @@ const TimelineItem = ({ data }) => {
         {data.fileUrl && (
           <Button
             sx={sx.downloadButton}
-            variant="outlined"
-            size="small"
-            endIcon={<Download fontSize="small" />}
+            variant="contained"
+            endIcon={<Download />}
             href={data.fileUrl}
           >
             Download
