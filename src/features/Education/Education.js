@@ -1,12 +1,15 @@
-import { Box, Container, Stack } from "@mui/material";
+import { Box, Container, Grid, Stack } from "@mui/material";
 
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import HexSlice4 from "components/icons/HexSlice4";
 import SectionHeader from "components/SectionHeader";
+import loadable from "@loadable/component";
 import { memo } from "react";
 import useSx from "./useEducationSx";
+
+const Animation = loadable(() => import("./Animation"), { ssr: false });
 
 const Education = () => {
   const sx = useSx();
@@ -20,7 +23,16 @@ const Education = () => {
             Icon={HexSlice4}
           />
           <EducationTimeline />
-          <Courses />
+          <div>
+            <Grid container spacing={6} sx={sx.gridContainer}>
+              <Grid item md={6} xs={12}>
+                <Courses />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                <Animation />
+              </Grid>
+            </Grid>
+          </div>
         </Stack>
       </Container>
     </Box>

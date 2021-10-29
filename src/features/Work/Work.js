@@ -7,6 +7,7 @@ import WorkTimeline from "./WorkTimeline";
 import { memo } from "react";
 
 const Work = () => {
+
   return (
     <Container component="section" id={WORK.id}>
       <Stack spacing={6}>

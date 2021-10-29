@@ -1,4 +1,4 @@
-import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Fragment } from "react";
@@ -37,42 +37,40 @@ const Courses = () => {
 
   return (
     <div>
-      <Box sx={sx.root}>
-        <Typography sx={sx.title} variant="subtitle2">
-          Courses
-        </Typography>
-        <List dense>
-          {courses.map(({ name, institution, fileUrl }, index) => {
-            const Icon = Icons[camelCase(institution)];
-            const last = index === courses.length - 1;
+      <Typography sx={sx.title} variant="subtitle2">
+        Courses
+      </Typography>
+      <List dense>
+        {courses.map(({ name, institution, fileUrl }, index) => {
+          const Icon = Icons[camelCase(institution)];
+          const last = index === courses.length - 1;
 
-            const content = (
-              <Fragment>
-                <ListItemIcon>
-                  <Icon color="primary" />
-                </ListItemIcon>
-                <ListItemText primary={name} />
-              </Fragment>
-            );
+          const content = (
+            <Fragment>
+              <ListItemIcon>
+                <Icon />
+              </ListItemIcon>
+              <ListItemText primary={name} />
+            </Fragment>
+          );
 
-            if (fileUrl) {
-              return (
-                <ListItem key={name} disablePadding>
-                  <ListItemButton divider={!last} component="a" href={fileUrl}>
-                    {content}
-                  </ListItemButton>
-                </ListItem>
-              );
-            } else {
-              return (
-                <ListItem key={name} divider={!last}>
+          if (fileUrl) {
+            return (
+              <ListItem key={name} disablePadding>
+                <ListItemButton divider={!last} component="a" href={fileUrl}>
                   {content}
-                </ListItem>
-              );
-            }
-          })}
-        </List>
-      </Box>
+                </ListItemButton>
+              </ListItem>
+            );
+          } else {
+            return (
+              <ListItem key={name} divider={!last}>
+                {content}
+              </ListItem>
+            );
+          }
+        })}
+      </List>
     </div>
   );
 };
