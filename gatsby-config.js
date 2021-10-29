@@ -26,6 +26,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-emotion",
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",
