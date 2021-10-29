@@ -1,7 +1,7 @@
 import { Fab, Zoom } from "@mui/material";
 
+import { KeyboardArrowUpRounded as ArrowUp } from "@mui/icons-material";
 import { HOME } from "constants/nav";
-import ToTop from "components/icons/ToTop";
 import { memo } from "react";
 import useShowScrollToTopFab from "hooks/useShowScrollToTopFab";
 
@@ -11,7 +11,7 @@ const ScrollToTopFab = () => {
   return (
     <Zoom in={show} mountOnEnter unmountOnExit>
       <Fab aria-label="scroll to top" href={`#${HOME.id}`}>
-        <ToTop />
+        <ArrowUp />
       </Fab>
     </Zoom>
   );

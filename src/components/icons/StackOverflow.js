@@ -1,18 +1,12 @@
 import { SvgIcon } from "@mui/material";
-import useSx from "./useThirdPartyIconSx";
 
-const StackOverflow = props => {
-  const sx = useSx();
+const StackOverflow = props => (
+  <SvgIcon {...props}>
+    <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
+  </SvgIcon>
+);
 
-  return (
-    <SvgIcon sx={sx.root} {...props}>
-      <path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z" />
-    </SvgIcon>
-  );
-};
-
-
-StackOverflow.muiName = SvgIcon.muiName;
 StackOverflow.whyDidYouRender = true;
+StackOverflow.muiName = SvgIcon.muiName;
 
 export default StackOverflow;

@@ -2,7 +2,7 @@ import { AppBar, Box, Collapse, Container, IconButton, List, Stack, Toolbar, use
 import { memo, useEffect, useState } from "react";
 
 import Logo from "./Logo";
-import Menu from "components/icons/Menu";
+import { MenuRounded as Menu } from "@mui/icons-material";
 import NavButton from "./NavButton";
 import NavListItem from "./NavListItem";
 import nav from "constants/nav";

@@ -8,7 +8,7 @@ import {
   TimelineSeparator
 } from "@mui/lab";
 
-import Download from "components/icons/Download";
+import { FileDownloadOutlined as Download } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import { Typography } from "@mui/material";
 import dayjs from "dayjs";
