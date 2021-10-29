@@ -5,7 +5,7 @@ const Mobile = props => {
   const sx = useSx();
 
   return (
-    <SvgIcon sx={sx.root} {...props}>
+    <SvgIcon sx={sx.streamline} {...props}>
       <g transform="matrix(1.7142857142857142,0,0,1.7142857142857142,0,0)">
         <g>
           <rect x="2" y="0.5" width="10" height="13" rx="1" />

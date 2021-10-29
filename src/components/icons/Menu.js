@@ -5,7 +5,7 @@ const Menu = props => {
   const sx = useSx();
 
   return (
-    <SvgIcon sx={sx.root} {...props}>
+    <SvgIcon sx={sx.streamline} {...props}>
       <g transform="matrix(1.7142857142857142,0,0,1.7142857142857142,0,0)">
         <g>
           <line x1="13.5" y1="2" x2="6" y2="2" />

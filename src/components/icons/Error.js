@@ -5,7 +5,7 @@ const Error = props => {
   const sx = useSx();
 
   return (
-    <SvgIcon sx={sx.root} {...props}>
+    <SvgIcon sx={sx.streamline} {...props}>
       <g transform="matrix(1.7142857142857142,0,0,1.7142857142857142,0,0)">
         <g>
           <path d="M13,6.5a6,6,0,1,0-9.5,4.87V12.5a1,1,0,0,0,1,1h5a1,1,0,0,0,1-1V11.37A6,6,0,0,0,13,6.5Z" />

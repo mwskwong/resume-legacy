@@ -5,7 +5,7 @@ const Download = props => {
   const sx = useSx();
 
   return (
-    <SvgIcon sx={sx.root} {...props}>
+    <SvgIcon sx={sx.streamline} {...props}>
       <g transform="matrix(1.7142857142857142,0,0,1.7142857142857142,0,0)">
         <g>
           <path d="M.5,10.5v1a2,2,0,0,0,2,2h9a2,2,0,0,0,2-2v-1" />
