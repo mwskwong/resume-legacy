@@ -11,7 +11,7 @@ const useSx = ({ active }) => useMemo(() => ({
     position: "absolute",
     bottom: 0,
     left: theme => `calc(50% - ${theme.spacing(1)})`,
-    borderRadius: "50%"
+    borderRadius: "25%"
   }
 }), [active]);
 
