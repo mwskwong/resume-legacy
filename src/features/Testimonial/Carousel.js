@@ -1,7 +1,8 @@
-import { KeyboardArrowLeftRounded as ArrowLeft, KeyboardArrowRightRounded as ArrowRight } from "@mui/icons-material";
 import { Box, Grid, IconButton, Stack } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
+import ArrowLeft from "components/icons/ArrowLeft";
+import ArrowRight from "components/icons/ArrowRight";
 import Pagination from "./Pagination";
 import Reference from "./Reference";
 import SwipeableViews from "react-swipeable-views";

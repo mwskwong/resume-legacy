@@ -1,7 +1,8 @@
-import { GitHub, LinkedIn } from "@mui/icons-material";
 import { IconButton, Stack } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
+import GitHub from "components/icons/GitHub";
+import LinkedIn from "components/icons/LinkedIn";
 import PropTypes from "prop-types";
 import StackOverflow from "components/icons/StackOverflow";
 import camelCase from "lodash/camelCase";

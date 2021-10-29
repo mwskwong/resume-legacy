@@ -1,10 +1,19 @@
 import { SvgIcon } from "@mui/material";
+import useSx from "./useThirdPartyIconSx";
 
-const Location = props => (
-  <SvgIcon {...props}>
-    <path d="M12 5C9.797 5 8 6.797 8 9c0 2.203 1.797 4 4 4 2.203 0 4-1.797 4-4 0-2.203-1.797-4-4-4zm0 1c1.663 0 3 1.337 3 3s-1.337 3-3 3-3-1.337-3-3 1.337-3 3-3zm0-6C6.483 0 2 4.483 2 10c0 3.223 2.082 6.65 4.31 9.32 1.115 1.336 2.274 2.48 3.262 3.3.494.41.945.738 1.338.974.393.236.694.406 1.09.406.396 0 .697-.17 1.09-.406.393-.236.844-.565 1.338-.975.988-.82 2.147-1.964 3.26-3.3C19.92 16.65 22 13.223 22 10c0-5.517-4.483-10-10-10zm0 1c4.976 0 9 4.024 9 9 0 2.777-1.927 6.1-4.078 8.68-1.076 1.29-2.2 2.396-3.133 3.17-.467.386-.885.69-1.214.888-.33.198-.602.262-.576.262.026 0-.247-.064-.576-.262-.33-.197-.747-.502-1.213-.888-.93-.774-2.056-1.88-3.132-3.17C4.928 16.1 3 12.777 3 10c0-4.976 4.024-9 9-9z" />
-  </SvgIcon>
-);
+const Location = props => {
+  const sx = useSx();
+
+  return (
+    <SvgIcon sx={sx.root} {...props}>
+      <g transform="matrix(1.7142857142857142,0,0,1.7142857142857142,0,0)"><g>
+        <path d="M11.5,5c0,2.49-4.5,8.5-4.5,8.5S2.5,7.49,2.5,5a4.5,4.5,0,0,1,9,0Z" style="fill: none;stroke: currentColor;stroke-linecap: round;stroke-linejoin: round"></path>
+        <circle cx="7" cy="5" r="1.5" style="fill: none;stroke: currentColor;stroke-linecap: round;stroke-linejoin: round"></circle>
+      </g></g>
+    </SvgIcon>
+  );
+};
+
 
 Location.muiName = SvgIcon.muiName;
 Location.whyDidYouRender = true;
