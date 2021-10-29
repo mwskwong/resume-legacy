@@ -1,9 +1,11 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
 
-import ArcticOceanFractal from "arctic-ocean-fractal";
 import { Link } from "gatsby";
 import SEO from "components/SEO";
+import loadable from "@loadable/component";
+
+const ArcticOceanFractal = loadable(() => import("arctic-ocean-fractal"));
 
 const useSx = () => useMemo(() => ({
   root: {
@@ -15,7 +17,7 @@ const useSx = () => useMemo(() => ({
   },
   animationContainer: {
     width: "100%",
-    maxWidth: 512
+    maxWidth: 600
   },
   404: {
     // Prevent RubikVariable being used
