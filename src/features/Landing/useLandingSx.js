@@ -7,8 +7,7 @@ const useSx = () => useMemo(() => ({
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
-    minHeight: "100vh",
-    py: 10 // Workaround: allow styled-components to SSR this CSS
+    minHeight: "100vh"
   },
   socialMedia: {
     mt: 3

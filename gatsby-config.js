@@ -25,7 +25,7 @@ module.exports = {
         spaceId: "zz9cwhc5t97i"
       }
     },
-    "gatsby-plugin-styled-components",
+    "gatsby-plugin-emotion",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",
