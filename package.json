@@ -24,7 +24,7 @@
     "@reduxjs/toolkit": "^1.6.2",
     "dayjs": "^1.10.7",
     "emailjs-com": "^3.2.0",
-    "gatsby": "^4.0.1",
+    "gatsby": "^4.0.2",
     "gatsby-plugin-emotion": "^7.0.0",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-loadable-components-ssr": "^4.0.0",
