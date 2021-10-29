@@ -17,7 +17,8 @@ const useSx = () => useMemo(() => ({
   },
   animationContainer: {
     width: "100%",
-    maxWidth: 600
+    maxWidth: 600,
+    aspectRatio: "600 / 487.48"
   },
   404: {
     // Prevent RubikVariable being used
@@ -35,7 +36,10 @@ const NotFoundPage = () => {
   const sx = useSx();
   const [pose, setPose] = useState("hide");
 
-  useEffect(() => setPose("show"), []);
+  useEffect(() => {
+    const timeout = setTimeout(() => setPose("show"), 150);
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <Container component="main" sx={sx.root}>

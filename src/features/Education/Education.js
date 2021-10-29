@@ -7,14 +7,12 @@ import HexSlice4 from "components/icons/HexSlice4";
 import SectionHeader from "components/SectionHeader";
 import loadable from "@loadable/component";
 import { memo } from "react";
-import { useInView } from "react-intersection-observer";
 import useSx from "./useEducationSx";
 
-const ArcticOceanFractal = loadable(() => import("arctic-ocean-fractal"), { ssr: false });
+const Animation = loadable(() => import("./Animation"), { ssr: false });
 
 const Education = () => {
   const sx = useSx();
-  const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
     <Box sx={sx.root} component="section" id={EDUCATION.id}>
@@ -25,14 +23,16 @@ const Education = () => {
             Icon={HexSlice4}
           />
           <EducationTimeline />
-          <Grid container spacing={6}>
-            <Grid item md={6} xs={12}>
-              <Courses />
+          <div>
+            <Grid container spacing={6} sx={sx.gridContainer}>
+              <Grid item md={6} xs={12}>
+                <Courses />
+              </Grid>
+              <Grid item md={6} xs={12}>
+                <Animation />
+              </Grid>
             </Grid>
-            <Grid ref={ref} item md={6} xs={12}>
-              <ArcticOceanFractal pose={inView ? "show" : "hide"} />
-            </Grid>
-          </Grid>
+          </div>
         </Stack>
       </Container>
     </Box>

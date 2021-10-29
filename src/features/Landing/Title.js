@@ -1,14 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
-import { useEffect, useMemo, useRef } from "react";
 
-import Typewriter from "typewriter-effect/dist/core";
+import loadable from "@loadable/component";
 import useSx from "./useTitleSx";
 import { visuallyHidden } from "@mui/utils";
 
+const Typewriter = loadable(() => import("typewriter-effect"), { ssr: false });
+
 const Title = () => {
   const sx = useSx();
-  const typewriterRef = useRef();
   const { name, occupationNodes } = useStaticQuery(graphql`{
     name: contentfulName {
       firstName
@@ -22,19 +22,15 @@ const Title = () => {
   }`);
 
   const occupations = occupationNodes.nodes.map(({ title }) => title);
-  const titleStrings = useMemo(() => [
+  const titleStrings = [
     `${name.firstName} ${name.lastName}.`,
     ...occupations.map(occupation => `a ${occupation}.`)
-  ], [name.firstName, name.lastName, occupations]);
-
-
-  useEffect(() => {
-    new Typewriter(typewriterRef.current, {
-      strings: titleStrings,
-      loop: true,
-      autoStart: true
-    });
-  }, [name.firstName, name.lastName, occupations, titleStrings]);
+  ];
+  const typewriterOptions = {
+    strings: titleStrings,
+    loop: true,
+    autoStart: true
+  };
 
   return (
     <Box sx={sx.root}>
@@ -43,7 +39,9 @@ const Title = () => {
       </Typography>
       <Typography sx={sx.title} variant="h1" component="div" aria-hidden>
         {"I Am "}
-        <Box component="span" ref={typewriterRef} sx={sx.importantText} />
+        <Box component="span" sx={sx.importantText}>
+          <Typewriter options={typewriterOptions} />
+        </Box>
       </Typography>
       <Typography sx={visuallyHidden} variant="h1">
         I Am {titleStrings.join(" I Am ")}

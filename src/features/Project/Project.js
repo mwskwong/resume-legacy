@@ -6,8 +6,10 @@ import { PROJECT } from "constants/nav";
 import ProjectCard from "./ProjectCard";
 import SectionHeader from "components/SectionHeader";
 import { memo } from "react";
+import useSx from "./useProjectSx";
 
 const Project = () => {
+  const sx = useSx();
   const { projectNodes } = useStaticQuery(graphql`{
     projectNodes: allContentfulProject(sort: {order: DESC, fields: from}) {
       nodes {
@@ -31,7 +33,7 @@ const Project = () => {
   }));
 
   return (
-    <Container component="section" id={PROJECT.id}>
+    <Container component="section" id={PROJECT.id} sx={sx.root}>
       <Stack spacing={6}>
         <SectionHeader
           heading="Recent Projects"
