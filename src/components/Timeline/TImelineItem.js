@@ -49,12 +49,7 @@ const TimelineItem = ({ data }) => {
           ))}
         </List>
         {data.fileUrl && (
-          <Button
-            sx={sx.downloadButton}
-            variant="contained"
-            endIcon={<Download />}
-            href={data.fileUrl}
-          >
+          <Button sx={sx.downloadButton} endIcon={<Download />} href={data.fileUrl}>
             Download
           </Button>
         )}
