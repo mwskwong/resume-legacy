@@ -4,11 +4,9 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import Pagination from "./Pagination";
 import Reference from "./Reference";
-import loadable from "@loadable/component";
+import SwipeableViews from "react-swipeable-views";
 import { useState } from "react";
 import useSx from "./useCarouselSx";
-
-const SwipeableViews = loadable(() => import("react-swipeable-views"));
 
 const Carousel = () => {
   const sx = useSx();
