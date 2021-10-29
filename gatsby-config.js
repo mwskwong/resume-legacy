@@ -59,6 +59,13 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-plugin-nprogress",
+      options: {
+        color: "#88C0D0",
+        showSpinner: false
+      }
+    },
+    {
       resolve: "gatsby-plugin-preconnect",
       options: {
         domains: [{ domain: "https://images.ctfassets.net", crossOrigin: false }]
