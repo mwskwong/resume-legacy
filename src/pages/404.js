@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import SEO from "components/SEO";
 import loadable from "@loadable/component";
 
-const ArcticOceanFractal = loadable(() => import("arctic-ocean-fractal"));
+const ArcticOceanFractal = loadable(() => import("arctic-ocean-fractal"), { ssr: false });
 
 const useSx = () => useMemo(() => ({
   root: {

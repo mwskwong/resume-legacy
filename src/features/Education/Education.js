@@ -10,7 +10,7 @@ import { memo } from "react";
 import { useInView } from "react-intersection-observer";
 import useSx from "./useEducationSx";
 
-const ArcticOceanFractal = loadable(() => import("arctic-ocean-fractal"));
+const ArcticOceanFractal = loadable(() => import("arctic-ocean-fractal"), { ssr: false });
 
 const Education = () => {
   const sx = useSx();
