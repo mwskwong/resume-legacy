@@ -1,5 +1,5 @@
 import { alpha, darken, lighten } from "@mui/system";
-import { nord0, nord1, nord11, nord13, nord14, nord3, nord4, nord5, nord6, nord8 } from "./nord";
+import { nord0, nord1, nord11, nord13, nord14, nord3, nord4, nord5, nord6, nord7, nord8 } from "./nord";
 import systemFonts, { variable as variableSystemFonts } from "./systemFonts";
 
 import defaultTheme from "./defaultTheme";
@@ -12,7 +12,7 @@ const getDesignTokens = mode => ({
     },
     primary: {
       main: nord8,
-      contrastText: nord3
+      contrastText: nord1
     },
     secondary: {
       main: nord0,
@@ -20,19 +20,19 @@ const getDesignTokens = mode => ({
     },
     error: {
       main: nord11,
-      contrastText: nord3
+      contrastText: nord1
     },
     warning: {
       main: nord13,
-      contrastText: nord3
+      contrastText: nord1
     },
     info: {
-      main: nord8,
-      contrastText: nord3
+      main: nord7,
+      contrastText: nord1
     },
     success: {
       main: nord14,
-      contrastText: nord3
+      contrastText: nord1
     },
     grey: {
       50: "#F3F6F9",
