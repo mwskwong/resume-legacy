@@ -18,7 +18,8 @@ const useSx = () => useMemo(() => ({
     color: "primary.main"
   },
   notFound: {
-    my: 4
+    my: 4,
+    textAlign: "center"
   }
 }), []);
 
