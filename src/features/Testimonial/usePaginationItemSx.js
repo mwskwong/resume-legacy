@@ -6,7 +6,7 @@ const useSx = ({ active }) => useMemo(() => ({
     height: 6,
     bgcolor: "primary.main",
     opacity: active ? .87 : .5,
-    borderRadius: 6,
+    borderRadius: "50%",
     mx: .5,
     transition: theme => theme.transitions.create(
       ["width", "opacity"],

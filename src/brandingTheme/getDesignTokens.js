@@ -66,9 +66,9 @@ const getDesignTokens = mode => ({
       focus: alpha(mode === "light" ? nord3 : nord6, .12)
     }
   },
-  spacing: 10,
+  spacing: 16,
   shape: {
-    borderRadius: 10
+    borderRadius: 16
   },
   typography: {
     fontFamily: systemFonts.join(","),

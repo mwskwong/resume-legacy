@@ -67,9 +67,9 @@ const getThemedComponents = theme => ({
       styleOverrides: {
         root: {
           position: "fixed",
-          bottom: 20,
-          right: 20,
-          borderRadius: 10
+          bottom: theme.spacing(1),
+          right: theme.spacing(1),
+          borderRadius: theme.shape.borderRadius
         }
       }
     },
