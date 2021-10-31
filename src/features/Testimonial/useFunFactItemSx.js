@@ -1,4 +1,4 @@
-import { darken } from "@mui/system";
+import { alpha } from "@mui/system";
 import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
@@ -7,7 +7,7 @@ const useSx = () => useMemo(() => ({
     p: 1,
     pl: 2,
     borderLeft: "4px solid",
-    borderColor: theme => darken(theme.palette.primary.main, .5)
+    borderColor: theme => alpha(theme.palette.primary.main, .25)
   },
   value: {
     color: "primary.main",

@@ -5,13 +5,10 @@ const useSx = ({ active }) => useMemo(() => ({
     width: active ? 20 : 12,
     height: 6,
     bgcolor: "primary.main",
-    opacity: active ? .87 : .5,
+    opacity: active ? 1 : .25,
     borderRadius: 1,
     mx: .5,
-    transition: theme => theme.transitions.create(
-      ["width", "opacity"],
-      { duration: theme.transitions.duration.standard }
-    ),
+    transition: theme => theme.transitions.create(["width", "opacity"]),
     "&:hover": {
       opacity: .87
     }
