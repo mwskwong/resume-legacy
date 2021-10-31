@@ -1,16 +1,14 @@
 import { Box, Container, Grid, Stack } from "@mui/material";
 
+import Animation from "./Animation";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import HexSlice4 from "components/icons/HexSlice4";
 import LazyHydrate from "react-lazy-hydration";
 import SectionHeader from "components/SectionHeader";
-import loadable from "@loadable/component";
 import { memo } from "react";
 import useSx from "./useEducationSx";
-
-const Animation = loadable(() => import("./Animation"), { ssr: false });
 
 const Education = () => {
   const sx = useSx();
