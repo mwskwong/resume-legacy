@@ -1,9 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
-import Typewriter from "typewriter-effect";
+import loadable from "@loadable/component";
 import useSx from "./useTitleSx";
 import { visuallyHidden } from "@mui/utils";
+
+const Typewriter = loadable(() => import("typewriter-effect"), { ssr: false });
 
 const Title = () => {
   const sx = useSx();

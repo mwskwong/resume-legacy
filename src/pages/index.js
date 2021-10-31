@@ -1,17 +1,15 @@
+import About from "features/About";
+import Contact from "features/Contact";
+import Education from "features/Education";
+import Footer from "features/Footer";
 import { Fragment } from "react";
+import Landing from "features/Landing";
 import NavBar from "components/NavBar";
+import Project from "features/Project";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
-import loadable from "@loadable/component";
-
-const Landing = loadable(() => import("features/Landing"));
-const About = loadable(() => import("features/About"));
-const Testimonial = loadable(() => import("features/Testimonial"));
-const Work = loadable(() => import("features/Work"));
-const Education = loadable(() => import("features/Education"));
-const Project = loadable(() => import("features/Project"));
-const Contact = loadable(() => import("features/Contact"));
-const Footer = loadable(() => import("features/Footer"));
+import Testimonial from "features/Testimonial";
+import Work from "features/Work";
 
 const IndexPage = () => {
   return (

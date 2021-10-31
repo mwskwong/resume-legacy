@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import loadable from "@loadable/component";
 import store from "store";
 
-const PWASnackbar = loadable(() => import("features/PWASnackbar"), { ssr: false });
+const PWASnackbar = loadable(() => import("features/PWASnackbar"));
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>

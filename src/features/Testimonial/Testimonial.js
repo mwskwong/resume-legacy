@@ -1,14 +1,16 @@
 import { Box, Container, Grid, Stack } from "@mui/material";
 
 import BrandingThemeProvider from "components/BrandingThemeProvider";
-import Carousel from "./Carousel";
 import FunFacts from "./FunFacts";
 import HexSlice2 from "components/icons/HexSlice2";
 import LazyHydrate from "react-lazy-hydration";
 import SectionHeader from "components/SectionHeader";
 import { TESTIMONIAL } from "constants/nav";
+import loadable from "@loadable/component";
 import { memo } from "react";
 import useSx from "./useTestimonialSx";
+
+const Carousel = loadable(() => import("./Carousel"));
 
 const Testimonial = () => {
   const sx = useSx();
