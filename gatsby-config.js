@@ -71,9 +71,6 @@ module.exports = {
           "/*": [
             "Link: <https://images.ctfassets.net>; rel=preconnect"
           ],
-          "https://www.mwskwong.com/*": [
-            `Link: <${PROD_URL}/:splat>; rel=canonical`
-          ],
           ...(
             isProd
               ? {
