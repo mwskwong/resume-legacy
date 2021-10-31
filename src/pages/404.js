@@ -1,11 +1,9 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
 
+import ArcticOceanFractal from "arctic-ocean-fractal";
 import { Link } from "gatsby";
 import SEO from "components/SEO";
-import loadable from "@loadable/component";
-
-const ArcticOceanFractal = loadable(() => import("arctic-ocean-fractal"), { ssr: false });
 
 const useSx = () => useMemo(() => ({
   root: {
@@ -36,10 +34,7 @@ const NotFoundPage = () => {
   const sx = useSx();
   const [pose, setPose] = useState("hide");
 
-  useEffect(() => {
-    const timeout = setTimeout(() => setPose("show"), 150);
-    return () => clearTimeout(timeout);
-  }, []);
+  useEffect(() => setPose("show"), []);
 
   return (
     <Container component="main" sx={sx.root}>
