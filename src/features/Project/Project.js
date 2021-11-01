@@ -19,9 +19,9 @@ const Project = () => {
         description {
           description
         }
-        screenshot {
-          gatsbyImageData(placeholder: BLURRED, height: 230)
-        }
+        # screenshot {
+        #   gatsbyImageData(placeholder: BLURRED, height: 230)
+        # }
       }
     }
   }`);
