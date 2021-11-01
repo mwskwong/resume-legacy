@@ -25,7 +25,7 @@ const useSx = () => useMemo(() => ({
     color: "text.secondary",
     fontWeight: "regular",
     "@supports (font-variation-settings: normal)": theme => ({
-      fontVariationSettings: `'wght' ${theme.typography.fontWeightBold}`
+      fontVariationSettings: `'wght' ${theme.typography.fontWeightRegular}`
     })
   },
   company: {
