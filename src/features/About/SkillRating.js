@@ -8,9 +8,9 @@ const SkillRating = ({ name, rating }) => {
   const value = rating * 100 / 5;
 
   return (
-    <Box>
+    <div>
       <Box sx={sx.ratingContainer}>
-        <Typography sx={sx.skillName} variant="subtitle2">
+        <Typography sx={sx.skillName}>
           {name}
         </Typography>
         <Typography>
@@ -18,7 +18,7 @@ const SkillRating = ({ name, rating }) => {
         </Typography>
       </Box>
       <LinearProgress variant="determinate" value={value} aria-hidden />
-    </Box>
+    </div>
   );
 };
 

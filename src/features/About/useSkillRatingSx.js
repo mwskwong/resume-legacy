@@ -5,7 +5,11 @@ const useSx = () => useMemo(() => ({
     display: "flex"
   },
   skillName: {
-    flexGrow: 1
+    flexGrow: 1,
+    fontWeight: "bold",
+    "@supports (font-variation-settings: normal)": theme => ({
+      fontVariationSettings: `'wght' ${theme.typography.fontWeightBold}`
+    })
   }
 }), []);
 

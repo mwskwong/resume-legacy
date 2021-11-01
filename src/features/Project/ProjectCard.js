@@ -3,6 +3,7 @@ import { Card, CardContent, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 import dayjs from "dayjs";
 import useSx from "./useProjectCardSx";
+
 // import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 
@@ -25,15 +26,13 @@ const ProjectCard = ({ project }) => {
         <Typography variant="subtitle1" component="div" gutterBottom>
           {project.name}
         </Typography>
-        <Typography variant="body1" component="div" gutterBottom>
+        <Typography component="div" gutterBottom>
           {period}
         </Typography>
         <Typography sx={sx.status} variant="subtitle2" component="div" gutterBottom>
           {project.status}
         </Typography>
-        <Typography variant="body2" component="div" gutterBottom>
-          {project.description}
-        </Typography>
+        <Typography>{project.description}</Typography>
       </CardContent>
     </Card>
   );
