@@ -19,9 +19,6 @@ const Project = () => {
         description {
           description
         }
-        # screenshot {
-        #   gatsbyImageData(placeholder: BLURRED, height: 230)
-        # }
       }
     }
   }`);
