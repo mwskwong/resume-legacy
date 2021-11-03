@@ -16,7 +16,7 @@ const ProjectCard = ({ project }) => {
         <Typography sx={sx.status} variant="subtitle2" component="div" gutterBottom>
           {project.status}
         </Typography>
-        <Typography variant="subtitle1" component="div">
+        <Typography variant="subtitle1" component="div" gutterBottom>
           {project.name}
         </Typography>
         <Typography sx={sx.period} component="div">
