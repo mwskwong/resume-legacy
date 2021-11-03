@@ -8,7 +8,8 @@ const useSx = () => useMemo(() => ({
     color: "primary.main"
   },
   period: {
-    mb: 1
+    mb: 1,
+    color: "text.secondary"
   }
 }), []);
 

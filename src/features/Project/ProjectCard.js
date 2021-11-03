@@ -16,10 +16,10 @@ const ProjectCard = ({ project }) => {
         <Typography sx={sx.status} variant="subtitle2" component="div" gutterBottom>
           {project.status}
         </Typography>
-        <Typography variant="h6" component="div" gutterBottom>
+        <Typography variant="subtitle1" component="div">
           {project.name}
         </Typography>
-        <Typography sx={sx.period} component="div" gutterBottom>
+        <Typography sx={sx.period} component="div">
           {period}
         </Typography>
         <Typography>{project.description}</Typography>

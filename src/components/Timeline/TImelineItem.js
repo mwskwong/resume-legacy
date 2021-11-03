@@ -32,7 +32,7 @@ const TimelineItem = ({ data }) => {
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent sx={sx.timelineContent}>
-        <Typography sx={sx.periodMobile} component="div" variant="body2" gutterBottom>
+        <Typography sx={sx.periodMobile} variant="body2" component="div" gutterBottom>
           {period}
         </Typography>
         <Typography variant="subtitle1" component="div" gutterBottom>
