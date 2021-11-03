@@ -7,13 +7,3 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     }
   });
 };
-
-exports.onCreateBabelConfig = ({ actions }) => {
-  actions.setBabelPreset({
-    name: "babel-preset-gatsby",
-    options: {
-      reactRuntime: "automatic",
-      reactImportSource: "@welldone-software/why-did-you-render"
-    }
-  });
-};
