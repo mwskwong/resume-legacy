@@ -4,11 +4,11 @@ const useSx = () => useMemo(() => ({
   root: {
     height: "100%"
   },
-  cardContent: {
-    textAlign: "center"
-  },
   status: {
     color: "primary.main"
+  },
+  period: {
+    mb: 1
   }
 }), []);
 
