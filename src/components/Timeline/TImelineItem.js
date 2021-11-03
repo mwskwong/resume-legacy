@@ -11,14 +11,15 @@ import {
 import { FileDownloadOutlined as Download } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import { Typography } from "@mui/material";
-import dayjs from "dayjs";
 import { memo } from "react";
 import useSx from "./useTImelineItemSx";
 
+const dateTimeFormat = new Intl.DateTimeFormat(undefined, { month: "short", year: "numeric" });
+
 const TimelineItem = ({ data }) => {
   const sx = useSx();
-  const from = dayjs(data.from).format("MMM YYYY");
-  const to = data.to ? dayjs(data.to).format("MMM YYYY") : "Present";
+  const from = dateTimeFormat.format(new Date(data.from));
+  const to = data.to ? dateTimeFormat.format(new Date(data.to)) : "Present";
   const period = `${from} — ${to}`;
   const contents = data.contents || [];
 
