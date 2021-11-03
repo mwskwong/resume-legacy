@@ -1,13 +1,14 @@
 import { Card, CardContent, Typography } from "@mui/material";
 
 import PropTypes from "prop-types";
-import dayjs from "dayjs";
 import useSx from "./useProjectCardSx";
+
+const dateTimeFormat = new Intl.DateTimeFormat(undefined, { month: "short", year: "numeric" });
 
 const ProjectCard = ({ project }) => {
   const sx = useSx();
-  const from = dayjs(project.from).format("MMM YYYY");
-  const to = project.to ? dayjs(project.to).format("MMM YYYY") : "Present";
+  const from = dateTimeFormat.format(new Date(project.from));
+  const to = project.to ? dateTimeFormat.format(new Date(project.to)) : "Present";
   const period = from === to ? from : `${from} — ${to}`;
 
   return (
@@ -16,10 +17,10 @@ const ProjectCard = ({ project }) => {
         <Typography sx={sx.status} variant="subtitle2" component="div" gutterBottom>
           {project.status}
         </Typography>
-        <Typography variant="h6" component="div" gutterBottom>
+        <Typography variant="subtitle1" component="div" gutterBottom>
           {project.name}
         </Typography>
-        <Typography sx={sx.period} component="div" gutterBottom>
+        <Typography sx={sx.period} component="div">
           {period}
         </Typography>
         <Typography>{project.description}</Typography>
