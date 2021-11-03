@@ -8,7 +8,7 @@ import {
   TimelineSeparator
 } from "@mui/lab";
 
-import { FileDownloadOutlined as Download } from "@mui/icons-material";
+import { DownloadRounded as Download } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import { Typography } from "@mui/material";
 import { memo } from "react";

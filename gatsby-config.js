@@ -9,6 +9,8 @@ const PREVIEW_URL = `https://${CF_PAGES_BRANCH}.mwskwong.com`;
 const siteUrl = isProd ? PROD_URL : PREVIEW_URL;
 
 module.exports = {
+  jsxRuntime: "automatic",
+  jsxImportSource: "@welldone-software/why-did-you-render",
   siteMetadata: {
     siteUrl
   },
