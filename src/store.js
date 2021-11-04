@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import serviceWorkerStatus from "features/PWASnackbar/serviceWorkerStatusSlice";
+import swStatus from "features/PWASnackbar/swStatusSlice";
 
 const store = configureStore({
   reducer: {
-    serviceWorkerStatus
+    swStatus
   }
 });
 

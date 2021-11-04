@@ -1,4 +1,4 @@
-import { Button, List, ListItem, ListItemText } from "@mui/material";
+import { Button, List, ListItem, ListItemText, Typography } from "@mui/material";
 import {
   TimelineItem as MuiTimelineItem,
   TimelineConnector,
@@ -10,7 +10,6 @@ import {
 
 import { DownloadRounded as Download } from "@mui/icons-material";
 import PropTypes from "prop-types";
-import { Typography } from "@mui/material";
 import { memo } from "react";
 import useSx from "./useTImelineItemSx";
 
@@ -42,9 +41,9 @@ const TimelineItem = ({ data }) => {
         <Typography sx={sx.subtitle} component="div" gutterBottom>
           {data.subtitle}
         </Typography>
-        <List>
+        <List disablePadding>
           {contents.map((content, index) => (
-            <ListItem key={index} sx={sx.contentListItem} disablePadding>
+            <ListItem key={index} sx={sx.contentListItem} disableGutters>
               <ListItemText primary={content} />
             </ListItem>
           ))}

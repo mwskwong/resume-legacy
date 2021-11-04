@@ -1,5 +1,5 @@
-import { serviceWorkerUpdateReady } from "features/PWASnackbar/serviceWorkerStatusSlice";
 import store from "store";
+import { swUpdateReady } from "features/PWASnackbar/swStatusSlice";
 
 export { wrapPageElement, wrapRootElement } from "./wrap-elements";
 
@@ -10,7 +10,7 @@ export const onClientEntry = () => {
 export const onServiceWorkerUpdateReady = () => {
   console.log("New content is available and will be used after reloading.");
   try {
-    store.dispatch(serviceWorkerUpdateReady());
+    store.dispatch(swUpdateReady());
   } catch (error) {
     window.location.reload();
   }
