@@ -1,14 +1,14 @@
 import { Button, Snackbar } from "@mui/material";
 import { memo, useEffect, useState } from "react";
-import { selectServiceWorkerStatus, serviceWorkerStatus } from "./serviceWorkerStatusSlice";
+import { selectSwStatus, swStatus } from "./swStatusSlice";
 
 import { useSelector } from "react-redux";
 import useSx from "./useSx";
 
-const { UPDATE_READY } = serviceWorkerStatus;
+const { UPDATE_READY } = swStatus;
 
 const PWASnackbar = () => {
-  const status = useSelector(selectServiceWorkerStatus);
+  const status = useSelector(selectSwStatus);
   const [open, setOpen] = useState(false);
   const sx = useSx();
 
