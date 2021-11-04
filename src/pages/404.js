@@ -13,7 +13,7 @@ const useSx = () => useMemo(() => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    height: "100vh"
+    minHeight: "100vh"
   },
   animationContainer: {
     width: "100%",
