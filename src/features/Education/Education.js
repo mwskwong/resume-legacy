@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack } from "@mui/material";
+import { Container, Grid, Stack } from "@mui/material";
 
 import Animation from "./Animation";
 import Courses from "./Courses";
@@ -14,29 +14,27 @@ const Education = () => {
   const sx = useSx();
 
   return (
-    <Box sx={sx.root} component="section" id={EDUCATION.id}>
+    <Container component="section" id={EDUCATION.id}>
       <LazyHydrate whenVisible>
-        <Container>
-          <Stack spacing={6}>
-            <SectionHeader
-              heading="Education"
-              Icon={HexSlice4}
-            />
-            <EducationTimeline />
-            <div>
-              <Grid container spacing={6} sx={sx.gridContainer}>
-                <Grid item md={6} xs={12}>
-                  <Courses />
-                </Grid>
-                <Grid item md={6} xs={12}>
-                  <Animation />
-                </Grid>
+        <Stack spacing={6}>
+          <SectionHeader
+            heading="Education"
+            Icon={HexSlice4}
+          />
+          <EducationTimeline />
+          <div>
+            <Grid container spacing={6} sx={sx.gridContainer}>
+              <Grid item md={6} xs={12}>
+                <Courses />
               </Grid>
-            </div>
-          </Stack>
-        </Container>
+              <Grid item md={6} xs={12}>
+                <Animation />
+              </Grid>
+            </Grid>
+          </div>
+        </Stack>
       </LazyHydrate>
-    </Box>
+    </Container>
   );
 };
 

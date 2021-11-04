@@ -1,4 +1,4 @@
-import { Container, Stack } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
 
 import HexSlice3 from "components/icons/HexSlice3";
 import LazyHydrate from "react-lazy-hydration";
@@ -6,21 +6,26 @@ import SectionHeader from "components/SectionHeader";
 import { WORK } from "constants/nav";
 import WorkTimeline from "./WorkTimeline";
 import { memo } from "react";
+import useSx from "./useWorkSx";
 
 const Work = () => {
+  const sx = useSx();
 
   return (
-    <Container component="section" id={WORK.id}>
+    <Box sx={sx.root} component="section" id={WORK.id}>
       <LazyHydrate whenVisible>
-        <Stack spacing={6}>
-          <SectionHeader
-            heading="Recent Experiences"
-            Icon={HexSlice3}
-          />
-          <WorkTimeline />
-        </Stack>
+        <Container>
+          <Stack spacing={6}>
+            <SectionHeader
+              heading="Recent Experiences"
+              Icon={HexSlice3}
+            />
+            <WorkTimeline />
+          </Stack>
+
+        </Container>
       </LazyHydrate>
-    </Container>
+    </Box>
   );
 };
 
