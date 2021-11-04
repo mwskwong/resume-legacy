@@ -13,11 +13,12 @@ const useSx = () => useMemo(() => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    height: "100vh"
+    minHeight: "100vh",
+    py: 4
   },
   animationContainer: {
     width: "100%",
-    maxWidth: 600,
+    maxWidth: 430,
     aspectRatio: "600 / 487.48"
   },
   404: {
