@@ -10,11 +10,11 @@ const Animation = () => {
   const sx = useSx();
 
   return (
-    <div ref={ref}>
-      <Box sx={sx.root}>
+    <Box ref={ref} sx={sx.root}>
+      <Box sx={sx.wrapper}>
         <ArcticOceanFractal pose={inView ? "show" : "hide"} />
       </Box>
-    </div>
+    </Box>
   );
 };
 

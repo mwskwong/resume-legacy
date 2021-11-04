@@ -3,7 +3,9 @@ import { useMemo } from "react";
 const useSx = () => useMemo(() => ({
   root: {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "center"
+  },
+  wrapper: {
     maxWidth: {
       sm: 430,
       md: "none"
