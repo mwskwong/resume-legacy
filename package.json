@@ -23,7 +23,6 @@
     "@mui/material": "^5.0.6",
     "@reduxjs/toolkit": "^1.6.2",
     "arctic-ocean-fractal": "^0.1.0",
-    "css-mediaquery": "^0.1.2",
     "emailjs-com": "^3.2.0",
     "gatsby": "^4.1.0",
     "gatsby-plugin-emotion": "^7.1.0",
@@ -48,8 +47,7 @@
     "react-redux": "^7.2.6",
     "react-swipeable-views": "^0.14.0",
     "styled-components": "^5.3.3",
-    "typewriter-effect": "^2.18.2",
-    "ua-parser-js": "^1.0.2"
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^6.2.1",

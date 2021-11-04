@@ -1,7 +1,6 @@
 import { nord3, nord6 } from "./nord";
 
 import { alpha } from "@mui/system";
-import ssrMatchMedia from "./ssrMatchMedia";
 
 const getThemedComponents = theme => ({
   components: {
@@ -141,11 +140,6 @@ const getThemedComponents = theme => ({
     MuiTypography: {
       defaultProps: {
         color: "text.primary"
-      }
-    },
-    MuiUseMediaQuery: {
-      defaultProps: {
-        ssrMatchMedia
       }
     }
   }
