@@ -1,5 +1,6 @@
 import BubbleGroundHole from "./BubbleGroundHole";
 import { groundHoleTopCircles } from "./pathData";
+import { memo } from "react";
 
 const BubblesGroundHoleTop = props => (
   <g>
@@ -11,4 +12,4 @@ const BubblesGroundHoleTop = props => (
 
 BubblesGroundHoleTop.whyDidYouRender = true;
 
-export default BubblesGroundHoleTop;
+export default memo(BubblesGroundHoleTop);

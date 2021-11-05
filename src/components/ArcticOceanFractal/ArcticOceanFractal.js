@@ -14,13 +14,13 @@ import posed from "react-pose";
 import { useState } from "react";
 
 const Svg = posed.svg({});
+const { anglerfish, jellyfish } = calcPoseTimings(3200);
 
 const ArcticOceanFractal = ({ pose, onAnimationComplete }) => {
-  const { anglerfish, jellyfish } = calcPoseTimings(3200);
-  const [runCssAnimations, setRunCssAnimations] = useState(false);
+  const [runCSSAnimations, setRunCSSAnimations] = useState(false);
 
   const handleCssAnimations = () => {
-    setRunCssAnimations(true);
+    setRunCSSAnimations(true);
     if (onAnimationComplete) onAnimationComplete();
   };
 
@@ -37,10 +37,10 @@ const ArcticOceanFractal = ({ pose, onAnimationComplete }) => {
       <BubblesGroundHoleTop />
       <BubblesGroundHoleCenter />
       <BubblesGroundHoleOverflow />
-      <JellyfishLeft poseTimings={jellyfish} runCssAnimations={runCssAnimations} />
-      <JellyfishLeftSmall poseTimings={jellyfish} runCssAnimations={runCssAnimations} />
-      <JellyfishCenter poseTimings={jellyfish} runCssAnimations={runCssAnimations} />
-      <JellyfishRight poseTimings={jellyfish} runCssAnimations={runCssAnimations} />
+      <JellyfishLeft poseTimings={jellyfish} runCSSAnimations={runCSSAnimations} />
+      <JellyfishLeftSmall poseTimings={jellyfish} runCSSAnimations={runCSSAnimations} />
+      <JellyfishCenter poseTimings={jellyfish} runCSSAnimations={runCSSAnimations} />
+      <JellyfishRight poseTimings={jellyfish} runCSSAnimations={runCSSAnimations} />
     </Svg>
   );
 };

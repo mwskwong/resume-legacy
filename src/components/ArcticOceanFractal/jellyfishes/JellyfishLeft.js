@@ -3,6 +3,7 @@ import { leftPaths, leftTentaclePaths } from "./pathData";
 
 import Jellyfish from "./Jellyfish";
 import { jellyfishBasePropTypes } from "../shared/propTypes";
+import { memo } from "react";
 
 const animTentacleSwing = keyframes`
   0% { transform: translate3d(0, 0, 0); }
@@ -22,12 +23,12 @@ const tentaclesAnimStyle = css`
   animation: ${animTentacleSwing} 3s linear 1.8s infinite alternate;
 `;
 
-const JellyfishLeft = ({ poseTimings, runCssAnimations }) => (
+const JellyfishLeft = ({ poseTimings, runCSSAnimations }) => (
   <Jellyfish
     bodyAnimation={bodyAnimStyle}
     bodyPaths={leftPaths}
     poseTimings={poseTimings}
-    runCssAnimations={runCssAnimations}
+    runCSSAnimations={runCSSAnimations}
     tentaclePaths={leftTentaclePaths}
     tentaclesAnimation={tentaclesAnimStyle}
   />
@@ -36,4 +37,4 @@ const JellyfishLeft = ({ poseTimings, runCssAnimations }) => (
 JellyfishLeft.propTypes = jellyfishBasePropTypes;
 JellyfishLeft.whyDidYouRender = true;
 
-export default JellyfishLeft;
+export default memo(JellyfishLeft);

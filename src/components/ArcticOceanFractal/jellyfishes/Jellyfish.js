@@ -4,21 +4,21 @@ import posed from "react-pose";
 import styled from "@emotion/styled";
 
 const Tentacle = styled(posed.path(poseConfigJellyfish))`
-  ${({ tentaclesAnimation, runCssAnimations }) => runCssAnimations && tentaclesAnimation};
-  animation-play-state: ${({ runCssAnimations }) => (runCssAnimations ? "running" : "paused")};
+  ${({ tentaclesAnimation, runCSSAnimations }) => runCSSAnimations && tentaclesAnimation};
+  animation-play-state: ${({ runCSSAnimations }) => (runCSSAnimations ? "running" : "paused")};
   transform-style: preserve-3d;
 `;
 
 const Group = styled(posed.g(poseConfigJellyfish))`
-  ${({ bodyAnimation, runCssAnimations }) => runCssAnimations && bodyAnimation};
-  animation-play-state: ${({ runCssAnimations }) => (runCssAnimations ? "running" : "paused")};
+  ${({ bodyAnimation, runCSSAnimations }) => runCSSAnimations && bodyAnimation};
+  animation-play-state: ${({ runCSSAnimations }) => (runCSSAnimations ? "running" : "paused")};
   transform-style: preserve-3d;
 `;
 
-const Jellyfish = ({ bodyAnimation, bodyPaths, poseTimings, runCssAnimations, tentaclesAnimation, tentaclePaths }) => (
-  <Group bodyAnimation={bodyAnimation} runCssAnimations={runCssAnimations} {...poseTimings}>
+const Jellyfish = ({ bodyAnimation, bodyPaths, poseTimings, runCSSAnimations, tentaclesAnimation, tentaclePaths }) => (
+  <Group bodyAnimation={bodyAnimation} runCSSAnimations={runCSSAnimations} {...poseTimings}>
     {tentaclePaths.map(({ d, fill }) => (
-      <Tentacle key={d} d={d} fill={fill} runCssAnimations={runCssAnimations} tentaclesAnimation={tentaclesAnimation} />
+      <Tentacle key={d} d={d} fill={fill} runCSSAnimations={runCSSAnimations} tentaclesAnimation={tentaclesAnimation} />
     ))}
     {bodyPaths.map(({ d, fill }) => (
       <path key={d} d={d} fill={fill} />
