@@ -21,7 +21,7 @@ const ArcticOceanFractal = ({ pose, onAnimationComplete }) => {
 
   const handleCssAnimations = () => {
     setRunCssAnimations(true);
-    onAnimationComplete();
+    if (onAnimationComplete) onAnimationComplete();
   };
 
   return (
