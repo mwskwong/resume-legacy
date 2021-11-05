@@ -18,14 +18,8 @@ const useSx = () => useMemo(() => ({
   },
   animationContainer: {
     width: "100%",
-    maxWidth: 430
-  },
-  404: {
-    // Prevent RubikVariable being used
-    fontFamily: "Azonix, sans-serif !important",
-    color: "primary.main",
-
-    mt: 4
+    maxWidth: 430,
+    aspectRatio: "430 / 312.64"
   },
   notFound: {
     my: 4,
@@ -42,9 +36,6 @@ const NotFoundPage = () => {
       <Box sx={sx.animationContainer}>
         <Animation404 />
       </Box>
-      <Typography variant="h1" sx={sx[404]}>
-        404
-      </Typography>
       <Typography variant="h5" sx={sx.notFound}>
         The page you were looking for does not exist.
       </Typography>
