@@ -14,3 +14,22 @@ export const nord12 = "#d08770";
 export const nord13 = "#ebcb8b";
 export const nord14 = "#a3be8c";
 export const nord15 = "#b48ead";
+
+export default {
+  nord0,
+  nord1,
+  nord2,
+  nord3,
+  nord4,
+  nord5,
+  nord6,
+  nord7,
+  nord8,
+  nord9,
+  nord10,
+  nord11,
+  nord12,
+  nord13,
+  nord14,
+  nord15
+};
