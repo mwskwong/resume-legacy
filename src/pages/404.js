@@ -1,6 +1,6 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 
-import Animation404 from "components/Animation404";
+import Arctic404 from "components/Arctic404";
 import { Link } from "gatsby";
 import SEO from "components/SEO";
 import { useMemo } from "react";
@@ -32,7 +32,7 @@ const NotFoundPage = () => {
     <Container component="main" sx={sx.root}>
       <SEO title="Not Found" />
       <Box sx={sx.animationContainer}>
-        <Animation404 />
+        <Arctic404 />
       </Box>
       <Typography variant="h5" sx={sx.notFound}>
         The page you were looking for does not exist.
