@@ -10,22 +10,24 @@ import { JellyfishCenter, JellyfishLeft, JellyfishLeftSmall, JellyfishRight } fr
 import IllustrationCanvas from "./IllustrationCanvas";
 import PropTypes from "prop-types";
 import calcPoseTimings from "./calcPoseTimings";
-import { motion } from "framer-motion";
+import posed from "react-pose";
 import { useState } from "react";
+
+const Svg = posed.svg({});
 
 const ArcticOceanFractal = ({ pose, onAnimationComplete }) => {
   const { anglerfish, jellyfish } = calcPoseTimings(3200);
   const [runCssAnimations, setRunCssAnimations] = useState(false);
 
-  const handleAnimationComplete = () => {
+  const handleCssAnimations = () => {
     setRunCssAnimations(true);
     if (onAnimationComplete) onAnimationComplete();
   };
 
   return (
-    <motion.svg
-      onAnimationComplete={handleAnimationComplete}
-      animate={pose}
+    <Svg
+      onPoseComplete={handleCssAnimations}
+      pose={pose}
       viewBox="0 0 800 640.66"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -39,7 +41,7 @@ const ArcticOceanFractal = ({ pose, onAnimationComplete }) => {
       <JellyfishLeftSmall poseTimings={jellyfish} runCssAnimations={runCssAnimations} />
       <JellyfishCenter poseTimings={jellyfish} runCssAnimations={runCssAnimations} />
       <JellyfishRight poseTimings={jellyfish} runCssAnimations={runCssAnimations} />
-    </motion.svg>
+    </Svg>
   );
 };
 

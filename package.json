@@ -24,7 +24,6 @@
     "@reduxjs/toolkit": "^1.6.2",
     "arctic-ocean-fractal": "^0.1.0",
     "emailjs-com": "^3.2.0",
-    "framer-motion": "^5.2.0",
     "gatsby": "^4.1.0",
     "gatsby-plugin-emotion": "^7.1.0",
     "gatsby-plugin-image": "^2.1.0",
@@ -44,8 +43,10 @@
     "react-helmet": "^6.1.0",
     "react-intersection-observer": "^8.32.2",
     "react-lazy-hydration": "^0.1.0",
+    "react-pose": "^4.0.10",
     "react-redux": "^7.2.6",
     "react-swipeable-views": "^0.14.0",
+    "styled-components": "^5.3.3",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
