@@ -16,8 +16,7 @@ const useSx = () => useMemo(() => ({
   },
   animationContainer: {
     width: "100%",
-    maxWidth: 430,
-    aspectRatio: "430 / 312.64"
+    maxWidth: 430
   },
   notFound: {
     my: 4,
