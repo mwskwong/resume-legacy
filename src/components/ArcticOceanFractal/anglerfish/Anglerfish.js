@@ -6,19 +6,16 @@ import {
 } from "../shared/poseConfig";
 
 import LightRing from "./LightRing";
-import posed from "react-pose";
-
-const Group = posed.g(poseConfigAnglerfish);
-const EyeLens = posed.path(poseConfigAnglerfishEyeLens);
-const ForeheadSkinFold = posed.path(poseConfigAnglerfishForeheadSkinFold);
+import { motion } from "framer-motion";
 
 const Anglerfish = props => (
-  <Group {...props}>
+  <motion.g variants={poseConfigAnglerfish} {...props}>
     <path
       d="M510.92 373.25c3.66-.656 7.114-2.281 11.008-1.953 1.919.16 3.402.576 4.595 2.109 4.657 5.984 8.696 12.277 10.2 19.873-.471 1.441-1.643 2.094-2.936 2.611-9.708 3.871-19.372 7.854-29.035 11.836-1.344.553-2.747 1.129-4.2.217-.73-.623-1.335-1.361-1.653-2.256-2.376-6.645-1.99-12.734 1.152-19.252.353-.676.662-1.316.938-1.861 2.235-4.717 6.133-7.976 9.931-11.324z"
       fill={nord8}
     />
-    <ForeheadSkinFold
+    <motion.path
+      variants={poseConfigAnglerfishForeheadSkinFold}
       d="M501.603 389.482c.52-3.16 1.694-5.855 4.088-7.92.478-.412 1.006-.855 1.615-.277.677.641.079 1.143-.329 1.561-1.869 1.902-3.133 4.1-3.431 6.789-.078.707-.002 1.693-.951 1.678-1.26-.02-.738-1.215-.992-1.831z"
       fill={nord4}
     />
@@ -34,7 +31,8 @@ const Anglerfish = props => (
       d="M498.148 408.68c-2.463 2.174-5.826 2.484-8.553 4.115-1.286-5.168-.767-12.805 1.395-16.611.275 2.75-.059 5.08.566 7.307.612 2.178 1.288 4.289 3.035 6.363.58-3.18-.427-6.172 1.294-9.277.324 3.15.595 5.845 2.263 8.103zm6.053-14.225c-.041-1.908 2.105-4.217 4.016-4.061 2.245.182 3.65 1.57 3.948 3.789.255 1.9-1.938 4.139-3.873 4.191-2.124.06-4.046-1.782-4.091-3.919z"
       fill={nord4}
     />
-    <EyeLens
+    <motion.path
+      variants={poseConfigAnglerfishEyeLens}
       d="M510.627 394.234c-.058 1.494-.773 2.412-2.228 2.527-1.088.088-2.628-.535-2.127-1.459.591-1.092-.728-3.514 1.952-3.344 1.48.097 2.225.899 2.403 2.276z"
       fill={nord3}
     />
@@ -49,7 +47,7 @@ const Anglerfish = props => (
       d="M468.611 385.336c.358 1.316.878 2.135 2.146 2.779 1.642.836 2.81 2.359 1.328 4.359-1.141 1.541-2.707 2.156-4.349.996-1.747-1.234-1.71-3.064-.583-4.699.722-1.046 1.497-1.984 1.458-3.435z"
       fill={nord13}
     />
-  </Group>
+  </motion.g>
 );
 
 Anglerfish.whyDidYouRender = true;
