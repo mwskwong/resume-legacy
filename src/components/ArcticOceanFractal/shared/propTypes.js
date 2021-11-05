@@ -65,7 +65,7 @@ const jellyfishPropTypes = {
   /**
    * The styled-components CSS styles for the body animation.
    */
-  bodyAnimation: PropTypes.instanceOf(Array).isRequired,
+  bodyAnimation: PropTypes.object.isRequired,
 
   /**
    * The SVG path definitions for the body.
@@ -75,7 +75,7 @@ const jellyfishPropTypes = {
   /**
    * The styled-components CSS styles for the tentacles animation.
    */
-  tentaclesAnimation: PropTypes.instanceOf(Array).isRequired,
+  tentaclesAnimation: PropTypes.object.isRequired,
 
   /**
    * The SVG path definitions for the tentacles.

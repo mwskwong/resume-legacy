@@ -1,5 +1,6 @@
 import BubbleFloating from "./BubbleFloating";
 import { fishSwarmCircles } from "./pathData";
+import { memo } from "react";
 
 const BubblesFishSwarm = props => (
   <g>
@@ -11,4 +12,4 @@ const BubblesFishSwarm = props => (
 
 BubblesFishSwarm.whyDidYouRender = true;
 
-export default BubblesFishSwarm;
+export default memo(BubblesFishSwarm);

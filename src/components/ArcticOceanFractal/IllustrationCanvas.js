@@ -1,5 +1,6 @@
+import { Fragment, memo } from "react";
+
 import Anglerfish from "./anglerfish";
-import { Fragment } from "react";
 import { anglerfishPropTypes } from "./shared/propTypes";
 import nord from "brandingTheme/nord";
 
@@ -358,4 +359,4 @@ const IllustrationCanvas = ({ anglerfishProps }) => (
 IllustrationCanvas.propTypes = anglerfishPropTypes;
 IllustrationCanvas.whyDidYouRender = true;
 
-export default IllustrationCanvas;
+export default memo(IllustrationCanvas);
