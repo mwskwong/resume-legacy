@@ -1,8 +1,8 @@
-import styled, { keyframes } from "styled-components";
-
 import CloudBottom from "./CloudBottom";
 import CloudTop from "./CloudTop";
 import NightSkyCanvas from "./NightSkyCanvas";
+import { keyframes } from "@emotion/react";
+import styled from "@emotion/styled";
 
 const animFloating = keyframes`
   from { transform: translate3d(0, 0, 0); }

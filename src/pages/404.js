@@ -1,11 +1,9 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 
+import Animation404 from "components/Animation404";
 import { Link } from "gatsby";
 import SEO from "components/SEO";
-import loadable from "@loadable/component";
 import { useMemo } from "react";
-
-const Animation404 = loadable(() => import("components/Animation404"), { ssr: false });
 
 const useSx = () => useMemo(() => ({
   root: {
