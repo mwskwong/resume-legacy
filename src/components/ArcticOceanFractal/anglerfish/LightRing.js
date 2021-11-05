@@ -1,5 +1,7 @@
 import { nord4, nord6 } from "brandingTheme/nord";
-import styled, { keyframes } from "@emotion/react";
+
+import { keyframes } from "@emotion/react";
+import styled from "@emotion/styled";
 
 const animLightRingGlow = keyframes`
   0% {
