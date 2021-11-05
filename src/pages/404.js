@@ -1,11 +1,11 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { useEffect, useMemo, useState } from "react";
 
 import { Link } from "gatsby";
 import SEO from "components/SEO";
 import loadable from "@loadable/component";
+import { useMemo } from "react";
 
-const ArcticOceanFractal = loadable(() => import("arctic-ocean-fractal"), { ssr: false });
+const Animation404 = loadable(() => import("components/Animation404"), { ssr: false });
 
 const useSx = () => useMemo(() => ({
   root: {
@@ -18,13 +18,13 @@ const useSx = () => useMemo(() => ({
   },
   animationContainer: {
     width: "100%",
-    maxWidth: 430,
-    aspectRatio: "600 / 487.48"
+    maxWidth: 430
   },
   404: {
     // Prevent RubikVariable being used
     fontFamily: "Azonix, sans-serif !important",
     color: "primary.main",
+
     mt: 4
   },
   notFound: {
@@ -35,18 +35,12 @@ const useSx = () => useMemo(() => ({
 
 const NotFoundPage = () => {
   const sx = useSx();
-  const [pose, setPose] = useState("hide");
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setPose("show"), 150);
-    return () => clearTimeout(timeout);
-  }, []);
 
   return (
     <Container component="main" sx={sx.root}>
       <SEO title="Not Found" />
       <Box sx={sx.animationContainer}>
-        <ArcticOceanFractal pose={pose} />
+        <Animation404 />
       </Box>
       <Typography variant="h1" sx={sx[404]}>
         404
