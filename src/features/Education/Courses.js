@@ -48,7 +48,7 @@ const Courses = () => {
           const content = (
             <Fragment>
               <ListItemIcon>
-                <Icon fontSize="small" />
+                <Icon />
               </ListItemIcon>
               <ListItemText primary={name} />
             </Fragment>
