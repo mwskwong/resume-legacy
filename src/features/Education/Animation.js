@@ -3,7 +3,7 @@ import loadable from "@loadable/component";
 import { useInView } from "react-intersection-observer";
 import useSx from "./useAnimationSx";
 
-const ArcticOceanFractal = loadable(() => import("arctic-ocean-fractal"), { ssr: false });
+const ArcticOceanFractal = loadable(() => import("components/ArcticOceanFractal"), { ssr: false });
 
 const Animation = () => {
   const { ref, inView } = useInView({ triggerOnce: true });
