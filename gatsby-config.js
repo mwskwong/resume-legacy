@@ -39,12 +39,6 @@ module.exports = {
       }
     },
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-plugin-loadable-components-ssr",
-      options: {
-        useHydrate: true
-      }
-    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
