@@ -2,7 +2,6 @@ import { Box, Container, Stack } from "@mui/material";
 
 import { ABOUT } from "constants/nav";
 import HexSlice1 from "components/icons/HexSlice1";
-import LazyHydrate from "react-lazy-hydration";
 import Message from "./Message";
 import Picture from "./Picture";
 import SectionHeader from "components/SectionHeader";
@@ -15,19 +14,17 @@ const About = () => {
 
   return (
     <Box sx={sx.root} component="section" id={ABOUT.id}>
-      <LazyHydrate whenVisible>
-        <Container>
-          <Stack sx={sx.stack} spacing={6}>
-            <SectionHeader
-              heading="About Me"
-              Icon={HexSlice1}
-            />
-            <Picture />
-            <Message />
-            <SkillSet />
-          </Stack>
-        </Container>
-      </LazyHydrate>
+      <Container>
+        <Stack sx={sx.stack} spacing={6}>
+          <SectionHeader
+            heading="About Me"
+            Icon={HexSlice1}
+          />
+          <Picture />
+          <Message />
+          <SkillSet />
+        </Stack>
+      </Container>
     </Box>
 
   );

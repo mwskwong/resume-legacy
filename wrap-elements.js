@@ -1,12 +1,11 @@
-import { Fragment, StrictMode } from "react";
+import { StrictMode, Suspense, lazy } from "react";
 
 import BrandingThemeProvider from "components/BrandingThemeProvider";
 import { CssBaseline } from "@mui/material";
 import { Provider } from "react-redux";
-import loadable from "@loadable/component";
 import store from "store";
 
-const PWASnackbar = loadable(() => import("features/PWASnackbar"), { ssr: false });
+const PWASnackbar = lazy(() => import(/* webpackChunkName: "pwa-snackbar" */ "features/PWASnackbar"));
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
@@ -20,8 +19,8 @@ export const wrapRootElement = ({ element }) => (
 );
 
 export const wrapPageElement = ({ element }) => (
-  <Fragment>
+  <Suspense fallback={null}>
     {element}
     <PWASnackbar />
-  </Fragment>
+  </Suspense>
 );
