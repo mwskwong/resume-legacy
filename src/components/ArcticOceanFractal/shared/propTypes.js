@@ -17,51 +17,7 @@ const jellyfishPaths = PropTypes.arrayOf(
   })
 );
 
-const anglerfishPropTypes = {
-  anglerfishProps: PropTypes.shape({
-    /**
-     * The delay of the anglerfish hiding animation.
-     */
-    anglerfishDelay: PropTypes.number,
-
-    /**
-     * The anglerfish hiding animation duration.
-     */
-    anglerfishDuration: PropTypes.number,
-
-    /**
-     * The delay of the anglerfish eye lens animation.
-     */
-    anglerfishEyeLensDelay: PropTypes.number,
-
-    /**
-     * The total anglerfish eye lens animation duration.
-     */
-    anglerfishEyeLensDuration: PropTypes.number
-  }).isRequired
-};
-
-const jellyfishBasePropTypes = {
-  poseTimings: PropTypes.shape({
-    /**
-     * The delay of the jellyfish bounce animation.
-     */
-    jellyFishDelay: PropTypes.number,
-
-    /**
-     * The duration pf the jellyfish animation.
-     */
-    jellyFishDuration: PropTypes.number
-  }).isRequired,
-
-  /**
-   * Indicates if the CSS animation keyframes should be run when the pose animation has been completed.
-   */
-  runCSSAnimations: PropTypes.bool.isRequired
-};
-
-const jellyfishPropTypes = {
-  ...jellyfishBasePropTypes,
+export const jellyfishPropTypes = {
   /**
    * The styled-components CSS styles for the body animation.
    */
@@ -82,5 +38,3 @@ const jellyfishPropTypes = {
    */
   tentaclePaths: jellyfishPaths.isRequired
 };
-
-export { anglerfishPropTypes, jellyfishBasePropTypes, jellyfishPropTypes };

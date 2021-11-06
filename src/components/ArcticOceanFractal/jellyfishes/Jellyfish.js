@@ -1,17 +1,15 @@
 import { jellyfishPropTypes } from "../shared/propTypes";
-import { poseConfigJellyfish } from "../shared/poseConfig";
-import posed from "react-pose";
 import styled from "@emotion/styled";
 
-const Tentacle = styled(posed.path(poseConfigJellyfish))`
-  ${({ tentaclesAnimation, runCSSAnimations }) => runCSSAnimations && tentaclesAnimation};
-  animation-play-state: ${({ runCSSAnimations }) => (runCSSAnimations ? "running" : "paused")};
+const Tentacle = styled.path`
+  ${({ tentaclesAnimation }) => tentaclesAnimation};
+  animation-play-state: "running"};
   transform-style: preserve-3d;
 `;
 
-const Group = styled(posed.g(poseConfigJellyfish))`
-  ${({ bodyAnimation, runCSSAnimations }) => runCSSAnimations && bodyAnimation};
-  animation-play-state: ${({ runCSSAnimations }) => (runCSSAnimations ? "running" : "paused")};
+const Group = styled.g`
+  ${({ bodyAnimation }) => bodyAnimation};
+  animation-play-state: "running";
   transform-style: preserve-3d;
 `;
 
