@@ -43,7 +43,6 @@
     "react-lazy-hydration": "^0.1.0",
     "react-redux": "^7.2.6",
     "react-swipeable-views": "^0.14.0",
-    "styled-components": "^5.3.3",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
