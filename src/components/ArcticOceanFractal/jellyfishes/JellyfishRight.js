@@ -2,7 +2,6 @@ import { css, keyframes } from "@emotion/react";
 import { rightPaths, rightTentaclePaths } from "./pathData";
 
 import Jellyfish from "./Jellyfish";
-import { jellyfishBasePropTypes } from "../shared/propTypes";
 import { memo } from "react";
 
 const animTentacleSwing = keyframes`
@@ -22,18 +21,15 @@ const tentaclesAnimStyle = css`
   animation: ${animTentacleSwing} 5s linear 1.8s infinite alternate;
 `;
 
-const JellyfishRight = ({ poseTimings, runCSSAnimations }) => (
+const JellyfishRight = () => (
   <Jellyfish
     bodyAnimation={bodyAnimStyle}
     bodyPaths={rightPaths}
-    poseTimings={poseTimings}
-    runCSSAnimations={runCSSAnimations}
     tentaclePaths={rightTentaclePaths}
     tentaclesAnimation={tentaclesAnimStyle}
   />
 );
 
-JellyfishRight.propTypes = jellyfishBasePropTypes;
 JellyfishRight.whyDidYouRender = true;
 
 export default memo(JellyfishRight);

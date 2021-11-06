@@ -7,7 +7,7 @@ const useSx = () => useMemo(() => ({
   },
   wrapper: {
     width: "100%",
-    aspectRatio: "600 / 487.48",
+    aspectRatio: "800 / 640.66",
     maxWidth: {
       sm: 430,
       md: "none"

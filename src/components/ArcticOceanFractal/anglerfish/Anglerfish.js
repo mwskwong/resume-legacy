@@ -1,26 +1,22 @@
 import { nord10, nord13, nord3, nord4, nord7, nord8, nord9 } from "brandingTheme/nord";
-import {
-  poseConfigAnglerfish,
-  poseConfigAnglerfishEyeLens,
-  poseConfigAnglerfishForeheadSkinFold
-} from "../shared/poseConfig";
 
 import LightRing from "./LightRing";
-import posed from "react-pose";
+import styled from "@emotion/styled";
 
-const Group = posed.g(poseConfigAnglerfish);
-const EyeLens = posed.path(poseConfigAnglerfishEyeLens);
-const ForeheadSkinFold = posed.path(poseConfigAnglerfishForeheadSkinFold);
+const Group = styled.g`
+  transform: translateX(20px) translateY(8px);
+`;
+
+const EyeLens = styled.path`
+  transform: scale(0.7);
+  transform-origin: 508.401px 394.359px;
+`;
 
 const Anglerfish = props => (
   <Group {...props}>
     <path
       d="M510.92 373.25c3.66-.656 7.114-2.281 11.008-1.953 1.919.16 3.402.576 4.595 2.109 4.657 5.984 8.696 12.277 10.2 19.873-.471 1.441-1.643 2.094-2.936 2.611-9.708 3.871-19.372 7.854-29.035 11.836-1.344.553-2.747 1.129-4.2.217-.73-.623-1.335-1.361-1.653-2.256-2.376-6.645-1.99-12.734 1.152-19.252.353-.676.662-1.316.938-1.861 2.235-4.717 6.133-7.976 9.931-11.324z"
       fill={nord8}
-    />
-    <ForeheadSkinFold
-      d="M501.603 389.482c.52-3.16 1.694-5.855 4.088-7.92.478-.412 1.006-.855 1.615-.277.677.641.079 1.143-.329 1.561-1.869 1.902-3.133 4.1-3.431 6.789-.078.707-.002 1.693-.951 1.678-1.26-.02-.738-1.215-.992-1.831z"
-      fill={nord4}
     />
     <path
       d="M498.148 408.68c1.158.256 2.027-.439 2.972-.895 11.868-4.836 23.736-9.67 35.604-14.504.872 4.807.492 9.418-1.759 13.873-2.794 5.531-7.343 9.17-12.559 12.127a50.333 50.333 0 0 1-14.498 5.49c-7.725-1.516-14.265-4.842-18.313-11.977.216-.844.725-1.564 1.507-1.807 2.362-.729 4.532-2.057 7.046-2.307z"
