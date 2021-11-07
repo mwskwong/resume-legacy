@@ -1,6 +1,6 @@
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
-import { Grid, useMediaQuery } from "@mui/material";
-import { useCallback, useRef, useState } from "react";
+import { Grid, useMediaQuery, useTheme } from "@mui/material";
+import { useCallback, useMemo, useRef, useState } from "react";
 
 import { LoadingButton } from "@mui/lab";
 import TextField from "./TextField";
@@ -11,13 +11,20 @@ import useSx from "./useContactFormSx";
 
 const ContactForm = () => {
   const sx = useSx();
-  const smDown = useMediaQuery(theme => theme.breakpoints.down("sm"));
+  const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const formRef = useRef();
   const emailInputRef = useRef(null);
   const [emailInputErrorMessage, setEmailInputErrorMessage] = useState(null);
   const invalidEmail = Boolean(emailInputErrorMessage);
   const [emailSending, setEmailSending] = useState(false);
   const [emailSendSuccess, setEmailSendSuccess] = useState(undefined);
+
+  const submitButtonColor = useMemo(() => {
+    if (emailSendSuccess) return "success";
+    if (emailSendSuccess === false) return "error";
+    return theme.palette.mode === "light" ? "secondary" : "primary";
+  }, [emailSendSuccess, theme.palette.mode]);
 
   const validateEmail = value => {
     if (isEmpty(value)) {
@@ -103,12 +110,7 @@ const ContactForm = () => {
       <LoadingButton
         loading={emailSending}
         loadingPosition="end"
-        color={emailSendSuccess
-          ? "success"
-          : emailSendSuccess === false
-            ? "error"
-            : "secondary"
-        }
+        color={submitButtonColor}
         endIcon={emailSendSuccess
           ? <Success />
           : emailSendSuccess === false

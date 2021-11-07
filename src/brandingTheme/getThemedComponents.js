@@ -1,15 +1,19 @@
+import { alpha, lighten } from "@mui/system";
 import { nord3, nord6 } from "./nord";
 
-import { alpha } from "@mui/system";
+import { darkScrollbar } from "@mui/material";
 
 const getThemedComponents = theme => ({
   components: {
     MuiAppBar: {
+      defaultProps: {
+        elevation: 0
+      },
       styleOverrides: {
         root: {
           backgroundColor: alpha(theme.palette.background.default, .72),
           backdropFilter: "blur(20px)",
-          boxShadow: `inset 0px -1px 1px ${theme.palette.grey[100]}`,
+          boxShadow: `inset 0px -1px 1px ${theme.palette.mode === "light" ? theme.palette.grey[100] : lighten(theme.palette.background.default, .1)}`,
           color: theme.palette.text.primary
         }
       }
@@ -50,6 +54,7 @@ const getThemedComponents = theme => ({
             scrollBehavior: "auto"
           }
         },
+        body: theme.palette.mode === "light" ? null : darkScrollbar(),
         section: {
           "@media (min-width: 0px) and (orientation: landscape)": {
             scrollMarginTop: "48px"
@@ -93,7 +98,7 @@ const getThemedComponents = theme => ({
     MuiFormControl: {
       defaultProps: {
         variant: "filled",
-        color: "secondary"
+        color: theme.palette.mode === "light" ? "secondary" : "primary"
       },
       styleOverrides: {
         root: {

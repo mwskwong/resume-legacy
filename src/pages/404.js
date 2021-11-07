@@ -2,6 +2,7 @@ import { Box, Button, Container, Typography } from "@mui/material";
 
 import Arctic404 from "components/Arctic404";
 import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
+import Layout from "layouts/Layout";
 import { Link } from "gatsby";
 import SEO from "components/SEO";
 import { useMemo } from "react";
@@ -29,18 +30,20 @@ const NotFoundPage = () => {
   const sx = useSx();
 
   return (
-    <Container component="main" sx={sx.root}>
-      <SEO title="Not Found" />
-      <Box sx={sx.animationContainer}>
-        <Arctic404 />
-      </Box>
-      <Typography variant="h5" sx={sx.notFound}>
-        The page you were looking for does not exist.
-      </Typography>
-      <Button variant="outlined" color="inherit" size="large" startIcon={<ArrowLeft />} component={Link} to="/">
-        go back
-      </Button>
-    </Container>
+    <Layout>
+      <Container component="main" sx={sx.root}>
+        <SEO title="Not Found" />
+        <Box sx={sx.animationContainer}>
+          <Arctic404 />
+        </Box>
+        <Typography variant="h5" sx={sx.notFound}>
+          The page you were looking for does not exist.
+        </Typography>
+        <Button variant="outlined" color="inherit" size="large" startIcon={<ArrowLeft />} component={Link} to="/">
+          go back
+        </Button>
+      </Container>
+    </Layout>
   );
 };
 
