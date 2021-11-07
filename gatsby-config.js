@@ -40,6 +40,7 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-perfect-dark-mode",
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
@@ -90,7 +91,7 @@ module.exports = {
       resolve: "gatsby-plugin-offline",
       options: {
         workboxConfig: {
-          globPatterns: ["**icon-*"]         
+          globPatterns: ["**icon-*"]
         }
       }
     },
