@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { loadState } from "browserStorage";
 
 const localState = loadState();
+console.log("called");
 
 const themeModeSlice = createSlice({
   name: "themeMode",
