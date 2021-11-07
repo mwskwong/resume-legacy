@@ -11,9 +11,11 @@ const Layout = ({ children }) => {
 
   return (
     <BrandingThemeProvider mode={mode}>
-      <CssBaseline />
-      {children}
-      <PWASnackbar />
+      <div style={{ visibility: mode !== undefined ? "visible" : "hidden" }}>
+        <CssBaseline />
+        {children}
+        <PWASnackbar />
+      </div>
     </BrandingThemeProvider>
   );
 };
