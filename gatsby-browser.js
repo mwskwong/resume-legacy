@@ -9,5 +9,9 @@ export const onClientEntry = () => {
 
 export const onServiceWorkerUpdateReady = () => {
   console.log("New content is available and will be used after reloading.");
-  store.dispatch(swUpdateReady());
+  try {
+    store.dispatch(swUpdateReady());
+  } catch (error) {
+    window.location.reload();
+  }
 };

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const prefersDarkMode = window && window.matchMedia("(prefers-color-scheme: dark)");
+const prefersDarkMode = typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)");
 
 const themeModeSlice = createSlice({
   name: "themeMode",
