@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     const localReduxState = loadState();
-    if (!localReduxState.themeMode) {
+    if (!localReduxState?.themeMode) {
       const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
       dispatch(setThemeMode(prefersDarkMode ? "dark" : "light"));
     }
