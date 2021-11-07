@@ -50,8 +50,7 @@ module.exports = {
         icon: "src/images/icon.png",
         name: "Matthew",
         short_name: "Matthew",
-        start_url: ".",
-        theme_color: "#ffffff"
+        start_url: "."
       }
     },
     {

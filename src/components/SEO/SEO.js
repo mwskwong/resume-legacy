@@ -3,8 +3,10 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { memo } from "react";
+import { useTheme } from "@mui/material";
 
 const SEO = ({ title: titleProp }) => {
+  const theme = useTheme();
   const { site, name, occupationNodes, descriptionNode, ogImage } = useStaticQuery(graphql`{
     site {
       siteMetadata {
@@ -39,6 +41,10 @@ const SEO = ({ title: titleProp }) => {
   const titleTemplate = titleProp ? `%s | ${name.firstName} ${name.lastName}` : null;
 
   const meta = [
+    {
+      name: "theme-color",
+      content: theme.palette.background.default
+    },
     {
       name: "description",
       content: description
