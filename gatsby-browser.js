@@ -1,7 +1,7 @@
 import store from "store";
 import { swUpdateReady } from "features/PWASnackbar/swStatusSlice";
 
-export { wrapPageElement, wrapRootElement } from "./wrap-elements";
+export { wrapRootElement } from "./wrap-elements";
 
 export const onClientEntry = () => {
   require("./wdyr");
