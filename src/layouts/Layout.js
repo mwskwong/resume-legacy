@@ -8,10 +8,11 @@ const PWASnackbar = lazy(() => import(/* webpackChunkName: "pwa-snackbar" */ "fe
 
 const Layout = ({ children }) => {
   const { mode } = usePerfectDarkMode();
+  const wrapperStyle = { visibility: mode ? "hidden" : "visible" };
 
   return (
     <BrandingThemeProvider mode={mode}>
-      <div style={{ visibility: mode !== undefined ? "visible" : "hidden" }}>
+      <div style={wrapperStyle}>
         <CssBaseline />
         {children}
         <PWASnackbar />
