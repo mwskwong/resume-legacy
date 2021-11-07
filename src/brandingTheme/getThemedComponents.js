@@ -1,7 +1,7 @@
 import { alpha, lighten } from "@mui/system";
-import { nord3, nord6 } from "./nord";
 
 import { darkScrollbar } from "@mui/material";
+import { nord6 } from "./nord";
 
 const getThemedComponents = theme => ({
   components: {
@@ -122,8 +122,8 @@ const getThemedComponents = theme => ({
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.mode === "light" ? theme.palette.common.black : theme.palette.common.white,
-          color: theme.palette.mode === "light" ? nord6 : nord3
+          backgroundColor: theme.palette.common.black,
+          color: nord6
         }
       }
     },
