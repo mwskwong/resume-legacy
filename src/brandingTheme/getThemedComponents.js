@@ -6,15 +6,13 @@ import { nord6 } from "./nord";
 const getThemedComponents = theme => ({
   components: {
     MuiAppBar: {
-      defaultProps: {
-        elevation: 0
-      },
       styleOverrides: {
         root: {
           backgroundColor: alpha(theme.palette.background.default, .72),
           backdropFilter: "blur(20px)",
           boxShadow: `inset 0px -1px 1px ${theme.palette.mode === "light" ? theme.palette.grey[100] : lighten(theme.palette.background.default, .1)}`,
-          color: theme.palette.text.primary
+          color: theme.palette.text.primary,
+          backgroundImage: "none"
         }
       }
     },
@@ -123,7 +121,8 @@ const getThemedComponents = theme => ({
       styleOverrides: {
         root: {
           backgroundColor: theme.palette.common.black,
-          color: nord6
+          color: nord6,
+          backgroundImage: "none"
         }
       }
     },
