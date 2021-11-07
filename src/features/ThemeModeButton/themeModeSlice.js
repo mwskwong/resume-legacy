@@ -1,12 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loadState } from "browserStorage";
-
-const localState = loadState();
-console.log(localState);
 
 const themeModeSlice = createSlice({
   name: "themeMode",
-  initialState: localState?.themeMode || "light",
+  initialState: "light",
   reducers: {
     toggleThemeMode: state => state === "light" ? "dark" : "light",
     setThemeMode: (_, action) => action.payload

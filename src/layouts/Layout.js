@@ -1,26 +1,26 @@
-import { lazy, useEffect } from "react";
-import { selectThemeMode, setThemeMode } from "features/ThemeModeButton/themeModeSlice";
-import { useDispatch, useSelector } from "react-redux";
-
 import BrandingThemeProvider from "components/BrandingThemeProvider";
 import { CssBaseline } from "@mui/material";
 import PropTypes from "prop-types";
-import { loadState } from "browserStorage";
+import { lazy } from "react";
+import { selectThemeMode } from "features/ThemeModeButton/themeModeSlice";
+import { useSelector } from "react-redux";
+
+// import { loadState } from "browserStorage";
 
 const PWASnackbar = lazy(() => import(/* webpackChunkName: "pwa-snackbar" */ "features/PWASnackbar"));
 
 const Layout = ({ children }) => {
   const themeMode = useSelector(selectThemeMode);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    const localReduxState = loadState();
-    console.log(localReduxState);
-    if (!localReduxState?.themeMode) {
-      const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-      dispatch(setThemeMode(prefersDarkMode ? "dark" : "light"));
-    }
-  }, [dispatch]);
+  // useEffect(() => {
+  //   const localReduxState = loadState();
+  //   console.log(localReduxState);
+  //   if (!localReduxState?.themeMode) {
+  //     const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+  //     dispatch(setThemeMode(prefersDarkMode ? "dark" : "light"));
+  //   }
+  // }, [dispatch]);
 
   return (
     <BrandingThemeProvider mode={themeMode}>
