@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import BrandingThemeProvider from "components/BrandingThemeProvider";
 import { CssBaseline } from "@mui/material";
 import PropTypes from "prop-types";
+import { loadState } from "browserStorage";
 
 const PWASnackbar = lazy(() => import(/* webpackChunkName: "pwa-snackbar" */ "features/PWASnackbar"));
 
@@ -13,8 +14,11 @@ const Layout = ({ children }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-    dispatch(setThemeMode(prefersDarkMode ? "dark" : "light"));
+    const localReduxState = loadState();
+    if (!localReduxState.themeMode) {
+      const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+      dispatch(setThemeMode(prefersDarkMode ? "dark" : "light"));
+    }
   }, [dispatch]);
 
   return (
