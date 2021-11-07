@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
     dispatch(setThemeMode(prefersDarkMode ? "dark" : "light"));
-  }, []);
+  }, [dispatch]);
 
   return (
     <BrandingThemeProvider mode={themeMode}>
