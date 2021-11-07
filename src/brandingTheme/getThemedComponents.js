@@ -1,6 +1,7 @@
-import { nord3, nord6 } from "./nord";
+import { alpha, lighten } from "@mui/system";
 
-import { alpha } from "@mui/system";
+import { darkScrollbar } from "@mui/material";
+import { nord6 } from "./nord";
 
 const getThemedComponents = theme => ({
   components: {
@@ -9,8 +10,9 @@ const getThemedComponents = theme => ({
         root: {
           backgroundColor: alpha(theme.palette.background.default, .72),
           backdropFilter: "blur(20px)",
-          boxShadow: `inset 0px -1px 1px ${theme.palette.grey[100]}`,
-          color: theme.palette.text.primary
+          boxShadow: `inset 0px -1px 1px ${theme.palette.mode === "light" ? theme.palette.grey[100] : lighten(theme.palette.background.default, .1)}`,
+          color: theme.palette.text.primary,
+          backgroundImage: "none"
         }
       }
     },
@@ -50,6 +52,7 @@ const getThemedComponents = theme => ({
             scrollBehavior: "auto"
           }
         },
+        body: theme.palette.mode === "light" ? null : darkScrollbar(),
         section: {
           "@media (min-width: 0px) and (orientation: landscape)": {
             scrollMarginTop: "48px"
@@ -93,7 +96,7 @@ const getThemedComponents = theme => ({
     MuiFormControl: {
       defaultProps: {
         variant: "filled",
-        color: "secondary"
+        color: theme.palette.mode === "light" ? "secondary" : "primary"
       },
       styleOverrides: {
         root: {
@@ -117,8 +120,9 @@ const getThemedComponents = theme => ({
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.mode === "light" ? theme.palette.common.black : theme.palette.common.white,
-          color: theme.palette.mode === "light" ? nord6 : nord3
+          backgroundColor: theme.palette.common.black,
+          color: nord6,
+          backgroundImage: "none"
         }
       }
     },

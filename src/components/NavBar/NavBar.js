@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import { MenuRounded as Menu } from "@mui/icons-material";
 import NavButton from "./NavButton";
 import NavListItem from "./NavListItem";
+import ThemeModeButton from "features/ThemeModeButton";
 import nav from "constants/nav";
 import useActiveSectionId from "hooks/useActiveSectionId";
 import useSx from "./useNavBarSx";
@@ -44,13 +45,16 @@ const NavBar = () => {
               />
             ))}
           </Stack>
-          <IconButton
-            sx={sx.menuButton}
-            onClick={handleMenuToggle}
-            aria-label="toggle menu"
-          >
-            <Menu />
-          </IconButton>
+          <Stack spacing={1} direction="row">
+            <IconButton
+              sx={sx.menuButton}
+              onClick={handleMenuToggle}
+              aria-label="toggle menu"
+            >
+              <Menu />
+            </IconButton>
+            <ThemeModeButton />
+          </Stack>
         </Toolbar>
         <Collapse in={menuOpen} timeout="auto" unmountOnExit>
           <List dense component="nav" aria-label="nav list">

@@ -1,8 +1,8 @@
-import { Fragment, lazy } from "react";
-
+import Layout from "layouts/Layout";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
+import { lazy } from "react";
 
 const About = lazy(() => import(/* webpackChunkName: "about" */ "features/About"));
 const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
@@ -14,7 +14,7 @@ const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
 
 const IndexPage = () => {
   return (
-    <Fragment>
+    <Layout>
       <SEO />
       <NavBar />
       <main>
@@ -27,7 +27,7 @@ const IndexPage = () => {
       </main>
       <Footer />
       <ScrollToTopFab />
-    </Fragment>
+    </Layout>
   );
 };
 
