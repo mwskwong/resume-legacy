@@ -1,19 +1,19 @@
 import { DarkModeRounded as DarkMode, LightModeRounded as LightMode } from "@mui/icons-material";
-import { selectThemeMode, toggleThemeMode } from "./themeModeSlice";
-import { useDispatch, useSelector } from "react-redux";
 
 import { IconButton } from "@mui/material";
 import { memo } from "react";
 
-const ThemeModeButton = () => {
-  const themeMode = useSelector(selectThemeMode);
-  const dispatch = useDispatch();
+// import { usePerfectDarkMode } from "gatsby-plugin-perfect-dark-mode";
 
-  const handleClick = () => dispatch(toggleThemeMode());
+const ThemeModeButton = () => {
+  // const { mode, updateMode } = usePerfectDarkMode();
+  const mode = "dark";
+
+  const handleClick = () => { };//updateMode(mode => mode === "light" ? "dark" : "light");
 
   return (
-    <IconButton onClick={handleClick} aria-label={themeMode === "light" ? "turn off the light" : "turn on the light"}>
-      {themeMode === "light" ? <DarkMode /> : <LightMode />}
+    <IconButton onClick={handleClick} aria-label={mode === "light" ? "turn off the light" : "turn on the light"} edge="end">
+      {mode === "light" ? <DarkMode /> : <LightMode />}
     </IconButton>
   );
 };

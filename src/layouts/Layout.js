@@ -1,25 +1,20 @@
 import { CssBaseline, useMediaQuery } from "@mui/material";
-import { lazy, useEffect } from "react";
-import { selectThemeMode, setThemeMode } from "features/ThemeModeButton/themeModeSlice";
-import { useDispatch, useSelector } from "react-redux";
 
 import BrandingThemeProvider from "components/BrandingThemeProvider";
 import PropTypes from "prop-types";
+import { lazy } from "react";
+
+// import { usePerfectDarkMode } from "gatsby-plugin-perfect-dark-mode";
 
 const PWASnackbar = lazy(() => import(/* webpackChunkName: "pwa-snackbar" */ "features/PWASnackbar"));
 
 const Layout = ({ children }) => {
+  // const { mode } = usePerfectDarkMode();
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const themeMode = useSelector(selectThemeMode);
-  const dispatch = useDispatch();
-
-  useEffect(
-    () => dispatch(setThemeMode(prefersDarkMode ? "dark" : "light")),
-    [dispatch, prefersDarkMode]
-  );
+  const mode = prefersDarkMode ? "dark" : "light";
 
   return (
-    <BrandingThemeProvider mode={themeMode}>
+    <BrandingThemeProvider mode={mode}>
       <CssBaseline />
       {children}
       <PWASnackbar />
