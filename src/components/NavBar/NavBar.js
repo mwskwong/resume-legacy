@@ -30,33 +30,31 @@ const NavBar = () => {
         <Toolbar disableGutters>
           <Logo />
           <Box sx={sx.spacer} />
-          <div>
-            <Stack
-              sx={sx.navButtonContainer}
-              component="nav"
-              spacing={1}
-              direction="row"
+          <Stack
+            sx={sx.navButtonContainer}
+            component="nav"
+            spacing={1}
+            direction="row"
+          >
+            {Object.values(nav).map(({ id, name }) => (
+              <NavButton
+                key={id}
+                id={id}
+                label={name}
+                active={activeSectionId === id}
+              />
+            ))}
+          </Stack>
+          <Stack spacing={1} direction="row">
+            <IconButton
+              sx={sx.menuButton}
+              onClick={handleMenuToggle}
+              aria-label="toggle menu"
             >
-              {Object.values(nav).map(({ id, name }) => (
-                <NavButton
-                  key={id}
-                  id={id}
-                  label={name}
-                  active={activeSectionId === id}
-                />
-              ))}
-            </Stack>
-            <Stack spacing={1} direction="row">
-              <IconButton
-                sx={sx.menuButton}
-                onClick={handleMenuToggle}
-                aria-label="toggle menu"
-              >
-                <Menu />
-              </IconButton>
-              <ThemeModeButton />
-            </Stack>
-          </div>
+              <Menu />
+            </IconButton>
+            <ThemeModeButton />
+          </Stack>
         </Toolbar>
         <Collapse in={menuOpen} timeout="auto" unmountOnExit>
           <List dense component="nav" aria-label="nav list">
