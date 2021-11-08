@@ -49,7 +49,7 @@ const NavBar = () => {
             <IconButton
               sx={sx.menuButton}
               onClick={handleMenuToggle}
-              aria-label={menuOpen ? "close menu" : "open menu"}
+              aria-label="toggle menu"
             >
               <Menu />
             </IconButton>

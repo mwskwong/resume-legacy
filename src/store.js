@@ -1,7 +1,4 @@
-import { loadState, saveState } from "localStorage";
-
 import { configureStore } from "@reduxjs/toolkit";
-import debounce from "lodash/debounce";
 import swStatus from "features/PWASnackbar/swStatusSlice";
 import themeMode from "features/ThemeModeButton/themeModeSlice";
 
@@ -10,10 +7,7 @@ const store = configureStore({
     swStatus,
     themeMode
   },
-  devTools: process.env.NODE_ENV !== "production",
-  preloadedState: loadState()
+  devTools: process.env.NODE_ENV !== "production"
 });
-
-store.subscribe(debounce(() => saveState({ themeMode: store.getState().themeMode }), 1000));
 
 export default store;

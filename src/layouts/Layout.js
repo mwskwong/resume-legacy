@@ -13,11 +13,10 @@ const Layout = ({ children }) => {
   const themeMode = useSelector(selectThemeMode);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (!themeMode) {
-      dispatch(setThemeMode(prefersDarkMode ? "dark" : "light"));
-    }
-  }, [dispatch, prefersDarkMode, themeMode]);
+  useEffect(
+    () => dispatch(setThemeMode(prefersDarkMode ? "dark" : "light")),
+    [dispatch, prefersDarkMode]
+  );
 
   return (
     <BrandingThemeProvider mode={themeMode}>
