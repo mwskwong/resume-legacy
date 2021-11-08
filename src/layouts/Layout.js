@@ -1,13 +1,17 @@
+import { CssBaseline, useMediaQuery } from "@mui/material";
+
 import BrandingThemeProvider from "components/BrandingThemeProvider";
-import { CssBaseline } from "@mui/material";
 import PropTypes from "prop-types";
 import { lazy } from "react";
-import { usePerfectDarkMode } from "gatsby-plugin-perfect-dark-mode";
+
+// import { usePerfectDarkMode } from "gatsby-plugin-perfect-dark-mode";
 
 const PWASnackbar = lazy(() => import(/* webpackChunkName: "pwa-snackbar" */ "features/PWASnackbar"));
 
 const Layout = ({ children }) => {
-  const { mode } = usePerfectDarkMode();
+  // const { mode } = usePerfectDarkMode();
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const mode = prefersDarkMode ? "dark" : "light";
 
   return (
     <BrandingThemeProvider mode={mode}>
