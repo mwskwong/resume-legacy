@@ -46,6 +46,8 @@ const NavBar = () => {
                 />
               ))}
             </Stack>
+          </div>
+          <div>
             <Stack spacing={1} direction="row">
               <IconButton
                 sx={sx.menuButton}
