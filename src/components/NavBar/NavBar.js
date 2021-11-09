@@ -5,7 +5,7 @@ import Logo from "./Logo";
 import { MenuRounded as Menu } from "@mui/icons-material";
 import NavButton from "./NavButton";
 import NavListItem from "./NavListItem";
-import ThemeModeButton from "features/ThemeModeButton";
+import ThemeModeButton from "./ThemeModeButton";
 import nav from "constants/nav";
 import useActiveSectionId from "hooks/useActiveSectionId";
 import useSx from "./useNavBarSx";
