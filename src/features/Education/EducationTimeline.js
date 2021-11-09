@@ -26,11 +26,7 @@ const EducationTimeline = () => {
       ...node
     }));
 
-  return (
-    <div>
-      <Timeline data={educations} />
-    </div>
-  );
+  return <Timeline data={educations} />;
 };
 
 EducationTimeline.whyDidYouRender = true;

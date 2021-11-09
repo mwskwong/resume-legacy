@@ -19,16 +19,14 @@ const Contact = () => {
             heading="Get In Touch"
             Icon={HexSlice6}
           />
-          <div>
-            <Grid container spacing={2}>
-              <Grid item md={4} xs={12}>
-                <PersonalInfo />
-              </Grid>
-              <Grid item md xs={12}>
-                <ContactForm />
-              </Grid>
+          <Grid container spacing={2}>
+            <Grid item md={4} xs={12}>
+              <PersonalInfo />
             </Grid>
-          </div>
+            <Grid item md xs={12}>
+              <ContactForm />
+            </Grid>
+          </Grid>
         </Stack>
       </Container>
     </Box>

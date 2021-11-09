@@ -15,13 +15,11 @@ const Picture = () => {
   const style = { borderRadius: "50%" };
 
   return (
-    <div>
-      <GatsbyImage
-        image={image}
-        alt={`Picture of ${name.firstName} ${name.lastName}`}
-        style={style}
-      />
-    </div>
+    <GatsbyImage
+      image={image}
+      alt={`Picture of ${name.firstName} ${name.lastName}`}
+      style={style}
+    />
   );
 };
 
