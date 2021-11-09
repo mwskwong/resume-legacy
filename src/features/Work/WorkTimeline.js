@@ -30,9 +30,7 @@ const WorkTimeline = () => {
     }));
 
   return (
-    <div>
-      <Timeline data={works} />
-    </div>
+    <Timeline data={works} />
   );
 };
 

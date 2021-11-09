@@ -20,16 +20,14 @@ const Education = () => {
           Icon={HexSlice4}
         />
         <EducationTimeline />
-        <div>
-          <Grid container spacing={6} sx={sx.gridContainer}>
-            <Grid item md={6} xs={12}>
-              <Courses />
-            </Grid>
-            <Grid item md={6} xs={12}>
-              <ArcticOceanFractal />
-            </Grid>
+        <Grid container spacing={6} sx={sx.gridContainer}>
+          <Grid item md={6} xs={12}>
+            <Courses />
           </Grid>
-        </div>
+          <Grid item md={6} xs={12}>
+            <ArcticOceanFractal />
+          </Grid>
+        </Grid>
       </Stack>
     </Container>
   );

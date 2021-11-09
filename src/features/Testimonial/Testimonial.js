@@ -21,12 +21,10 @@ const Testimonial = () => {
               heading="What People Say"
               Icon={HexSlice2}
             />
-            <div>
-              <Grid container spacing={6} sx={sx.contentGrid}>
-                <Carousel />
-                <FunFacts />
-              </Grid>
-            </div>
+            <Grid container spacing={6} sx={sx.contentGrid}>
+              <Carousel />
+              <FunFacts />
+            </Grid>
           </Stack>
         </Container>
       </Box>
