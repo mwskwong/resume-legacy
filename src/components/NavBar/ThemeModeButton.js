@@ -10,7 +10,7 @@ const ThemeModeButton = () => {
   const handleClick = () => updateMode(mode => mode === "light" ? "dark" : "light");
 
   return (
-    <IconButton onClick={handleClick} aria-label={mode === "light" ? "turn off the light" : "turn on the light"} edge="end">
+    <IconButton onClick={handleClick} aria-label={mode === "light" ? "turn off the light" : "turn on the light"}>
       {mode === "light" ? <DarkMode /> : <LightMode />}
     </IconButton>
   );
