@@ -16,16 +16,18 @@ const SkillSet = () => {
   const skills = skillNodes.nodes;
 
   return (
-    <Grid container spacing={6}>
-      {skills.map(({ name, rating }) => (
-        <Grid key={name} item sm={6} xs={12}>
-          <SkillRating
-            name={name}
-            rating={rating}
-          />
-        </Grid>
-      ))}
-    </Grid>
+    <div>
+      <Grid container spacing={6}>
+        {skills.map(({ name, rating }) => (
+          <Grid key={name} item sm={6} xs={12}>
+            <SkillRating
+              name={name}
+              rating={rating}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </div>
   );
 };
 
