@@ -91,13 +91,5 @@ module.exports = {
     "gatsby-plugin-offline",
     ANALYZE_BUNDLE && "gatsby-plugin-webpack-bundle-analyser-v2",
     ANALYZE_BUNDLE && "gatsby-plugin-perf-budgets"
-    // ...(
-    //   ANALYZE_BUNDLE
-    //     ? [
-    //       "gatsby-plugin-webpack-bundle-analyser-v2",
-    //       "gatsby-plugin-perf-budgets"
-    //     ]
-    //     : []
-    // )
-  ]
+  ].filter(Boolean)
 };
