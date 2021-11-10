@@ -6,11 +6,11 @@ const useSx = ({ active }) => useMemo(() => ({
   },
   active: {
     height: 3,
-    width: 16,
+    width: 20,
     bgcolor: "primary.main",
     position: "absolute",
     bottom: 0,
-    left: theme => `calc(50% - ${theme.spacing(1)})`,
+    left: "calc(50% - 10px)",
     borderRadius: 1
   }
 }), [active]);
