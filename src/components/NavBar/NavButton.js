@@ -10,11 +10,7 @@ const NavButton = ({ label, id, active }) => {
   return (
     <Button color="inherit" sx={sx.root} href={`#${id}`}>
       {label}
-      {
-        active
-          ? <Box component="span" sx={sx.active} />
-          : null
-      }
+      <Box component="span" sx={sx.active} />
     </Button>
   );
 };

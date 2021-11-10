@@ -5,6 +5,7 @@ const useSx = ({ active }) => useMemo(() => ({
     color: active && "primary.main"
   },
   active: {
+    display: active ? "block" : "none",
     height: 3,
     width: 20,
     bgcolor: "primary.main",
