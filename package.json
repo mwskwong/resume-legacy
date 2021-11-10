@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
-    "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@fontsource/rubik": "^4.5.0",
     "@mui/icons-material": "^5.1.0",
@@ -27,7 +26,6 @@
     "gatsby-plugin-emotion": "^7.1.0",
     "gatsby-plugin-image": "^2.1.0",
     "gatsby-plugin-manifest": "^4.1.1",
-    "gatsby-plugin-material-ui": "^4.0.3",
     "gatsby-plugin-netlify": "^4.0.0-next.0",
     "gatsby-plugin-offline": "^5.1.1",
     "gatsby-plugin-perfect-dark-mode": "^1.0.0",
