@@ -6,7 +6,7 @@ import { usePerfectDarkMode } from "gatsby-plugin-perfect-dark-mode";
 
 const PWASnackbar = lazy(() => import(/* webpackChunkName: "pwa-snackbar" */ "features/PWASnackbar"));
 
-const Layout = ({ children }) => {
+const TopLayout = ({ children }) => {
   const { mode } = usePerfectDarkMode();
 
   return (
@@ -18,9 +18,9 @@ const Layout = ({ children }) => {
   );
 };
 
-Layout.propTypes = {
+TopLayout.propTypes = {
   children: PropTypes.node
 };
-Layout.whyDidYouRender = true;
+TopLayout.whyDidYouRender = true;
 
-export default Layout;
+export default TopLayout;
