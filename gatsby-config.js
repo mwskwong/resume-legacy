@@ -27,7 +27,8 @@ module.exports = {
         spaceId: "zz9cwhc5t97i"
       }
     },
-    "gatsby-plugin-mui",
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-material-ui",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",
