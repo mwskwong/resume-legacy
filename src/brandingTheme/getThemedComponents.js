@@ -9,6 +9,7 @@ const getThemedComponents = theme => ({
         root: {
           backgroundColor: alpha(theme.palette.background.default, .72),
           backdropFilter: "blur(20px)",
+          boxShadow: "none",
           color: theme.palette.text.primary,
           backgroundImage: "none"
         }
