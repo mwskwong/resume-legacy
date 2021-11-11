@@ -28,6 +28,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-emotion",
+    "gatsby-plugin-mui",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",
