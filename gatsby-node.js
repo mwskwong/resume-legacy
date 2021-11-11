@@ -7,3 +7,10 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     }
   });
 };
+
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: require.resolve("@emotion/babel-plugin"),
+    options: {}
+  });
+};
