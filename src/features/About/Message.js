@@ -37,7 +37,7 @@ const Message = () => {
         {occupations.map((occupation, index) => (
           <Fragment key={occupation}>
             {index !== 0 && <Box sx={sx.dot} />}
-            <Typography variant="subtitle1">
+            <Typography variant="subtitle1" component="div">
               {occupation}
             </Typography>
           </Fragment>

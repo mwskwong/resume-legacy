@@ -2,7 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`
 });
 
-const { CF_PAGES_BRANCH = "main", CONTENTFUL_ACCESS_TOKEN, ANALYZE_BUNDLE } = process.env;
+const { CF_PAGES_BRANCH = "main", CONTENTFUL_ACCESS_TOKEN, ANALYZE_BUNDLE, NODE_ENV } = process.env;
 const isProd = CF_PAGES_BRANCH === "main";
 const PROD_URL = "https://mwskwong.com";
 const PREVIEW_URL = `https://${CF_PAGES_BRANCH}.mwskwong.com`;
@@ -10,7 +10,7 @@ const siteUrl = isProd ? PROD_URL : PREVIEW_URL;
 
 module.exports = {
   jsxRuntime: "automatic",
-  jsxImportSource: "@welldone-software/why-did-you-render",
+  jsxImportSource: NODE_ENV === "production" ? "@emotion/react" : "@welldone-software/why-did-you-render",
   siteMetadata: {
     siteUrl
   },

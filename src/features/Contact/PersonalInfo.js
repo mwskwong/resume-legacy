@@ -1,8 +1,6 @@
+import { EmailRounded as Email, LocationOnRounded as Location, PhoneAndroidRounded as Mobile } from "@mui/icons-material";
 import { graphql, useStaticQuery } from "gatsby";
 
-import Email from "components/icons/Email";
-import Location from "components/icons/Location";
-import Mobile from "components/icons/Mobile";
 import PersonalInfoItem from "./PersonalInfoItem";
 import { Stack } from "@mui/material";
 import useSx from "./usePersonalInfoSx";

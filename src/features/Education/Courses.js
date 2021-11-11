@@ -37,7 +37,7 @@ const Courses = () => {
 
   return (
     <div>
-      <Typography sx={sx.title} variant="subtitle2">
+      <Typography sx={sx.title} variant="subtitle2" component="h3">
         Courses
       </Typography>
       <List dense>

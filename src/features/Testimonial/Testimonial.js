@@ -3,7 +3,6 @@ import { Box, Container, Grid, Stack } from "@mui/material";
 import BrandingThemeProvider from "components/BrandingThemeProvider";
 import Carousel from "./Carousel";
 import FunFacts from "./FunFacts";
-import HexSlice2 from "components/icons/HexSlice2";
 import SectionHeader from "components/SectionHeader";
 import { TESTIMONIAL } from "constants/nav";
 import { memo } from "react";
@@ -17,10 +16,7 @@ const Testimonial = () => {
       <Box component="section" sx={sx.root} id={TESTIMONIAL.id}>
         <Container>
           <Stack spacing={6}>
-            <SectionHeader
-              heading="What People Say"
-              Icon={HexSlice2}
-            />
+            <SectionHeader heading="What People Say" />
             <div>
               <Grid container spacing={6} sx={sx.contentGrid}>
                 <Carousel />

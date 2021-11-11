@@ -1,6 +1,5 @@
 import { Box, Container, Stack } from "@mui/material";
 
-import HexSlice3 from "components/icons/HexSlice3";
 import SectionHeader from "components/SectionHeader";
 import { WORK } from "constants/nav";
 import WorkTimeline from "./WorkTimeline";
@@ -14,10 +13,7 @@ const Work = () => {
     <Box sx={sx.root} component="section" id={WORK.id}>
       <Container>
         <Stack spacing={6}>
-          <SectionHeader
-            heading="Recent Experiences"
-            Icon={HexSlice3}
-          />
+          <SectionHeader heading="Recent Experiences" />
           <WorkTimeline />
         </Stack>
       </Container>
