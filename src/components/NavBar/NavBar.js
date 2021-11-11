@@ -1,8 +1,8 @@
 import { AppBar, Box, Collapse, Container, IconButton, List, Stack, Toolbar, useMediaQuery } from "@mui/material";
+import { CloseRounded as Close, MenuRounded as Menu } from "@mui/icons-material";
 import { memo, useEffect, useState } from "react";
 
 import Logo from "./Logo";
-import { MenuRounded as Menu } from "@mui/icons-material";
 import NavButton from "./NavButton";
 import NavListItem from "./NavListItem";
 import ThemeModeButton from "./ThemeModeButton";
@@ -49,9 +49,9 @@ const NavBar = () => {
             <IconButton
               sx={sx.menuButton}
               onClick={handleMenuToggle}
-              aria-label="toggle menu"
+              aria-label={menuOpen ? "close menu" : "open menu"}
             >
-              <Menu />
+              {menuOpen ? <Close /> : <Menu />}
             </IconButton>
             <ThemeModeButton />
           </Stack>

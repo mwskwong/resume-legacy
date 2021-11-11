@@ -1,0 +1,7 @@
+ @font-face {
+    font-family: "Aquire Bold";
+    font-display: "swap";
+    src: local("Aquire Bold"),
+      url("fonts/aquire_bold.woff2") format("woff2"),
+      url("fonts/aquire_bold.woff") format("woff");
+ }
