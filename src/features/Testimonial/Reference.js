@@ -12,7 +12,7 @@ const Reference = ({ name, jobTitle, refereePicture, company, comment }) => {
 
   return (
     <div>
-      <Typography variant="subtitle1" sx={sx.comment}>
+      <Typography variant="subtitle1" component="p" sx={sx.comment}>
         {`"${comment}"`}
       </Typography>
       <Box sx={sx.profileContainer}>
