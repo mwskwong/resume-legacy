@@ -2,7 +2,6 @@ import { Box, Container, Grid, Stack } from "@mui/material";
 
 import { CONTACT } from "constants/nav";
 import ContactForm from "./ContactForm";
-import HexSlice6 from "components/icons/HexSlice6";
 import PersonalInfo from "./PersonalInfo";
 import SectionHeader from "components/SectionHeader";
 import { memo } from "react";
@@ -15,10 +14,7 @@ const Contact = () => {
     <Box sx={sx.root} component="section" id={CONTACT.id}>
       <Container>
         <Stack spacing={6}>
-          <SectionHeader
-            heading="Get In Touch"
-            Icon={HexSlice6}
-          />
+          <SectionHeader heading="Get In Touch" />
           <div>
             <Grid container spacing={2}>
               <Grid item md={4} xs={12}>

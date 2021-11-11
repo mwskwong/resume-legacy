@@ -2,17 +2,19 @@ import { useMemo } from "react";
 
 const useSx = ({ active }) => useMemo(() => ({
   root: {
-    color: active && "primary.main"
+    color: active && "primary.main",
+    transition: theme => theme.transitions.create(["color"])
   },
   active: {
-    display: active ? "block" : "none",
-    height: 3,
-    width: 20,
+    height: 6,
+    width: 6,
     bgcolor: "primary.main",
     position: "absolute",
     bottom: 0,
-    left: "calc(50% - 10px)",
-    borderRadius: 1
+    left: "calc(50% - 3px)",
+    borderRadius: "50%",
+    transition: theme => theme.transitions.create(["opacity"]),
+    opacity: active ? 1 : 0
   }
 }), [active]);
 

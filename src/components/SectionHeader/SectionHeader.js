@@ -1,9 +1,10 @@
 import { Box, Divider, Typography } from "@mui/material";
 
 import PropTypes from "prop-types";
+import { Xml } from "mdi-material-ui";
 import useSx from "./useSectionHeaderSx";
 
-const SectionHeader = ({ heading, Icon }) => {
+const SectionHeader = ({ heading }) => {
   const sx = useSx();
 
   return (
@@ -13,7 +14,7 @@ const SectionHeader = ({ heading, Icon }) => {
       </Typography>
       <Box sx={sx.separatorContainer}>
         <Divider sx={sx.divider} />
-        <Icon />
+        <Xml />
         <Divider sx={sx.divider} />
       </Box>
     </Box>
@@ -21,8 +22,7 @@ const SectionHeader = ({ heading, Icon }) => {
 };
 
 SectionHeader.propTypes = {
-  heading: PropTypes.string.isRequired,
-  Icon: PropTypes.elementType.isRequired
+  heading: PropTypes.string.isRequired
 };
 
 SectionHeader.whyDidYouRender = true;

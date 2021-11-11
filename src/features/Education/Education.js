@@ -4,7 +4,6 @@ import ArcticOceanFractal from "components/ArcticOceanFractal";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
-import HexSlice4 from "components/icons/HexSlice4";
 import SectionHeader from "components/SectionHeader";
 import { memo } from "react";
 import useSx from "./useEducationSx";
@@ -15,10 +14,7 @@ const Education = () => {
   return (
     <Container component="section" id={EDUCATION.id}>
       <Stack spacing={6}>
-        <SectionHeader
-          heading="Education"
-          Icon={HexSlice4}
-        />
+        <SectionHeader heading="Education" />
         <EducationTimeline />
         <div>
           <Grid container spacing={6} sx={sx.gridContainer}>

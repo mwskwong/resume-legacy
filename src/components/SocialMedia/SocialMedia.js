@@ -3,7 +3,7 @@ import { IconButton, Stack } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
 import PropTypes from "prop-types";
-import StackOverflow from "components/icons/StackOverflow";
+import { StackOverflow } from "mdi-material-ui";
 import camelCase from "lodash/camelCase";
 import useSx from "./useSx";
 

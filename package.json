@@ -36,6 +36,7 @@
     "gatsby-source-contentful": "^6.1.2",
     "gatsby-transformer-sharp": "^4.1.0",
     "lodash": "^4.17.21",
+    "mdi-material-ui": "^7.1.0",
     "react": "18.0.0-alpha-7d38e4fd8-20210930",
     "react-dom": "18.0.0-alpha-7d38e4fd8-20210930",
     "react-helmet": "^6.1.0",
