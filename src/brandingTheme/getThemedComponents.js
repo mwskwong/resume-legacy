@@ -53,7 +53,7 @@ const getThemedComponents = theme => ({
         },
         body: theme.palette.mode === "light" ? null : darkScrollbar(),
         section: {
-          "@media (min-width: 0px) and (orientation: landscape)": {
+          [`@media (min-width: ${theme.breakpoints.values.xs}px) and (orientation: landscape)`]: {
             scrollMarginTop: "48px"
           },
           [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
@@ -99,7 +99,7 @@ const getThemedComponents = theme => ({
       },
       styleOverrides: {
         root: {
-          "@media (min-width: 0px) and (orientation: landscape)": {
+          [`@media (min-width: ${theme.breakpoints.values.xs}px) and (orientation: landscape)`]: {
             scrollMarginTop: "72px"
           },
           [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
