@@ -37,10 +37,10 @@
     "gatsby-transformer-sharp": "^4.2.0",
     "lodash": "^4.17.21",
     "mdi-material-ui": "^7.1.0",
-    "react": "18.0.0-alpha-7d38e4fd8-20210930",
-    "react-dom": "18.0.0-alpha-7d38e4fd8-20210930",
+    "react": "^18.0.0-beta-4ff5f5719-20211115",
+    "react-dom": "^18.0.0-beta-4ff5f5719-20211115",
     "react-helmet": "^6.1.0",
-    "react-redux": "^7.2.6",
+    "react-redux": "^8.0.0-alpha.1",
     "react-swipeable-views": "^0.14.0",
     "simple-icons": "^5.23.0",
     "typewriter-effect": "^2.18.2"
