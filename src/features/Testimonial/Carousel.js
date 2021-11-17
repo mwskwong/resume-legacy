@@ -18,9 +18,9 @@ const Carousel = () => {
         jobTitle
         refereePicture {
           gatsbyImageData(
-            layout: FIXED, 
-            width: 60, 
-            aspectRatio: 1, 
+            layout: FIXED
+            width: 60
+            aspectRatio: 1
             placeholder: BLURRED
             formats: [AUTO, WEBP, AVIF]
           )

@@ -5,9 +5,9 @@ const Picture = () => {
   const { picture, name } = useStaticQuery(graphql`{
     picture: contentfulAsset(title: {eq: "Personal Photo"}) {
       gatsbyImageData(
-        layout: FIXED, 
-        width: 200, 
-        aspectRatio: 1, 
+        layout: FIXED
+        width: 200
+        aspectRatio: 1 
         placeholder: BLURRED
         formats: [AVIF, WEBP, AUTO]
       )
