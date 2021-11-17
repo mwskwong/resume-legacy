@@ -9,7 +9,7 @@ const Picture = () => {
         width: 200, 
         aspectRatio: 1, 
         placeholder: BLURRED
-        formats: [AUTO, WEBP, AVIF]
+        formats: [AVIF, WEBP, AUTO]
       )
     }
     name: contentfulName {
