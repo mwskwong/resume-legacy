@@ -22,7 +22,7 @@ const Carousel = () => {
             width: 60
             aspectRatio: 1
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AVIF, WEBP, AUTO]
           )
         }
         company
