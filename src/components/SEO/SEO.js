@@ -36,7 +36,7 @@ const SEO = ({ title: titleProp }) => {
 
   const description = descriptionNode.content.content;
   const occupations = occupationNodes.nodes.map(({ title }) => title);
-  const ogImageUrl = ogImage.file.url;
+  const ogImageUrl = `https:${ogImage.file.url}`;
   const title = titleProp || `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
   const titleTemplate = titleProp ? `%s | ${name.firstName} ${name.lastName}` : null;
 
@@ -50,12 +50,12 @@ const SEO = ({ title: titleProp }) => {
       content: description
     },
     {
-      property: "og:type",
-      content: "website"
-    },
-    {
       property: "og:url",
       content: site.siteMetadata.siteUrl
+    },
+    {
+      property: "og:type",
+      content: "website"
     },
     {
       property: "og:title",
@@ -72,6 +72,10 @@ const SEO = ({ title: titleProp }) => {
     {
       property: "twitter:card",
       content: "summary_large_image"
+    },
+    {
+      property: "twitter:domain",
+      content: new URL(site.siteMetadata.siteUrl).host
     },
     {
       property: "twitter:url",
