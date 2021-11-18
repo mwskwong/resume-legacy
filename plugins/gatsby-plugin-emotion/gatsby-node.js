@@ -1,4 +1,4 @@
-export const onCreateBabelConfig = ({ actions }, pluginOptions) => {
+exports.onCreateBabelConfig = ({ actions }, pluginOptions) => {
   actions.setBabelPlugin({
     name: "@emotion/babel-plugin",
     options: pluginOptions
