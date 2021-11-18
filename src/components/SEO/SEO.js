@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { memo } from "react";
 import { useTheme } from "@mui/material";
 
-const SEO = ({ title: titleProp }) => {
+const SEO = ({ title }) => {
   const theme = useTheme();
   const { site, name, occupationNodes, descriptionNode, ogImage } = useStaticQuery(graphql`{
     site {
@@ -37,8 +37,8 @@ const SEO = ({ title: titleProp }) => {
   const description = descriptionNode.content.content;
   const occupations = occupationNodes.nodes.map(({ title }) => title);
   const ogImageUrl = `https:${ogImage.file.url}`;
-  const title = titleProp || `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
-  const titleTemplate = titleProp ? `%s | ${name.firstName} ${name.lastName}` : null;
+  const defaultTitle = `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
+  const titleTemplate = `%s | ${name.firstName} ${name.lastName}`;
 
   const meta = [
     {
@@ -99,6 +99,7 @@ const SEO = ({ title: titleProp }) => {
 
   return (
     <Helmet
+      defaultTitle={defaultTitle}
       title={title}
       titleTemplate={titleTemplate}
       meta={meta}
