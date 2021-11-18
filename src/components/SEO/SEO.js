@@ -70,7 +70,7 @@ const SEO = ({ title: titleProp }) => {
       content: ogImageUrl
     },
     {
-      property: "twitter:card",
+      name: "twitter:card",
       content: "summary_large_image"
     },
     {
@@ -82,15 +82,15 @@ const SEO = ({ title: titleProp }) => {
       content: site.siteMetadata.siteUrl
     },
     {
-      property: "twitter:title",
+      name: "twitter:title",
       content: title
     },
     {
-      property: "twitter:description",
+      name: "twitter:description",
       content: description
     },
     {
-      property: "twitter:image",
+      name: "twitter:image",
       content: ogImageUrl
     }
   ];
