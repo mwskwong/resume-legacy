@@ -36,8 +36,8 @@
     "gatsby-transformer-sharp": "^4.2.0",
     "lodash": "^4.17.21",
     "mdi-material-ui": "^7.1.0",
-    "react": "^18.0.0-beta-f320ef88f-20211116",
-    "react-dom": "^18.0.0-beta-f320ef88f-20211116",
+    "react": "^18.0.0-beta-fdc1d617a-20211118",
+    "react-dom": "^18.0.0-beta-fdc1d617a-20211118",
     "react-helmet": "^6.1.0",
     "react-redux": "^8.0.0-alpha.1",
     "react-swipeable-views": "^0.14.0",
@@ -49,7 +49,7 @@
     "@welldone-software/why-did-you-render": "^6.2.3",
     "gatsby-plugin-perf-budgets": "^0.0.18",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.26",
-    "lmdb-store": "^1.6.13"
+    "lmdb-store": "^1.6.14"
   },
   "browserslist": [
     "> 0.5%",
