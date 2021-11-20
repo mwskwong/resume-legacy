@@ -39,7 +39,7 @@
     "react": "^18.0.0-beta-fdc1d617a-20211118",
     "react-dom": "^18.0.0-beta-fdc1d617a-20211118",
     "react-helmet": "^6.1.0",
-    "react-redux": "^8.0.0-beta.0",
+    "react-redux": "^8.0.0-beta.1",
     "react-swipeable-views": "^0.14.0",
     "simple-icons": "^5.23.0",
     "typewriter-effect": "^2.18.2"
