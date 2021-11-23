@@ -24,7 +24,7 @@ const WorkTimeline = () => {
     .map(({ jobTitle, company, document, jobDuties, ...node }) => ({
       title: jobTitle,
       subtitle: company,
-      fileUrl: document?.file?.url,
+      fileUrl: document?.file?.url && `https:${document.file.url}`,
       contents: jobDuties,
       ...node
     }));

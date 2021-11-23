@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { memo } from "react";
 import { useTheme } from "@mui/material";
 
-const SEO = ({ title: titleProp }) => {
+const SEO = ({ title }) => {
   const theme = useTheme();
   const { site, name, occupationNodes, descriptionNode, ogImage } = useStaticQuery(graphql`{
     site {
@@ -36,9 +36,9 @@ const SEO = ({ title: titleProp }) => {
 
   const description = descriptionNode.content.content;
   const occupations = occupationNodes.nodes.map(({ title }) => title);
-  const ogImageUrl = ogImage.file.url;
-  const title = titleProp || `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
-  const titleTemplate = titleProp ? `%s | ${name.firstName} ${name.lastName}` : null;
+  const ogImageUrl = `https:${ogImage.file.url}`;
+  const defaultTitle = `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
+  const titleTemplate = `%s | ${name.firstName} ${name.lastName}`;
 
   const meta = [
     {
@@ -50,12 +50,12 @@ const SEO = ({ title: titleProp }) => {
       content: description
     },
     {
-      property: "og:type",
-      content: "website"
-    },
-    {
       property: "og:url",
       content: site.siteMetadata.siteUrl
+    },
+    {
+      property: "og:type",
+      content: "website"
     },
     {
       property: "og:title",
@@ -70,23 +70,27 @@ const SEO = ({ title: titleProp }) => {
       content: ogImageUrl
     },
     {
-      property: "twitter:card",
+      name: "twitter:card",
       content: "summary_large_image"
+    },
+    {
+      property: "twitter:domain",
+      content: new URL(site.siteMetadata.siteUrl).host
     },
     {
       property: "twitter:url",
       content: site.siteMetadata.siteUrl
     },
     {
-      property: "twitter:title",
+      name: "twitter:title",
       content: title
     },
     {
-      property: "twitter:description",
+      name: "twitter:description",
       content: description
     },
     {
-      property: "twitter:image",
+      name: "twitter:image",
       content: ogImageUrl
     }
   ];
@@ -95,6 +99,7 @@ const SEO = ({ title: titleProp }) => {
 
   return (
     <Helmet
+      defaultTitle={defaultTitle}
       title={title}
       titleTemplate={titleTemplate}
       meta={meta}

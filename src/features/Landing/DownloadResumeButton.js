@@ -19,7 +19,7 @@ const DownloadResumeButton = ({ sx }) => {
       variant="contained"
       color={theme.palette.mode === "light" ? "secondary" : "primary"}
       size="large"
-      href={resume.file.url}
+      href={`https:${resume.file.url}`}
     >
       Download Resume
     </Button>
