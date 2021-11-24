@@ -2,6 +2,7 @@ import { Box, Container, Grid, Stack } from "@mui/material";
 
 import { CONTACT } from "constants/nav";
 import ContactForm from "./ContactForm";
+import { NoSsr } from "@mui/base";
 import PersonalInfo from "./PersonalInfo";
 import SectionHeader from "components/SectionHeader";
 import { memo } from "react";
@@ -21,7 +22,9 @@ const Contact = () => {
                 <PersonalInfo />
               </Grid>
               <Grid item md xs={12}>
-                <ContactForm />
+                <NoSsr defer>
+                  <ContactForm />
+                </NoSsr>
               </Grid>
             </Grid>
           </div>

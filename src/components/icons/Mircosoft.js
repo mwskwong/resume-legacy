@@ -6,7 +6,7 @@ const Microsoft = props => {
   const sx = useSx();
 
   return (
-    <SvgIcon sx={sx.root} {...props}>
+    <SvgIcon sx={sx.root} titleAccess={siMicrosoft.title} {...props}>
       <path d={siMicrosoft.path} />
     </SvgIcon>
   );

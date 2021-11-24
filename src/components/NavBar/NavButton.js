@@ -8,7 +8,7 @@ const NavButton = ({ label, id, active }) => {
   const sx = useSx({ active });
 
   return (
-    <Button color="inherit" sx={sx.root} href={`#${id}`}>
+    <Button color={active ? "primary" : "inherit"} href={`#${id}`}>
       {label}
       <Box component="span" sx={sx.active} />
     </Button>

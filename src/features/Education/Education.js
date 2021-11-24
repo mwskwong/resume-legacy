@@ -4,6 +4,7 @@ import ArcticOceanFractal from "components/ArcticOceanFractal";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
+import { NoSsr } from "@mui/base";
 import SectionHeader from "components/SectionHeader";
 import { memo } from "react";
 import useSx from "./useEducationSx";
@@ -22,7 +23,9 @@ const Education = () => {
               <Courses />
             </Grid>
             <Grid item md={6} xs={12}>
-              <ArcticOceanFractal />
+              <NoSsr defer>
+                <ArcticOceanFractal />
+              </NoSsr>
             </Grid>
           </Grid>
         </div>
