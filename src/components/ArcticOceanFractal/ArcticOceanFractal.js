@@ -18,10 +18,10 @@ const ArcticOceanFractal = () => {
       <BubblesGroundHoleTop />
       <BubblesGroundHoleCenter />
       <BubblesGroundHoleOverflow />
-      <JellyfishLeft  />
-      <JellyfishLeftSmall  />
-      <JellyfishCenter  />
-      <JellyfishRight  />
+      <JellyfishLeft />
+      <JellyfishLeftSmall />
+      <JellyfishCenter />
+      <JellyfishRight />
     </svg>
   );
 };
