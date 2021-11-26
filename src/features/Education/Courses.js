@@ -2,7 +2,7 @@ import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography 
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Fragment } from "react";
-import Microsoft from "components/icons/Mircosoft";
+import Microsoft from "components/icons/Microsoft";
 import Oracle from "components/icons/Oracle";
 import Udemy from "components/icons/Udemy";
 import camelCase from "lodash/camelCase";
