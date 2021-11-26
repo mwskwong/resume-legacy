@@ -27,7 +27,6 @@ export const onClientEntry = () => {
     const whyDidYouRender = require("@welldone-software/why-did-you-render");
     whyDidYouRender(React, {
       trackAllPureComponents: true
-      // exclude: [/PoseElement/, /Unknown/]
     });
   }
 };
