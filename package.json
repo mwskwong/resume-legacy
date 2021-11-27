@@ -14,7 +14,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@emotion/react": "^11.6.0",
+    "@emotion/react": "^11.7.0",
     "@emotion/styled": "^11.6.0",
     "@fontsource/rubik": "^4.5.0",
     "@mui/icons-material": "^5.2.0",
@@ -22,7 +22,7 @@
     "@mui/material": "^5.2.1",
     "@reduxjs/toolkit": "^1.6.2",
     "emailjs-com": "^3.2.0",
-    "gatsby": "^4.3.0-next.1",
+    "gatsby": "^4.3.0-next.2",
     "gatsby-plugin-image": "^2.2.0",
     "gatsby-plugin-manifest": "^4.2.0",
     "gatsby-plugin-netlify": "^4.0.0-next.0",
