@@ -2,7 +2,7 @@ import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography 
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Fragment } from "react";
-import Microsoft from "components/icons/Mircosoft";
+import Microsoft from "components/icons/Microsoft";
 import Oracle from "components/icons/Oracle";
 import Udemy from "components/icons/Udemy";
 import camelCase from "lodash/camelCase";
@@ -41,9 +41,8 @@ const Courses = () => {
         Courses
       </Typography>
       <List dense>
-        {courses.map(({ name, institution, fileUrl }, index) => {
+        {courses.map(({ name, institution, fileUrl }) => {
           const Icon = Icons[camelCase(institution)];
-          const last = index === courses.length - 1;
 
           const content = (
             <Fragment>
@@ -57,14 +56,14 @@ const Courses = () => {
           if (fileUrl) {
             return (
               <ListItem key={name} disablePadding>
-                <ListItemButton divider={!last} component="a" href={fileUrl}>
+                <ListItemButton component="a" href={fileUrl}>
                   {content}
                 </ListItemButton>
               </ListItem>
             );
           } else {
             return (
-              <ListItem key={name} divider={!last}>
+              <ListItem key={name}>
                 {content}
               </ListItem>
             );
