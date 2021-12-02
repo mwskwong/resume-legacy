@@ -1,11 +1,12 @@
-import { Box, LinearProgress, Typography } from "@mui/material";
+import { Box, Rating, Typography } from "@mui/material";
 
 import PropTypes from "prop-types";
+import { StarRounded as Star } from "@mui/icons-material";
 import useSx from "./useSkillRatingSx";
 
 const SkillRating = ({ name, rating }) => {
   const sx = useSx();
-  const value = rating * 100 / 5;
+  const icon = <Star fontSize="inherit" />;
 
   return (
     <div>
@@ -13,11 +14,15 @@ const SkillRating = ({ name, rating }) => {
         <Typography sx={sx.skillName}>
           {name}
         </Typography>
-        <Typography>
-          {`${value}%`}
-        </Typography>
+        <Rating
+          sx={sx.rating}
+          name={`${name} rating`}
+          value={rating}
+          readOnly
+          icon={icon}
+          emptyIcon={icon}
+        />
       </Box>
-      <LinearProgress variant="determinate" value={value} aria-hidden />
     </div>
   );
 };
