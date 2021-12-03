@@ -4,6 +4,7 @@ const useSx = () => useMemo(() => ({
   supplementarySkillsContainer: {
     display: "flex",
     justifyContent: "center",
+    flexWrap: "wrap",
     mt: 6
   },
   supplementarySkill: {
