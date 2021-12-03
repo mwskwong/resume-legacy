@@ -20,10 +20,6 @@ const getThemedComponents = theme => ({
         disableElevation: true
       },
       styleOverrides: {
-        textSizeMedium: {
-          paddingLeft: 16,
-          paddingRight: 16
-        },
         sizeLarge: {
           padding: "1rem 1.25rem",
           ...theme.typography.body1,
@@ -33,6 +29,9 @@ const getThemedComponents = theme => ({
       }
     },
     MuiChip: {
+      defaultProps: {
+        color: theme.palette.mode === "light" ? "secondary" : "primary"
+      },
       styleOverrides: {
         root: {
           borderRadius: theme.shape.borderRadius
