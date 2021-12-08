@@ -2,7 +2,8 @@ import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
   root: {
-    textAlign: "center"
+    textAlign: "center",
+    color: "inherit"
   }
 }), []);
 
