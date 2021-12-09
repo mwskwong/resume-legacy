@@ -10,7 +10,7 @@ const NavListItem = ({ label, id, active }) => {
 
   return (
     <ListItem disablePadding>
-      <ListItemButton sx={sx.root} component="a" href={`#${id}`} selected={active}>
+      <ListItemButton component="a" href={`#${id}`} selected={active}>
         <ListItemText
           primary={label}
           primaryTypographyProps={primaryTypographyProps}
