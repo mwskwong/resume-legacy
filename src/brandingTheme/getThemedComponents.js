@@ -115,6 +115,13 @@ const getThemedComponents = theme => ({
         }
       }
     },
+    MuiListItemButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: theme.shape.borderRadius
+        }
+      }
+    },
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
