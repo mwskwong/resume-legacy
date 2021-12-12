@@ -20,7 +20,7 @@
     "@mui/icons-material": "^5.2.1",
     "@mui/lab": "5.0.0-alpha.59",
     "@mui/material": "^5.2.3",
-    "@reduxjs/toolkit": "^1.6.2",
+    "@reduxjs/toolkit": "^1.7.0",
     "emailjs-com": "^3.2.0",
     "gatsby": "^4.3.0",
     "gatsby-plugin-emotion": "^7.5.0-next.0",
@@ -42,7 +42,7 @@
     "react-helmet": "^6.1.0",
     "react-redux": "^8.0.0-beta.1",
     "react-swipeable-views": "^0.14.0",
-    "simple-icons": "^6.1.0",
+    "simple-icons": "^6.2.0",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
