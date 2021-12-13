@@ -14,7 +14,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@emotion/react": "^11.7.0",
+    "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@fontsource/rubik": "^4.5.0",
     "@mui/icons-material": "^5.2.1",
@@ -46,7 +46,6 @@
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.3.0",
     "@welldone-software/why-did-you-render": "^6.2.3",
     "gatsby-plugin-perf-budgets": "^0.0.18",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.26",
