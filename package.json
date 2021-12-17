@@ -20,7 +20,7 @@
     "@mui/icons-material": "^5.2.4",
     "@mui/lab": "5.0.0-alpha.60",
     "@mui/material": "^5.2.4",
-    "@reduxjs/toolkit": "^1.7.0",
+    "@reduxjs/toolkit": "^1.7.1",
     "emailjs-com": "^3.2.0",
     "gatsby": "^4.4.0",
     "gatsby-plugin-emotion": "^7.4.0",
