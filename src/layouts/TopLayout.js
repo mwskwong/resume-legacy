@@ -11,7 +11,7 @@ const TopLayout = ({ children }) => {
 
   return (
     <BrandingThemeProvider mode={mode}>
-      <CssBaseline />
+      <CssBaseline enableColorScheme />
       {children}
       <PWASnackbar />
     </BrandingThemeProvider>

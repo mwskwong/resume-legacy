@@ -1,5 +1,4 @@
 import { alpha } from "@mui/system";
-import { darkScrollbar } from "@mui/material";
 import { nord6 } from "./nord";
 
 const getThemedComponents = theme => ({
@@ -50,7 +49,6 @@ const getThemedComponents = theme => ({
             scrollBehavior: "auto"
           }
         },
-        body: theme.palette.mode === "light" ? null : darkScrollbar(),
         section: {
           [`@media (min-width: ${theme.breakpoints.values.xs}px) and (orientation: landscape)`]: {
             scrollMarginTop: "48px"
