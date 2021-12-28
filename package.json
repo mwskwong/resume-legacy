@@ -18,8 +18,8 @@
     "@emotion/styled": "^11.6.0",
     "@fontsource/rubik": "^4.5.0",
     "@mui/icons-material": "^5.2.5",
-    "@mui/lab": "5.0.0-alpha.61",
-    "@mui/material": "^5.2.5",
+    "@mui/lab": "5.0.0-alpha.62",
+    "@mui/material": "^5.2.6",
     "@reduxjs/toolkit": "^1.7.1",
     "emailjs-com": "^3.2.0",
     "gatsby": "^4.4.0",
@@ -42,7 +42,7 @@
     "react-helmet": "^6.1.0",
     "react-redux": "^8.0.0-beta.2",
     "react-swipeable-views": "^0.14.0",
-    "simple-icons": "^6.3.0",
+    "simple-icons": "^6.4.0",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
