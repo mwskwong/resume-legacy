@@ -66,7 +66,7 @@ module.exports = {
             "Link: <https://images.ctfassets.net>; rel=preconnect",
             "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
             "Cross-Origin-Embedder-Policy: require-corp; report-to=default",
-            "Cross-Origin-Opener-Policy: same-site; report-to=default;",
+            "Cross-Origin-Opener-Policy: same-site; report-to=default",
             "Cross-Origin-Resource-Policy: same-site"
           ],
           [`${PREVIEW_URL}/*`]: [
