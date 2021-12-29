@@ -59,18 +59,15 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-preconnect",
-      options: {
-        domains: [{ domain: "https://images.ctfassets.net", crossOrigin: false }]
-      }
-    },
-    {
       resolve: "gatsby-plugin-netlify",
       options: {
         headers: {
           "/*": [
             "Link: <https://images.ctfassets.net>; rel=preconnect",
-            "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
+            "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
+            "Cross-Origin-Embedder-Policy: require-corp; report-to=default",
+            "Cross-Origin-Opener-Policy: same-site; report-to=default;",
+            "Cross-Origin-Resource-Policy: same-site"
           ],
           [`${PREVIEW_URL}/*`]: [
             `Link: <${PROD_URL}/:splat>; rel=canonical`
