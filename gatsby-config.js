@@ -69,7 +69,9 @@ module.exports = {
       options: {
         headers: {
           "/*": [
-            "Link: <https://images.ctfassets.net>; rel=preconnect"
+            "Link: <https://images.ctfassets.net>; rel=preconnect",
+            "Permissions-Policy: document-domain=()",
+            "Strict-Transport-Security: max-age=31536000; includeSubDomains"
           ],
           [`${PREVIEW_URL}/*`]: [
             `Link: <${PROD_URL}/:splat>; rel=canonical`
