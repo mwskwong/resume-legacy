@@ -64,10 +64,7 @@ module.exports = {
         headers: {
           "/*": [
             "Link: <https://images.ctfassets.net>; rel=preconnect",
-            "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
-            "Cross-Origin-Embedder-Policy: require-corp; report-to=default",
-            "Cross-Origin-Opener-Policy: same-site; report-to=default",
-            "Cross-Origin-Resource-Policy: same-site"
+            "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
           ],
           [`${PREVIEW_URL}/*`]: [
             `Link: <${PROD_URL}/:splat>; rel=canonical`
