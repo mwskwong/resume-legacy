@@ -71,21 +71,14 @@ module.exports = {
           "/*": [
             "Link: <https://images.ctfassets.net>; rel=preconnect"
           ],
-          ...(
-            prod
-              ? {
-                "https://:project.pages.dev/*": [
-                  `Link: <${PROD_URL}/:splat>; rel=canonical`
-                ]
-              }
-              : {
-                [`https://${CF_PAGES_BRANCH}.:project.pages.dev/*`]: [
-                  `Link: <${PREVIEW_URL}/:splat>; rel=canonical`
-                ]
-              }
-          ),
+          [`${PREVIEW_URL}/*`]: [
+            `Link: <${PROD_URL}/:splat>; rel=canonical`
+          ],
+          "https://:project.pages.dev/*": [
+            `Link: <${PROD_URL}/:splat>; rel=canonical`
+          ],
           "https://:commit.:project.pages.dev/*": [
-            "X-Robots-Tag: noindex"
+            `Link: <${PROD_URL}/:splat>; rel=canonical`
           ]
         }
       }
