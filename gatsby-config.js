@@ -63,7 +63,6 @@ module.exports = {
       options: {
         headers: {
           "/*": [
-            "Link: <https://images.ctfassets.net>; rel=preconnect",
             "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
           ],
           [`${PREVIEW_URL}/*`]: [
@@ -74,6 +73,18 @@ module.exports = {
           ],
           "https://:commit.:project.pages.dev/*": [
             `Link: <${PROD_URL}/:splat>; rel=canonical`
+          ],
+          "/offline-plugin-app-shell-fallback/": [
+            "Link: <https://images.ctfassets.net>; rel=preconnect"
+          ],
+          "/404/": [
+            "Link: <https://images.ctfassets.net>; rel=preconnect"
+          ],
+          "/404.html": [
+            "Link: <https://images.ctfassets.net>; rel=preconnect"
+          ],
+          "/": [
+            "Link: <https://images.ctfassets.net>; rel=preconnect"
           ]
         }
       }
