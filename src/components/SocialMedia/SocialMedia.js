@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import PropTypes from "prop-types";
 import { StackOverflow } from "mdi-material-ui";
-import camelCase from "lodash/camelCase";
+import { camelCase } from "camel-case";
 import useSx from "./useSx";
 
 const Icons = {
