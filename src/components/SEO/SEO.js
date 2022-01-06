@@ -97,6 +97,14 @@ const SEO = ({ title }) => {
 
   const htmlAttributes = { lang: "en" };
 
+  const script = [
+    {
+      "data-ad-client": "ca-pub-4359361226572500",
+      async: true,
+      src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    }
+  ];
+
   return (
     <Helmet
       defaultTitle={defaultTitle}
@@ -104,6 +112,7 @@ const SEO = ({ title }) => {
       titleTemplate={titleTemplate}
       meta={meta}
       htmlAttributes={htmlAttributes}
+      script={script}
     />
   );
 };
