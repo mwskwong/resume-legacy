@@ -40,80 +40,28 @@ const SEO = ({ title }) => {
   const defaultTitle = `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
   const titleTemplate = `%s | ${name.firstName} ${name.lastName}`;
 
-  const meta = [
-    {
-      name: "theme-color",
-      content: theme.palette.background.default
-    },
-    {
-      name: "description",
-      content: description
-    },
-    {
-      property: "og:url",
-      content: site.siteMetadata.siteUrl
-    },
-    {
-      property: "og:type",
-      content: "website"
-    },
-    {
-      property: "og:title",
-      content: title
-    },
-    {
-      property: "og:description",
-      content: description
-    },
-    {
-      property: "og:image",
-      content: ogImageUrl
-    },
-    {
-      name: "twitter:card",
-      content: "summary_large_image"
-    },
-    {
-      property: "twitter:domain",
-      content: new URL(site.siteMetadata.siteUrl).host
-    },
-    {
-      property: "twitter:url",
-      content: site.siteMetadata.siteUrl
-    },
-    {
-      name: "twitter:title",
-      content: title
-    },
-    {
-      name: "twitter:description",
-      content: description
-    },
-    {
-      name: "twitter:image",
-      content: ogImageUrl
-    }
-  ];
-
-  const htmlAttributes = { lang: "en" };
-
-  const script = [
-    {
-      "data-ad-client": "ca-pub-4359361226572500",
-      async: true,
-      src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-    }
-  ];
-
   return (
-    <Helmet
-      defaultTitle={defaultTitle}
-      title={title}
-      titleTemplate={titleTemplate}
-      meta={meta}
-      htmlAttributes={htmlAttributes}
-      script={script}
-    />
+    <Helmet defaultTitle={defaultTitle} titleTemplate={titleTemplate}>
+      <html lang="en" />
+      <title>{title}</title>
+
+      <meta name="description" content={description} />
+      <meta name="theme-color" content={theme.palette.background.default} />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={site.siteMetadata.siteUrl} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={ogImageUrl} />
+
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={site.siteMetadata.siteUrl} />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
+      <meta property="twitter:image" content={ogImageUrl} />
+
+      <script data-ad-client="ca-pub-4359361226572500" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
+    </Helmet>
   );
 };
 
