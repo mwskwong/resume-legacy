@@ -45,6 +45,7 @@ const SEO = ({ title: titleProp }) => {
       <html lang="en" />
       <title>{title}</title>
 
+      <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="theme-color" content={theme.palette.background.default} />
 
