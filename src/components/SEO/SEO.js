@@ -60,8 +60,6 @@ const SEO = ({ title: titleProp }) => {
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={ogImageUrl} />
-
-      <script data-ad-client="ca-pub-4359361226572500" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
     </Helmet>
   );
 };
