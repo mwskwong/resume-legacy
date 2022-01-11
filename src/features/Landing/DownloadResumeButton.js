@@ -7,8 +7,8 @@ const DownloadResumeButton = ({ sx }) => {
   const theme = useTheme();
   const { resume } = useStaticQuery(graphql`{
     resume: contentfulAsset(title: {eq: "Resume"}) {
-      file {
-        url
+      localFile {
+        publicURL
       }
     }
   }`);
@@ -19,7 +19,7 @@ const DownloadResumeButton = ({ sx }) => {
       variant="contained"
       color={theme.palette.mode === "light" ? "secondary" : "primary"}
       size="large"
-      href={`https:${resume.file.url}`}
+      href={resume.localFile.publicURL}
     >
       Download Resume
     </Button>

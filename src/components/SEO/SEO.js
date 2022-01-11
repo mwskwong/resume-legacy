@@ -16,7 +16,7 @@ const SEO = ({ title: titleProp }) => {
     name: contentfulName {
       firstName
       lastName
-    },
+    }
     occupationNodes: allContentfulOccupation(sort: {fields: title}) {
       nodes {
         title
@@ -28,15 +28,15 @@ const SEO = ({ title: titleProp }) => {
       }
     }
     ogImage: contentfulAsset(title: {eq: "Open Graph Image"}) {
-      file {
-        url
+      localFile {
+        publicURL
       }
     }
   }`);
 
   const description = descriptionNode.content.content;
   const occupations = occupationNodes.nodes.map(({ title }) => title);
-  const ogImageUrl = `https:${ogImage.file.url}`;
+  const ogImageUrl = `${site.siteMetadata.siteUrl}${ogImage.localFile.publicURL}`;
   const defaultTitle = `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
   const title = titleProp ? `${titleProp} | ${name.firstName} ${name.lastName}` : defaultTitle;
 

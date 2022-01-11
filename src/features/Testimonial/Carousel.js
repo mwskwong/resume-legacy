@@ -17,13 +17,11 @@ const Carousel = () => {
         name
         jobTitle
         refereePicture {
-          gatsbyImageData(
-            layout: FIXED
-            width: 60
-            aspectRatio: 1
-            placeholder: BLURRED
-            formats: [AVIF, WEBP, AUTO]
-          )
+          localFile {
+            childImageSharp {
+              gatsbyImageData(aspectRatio: 1, width: 60)
+            }
+          }
         }
         company
         comment {
@@ -31,7 +29,8 @@ const Carousel = () => {
         }
       }
     }
-  }`);
+  }
+  `);
 
   const references = referenceNodes.nodes.map(({ comment, ...node }) => ({
     ...node,
@@ -86,7 +85,7 @@ const Carousel = () => {
             key={name}
             name={name}
             jobTitle={jobTitle}
-            refereePicture={refereePicture}
+            refereePicture={refereePicture.localFile.childImageSharp}
             company={company}
             comment={comment}
           />

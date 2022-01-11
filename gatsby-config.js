@@ -3,6 +3,7 @@ require("dotenv").config({
 });
 
 const { CF_PAGES_BRANCH = "main", CONTENTFUL_ACCESS_TOKEN, ANALYZE_BUNDLE, NODE_ENV } = process.env;
+
 const prod = CF_PAGES_BRANCH === "main";
 const PROD_URL = "https://mwskwong.com";
 const PREVIEW_URL = `https://${CF_PAGES_BRANCH}.mwskwong.com`;
@@ -22,11 +23,19 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`
+      }
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: {
         host: NODE_ENV === "development" || !prod ? "preview.contentful.com" : "cdn.contentful.com",
         accessToken: CONTENTFUL_ACCESS_TOKEN,
-        spaceId: "zz9cwhc5t97i"
+        spaceId: "zz9cwhc5t97i",
+        downloadLocal: true
       }
     },
     "gatsby-plugin-emotion",
@@ -43,7 +52,37 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-perfect-dark-mode",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `{
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          allFile {
+            nodes {
+              publicURL
+            }
+          }
+        }`,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allFile: { nodes: allFiles }
+        }) => {
+          return [
+            ...allPages,
+            ...(allFiles.map(({ publicURL }) => ({ path: publicURL })))
+          ];
+        }
+      }
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
