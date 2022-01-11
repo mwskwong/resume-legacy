@@ -4,20 +4,19 @@ import { graphql, useStaticQuery } from "gatsby";
 const Picture = () => {
   const { picture, name } = useStaticQuery(graphql`{
     picture: contentfulAsset(title: {eq: "Personal Photo"}) {
-      gatsbyImageData(
-        layout: FIXED
-        width: 200
-        aspectRatio: 1 
-        placeholder: BLURRED
-        formats: [AVIF, WEBP, AUTO]
-      )
+      localFile {
+        childImageSharp {
+          gatsbyImageData(aspectRatio: 1, width: 200)
+        }
+      }
     }
     name: contentfulName {
       firstName
       lastName
     }
   }`);
-  const image = getImage(picture);
+
+  const image = getImage(picture.localFile.childImageSharp);
   const style = { borderRadius: "50%" };
 
   return (

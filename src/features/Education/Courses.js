@@ -22,8 +22,8 @@ const Courses = () => {
         name
         institution
         certification {
-          file {
-            url
+          localFile {
+            publicURL
           }
         }
       }
@@ -31,7 +31,7 @@ const Courses = () => {
   }`);
 
   const courses = courseNodes.nodes.map(({ certification, ...node }) => ({
-    fileUrl: certification?.file?.url && `https:${certification.file.url}`,
+    fileUrl: certification ? certification.localFile.publicURL : undefined,
     ...node
   }));
 

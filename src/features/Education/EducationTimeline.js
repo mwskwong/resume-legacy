@@ -11,8 +11,8 @@ const EducationTimeline = () => {
         title
         institution
         document {
-          file {
-            url
+          localFile {
+            publicURL
           }
         }
       }
@@ -22,7 +22,7 @@ const EducationTimeline = () => {
   const educations = educationNodes.nodes
     .map(({ institution, document, ...node }) => ({
       subtitle: institution,
-      fileUrl: document?.file?.url && `https:${document.file.url}`,
+      fileUrl: document ? document.localFile.publicURL : undefined,
       ...node
     }));
 
