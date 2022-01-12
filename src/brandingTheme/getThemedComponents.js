@@ -16,7 +16,8 @@ const getThemedComponents = theme => ({
     },
     MuiButton: {
       defaultProps: {
-        disableElevation: true
+        disableElevation: true,
+        color: theme.palette.mode === "light" ? "secondary" : "primary"
       },
       styleOverrides: {
         sizeLarge: {
