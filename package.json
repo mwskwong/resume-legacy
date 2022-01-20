@@ -23,7 +23,7 @@
     "@reduxjs/toolkit": "^1.7.1",
     "camel-case": "^4.1.2",
     "emailjs-com": "^3.2.0",
-    "gatsby": "^4.5.3",
+    "gatsby": "^4.5.4",
     "gatsby-plugin-emotion": "^7.5.0",
     "gatsby-plugin-image": "^2.5.2",
     "gatsby-plugin-manifest": "^4.5.2",
