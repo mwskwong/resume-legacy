@@ -11,7 +11,7 @@ const getDesignTokens = mode => ({
       black: nord0
     },
     primary: {
-      main: mode === "light" ? darken(nord8, .25) : nord8,
+      main: nord8,
       contrastText: nord1
     },
     secondary: {
