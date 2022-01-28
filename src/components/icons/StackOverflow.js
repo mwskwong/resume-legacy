@@ -1,5 +1,5 @@
 import { SvgIcon } from "@mui/material";
-import { siStackoverflow } from "simple-icons/icons";
+import { siStackOverflow } from "simple-icons/icons";
 import useSx from "./useThirdPartyIconSx";
 
 const StackOverflow = props => {
@@ -7,7 +7,7 @@ const StackOverflow = props => {
 
   return (
     <SvgIcon sx={sx.simpleIcons} {...props}>
-      <path d={siStackoverflow.path} />
+      <path d={siStackOverflow.path} />
     </SvgIcon>
   );
 };
