@@ -1,5 +1,5 @@
 import { keyframes } from "@emotion/react";
-import { nord4 } from "brandingTheme/nord";
+import { nord4 } from "nord";
 import styled from "@emotion/styled";
 
 const animBubbleRiseUp = keyframes`

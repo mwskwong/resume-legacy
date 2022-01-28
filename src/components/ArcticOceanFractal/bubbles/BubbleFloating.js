@@ -1,5 +1,5 @@
 import { keyframes } from "@emotion/react";
-import { nord3 } from "brandingTheme/nord";
+import { nord3 } from "nord";
 import styled from "@emotion/styled";
 
 const animBubbleFloat = keyframes`
