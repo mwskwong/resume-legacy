@@ -1,7 +1,7 @@
 import { Box, Divider, Typography } from "@mui/material";
 
-import Activity from "components/icons/Activity";
 import PropTypes from "prop-types";
+import { SnowflakeVariant } from "mdi-material-ui";
 import useSx from "./useSectionHeaderSx";
 
 const SectionHeader = ({ heading }) => {
@@ -14,7 +14,7 @@ const SectionHeader = ({ heading }) => {
       </Typography>
       <Box sx={sx.separatorContainer}>
         <Divider sx={sx.divider} />
-        <Activity />
+        <SnowflakeVariant />
         <Divider sx={sx.divider} />
       </Box>
     </Box>
