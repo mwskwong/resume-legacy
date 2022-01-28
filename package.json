@@ -39,6 +39,7 @@
     "mdi-material-ui": "^7.1.0",
     "react": "rc",
     "react-dom": "rc",
+    "react-feather": "^2.0.9",
     "react-helmet": "^6.1.0",
     "react-redux": "^8.0.0-beta.2",
     "react-swipeable-views": "^0.14.0",
