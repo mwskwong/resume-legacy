@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
-  simpleIcons: {
+  root: {
     p: "2px"
   }
 }), []);
