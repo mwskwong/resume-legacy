@@ -1,9 +1,12 @@
-import { StrictMode, Suspense } from "react";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { StrictMode, Suspense, lazy } from "react";
 
 import { Provider } from "react-redux";
-import TopLayout from "layouts/TopLayout";
+import brandingTheme from "brandingTheme";
 import store from "store";
 import { swUpdateReady } from "features/PWASnackbar/swStatusSlice";
+
+const PWASnackbar = lazy(() => import(/* webpackChunkName: "pwa-snackbar" */ "features/PWASnackbar"));
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
@@ -16,9 +19,11 @@ export const wrapRootElement = ({ element }) => (
 );
 
 export const wrapPageElement = ({ element }) => (
-  <TopLayout>
+  <ThemeProvider theme={brandingTheme}>
+    <CssBaseline enableColorScheme />
     {element}
-  </TopLayout>
+    <PWASnackbar />
+  </ThemeProvider>
 );
 
 export const onClientEntry = () => {

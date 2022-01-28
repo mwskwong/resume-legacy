@@ -7,11 +7,10 @@ import "./aquireBold.css";
 
 import { createTheme } from "@mui/material";
 import { deepmerge } from "@mui/utils";
-import getDesignTokens from "./getDesignTokens";
+import designTokens from "./designTokens";
 import getThemedComponents from "./getThemedComponents";
 
-const lightTheme = createTheme(getDesignTokens("light"));
-export const brandingLightTheme = deepmerge(lightTheme, getThemedComponents(lightTheme));
+const darkTheme = createTheme(designTokens);
+const brandingTheme = deepmerge(darkTheme, getThemedComponents(darkTheme));
 
-const darkTheme = createTheme(getDesignTokens("dark"));
-export const brandingDarkTheme = deepmerge(darkTheme, getThemedComponents(darkTheme));
+export default brandingTheme;

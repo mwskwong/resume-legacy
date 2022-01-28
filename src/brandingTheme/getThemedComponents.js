@@ -1,5 +1,5 @@
 import { alpha } from "@mui/system";
-import { nord6 } from "./nord";
+import { nord6 } from "../../nord";
 
 const getThemedComponents = theme => ({
   components: {
@@ -16,8 +16,7 @@ const getThemedComponents = theme => ({
     },
     MuiButton: {
       defaultProps: {
-        disableElevation: true,
-        color: theme.palette.mode === "light" ? "secondary" : "primary"
+        disableElevation: true
       },
       styleOverrides: {
         sizeLarge: {
@@ -30,7 +29,7 @@ const getThemedComponents = theme => ({
     },
     MuiChip: {
       defaultProps: {
-        color: theme.palette.mode === "light" ? "secondary" : "primary"
+        color: "primary"
       },
       styleOverrides: {
         root: {
@@ -93,7 +92,7 @@ const getThemedComponents = theme => ({
     MuiFormControl: {
       defaultProps: {
         variant: "filled",
-        color: theme.palette.mode === "light" ? "secondary" : "primary"
+        color: "primary"
       },
       styleOverrides: {
         root: {
