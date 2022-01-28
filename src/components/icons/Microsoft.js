@@ -1,18 +1,11 @@
-import { SvgIcon } from "@mui/material";
+import { createSvgIcon } from "@mui/material";
 import { siMicrosoft } from "simple-icons/icons";
-import useSx from "./useThirdPartyIconSx";
 
-const Microsoft = props => {
-  const sx = useSx();
+const Microsoft = createSvgIcon(
+  <path d={siMicrosoft.path} />,
+  "Microsoft"
+);
 
-  return (
-    <SvgIcon sx={sx.root} titleAccess={siMicrosoft.title} {...props}>
-      <path d={siMicrosoft.path} />
-    </SvgIcon>
-  );
-};
-
-Microsoft.muiName = SvgIcon.muiName;
 Microsoft.whyDidYouRender = true;
 
 export default Microsoft;
