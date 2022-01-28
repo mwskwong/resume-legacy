@@ -1,5 +1,5 @@
 import { alpha } from "@mui/system";
-import { nord6 } from "../../nord";
+import { nord6 } from "nord";
 
 const getThemedComponents = theme => ({
   components: {
