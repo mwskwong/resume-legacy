@@ -1,4 +1,4 @@
-import { alpha, darken, lighten } from "@mui/system";
+import { alpha, darken } from "@mui/system";
 import systemFonts, { variable as variableSystemFonts } from "./systemFonts";
 
 import defaultTheme from "./defaultTheme";
@@ -55,7 +55,7 @@ const designTokens = {
     background: {
       default: nord.nord0,
       sectionPrimary: darken(nord.nord0, .1),
-      sectionSecondary: lighten(nord.nord5, .7)
+      sectionSecondary: nord.nord1
     },
     action: {
       active: nord.nord6,
