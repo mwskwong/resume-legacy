@@ -1,13 +1,15 @@
-import { EmailRounded as Email, LocationOnRounded as Location, PhoneAndroidRounded as Mobile } from "@mui/icons-material";
 import { graphql, useStaticQuery } from "gatsby";
 
+import Email from "components/icons/Email";
+import Location from "components/icons/Location";
 import PersonalInfoItem from "./PersonalInfoItem";
+import Phone from "components/icons/Phone";
 import { Stack } from "@mui/material";
 import useSx from "./usePersonalInfoSx";
 
 const contactTemplate = {
   phone: {
-    Icon: Mobile,
+    Icon: Phone,
     title: "Call Me On"
   },
   email: {

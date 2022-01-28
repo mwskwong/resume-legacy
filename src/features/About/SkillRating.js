@@ -1,7 +1,7 @@
 import { Box, Rating, Typography } from "@mui/material";
 
 import PropTypes from "prop-types";
-import { StarRateRounded as Star } from "@mui/icons-material";
+import Star from "components/icons/Star";
 import useSx from "./useSkillRatingSx";
 
 const SkillRating = ({ name, rating }) => {
