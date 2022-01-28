@@ -1,11 +1,18 @@
-import { createSvgIcon } from "@mui/material";
+import { SvgIcon } from "@mui/material";
 import { siUdemy } from "simple-icons/icons";
+import useSx from "./useThirdPartyIconSx";
 
-const Udemy = createSvgIcon(
-  <path d={siUdemy.path} />,
-  "Udemy"
-);
+const Udemy = props => {
+  const sx = useSx();
 
+  return (
+    <SvgIcon sx={sx.root} titleAccess={siUdemy.title} {...props}>
+      <path d={siUdemy.path} />
+    </SvgIcon>
+  );
+};
+
+Udemy.muiName = SvgIcon.muiName;
 Udemy.whyDidYouRender = true;
 
 export default Udemy;
