@@ -1,7 +1,8 @@
-import { KeyboardArrowLeftRounded as ArrowLeft, KeyboardArrowRightRounded as ArrowRight } from "@mui/icons-material";
 import { Box, Grid, IconButton, Stack } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
+import ChevronLeft from "components/icons/ChevronLeft";
+import ChevronRight from "components/icons/ChevronRight";
 import Pagination from "./Pagination";
 import Reference from "./Reference";
 import SwipeableViews from "react-swipeable-views";
@@ -56,7 +57,7 @@ const Carousel = () => {
             disabled={index === 0}
             aria-label={"previous testimonial"}
           >
-            <ArrowLeft fontSize="small" />
+            <ChevronLeft fontSize="small" />
           </IconButton>
           <IconButton
             size="small"
@@ -64,7 +65,7 @@ const Carousel = () => {
             disabled={index === references.length - 1}
             aria-label={"next testimonial"}
           >
-            <ArrowRight fontSize="small" />
+            <ChevronRight fontSize="small" />
           </IconButton>
         </Stack>
         <Pagination

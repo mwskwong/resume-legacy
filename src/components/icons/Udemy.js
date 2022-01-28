@@ -6,7 +6,7 @@ const Udemy = props => {
   const sx = useSx();
 
   return (
-    <SvgIcon sx={sx.root} titleAccess={siUdemy.title} {...props}>
+    <SvgIcon sx={sx.simpleIcons} {...props}>
       <path d={siUdemy.path} />
     </SvgIcon>
   );

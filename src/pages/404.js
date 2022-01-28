@@ -1,7 +1,7 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 
 import Arctic404 from "components/Arctic404";
-import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
+import ChevronLeft from "components/icons/ChevronLeft";
 import { Link } from "gatsby";
 import SEO from "components/SEO";
 import { useMemo } from "react";
@@ -37,7 +37,14 @@ const NotFoundPage = () => {
       <Typography variant="h5" sx={sx.notFound}>
         The page you were looking for does not exist.
       </Typography>
-      <Button variant="outlined" color="inherit" size="large" startIcon={<ArrowLeft />} component={Link} to="/">
+      <Button
+        variant="outlined"
+        color="inherit"
+        size="large"
+        startIcon={<ChevronLeft />}
+        component={Link}
+        to="/"
+      >
         go back
       </Button>
     </Container>

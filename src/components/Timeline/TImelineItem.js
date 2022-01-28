@@ -8,7 +8,7 @@ import {
   TimelineSeparator
 } from "@mui/lab";
 
-import { DownloadRounded as Download } from "@mui/icons-material";
+import Download from "components/icons/Download";
 import PropTypes from "prop-types";
 import { memo } from "react";
 import useSx from "./useTImelineItemSx";

@@ -1,8 +1,10 @@
-import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
 import { Grid, useMediaQuery } from "@mui/material";
 import { useCallback, useMemo, useRef, useState } from "react";
 
+import Error from "components/icons/Error";
 import { LoadingButton } from "@mui/lab";
+import Send from "components/icons/Send";
+import Success from "components/icons/Success";
 import TextField from "./TextField";
 import isEmailValid from "utils/isEmailValid";
 import isEmpty from "utils/isEmpty";

@@ -1,7 +1,7 @@
 import { AppBar, Box, Collapse, Container, IconButton, List, Stack, Toolbar, useMediaQuery } from "@mui/material";
 import { memo, useEffect, useState } from "react";
 
-import { CloseRounded as Close } from "@mui/icons-material";
+import Close from "components/icons/Close";
 import Logo from "./Logo";
 import Menu from "components/icons/Menu";
 import NavButton from "./NavButton";

@@ -1,6 +1,6 @@
-import { DarkModeRounded as DarkMode, LightModeRounded as LightMode } from "@mui/icons-material";
-
+import DarkMode from "components/icons/DarkMode";
 import { IconButton } from "@mui/material";
+import LightMode from "components/icons/LightMode";
 import { memo } from "react";
 import { usePerfectDarkMode } from "gatsby-plugin-perfect-dark-mode";
 
