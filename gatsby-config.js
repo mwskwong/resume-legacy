@@ -2,6 +2,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`
 });
 
+const { nord0 } = require("./src/nord");
+
 const { CF_PAGES_BRANCH = "main", CONTENTFUL_ACCESS_TOKEN, ANALYZE_BUNDLE, NODE_ENV } = process.env;
 
 const prod = CF_PAGES_BRANCH === "main";
@@ -51,7 +53,6 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-perfect-dark-mode",
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
@@ -86,8 +87,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        background_color: "#ffffff",
-        theme_color: "#ffffff",
+        background_color: nord0,
+        theme_color: nord0,
         theme_color_in_head: false,
         cache_busting_mode: "none",
         display: "standalone",

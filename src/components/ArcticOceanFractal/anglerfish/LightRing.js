@@ -1,4 +1,4 @@
-import { nord4, nord6 } from "brandingTheme/nord";
+import { nord4, nord6 } from "nord";
 
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";

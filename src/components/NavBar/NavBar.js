@@ -5,7 +5,6 @@ import { memo, useEffect, useState } from "react";
 import Logo from "./Logo";
 import NavButton from "./NavButton";
 import NavListItem from "./NavListItem";
-import ThemeModeButton from "./ThemeModeButton";
 import nav from "constants/nav";
 import useActiveSectionId from "hooks/useActiveSectionId";
 import useSx from "./useNavBarSx";
@@ -45,16 +44,13 @@ const NavBar = () => {
               />
             ))}
           </Stack>
-          <Stack spacing={1} direction="row">
-            <IconButton
-              sx={sx.menuButton}
-              onClick={handleMenuToggle}
-              aria-label={menuOpen ? "close menu" : "open menu"}
-            >
-              {menuOpen ? <Close /> : <Menu />}
-            </IconButton>
-            <ThemeModeButton />
-          </Stack>
+          <IconButton
+            sx={sx.menuButton}
+            onClick={handleMenuToggle}
+            aria-label={menuOpen ? "close menu" : "open menu"}
+          >
+            {menuOpen ? <Close /> : <Menu />}
+          </IconButton>
         </Toolbar>
         <Collapse in={menuOpen} timeout="auto" unmountOnExit>
           <List dense component="nav" aria-label="nav list">

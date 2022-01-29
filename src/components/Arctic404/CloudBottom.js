@@ -1,4 +1,4 @@
-import { nord4, nord6 } from "brandingTheme/nord";
+import { nord4, nord6 } from "nord";
 
 import { forwardRef } from "react";
 

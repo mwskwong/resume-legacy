@@ -1,4 +1,4 @@
-import { nord1, nord2, nord3, nord4, nord5, nord6 } from "brandingTheme/nord";
+import { nord1, nord2, nord3, nord4, nord5, nord6 } from "nord";
 
 const NightSkyCanvas = props => (
   <g {...props}>

@@ -1,38 +1,38 @@
-import { alpha, darken, lighten } from "@mui/system";
-import { nord0, nord1, nord11, nord13, nord14, nord3, nord4, nord5, nord6, nord7, nord8 } from "./nord";
+import { alpha, darken } from "@mui/system";
 import systemFonts, { variable as variableSystemFonts } from "./systemFonts";
 
 import defaultTheme from "./defaultTheme";
+import nord from "nord";
 
-const getDesignTokens = mode => ({
+const designTokens = {
   palette: {
-    mode,
+    mode: "dark",
     common: {
-      black: nord0
+      black: nord.nord0
     },
     primary: {
-      main: nord8,
-      contrastText: nord1
+      main: nord.nord8,
+      contrastText: nord.nord1
     },
     secondary: {
-      main: nord0,
-      contrastText: nord8
+      main: nord.nord0,
+      contrastText: nord.nord8
     },
     error: {
-      main: nord11,
-      contrastText: nord1
+      main: nord.nord11,
+      contrastText: nord.nord6
     },
     warning: {
-      main: nord13,
-      contrastText: nord1
+      main: nord.nord13,
+      contrastText: nord.nord1
     },
     info: {
-      main: nord7,
-      contrastText: nord1
+      main: nord.nord7,
+      contrastText: nord.nord1
     },
     success: {
-      main: nord14,
-      contrastText: nord1
+      main: nord.nord14,
+      contrastText: nord.nord1
     },
     grey: {
       50: "#F3F6F9",
@@ -47,23 +47,23 @@ const getDesignTokens = mode => ({
       900: "#20262D"
     },
     text: {
-      primary: mode === "light" ? nord3 : nord6,
-      secondary: mode === "light" ? lighten(nord3, .2) : darken(nord6, .2),
-      disabled: mode === "light" ? lighten(nord3, .4) : darken(nord6, .4)
+      primary: nord.nord6,
+      secondary: darken(nord.nord6, .2),
+      disabled: darken(nord.nord6, .4)
     },
-    divider: alpha(nord4, mode === "light" ? .8 : .5),
+    divider: alpha(nord.nord4, .5),
     background: {
-      default: mode === "light" ? "#fff" : nord0,
-      sectionPrimary: mode === "light" ? lighten(nord6, .7) : darken(nord0, .1),
-      sectionSecondary: mode === "light" ? lighten(nord5, .7) : nord1
+      default: nord.nord0,
+      sectionPrimary: darken(nord.nord0, .1),
+      sectionSecondary: nord.nord1
     },
     action: {
-      active: mode === "light" ? nord3 : nord6,
-      hover: alpha(mode === "light" ? nord3 : nord6, .04),
-      selected: alpha(mode === "light" ? nord3 : nord6, .08),
-      disabled: alpha(mode === "light" ? nord3 : nord6, .26),
-      disabledBackground: alpha(mode === "light" ? nord3 : nord6, .12),
-      focus: alpha(mode === "light" ? nord3 : nord6, .12)
+      active: nord.nord6,
+      hover: alpha(nord.nord6, .04),
+      selected: alpha(nord.nord6, .08),
+      disabled: alpha(nord.nord6, .26),
+      disabledBackground: alpha(nord.nord6, .12),
+      focus: alpha(nord.nord6, .12)
     }
   },
   spacing: 10,
@@ -180,6 +180,6 @@ const getDesignTokens = mode => ({
       }
     }
   }
-});
+};
 
-export default getDesignTokens;
+export default designTokens;

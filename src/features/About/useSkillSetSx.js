@@ -1,14 +1,32 @@
 import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
-  supplementarySkillsContainer: {
+  title: {
+    color: "primary.main",
+    textAlign: "center",
+    mb: 2
+  },
+  gridContainer: {
+    justifyContent: "center"
+  },
+  stack: {
+    alignItems: "center"
+  },
+  icon: {
+    color: "primary.main",
+    fontSize: 60
+  },
+  subtitle: {
+    textAlign: "center"
+  },
+  skillsContainer: {
     display: "flex",
     justifyContent: "center",
-    flexWrap: "wrap",
-    mt: 6
+    flexWrap: "wrap"
   },
-  supplementarySkill: {
-    m: 0.5
+  skill: {
+    m: 0.5,
+    color: "inherit"
   }
 }), []);
 

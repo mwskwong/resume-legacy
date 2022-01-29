@@ -1,7 +1,7 @@
 import { Fragment, memo } from "react";
 
 import Anglerfish from "./anglerfish";
-import nord from "brandingTheme/nord";
+import nord from "nord";
 
 const IllustrationCanvas = () => (
   <Fragment>
