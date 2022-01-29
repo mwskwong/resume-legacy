@@ -9,7 +9,7 @@ const useSx = () => useMemo(() => ({
     }
   },
   timelineContent: {
-    mb: 2
+    mb: 4
   },
   periodMobile: {
     color: "text.secondary",

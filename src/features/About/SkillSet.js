@@ -13,10 +13,10 @@ import groupBy from "lodash/groupBy";
 import useSx from "./useSkillSetSx";
 
 const Icons = {
-  backEnd: Terminal,
+  backend: Terminal,
   dataOps: AllInclusive,
   database: Database,
-  frontEnd: Dashboard,
+  frontend: Dashboard,
   mobile: DevicesOther
 };
 
