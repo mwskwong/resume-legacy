@@ -1,16 +1,15 @@
-import { GitHub, LinkedIn } from "@mui/icons-material";
+import { Github, Linkedin, StackOverflow } from "mdi-material-ui";
 import { IconButton, Stack } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
 import PropTypes from "prop-types";
-import { StackOverflow } from "mdi-material-ui";
 import { camelCase } from "camel-case";
 import useSx from "./useSx";
 
 const Icons = {
   stackOverflow: StackOverflow,
-  linkedIn: LinkedIn,
-  gitHub: GitHub
+  linkedIn: Linkedin,
+  gitHub: Github
 };
 
 const SocialMedia = ({ sx: sxProp }) => {
