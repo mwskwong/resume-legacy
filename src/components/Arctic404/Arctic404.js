@@ -17,7 +17,7 @@ const StyledCloudTop = styled(CloudTop)`
   animation: ${animFloating} 4000ms ease-in-out infinite alternate 1200ms;
 `;
 
-const Arctic404 = () => {
+const Animation404 = () => {
   return (
     <svg viewBox="0 0 512.5 372.642" xmlns="http://www.w3.org/2000/svg" width="100%">
       <NightSkyCanvas />
@@ -27,4 +27,4 @@ const Arctic404 = () => {
   );
 };
 
-export default Arctic404;
+export default Animation404;

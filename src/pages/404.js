@@ -1,7 +1,7 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 
 import Arctic404 from "components/Arctic404";
-import ArrowLeft from "components/icons/ArrowLeft";
+import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
 import { Link } from "gatsby";
 import SEO from "components/SEO";
 import { useMemo } from "react";

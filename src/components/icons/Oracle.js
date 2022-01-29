@@ -6,7 +6,7 @@ const Oracle = props => {
   const sx = useSx();
 
   return (
-    <SvgIcon sx={sx.simpleIcons} {...props}>
+    <SvgIcon sx={sx.simpleIcons} titleAccess={siOracle.title} {...props}>
       <path d={siOracle.path} />
     </SvgIcon>
   );

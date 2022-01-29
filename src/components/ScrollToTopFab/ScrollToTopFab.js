@@ -1,6 +1,6 @@
 import { Fab, Zoom } from "@mui/material";
 
-import ArrowUp from "components/icons/ArrowUp";
+import { KeyboardArrowUpRounded as ArrowUp } from "@mui/icons-material";
 import { HOME } from "constants/nav";
 import { memo } from "react";
 import useShowScrollToTopFab from "hooks/useShowScrollToTopFab";
