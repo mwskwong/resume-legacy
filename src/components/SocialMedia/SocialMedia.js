@@ -3,7 +3,7 @@ import { IconButton, Stack } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
 import PropTypes from "prop-types";
-import { camelCase } from "camel-case";
+import camelCase from "lodash/camelCase";
 import useSx from "./useSx";
 
 const Icons = {

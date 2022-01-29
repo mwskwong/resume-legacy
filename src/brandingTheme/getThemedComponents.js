@@ -28,9 +28,6 @@ const getThemedComponents = theme => ({
       }
     },
     MuiChip: {
-      defaultProps: {
-        color: "primary"
-      },
       styleOverrides: {
         root: {
           borderRadius: theme.shape.borderRadius
