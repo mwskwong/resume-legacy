@@ -1,5 +1,4 @@
 import { SvgIcon } from "@mui/material";
-import { memo } from "react";
 
 const Success = props => (
   <SvgIcon {...props}>
@@ -11,4 +10,4 @@ const Success = props => (
 Success.muiName = SvgIcon.muiName;
 Success.whyDidYouRender = true;
 
-export default memo(Success);
+export default Success;

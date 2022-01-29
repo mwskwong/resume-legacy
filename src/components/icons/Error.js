@@ -1,5 +1,4 @@
 import { SvgIcon } from "@mui/material";
-import { memo } from "react";
 
 const Error = props => (
   <SvgIcon {...props}>
@@ -12,4 +11,4 @@ const Error = props => (
 Error.muiName = SvgIcon.muiName;
 Error.whyDidYouRender = true;
 
-export default memo(Error);
+export default Error;

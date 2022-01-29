@@ -1,5 +1,4 @@
 import { SvgIcon } from "@mui/material";
-import { memo } from "react";
 
 const ArrowUp = props => (
   <SvgIcon {...props}>
@@ -10,4 +9,4 @@ const ArrowUp = props => (
 ArrowUp.muiName = SvgIcon.muiName;
 ArrowUp.whyDidYouRender = true;
 
-export default memo(ArrowUp);
+export default ArrowUp;

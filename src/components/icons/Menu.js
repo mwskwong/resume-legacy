@@ -1,5 +1,4 @@
 import { SvgIcon } from "@mui/material";
-import { memo } from "react";
 
 const Menu = props => (
   <SvgIcon {...props}>
@@ -13,4 +12,4 @@ const Menu = props => (
 Menu.muiName = SvgIcon.muiName;
 Menu.whyDidYouRender = true;
 
-export default memo(Menu);
+export default Menu;
