@@ -1,7 +1,7 @@
 import { Box, Divider, Typography } from "@mui/material";
 
 import PropTypes from "prop-types";
-import { AcUnit as Snow } from "@mui/icons-material";
+import { AcUnitRounded as Snow } from "@mui/icons-material";
 import useSx from "./useSectionHeaderSx";
 
 const SectionHeader = ({ heading }) => {
