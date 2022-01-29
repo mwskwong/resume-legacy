@@ -25,7 +25,8 @@ const useSx = () => useMemo(() => ({
     flexWrap: "wrap"
   },
   skill: {
-    m: 0.5
+    m: 0.5,
+    color: "inherit"
   }
 }), []);
 
