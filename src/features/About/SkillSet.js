@@ -44,23 +44,25 @@ const SkillSet = () => {
 
           return (
             <Grid key={type} item lg={4} sm={6} xs={12}>
-              <Stack spacing={2} sx={sx.stack}>
-                <Icon sx={sx.icon} />
-                <Typography variant="subtitle1" component="h4" sx={sx.subtitle}>
-                  {type}
-                </Typography>
-                <Box sx={sx.skillsContainer}>
-                  {skills.map(({ name }) => (
-                    <Chip
-                      key={name}
-                      sx={sx.skill}
-                      label={name}
-                      variant="outlined"
-                      color="primary"
-                    />
-                  ))}
-                </Box>
-              </Stack>
+              <div>
+                <Stack spacing={2} sx={sx.stack}>
+                  <Icon sx={sx.icon} />
+                  <Typography variant="subtitle1" component="h4" sx={sx.subtitle}>
+                    {type}
+                  </Typography>
+                  <Box sx={sx.skillsContainer}>
+                    {skills.map(({ name }) => (
+                      <Chip
+                        key={name}
+                        sx={sx.skill}
+                        label={name}
+                        variant="outlined"
+                        color="primary"
+                      />
+                    ))}
+                  </Box>
+                </Stack>
+              </div>
             </Grid>
           );
         })}
