@@ -1,8 +1,7 @@
+import { Box, Stack, Typography } from "@mui/material";
 import { EmailRounded as Email, LocationOnRounded as Location, PhoneAndroidRounded as Mobile } from "@mui/icons-material";
 import { graphql, useStaticQuery } from "gatsby";
 
-import PersonalInfoItem from "./PersonalInfoItem";
-import { Stack } from "@mui/material";
 import useSx from "./usePersonalInfoSx";
 
 const contactTemplate = {
@@ -33,12 +32,15 @@ const PersonalInfo = () => {
   return (
     <Stack spacing={3} sx={sx.root}>
       {Object.entries(contactTemplate).map(([key, { Icon, title }]) => (
-        <PersonalInfoItem
-          key={key}
-          Icon={Icon}
-          title={title}
-          value={contact[key]}
-        />
+        <Box key={key} sx={sx.itemContainer}>
+          <Icon fontSize="large" color="action" />
+          <Typography component="div" sx={sx.title} gutterBottom>
+            {title}
+          </Typography>
+          <Typography component="div" sx={sx.value}>
+            {contact[key]}
+          </Typography>
+        </Box>
       ))}
     </Stack>
   );

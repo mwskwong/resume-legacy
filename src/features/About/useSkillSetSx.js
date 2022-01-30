@@ -13,11 +13,10 @@ const useSx = () => useMemo(() => ({
     alignItems: "center"
   },
   icon: {
-    color: "primary.main",
     fontSize: 60
   },
   subtitle: {
-    textAlign: "center"
+    color: "primary.main"
   },
   skillsContainer: {
     display: "flex",

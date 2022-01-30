@@ -1,9 +1,10 @@
+import { Box, Grid, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
-import FunFactItem from "./FunFactItem";
-import { Grid } from "@mui/material";
+import useSx from "./useFunFactSx";
 
 const FunFacts = () => {
+  const sx = useSx();
   const { funFactNodes } = useStaticQuery(graphql`{
     funFactNodes: allContentfulFunFact(sort: {fields: title}) {
       nodes {
@@ -19,10 +20,14 @@ const FunFacts = () => {
     <Grid item container spacing={2} md={6} xs={12}>
       {funFacts.map(({ title, value }) => (
         <Grid key={title} item xs={6}>
-          <FunFactItem
-            title={title}
-            value={value}
-          />
+          <Box sx={sx.root}>
+            <Typography component="div" variant="h3" sx={sx.value}>
+              {value}
+            </Typography>
+            <Typography sx={sx.title}>
+              {title}
+            </Typography>
+          </Box>
         </Grid>
       ))}
     </Grid>
