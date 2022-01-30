@@ -88,7 +88,6 @@ module.exports = {
       options: {
         background_color: nord0,
         theme_color: nord0,
-        theme_color_in_head: false,
         cache_busting_mode: "none",
         display: "standalone",
         icon: "src/images/icon.png",
