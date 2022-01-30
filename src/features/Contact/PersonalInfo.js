@@ -33,7 +33,7 @@ const PersonalInfo = () => {
     <Stack spacing={3} sx={sx.root}>
       {Object.entries(contactTemplate).map(([key, { Icon, title }]) => (
         <Box key={key} sx={sx.itemContainer}>
-          <Icon fontSize="large" color="action" />
+          <Icon fontSize="large" />
           <Typography component="div" sx={sx.title} gutterBottom>
             {title}
           </Typography>

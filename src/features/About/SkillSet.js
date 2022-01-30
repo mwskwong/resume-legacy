@@ -35,7 +35,7 @@ const SkillSet = () => {
 
   return (
     <div>
-      <Typography variant="subtitle2" sx={sx.title}>
+      <Typography variant="subtitle2" component="h3" sx={sx.title}>
         Skills
       </Typography>
       <Grid container spacing={6} sx={sx.gridContainer}>
@@ -46,7 +46,7 @@ const SkillSet = () => {
             <Grid key={type} item lg={4} sm={6} xs={12}>
               <Stack spacing={2} sx={sx.stack}>
                 <Icon sx={sx.icon} />
-                <Typography variant="subtitle1" sx={sx.subtitle}>
+                <Typography variant="subtitle1" component="h4" sx={sx.subtitle}>
                   {type}
                 </Typography>
                 <Box sx={sx.skillsContainer}>
