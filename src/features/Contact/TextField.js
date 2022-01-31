@@ -23,7 +23,7 @@ const TextField = ({ name, control, fullWidth, label, autoComplete, multiline, r
     <FormControl fullWidth={fullWidth} error={invalid}>
       <InputLabel>{label}</InputLabel>
       <FilledInput
-        ref={ref}
+        inputRef={ref}
         autoComplete={autoComplete}
         multiline={multiline}
         rows={rows}

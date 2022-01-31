@@ -20,6 +20,7 @@ const schema = object({
 const ContactForm = () => {
   const { control, handleSubmit } = useForm({
     resolver: yupResolver(schema),
+    mode: "onChange",
     defaultValues: { name: "", email: "", subject: "", message: "" }
   });
   const sx = useSx();
