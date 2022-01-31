@@ -19,7 +19,8 @@ const schema = object({
 
 const ContactForm = () => {
   const { control, handleSubmit } = useForm({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(schema),
+    defaultValues: { name: "", email: "", subject: "", message: "" }
   });
   const sx = useSx();
   const smDown = useMediaQuery(theme => theme.breakpoints.down("sm"));
