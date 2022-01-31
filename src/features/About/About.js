@@ -16,7 +16,9 @@ const About = () => {
       <Container>
         <Stack sx={sx.stack} spacing={6}>
           <SectionHeader heading="About Me" />
-          <Picture />
+          <div>
+            <Picture />
+          </div>
           <Message />
           <SkillSet />
         </Stack>
