@@ -31,7 +31,8 @@ export const onClientEntry = () => {
     const React = require("react");
     const whyDidYouRender = require("@welldone-software/why-did-you-render");
     whyDidYouRender(React, {
-      trackAllPureComponents: true
+      trackAllPureComponents: true,
+      exclude: [/RouterImpl/, /SideEffect\(NullComponent\)/]
     });
   }
 };
