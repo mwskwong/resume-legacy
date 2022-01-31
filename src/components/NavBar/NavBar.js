@@ -1,4 +1,4 @@
-import { AppBar, Box, Collapse, Container, IconButton, List, Stack, Toolbar, useMediaQuery } from "@mui/material";
+import { AppBar, Box, ClickAwayListener, Collapse, Container, IconButton, List, Stack, Toolbar, useMediaQuery } from "@mui/material";
 import { CloseRounded as Close, MenuRounded as Menu } from "@mui/icons-material";
 import { memo, useEffect, useState } from "react";
 
@@ -22,6 +22,7 @@ const NavBar = () => {
   }, [mdUp]);
 
   const handleMenuToggle = () => setMenuOpen(menuOpen => !menuOpen);
+  const handleMenuClickAway = () => setMenuOpen(false);
 
   return (
     <AppBar>
@@ -53,16 +54,18 @@ const NavBar = () => {
           </IconButton>
         </Toolbar>
         <Collapse in={menuOpen} timeout="auto" unmountOnExit>
-          <List dense component="nav" aria-label="nav list">
-            {Object.values(nav).map(({ id, name }) => (
-              <NavListItem
-                key={id}
-                id={id}
-                label={name}
-                active={activeSectionId === id}
-              />
-            ))}
-          </List>
+          <ClickAwayListener onClickAway={handleMenuClickAway}>
+            <List dense component="nav" aria-label="nav list">
+              {Object.values(nav).map(({ id, name }) => (
+                <NavListItem
+                  key={id}
+                  id={id}
+                  label={name}
+                  active={activeSectionId === id}
+                />
+              ))}
+            </List>
+          </ClickAwayListener>
         </Collapse>
       </Container>
     </AppBar>
