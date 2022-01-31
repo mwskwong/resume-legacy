@@ -65,7 +65,7 @@ const ContactForm = () => {
             autoComplete="email"
             inputProps={register("email")}
             error={Boolean(errors.email)}
-            helperText={errors.mail?.message}
+            helperText={errors.email?.message}
           />
         </Grid>
         <Grid item xs={12}>
