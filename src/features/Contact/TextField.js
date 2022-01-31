@@ -13,14 +13,14 @@ const TextField = ({ name, control, fullWidth, label, autoComplete, multiline, r
   const sx = useSx();
   const {
     field: { onChange, onBlur, value, ref },
-    fieldState: { error }
+    fieldState: { invalid, error }
   } = useController({
     name: name,
     control: control
   });
 
   return (
-    <FormControl fullWidth={fullWidth} error={Boolean(error)}>
+    <FormControl fullWidth={fullWidth} error={invalid}>
       <InputLabel>{label}</InputLabel>
       <FilledInput
         inputRef={ref}
@@ -33,7 +33,7 @@ const TextField = ({ name, control, fullWidth, label, autoComplete, multiline, r
         value={value}
       />
       <FormHelperText sx={sx.FormHelperText} id={`${name}-helper-text`}>
-        {error.message}
+        {error?.message}
       </FormHelperText>
     </FormControl>
   );
