@@ -24,6 +24,7 @@ const Picture = () => {
       image={image}
       alt={`Picture of ${name.firstName} ${name.lastName}`}
       style={style}
+      imgStyle={style}
     />
   );
 };

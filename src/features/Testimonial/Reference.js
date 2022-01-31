@@ -20,6 +20,7 @@ const Reference = ({ name, jobTitle, refereePicture, company, comment }) => {
           image={image}
           alt={`Picture of ${name}`}
           style={avatarStyle}
+          imgStyle={avatarStyle}
         />
         <Box sx={sx.refereeInfoContainer}>
           <Typography sx={sx.name} gutterBottom>
