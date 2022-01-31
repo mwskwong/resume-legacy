@@ -18,7 +18,7 @@ const schema = object({
 }).required();
 
 const ContactForm = () => {
-  const { register, formState: { errors }, handleSubmit } = useForm({
+  const { control, handleSubmit } = useForm({
     resolver: yupResolver(schema)
   });
   const sx = useSx();
@@ -48,46 +48,38 @@ const ContactForm = () => {
       <Grid container spacing={4}>
         <Grid item sm={6} xs={12}>
           <TextField
+            name="name"
+            control={control}
             fullWidth
             label="Name"
             autoComplete="name"
-            inputProps={register("name")}
-            error={Boolean(errors.name)}
-            helperText={errors.name?.message}
           />
         </Grid>
         <Grid item sm={6} xs={12}>
           <TextField
             name="email"
+            control={control}
             fullWidth
-            required
             label="Email"
             autoComplete="email"
-            inputProps={register("email")}
-            error={Boolean(errors.email)}
-            helperText={errors.email?.message}
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
             name="subject"
+            control={control}
             fullWidth
             label="Subject"
-            inputProps={register("subject")}
-            error={Boolean(errors.subject)}
-            helperText={errors.subject?.message}
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
             name="message"
+            control={control}
             fullWidth
             label="Message"
             multiline
             rows={9}
-            inputProps={register("message")}
-            error={Boolean(errors.message)}
-            helperText={errors.message?.message}
           />
         </Grid>
       </Grid>
