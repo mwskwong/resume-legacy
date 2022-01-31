@@ -1,76 +1,57 @@
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
 import { Grid, useMediaQuery } from "@mui/material";
-import { useCallback, useMemo, useRef, useState } from "react";
+import { object, string } from "yup";
 
 import { LoadingButton } from "@mui/lab";
 import TextField from "./TextField";
-import isEmailValid from "utils/isEmailValid";
-import isEmpty from "utils/isEmpty";
 import sendEmail from "utils/sendEmail";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
 import useSx from "./useContactFormSx";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const schema = object({
+  name: string().required(),
+  email: string().email().required(),
+  subject: string().required(),
+  message: string().required()
+}).required();
 
 const ContactForm = () => {
+  const { control, handleSubmit } = useForm({
+    resolver: yupResolver(schema),
+    mode: "onChange",
+    defaultValues: { name: "", email: "", subject: "", message: "" }
+  });
   const sx = useSx();
   const smDown = useMediaQuery(theme => theme.breakpoints.down("sm"));
-  const formRef = useRef();
-  const emailInputRef = useRef(null);
-  const [emailInputErrorMessage, setEmailInputErrorMessage] = useState(null);
-  const invalidEmail = Boolean(emailInputErrorMessage);
-  const [emailSending, setEmailSending] = useState(false);
-  const [emailSendSuccess, setEmailSendSuccess] = useState(undefined);
+  const [sendEmailStatus, setSendEmailStatus] = useState();
 
-  const submitButtonColor = useMemo(() => {
-    if (emailSendSuccess) return "success";
-    if (emailSendSuccess === false) return "error";
-    return undefined;
-  }, [emailSendSuccess]);
+  const submitButtonColor = sendEmailStatus === "loading"
+    ? undefined
+    : sendEmailStatus;
 
-  const validateEmail = value => {
-    if (isEmpty(value)) {
-      return "Email can't be empty";
-    }
+  const submitButtonIcon = sendEmailStatus === "success"
+    ? <Success />
+    : sendEmailStatus === "error"
+      ? <Error />
+      : <Send />;
 
-    if (!isEmailValid(value)) {
-      return "Invalid email";
-    }
-
-    return null;
-  };
-
-  const handleEmailChange = useCallback(event => setEmailInputErrorMessage(validateEmail(event.target.value)), []);
-
-  const handleSubmit = event => {
-    event.preventDefault();
-
-    const formData = new FormData(formRef.current);
-    const emailData = {};
-    for (const [key, value] of formData.entries()) {
-      emailData[key] = value;
-    }
-
-    const emailErrorMessage = validateEmail(emailData.email);
-    const invalidEmail = Boolean(emailErrorMessage);
-    if (invalidEmail) {
-      setEmailInputErrorMessage(emailErrorMessage);
-      emailInputRef.current.focus();
-      emailInputRef.current.scrollIntoView();
-      return false;
-    }
-
-    setEmailSending(true);
-    setEmailSendSuccess(undefined);
-    sendEmail(emailData)
-      .then(() => setEmailSendSuccess(true))
-      .catch(() => setEmailSendSuccess(false))
-      .finally(() => setEmailSending(false));
+  const handleFormSubmit = data => {
+    console.log(data);
+    setSendEmailStatus("loading");
+    sendEmail(data)
+      .then(() => setSendEmailStatus("success"))
+      .catch(() => setSendEmailStatus("error"));
   };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} noValidate>
+    <form onSubmit={handleSubmit(handleFormSubmit)} noValidate>
       <Grid container spacing={4}>
         <Grid item sm={6} xs={12}>
           <TextField
             name="name"
+            control={control}
             fullWidth
             label="Name"
             autoComplete="name"
@@ -78,20 +59,17 @@ const ContactForm = () => {
         </Grid>
         <Grid item sm={6} xs={12}>
           <TextField
-            ref={emailInputRef}
             name="email"
+            control={control}
             fullWidth
-            required
             label="Email"
             autoComplete="email"
-            onChange={handleEmailChange}
-            error={invalidEmail}
-            helperText={invalidEmail ? emailInputErrorMessage : "*Required"}
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
             name="subject"
+            control={control}
             fullWidth
             label="Subject"
           />
@@ -99,6 +77,7 @@ const ContactForm = () => {
         <Grid item xs={12}>
           <TextField
             name="message"
+            control={control}
             fullWidth
             label="Message"
             multiline
@@ -107,15 +86,10 @@ const ContactForm = () => {
         </Grid>
       </Grid>
       <LoadingButton
-        loading={emailSending}
+        loading={sendEmailStatus === "loading"}
         loadingPosition="end"
         color={submitButtonColor}
-        endIcon={emailSendSuccess
-          ? <Success />
-          : emailSendSuccess === false
-            ? <Error />
-            : <Send />
-        }
+        endIcon={submitButtonIcon}
         sx={sx.submitButton}
         type="submit"
         variant="contained"
