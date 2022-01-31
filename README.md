@@ -10,8 +10,6 @@
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fmwskwong.com)
 ![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fmwskwong.com)
 ![Chromium HSTS preload](https://img.shields.io/hsts/preload/mwskwong.com)
-![GitHub branch checks state](https://img.shields.io/github/checks-status/mwskwong/resume/next)
-![Maintenance](https://img.shields.io/maintenance/yes/2021)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/mwskwong/resume/next)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/mwskwong/resume/next)
 ![GitHub language count](https://img.shields.io/github/languages/count/mwskwong/resume)
