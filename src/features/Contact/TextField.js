@@ -7,27 +7,22 @@ import PropTypes from "prop-types";
  * This is a stripped down version of the MUI TextField.
  * Only essential features for the contact form are kept.
  */
-const TextField = forwardRef((
-  { name, fullWidth, label, autoComplete, required, onChange, error, helperText, multiline, rows },
-  ref
-) => (
-  <FormControl ref={ref} fullWidth={fullWidth} required={required} error={error}>
-    <InputLabel htmlFor={name}>{label}</InputLabel>
+const TextField = forwardRef((props, ref) => (
+  <FormControl ref={ref} fullWidth={props.fullWidth} required={props.required} error={props.error}>
+    <InputLabel>{props.label}</InputLabel>
     <FilledInput
-      id={name}
-      name={name}
-      autoComplete={autoComplete}
-      onChange={onChange}
-      multiline={multiline}
-      rows={rows}
-      aria-describedby={`${name}-helper-text`}
+      autoComplete={props.autoComplete}
+      onChange={props.onChange}
+      multiline={props.multiline}
+      rows={props.rows}
+      aria-describedby={`${props.label}-helper-text`}
+      inputProps={props.inputProps}
     />
-    <FormHelperText id={`${name}-helper-text`}>{helperText}</FormHelperText>
+    <FormHelperText id={`${props.label}-helper-text`}>{props.helperText}</FormHelperText>
   </FormControl>
 ));
 
 TextField.propTypes = {
-  name: PropTypes.string,
   fullWidth: PropTypes.bool,
   label: PropTypes.string,
   autoComplete: PropTypes.string,
@@ -36,7 +31,8 @@ TextField.propTypes = {
   error: PropTypes.bool,
   helperText: PropTypes.string,
   multiline: PropTypes.bool,
-  rows: PropTypes.number
+  rows: PropTypes.number,
+  inputProps: PropTypes.object
 };
 TextField.whyDidYouRender = true;
 TextField.displayName = "TextField";
