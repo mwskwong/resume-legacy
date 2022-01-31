@@ -2,7 +2,8 @@ import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
   root: {
-    p: 3
+    justifyContent: "center",
+    height: "100%"
   },
   itemContainer: {
     display: "flex",

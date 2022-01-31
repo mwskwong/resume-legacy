@@ -2,6 +2,7 @@ import { Box, Divider, Typography } from "@mui/material";
 
 import PropTypes from "prop-types";
 import { AcUnitRounded as Snow } from "@mui/icons-material";
+import { memo } from "react";
 import useSx from "./useSectionHeaderSx";
 
 const SectionHeader = ({ heading }) => {
@@ -27,4 +28,4 @@ SectionHeader.propTypes = {
 
 SectionHeader.whyDidYouRender = true;
 
-export default SectionHeader;
+export default memo(SectionHeader);

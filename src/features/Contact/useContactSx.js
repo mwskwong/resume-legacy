@@ -6,6 +6,10 @@ const useSx = () => useMemo(() => ({
       ${theme.palette.background.sectionPrimary} 0%,
       ${theme.palette.background.default} 100%
     )`
+  },
+  submitButton: {
+    float: "right",
+    mt: 4
   }
 }), []);
 

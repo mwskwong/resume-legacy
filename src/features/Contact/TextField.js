@@ -3,21 +3,18 @@ import { FilledInput, FormControl, FormHelperText, InputLabel } from "@mui/mater
 import PropTypes from "prop-types";
 import { memo } from "react";
 import { useController } from "react-hook-form";
-import useSx from "./useTextFieldSx";
 
 /**
  * This is a stripped down version of the MUI TextField.
  * Only essential features for the contact form are kept.
  */
 const TextField = ({ name, control, fullWidth, label, autoComplete, multiline, rows }) => {
-  const sx = useSx();
   const {
     field: { onChange, onBlur, value, ref },
     fieldState: { invalid, error }
-  } = useController({
-    name: name,
-    control: control
-  });
+  } = useController({ name: name, control: control });
+
+  const helperTextId = `${name}-helper-text`;
 
   return (
     <FormControl fullWidth={fullWidth} error={invalid}>
@@ -27,14 +24,12 @@ const TextField = ({ name, control, fullWidth, label, autoComplete, multiline, r
         autoComplete={autoComplete}
         multiline={multiline}
         rows={rows}
-        aria-describedby={`${label}-helper-text`}
+        aria-describedby={helperTextId}
         onChange={onChange}
         onBlur={onBlur}
         value={value}
       />
-      <FormHelperText sx={sx.formHelperText} id={`${name}-helper-text`}>
-        {error?.message || " "}
-      </FormHelperText>
+      <FormHelperText id={helperTextId}>{error?.message || " "}</FormHelperText>
     </FormControl>
   );
 };

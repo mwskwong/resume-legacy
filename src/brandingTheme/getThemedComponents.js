@@ -90,17 +90,6 @@ const getThemedComponents = theme => ({
       defaultProps: {
         variant: "filled",
         color: "primary"
-      },
-      styleOverrides: {
-        root: {
-          [`@media (min-width: ${theme.breakpoints.values.xs}px) and (orientation: landscape)`]: {
-            scrollMarginTop: "72px"
-          },
-          [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
-            scrollMarginTop: "88px"
-          },
-          scrollMarginTop: "80px"
-        }
       }
     },
     MuiInputLabel: {

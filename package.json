@@ -37,6 +37,7 @@
     "gatsby-transformer-sharp": "^4.6.0",
     "lodash": "^4.17.21",
     "mdi-material-ui": "^7.1.0",
+    "nope-validator": "^1.0.2",
     "react": "rc",
     "react-dom": "rc",
     "react-helmet": "^6.1.0",
@@ -44,8 +45,7 @@
     "react-redux": "^8.0.0-beta.2",
     "react-swipeable-views": "^0.14.0",
     "simple-icons": "^6.8.0",
-    "typewriter-effect": "^2.18.2",
-    "yup": "^0.32.11"
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^6.2.3",
