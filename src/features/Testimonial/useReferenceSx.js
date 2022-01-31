@@ -10,7 +10,10 @@ const useSx = () => useMemo(() => ({
   },
   avatar: {
     borderRadius: "50%",
-    minWidth: 60
+    minWidth: 60,
+    "& img": {
+      borderRadius: "50%"
+    }
   },
   refereeInfoContainer: {
     ml: 2
