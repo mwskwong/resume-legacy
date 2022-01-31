@@ -32,7 +32,7 @@ const TextField = ({ name, control, fullWidth, label, autoComplete, multiline, r
         onBlur={onBlur}
         value={value}
       />
-      <FormHelperText sx={sx.FormHelperText} id={`${name}-helper-text`}>
+      <FormHelperText sx={sx.formHelperText} id={`${name}-helper-text`}>
         {error?.message}
       </FormHelperText>
     </FormControl>
