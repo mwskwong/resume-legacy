@@ -1,7 +1,7 @@
 import { Box, Container, Grid, Stack, useMediaQuery } from "@mui/material";
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
 import { memo, useState } from "react";
-import { object, string } from "yup";
+import { object, string } from "nope-validator";
 
 import { CONTACT } from "constants/nav";
 import { LoadingButton } from "@mui/lab";
@@ -9,21 +9,21 @@ import { NoSsr } from "@mui/base";
 import PersonalInfo from "./PersonalInfo";
 import SectionHeader from "components/SectionHeader";
 import TextField from "./TextField";
+import { nopeResolver } from "@hookform/resolvers/nope";
 import sendEmail from "utils/sendEmail";
 import { useForm } from "react-hook-form";
 import useSx from "./useContactSx";
-import { yupResolver } from "@hookform/resolvers/yup";
 
-const schema = object({
+const schema = object().shape({
   name: string().required(),
   email: string().email().required(),
   subject: string().required(),
   message: string().required()
-}).required();
+});
 
 const Contact = () => {
   const { control, handleSubmit } = useForm({
-    resolver: yupResolver(schema),
+    resolver: nopeResolver(schema),
     mode: "onChange",
     defaultValues: { name: "", email: "", subject: "", message: "" }
   });
