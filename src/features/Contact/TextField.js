@@ -23,7 +23,7 @@ const TextField = ({ name, control, fullWidth, label, autoComplete, multiline, r
     <FormControl fullWidth={fullWidth} error={invalid}>
       <InputLabel>{label}</InputLabel>
       <FilledInput
-        inputRef={ref}
+        ref={ref}
         autoComplete={autoComplete}
         multiline={multiline}
         rows={rows}
@@ -33,7 +33,7 @@ const TextField = ({ name, control, fullWidth, label, autoComplete, multiline, r
         value={value}
       />
       <FormHelperText sx={sx.formHelperText} id={`${name}-helper-text`}>
-        {error?.message}
+        {error?.message || " "}
       </FormHelperText>
     </FormControl>
   );
