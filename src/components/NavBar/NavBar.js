@@ -1,7 +1,8 @@
-import { AppBar, Box, ClickAwayListener, Collapse, Container, IconButton, List, Stack, Toolbar, useMediaQuery } from "@mui/material";
+import { AppBar, Box, Collapse, Container, IconButton, List, Stack, Toolbar, useMediaQuery } from "@mui/material";
 import { CloseRounded as Close, MenuRounded as Menu } from "@mui/icons-material";
 import { memo, useEffect, useState } from "react";
 
+import { ClickAwayListener } from "@mui/base";
 import Logo from "./Logo";
 import NavButton from "./NavButton";
 import NavListItem from "./NavListItem";
