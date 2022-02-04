@@ -64,7 +64,6 @@ const Contact = () => {
                     <TextField
                       name="name"
                       control={control}
-                      fullWidth
                       label="Name"
                       autoComplete="name"
                     />
@@ -73,7 +72,6 @@ const Contact = () => {
                     <TextField
                       name="email"
                       control={control}
-                      fullWidth
                       label="Email"
                       autoComplete="email"
                     />
@@ -82,7 +80,6 @@ const Contact = () => {
                     <TextField
                       name="subject"
                       control={control}
-                      fullWidth
                       label="Subject"
                     />
                   </Grid>
@@ -90,7 +87,6 @@ const Contact = () => {
                     <TextField
                       name="message"
                       control={control}
-                      fullWidth
                       label="Message"
                       multiline
                       rows={9}

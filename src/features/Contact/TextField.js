@@ -8,23 +8,25 @@ import { useController } from "react-hook-form";
  * This is a stripped down version of the MUI TextField.
  * Only essential features for the contact form are kept.
  */
-const TextField = ({ name, control, fullWidth, label, autoComplete, multiline, rows }) => {
+const TextField = ({ name, control, label, autoComplete, multiline, rows }) => {
   const {
     field: { onChange, onBlur, value, ref },
     fieldState: { invalid, error }
   } = useController({ name: name, control: control });
 
+  const inputId = `${name}-input`;
   const helperTextId = `${name}-helper-text`;
 
   return (
-    <FormControl fullWidth={fullWidth} error={invalid}>
-      <InputLabel>{label}</InputLabel>
+    <FormControl fullWidth error={invalid}>
+      <InputLabel htmlFor={inputId}>{label}</InputLabel>
       <FilledInput
         inputRef={ref}
+        id={inputId}
+        aria-describedby={helperTextId}
         autoComplete={autoComplete}
         multiline={multiline}
         rows={rows}
-        aria-describedby={helperTextId}
         onChange={onChange}
         onBlur={onBlur}
         value={value}
@@ -37,7 +39,6 @@ const TextField = ({ name, control, fullWidth, label, autoComplete, multiline, r
 TextField.propTypes = {
   name: PropTypes.string.isRequired,
   control: PropTypes.object,
-  fullWidth: PropTypes.bool,
   label: PropTypes.string,
   autoComplete: PropTypes.string,
   multiline: PropTypes.bool,
