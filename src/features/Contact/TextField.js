@@ -14,17 +14,19 @@ const TextField = ({ name, control, fullWidth, label, autoComplete, multiline, r
     fieldState: { invalid, error }
   } = useController({ name: name, control: control });
 
+  const inputId = `${name}-input`;
   const helperTextId = `${name}-helper-text`;
 
   return (
     <FormControl fullWidth={fullWidth} error={invalid}>
-      <InputLabel>{label}</InputLabel>
+      <InputLabel htmlFor={inputId}>{label}</InputLabel>
       <FilledInput
         inputRef={ref}
+        id={inputId}
+        aria-describedby={helperTextId}
         autoComplete={autoComplete}
         multiline={multiline}
         rows={rows}
-        aria-describedby={helperTextId}
         onChange={onChange}
         onBlur={onBlur}
         value={value}
