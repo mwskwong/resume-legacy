@@ -41,10 +41,10 @@
     "react": "rc",
     "react-dom": "rc",
     "react-helmet": "^6.1.0",
-    "react-hook-form": "^7.26.0",
+    "react-hook-form": "^7.26.1",
     "react-redux": "^8.0.0-beta.3",
     "react-swipeable-views": "^0.14.0",
-    "simple-icons": "^6.8.0",
+    "simple-icons": "^6.9.0",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
