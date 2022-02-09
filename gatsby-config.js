@@ -14,6 +14,7 @@ const siteUrl = prod ? PROD_URL : PREVIEW_URL;
 module.exports = {
   jsxRuntime: "automatic",
   jsxImportSource: NODE_ENV === "production" ? "@emotion/react" : "@welldone-software/why-did-you-render",
+  trailingSlash: "always",
   siteMetadata: {
     siteUrl
   },
