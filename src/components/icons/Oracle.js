@@ -1,6 +1,6 @@
 import { SvgIcon } from "@mui/material";
 import { siOracle } from "simple-icons/icons";
-import useSx from "./useSimpleIconsSx";
+import useSx from "./useThirdPartyIconSx";
 
 const Oracle = props => {
   const sx = useSx();

@@ -1,6 +1,6 @@
 import { SvgIcon } from "@mui/material";
 import { siStackoverflow } from "simple-icons/icons";
-import useSx from "./useSimpleIconsSx";
+import useSx from "./useThirdPartyIconSx";
 
 const StackOverflow = props => {
   const sx = useSx();

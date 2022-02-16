@@ -1,6 +1,6 @@
 import { SvgIcon } from "@mui/material";
 import { siMicrosoft } from "simple-icons/icons";
-import useSx from "./useSimpleIconsSx";
+import useSx from "./useThirdPartyIconSx";
 
 const Microsoft = props => {
   const sx = useSx();

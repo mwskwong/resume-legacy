@@ -1,6 +1,6 @@
 import { SvgIcon } from "@mui/material";
 import { siLinkedin } from "simple-icons/icons";
-import useSx from "./useSimpleIconsSx";
+import useSx from "./useThirdPartyIconSx";
 
 const LinkedIn = props => {
   const sx = useSx();
