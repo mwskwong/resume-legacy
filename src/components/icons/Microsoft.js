@@ -1,12 +1,12 @@
 import { SvgIcon } from "@mui/material";
 import { siMicrosoft } from "simple-icons/icons";
-import useSx from "./useThirdPartyIconSx";
+import useSx from "./useSimpleIconsSx";
 
 const Microsoft = props => {
   const sx = useSx();
 
   return (
-    <SvgIcon sx={sx.simpleIcons} titleAccess={siMicrosoft.title} {...props}>
+    <SvgIcon sx={sx.simpleIcons} {...props}>
       <path d={siMicrosoft.path} />
     </SvgIcon>
   );

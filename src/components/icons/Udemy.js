@@ -1,12 +1,12 @@
 import { SvgIcon } from "@mui/material";
 import { siUdemy } from "simple-icons/icons";
-import useSx from "./useThirdPartyIconSx";
+import useSx from "./useSimpleIconsSx";
 
 const Udemy = props => {
   const sx = useSx();
 
   return (
-    <SvgIcon sx={sx.simpleIcons} titleAccess={siUdemy.title} {...props}>
+    <SvgIcon sx={sx.simpleIcons} {...props}>
       <path d={siUdemy.path} />
     </SvgIcon>
   );
