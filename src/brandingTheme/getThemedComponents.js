@@ -65,6 +65,7 @@ const getThemedComponents = theme => ({
     },
     MuiFab: {
       defaultProps: {
+        color: "secondary",
         size: "medium"
       },
       styleOverrides: {
@@ -73,8 +74,6 @@ const getThemedComponents = theme => ({
           bottom: theme.spacing(2),
           right: theme.spacing(2),
           borderRadius: theme.shape.borderRadius,
-          backgroundColor: nord1,
-          color: theme.palette.primary.main,
           boxShadow: "none"
         }
       }

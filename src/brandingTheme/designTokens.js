@@ -15,7 +15,7 @@ const designTokens = {
       contrastText: nord.nord1
     },
     secondary: {
-      main: nord.nord0,
+      main: nord.nord1,
       contrastText: nord.nord8
     },
     error: {
