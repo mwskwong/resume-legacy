@@ -1,5 +1,6 @@
+import { nord1, nord6 } from "nord";
+
 import { alpha } from "@mui/system";
-import { nord6 } from "nord";
 
 const getThemedComponents = theme => ({
   components: {
@@ -64,7 +65,6 @@ const getThemedComponents = theme => ({
     },
     MuiFab: {
       defaultProps: {
-        color: "secondary",
         size: "medium"
       },
       styleOverrides: {
@@ -72,7 +72,10 @@ const getThemedComponents = theme => ({
           position: "fixed",
           bottom: theme.spacing(2),
           right: theme.spacing(2),
-          borderRadius: theme.shape.borderRadius
+          borderRadius: theme.shape.borderRadius,
+          backgroundColor: nord1,
+          color: theme.palette.primary.main,
+          boxShadow: "none"
         }
       }
     },
@@ -107,11 +110,13 @@ const getThemedComponents = theme => ({
       }
     },
     MuiSnackbarContent: {
+      defaultProps: {
+        elevation: 0
+      },
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.common.black,
-          color: nord6,
-          backgroundImage: "none"
+          backgroundColor: nord1,
+          color: nord6
         }
       }
     },
