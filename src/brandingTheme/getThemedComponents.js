@@ -1,5 +1,4 @@
 import { alpha } from "@mui/system";
-import { nord6 } from "nord";
 
 const getThemedComponents = theme => ({
   components: {
@@ -64,7 +63,7 @@ const getThemedComponents = theme => ({
     },
     MuiFab: {
       defaultProps: {
-        color: "secondary",
+        color: "primary",
         size: "medium"
       },
       styleOverrides: {
@@ -109,9 +108,8 @@ const getThemedComponents = theme => ({
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.common.black,
-          color: nord6,
-          backgroundImage: "none"
+          backgroundColor: theme.palette.primary.main,
+          color: theme.palette.primary.contraText
         }
       }
     },
