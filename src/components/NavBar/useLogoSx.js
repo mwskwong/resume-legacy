@@ -3,8 +3,8 @@ import { useMemo } from "react";
 const useSx = ({ sxProp }) => useMemo(() => ({
   root: sxProp,
   text: {
-    // Prevent RubikVariable being used
-    fontFamily: "Riviera, sans-serif !important"
+    fontFamily: "Riviera, sans-serif !important", // Prevent RubikVariable being used
+    color: "inherit"
   }
 }), [sxProp]);
 

@@ -109,7 +109,8 @@ const getThemedComponents = theme => ({
       styleOverrides: {
         root: {
           backgroundColor: theme.palette.primary.main,
-          color: theme.palette.primary.contraText
+          color: theme.palette.primary.contraText,
+          backgroundImage: "none"
         }
       }
     },
