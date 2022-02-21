@@ -3,7 +3,7 @@ import "@fontsource/rubik/latin-500.css";
 import "@fontsource/rubik/latin-700.css";
 import "@fontsource/rubik/latin-800.css";
 import "@fontsource/rubik/variable.css";
-import "./aquireBold.css";
+import "./riviera.css";
 
 import { createTheme } from "@mui/material";
 import { deepmerge } from "@mui/utils";
