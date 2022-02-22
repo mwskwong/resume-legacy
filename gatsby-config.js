@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: `${__dirname}/src/images`
+        name: "constants",
+        path: `${__dirname}/src/constants`
       }
     },
     {
@@ -91,10 +91,81 @@ module.exports = {
         theme_color: nord0,
         cache_busting_mode: "none",
         display: "standalone",
-        icon: "src/images/icon.png",
+        // icon: "src/images/icon.png",
         name: "Matthew Kwong",
         short_name: "Matthew",
-        start_url: "."
+        start_url: ".",
+        icons: [
+          {
+            src: "icon-16x16.png",
+            sizes: "16x16",
+            type: "image/png"
+          },
+          {
+            src: "icon-32x32.png",
+            sizes: "32x32",
+            type: "image/png"
+          },
+          {
+            src: "icon-180x180.png",
+            sizes: "180x180",
+            type: "image/png"
+          },
+          {
+            src: "icon-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
+          },
+          {
+            src: "icon-512x512.png",
+            sizes: "512x512",
+            type: "image/png"
+          },
+          {
+            src: "icon-maskable-48x48.png",
+            sizes: "48x48",
+            type: "image/png",
+            purpose: "maskable"
+          },
+          {
+            src: "icon-maskable-72x72.png",
+            sizes: "72x72",
+            type: "image/png",
+            purpose: "maskable"
+          },
+          {
+            src: "icon-maskable-96x96.png",
+            sizes: "96x96",
+            type: "image/png",
+            purpose: "maskable"
+          },
+          {
+            src: "icon-maskable-128x128.png",
+            sizes: "128x128",
+            type: "image/png",
+            purpose: "maskable"
+          },
+          {
+            src: "icon-maskable-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "maskable"
+          },
+          {
+            src: "icon-maskable-384x384.png",
+            sizes: "384x384",
+            type: "image/png",
+            purpose: "maskable"
+          },
+          {
+            src: "icon-maskable-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "maskable"
+          }
+        ],
+        legacy: false,
+        include_favicon: false
       }
     },
     {
