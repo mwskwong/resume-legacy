@@ -38,7 +38,7 @@ const NotFoundPage = () => {
         The page you were looking for does not exist.
       </Typography>
       <Button variant="outlined" color="inherit" size="large" startIcon={<ArrowLeft />} component={Link} to="/">
-        go back
+        back to home
       </Button>
     </Container>
   );
