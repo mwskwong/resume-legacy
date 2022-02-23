@@ -93,7 +93,8 @@ module.exports = {
         display: "standalone",
         name: "Matthew Kwong",
         short_name: "Matthew",
-        start_url: ".",
+        start_url: "/",
+        id: "/",
         icons: [
           {
             src: "/icon-192x192.png",
