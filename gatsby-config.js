@@ -91,7 +91,6 @@ module.exports = {
         theme_color: nord0,
         cache_busting_mode: "none",
         display: "standalone",
-        // icon: "src/images/icon.png",
         name: "Matthew Kwong",
         short_name: "Matthew",
         start_url: ".",
