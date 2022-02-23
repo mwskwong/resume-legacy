@@ -34,11 +34,11 @@ const NotFoundPage = () => {
       <Box sx={sx.animationContainer}>
         <Arctic404 />
       </Box>
-      <Typography variant="h5" sx={sx.notFound}>
+      <Typography variant="h5" component="h1" sx={sx.notFound}>
         The page you were looking for does not exist.
       </Typography>
       <Button variant="outlined" color="inherit" size="large" startIcon={<ArrowLeft />} component={Link} to="/">
-        go back
+        back to home
       </Button>
     </Container>
   );
