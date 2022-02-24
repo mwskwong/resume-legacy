@@ -63,7 +63,7 @@ const getThemedComponents = theme => ({
     },
     MuiFab: {
       defaultProps: {
-        color: "primary",
+        color: "secondary",
         size: "medium"
       },
       styleOverrides: {
@@ -108,8 +108,8 @@ const getThemedComponents = theme => ({
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.primary.main,
-          color: theme.palette.primary.contraText,
+          backgroundColor: theme.palette.secondary.main,
+          color: theme.palette.text.primary,
           backgroundImage: "none"
         }
       }
