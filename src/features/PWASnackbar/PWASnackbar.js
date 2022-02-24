@@ -28,7 +28,7 @@ const PWASnackbar = () => {
       open={open}
       message="New content is available and will be used after reloading."
       action={
-        <Button color="inherit" onClick={handleReload}>
+        <Button onClick={handleReload}>
           reload
         </Button>
       }
