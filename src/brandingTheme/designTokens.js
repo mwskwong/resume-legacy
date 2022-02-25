@@ -54,8 +54,9 @@ const designTokens = {
     divider: alpha(nord.nord4, .5),
     background: {
       default: nord.nord0,
-      sectionPrimary: darken(nord.nord0, .1),
-      sectionSecondary: nord.nord1
+      sectionPrimary: nord.nord1,
+      sectionSecondary: darken(nord.nord0, .1),
+      sectionTertiary: darken(nord.nord0, .2)
     },
     action: {
       active: nord.nord6,

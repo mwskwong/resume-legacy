@@ -1,12 +1,9 @@
 import { useMemo } from "react";
 
-const useSx = () => useMemo(() => ({
-  divider: {
-    color: "background.sectionSecondary"
-  },
+const useSx = ({ sxProp }) => useMemo(() => ({
   root: {
     color: "text.secondary",
-    bgcolor: "background.sectionSecondary"
+    ...sxProp
   },
   gridContainer: {
     alignItems: "center",
@@ -16,6 +13,6 @@ const useSx = () => useMemo(() => ({
       sm: 5
     }
   }
-}), []);
+}), [sxProp]);
 
 export default useSx;

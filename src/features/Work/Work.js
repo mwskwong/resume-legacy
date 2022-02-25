@@ -1,28 +1,29 @@
 import { Box, Container, Stack } from "@mui/material";
-import { Fragment, memo } from "react";
 
+import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import { WORK } from "constants/nav";
-import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 import WorkTimeline from "./WorkTimeline";
+import { memo } from "react";
 import useSx from "./useWorkSx";
 
-const Work = () => {
-  const sx = useSx();
+const Work = ({ sx: sxProp }) => {
+  const sx = useSx({ sxProp });
 
   return (
-    <Fragment>
-      <WaveSmoothFlat sx={sx.divider} />
-      <Box sx={sx.root} component="section" id={WORK.id}>
-        <Container>
-          <Stack spacing={6}>
-            <SectionHeader heading="Recent Experiences" />
-            <WorkTimeline />
-          </Stack>
-        </Container>
-      </Box>
-    </Fragment>
+    <Box sx={sx.root} component="section" id={WORK.id}>
+      <Container>
+        <Stack spacing={6}>
+          <SectionHeader heading="Recent Experiences" />
+          <WorkTimeline />
+        </Stack>
+      </Container>
+    </Box>
   );
+};
+
+Work.propTypes = {
+  sx: PropTypes.object
 };
 
 Work.whyDidYouRender = true;
