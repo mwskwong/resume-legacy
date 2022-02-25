@@ -1,21 +1,20 @@
 import { Box, Container, Grid, Stack } from "@mui/material";
-import { Fragment, memo } from "react";
 
 import ArcticOceanFractal from "components/ArcticOceanFractal";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import { NoSsr } from "@mui/base";
+import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
-import WaveSmooth2 from "../../components/dividers/WaveSmooth2";
+import { memo } from "react";
 import useSx from "./useEducationSx";
 
-const Education = () => {
-  const sx = useSx();
+const Education = ({ sx: sxProp }) => {
+  const sx = useSx({ sxProp });
 
   return (
-    <Fragment>
-      <WaveSmooth2 sx={sx.divider} />
+    <Box sx={sx.root}>
       <Container component="section" id={EDUCATION.id}>
         <Stack spacing={6}>
           <SectionHeader heading="Education" />
@@ -38,8 +37,12 @@ const Education = () => {
           </div>
         </Stack>
       </Container>
-    </Fragment>
+    </Box>
   );
+};
+
+Education.propTypes = {
+  sx: PropTypes.object
 };
 
 Education.whyDidYouRender = true;

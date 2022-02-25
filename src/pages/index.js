@@ -1,4 +1,4 @@
-import { Fragment, lazy } from "react";
+import { Fragment, lazy, useMemo } from "react";
 
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
@@ -12,7 +12,63 @@ const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/La
 const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
 const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
 
+const WaveSmooth = lazy(() => import(/* webpackChunkName: "about" */ "components/dividers/WaveSmooth"));
+const WaveRough = lazy(() => import(/* webpackChunkName: "testimonial" */ "components/dividers/WaveRough"));
+const WaveSmoothFlat = lazy(() => import(/* webpackChunkName: "work" */ "components/dividers/WaveSmoothFlat"));
+const WaveSmooth2 = lazy(() => import(/* webpackChunkName: "education" */ "components/dividers/WaveSmooth2"));
+const WaveRoaring = lazy(() => import(/* webpackChunkName: "contact" */ "components/dividers/WaveRoaring"));
+const FooterDivider = lazy(() => import(/* webpackChunkName: "footer" */ "components/dividers/Footer"));
+
+const bgcolors = {
+  landing: "default",
+  about: "sectionSecondary",
+  testimonial: "default",
+  work: "sectionTertiary",
+  education: "sectionSecondary",
+  contact: "default",
+  footer: "sectionPrimary"
+};
+
+const useSx = () => useMemo(() => ({
+  about: {
+    bgcolor: `background.${bgcolors.about}`
+  },
+  work: {
+    bgcolor: `background.${bgcolors.work}`
+  },
+  education: {
+    bgcolor: `background.${bgcolors.education}`
+  },
+  footer: {
+    bgcolor: `background.${bgcolors.footer}`
+  },
+  waveSmooth: {
+    color: `background.${bgcolors.about}`
+  },
+  waveRough: {
+    bgcolor: `background.${bgcolors.about}`,
+    color: `background.${bgcolors.testimonial}`
+  },
+  waveSmoothFlat: {
+    bgcolor: `background.${bgcolors.testimonial}`,
+    color: `background.${bgcolors.work}`
+  },
+  waveSmooth2: {
+    bgcolor: `background.${bgcolors.work}`,
+    color: `background.${bgcolors.education}`
+  },
+  waveRoaring: {
+    bgcolor: `background.${bgcolors.education}`,
+    color: `background.${bgcolors.contact}`
+  },
+  footerDivider: {
+    bgcolor: `background.${bgcolors.contact}`,
+    color: `background.${bgcolors.footer}`
+  }
+}), []);
+
 const IndexPage = () => {
+  const sx = useSx();
 
   return (
     <Fragment>
@@ -20,13 +76,19 @@ const IndexPage = () => {
       <NavBar />
       <main>
         <Landing />
-        <About />
+        <WaveSmooth sx={sx.waveSmooth} />
+        <About sx={sx.about} />
+        <WaveRough sx={sx.waveRough} />
         <Testimonial />
-        <Work />
-        <Education />
+        <WaveSmoothFlat sx={sx.waveSmoothFlat} />
+        <Work sx={sx.work} />
+        <WaveSmooth2 sx={sx.waveSmooth2} />
+        <Education sx={sx.education} />
+        <WaveRoaring sx={sx.waveRoaring} />
         <Contact />
       </main>
-      <Footer />
+      <FooterDivider sx={sx.footerDivider} />
+      <Footer sx={sx.footer} />
       <ScrollToTopFab />
     </Fragment>
   );

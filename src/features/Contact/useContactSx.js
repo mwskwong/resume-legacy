@@ -1,19 +1,11 @@
 import { useMemo } from "react";
 
-const useSx = () => useMemo(() => ({
-  divider: {
-    color: "background.sectionPrimary"
-  },
-  root: {
-    background: theme => `linear-gradient(
-      ${theme.palette.background.sectionPrimary} 0%,
-      ${theme.palette.background.default} 100%
-    )`
-  },
+const useSx = ({ sxProp }) => useMemo(() => ({
+  root: sxProp,
   submitButton: {
     float: "right",
     mt: 4
   }
-}), []);
+}), [sxProp]);
 
 export default useSx;
