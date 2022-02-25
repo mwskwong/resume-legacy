@@ -13,6 +13,7 @@ const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "fea
 const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
 
 const IndexPage = () => {
+
   return (
     <Fragment>
       <SEO />
