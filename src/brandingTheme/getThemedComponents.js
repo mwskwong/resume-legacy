@@ -63,7 +63,7 @@ const getThemedComponents = theme => ({
     },
     MuiFab: {
       defaultProps: {
-        color: "secondary",
+        color: "primary",
         size: "medium"
       },
       styleOverrides: {
