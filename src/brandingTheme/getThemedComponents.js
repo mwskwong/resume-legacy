@@ -46,13 +46,13 @@ const getThemedComponents = theme => ({
           }
         },
         section: {
+          scrollMarginTop: "56px",
           [`@media (min-width: ${theme.breakpoints.values.xs}px) and (orientation: landscape)`]: {
             scrollMarginTop: "48px"
           },
           [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
             scrollMarginTop: "64px"
           },
-          scrollMarginTop: "56px",
           paddingTop: theme.spacing(10),
           paddingBottom: theme.spacing(10)
         },
