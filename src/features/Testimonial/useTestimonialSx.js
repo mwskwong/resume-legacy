@@ -1,8 +1,9 @@
 import { useMemo } from "react";
 
 const useSx = () => useMemo(() => ({
-  root: {
-    bgcolor: "background.default"
+  divider: {
+    color: "background.default",
+    bgcolor: "background.sectionPrimary"
   },
   contentContainer: {
     mt: 5
