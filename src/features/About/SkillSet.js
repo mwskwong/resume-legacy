@@ -1,5 +1,6 @@
 import {
   AllInclusiveRounded as AllInclusive,
+  CloudRounded as Cloud,
   DashboardRounded as Dashboard,
   DevicesOtherRounded as DevicesOther,
   TerminalRounded as Terminal
@@ -14,6 +15,7 @@ import useSx from "./useSkillSetSx";
 
 const Icons = {
   backend: Terminal,
+  cloud: Cloud,
   dataOps: AllInclusive,
   database: Database,
   frontend: Dashboard,
