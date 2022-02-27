@@ -128,7 +128,26 @@ module.exports = {
       options: {
         headers: {
           "/*": [
-            "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
+            "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
+            `Permissions-Policy: 
+              accelerometer=(), 
+              ambient-light-sensor=(), 
+              autoplay=(), 
+              camera=(), 
+              encrypted-media=(),
+              fullscreen=(self), 
+              geolocation=(self), 
+              gyroscope=(self), 
+              magnetometer=(), 
+              microphone=(), 
+              payment=(), 
+              usb=(), 
+              midi=(), 
+              picture-in-picture=(), 
+              speaker=(), 
+              sync-xhr=(), 
+              vr=()
+            `
           ],
           [`${PREVIEW_URL}/*`]: [
             `Link: <${PROD_URL}/:splat>; rel=canonical`
