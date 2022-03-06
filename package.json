@@ -36,7 +36,7 @@
     "gatsby-source-filesystem": "^4.9.0",
     "gatsby-transformer-sharp": "^4.9.0",
     "lodash": "^4.17.21",
-    "mdi-material-ui": "^7.1.0",
+    "mdi-material-ui": "^7.2.0",
     "nope-validator": "^1.0.2",
     "react": "rc",
     "react-dom": "rc",
@@ -44,7 +44,7 @@
     "react-hook-form": "^7.27.1",
     "react-redux": "^8.0.0-beta.3",
     "react-swipeable-views": "^0.14.0",
-    "simple-icons": "^6.12.0",
+    "simple-icons": "^6.13.0",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
