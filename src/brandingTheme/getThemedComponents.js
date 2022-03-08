@@ -108,9 +108,10 @@ const getThemedComponents = theme => ({
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.common.black,
+          backgroundColor: alpha(theme.palette.common.black, .72),
           color: theme.palette.text.primary,
-          backgroundImage: "none"
+          backgroundImage: "none",
+          backdropFilter: "blur(20px)"
         }
       }
     },
