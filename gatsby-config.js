@@ -67,7 +67,7 @@ module.exports = {
               path
             }
           }
-          allFile {
+          allFile(filter: {ext: {eq: ".pdf"}}) {
             nodes {
               publicURL
             }
