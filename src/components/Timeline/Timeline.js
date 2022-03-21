@@ -1,7 +1,9 @@
 import { Timeline as MuiTimeline } from "@mui/lab";
 import PropTypes from "prop-types";
-import TimelineItem from "./TImelineItem";
 import { useMediaQuery } from "@mui/material";
+
+// import TimelineItem from "./TImelineItem";
+
 
 const Timeline = ({ data }) => {
   const mdDown = useMediaQuery(theme => theme.breakpoints.down("md"));
@@ -10,7 +12,8 @@ const Timeline = ({ data }) => {
     <div>
       <MuiTimeline position={mdDown ? "right" : "alternate"}>
         {data.map((datum, index) => (
-          <TimelineItem key={index} data={datum} />
+          <div key={index}>{JSON.stringify(datum)}</div>
+          // <TimelineItem key={index} data={datum} />
         ))}
       </MuiTimeline>
     </div>
