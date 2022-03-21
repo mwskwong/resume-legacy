@@ -11,12 +11,12 @@ import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 
 const About = lazy(() => import(/* webpackChunkName: "about" */ "features/About"));
-// const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
+const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
 // const Education = lazy(() => import(/* webpackChunkName: "education" */ "features/Education"));
 const Footer = lazy(() => import(/* webpackChunkName: "footer" */ "features/Footer"));
 const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/Landing"));
 const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
-const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
+// const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
 
 const bgcolors = {
   landing: "default",
