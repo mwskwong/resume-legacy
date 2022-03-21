@@ -9,7 +9,7 @@ const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Co
 const Education = lazy(() => import(/* webpackChunkName: "education" */ "features/Education"));
 const Footer = lazy(() => import(/* webpackChunkName: "footer" */ "features/Footer"));
 const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/Landing"));
-const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
+// const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
 const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
 
 const WaveSmooth = lazy(() => import(/* webpackChunkName: "about" */ "components/dividers/WaveSmooth"));
@@ -79,7 +79,7 @@ const IndexPage = () => {
         <WaveSmooth sx={sx.waveSmooth} />
         <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
-        <Testimonial />
+        {/* <Testimonial /> */}
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
         <Work sx={sx.work} />
         <WaveSmooth2 sx={sx.waveSmooth2} />
