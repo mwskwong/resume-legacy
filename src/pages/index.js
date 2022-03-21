@@ -10,7 +10,7 @@ import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 
-// const About = lazy(() => import(/* webpackChunkName: "about" */ "features/About"));
+const About = lazy(() => import(/* webpackChunkName: "about" */ "features/About"));
 // const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
 // const Education = lazy(() => import(/* webpackChunkName: "education" */ "features/Education"));
 const Footer = lazy(() => import(/* webpackChunkName: "footer" */ "features/Footer"));
@@ -76,7 +76,7 @@ const IndexPage = () => {
       <main>
         <Landing />
         <WaveSmooth sx={sx.waveSmooth} />
-        {/* <About sx={sx.about} /> */}
+        <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
         {/* <Testimonial /> */}
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
