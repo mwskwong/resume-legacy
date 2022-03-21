@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-import Timeline from "components/Timeline";
+// import Timeline from "components/Timeline";
 
 const WorkTimeline = () => {
   const { workNodes } = useStaticQuery(graphql`{
@@ -24,13 +24,14 @@ const WorkTimeline = () => {
     .map(({ jobTitle, company, document, jobDuties, ...node }) => ({
       title: jobTitle,
       subtitle: company,
-      fileUrl: document? document.localFile.publicURL: undefined,
+      fileUrl: document ? document.localFile.publicURL : undefined,
       contents: jobDuties,
       ...node
     }));
 
   return (
-    <Timeline data={works} />
+    <div />
+    // <Timeline data={works} />
   );
 };
 

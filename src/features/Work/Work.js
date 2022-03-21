@@ -3,12 +3,9 @@ import { Box, Container, Stack } from "@mui/material";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import { WORK } from "constants/nav";
+import WorkTimeline from "./WorkTimeline";
 import { memo } from "react";
 import useSx from "./useWorkSx";
-
-// import WorkTimeline from "./WorkTimeline";
-
-
 
 const Work = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
@@ -18,7 +15,7 @@ const Work = ({ sx: sxProp }) => {
       <Container>
         <Stack spacing={6}>
           <SectionHeader heading="Recent Experiences" />
-          {/* <WorkTimeline /> */}
+          <WorkTimeline />
         </Stack>
       </Container>
     </Box>
