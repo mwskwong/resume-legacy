@@ -4,7 +4,7 @@ import TimelineItem from "./TImelineItem";
 import { useMediaQuery } from "@mui/material";
 
 const Timeline = ({ data }) => {
-  const mdDown = useMediaQuery(theme => theme.breakpoints.down("md"));
+  const mdDown = useMediaQuery(theme => theme.breakpoints.down("md"), { noSsr: true });
 
   return (
     <div>
