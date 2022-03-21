@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-// import Timeline from "components/Timeline";
+import Timeline from "components/Timeline";
 
 const WorkTimeline = () => {
   const { workNodes } = useStaticQuery(graphql`{
@@ -29,10 +29,7 @@ const WorkTimeline = () => {
       ...node
     }));
 
-  return (
-    <div />
-    // <Timeline data={works} />
-  );
+  return <Timeline data={works} />;
 };
 
 WorkTimeline.whyDidYouRender = true;
