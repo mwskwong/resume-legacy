@@ -16,7 +16,7 @@ const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Co
 const Footer = lazy(() => import(/* webpackChunkName: "footer" */ "features/Footer"));
 const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/Landing"));
 const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
-// const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
+const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
 
 const bgcolors = {
   landing: "default",
@@ -80,7 +80,7 @@ const IndexPage = () => {
         <WaveRough sx={sx.waveRough} />
         <Testimonial />
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        {/* <Work sx={sx.work} /> */}
+        <Work sx={sx.work} />
         <WaveSmooth2 sx={sx.waveSmooth2} />
         {/* <Education sx={sx.education} /> */}
         <WaveRoaring sx={sx.waveRoaring} />
