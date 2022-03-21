@@ -14,7 +14,7 @@ import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 // const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
 // const Education = lazy(() => import(/* webpackChunkName: "education" */ "features/Education"));
 const Footer = lazy(() => import(/* webpackChunkName: "footer" */ "features/Footer"));
-// const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/Landing"));
+const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/Landing"));
 // const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
 // const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
 
@@ -74,7 +74,7 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        {/* <Landing /> */}
+        <Landing />
         <WaveSmooth sx={sx.waveSmooth} />
         {/* <About sx={sx.about} /> */}
         <WaveRough sx={sx.waveRough} />
