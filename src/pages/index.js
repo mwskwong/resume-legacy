@@ -80,11 +80,11 @@ const IndexPage = () => {
         <WaveRough sx={sx.waveRough} />
         <Testimonial />
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        <Work sx={sx.work} />
+        {/* <Work sx={sx.work} /> */}
         <WaveSmooth2 sx={sx.waveSmooth2} />
         {/* <Education sx={sx.education} /> */}
         <WaveRoaring sx={sx.waveRoaring} />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       <FooterDivider sx={sx.footerDivider} />
       <Footer sx={sx.footer} />
