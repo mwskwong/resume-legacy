@@ -134,6 +134,11 @@ const getThemedComponents = theme => ({
       defaultProps: {
         color: "text.primary"
       }
+    },
+    MuiUseMediaQuery: {
+      defaultProps: {
+        noSsr: true
+      }
     }
   }
 });
