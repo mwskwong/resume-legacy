@@ -24,15 +24,15 @@ const TimelineItem = ({ data }) => {
 
   return (
     <MuiTimelineItem>
-      {/* <TimelineOppositeContent sx={sx.periodDesktop} variant="body2">
+      <TimelineOppositeContent sx={{ display: "none" }} variant="body2">
         {period}
-      </TimelineOppositeContent> */}
+      </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineDot color="primary" />
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent sx={sx.timelineContent}>
-        <Typography sx={sx.periodMobile} variant="body2" component="div" gutterBottom>
+        {/* <Typography sx={sx.periodMobile} variant="body2" component="div" gutterBottom>
           {period}
         </Typography>
         <Typography variant="subtitle1" component="div" gutterBottom>
@@ -52,7 +52,7 @@ const TimelineItem = ({ data }) => {
           <Button sx={sx.downloadButton} startIcon={<Download />} href={data.fileUrl}>
             Download
           </Button>
-        )}
+        )} */}
       </TimelineContent>
     </MuiTimelineItem >
   );
