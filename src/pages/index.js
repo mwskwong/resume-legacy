@@ -83,21 +83,36 @@ const IndexPage = () => {
       <main>
         <Timeline>
           <TimelineItem>
-            <TimelineOppositeContent variant="body2">
+            <TimelineOppositeContent variant="body2" sx={{
+              color: "text.secondary",
+              display: {
+                xs: "none",
+                md: "initial"
+              }
+            }}>
               {"Aug 2021 — Present"}
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot color="primary" />
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent sx={sx.timelineContent}>
-              {/* <Typography sx={sx.periodMobile} variant="body2" component="div" gutterBottom>
-                {period}
-              </Typography> */}
+            <TimelineContent sx={{
+              mb: 4
+            }}>
+              <Typography sx={{
+                color: "text.secondary",
+                display: {
+                  md: "none"
+                }
+              }} variant="body2" component="div" gutterBottom>
+                {"Aug 2021 — Present"}
+              </Typography>
               <Typography variant="subtitle1" component="div" gutterBottom>
                 {"Programmer (Database Management System)"}
               </Typography>
-              <Typography component="div" gutterBottom>
+              <Typography sx={{
+                color: "primary.main"
+              }} component="div" gutterBottom>
                 {"EDPS Limited | Outsourced to Hospital Authority"}
               </Typography>
               <List disablePadding>
