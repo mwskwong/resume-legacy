@@ -1,21 +1,21 @@
-import { Fragment, lazy, useMemo } from "react";
+import { Fragment, useMemo } from "react";
 
+import About from "features/About";
+import Contact from "features/Contact";
+import Education from "features/Education";
+import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
+import Landing from "features/Landing";
+import NavBar from "components/NavBar";
 import SEO from "components/SEO";
+import ScrollToTopFab from "components/ScrollToTopFab";
+import Testimonial from "features/Testimonial";
 import WaveRoaring from "components/dividers/WaveRoaring";
 import WaveRough from "components/dividers/WaveRough";
 import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
-
-// import NavBar from "components/NavBar";
-
-// import ScrollToTopFab from "components/ScrollToTopFab";
-
-
-
-
-
+import Work from "features/Work";
 
 // const About = lazy(() => import(/* webpackChunkName: "about" */ "features/About"));
 // const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
@@ -79,23 +79,23 @@ const IndexPage = () => {
   return (
     <Fragment>
       <SEO />
-      {/* <NavBar /> */}
+      <NavBar />
       <main>
-        {/* <Landing /> */}
+        <Landing />
         <WaveSmooth sx={sx.waveSmooth} />
-        {/* <About sx={sx.about} /> */}
+        <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
-        {/* <Testimonial /> */}
+        <Testimonial />
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        {/* <Work sx={sx.work} /> */}
+        <Work sx={sx.work} />
         <WaveSmooth2 sx={sx.waveSmooth2} />
-        {/* <Education sx={sx.education} /> */}
+        <Education sx={sx.education} />
         <WaveRoaring sx={sx.waveRoaring} />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       <FooterDivider sx={sx.footerDivider} />
-      {/* <Footer sx={sx.footer} /> */}
-      {/* <ScrollToTopFab /> */}
+      <Footer sx={sx.footer} />
+      <ScrollToTopFab />
     </Fragment>
   );
 };
