@@ -41,18 +41,18 @@ const TimelineItem = ({ data }) => {
         <Typography sx={sx.subtitle} component="div" gutterBottom>
           {data.subtitle}
         </Typography>
-        <List disablePadding>
+        {/* <List disablePadding>
           {contents.map((content, index) => (
             <ListItem key={index} sx={sx.contentListItem} disableGutters>
               <ListItemText primary={content} />
             </ListItem>
           ))}
-        </List>
-        {/* {data.fileUrl && (
+        </List> */}
+        {data.fileUrl && (
           <Button sx={sx.downloadButton} startIcon={<Download />} href={data.fileUrl}>
             Download
           </Button>
-        )} */}
+        )}
       </TimelineContent>
     </MuiTimelineItem >
   );
