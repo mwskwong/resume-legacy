@@ -74,17 +74,17 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <Landing />
+        {/* <Landing /> */}
         <WaveSmooth sx={sx.waveSmooth} />
-        <About sx={sx.about} />
+        {/* <About sx={sx.about} /> */}
         <WaveRough sx={sx.waveRough} />
-        <Testimonial />
+        {/* <Testimonial /> */}
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
         {/* <Work sx={sx.work} /> */}
         <WaveSmooth2 sx={sx.waveSmooth2} />
         {/* <Education sx={sx.education} /> */}
         <WaveRoaring sx={sx.waveRoaring} />
-        <Contact />
+        {/* <Contact /> */}
       </main>
       <FooterDivider sx={sx.footerDivider} />
       <Footer sx={sx.footer} />
