@@ -19,7 +19,7 @@ const TimelineItem = ({ data }) => {
   const sx = useSx();
   const from = dateTimeFormat.format(new Date(data.from));
   const to = data.to ? dateTimeFormat.format(new Date(data.to)) : "Present";
-  const period = `${from} — ${to}`;
+  const period = `${data.from} — ${data.to}`;
   const contents = data.contents || [];
 
   return (
