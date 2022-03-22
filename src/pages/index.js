@@ -1,22 +1,28 @@
 import { Fragment, lazy, useMemo } from "react";
 
-import FooterDivider from "components/dividers/Footer";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
-import WaveRoaring from "components/dividers/WaveRoaring";
-import WaveRough from "components/dividers/WaveRough";
-import WaveSmooth from "components/dividers/WaveSmooth";
-import WaveSmooth2 from "components/dividers/WaveSmooth2";
-import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
+import WorkTimeline from "../features/Work/WorkTimeline";
 
-const About = lazy(() => import(/* webpackChunkName: "about" */ "features/About"));
-const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
-const Education = lazy(() => import(/* webpackChunkName: "education" */ "features/Education"));
-const Footer = lazy(() => import(/* webpackChunkName: "footer" */ "features/Footer"));
-const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/Landing"));
-const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
-const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
+// import FooterDivider from "components/dividers/Footer";
+
+
+
+// import WaveRoaring from "components/dividers/WaveRoaring";
+// import WaveRough from "components/dividers/WaveRough";
+// import WaveSmooth from "components/dividers/WaveSmooth";
+// import WaveSmooth2 from "components/dividers/WaveSmooth2";
+// import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
+
+
+// const About = lazy(() => import(/* webpackChunkName: "about" */ "features/About"));
+// const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
+// const Education = lazy(() => import(/* webpackChunkName: "education" */ "features/Education"));
+// const Footer = lazy(() => import(/* webpackChunkName: "footer" */ "features/Footer"));
+// const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/Landing"));
+// const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
+// const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
 
 const bgcolors = {
   landing: "default",
@@ -74,7 +80,8 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <Landing />
+        <WorkTimeline />
+        {/* <Landing />
         <WaveSmooth sx={sx.waveSmooth} />
         <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
@@ -84,10 +91,10 @@ const IndexPage = () => {
         <WaveSmooth2 sx={sx.waveSmooth2} />
         <Education sx={sx.education} />
         <WaveRoaring sx={sx.waveRoaring} />
-        <Contact />
+        <Contact /> */}
       </main>
-      <FooterDivider sx={sx.footerDivider} />
-      <Footer sx={sx.footer} />
+      {/* <FooterDivider sx={sx.footerDivider} /> */}
+      {/* <Footer sx={sx.footer} /> */}
       <ScrollToTopFab />
     </Fragment>
   );
