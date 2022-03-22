@@ -17,16 +17,16 @@ const dateTimeFormat = new Intl.DateTimeFormat(undefined, { month: "short", year
 
 const TimelineItem = ({ data }) => {
   const sx = useSx();
-  const from = dateTimeFormat.format(new Date(data.from));
-  const to = data.to ? dateTimeFormat.format(new Date(data.to)) : "Present";
-  const period = `${from} — ${to}`;
-  const contents = data.contents || [];
+  // const from = dateTimeFormat.format(new Date(data.from));
+  // const to = data.to ? dateTimeFormat.format(new Date(data.to)) : "Present";
+  // const period = `${from} — ${to}`;
+  // const contents = data.contents || [];
 
   return (
     <MuiTimelineItem>
-      <TimelineOppositeContent sx={{ display: "none" }} variant="body2">
+      {/* <TimelineOppositeContent sx={{ display: "none" }} variant="body2">
         {period}
-      </TimelineOppositeContent>
+      </TimelineOppositeContent> */}
       <TimelineSeparator>
         <TimelineDot color="primary" />
         <TimelineConnector />
