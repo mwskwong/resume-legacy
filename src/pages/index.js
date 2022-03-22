@@ -1,9 +1,9 @@
 import { Fragment, lazy, useMemo } from "react";
+import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator } from "@mui/lab";
 
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
-import WorkTimeline from "../features/Work/WorkTimeline";
 
 // import FooterDivider from "components/dividers/Footer";
 
@@ -80,7 +80,28 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <WorkTimeline />
+        <Timeline>
+          <TimelineItem>
+            <TimelineSeparator>
+              <TimelineDot />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>Eat</TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelineSeparator>
+              <TimelineDot />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>Code</TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelineSeparator>
+              <TimelineDot />
+            </TimelineSeparator>
+            <TimelineContent>Sleep</TimelineContent>
+          </TimelineItem>
+        </Timeline>
         {/* <Landing />
         <WaveSmooth sx={sx.waveSmooth} />
         <About sx={sx.about} />
