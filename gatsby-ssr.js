@@ -5,7 +5,7 @@ import brandingTheme from "brandingTheme";
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
-    <Suspense fallback={null}>
+    <Suspense>
       {element}
     </Suspense>
   </StrictMode>
