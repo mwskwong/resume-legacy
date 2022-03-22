@@ -13,18 +13,18 @@ import PropTypes from "prop-types";
 import { memo } from "react";
 import useSx from "./useTImelineItemSx";
 
-const dateTimeFormat = new Intl.DateTimeFormat(undefined, { month: "short", year: "numeric" });
+const dateTimeFormat = new Intl.DateTimeFormat("en", { month: "short", year: "numeric" });
 
 const TimelineItem = ({ data }) => {
   const sx = useSx();
-  // const from = dateTimeFormat.format(new Date(data.from));
-  // const to = data.to ? dateTimeFormat.format(new Date(data.to)) : "Present";
-  const period = `${data.from} — ${data.to}`;
+  const from = dateTimeFormat.format(new Date(data.from));
+  const to = data.to ? dateTimeFormat.format(new Date(data.to)) : "Present";
+  const period = `${from} — ${to}`;
   const contents = data.contents || [];
 
   return (
     <MuiTimelineItem>
-      <TimelineOppositeContent sx={{ display: "none" }} variant="body2">
+      <TimelineOppositeContent sx={sx.periodDesktop} variant="body2">
         {period}
       </TimelineOppositeContent>
       <TimelineSeparator>
