@@ -10,9 +10,9 @@ import { useController } from "react-hook-form";
  */
 const TextField = ({ name, control, label, autoComplete, multiline, rows }) => {
   const {
-    field: { onChange, onBlur, value, ref },
+    field: { ref, ...field },
     fieldState: { invalid, error }
-  } = useController({ name: name, control: control });
+  } = useController({ name, control });
 
   const inputId = `${name}-input`;
   const helperTextId = `${name}-helper-text`;
@@ -22,14 +22,12 @@ const TextField = ({ name, control, label, autoComplete, multiline, rows }) => {
       <InputLabel htmlFor={inputId}>{label}</InputLabel>
       <FilledInput
         inputRef={ref}
+        {...field}
         id={inputId}
         aria-describedby={helperTextId}
         autoComplete={autoComplete}
         multiline={multiline}
         rows={rows}
-        onChange={onChange}
-        onBlur={onBlur}
-        value={value}
       />
       <FormHelperText id={helperTextId}>{error?.message || " "}</FormHelperText>
     </FormControl>

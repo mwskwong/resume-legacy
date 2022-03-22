@@ -24,14 +24,12 @@ const WorkTimeline = () => {
     .map(({ jobTitle, company, document, jobDuties, ...node }) => ({
       title: jobTitle,
       subtitle: company,
-      fileUrl: document? document.localFile.publicURL: undefined,
+      fileUrl: document ? document.localFile.publicURL : undefined,
       contents: jobDuties,
       ...node
     }));
 
-  return (
-    <Timeline data={works} />
-  );
+  return <Timeline data={works} />;
 };
 
 WorkTimeline.whyDidYouRender = true;

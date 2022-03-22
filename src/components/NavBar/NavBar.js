@@ -12,7 +12,7 @@ import useSx from "./useNavBarSx";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const mdUp = useMediaQuery(theme => theme.breakpoints.up("md"), { noSsr: true });
+  const mdUp = useMediaQuery(theme => theme.breakpoints.up("md"));
   const activeSectionId = useActiveSectionId();
   const sx = useSx();
 

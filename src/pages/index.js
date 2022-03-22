@@ -1,8 +1,14 @@
 import { Fragment, lazy, useMemo } from "react";
 
+import FooterDivider from "components/dividers/Footer";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
+import WaveRoaring from "components/dividers/WaveRoaring";
+import WaveRough from "components/dividers/WaveRough";
+import WaveSmooth from "components/dividers/WaveSmooth";
+import WaveSmooth2 from "components/dividers/WaveSmooth2";
+import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 
 const About = lazy(() => import(/* webpackChunkName: "about" */ "features/About"));
 const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
@@ -11,13 +17,6 @@ const Footer = lazy(() => import(/* webpackChunkName: "footer" */ "features/Foot
 const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/Landing"));
 const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
 const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
-
-const WaveSmooth = lazy(() => import(/* webpackChunkName: "about" */ "components/dividers/WaveSmooth"));
-const WaveRough = lazy(() => import(/* webpackChunkName: "testimonial" */ "components/dividers/WaveRough"));
-const WaveSmoothFlat = lazy(() => import(/* webpackChunkName: "work" */ "components/dividers/WaveSmoothFlat"));
-const WaveSmooth2 = lazy(() => import(/* webpackChunkName: "education" */ "components/dividers/WaveSmooth2"));
-const WaveRoaring = lazy(() => import(/* webpackChunkName: "contact" */ "components/dividers/WaveRoaring"));
-const FooterDivider = lazy(() => import(/* webpackChunkName: "footer" */ "components/dividers/Footer"));
 
 const bgcolors = {
   landing: "default",
