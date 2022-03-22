@@ -1,29 +1,22 @@
-import { Fragment, lazy, useMemo } from "react";
+import { Suspense, lazy, useMemo } from "react";
 
 import FooterDivider from "components/dividers/Footer";
+import NavBar from "components/NavBar";
 import SEO from "components/SEO";
+import ScrollToTopFab from "components/ScrollToTopFab";
 import WaveRoaring from "components/dividers/WaveRoaring";
 import WaveRough from "components/dividers/WaveRough";
 import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 
-// import NavBar from "components/NavBar";
-
-// import ScrollToTopFab from "components/ScrollToTopFab";
-
-
-
-
-
-
-// const About = lazy(() => import(/* webpackChunkName: "about" */ "features/About"));
-// const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
-// const Education = lazy(() => import(/* webpackChunkName: "education" */ "features/Education"));
-// const Footer = lazy(() => import(/* webpackChunkName: "footer" */ "features/Footer"));
-// const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/Landing"));
-// const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
-// const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
+const About = lazy(() => import(/* webpackChunkName: "about" */ "features/About"));
+const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
+const Education = lazy(() => import(/* webpackChunkName: "education" */ "features/Education"));
+const Footer = lazy(() => import(/* webpackChunkName: "footer" */ "features/Footer"));
+const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/Landing"));
+const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
+const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
 
 const bgcolors = {
   landing: "default",
@@ -77,26 +70,26 @@ const IndexPage = () => {
   const sx = useSx();
 
   return (
-    <Fragment>
+    <Suspense>
       <SEO />
-      {/* <NavBar /> */}
+      <NavBar />
       <main>
-        {/* <Landing /> */}
+        <Landing />
         <WaveSmooth sx={sx.waveSmooth} />
-        {/* <About sx={sx.about} /> */}
+        <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
-        {/* <Testimonial /> */}
+        <Testimonial />
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        {/* <Work sx={sx.work} /> */}
+        <Work sx={sx.work} />
         <WaveSmooth2 sx={sx.waveSmooth2} />
-        {/* <Education sx={sx.education} /> */}
+        <Education sx={sx.education} />
         <WaveRoaring sx={sx.waveRoaring} />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       <FooterDivider sx={sx.footerDivider} />
-      {/* <Footer sx={sx.footer} /> */}
-      {/* <ScrollToTopFab /> */}
-    </Fragment>
+      <Footer sx={sx.footer} />
+      <ScrollToTopFab />
+    </Suspense>
   );
 };
 
