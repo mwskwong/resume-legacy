@@ -1,5 +1,6 @@
 import { Fragment, lazy, useMemo } from "react";
-import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator } from "@mui/lab";
+import { List, ListItem, ListItemText, Typography } from "@mui/material";
+import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
 
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
@@ -82,25 +83,50 @@ const IndexPage = () => {
       <main>
         <Timeline>
           <TimelineItem>
+            <TimelineOppositeContent variant="body2">
+              {"Aug 2021 — Present"}
+            </TimelineOppositeContent>
             <TimelineSeparator>
-              <TimelineDot />
+              <TimelineDot color="primary" />
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent>Eat</TimelineContent>
-          </TimelineItem>
-          <TimelineItem>
-            <TimelineSeparator>
-              <TimelineDot />
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent>Code</TimelineContent>
-          </TimelineItem>
-          <TimelineItem>
-            <TimelineSeparator>
-              <TimelineDot />
-            </TimelineSeparator>
-            <TimelineContent>Sleep</TimelineContent>
-          </TimelineItem>
+            <TimelineContent sx={sx.timelineContent}>
+              {/* <Typography sx={sx.periodMobile} variant="body2" component="div" gutterBottom>
+                {period}
+              </Typography> */}
+              <Typography variant="subtitle1" component="div" gutterBottom>
+                {"Programmer (Database Management System)"}
+              </Typography>
+              <Typography component="div" gutterBottom>
+                {"EDPS Limited | Outsourced to Hospital Authority"}
+              </Typography>
+              <List disablePadding>
+                <ListItem disableGutters>
+                  <ListItemText primary={"Participate in conducting internal knowledge sharing session."} />
+                </ListItem>
+                <ListItem disableGutters>
+                  <ListItemText primary={"Initiate and maintain a CMS to manage internal training materials, guidelines and documentations."} />
+                </ListItem>
+                <ListItem disableGutters>
+                  <ListItemText primary={"Design and develop a database health check system to facilitate SRE."} />
+                </ListItem>
+                <ListItem disableGutters>
+                  <ListItemText primary={"Support and guide application teams on MySQL deployment and maintenance."} />
+                </ListItem>
+                <ListItem disableGutters>
+                  <ListItemText primary={"Design and develop a React web app to visualize database CPU utilization."} />
+                </ListItem>
+                <ListItem disableGutters>
+                  <ListItemText primary={"POC on data virtualization with Delphix DataOp platform."} />
+                </ListItem>
+              </List>
+              {/* {data.fileUrl && (
+                <Button sx={sx.downloadButton} startIcon={<Download />} href={data.fileUrl}>
+                  Download
+                </Button>
+              )} */}
+            </TimelineContent>
+          </TimelineItem >
         </Timeline>
         {/* <Landing />
         <WaveSmooth sx={sx.waveSmooth} />
