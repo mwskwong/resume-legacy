@@ -1,10 +1,9 @@
 import { Fragment, lazy, useMemo } from "react";
-import { List, ListItem, ListItemText, Typography } from "@mui/material";
-import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from "@mui/lab";
 
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
+import Timeline from "components/Timeline";
 
 // import FooterDivider from "components/dividers/Footer";
 
@@ -73,6 +72,67 @@ const useSx = () => useMemo(() => ({
   }
 }), []);
 
+const works = [
+  {
+    "title": "Programmer (Database Management System)",
+    "subtitle": "EDPS Limited | Outsourced to Hospital Authority",
+    "contents": [
+      "Participate in conducting internal knowledge sharing session.",
+      "Initiate and maintain a CMS to manage internal training materials, guidelines and documentations.",
+      "Design and develop a database health check system to facilitate SRE.",
+      "Support and guide application teams on MySQL deployment and maintenance.",
+      "Design and develop a React web app to visualize database CPU utilization.",
+      "POC on data virtualization with Delphix DataOp platform."
+    ],
+    "from": "2021-08-16",
+    "to": null
+  },
+  {
+    "title": "Junior Programmer (Database Management System)",
+    "subtitle": "EDPS Limited | Outsourced to Hospital Authority",
+    "contents": [
+      "Support and guide application teams on MySQL deployment and maintenance.",
+      "Maintain database management web application.",
+      "Develop time off web application system",
+      "Develop a Java-based database password management application.",
+      "POC on data virtualization with Delphix DataOp platform."
+    ],
+    "from": "2019-07-15",
+    "to": "2021-08-16"
+  },
+  {
+    "title": "Summer Internship (Software Development)",
+    "subtitle": "Versitech Limited",
+    "contents": [
+      "Design test suite for E-Form Filler in cooperation with software engineers.",
+      "Design and develop installer for E-Form Filler using NSIS MUI2.",
+      "Rework a 3-year-old MPF cross-platform mobile application using React Native to replace the legacy Apache Cordova framework."
+    ],
+    "from": "2018-06-01",
+    "to": "2018-08-31"
+  },
+  {
+    "title": "Student Research Assistant",
+    "subtitle": "School of Public Health, HKU",
+    "fileUrl": "/static/24794bfddd05de06d588a76ea9038d63/hku_med_ra.pdf",
+    "contents": [
+      "Develop and design a JavaFX application to perform bioinformatics analysis."
+    ],
+    "from": "2017-07-02",
+    "to": "2017-09-09"
+  },
+  {
+    "title": "Teaching Assistant",
+    "subtitle": "Faculty of Engineering, HKU",
+    "fileUrl": "/static/cd1779f0dbd677bbf13c7fd054db1cab/hku_eng_ta.pdf",
+    "contents": [
+      "Instruct over 20 students during tutorial sessions of a C++ programming course."
+    ],
+    "from": "2017-01-01",
+    "to": "2017-04-30"
+  }
+];
+
 const IndexPage = () => {
   const sx = useSx();
 
@@ -81,68 +141,7 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <Timeline>
-          <TimelineItem>
-            <TimelineOppositeContent variant="body2" sx={{
-              color: "text.secondary",
-              display: {
-                xs: "none",
-                md: "initial"
-              }
-            }}>
-              {"Aug 2021 — Present"}
-            </TimelineOppositeContent>
-            <TimelineSeparator>
-              <TimelineDot color="primary" />
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent sx={{
-              mb: 4
-            }}>
-              <Typography sx={{
-                color: "text.secondary",
-                display: {
-                  md: "none"
-                }
-              }} variant="body2" component="div" gutterBottom>
-                {"Aug 2021 — Present"}
-              </Typography>
-              <Typography variant="subtitle1" component="div" gutterBottom>
-                {"Programmer (Database Management System)"}
-              </Typography>
-              <Typography sx={{
-                color: "primary.main"
-              }} component="div" gutterBottom>
-                {"EDPS Limited | Outsourced to Hospital Authority"}
-              </Typography>
-              <List disablePadding>
-                <ListItem disableGutters>
-                  <ListItemText primary={"Participate in conducting internal knowledge sharing session."} />
-                </ListItem>
-                <ListItem disableGutters>
-                  <ListItemText primary={"Initiate and maintain a CMS to manage internal training materials, guidelines and documentations."} />
-                </ListItem>
-                <ListItem disableGutters>
-                  <ListItemText primary={"Design and develop a database health check system to facilitate SRE."} />
-                </ListItem>
-                <ListItem disableGutters>
-                  <ListItemText primary={"Support and guide application teams on MySQL deployment and maintenance."} />
-                </ListItem>
-                <ListItem disableGutters>
-                  <ListItemText primary={"Design and develop a React web app to visualize database CPU utilization."} />
-                </ListItem>
-                <ListItem disableGutters>
-                  <ListItemText primary={"POC on data virtualization with Delphix DataOp platform."} />
-                </ListItem>
-              </List>
-              {/* {data.fileUrl && (
-                <Button sx={sx.downloadButton} startIcon={<Download />} href={data.fileUrl}>
-                  Download
-                </Button>
-              )} */}
-            </TimelineContent>
-          </TimelineItem >
-        </Timeline>
+        <Timeline data={works} />
         {/* <Landing />
         <WaveSmooth sx={sx.waveSmooth} />
         <About sx={sx.about} />
