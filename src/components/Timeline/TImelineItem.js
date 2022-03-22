@@ -13,7 +13,7 @@ import PropTypes from "prop-types";
 import { memo } from "react";
 import useSx from "./useTImelineItemSx";
 
-const dateTimeFormat = new Intl.DateTimeFormat("en", { month: "short", year: "numeric" });
+const dateTimeFormat = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" });
 
 const TimelineItem = ({ data }) => {
   const sx = useSx();
