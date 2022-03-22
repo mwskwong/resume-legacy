@@ -10,7 +10,7 @@ const Timeline = ({ data }) => {
 
   return (
     <div>
-      <MuiTimeline position={mdDown ? "right" : "alternate"}>
+      <MuiTimeline position={"alternate"}>
         {data.map((datum, index) => (
           <li key={index}>{JSON.stringify(datum)}</li>
           // <TimelineItem key={index} data={datum} />
