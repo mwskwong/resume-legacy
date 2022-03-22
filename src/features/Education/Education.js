@@ -4,11 +4,16 @@ import ArcticOceanFractal from "components/ArcticOceanFractal";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
-import { NoSsr } from "@mui/base";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import { memo } from "react";
 import useSx from "./useEducationSx";
+
+// import { NoSsr } from "@mui/base";
+
+
+
+
 
 const Education = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
@@ -25,13 +30,13 @@ const Education = ({ sx: sxProp }) => {
                 <Courses />
               </Grid>
               <Grid item md={6} xs={12}>
-                <NoSsr defer>
-                  <Box sx={sx.animationContainer}>
-                    <Box sx={sx.animationWrapper}>
-                      <ArcticOceanFractal />
-                    </Box>
+                {/* <NoSsr defer> */}
+                <Box sx={sx.animationContainer}>
+                  <Box sx={sx.animationWrapper}>
+                    <ArcticOceanFractal />
                   </Box>
-                </NoSsr>
+                </Box>
+                {/* </NoSsr> */}
               </Grid>
             </Grid>
           </div>
