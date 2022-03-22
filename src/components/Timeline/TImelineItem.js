@@ -48,11 +48,11 @@ const TimelineItem = ({ data }) => {
             </ListItem>
           ))}
         </List>
-        {data.fileUrl && (
+        {/* {data.fileUrl && (
           <Button sx={sx.downloadButton} startIcon={<Download />} href={data.fileUrl}>
             Download
           </Button>
-        )}
+        )} */}
       </TimelineContent>
     </MuiTimelineItem >
   );
