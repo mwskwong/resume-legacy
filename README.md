@@ -15,6 +15,7 @@
   ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/react?style=for-the-badge)
   ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/gatsby?style=for-the-badge)
   ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/@mui/material?style=for-the-badge)
+  ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/react-hook-form?style=for-the-badge)
 
 </div>
 
