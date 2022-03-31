@@ -78,7 +78,7 @@ const Carousel = () => {
         disableLazyLoading
         index={index}
         onChangeIndex={handleChangeIndex}
-      // containerStyle={swipeableViewsContainerStyle}
+        containerStyle={swipeableViewsContainerStyle}
       >
         {references.map(({ name, jobTitle, refereePicture, company, comment }) => (
           <Reference
