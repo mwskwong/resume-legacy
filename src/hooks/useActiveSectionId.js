@@ -1,9 +1,10 @@
 import nav, { HOME } from "constants/nav";
-import { startTransition, useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 
 import throttle from "lodash/throttle";
 
 const useActiveSectionId = () => {
+  const [, startTransition] = useTransition();
   const [activeSectionId, setActiveSectionId] = useState(HOME.id);
 
   const isScrollToBottom = () => window.innerHeight + window.scrollY >= document.body.offsetHeight;
