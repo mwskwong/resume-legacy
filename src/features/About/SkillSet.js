@@ -10,7 +10,6 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { Database } from "mdi-material-ui";
 import camelCase from "lodash/camelCase";
-import groupBy from "lodash/groupBy";
 import useSx from "./useSkillSetSx";
 
 const Icons = {
@@ -26,14 +25,15 @@ const SkillSet = () => {
   const sx = useSx();
   const { skillNodes } = useStaticQuery(graphql`{
     skillNodes: allContentfulSkill(sort: {fields: [type, name]}) {
-      nodes {
-        name
-        type
+      group(field: type) {
+        nodes {
+          name
+          type
+        }
+        fieldValue
       }
     }
   }`);
-
-  const skillsByType = groupBy(skillNodes.nodes, "type");
 
   return (
     <div>
@@ -41,7 +41,7 @@ const SkillSet = () => {
         Skills
       </Typography>
       <Grid container spacing={6} sx={sx.gridContainer}>
-        {Object.entries(skillsByType).map(([type, skills]) => {
+        {skillNodes.group.map(({ nodes: skills, fieldValue: type }) => {
           const Icon = Icons[camelCase(type)];
 
           return (
