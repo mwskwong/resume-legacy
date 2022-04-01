@@ -5,7 +5,7 @@ import { Fragment } from "react";
 import Microsoft from "components/icons/Microsoft";
 import Oracle from "components/icons/Oracle";
 import Udemy from "components/icons/Udemy";
-import camelCase from "lodash/camelCase";
+import camelCase from "camelcase";
 import useSx from "./useCoursesSx";
 
 const Icons = {
