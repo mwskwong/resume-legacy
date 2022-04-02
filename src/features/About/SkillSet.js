@@ -9,7 +9,7 @@ import { Box, Chip, Grid, Stack, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Database } from "mdi-material-ui";
-import camelCase from "camelcase";
+import camelCase from "lodash/camelCase";
 import useSx from "./useSkillSetSx";
 
 const Icons = {

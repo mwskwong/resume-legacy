@@ -5,7 +5,7 @@ import GitHub from "components/icons/GitHub";
 import LinkedIn from "components/icons/LinkedIn";
 import PropTypes from "prop-types";
 import StackOverflow from "components/icons/StackOverflow";
-import camelCase from "camelcase";
+import camelCase from "lodash/camelCase";
 import useSx from "./useSx";
 
 const Icons = {
