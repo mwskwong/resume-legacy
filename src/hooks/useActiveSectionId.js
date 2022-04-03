@@ -31,7 +31,7 @@ const useActiveSectionId = () => {
           }
         }
       }
-    }, 166);
+    }, 16);
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
