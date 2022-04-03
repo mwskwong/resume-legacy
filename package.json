@@ -47,7 +47,7 @@
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
-    "@welldone-software/why-did-you-render": "^6.2.3",
+    "@welldone-software/why-did-you-render": "^7.0.0",
     "gatsby-plugin-perf-budgets": "^0.0.18",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27"
   },
