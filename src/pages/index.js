@@ -1,4 +1,4 @@
-import { Suspense, lazy, useMemo } from "react";
+import { Fragment, Suspense, lazy, useMemo } from "react";
 
 import FooterDivider from "components/dividers/Footer";
 import NavBar from "components/NavBar";
@@ -70,26 +70,28 @@ const IndexPage = () => {
   const sx = useSx();
 
   return (
-    <Suspense>
+    <Fragment>
       <SEO />
       <NavBar />
-      <main>
-        <Landing />
-        <WaveSmooth sx={sx.waveSmooth} />
-        <About sx={sx.about} />
-        <WaveRough sx={sx.waveRough} />
-        <Testimonial />
-        <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        <Work sx={sx.work} />
-        <WaveSmooth2 sx={sx.waveSmooth2} />
-        <Education sx={sx.education} />
-        <WaveRoaring sx={sx.waveRoaring} />
-        <Contact />
-      </main>
-      <FooterDivider sx={sx.footerDivider} />
-      <Footer sx={sx.footer} />
+      <Suspense>
+        <main>
+          <Landing />
+          <WaveSmooth sx={sx.waveSmooth} />
+          <About sx={sx.about} />
+          <WaveRough sx={sx.waveRough} />
+          <Testimonial />
+          <WaveSmoothFlat sx={sx.waveSmoothFlat} />
+          <Work sx={sx.work} />
+          <WaveSmooth2 sx={sx.waveSmooth2} />
+          <Education sx={sx.education} />
+          <WaveRoaring sx={sx.waveRoaring} />
+          <Contact />
+        </main>
+        <FooterDivider sx={sx.footerDivider} />
+        <Footer sx={sx.footer} />
+      </Suspense>
       <ScrollToTopFab />
-    </Suspense>
+    </Fragment>
   );
 };
 
