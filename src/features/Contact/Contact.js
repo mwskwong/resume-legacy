@@ -1,19 +1,19 @@
 import { Box, Container, Grid, Stack, useMediaQuery } from "@mui/material";
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
-import { Suspense, lazy, memo, useState } from "react";
+import { memo, useState } from "react";
 import { object, string } from "nope-validator";
 
 import { CONTACT } from "constants/nav";
 import { LoadingButton } from "@mui/lab";
+import { NoSsr } from "@mui/base";
 import PersonalInfo from "./PersonalInfo";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
+import TextField from "./TextField";
 import { nopeResolver } from "@hookform/resolvers/nope";
 import sendEmail from "utils/sendEmail";
 import { useForm } from "react-hook-form";
 import useSx from "./useContactSx";
-
-const TextField = lazy(() => import("./TextField"));
 
 const schema = object().shape({
   name: string().required(),
@@ -59,7 +59,7 @@ const Contact = ({ sx: sxProp }) => {
               <Grid item md={4} xs={12}>
                 <PersonalInfo />
               </Grid>
-              <Suspense fallback={null}>
+              <NoSsr defer>
                 <Grid container spacing={2} item md xs={12} >
                   <Grid item sm={6} xs={12}>
                     <TextField
@@ -94,7 +94,7 @@ const Contact = ({ sx: sxProp }) => {
                     />
                   </Grid>
                 </Grid>
-              </Suspense>
+              </NoSsr>
             </Grid>
             <LoadingButton
               loading={sendEmailStatus === "loading"}

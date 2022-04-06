@@ -1,21 +1,22 @@
-import { Fragment, Suspense, useMemo } from "react";
+import { Fragment, Suspense, lazy, useMemo } from "react";
 
-import About from "feature/About";
-import Contact from "feature/Contact";
-import Education from "feature/Education";
-import Footer from "feature/Footer";
 import FooterDivider from "components/dividers/Footer";
-import Landing from "feature/Landing";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
-import Testimonial from "feature/Testimonial";
 import WaveRoaring from "components/dividers/WaveRoaring";
 import WaveRough from "components/dividers/WaveRough";
 import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
-import Work from "feature/Work";
+
+const About = lazy(() => import(/* webpackChunkName: "about" */ "features/About"));
+const Contact = lazy(() => import(/* webpackChunkName: "contact" */ "features/Contact"));
+const Education = lazy(() => import(/* webpackChunkName: "education" */ "features/Education"));
+const Footer = lazy(() => import(/* webpackChunkName: "footer" */ "features/Footer"));
+const Landing = lazy(() => import(/* webpackChunkName: "landing" */ "features/Landing"));
+const Testimonial = lazy(() => import(/* webpackChunkName: "testimonial" */ "features/Testimonial"));
+const Work = lazy(() => import(/* webpackChunkName: "work" */ "features/Work"));
 
 const bgcolors = {
   landing: "default",
@@ -73,17 +74,29 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <Landing />
+        <Suspense>
+          <Landing />
+        </Suspense>
         <WaveSmooth sx={sx.waveSmooth} />
-        <About sx={sx.about} />
+        <Suspense>
+          <About sx={sx.about} />
+        </Suspense>
         <WaveRough sx={sx.waveRough} />
-        <Testimonial />
+        <Suspense>
+          <Testimonial />
+        </Suspense>
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        <Work sx={sx.work} />
+        <Suspense>
+          <Work sx={sx.work} />
+        </Suspense>
         <WaveSmooth2 sx={sx.waveSmooth2} />
-        <Education sx={sx.education} />
+        <Suspense>
+          <Education sx={sx.education} />
+        </Suspense>
         <WaveRoaring sx={sx.waveRoaring} />
-        <Contact />
+        <Suspense>
+          <Contact />
+        </Suspense>
       </main>
       <FooterDivider sx={sx.footerDivider} />
       <Suspense>
