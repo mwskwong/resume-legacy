@@ -73,33 +73,21 @@ const IndexPage = () => {
     <Fragment>
       <SEO />
       <NavBar />
-      <main>
-        <Suspense>
-          <Landing />
-        </Suspense>
-        <WaveSmooth sx={sx.waveSmooth} />
-        <Suspense>
-          <About sx={sx.about} />
-        </Suspense>
-        <WaveRough sx={sx.waveRough} />
-        <Suspense>
-          <Testimonial />
-        </Suspense>
-        <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        <Suspense>
-          <Work sx={sx.work} />
-        </Suspense>
-        <WaveSmooth2 sx={sx.waveSmooth2} />
-        <Suspense>
-          <Education sx={sx.education} />
-        </Suspense>
-        <WaveRoaring sx={sx.waveRoaring} />
-        <Suspense>
-          <Contact />
-        </Suspense>
-      </main>
-      <FooterDivider sx={sx.footerDivider} />
       <Suspense>
+        <main>
+          <Landing />
+          <WaveSmooth sx={sx.waveSmooth} />
+          <About sx={sx.about} />
+          <WaveRough sx={sx.waveRough} />
+          <Testimonial />
+          <WaveSmoothFlat sx={sx.waveSmoothFlat} />
+          <Work sx={sx.work} />
+          <WaveSmooth2 sx={sx.waveSmooth2} />
+          <Education sx={sx.education} />
+          <WaveRoaring sx={sx.waveRoaring} />
+          <Contact />
+        </main>
+        <FooterDivider sx={sx.footerDivider} />
         <Footer sx={sx.footer} />
       </Suspense>
       <ScrollToTopFab />
