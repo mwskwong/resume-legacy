@@ -2,12 +2,9 @@ import { useMemo } from "react";
 
 const useSx = ({ sxProp }) => useMemo(() => ({
   root: sxProp,
-  formWrapper: {
-    minHeight: {
-      xs: 1091.78,
-      sm: 994.781,
-      md: 549
-    }
+  submitButton: {
+    float: "right",
+    mt: 4
   }
 }), [sxProp]);
 
