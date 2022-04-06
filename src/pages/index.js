@@ -1,4 +1,4 @@
-import { Fragment, lazy, useMemo } from "react";
+import { Fragment, Suspense, lazy, useMemo } from "react";
 
 import FooterDivider from "components/dividers/Footer";
 import NavBar from "components/NavBar";
@@ -74,22 +74,36 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <Landing />
+        <Suspense>
+          <Landing />
+        </Suspense>
         <WaveSmooth sx={sx.waveSmooth} />
-        <About sx={sx.about} />
+        <Suspense>
+          <About sx={sx.about} />
+        </Suspense>
         <WaveRough sx={sx.waveRough} />
-        <Testimonial />
+        <Suspense>
+          <Testimonial />
+        </Suspense>
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        <Work sx={sx.work} />
+        <Suspense>
+          <Work sx={sx.work} />
+        </Suspense>
         <WaveSmooth2 sx={sx.waveSmooth2} />
-        <Education sx={sx.education} />
+        <Suspense>
+          <Education sx={sx.education} />
+        </Suspense>
         <WaveRoaring sx={sx.waveRoaring} />
-        <Contact />
+        <Suspense>
+          <Contact />
+        </Suspense>
       </main>
       <FooterDivider sx={sx.footerDivider} />
-      <Footer sx={sx.footer} />
+      <Suspense>
+        <Footer sx={sx.footer} />
+      </Suspense>
       <ScrollToTopFab />
-    </Fragment>
+    </Fragment >
   );
 };
 

@@ -5,7 +5,6 @@ import { object, string } from "nope-validator";
 
 import { CONTACT } from "constants/nav";
 import { LoadingButton } from "@mui/lab";
-import { NoSsr } from "@mui/base";
 import PersonalInfo from "./PersonalInfo";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
@@ -59,42 +58,40 @@ const Contact = ({ sx: sxProp }) => {
               <Grid item md={4} xs={12}>
                 <PersonalInfo />
               </Grid>
-              <NoSsr defer>
-                <Grid container spacing={2} item md xs={12} >
-                  <Grid item sm={6} xs={12}>
-                    <TextField
-                      name="name"
-                      control={control}
-                      label="Name"
-                      autoComplete="name"
-                    />
-                  </Grid>
-                  <Grid item sm={6} xs={12}>
-                    <TextField
-                      name="email"
-                      control={control}
-                      label="Email"
-                      autoComplete="email"
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <TextField
-                      name="subject"
-                      control={control}
-                      label="Subject"
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <TextField
-                      name="message"
-                      control={control}
-                      label="Message"
-                      multiline
-                      rows={9}
-                    />
-                  </Grid>
+              <Grid container spacing={2} item md xs={12} >
+                <Grid item sm={6} xs={12}>
+                  <TextField
+                    name="name"
+                    control={control}
+                    label="Name"
+                    autoComplete="name"
+                  />
                 </Grid>
-              </NoSsr>
+                <Grid item sm={6} xs={12}>
+                  <TextField
+                    name="email"
+                    control={control}
+                    label="Email"
+                    autoComplete="email"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    name="subject"
+                    control={control}
+                    label="Subject"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    name="message"
+                    control={control}
+                    label="Message"
+                    multiline
+                    rows={9}
+                  />
+                </Grid>
+              </Grid>
             </Grid>
             <LoadingButton
               loading={sendEmailStatus === "loading"}
