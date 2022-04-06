@@ -1,4 +1,4 @@
-import { Fragment, lazy, useMemo } from "react";
+import { Suspense, lazy, useMemo } from "react";
 
 import FooterDivider from "components/dividers/Footer";
 import NavBar from "components/NavBar";
@@ -70,7 +70,7 @@ const IndexPage = () => {
   const sx = useSx();
 
   return (
-    <Fragment>
+    <Suspense>
       <SEO />
       <NavBar />
       <main>
@@ -89,7 +89,7 @@ const IndexPage = () => {
       <FooterDivider sx={sx.footerDivider} />
       <Footer sx={sx.footer} />
       <ScrollToTopFab />
-    </Fragment>
+    </Suspense>
   );
 };
 

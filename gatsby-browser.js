@@ -1,13 +1,11 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { StrictMode, Suspense } from "react";
 
+import { StrictMode } from "react";
 import brandingTheme from "brandingTheme";
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
-    <Suspense fallback={null}>
-      {element}
-    </Suspense>
+    {element}
   </StrictMode>
 );
 
