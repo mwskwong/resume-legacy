@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   root: {
     display: "flex",
     flexDirection: "column",
@@ -27,6 +25,6 @@ const useSx = () => useMemo(() => ({
   importantText: {
     color: "primary.main"
   }
-}), []);
+});
 
 export default useSx;

@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = ({ sxProp }) => useMemo(() => ({
+const useSx = ({ sxProp }) => ({
   root: {
     display: "block",
     bottom: "-1px",
@@ -14,6 +12,6 @@ const useSx = ({ sxProp }) => useMemo(() => ({
     overflow: "hidden",
     ...sxProp
   }
-}), [sxProp]);
+});
 
 export default useSx;

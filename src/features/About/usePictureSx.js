@@ -1,12 +1,10 @@
-import { useMemo } from "react";
-
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   root: {
     borderRadius: "50%",
     "& img": {
       borderRadius: "50%"
     }
   }
-}), []);
+});
 
 export default useSx;

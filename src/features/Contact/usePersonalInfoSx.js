@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   root: {
     justifyContent: "center",
     height: "100%"
@@ -19,6 +17,6 @@ const useSx = () => useMemo(() => ({
   value: {
     textAlign: "center"
   }
-}), []);
+});
 
 export default useSx;

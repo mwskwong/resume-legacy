@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = ({ sxProp }) => useMemo(() => ({
+const useSx = ({ sxProp }) => ({
   root: {
     color: "text.secondary",
     ...sxProp
@@ -13,6 +11,6 @@ const useSx = ({ sxProp }) => useMemo(() => ({
       sm: 5
     }
   }
-}), [sxProp]);
+});
 
 export default useSx;

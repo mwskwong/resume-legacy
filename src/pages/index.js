@@ -1,4 +1,4 @@
-import { Fragment, Suspense, useMemo } from "react";
+import { Fragment, Suspense } from "react";
 
 import About from "features/About";
 import Contact from "features/Contact";
@@ -27,7 +27,7 @@ const bgcolors = {
   footer: "sectionPrimary"
 };
 
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   about: {
     bgcolor: `background.${bgcolors.about}`
   },
@@ -63,7 +63,7 @@ const useSx = () => useMemo(() => ({
     bgcolor: `background.${bgcolors.contact}`,
     color: `background.${bgcolors.footer}`
   }
-}), []);
+});
 
 const IndexPage = () => {
   const sx = useSx();

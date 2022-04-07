@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = ({ sxProp }) => useMemo(() => ({
+const useSx = ({ sxProp }) => ({
   root: sxProp,
   contentContainer: {
     mt: 5
@@ -8,6 +6,6 @@ const useSx = ({ sxProp }) => useMemo(() => ({
   contentGrid: {
     alignItems: "center"
   }
-}), [sxProp]);
+});
 
 export default useSx;

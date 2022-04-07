@@ -1,9 +1,7 @@
-import { useMemo } from "react";
-
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   root: {
     display: "flex"
   }
-}), []);
+});
 
 export default useSx;

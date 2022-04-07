@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = ({ sxProp }) => useMemo(() => ({
+const useSx = ({ sxProp }) => ({
   root: sxProp,
   gridContainer: {
     alignItems: "center"
@@ -16,6 +14,6 @@ const useSx = ({ sxProp }) => useMemo(() => ({
       md: "none"
     }
   }
-}), [sxProp]);
+});
 
 export default useSx;

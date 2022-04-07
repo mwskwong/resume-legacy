@@ -1,10 +1,8 @@
-import { useMemo } from "react";
-
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   submitButton: {
     float: "right",
     mt: 4
   }
-}), []);
+});
 
 export default useSx;
