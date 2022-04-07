@@ -1,4 +1,4 @@
-import { Box, Container, Stack } from "@mui/material";
+import { Box, Container, NoSsr, Stack } from "@mui/material";
 import { Suspense, lazy, memo } from "react";
 
 import { CONTACT } from "constants/nav";
@@ -17,9 +17,11 @@ const Contact = ({ sx: sxProp }) => {
       <Container>
         <Stack spacing={6}>
           <SectionHeader heading="Get In Touch" />
-          <Suspense fallback={<FormPlaceholder />}>
-            <Form />
-          </Suspense>
+          <NoSsr defer>
+            <Suspense fallback={<FormPlaceholder />}>
+              <Form />
+            </Suspense>
+          </NoSsr>
         </Stack>
       </Container>
     </Box>

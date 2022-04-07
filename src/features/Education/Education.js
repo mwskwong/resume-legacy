@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack } from "@mui/material";
+import { Box, Container, Grid, NoSsr, Stack } from "@mui/material";
 import { Suspense, lazy, memo } from "react";
 
 import ArcticOceanFractalPlaceholder from "components/ArcticOceanFractal/Placeholder";
@@ -28,9 +28,11 @@ const Education = ({ sx: sxProp }) => {
               <Grid item md={6} xs={12}>
                 <Box sx={sx.animationContainer}>
                   <Box sx={sx.animationWrapper}>
-                    <Suspense fallback={<ArcticOceanFractalPlaceholder />}>
-                      <ArcticOceanFractal />
-                    </Suspense>
+                    <NoSsr defer>
+                      <Suspense fallback={<ArcticOceanFractalPlaceholder />}>
+                        <ArcticOceanFractal />
+                      </Suspense>
+                    </NoSsr>
                   </Box>
                 </Box>
               </Grid>
