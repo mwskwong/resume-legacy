@@ -12,8 +12,8 @@ const Landing = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
 
   return (
-    <Box sx={sx.root} component="section" id={HOME.id}>
-      <Container sx={sx.container} >
+    <Box sx={sx.root} >
+      <Container component="section" sx={sx.container} id={HOME.id}>
         <Toolbar />
         <Title />
         <SocialMedia sx={sx.socialMedia} />
