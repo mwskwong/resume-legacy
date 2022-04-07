@@ -73,21 +73,33 @@ const IndexPage = () => {
     <Fragment>
       <SEO />
       <NavBar />
-      <Suspense>
-        <main>
+      <main>
+        <Suspense>
           <Landing />
-          <WaveSmooth sx={sx.waveSmooth} />
+        </Suspense>
+        <WaveSmooth sx={sx.waveSmooth} />
+        <Suspense>
           <About sx={sx.about} />
-          <WaveRough sx={sx.waveRough} />
+        </Suspense>
+        <WaveRough sx={sx.waveRough} />
+        <Suspense>
           <Testimonial />
-          <WaveSmoothFlat sx={sx.waveSmoothFlat} />
+        </Suspense>
+        <WaveSmoothFlat sx={sx.waveSmoothFlat} />
+        <Suspense>
           <Work sx={sx.work} />
-          <WaveSmooth2 sx={sx.waveSmooth2} />
+        </Suspense>
+        <WaveSmooth2 sx={sx.waveSmooth2} />
+        <Suspense>
           <Education sx={sx.education} />
-          <WaveRoaring sx={sx.waveRoaring} />
+        </Suspense>
+        <WaveRoaring sx={sx.waveRoaring} />
+        <Suspense>
           <Contact />
-        </main>
-        <FooterDivider sx={sx.footerDivider} />
+        </Suspense>
+      </main>
+      <FooterDivider sx={sx.footerDivider} />
+      <Suspense>
         <Footer sx={sx.footer} />
       </Suspense>
       <ScrollToTopFab />
