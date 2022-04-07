@@ -1,5 +1,4 @@
-const useSx = ({ sxProp }) => ({
-  root: sxProp,
+const useSx = () => ({
   container: {
     display: "flex",
     flexDirection: "column",
