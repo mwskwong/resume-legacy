@@ -1,8 +1,6 @@
 import nav, { HOME } from "constants/nav";
 import { useEffect, useState, useTransition } from "react";
 
-import throttle from "lodash/throttle";
-
 const useActiveSectionId = () => {
   const [, startTransition] = useTransition();
   const [activeSectionId, setActiveSectionId] = useState(HOME.id);
@@ -19,7 +17,7 @@ const useActiveSectionId = () => {
 
     const sectionIds = Object.values(nav).map(({ id }) => id).reverse();
 
-    const handleScroll = throttle(() => {
+    const handleScroll = () => {
       if (isScrollToBottom()) {
         startTransition(() => setActiveSectionId(sectionIds[0]));
       } else {
@@ -31,7 +29,7 @@ const useActiveSectionId = () => {
           }
         }
       }
-    }, 16);
+    };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
