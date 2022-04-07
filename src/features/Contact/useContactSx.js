@@ -1,11 +1,5 @@
-import { useMemo } from "react";
-
-const useSx = ({ sxProp }) => useMemo(() => ({
-  root: sxProp,
-  submitButton: {
-    float: "right",
-    mt: 4
-  }
-}), [sxProp]);
+const useSx = ({ sxProp }) => ({
+  root: sxProp
+});
 
 export default useSx;

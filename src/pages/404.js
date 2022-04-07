@@ -4,9 +4,8 @@ import Arctic404 from "components/Arctic404";
 import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
 import { Link } from "gatsby";
 import SEO from "components/SEO";
-import { useMemo } from "react";
 
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   root: {
     display: "flex",
     flexDirection: "column",
@@ -23,7 +22,7 @@ const useSx = () => useMemo(() => ({
     my: 4,
     textAlign: "center"
   }
-}), []);
+});
 
 const NotFoundPage = () => {
   const sx = useSx();

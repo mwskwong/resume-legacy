@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   navButtonContainer: {
     display: {
       xs: "none",
@@ -16,6 +14,6 @@ const useSx = () => useMemo(() => ({
       md: "none"
     }
   }
-}), []);
+});
 
 export default useSx;

@@ -1,6 +1,7 @@
 const useSx = () => ({
-  simpleIcons: {
-    p: "2px"
+  submitButton: {
+    float: "right",
+    mt: 4
   }
 });
 

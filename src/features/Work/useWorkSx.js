@@ -1,7 +1,5 @@
-import { useMemo } from "react";
-
-const useSx = ({ sxProp }) => useMemo(() => ({
+const useSx = ({ sxProp }) => ({
   root: sxProp
-}), [sxProp]);
+});
 
 export default useSx;
