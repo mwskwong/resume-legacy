@@ -1,6 +1,6 @@
 import { Timeline as MuiTimeline } from "@mui/lab";
 import PropTypes from "prop-types";
-import TimelineItem from "./TImelineItem";
+import TimelineItem from "./TimelineItem";
 import { useMediaQuery } from "@mui/material";
 
 const Timeline = ({ data }) => {

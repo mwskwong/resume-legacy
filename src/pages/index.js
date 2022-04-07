@@ -1,10 +1,9 @@
-import { Fragment, Suspense } from "react";
-
 import About from "features/About";
 import Contact from "features/Contact";
 import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
+import { Fragment } from "react";
 import Landing from "features/Landing";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
@@ -72,23 +71,21 @@ const IndexPage = () => {
     <Fragment>
       <SEO />
       <NavBar />
-      <Suspense>
-        <main>
-          <Landing />
-          <WaveSmooth sx={sx.waveSmooth} />
-          <About sx={sx.about} />
-          <WaveRough sx={sx.waveRough} />
-          <Testimonial />
-          <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-          <Work sx={sx.work} />
-          <WaveSmooth2 sx={sx.waveSmooth2} />
-          <Education sx={sx.education} />
-          <WaveRoaring sx={sx.waveRoaring} />
-          <Contact />
-        </main>
-        <FooterDivider sx={sx.footerDivider} />
-        <Footer sx={sx.footer} />
-      </Suspense>
+      <main>
+        <Landing />
+        <WaveSmooth sx={sx.waveSmooth} />
+        <About sx={sx.about} />
+        <WaveRough sx={sx.waveRough} />
+        <Testimonial />
+        <WaveSmoothFlat sx={sx.waveSmoothFlat} />
+        <Work sx={sx.work} />
+        <WaveSmooth2 sx={sx.waveSmooth2} />
+        <Education sx={sx.education} />
+        <WaveRoaring sx={sx.waveRoaring} />
+        <Contact />
+      </main>
+      <FooterDivider sx={sx.footerDivider} />
+      <Footer sx={sx.footer} />
       <ScrollToTopFab />
     </Fragment >
   );
