@@ -1,6 +1,8 @@
 import { Fragment, Suspense, lazy, useMemo } from "react";
 
+import AboutPlaceholder from "features/About/Placeholder";
 import FooterDivider from "components/dividers/Footer";
+import LandingPlaceholder from "features/Landing/Placeholder";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
@@ -74,11 +76,11 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <Suspense>
+        <Suspense fallback={<LandingPlaceholder />}>
           <Landing />
         </Suspense>
         <WaveSmooth sx={sx.waveSmooth} />
-        <Suspense>
+        <Suspense fallback={<AboutPlaceholder sx={sx.about} />}>
           <About sx={sx.about} />
         </Suspense>
         <WaveRough sx={sx.waveRough} />
