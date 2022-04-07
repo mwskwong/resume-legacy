@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   ratingContainer: {
     display: "flex",
     alignItems: "center"
@@ -15,6 +13,6 @@ const useSx = () => useMemo(() => ({
   rating: {
     color: "primary.main"
   }
-}), []);
+});
 
 export default useSx;

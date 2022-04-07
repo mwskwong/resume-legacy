@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   comment: {
     mb: 2
   },
@@ -34,6 +32,6 @@ const useSx = () => useMemo(() => ({
   company: {
     color: "primary.main"
   }
-}), []);
+});
 
 export default useSx;

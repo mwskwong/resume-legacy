@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   periodDesktop: {
     color: "text.secondary",
     display: {
@@ -26,6 +24,6 @@ const useSx = () => useMemo(() => ({
   downloadButton: {
     mt: 1
   }
-}), []);
+});
 
 export default useSx;

@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = ({ active }) => useMemo(() => ({
+const useSx = ({ active }) => ({
   root: {
     width: active ? 20 : 12,
     height: 6,
@@ -15,6 +13,6 @@ const useSx = ({ active }) => useMemo(() => ({
       opacity: .87
     }
   }
-}), [active]);
+});
 
 export default useSx;

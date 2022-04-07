@@ -1,7 +1,6 @@
 import { alpha } from "@mui/system";
-import { useMemo } from "react";
 
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   root: {
     height: "100%",
     p: 1,
@@ -19,6 +18,6 @@ const useSx = () => useMemo(() => ({
   title: {
     color: "text.secondary"
   }
-}), []);
+});
 
 export default useSx;

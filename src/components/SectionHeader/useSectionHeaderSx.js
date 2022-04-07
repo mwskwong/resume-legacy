@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   root: {
     color: "text.primary"
   },
@@ -18,6 +16,6 @@ const useSx = () => useMemo(() => ({
     alignItems: "center",
     justifyContent: "center"
   }
-}), []);
+});
 
 export default useSx;

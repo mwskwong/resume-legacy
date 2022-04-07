@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = () => useMemo(() => ({
+const useSx = () => ({
   title: {
     color: "primary.main",
     textAlign: "center",
@@ -27,6 +25,6 @@ const useSx = () => useMemo(() => ({
     m: 0.5,
     color: "inherit"
   }
-}), []);
+});
 
 export default useSx;

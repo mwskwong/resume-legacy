@@ -1,7 +1,4 @@
-import { useMemo } from "react";
-
-const useSx = ({ sxProp }) => useMemo(() => ({
-  root: sxProp,
+const useSx = () => ({
   container: {
     display: "flex",
     flexDirection: "column",
@@ -16,6 +13,6 @@ const useSx = ({ sxProp }) => useMemo(() => ({
   downloadButton: {
     mt: 4
   }
-}), [sxProp]);
+});
 
 export default useSx;

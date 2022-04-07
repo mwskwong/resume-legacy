@@ -1,10 +1,8 @@
-import { useMemo } from "react";
-
-const useSx = ({ sxProp }) => useMemo(() => ({
+const useSx = ({ sxProp }) => ({
   root: sxProp,
   stack: {
     alignItems: "center"
   }
-}), [sxProp]);
+});
 
 export default useSx;
