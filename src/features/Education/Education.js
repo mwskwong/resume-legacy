@@ -1,16 +1,19 @@
 import { Box, Container, Grid, Stack } from "@mui/material";
+import { Suspense, lazy, memo } from "react";
 
-import ArcticOceanFractal from "components/ArcticOceanFractal";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
-import { memo } from "react";
+import { useInView } from "react-intersection-observer";
 import useSx from "./useEducationSx";
+
+const ArcticOceanFractal = lazy(() => import("components/ArcticOceanFractal"));
 
 const Education = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
+  const { ref, inView } = useInView({ rootMargin: "500px", triggerOnce: true });
 
   return (
     <Box component="section" id={EDUCATION.id} sx={sx.root}>
@@ -25,8 +28,12 @@ const Education = ({ sx: sxProp }) => {
               </Grid>
               <Grid item md={6} xs={12}>
                 <Box sx={sx.animationContainer}>
-                  <Box sx={sx.animationWrapper}>
-                    <ArcticOceanFractal />
+                  <Box ref={ref} sx={sx.animationWrapper}>
+                    {inView && (
+                      <Suspense>
+                        <ArcticOceanFractal />
+                      </Suspense>
+                    )}
                   </Box>
                 </Box>
               </Grid>
