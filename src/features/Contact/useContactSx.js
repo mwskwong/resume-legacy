@@ -1,9 +1,5 @@
 const useSx = ({ sxProp }) => ({
-  root: sxProp,
-  submitButton: {
-    float: "right",
-    mt: 4
-  }
+  root: sxProp
 });
 
 export default useSx;
