@@ -1,15 +1,15 @@
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
-import { Fragment, useState } from "react";
 import { Grid, useMediaQuery } from "@mui/material";
 import { object, string } from "nope-validator";
 
 import { LoadingButton } from "@mui/lab";
+import { NoSsr } from "@mui/base";
 import PersonalInfo from "./PersonalInfo";
 import TextField from "./TextField";
 import { nopeResolver } from "@hookform/resolvers/nope";
 import sendEmail from "utils/sendEmail";
 import { useForm } from "react-hook-form";
-import { useInView } from "react-intersection-observer";
+import { useState } from "react";
 import useSx from "./useFormSx";
 
 const schema = object().shape({
@@ -28,7 +28,6 @@ const Form = () => {
   });
   const smDown = useMediaQuery(theme => theme.breakpoints.down("sm"));
   const [sendEmailStatus, setSendEmailStatus] = useState();
-  const { ref, inView } = useInView({ rootMargin: "500px", triggerOnce: true });
 
   const submitButtonColor = sendEmailStatus === "loading"
     ? undefined
@@ -53,44 +52,42 @@ const Form = () => {
         <Grid item md={4} xs={12}>
           <PersonalInfo />
         </Grid>
-        <Grid ref={ref} container spacing={2} item md xs={12}>
-          {inView && (
-            <Fragment>
-              <Grid item sm={6} xs={12}>
-                <TextField
-                  name="name"
-                  control={control}
-                  label="Name"
-                  autoComplete="name"
-                />
-              </Grid>
-              <Grid item sm={6} xs={12}>
-                <TextField
-                  name="email"
-                  control={control}
-                  label="Email"
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  name="subject"
-                  control={control}
-                  label="Subject"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  name="message"
-                  control={control}
-                  label="Message"
-                  multiline
-                  rows={9}
-                />
-              </Grid>
-            </Fragment>
-          )}
-        </Grid>
+        <NoSsr defer>
+          <Grid container spacing={2} item md xs={12} >
+            <Grid item sm={6} xs={12}>
+              <TextField
+                name="name"
+                control={control}
+                label="Name"
+                autoComplete="name"
+              />
+            </Grid>
+            <Grid item sm={6} xs={12}>
+              <TextField
+                name="email"
+                control={control}
+                label="Email"
+                autoComplete="email"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                name="subject"
+                control={control}
+                label="Subject"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                name="message"
+                control={control}
+                label="Message"
+                multiline
+                rows={9}
+              />
+            </Grid>
+          </Grid>
+        </NoSsr>
       </Grid>
       <LoadingButton
         loading={sendEmailStatus === "loading"}
