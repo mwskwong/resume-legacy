@@ -1,20 +1,17 @@
 import { Box, Container, Stack } from "@mui/material";
-import { Suspense, lazy, memo } from "react";
 
 import { CONTACT } from "constants/nav";
+import Form from "./Form";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
-
-const Form = lazy(() => import("./Form"));
+import { memo } from "react";
 
 const Contact = ({ sx }) => (
   <Box sx={sx} component="section" id={CONTACT.id}>
     <Container>
       <Stack spacing={6}>
         <SectionHeader heading="Get In Touch" />
-        <Suspense>
-          <Form />
-        </Suspense>
+        <Form />
       </Stack>
     </Container>
   </Box>
