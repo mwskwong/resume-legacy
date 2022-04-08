@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Stack } from "@mui/material";
-import { lazy, memo } from "react";
+import { Suspense, lazy, memo } from "react";
 
 import FunFacts from "./FunFacts";
 import PropTypes from "prop-types";
@@ -19,7 +19,9 @@ const Testimonial = ({ sx: sxProp }) => {
           <SectionHeader heading="What People Say" />
           <div>
             <Grid container spacing={6} sx={sx.contentGrid}>
-              <Carousel />
+              <Suspense>
+                <Carousel />
+              </Suspense>
               <FunFacts />
             </Grid>
           </div>
