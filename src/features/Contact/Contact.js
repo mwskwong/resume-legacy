@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Stack, useMediaQuery } from "@mui/material";
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
-import { Suspense, lazy, memo, useState } from "react";
+import { memo, useState } from "react";
 import { object, string } from "nope-validator";
 
 import { CONTACT } from "constants/nav";
@@ -9,12 +9,11 @@ import { NoSsr } from "@mui/base";
 import PersonalInfo from "./PersonalInfo";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
+import TextField from "./TextField";
 import { nopeResolver } from "@hookform/resolvers/nope";
 import sendEmail from "utils/sendEmail";
 import { useForm } from "react-hook-form";
 import useSx from "./useContactSx";
-
-const TextField = lazy(() => import("./TextField"));
 
 const schema = object().shape({
   name: string().required(),
@@ -62,42 +61,40 @@ const Contact = ({ sx: sxProp }) => {
                 <PersonalInfo />
               </Grid>
               <NoSsr defer>
-                <Suspense>
-                  <Grid container spacing={2} item md xs={12} >
-                    <Grid item sm={6} xs={12}>
-                      <TextField
-                        name="name"
-                        control={control}
-                        label="Name"
-                        autoComplete="name"
-                      />
-                    </Grid>
-                    <Grid item sm={6} xs={12}>
-                      <TextField
-                        name="email"
-                        control={control}
-                        label="Email"
-                        autoComplete="email"
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        name="subject"
-                        control={control}
-                        label="Subject"
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        name="message"
-                        control={control}
-                        label="Message"
-                        multiline
-                        rows={9}
-                      />
-                    </Grid>
+                <Grid container spacing={2} item md xs={12} >
+                  <Grid item sm={6} xs={12}>
+                    <TextField
+                      name="name"
+                      control={control}
+                      label="Name"
+                      autoComplete="name"
+                    />
                   </Grid>
-                </Suspense>
+                  <Grid item sm={6} xs={12}>
+                    <TextField
+                      name="email"
+                      control={control}
+                      label="Email"
+                      autoComplete="email"
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      name="subject"
+                      control={control}
+                      label="Subject"
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      name="message"
+                      control={control}
+                      label="Message"
+                      multiline
+                      rows={9}
+                    />
+                  </Grid>
+                </Grid>
               </NoSsr>
             </Grid>
             <LoadingButton
