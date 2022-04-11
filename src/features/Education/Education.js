@@ -4,6 +4,7 @@ import { Suspense, lazy, memo } from "react";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
+import { NoSsr } from "@mui/base";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import useSx from "./useEducationSx";
@@ -25,13 +26,15 @@ const Education = ({ sx: sxProp }) => {
                 <Courses />
               </Grid>
               <Grid item md={6} xs={12}>
-                <Suspense>
-                  <Box sx={sx.animationContainer}>
-                    <Box sx={sx.animationWrapper}>
-                      <ArcticOceanFractal />
+                <NoSsr defer>
+                  <Suspense>
+                    <Box sx={sx.animationContainer}>
+                      <Box sx={sx.animationWrapper}>
+                        <ArcticOceanFractal />
+                      </Box>
                     </Box>
-                  </Box>
-                </Suspense>
+                  </Suspense>
+                </NoSsr>
               </Grid>
             </Grid>
           </div>
