@@ -1,9 +1,6 @@
-// import About from "features/About";
-// import Work from "features/Work";
-// import Education from "features/Education";
-// import Testimonial from "features/Testimonial";
-
+import About from "features/About";
 import Contact from "features/Contact";
+import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
 import { Fragment } from "react";
@@ -11,11 +8,13 @@ import Landing from "features/Landing";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
+import Testimonial from "features/Testimonial";
 import WaveRoaring from "components/dividers/WaveRoaring";
 import WaveRough from "components/dividers/WaveRough";
 import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
+import Work from "features/Work";
 
 const bgcolors = {
   landing: "default",
@@ -75,13 +74,13 @@ const IndexPage = () => {
       <main>
         <Landing />
         <WaveSmooth sx={sx.waveSmooth} />
-        {/* <About sx={sx.about} /> */}
+        <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
-        {/* <Testimonial /> */}
+        <Testimonial />
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        {/* <Work sx={sx.work} /> */}
+        <Work sx={sx.work} />
         <WaveSmooth2 sx={sx.waveSmooth2} />
-        {/* <Education sx={sx.education} /> */}
+        <Education sx={sx.education} />
         <WaveRoaring sx={sx.waveRoaring} />
         <Contact />
       </main>
