@@ -7,7 +7,7 @@ const useSx = () => ({
   },
   mobile: {
     xs: "unset",
-    md: "mobile"
+    md: "hidden"
   }
 });
 
