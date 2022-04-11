@@ -1,4 +1,5 @@
 import About from "features/About";
+import Contact from "features/Contact";
 import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
@@ -14,23 +15,6 @@ import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 import Work from "features/Work";
-
-// import Contact from "features/Contact";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const bgcolors = {
   landing: "default",
@@ -98,7 +82,7 @@ const IndexPage = () => {
         <WaveSmooth2 sx={sx.waveSmooth2} />
         <Education sx={sx.education} />
         <WaveRoaring sx={sx.waveRoaring} />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       <FooterDivider sx={sx.footerDivider} />
       <Footer sx={sx.footer} />
