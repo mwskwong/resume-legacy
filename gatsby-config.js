@@ -24,6 +24,7 @@ module.exports = {
     PRESERVE_FILE_DOWNLOAD_CACHE: true
   },
   plugins: [
+    "gatsby-plugin-preact",
     {
       resolve: "gatsby-source-filesystem",
       options: {

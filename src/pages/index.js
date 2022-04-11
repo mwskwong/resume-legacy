@@ -3,11 +3,11 @@
 // import Education from "features/Education";
 // import Testimonial from "features/Testimonial";
 // import Work from "features/Work";
+// import Landing from "features/Landing";
 
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
 import { Fragment } from "react";
-import Landing from "features/Landing";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
@@ -73,7 +73,7 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <Landing />
+        {/* <Landing /> */}
         <WaveSmooth sx={sx.waveSmooth} />
         {/* <About sx={sx.about} /> */}
         <WaveRough sx={sx.waveRough} />
