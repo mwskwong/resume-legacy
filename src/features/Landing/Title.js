@@ -2,7 +2,6 @@ import { Box, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 import { useEffect, useMemo, useRef } from "react";
 
-import { NoSsr } from "@mui/base";
 import Typewriter from "typewriter-effect/dist/core";
 import useSx from "./useTitleSx";
 import { visuallyHidden } from "@mui/utils";
@@ -44,9 +43,7 @@ const Title = () => {
       </Typography>
       <Typography sx={sx.title} variant="h1" component="div" aria-hidden>
         {"I Am "}
-        <NoSsr defer>
-          <Box ref={typewriterRef} component="span" sx={sx.importantText} />
-        </NoSsr>
+        <Box ref={typewriterRef} component="span" sx={sx.importantText} />
       </Typography>
       <Typography sx={visuallyHidden} variant="h1">
         I Am {titleStrings.join(" I Am ")}
