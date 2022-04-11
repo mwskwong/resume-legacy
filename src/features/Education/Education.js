@@ -1,13 +1,14 @@
 import { Box, Container, Grid, Stack } from "@mui/material";
+import { Suspense, lazy, memo } from "react";
 
-import ArcticOceanFractal from "components/ArcticOceanFractal";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
-import { memo } from "react";
 import useSx from "./useEducationSx";
+
+const ArcticOceanFractal = lazy(() => import("./ArcticOceanFractal"));
 
 const Education = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
@@ -24,11 +25,13 @@ const Education = ({ sx: sxProp }) => {
                 <Courses />
               </Grid>
               <Grid item md={6} xs={12}>
-                <Box sx={sx.animationContainer}>
-                  <Box sx={sx.animationWrapper}>
-                    <ArcticOceanFractal />
+                <Suspense>
+                  <Box sx={sx.animationContainer}>
+                    <Box sx={sx.animationWrapper}>
+                      <ArcticOceanFractal />
+                    </Box>
                   </Box>
-                </Box>
+                </Suspense>
               </Grid>
             </Grid>
           </div>
