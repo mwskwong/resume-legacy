@@ -11,7 +11,7 @@ import {
 import { DownloadRounded as Download } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import { memo } from "react";
-import useSx from "./useTImelineItemSx";
+import useSx from "./useTimelineItemSx";
 
 const dateTimeFormat = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" });
 
