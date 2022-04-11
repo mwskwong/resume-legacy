@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { memo } from "react";
 
@@ -39,7 +39,7 @@ const SEO = ({ title: titleProp }) => {
   const title = titleProp ? `${titleProp} | ${name.firstName} ${name.lastName}` : defaultTitle;
 
   return (
-    <Helmet prioritizeSeoTags>
+    <Helmet>
       <html lang="en" />
       <title>{title}</title>
 
