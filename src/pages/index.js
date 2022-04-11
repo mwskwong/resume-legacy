@@ -1,8 +1,9 @@
 // import About from "features/About";
-// import Contact from "features/Contact";
+// import Work from "features/Work";
 // import Education from "features/Education";
 // import Testimonial from "features/Testimonial";
 
+import Contact from "features/Contact";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
 import { Fragment } from "react";
@@ -15,7 +16,6 @@ import WaveRough from "components/dividers/WaveRough";
 import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
-import Work from "features/Work";
 
 const bgcolors = {
   landing: "default",
@@ -79,11 +79,11 @@ const IndexPage = () => {
         <WaveRough sx={sx.waveRough} />
         {/* <Testimonial /> */}
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        <Work sx={sx.work} />
+        {/* <Work sx={sx.work} /> */}
         <WaveSmooth2 sx={sx.waveSmooth2} />
         {/* <Education sx={sx.education} /> */}
         <WaveRoaring sx={sx.waveRoaring} />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       <FooterDivider sx={sx.footerDivider} />
       <Footer sx={sx.footer} />
