@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack, useMediaQuery } from "@mui/material";
+import { Box, Container, Grid, Stack } from "@mui/material";
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
 import { memo, useState } from "react";
 import { object, string } from "nope-validator";
@@ -28,7 +28,7 @@ const Contact = ({ sx: sxProp }) => {
     mode: "onChange",
     defaultValues: { name: "", email: "", subject: "", message: "" }
   });
-  const smDown = useMediaQuery(theme => theme.breakpoints.down("sm"));
+  // const smDown = useMediaQuery(theme => theme.breakpoints.down("sm"));
   const [sendEmailStatus, setSendEmailStatus] = useState();
 
   const submitButtonColor = sendEmailStatus === "loading"
@@ -103,7 +103,7 @@ const Contact = ({ sx: sxProp }) => {
               type="submit"
               variant="contained"
               size="large"
-              fullWidth={smDown}
+            // fullWidth={smDown}
             >
               send message
             </LoadingButton>
