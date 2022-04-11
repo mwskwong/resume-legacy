@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { Timeline } from "@mui/lab";
+import Timeline from "./Timeline";
 import TimelineItem from "./TimelineItem";
 
 const ExpTimeline = ({ data }) => (
-  <Timeline position="alternate">
+  <Timeline>
     {data.map((datum, index) => (
       <TimelineItem key={index} data={datum} />
     ))}
