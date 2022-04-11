@@ -17,7 +17,7 @@ const About = ({ sx: sxProp }) => {
       <Container>
         <Stack sx={sx.stack} spacing={6}>
           <SectionHeader heading="About Me" />
-          <div><Picture /></div>
+          <Picture />
           <Message />
           <SkillSet />
         </Stack>

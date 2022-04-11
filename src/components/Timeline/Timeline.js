@@ -7,13 +7,11 @@ const Timeline = ({ data }) => {
   const mdDown = useMediaQuery(theme => theme.breakpoints.down("md"));
 
   return (
-    <div>
-      <MuiTimeline position={mdDown ? "right" : "alternate"}>
-        {data.map((datum, index) => (
-          <TimelineItem key={index} data={datum} />
-        ))}
-      </MuiTimeline>
-    </div>
+    <MuiTimeline position={mdDown ? "right" : "alternate"}>
+      {data.map((datum, index) => (
+        <TimelineItem key={index} data={datum} />
+      ))}
+    </MuiTimeline>
   );
 };
 
