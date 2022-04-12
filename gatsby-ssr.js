@@ -1,3 +1,17 @@
-import wrapWithProvider from "./wrap-with-provider";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
-export const wrapRootElement = wrapWithProvider;
+import { StrictMode } from "react";
+import brandingTheme from "brandingTheme";
+
+export const wrapRootElement = ({ element }) => (
+  <StrictMode>
+    {element}
+  </StrictMode>
+);
+
+export const wrapPageElement = ({ element }) => (
+  <ThemeProvider theme={brandingTheme}>
+    <CssBaseline enableColorScheme />
+    {element}
+  </ThemeProvider>
+);
