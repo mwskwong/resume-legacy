@@ -4,8 +4,8 @@ import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { memo } from "react";
 
-const SEO = ({ title: titleProp }) => {
-  const { site, name, occupationNodes, descriptionNode, ogImage } = useStaticQuery(graphql`{
+const SEO = ({ title }) => {
+  const { site, name, occupationNodes, descriptionNode, contact, ogImage, picture } = useStaticQuery(graphql`{
     site {
       siteMetadata {
         siteUrl
@@ -25,21 +25,47 @@ const SEO = ({ title: titleProp }) => {
         content
       }
     }
+    contact: contentfulContact {
+      address
+      email
+      phone
+    }
     ogImage: contentfulAsset(title: {eq: "Open Graph Image"}) {
+      localFile {
+        publicURL
+      }
+    }
+    picture: contentfulAsset(title: {eq: "Personal Photo"}) {
       localFile {
         publicURL
       }
     }
   }`);
 
+  const fullName = `${name.firstName} ${name.lastName}`;
+  const jobTitle = occupationNodes.nodes.map(({ title }) => title).join(" & ");
+
   const description = descriptionNode.content.content;
-  const occupations = occupationNodes.nodes.map(({ title }) => title);
   const ogImageUrl = `${site.siteMetadata.siteUrl}${ogImage.localFile.publicURL}`;
-  const defaultTitle = `${name.firstName} ${name.lastName} - ${occupations.join(" & ")}`;
-  const title = titleProp ? `${titleProp} | ${name.firstName} ${name.lastName}` : defaultTitle;
+  const defaultTitle = `${name.firstName} ${name.lastName} - ${jobTitle}`;
+  const titleTemplate = `% | ${fullName}`;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: `${contact.address}`
+    },
+    email: `mailto:${contact.email}`,
+    image: picture.localFile.publicURL,
+    jobTitle,
+    name: fullName,
+    telephone: contact.phone,
+    url: site.siteMetadata.siteUrl
+  };
 
   return (
-    <Helmet>
+    <Helmet defaultTitle={defaultTitle} titleTemplate={titleTemplate}>
       <html lang="en" />
       <title>{title}</title>
 
@@ -63,6 +89,10 @@ const SEO = ({ title: titleProp }) => {
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={ogImageUrl} />
+
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
     </Helmet>
   );
 };
