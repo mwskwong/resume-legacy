@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { memo } from "react";
 
-const SEO = ({ title }) => {
+const SEO = ({ title: titleProp }) => {
   const { site, name, occupationNodes, descriptionNode, contact, ogImage, picture } = useStaticQuery(graphql`{
     site {
       siteMetadata {
@@ -44,11 +44,11 @@ const SEO = ({ title }) => {
 
   const fullName = `${name.firstName} ${name.lastName}`;
   const jobTitle = occupationNodes.nodes.map(({ title }) => title).join(" & ");
+  const defaultTitle = `${fullName} - ${jobTitle}`;
 
   const description = descriptionNode.content.content;
   const ogImageUrl = `${site.siteMetadata.siteUrl}${ogImage.localFile.publicURL}`;
-  const defaultTitle = `${name.firstName} ${name.lastName} - ${jobTitle}`;
-  const titleTemplate = `% | ${fullName}`;
+  const title = titleProp ? `${titleProp} | ${fullName}` : defaultTitle;
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -65,7 +65,7 @@ const SEO = ({ title }) => {
   };
 
   return (
-    <Helmet defaultTitle={defaultTitle} titleTemplate={titleTemplate}>
+    <Helmet>
       <html lang="en" />
       <title>{title}</title>
 
