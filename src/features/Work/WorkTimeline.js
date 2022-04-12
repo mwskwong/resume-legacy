@@ -1,6 +1,9 @@
+import { Suspense, lazy } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import Timeline from "components/Timeline";
+import TimelineFallback from "./TimelineFallback";
+
+const ExpTimeline = lazy(() => import("components/ExpTimeline"));
 
 const WorkTimeline = () => {
   const { workNodes } = useStaticQuery(graphql`{
@@ -29,7 +32,11 @@ const WorkTimeline = () => {
       ...node
     }));
 
-  return <Timeline data={works} />;
+  return (
+    <Suspense fallback={<TimelineFallback />}>
+      <ExpTimeline data={works} />
+    </Suspense>
+  );
 };
 
 WorkTimeline.whyDidYouRender = true;
