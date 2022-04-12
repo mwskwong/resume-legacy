@@ -5,9 +5,12 @@ import Message from "./Message";
 import Picture from "./Picture";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
-import SkillSet from "./SkillSet";
 import { memo } from "react";
 import useSx from "./useAboutSx";
+
+// import SkillSet from "./SkillSet";
+
+
 
 const About = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
@@ -19,7 +22,7 @@ const About = ({ sx: sxProp }) => {
           <SectionHeader heading="About Me" />
           <div><Picture /></div>
           <Message />
-          <SkillSet />
+          {/* <SkillSet /> */}
         </Stack>
       </Container>
     </Box>
