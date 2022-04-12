@@ -1,6 +1,8 @@
 import { Suspense, lazy } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
+import TimelineFallback from "./TimelineFallback";
+
 const ExpTimeline = lazy(() => import("components/ExpTimeline"));
 
 const EducationTimeline = () => {
@@ -28,7 +30,7 @@ const EducationTimeline = () => {
     }));
 
   return (
-    <Suspense>
+    <Suspense fallback={<TimelineFallback />}>
       <ExpTimeline data={educations} />
     </Suspense>
   );
