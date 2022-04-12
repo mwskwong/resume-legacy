@@ -5,7 +5,6 @@ import ArcticOceanFractalFallback from "components/ArcticOceanFractal/Fallback";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
-import { NoSsr } from "@mui/base";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import useSx from "./useEducationSx";
@@ -29,11 +28,9 @@ const Education = ({ sx: sxProp }) => {
               <Grid item md={6} xs={12}>
                 <Box sx={sx.animationContainer}>
                   <Box sx={sx.animationWrapper}>
-                    <NoSsr defer>
-                      <Suspense fallback={<ArcticOceanFractalFallback />}>
-                        <ArcticOceanFractal />
-                      </Suspense>
-                    </NoSsr>
+                    <Suspense fallback={<ArcticOceanFractalFallback />}>
+                      <ArcticOceanFractal />
+                    </Suspense>
                   </Box>
                 </Box>
               </Grid>
