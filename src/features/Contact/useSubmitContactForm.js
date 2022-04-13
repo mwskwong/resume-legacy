@@ -23,11 +23,11 @@ const useSubmitContactForm = () => {
         _template: "table"
       })
     });
-    const body = await response.json();
-    console.log(body);
 
     if (!response.ok) throw Error(response.statusText);
 
+    const body = await response.json();
+    if (body?.success) throw Error(body);
     return body;
   };
 
