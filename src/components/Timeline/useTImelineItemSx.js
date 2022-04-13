@@ -3,8 +3,9 @@ const useSx = () => ({
     color: "text.secondary",
     display: {
       xs: "none",
-      md: "initial"
-    }
+      md: "unset"
+    },
+    flex: .28
   },
   timelineContent: {
     mb: 4
