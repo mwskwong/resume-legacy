@@ -3,7 +3,7 @@ const useSx = () => ({
     color: "text.secondary",
     display: {
       xs: "none",
-      md: "initial"
+      md: "unset"
     }
   },
   timelineContent: {
