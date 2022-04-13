@@ -47,10 +47,7 @@ module.exports = {
       options: {
         defaults: {
           formats: ["auto", "webp", "avif"],
-          placeholder: "tracedSVG",
-          tracedSVGOptions: {
-            blackOnWhite: false
-          }
+          placeholder: "tracedSVG"
         }
       }
     },
