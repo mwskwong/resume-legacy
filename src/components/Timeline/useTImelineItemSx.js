@@ -4,7 +4,8 @@ const useSx = () => ({
     display: {
       xs: "none",
       md: "unset"
-    }
+    },
+    flex: .28
   },
   timelineContent: {
     mb: 4
