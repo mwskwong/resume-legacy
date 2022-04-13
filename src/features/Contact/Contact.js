@@ -10,8 +10,8 @@ import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import TextField from "./TextField";
 import { nopeResolver } from "@hookform/resolvers/nope";
-import sendEmail from "utils/sendEmail";
 import { useForm } from "react-hook-form";
+import useSubmitContactFrom from "./useSubmitContactForm";
 import useSx from "./useContactSx";
 
 const schema = object().shape({
@@ -30,6 +30,7 @@ const Contact = ({ sx: sxProp }) => {
   });
   const smDown = useMediaQuery(theme => theme.breakpoints.down("sm"));
   const [sendEmailStatus, setSendEmailStatus] = useState();
+  const submitContactForm = useSubmitContactFrom();
 
   const submitButtonColor = sendEmailStatus === "loading"
     ? undefined
@@ -43,9 +44,10 @@ const Contact = ({ sx: sxProp }) => {
 
   const handleFormSubmit = data => {
     setSendEmailStatus("loading");
-    sendEmail(data)
+    submitContactForm(data)
       .then(() => setSendEmailStatus("success"))
       .catch(() => setSendEmailStatus("error"));
+
   };
 
 
