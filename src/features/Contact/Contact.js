@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import TextField from "./TextField";
 import { nopeResolver } from "@hookform/resolvers/nope";
-import sendEmail from "utils/sendEmail";
+import submitContactForm from "./submitContactForm";
 import { useForm } from "react-hook-form";
 import useSx from "./useContactSx";
 
@@ -43,9 +43,10 @@ const Contact = ({ sx: sxProp }) => {
 
   const handleFormSubmit = data => {
     setSendEmailStatus("loading");
-    sendEmail(data)
+    submitContactForm(data)
       .then(() => setSendEmailStatus("success"))
       .catch(() => setSendEmailStatus("error"));
+
   };
 
 
