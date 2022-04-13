@@ -34,7 +34,6 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        host: NODE_ENV === "development" || !prod ? "preview.contentful.com" : "cdn.contentful.com",
         accessToken: CONTENTFUL_ACCESS_TOKEN,
         spaceId: "zz9cwhc5t97i",
         downloadLocal: true
