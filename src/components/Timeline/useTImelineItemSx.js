@@ -3,8 +3,9 @@ const useSx = () => ({
     color: "text.secondary",
     display: {
       xs: "none",
-      md: "initial"
-    }
+      md: "unset"
+    },
+    flex: .28
   },
   timelineContent: {
     mb: 4
@@ -17,9 +18,6 @@ const useSx = () => ({
   },
   subtitle: {
     color: "primary.main"
-  },
-  contentListItem: {
-    textAlign: "inherit"
   },
   downloadButton: {
     mt: 1

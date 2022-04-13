@@ -43,7 +43,7 @@ const TimelineItem = ({ data }) => {
         </Typography>
         <List disablePadding>
           {contents.map((content, index) => (
-            <ListItem key={index} sx={sx.contentListItem} disableGutters>
+            <ListItem key={index} disableGutters>
               <ListItemText primary={content} />
             </ListItem>
           ))}
