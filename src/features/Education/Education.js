@@ -1,4 +1,4 @@
-import { Box, Container, Grid, NoSsr, Stack } from "@mui/material";
+import { Box, Container, Grid, Stack } from "@mui/material";
 
 import ArcticOceanFractal from "components/ArcticOceanFractal";
 import Courses from "./Courses";
@@ -26,9 +26,7 @@ const Education = ({ sx: sxProp }) => {
               <Grid item md={6} xs={12}>
                 <Box sx={sx.animationContainer}>
                   <Box sx={sx.animationWrapper}>
-                    <NoSsr defer>
-                      <ArcticOceanFractal />
-                    </NoSsr>
+                    <ArcticOceanFractal />
                   </Box>
                 </Box>
               </Grid>
