@@ -19,7 +19,6 @@ const submitContactForm = async ({ name, email, subject, message }) => {
   if (!response.ok) throw Error(response.statusText);
 
   const body = await response.json();
-  console.log(body);
   if (!body?.ok) throw Error(body);
   return body;
 };

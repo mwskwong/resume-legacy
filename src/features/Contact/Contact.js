@@ -31,16 +31,6 @@ const Contact = ({ sx: sxProp }) => {
   const smDown = useMediaQuery(theme => theme.breakpoints.down("sm"));
   const [sendEmailStatus, setSendEmailStatus] = useState();
 
-  const submitButtonColor = sendEmailStatus === "loading"
-    ? undefined
-    : sendEmailStatus;
-
-  const submitButtonIcon = sendEmailStatus === "success"
-    ? <Success />
-    : sendEmailStatus === "error"
-      ? <Error />
-      : <Send />;
-
   const handleFormSubmit = data => {
     setSendEmailStatus("loading");
     submitContactForm(data)
@@ -67,6 +57,7 @@ const Contact = ({ sx: sxProp }) => {
                     control={control}
                     label="Name"
                     autoComplete="name"
+                    disabled={sendEmailStatus === "loading"}
                   />
                 </Grid>
                 <Grid item sm={6} xs={12}>
@@ -75,6 +66,7 @@ const Contact = ({ sx: sxProp }) => {
                     control={control}
                     label="Email"
                     autoComplete="email"
+                    disabled={sendEmailStatus === "loading"}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -82,6 +74,7 @@ const Contact = ({ sx: sxProp }) => {
                     name="subject"
                     control={control}
                     label="Subject"
+                    disabled={sendEmailStatus === "loading"}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -91,6 +84,7 @@ const Contact = ({ sx: sxProp }) => {
                     label="Message"
                     multiline
                     rows={9}
+                    disabled={sendEmailStatus === "loading"}
                   />
                 </Grid>
               </Grid>
@@ -98,8 +92,14 @@ const Contact = ({ sx: sxProp }) => {
             <LoadingButton
               loading={sendEmailStatus === "loading"}
               loadingPosition="end"
-              color={submitButtonColor}
-              endIcon={submitButtonIcon}
+              color={sendEmailStatus === "loading" ? undefined : sendEmailStatus}
+              endIcon={
+                sendEmailStatus === "success"
+                  ? <Success />
+                  : sendEmailStatus === "error"
+                    ? <Error />
+                    : <Send />
+              }
               sx={sx.submitButton}
               type="submit"
               variant="contained"
