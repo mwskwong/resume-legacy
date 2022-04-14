@@ -23,7 +23,7 @@ const schema = object().shape({
 
 const Contact = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
-  const { control, handleSubmit } = useForm({
+  const { control, handleSubmit, reset } = useForm({
     resolver: nopeResolver(schema),
     mode: "onChange",
     defaultValues: { name: "", email: "", subject: "", message: "" }
@@ -34,7 +34,10 @@ const Contact = ({ sx: sxProp }) => {
   const handleFormSubmit = data => {
     setSendEmailStatus("loading");
     submitContactForm(data)
-      .then(() => setSendEmailStatus("success"))
+      .then(() => {
+        setSendEmailStatus("success");
+        reset();
+      })
       .catch(() => setSendEmailStatus("error"));
 
   };
