@@ -8,6 +8,7 @@ const PaginationItem = ({ active = false, onClick, ...props }) => {
   return (
     <ButtonBase
       sx={sx.root}
+      disableRipple
       onClick={onClick}
       {...props}
     />
