@@ -6,7 +6,7 @@ const useSx = ({ active }) => ({
     bgcolor: active ? "primary.main" : "currentColor",
     opacity: active ? 1 : .26,
     borderRadius: "4px",
-    transition: theme => theme.transitions.create(["width", "opacity", "backgroundColor"], {
+    transition: theme => theme.transitions.create(["width", "opacity", "background-color"], {
       duration: theme.transitions.duration.shorter
     }),
     "&:hover": {
