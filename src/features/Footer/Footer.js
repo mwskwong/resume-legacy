@@ -12,11 +12,11 @@ const Footer = ({ sx: sxProp }) => {
   return (
     <Box component="footer" sx={sx.root}>
       <Container>
-        <Grid sx={sx.gridContainer} container>
-          <Grid item sm="auto" xs={12}>
+        <Grid sx={sx.gridContainer} container spacing={1}>
+          <Grid item lg="auto" xs={12}>
             <CopyrightStatement />
           </Grid>
-          <Grid item sm="auto" xs={12}>
+          <Grid item lg="auto" xs={12}>
             <SocialMedia />
           </Grid>
         </Grid>
