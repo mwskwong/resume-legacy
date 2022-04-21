@@ -11,14 +11,14 @@ import { useController } from "react-hook-form";
 const TextField = ({ name, control, label, autoComplete, multiline, rows, disabled }) => {
   const {
     field: { ref, ...field },
-    fieldState: { invalid, error }
+    fieldState: { error }
   } = useController({ name, control });
 
   const inputId = useId();
   const helperTextId = useId();
 
   return (
-    <FormControl fullWidth error={invalid} disabled={disabled}>
+    <FormControl fullWidth error={Boolean(error)} disabled={disabled}>
       <InputLabel htmlFor={inputId}>{label}</InputLabel>
       <FilledInput
         inputRef={ref}
