@@ -1,8 +1,8 @@
 import { alpha, darken } from "@mui/system";
-import systemFonts, { variable as variableSystemFonts } from "./systemFonts";
 
 import defaultTheme from "./defaultTheme";
 import nord from "nord";
+import systemFonts from "./systemFonts";
 
 const designTokens = {
   palette: {
@@ -33,18 +33,6 @@ const designTokens = {
     success: {
       main: nord.nord14,
       contrastText: nord.nord1
-    },
-    grey: {
-      50: "#F3F6F9",
-      100: "#EAEEF3",
-      200: "#E5E8EC",
-      300: "#D7DCE1",
-      400: "#BFC7CF",
-      500: "#AAB4BE",
-      600: "#7F8E9D",
-      700: "#46505A",
-      800: "#2F3A45",
-      900: "#20262D"
     },
     text: {
       primary: nord.nord6,
@@ -77,108 +65,60 @@ const designTokens = {
     h1: {
       fontSize: "clamp(2.625rem, 1.2857rem + 3.5714vw, 4rem)",
       fontWeight: 800,
-      lineHeight: 78 / 70,
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(","),
-        fontVariationSettings: "'wght' 800"
-      }
+      lineHeight: 78 / 70
     },
     h2: {
       fontSize: "clamp(1.5rem, 0.9643rem + 1.4286vw, 2.25rem)",
       fontWeight: 800,
-      lineHeight: 44 / 36,
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(","),
-        fontVariationSettings: "'wght' 800"
-      }
+      lineHeight: 44 / 36
     },
     h3: {
       fontSize: defaultTheme.typography.pxToRem(36),
       lineHeight: 44 / 36,
-      letterSpacing: 0,
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(",")
-      }
+      letterSpacing: 0
     },
     h4: {
       fontSize: defaultTheme.typography.pxToRem(28),
       lineHeight: 42 / 28,
-      letterSpacing: 0,
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(",")
-      }
+      letterSpacing: 0
     },
     h5: {
       fontSize: defaultTheme.typography.pxToRem(24),
       lineHeight: 36 / 24,
-      letterSpacing: 0,
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(",")
-      }
+      letterSpacing: 0
     },
     h6: {
       fontSize: defaultTheme.typography.pxToRem(20),
       lineHeight: 30 / 20,
-      letterSpacing: 0,
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(",")
-      }
+      letterSpacing: 0
     },
     button: {
       textTransform: "capitalize",
       fontWeight: 700,
-      letterSpacing: 0,
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(","),
-        fontVariationSettings: "'wght' 700"
-      }
+      letterSpacing: 0
     },
     subtitle1: {
       fontSize: defaultTheme.typography.pxToRem(18),
       lineHeight: 24 / 18,
       letterSpacing: 0,
-      fontWeight: 500,
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(","),
-        fontVariationSettings: "'wght' 500"
-      }
-    },
-    subtitle2: {
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(",")
-      }
+      fontWeight: 500
     },
     body1: {
       fontSize: defaultTheme.typography.pxToRem(16),
       lineHeight: 24 / 16,
-      letterSpacing: 0,
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(",")
-      }
+      letterSpacing: 0
     },
     body2: {
       fontSize: defaultTheme.typography.pxToRem(14),
       lineHeight: 21 / 14,
-      letterSpacing: 0,
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(",")
-      }
+      letterSpacing: 0
     },
     caption: {
       display: "inline-block",
       fontSize: defaultTheme.typography.pxToRem(12),
       lineHeight: 18 / 12,
       letterSpacing: 0,
-      fontWeight: 700,
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(","),
-        fontVariationSettings: "'wght' 700"
-      }
-    },
-    overline: {
-      "@supports (font-variation-settings: normal)": {
-        fontFamily: variableSystemFonts.join(",")
-      }
+      fontWeight: 700
     }
   }
 };

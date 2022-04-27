@@ -1,9 +1,6 @@
-export const variable = [
+const systemFonts = [
   "RubikVariable",
   "sans-serif"
 ];
 
-export default [
-  "Rubik",
-  "sans-serif"
-];
+export default systemFonts;
