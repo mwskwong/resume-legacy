@@ -37,6 +37,7 @@
     "gatsby-transformer-sharp": "^4.13.0",
     "mdi-material-ui": "^7.2.0",
     "nope-validator": "^1.0.2",
+    "polished": "^3.4.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",

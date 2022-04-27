@@ -31,7 +31,7 @@ const TimelineItem = ({ data }) => {
         <TimelineDot color="primary" />
         <TimelineConnector />
       </TimelineSeparator>
-      <TimelineContent sx={sx.timelineContent}>
+      <TimelineContent>
         <Typography sx={sx.periodMobile} variant="body2" component="div" gutterBottom>
           {period}
         </Typography>
@@ -49,12 +49,12 @@ const TimelineItem = ({ data }) => {
           ))}
         </List>
         {data.fileUrl && (
-          <Button sx={sx.downloadButton} startIcon={<Download />} href={data.fileUrl}>
+          <Button color="primary" sx={sx.downloadButton} startIcon={<Download />} href={data.fileUrl}>
             Download
           </Button>
         )}
       </TimelineContent>
-    </MuiTimelineItem >
+    </MuiTimelineItem>
   );
 };
 
