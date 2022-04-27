@@ -3,7 +3,7 @@ const useSx = ({ active }) => ({
     m: .5,
     width: active ? 20 : 8,
     height: 8,
-    bgcolor: active ? "primary.main" : "currentColor",
+    bgcolor: active ? "primary.main" : "action.active",
     opacity: active ? 1 : .26,
     borderRadius: "4px",
     transition: theme => theme.transitions.create(["width", "opacity", "background-color"], {
