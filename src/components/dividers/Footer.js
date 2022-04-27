@@ -1,11 +1,10 @@
 import DividerSvg from "./DividerSvg";
-import { lighten } from "@mui/system";
-import { nord6 } from "nord";
+import { darken } from "@mui/system";
+import { nord1 } from "nord";
 
 const Footer = props => {
-  const fillColorWave1 = lighten(nord6, .48);
-  const fillColorWave2 = lighten(nord6, .65);
-  console.log({ fillColorWave1, fillColorWave2 });
+  const fillColorWave1 = darken(nord1, .06);
+  const fillColorWave2 = darken(nord1, .03);
 
   return (
     <DividerSvg {...props} viewBox="0 0 1920 250" xmlns="http://www.w3.org/2000/svg">

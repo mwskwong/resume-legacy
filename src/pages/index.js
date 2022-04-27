@@ -9,19 +9,17 @@ import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
 import Testimonial from "features/Testimonial";
-import { ThemeProvider } from "@mui/material";
 import WaveRoaring from "components/dividers/WaveRoaring";
 import WaveRough from "components/dividers/WaveRough";
 import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 import Work from "features/Work";
-import { brandingDarkTheme } from "brandingTheme";
 
 const bgcolors = {
   landing: "default",
   about: "sectionSecondary",
-  testimonial: brandingDarkTheme.palette.background.default,
+  testimonial: "default",
   work: "sectionTertiary",
   education: "sectionSecondary",
   contact: "default",
@@ -31,9 +29,6 @@ const bgcolors = {
 const useSx = () => ({
   about: {
     bgcolor: `background.${bgcolors.about}`
-  },
-  testimonial: {
-    bgcolor: bgcolors.testimonial
   },
   work: {
     bgcolor: `background.${bgcolors.work}`
@@ -49,10 +44,10 @@ const useSx = () => ({
   },
   waveRough: {
     bgcolor: `background.${bgcolors.about}`,
-    color: bgcolors.testimonial
+    color: `background.${bgcolors.testimonial}`
   },
   waveSmoothFlat: {
-    bgcolor: bgcolors.testimonial,
+    bgcolor: `background.${bgcolors.testimonial}`,
     color: `background.${bgcolors.work}`
   },
   waveSmooth2: {
@@ -81,9 +76,7 @@ const IndexPage = () => {
         <WaveSmooth sx={sx.waveSmooth} />
         <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
-        <ThemeProvider theme={brandingDarkTheme}>
-          <Testimonial sx={sx.testimonial} />
-        </ThemeProvider>
+        <Testimonial />
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
         <Work sx={sx.work} />
         <WaveSmooth2 sx={sx.waveSmooth2} />

@@ -1,20 +1,17 @@
-import { alpha, darken, lighten, rgbToHex } from "@mui/system";
+import { alpha, darken } from "@mui/system";
 
 import defaultTheme from "./defaultTheme";
 import nord from "nord";
 import systemFonts from "./systemFonts";
 
-console.log(rgbToHex(lighten(nord.nord4, .67)));
-
-const designTokens = mode => ({
+const designTokens = {
   palette: {
-    mode,
+    mode: "dark",
     common: {
       black: nord.nord0
     },
     primary: {
-      // darker and more vibrant version of Nord8 to increase the contrast with light backgrounds
-      main: mode === "dark" ? nord.nord8 : "#4a9fb7",
+      main: nord.nord8,
       contrastText: nord.nord1
     },
     secondary: {
@@ -38,24 +35,24 @@ const designTokens = mode => ({
       contrastText: nord.nord1
     },
     text: {
-      primary: mode === "dark" ? nord.nord6 : nord.nord3,
-      secondary: mode === "dark" ? darken(nord.nord6, .2) : lighten(nord.nord3, .2),
-      disabled: mode === "dark" ? darken(nord.nord6, .4) : lighten(nord.nord3, .4)
+      primary: nord.nord6,
+      secondary: darken(nord.nord6, .2),
+      disabled: darken(nord.nord6, .4)
     },
-    divider: alpha(nord.nord4, mode === "dark" ? .5 : .8),
+    divider: alpha(nord.nord4, .5),
     background: {
-      default: mode === "dark" ? nord.nord0 : "#fff",
-      sectionPrimary: mode === "dark" ? nord.nord1 : lighten(nord.nord6, .8),
-      sectionSecondary: mode === "dark" ? darken(nord.nord0, .1) : lighten(nord.nord5, .75),
-      sectionTertiary: mode === "dark" ? darken(nord.nord0, .2) : lighten(nord.nord4, .67)
+      default: nord.nord0,
+      sectionPrimary: nord.nord1,
+      sectionSecondary: darken(nord.nord0, .1),
+      sectionTertiary: darken(nord.nord0, .2)
     },
     action: {
-      active: mode === "dark" ? nord.nord6 : nord.nord3,
-      hover: alpha(mode === "dark" ? nord.nord6 : nord.nord3, .04),
-      selected: alpha(mode === "dark" ? nord.nord6 : nord.nord3, .08),
-      disabled: alpha(mode === "dark" ? nord.nord6 : nord.nord3, .26),
-      disabledBackground: alpha(mode === "dark" ? nord.nord6 : nord.nord3, .12),
-      focus: alpha(mode === "dark" ? nord.nord6 : nord.nord3, .12)
+      active: nord.nord6,
+      hover: alpha(nord.nord6, .04),
+      selected: alpha(nord.nord6, .08),
+      disabled: alpha(nord.nord6, .26),
+      disabledBackground: alpha(nord.nord6, .12),
+      focus: alpha(nord.nord6, .12)
     }
   },
   spacing: 10,
@@ -124,6 +121,6 @@ const designTokens = mode => ({
       fontWeight: 700
     }
   }
-});
+};
 
 export default designTokens;

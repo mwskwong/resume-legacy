@@ -15,8 +15,7 @@ const getThemedComponents = theme => ({
     },
     MuiButton: {
       defaultProps: {
-        disableElevation: true,
-        color: theme.palette.mode === "dark" ? "primary" : "secondary"
+        disableElevation: true
       },
       styleOverrides: {
         sizeLarge: {
@@ -64,7 +63,7 @@ const getThemedComponents = theme => ({
     },
     MuiFab: {
       defaultProps: {
-        color: theme.palette.mode === "dark" ? "primary" : "secondary",
+        color: "primary",
         size: "medium"
       },
       styleOverrides: {
@@ -79,13 +78,9 @@ const getThemedComponents = theme => ({
     MuiFilledInput: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.mode === "dark"
-            ? theme.palette.background.sectionPrimary
-            : theme.palette.background.sectionTertiary,
+          backgroundColor: theme.palette.background.sectionPrimary,
           "&:hover": {
-            backgroundColor: theme.palette.mode === "dark"
-              ? theme.palette.background.sectionPrimary
-              : theme.palette.background.sectionTertiary
+            backgroundColor: theme.palette.background.sectionPrimary
           }
         }
       }
@@ -93,7 +88,7 @@ const getThemedComponents = theme => ({
     MuiFormControl: {
       defaultProps: {
         variant: "filled",
-        color: theme.palette.mode === "dark" ? "primary" : "secondary"
+        color: "primary"
       }
     },
     MuiInputLabel: {

@@ -7,6 +7,9 @@ const useSx = () => ({
     },
     flex: .28
   },
+  timelineContent: {
+    mb: 4
+  },
   periodMobile: {
     color: "text.secondary",
     display: {
