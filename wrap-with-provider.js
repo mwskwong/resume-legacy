@@ -1,11 +1,11 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import { StrictMode } from "react";
-import { brandingLightTheme } from "brandingTheme";
+import brandingTheme from "brandingTheme";
 
 export const wrapRootElement = ({ element }) => (
   <StrictMode>
-    <ThemeProvider theme={brandingLightTheme}>
+    <ThemeProvider theme={brandingTheme}>
       <CssBaseline enableColorScheme />
       {element}
     </ThemeProvider>
