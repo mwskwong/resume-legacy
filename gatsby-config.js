@@ -146,8 +146,8 @@ module.exports = {
       options: {
         workboxConfig: {
           globPatterns: [
-            "icon-*",
-            "favicon.ico"
+            "**/icon-*",
+            "**/favicon.ico"
           ]
         }
       }
