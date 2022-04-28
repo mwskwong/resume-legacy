@@ -8,7 +8,7 @@ const useSx = () => ({
     flex: .28
   },
   timelineContent: {
-    mb: 4
+    pb: 3
   },
   periodMobile: {
     color: "text.secondary",

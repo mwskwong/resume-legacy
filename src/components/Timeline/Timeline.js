@@ -11,14 +11,22 @@ const Timeline = ({ data }) => (
 );
 
 Timeline.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    from: PropTypes.string.isRequired,
-    to: PropTypes.string,
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string,
-    contents: PropTypes.arrayOf(PropTypes.string),
-    fileUrl: PropTypes.string
-  }))
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      from: PropTypes.string.isRequired,
+      to: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      subtitle: PropTypes.string,
+      contents: PropTypes.arrayOf(PropTypes.string),
+      supportDocuments: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          url: PropTypes.string.isRequired,
+          thumbnail: PropTypes.object.isRequired
+        })
+      )
+    })
+  )
 };
 Timeline.whyDidYouRender = true;
 
