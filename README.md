@@ -28,3 +28,11 @@ Welcome to the source code of [mwskwong.com](https://mwskwong.com). You can see 
 - Framework - [Gatsby](https://www.gatsbyjs.com)
 - UI library - [MUI](https://mui.com)
 - CMS - [Contentful](https://www.contentful.com)
+
+## To Do
+1. Add tags to PDF files
+2. Embed image of PDF files to website
+
+> For PDF files, we recommend embedding an image of the PDF with alternative text, and providing a link to download a tagged PDF.
+
+Ref: https://www.gatsbyjs.com/docs/how-to/images-and-media/importing-media-content/#images-svg-and-pdfs
