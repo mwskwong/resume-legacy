@@ -11,21 +11,36 @@ const WorkTimeline = () => {
         jobTitle
         company
         jobDuties
-        document {
-          localFile {
-            publicURL
+        supportDocuments {
+          title
+          file {
+            localFile {
+              publicURL
+            }
+          }
+          thumbnail {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(aspectRatio: 1.5, width: 102)
+              }
+            }
           }
         }
       }
     }
-  }`);
+  }
+`);
 
   const works = workNodes.nodes
-    .map(({ jobTitle, company, document, jobDuties, ...node }) => ({
+    .map(({ jobTitle, company, jobDuties, supportDocuments, ...node }) => ({
       title: jobTitle,
       subtitle: company,
-      fileUrl: document ? document.localFile.publicURL : undefined,
       contents: jobDuties,
+      supportDocuments: supportDocuments?.map(({ title, file, thumbnail }) => ({
+        title,
+        url: file.localFile.publicURL,
+        thumbnail: thumbnail.localFile.childImageSharp
+      })),
       ...node
     }));
 

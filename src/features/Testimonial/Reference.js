@@ -8,6 +8,10 @@ import useSx from "./useReferenceSx";
 const Reference = ({ name, jobTitle, refereePicture, company, comment }) => {
   const sx = useSx();
   const image = getImage(refereePicture);
+  const gatsbyImageStyle = {
+    borderRadius: "50%",
+    minWidth: 60
+  };
 
   return (
     <div>
@@ -15,11 +19,10 @@ const Reference = ({ name, jobTitle, refereePicture, company, comment }) => {
         {`"${comment}"`}
       </Typography>
       <Box sx={sx.profileContainer}>
-        <Box
-          component={GatsbyImage}
+        <GatsbyImage
           image={image}
           alt={`Picture of ${name}`}
-          sx={sx.avatar}
+          style={gatsbyImageStyle}
         />
         <Box sx={sx.refereeInfoContainer}>
           <Typography sx={sx.name} gutterBottom>

@@ -31,7 +31,6 @@ Welcome to the source code of [mwskwong.com](https://mwskwong.com). You can see 
 
 ## To Do
 1. Add tags to PDF files
-2. Embed image of PDF files to website
 
 > For PDF files, we recommend embedding an image of the PDF with alternative text, and providing a link to download a tagged PDF.
 

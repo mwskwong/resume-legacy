@@ -6,13 +6,6 @@ const useSx = () => ({
     display: "flex",
     alignItems: "center"
   },
-  avatar: {
-    borderRadius: "50%",
-    minWidth: 60,
-    "& img": {
-      borderRadius: "50%"
-    }
-  },
   refereeInfoContainer: {
     ml: 2
   },

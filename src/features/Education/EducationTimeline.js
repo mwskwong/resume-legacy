@@ -10,9 +10,19 @@ const EducationTimeline = () => {
         to
         title
         institution
-        document {
-          localFile {
-            publicURL
+        supportDocuments {
+          title
+          file {
+            localFile {
+              publicURL
+            }
+          }
+          thumbnail {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(aspectRatio: 1.5, width: 102)
+              }
+            }
           }
         }
       }
@@ -20,9 +30,13 @@ const EducationTimeline = () => {
   }`);
 
   const educations = educationNodes.nodes
-    .map(({ institution, document, ...node }) => ({
+    .map(({ institution, supportDocuments, ...node }) => ({
       subtitle: institution,
-      fileUrl: document ? document.localFile.publicURL : undefined,
+      supportDocuments: supportDocuments?.map(({ title, file, thumbnail }) => ({
+        title,
+        url: file.localFile.publicURL,
+        thumbnail: thumbnail.localFile.childImageSharp
+      })),
       ...node
     }));
 

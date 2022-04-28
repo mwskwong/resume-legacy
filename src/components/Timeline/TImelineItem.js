@@ -1,4 +1,4 @@
-import { Button, List, ListItem, ListItemText, Typography } from "@mui/material";
+import { List, ListItem, ListItemText, Typography } from "@mui/material";
 import {
   TimelineItem as MuiTimelineItem,
   TimelineConnector,
@@ -8,8 +8,8 @@ import {
   TimelineSeparator
 } from "@mui/lab";
 
-import { DownloadRounded as Download } from "@mui/icons-material";
 import PropTypes from "prop-types";
+import SupportDocumentListItem from "./SupportDocumentListItem";
 import { memo } from "react";
 import useSx from "./useTImelineItemSx";
 
@@ -21,6 +21,7 @@ const TimelineItem = ({ data }) => {
   const to = data.to ? dateTimeFormat.format(new Date(data.to)) : "Present";
   const period = `${from} — ${to}`;
   const contents = data.contents || [];
+  const supportDocuments = data.supportDocuments || [];
 
   return (
     <MuiTimelineItem>
@@ -48,11 +49,21 @@ const TimelineItem = ({ data }) => {
             </ListItem>
           ))}
         </List>
-        {data.fileUrl && (
+        {supportDocuments.length > 0 && (
+          <List>
+            {supportDocuments.map((supportDocument, index) => (
+              <SupportDocumentListItem
+                key={index}
+                supportDocument={supportDocument}
+              />
+            ))}
+          </List>
+        )}
+        {/* {data.fileUrl && (
           <Button sx={sx.downloadButton} startIcon={<Download />} href={data.fileUrl}>
             Download
           </Button>
-        )}
+        )} */}
       </TimelineContent>
     </MuiTimelineItem >
   );
@@ -65,7 +76,13 @@ TimelineItem.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string,
     contents: PropTypes.arrayOf(PropTypes.string),
-    fileUrl: PropTypes.string
+    supportDocuments: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+        thumbnail: PropTypes.object.isRequired
+      })
+    )
   })
 };
 TimelineItem.whyDidYouRender = true;
