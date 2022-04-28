@@ -59,11 +59,6 @@ const TimelineItem = ({ data }) => {
             ))}
           </List>
         )}
-        {/* {data.fileUrl && (
-          <Button sx={sx.downloadButton} startIcon={<Download />} href={data.fileUrl}>
-            Download
-          </Button>
-        )} */}
       </TimelineContent>
     </MuiTimelineItem >
   );
