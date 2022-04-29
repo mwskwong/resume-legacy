@@ -1,6 +1,6 @@
 const useSx = () => ({
-  avatar: {
-    pr: "16px"
+  zoom: {
+    transformOrigin: "bottom right"
   }
 });
 
