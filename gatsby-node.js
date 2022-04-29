@@ -8,7 +8,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
           test: /\.(png|jpe?g|gif|webp|avif|woff2?)$/i,
           parser: {
             dataUrlCondition: {
-              maxSize: 0
+              maxSize: -1
             }
           }
         }
