@@ -4,12 +4,14 @@ import { KeyboardArrowUpRounded as ArrowUp } from "@mui/icons-material";
 import { HOME } from "constants/nav";
 import { memo } from "react";
 import useShowScrollToTopFab from "hooks/useShowScrollToTopFab";
+import useSx from "./useSx";
 
 const ScrollToTopFab = () => {
+  const sx = useSx();
   const show = useShowScrollToTopFab();
 
   return (
-    <Zoom in={show} mountOnEnter unmountOnExit>
+    <Zoom in={show} sx={sx.zoom} mountOnEnter unmountOnExit>
       <Fab aria-label="scroll to top" href={`#${HOME.id}`}>
         <ArrowUp />
       </Fab>
