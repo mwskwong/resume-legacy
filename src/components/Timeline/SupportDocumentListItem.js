@@ -12,15 +12,15 @@ const SupportDocumentListItem = ({ supportDocument: { title, url, thumbnail } })
 
   return (
     <ListItem disablePadding>
-      <ListItemButton component="a" href={url} disableGutters>
-        <ListItemAvatar sx={sx.avatarContainer}>
+      <ListItemButton sx={sx.button} component="a" href={url}>
+        <ListItemAvatar sx={sx.avatar}>
           <GatsbyImage
             image={image}
             alt={`Thumbnail of ${title}`}
             style={gatsbyImageStyle}
           />
         </ListItemAvatar>
-        <ListItemText primary={title} />
+        <ListItemText sx={sx.text} primary={title} />
       </ListItemButton>
     </ListItem>
   );
