@@ -1,6 +1,6 @@
 const useSx = () => ({
-  avatarContainer: {
-    pr: 2
+  avatar: {
+    pr: "16px"
   }
 });
 
