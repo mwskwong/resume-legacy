@@ -9,7 +9,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
           type: "asset",
           parser: {
             dataUrlCondition: {
-              maxSize: 0
+              maxSize: 1
             }
           }
         }
