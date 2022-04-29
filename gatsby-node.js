@@ -5,6 +5,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     module: {
       rules: [
         {
+          test: /\.(png|jpe?g|gif|webp|avif|woff2?)$/i,
           parser: {
             dataUrlCondition: {
               maxSize: 0
