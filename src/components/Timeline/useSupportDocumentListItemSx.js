@@ -1,12 +1,6 @@
 const useSx = () => ({
-  button: {
-    p: 0
-  },
-  avatar: {
+  avatarContainer: {
     pr: 2
-  },
-  text: {
-    py: 1
   }
 });
 
