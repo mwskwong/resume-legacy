@@ -1,7 +1,3 @@
-import "@fontsource/rubik/latin-400.css";
-import "@fontsource/rubik/latin-500.css";
-import "@fontsource/rubik/latin-700.css";
-import "@fontsource/rubik/latin-800.css";
 import "@fontsource/rubik/variable.css";
 import "./riviera.css";
 
