@@ -27,7 +27,8 @@ const useSx = () => ({
     alignSelf: "flex-start"
   },
   listItemNumber: {
-    color: "text.secondary"
+    color: "text.secondary",
+    userSelect: "none"
   },
   downloadButton: {
     mt: 1
