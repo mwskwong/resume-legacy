@@ -8,7 +8,8 @@ const useSx = () => ({
     flex: .28
   },
   timelineContent: {
-    pb: 3
+    pb: 3,
+    pr: 0
   },
   periodMobile: {
     color: "text.secondary",
@@ -19,8 +20,14 @@ const useSx = () => ({
   subtitle: {
     color: "primary.main"
   },
-  contentListItem: {
-    textAlign: "inherit"
+  listItemIcon: {
+    minWidth: "initial",
+    mr: "32px",
+    my: "4px",
+    alignSelf: "flex-start"
+  },
+  listItemNumber: {
+    color: "text.secondary"
   },
   downloadButton: {
     mt: 1

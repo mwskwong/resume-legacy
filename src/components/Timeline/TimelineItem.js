@@ -1,4 +1,4 @@
-import { List, ListItem, ListItemText, Typography } from "@mui/material";
+import { List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import {
   TimelineItem as MuiTimelineItem,
   TimelineConnector,
@@ -44,21 +44,24 @@ const TimelineItem = ({ data }) => {
         </Typography>
         <List disablePadding>
           {contents.map((content, index) => (
-            <ListItem key={index} sx={sx.contentListItem} disableGutters>
+            <ListItem key={index} disableGutters>
+              <ListItemIcon sx={sx.listItemIcon}>
+                <Typography variant="overline" component="span" sx={sx.listItemNumber}>
+                  {`${index + 1 < 10 ? 0 : ""}${index + 1}`}
+                </Typography>
+              </ListItemIcon>
               <ListItemText primary={content} />
             </ListItem>
           ))}
         </List>
-        {supportDocuments.length > 0 && (
-          <List>
-            {supportDocuments.map((supportDocument, index) => (
-              <SupportDocumentListItem
-                key={index}
-                supportDocument={supportDocument}
-              />
-            ))}
-          </List>
-        )}
+        <List disablePadding>
+          {supportDocuments.map((supportDocument, index) => (
+            <SupportDocumentListItem
+              key={index}
+              supportDocument={supportDocument}
+            />
+          ))}
+        </List>
       </TimelineContent>
     </MuiTimelineItem >
   );
