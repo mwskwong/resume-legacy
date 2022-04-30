@@ -22,12 +22,13 @@ const useSx = () => ({
   },
   listItemIcon: {
     minWidth: "initial",
-    mr: "32px",
+    mr: "16px",
     my: "4px",
     alignSelf: "flex-start"
   },
   listItemNumber: {
-    color: "text.secondary"
+    color: "text.secondary",
+    userSelect: "none"
   },
   downloadButton: {
     mt: 1
