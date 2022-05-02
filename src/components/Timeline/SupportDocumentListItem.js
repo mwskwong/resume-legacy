@@ -12,7 +12,7 @@ const SupportDocumentListItem = ({ supportDocument: { title, url, thumbnail } })
 
   return (
     <ListItem disablePadding>
-      <ListItemButton component="a" href={url} disableGutters>
+      <ListItemButton component="a" href={url} sx={sx.button}>
         <ListItemAvatar sx={sx.avatar}>
           <GatsbyImage
             image={image}
