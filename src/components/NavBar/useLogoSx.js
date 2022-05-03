@@ -1,7 +1,7 @@
 const useSx = ({ sxProp }) => ({
   root: sxProp,
   text: {
-    fontFamily: "Riviera, sans-serif !important", // Prevent RubikVariable being used
+    fontFamily: "Riviera, sans-serif",
     color: "inherit"
   }
 });
