@@ -1,8 +1,7 @@
 import nav, { HOME } from "constants/nav";
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 
 const useActiveSectionId = () => {
-  const [, startTransition] = useTransition();
   const [activeSectionId, setActiveSectionId] = useState(HOME.id);
 
   const isScrollToBottom = () => window.innerHeight + window.scrollY >= document.body.offsetHeight;
@@ -19,12 +18,12 @@ const useActiveSectionId = () => {
 
     const handleScroll = () => {
       if (isScrollToBottom()) {
-        startTransition(() => setActiveSectionId(sectionIds[0]));
+        setActiveSectionId(sectionIds[0]);
       } else {
         for (const sectionId of sectionIds) {
           const section = document.getElementById(sectionId);
           if (isSectionActive(section)) {
-            startTransition(() => setActiveSectionId(sectionId));
+            setActiveSectionId(sectionId);
             break;
           }
         }
