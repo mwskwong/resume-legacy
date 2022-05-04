@@ -1,6 +1,7 @@
+import { Suspense, lazy } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import Timeline from "components/Timeline";
+const Timeline = lazy(() => import("components/Timeline"));
 
 const WorkTimeline = () => {
   const { workNodes } = useStaticQuery(graphql`{
@@ -44,7 +45,11 @@ const WorkTimeline = () => {
       ...node
     }));
 
-  return <Timeline data={works} />;
+  return (
+    <Suspense>
+      <Timeline data={works} />
+    </Suspense>
+  );
 };
 
 WorkTimeline.whyDidYouRender = true;
