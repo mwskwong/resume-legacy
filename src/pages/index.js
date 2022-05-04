@@ -87,7 +87,7 @@ const IndexPage = () => {
       <FooterDivider sx={sx.footerDivider} />
       <Footer sx={sx.footer} />
       <ScrollToTopFab />
-    </Fragment >
+    </Fragment>
   );
 };
 
