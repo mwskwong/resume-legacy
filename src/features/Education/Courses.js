@@ -36,7 +36,7 @@ const Courses = () => {
   }));
 
   return (
-    <div>
+    <Fragment>
       <Typography sx={sx.title} variant="subtitle2" component="h3">
         Courses
       </Typography>
@@ -70,7 +70,7 @@ const Courses = () => {
           }
         })}
       </List>
-    </div>
+    </Fragment>
   );
 };
 
