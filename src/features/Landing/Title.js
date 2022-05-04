@@ -38,12 +38,12 @@ const Title = () => {
 
   return (
     <Box sx={sx.root}>
-      <Typography sx={sx.greetings} variant="h4" component="div" gutterBottom>
+      <Typography variant="h4" component="div" gutterBottom>
         Greetings
       </Typography>
       <Typography sx={sx.title} variant="h1" component="div" aria-hidden>
         {"I Am "}
-        <Box ref={typewriterRef} component="span" sx={sx.importantText} />
+        <Box ref={typewriterRef} component="span" />
       </Typography>
       <Typography sx={visuallyHidden} variant="h1">
         I Am {titleStrings.join(" I Am ")}
