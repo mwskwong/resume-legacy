@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Stack, useMediaQuery } from "@mui/material";
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
-import { Suspense, lazy, memo, useState } from "react";
+import { memo, useState } from "react";
 import { object, string } from "nope-validator";
 
 import { CONTACT } from "constants/nav";
@@ -8,12 +8,11 @@ import { LoadingButton } from "@mui/lab";
 import PersonalInfo from "./PersonalInfo";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
+import TextField from "./TextField";
 import { nopeResolver } from "@hookform/resolvers/nope";
 import submitContactForm from "./submitContactForm";
 import { useForm } from "react-hook-form";
 import useSx from "./useContactSx";
-
-const TextField = lazy(() => import("./TextField"));
 
 const schema = object().shape({
   name: string().required(),
@@ -55,44 +54,42 @@ const Contact = ({ sx: sxProp }) => {
                 <PersonalInfo />
               </Grid>
               <Grid container spacing={2} item md xs={12} >
-                <Suspense>
-                  <Grid item sm={6} xs={12}>
-                    <TextField
-                      name="name"
-                      control={control}
-                      label="Name"
-                      autoComplete="name"
-                      disabled={sendEmailStatus === "loading"}
-                    />
-                  </Grid>
-                  <Grid item sm={6} xs={12}>
-                    <TextField
-                      name="email"
-                      control={control}
-                      label="Email"
-                      autoComplete="email"
-                      disabled={sendEmailStatus === "loading"}
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <TextField
-                      name="subject"
-                      control={control}
-                      label="Subject"
-                      disabled={sendEmailStatus === "loading"}
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <TextField
-                      name="message"
-                      control={control}
-                      label="Message"
-                      multiline
-                      rows={9}
-                      disabled={sendEmailStatus === "loading"}
-                    />
-                  </Grid>
-                </Suspense>
+                <Grid item sm={6} xs={12}>
+                  <TextField
+                    name="name"
+                    control={control}
+                    label="Name"
+                    autoComplete="name"
+                    disabled={sendEmailStatus === "loading"}
+                  />
+                </Grid>
+                <Grid item sm={6} xs={12}>
+                  <TextField
+                    name="email"
+                    control={control}
+                    label="Email"
+                    autoComplete="email"
+                    disabled={sendEmailStatus === "loading"}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    name="subject"
+                    control={control}
+                    label="Subject"
+                    disabled={sendEmailStatus === "loading"}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    name="message"
+                    control={control}
+                    label="Message"
+                    multiline
+                    rows={9}
+                    disabled={sendEmailStatus === "loading"}
+                  />
+                </Grid>
               </Grid>
             </Grid>
             <LoadingButton
