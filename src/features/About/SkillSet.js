@@ -9,6 +9,7 @@ import { Box, Chip, Grid, Stack, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Database } from "mdi-material-ui";
+import { Fragment } from "react";
 import camelCase from "camelcase";
 import useSx from "./useSkillSetSx";
 
@@ -36,7 +37,7 @@ const SkillSet = () => {
   }`);
 
   return (
-    <div>
+    <Fragment>
       <Typography variant="subtitle2" component="h3" sx={sx.title}>
         Skills
       </Typography>
@@ -67,7 +68,7 @@ const SkillSet = () => {
           );
         })}
       </Grid>
-    </div>
+    </Fragment>
   );
 };
 
