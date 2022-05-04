@@ -5,9 +5,6 @@ const useSx = () => ({
     alignItems: "center",
     width: "100%"
   },
-  greetings: {
-    textTransform: "capitalize"
-  },
   title: {
     textTransform: "capitalize",
     textAlign: "center",
@@ -17,13 +14,13 @@ const useSx = () => ({
     "@media (max-width: 370px)": {
       height: theme => `${theme.typography.h1.lineHeight * 3}em`
     },
+    "& .Typewriter__wrapper": {
+      color: "primary.main"
+    },
     "& .Typewriter__cursor": {
       color: "text.primary"
     },
     width: "100%"
-  },
-  importantText: {
-    color: "primary.main"
   }
 });
 
