@@ -30,12 +30,10 @@ export const replaceRenderer = ({ bodyComponent, setHeadComponents, replaceBodyH
       <style
         data-emotion={`${style.key} ${style.ids.join(" ")}`}
         key={`emotion-${style.key}`}
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: style.css }}
       />
     ))
   );
 
-  // render the result from `extractCritical`
   replaceBodyHTMLString(emotionStyles.html);
 };
