@@ -1,8 +1,8 @@
 import { CacheProvider } from "@emotion/react";
-import getEmotionCache from "./getEmotionCache";
+import { emotionCache } from "./create-emotion-cache";
 
-const cache = getEmotionCache();
-
-export const wrapRootElement = ({ element }) => {
-  return <CacheProvider value={cache}>{element}</CacheProvider>;
-};
+export const wrapRootElement = ({ element }) => (
+  <CacheProvider value={emotionCache}>
+    {element}
+  </CacheProvider>
+);
