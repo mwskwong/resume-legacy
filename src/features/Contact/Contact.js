@@ -54,7 +54,7 @@ const Contact = ({ sx: sxProp }) => {
                 <PersonalInfo />
               </Grid>
               <Grid container spacing={2} item md xs={12}>
-                <Grid item sm={6} xs={12}>
+                {/* <Grid item sm={6} xs={12}>
                   <TextField
                     name="name"
                     control={control}
@@ -89,7 +89,7 @@ const Contact = ({ sx: sxProp }) => {
                     rows={9}
                     disabled={sendEmailStatus === "loading"}
                   />
-                </Grid>
+                </Grid> */}
               </Grid>
             </Grid>
             <LoadingButton
