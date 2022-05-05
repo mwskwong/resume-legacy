@@ -49,12 +49,13 @@ const Contact = ({ sx: sxProp }) => {
         <Stack spacing={6}>
           <SectionHeader heading="Get In Touch" />
           <form onSubmit={handleSubmit(handleFormSubmit)}>
-            <Grid container spacing={6}>
-              <Grid item md={4} xs={12}>
-                {/* <PersonalInfo /> */}
-              </Grid>
-              <Grid item md xs={12}> {/* container spacing={2} */}
-                {/* <Grid item sm={6} xs={12}>
+            <div>
+              <Grid container spacing={6}>
+                <Grid item md={4} xs={12}>
+                  {/* <PersonalInfo /> */}
+                </Grid>
+                <Grid item md xs={12}> {/* container spacing={2} */}
+                  {/* <Grid item sm={6} xs={12}>
                   <TextField
                     name="name"
                     control={control}
@@ -90,8 +91,9 @@ const Contact = ({ sx: sxProp }) => {
                     disabled={sendEmailStatus === "loading"}
                   />
                 </Grid> */}
+                </Grid>
               </Grid>
-            </Grid>
+            </div>
             <LoadingButton
               loading={sendEmailStatus === "loading"}
               loadingPosition="end"
