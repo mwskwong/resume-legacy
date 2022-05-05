@@ -51,7 +51,7 @@ const Contact = ({ sx: sxProp }) => {
           <form onSubmit={handleSubmit(handleFormSubmit)}>
             <Grid container spacing={6}>
               <Grid item md={4} xs={12} />
-              <Grid item md xs={12} />
+              <Grid item md={8} xs={12} />
               {/* <Grid item md={4} xs={12}>
                 <PersonalInfo />
               </Grid>
