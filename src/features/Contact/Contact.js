@@ -50,8 +50,8 @@ const Contact = ({ sx: sxProp }) => {
           <SectionHeader heading="Get In Touch" />
           <div>
             <Grid container spacing={6}>
-              <Grid item md={6} xs={12} />
-              <Grid item md={6} xs={12} />
+              <Grid item md={4} xs={12} />
+              <Grid item md={8} xs={12} />
             </Grid>
           </div>
           <form onSubmit={handleSubmit(handleFormSubmit)}>
