@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { memo } from "react";
 
