@@ -42,16 +42,13 @@ const Contact = ({ sx: sxProp }) => {
 
   };
 
-  const gridContainerStyle = { display: "flex" };
-
   return (
     <Box sx={sx.root} component="section" id={CONTACT.id}>
       <Container>
         <Stack spacing={6}>
           <SectionHeader heading="Get In Touch" />
           <form onSubmit={handleSubmit(handleFormSubmit)}>
-            {/* Workaround: display: flex is not applied in SSR */}
-            <Grid container spacing={6} style={gridContainerStyle}>
+            <Grid container spacing={6}>
               <Grid item md={4} xs={12}>
                 <PersonalInfo />
               </Grid>

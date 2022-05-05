@@ -17,7 +17,7 @@ const Education = ({ sx: sxProp }) => {
       <Container>
         <Stack spacing={6}>
           <SectionHeader heading="Education" />
-          <EducationTimeline />
+          <div><EducationTimeline /></div>
           <div>
             <Grid container spacing={6} sx={sx.gridContainer}>
               <Grid item md={6} xs={12}>

@@ -26,7 +26,7 @@ const Message = () => {
   const occupations = occupationNodes.nodes.map(({ title }) => title);
 
   return (
-    <Fragment>
+    <div>
       <Typography sx={sx.hello} variant="h3">
         {"Hello! "}
         <Box sx={sx.name} component="span">
@@ -46,7 +46,7 @@ const Message = () => {
       <Typography sx={sx.intro}>
         {introNode.content.content}
       </Typography>
-    </Fragment>
+    </div>
   );
 };
 
