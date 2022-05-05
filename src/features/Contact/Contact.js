@@ -49,7 +49,7 @@ const Contact = ({ sx: sxProp }) => {
         <Stack spacing={6}>
           <SectionHeader heading="Get In Touch" />
           <div>
-            <Grid container spacing={6} display="flex">
+            <Grid container spacing={6} sx={{ display: "flex !important" }}>
               <Grid item md={4} xs={12} />
               <Grid item md={8} xs={12} />
             </Grid>
