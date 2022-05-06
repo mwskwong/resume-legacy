@@ -39,7 +39,6 @@ module.exports = {
         downloadLocal: true
       }
     },
-    "gatsby-plugin-top-layout",
     "gatsby-plugin-material-ui",
     "gatsby-plugin-image",
     {
