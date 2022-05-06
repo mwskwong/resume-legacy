@@ -44,7 +44,7 @@ const Contact = ({ sx: sxProp }) => {
 
   // Workaround: Grid container with children in different sizes causing the default style to be missing in SSR
   const gridContainerStyle = {
-    boxSizing: "border-box",
+    boxSizing: "borderBox",
     display: "flex",
     flexFlow: "row wrap",
     marginTop: -60,
