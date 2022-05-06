@@ -48,7 +48,7 @@ const Contact = ({ sx: sxProp }) => {
     display: "flex",
     flexFlow: "row wrap",
     marginTop: -60,
-    width: "calc(100% + 60px)",
+    width: "calc(100% - 60px)",
     marginLeft: -60
   };
 
