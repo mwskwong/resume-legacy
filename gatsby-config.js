@@ -47,7 +47,7 @@ module.exports = {
             google2: [
               {
                 family: "Rubik",
-                axes: "wght@400;500;700;800"
+                axes: "wght@400..800"
               }
             ]
           }
