@@ -1,5 +1,5 @@
 const systemFonts = [
-  "RubikVariable",
+  "Rubik",
   "sans-serif"
 ];
 
