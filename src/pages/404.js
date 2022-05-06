@@ -1,8 +1,8 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
 import Arctic404 from "components/Arctic404";
 import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
-import { Link } from "gatsby";
+import { Button } from "gatsby-theme-material-ui";
 import SEO from "components/SEO";
 
 const useSx = () => ({
@@ -36,7 +36,7 @@ const NotFoundPage = () => {
       <Typography variant="h5" component="h1" sx={sx.notFound}>
         The page you were looking for does not exist.
       </Typography>
-      <Button variant="outlined" color="inherit" size="large" startIcon={<ArrowLeft />} component={Link} to="/">
+      <Button variant="outlined" color="inherit" size="large" startIcon={<ArrowLeft />} to="/">
         back to home
       </Button>
     </Container>

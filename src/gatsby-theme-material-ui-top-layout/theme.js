@@ -1,4 +1,3 @@
-import "@fontsource/rubik/variable.css";
 import "./riviera.css";
 
 import { createTheme } from "@mui/material";
