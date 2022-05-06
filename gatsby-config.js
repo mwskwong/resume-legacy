@@ -39,21 +39,7 @@ module.exports = {
         downloadLocal: true
       }
     },
-    {
-      resolve: "gatsby-theme-material-ui",
-      options: {
-        webFontsConfig: {
-          fonts: {
-            google2: [
-              {
-                family: "Rubik",
-                axes: "wght@400;500;700;800"
-              }
-            ]
-          }
-        }
-      }
-    },
+    "gatsby-plugin-material-ui",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",

@@ -1,3 +1,5 @@
+export { wrapRootElement } from "./wrap-with-provider";
+
 export const onClientEntry = () => {
   if (process.env.NODE_ENV === "development") {
     const React = require("react");
