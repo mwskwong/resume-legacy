@@ -39,6 +39,7 @@ module.exports = {
         downloadLocal: true
       }
     },
+    "gatsby-plugin-emotion",
     "gatsby-plugin-material-ui",
     "gatsby-plugin-image",
     {
