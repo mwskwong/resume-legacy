@@ -42,7 +42,6 @@ const Contact = ({ sx: sxProp }) => {
 
   };
 
-
   return (
     <Box sx={sx.root} component="section" id={CONTACT.id}>
       <Container>
@@ -53,7 +52,7 @@ const Contact = ({ sx: sxProp }) => {
               <Grid item md={4} xs={12}>
                 <PersonalInfo />
               </Grid>
-              <Grid container spacing={2} item md xs={12} >
+              <Grid container spacing={2} item md xs={12}>
                 <Grid item sm={6} xs={12}>
                   <TextField
                     name="name"
