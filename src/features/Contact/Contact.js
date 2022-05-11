@@ -40,7 +40,6 @@ const Contact = ({ sx: sxProp }) => {
         reset();
       })
       .catch(() => setSendEmailStatus("error"));
-
   };
 
   return (
