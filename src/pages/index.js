@@ -6,7 +6,6 @@ import FooterDivider from "components/dividers/Footer";
 import { Fragment } from "react";
 import Landing from "features/Landing";
 import NavBar from "components/NavBar";
-import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
 import Testimonial from "features/Testimonial";
 import WaveRoaring from "components/dividers/WaveRoaring";
@@ -15,6 +14,16 @@ import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 import Work from "features/Work";
+
+// import SEO from "components/SEO";
+
+
+
+
+
+
+
+
 
 const bgcolors = {
   landing: "default",
@@ -69,7 +78,7 @@ const IndexPage = () => {
 
   return (
     <Fragment>
-      <SEO />
+      {/* <SEO /> */}
       <NavBar />
       <main>
         <Landing />
