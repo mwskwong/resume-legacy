@@ -10,10 +10,7 @@ const useSx = () => ({
   },
   value: {
     color: "primary.main",
-    fontWeight: "bold",
-    "@supports (font-variation-settings: normal)": theme => ({
-      fontVariationSettings: `'wght' ${theme.typography.fontWeightBold}`
-    })
+    fontWeight: "bold"
   },
   title: {
     color: "text.secondary"

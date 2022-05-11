@@ -10,17 +10,11 @@ const useSx = () => ({
     ml: 2
   },
   name: {
-    fontWeight: "bold",
-    "@supports (font-variation-settings: normal)": theme => ({
-      fontVariationSettings: `'wght' ${theme.typography.fontWeightBold}`
-    })
+    fontWeight: "bold"
   },
   jobTitle: {
     color: "text.secondary",
-    fontWeight: "regular",
-    "@supports (font-variation-settings: normal)": theme => ({
-      fontVariationSettings: `'wght' ${theme.typography.fontWeightRegular}`
-    })
+    fontWeight: "regular"
   },
   company: {
     color: "primary.main"
