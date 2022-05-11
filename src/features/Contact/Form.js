@@ -9,7 +9,7 @@ import { nopeResolver } from "@hookform/resolvers/nope";
 import submitContactForm from "./submitContactForm";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import useSx from "./useContactSx";
+import useSx from "./useFormSx";
 
 const schema = object().shape({
   name: string().required(),
