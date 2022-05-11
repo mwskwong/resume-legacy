@@ -31,8 +31,12 @@ Welcome to the source code of [mwskwong.com](https://mwskwong.com). You can see 
 
 ## To Do
 1. Migrate `gatsbyImageData` with `gatsbyImage`
+    
+    `gatsbyImage` is not available in `localFile` yet.
 
 2. Migrate MUI theme to css variables 
+    
+    Too early currently
     
     https://mui.com/experimental-api/css-variables/
 
