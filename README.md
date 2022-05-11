@@ -30,11 +30,13 @@ Welcome to the source code of [mwskwong.com](https://mwskwong.com). You can see 
 - CMS - [Contentful](https://www.contentful.com)
 
 ## To Do
-1. Migrate MUI theme to css variables 
+1. Migrate `gatsbyImageData` with `gatsbyImage`
+
+2. Migrate MUI theme to css variables 
     
     https://mui.com/experimental-api/css-variables/
 
-2. Add tags to PDF files
+3. Add tags to PDF files
     
     > For PDF files, we recommend embedding an image of the PDF with alternative text, and providing a link to download a tagged PDF.
     
