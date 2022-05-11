@@ -19,7 +19,7 @@ const Carousel = () => {
         refereePicture {
           localFile {
             childImageSharp {
-              gatsbyImageData(aspectRatio: 1, width: 60)
+              gatsbyImage(aspectRatio: 1, width: 60)
             }
           }
         }

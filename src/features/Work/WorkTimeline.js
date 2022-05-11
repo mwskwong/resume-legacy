@@ -21,7 +21,7 @@ const WorkTimeline = () => {
           thumbnail {
             localFile {
               childImageSharp {
-                gatsbyImageData(aspectRatio: 1.5, width: 102)
+                gatsbyImage(aspectRatio: 1.5, width: 102)
               }
             }
           }
