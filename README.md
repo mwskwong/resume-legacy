@@ -30,8 +30,11 @@ Welcome to the source code of [mwskwong.com](https://mwskwong.com). You can see 
 - CMS - [Contentful](https://www.contentful.com)
 
 ## To Do
-1. Add tags to PDF files
+1. Migrate MUI theme to css variables 
+    
+    https://mui.com/experimental-api/css-variables/
 
-> For PDF files, we recommend embedding an image of the PDF with alternative text, and providing a link to download a tagged PDF.
-
-Ref: https://www.gatsbyjs.com/docs/how-to/images-and-media/importing-media-content/#images-svg-and-pdfs
+2. Add tags to PDF files
+    
+    > For PDF files, we recommend embedding an image of the PDF with alternative text, and providing a link to download a tagged PDF.
+    
