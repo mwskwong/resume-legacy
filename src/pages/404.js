@@ -3,8 +3,7 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import Arctic404 from "components/Arctic404";
 import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
 import { Link } from "gatsby";
-
-// import SEO from "components/SEO";
+import SEO from "components/SEO";
 
 const useSx = () => ({
   root: {
@@ -30,7 +29,7 @@ const NotFoundPage = () => {
 
   return (
     <Container component="main" sx={sx.root}>
-      {/* <SEO title="Not Found" /> */}
+      <SEO title="Not Found" />
       <Box sx={sx.animationContainer}>
         <Arctic404 />
       </Box>
