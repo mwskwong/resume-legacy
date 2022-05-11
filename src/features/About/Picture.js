@@ -6,7 +6,7 @@ const Picture = () => {
     picture: contentfulAsset(title: {eq: "Personal Photo"}) {
       localFile {
         childImageSharp {
-          gatsbyImage(aspectRatio: 1, width: 200)
+          gatsbyImageData(aspectRatio: 1, width: 200)
         }
       }
     }

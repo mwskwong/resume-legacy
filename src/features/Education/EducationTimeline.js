@@ -20,7 +20,7 @@ const EducationTimeline = () => {
           thumbnail {
             localFile {
               childImageSharp {
-                gatsbyImage(aspectRatio: 1.5, width: 102)
+                gatsbyImageData(aspectRatio: 1.5, width: 102)
               }
             }
           }
