@@ -40,7 +40,6 @@ module.exports = {
       }
     },
     "gatsby-plugin-emotion",
-    // "gatsby-plugin-material-ui",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",
@@ -139,7 +138,8 @@ module.exports = {
           "https://:commit.:project.pages.dev/*": [
             `Link: <${PROD_URL}/:splat>; rel=canonical`
           ]
-        }
+        },
+        mergeLinkHeaders: false
       }
     },
     {
