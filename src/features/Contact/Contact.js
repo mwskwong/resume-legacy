@@ -1,3 +1,5 @@
+import * as styles from "./contact.module.css";
+
 import { Box, Container, Grid, Stack, useMediaQuery } from "@mui/material";
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
 import { object, string } from "nope-validator";
@@ -48,7 +50,7 @@ const Contact = ({ sx: sxProp }) => {
         <Stack spacing={6}>
           <SectionHeader heading="Get In Touch" />
           <form onSubmit={handleSubmit(handleFormSubmit)}>
-            <Grid container spacing={6}>
+            <Grid container spacing={6} className={styles.gridContainer}>
               <Grid item md={4} xs={12}>
                 <PersonalInfo />
               </Grid>

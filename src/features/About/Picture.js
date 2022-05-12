@@ -1,3 +1,5 @@
+import * as styles from "./picture.module.css";
+
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -17,13 +19,12 @@ const Picture = () => {
   }`);
 
   const image = getImage(picture.localFile.childImageSharp);
-  const style = { borderRadius: "50%" };
 
   return (
     <GatsbyImage
       image={image}
       alt={`Picture of ${name.firstName} ${name.lastName}`}
-      style={style}
+      className={styles.picture}
     />
   );
 };

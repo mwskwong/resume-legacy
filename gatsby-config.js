@@ -138,7 +138,8 @@ module.exports = {
           "https://:commit.:project.pages.dev/*": [
             `Link: <${PROD_URL}/:splat>; rel=canonical`
           ]
-        }
+        },
+        mergeLinkHeaders: false
       }
     },
     {

@@ -1,3 +1,5 @@
+import * as styles from "./reference.module.css";
+
 import { Box, Typography } from "@mui/material";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
@@ -8,10 +10,6 @@ import useSx from "./useReferenceSx";
 const Reference = ({ name, jobTitle, refereePicture, company, comment }) => {
   const sx = useSx();
   const image = getImage(refereePicture);
-  const gatsbyImageStyle = {
-    borderRadius: "50%",
-    minWidth: 60
-  };
 
   return (
     <div>
@@ -22,7 +20,7 @@ const Reference = ({ name, jobTitle, refereePicture, company, comment }) => {
         <GatsbyImage
           image={image}
           alt={`Picture of ${name}`}
-          style={gatsbyImageStyle}
+          className={styles.picture}
         />
         <Box sx={sx.refereeInfoContainer}>
           <Typography sx={sx.name} gutterBottom>
