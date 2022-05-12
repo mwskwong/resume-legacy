@@ -1,4 +1,5 @@
-const useSx = () => ({
+const useSx = ({ sxProp }) => ({
+  root: sxProp,
   submitButton: {
     float: "right",
     mt: 4
