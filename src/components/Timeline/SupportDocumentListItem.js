@@ -1,14 +1,14 @@
+import * as styles from "./support-document-list-item.module.css";
+
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { ListItem, ListItemAvatar, ListItemButton, ListItemText, useTheme } from "@mui/material";
+import { ListItem, ListItemAvatar, ListItemButton, ListItemText } from "@mui/material";
 
 import PropTypes from "prop-types";
 import useSx from "./useSupportDocumentListItemSx";
 
 const SupportDocumentListItem = ({ supportDocument: { title, url, thumbnail } }) => {
   const image = getImage(thumbnail);
-  const theme = useTheme();
   const sx = useSx();
-  const gatsbyImageStyle = { borderRadius: theme.shape.borderRadius };
 
   return (
     <ListItem disablePadding>
@@ -17,7 +17,7 @@ const SupportDocumentListItem = ({ supportDocument: { title, url, thumbnail } })
           <GatsbyImage
             image={image}
             alt={`Thumbnail of ${title}`}
-            style={gatsbyImageStyle}
+            className={styles.thumbnail}
           />
         </ListItemAvatar>
         <ListItemText primary={title} />

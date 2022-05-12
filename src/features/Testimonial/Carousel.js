@@ -1,3 +1,5 @@
+import * as styles from "./carousel.module.css";
+
 import { KeyboardArrowLeftRounded as ArrowLeft, KeyboardArrowRightRounded as ArrowRight } from "@mui/icons-material";
 import { Box, Grid, IconButton, Stack } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
@@ -37,14 +39,12 @@ const Carousel = () => {
     comment: comment.comment
   }));
 
-  // Workaround of the first mount doesn't animate index change
-  const swipeableViewsContainerStyle = {
-    transition: "transform 0.35s cubic-bezier(0.15, 0.3, 0.25, 1) 0s"
-  };
-
   const handleChangeIndex = index => setIndex(index);
   const handlePrev = () => setIndex(index => index - 1);
   const handleNext = () => setIndex(index => index + 1);
+
+  console.log("debug");
+  console.log(styles);
 
   return (
     <Grid item md={6} xs={12}>
@@ -78,7 +78,7 @@ const Carousel = () => {
         disableLazyLoading
         index={index}
         onChangeIndex={handleChangeIndex}
-        containerStyle={swipeableViewsContainerStyle}
+        className={styles.swipeableViewsContainer}
       >
         {references.map(({ name, jobTitle, refereePicture, company, comment }) => (
           <Reference
