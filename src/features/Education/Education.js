@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import useSx from "./useEducationSx";
 
-const ArcticOceanFractal = lazy(() => import("components/ArcticOceanFractal"));
+const ArcticOceanFractal = lazy(() => import("./ArcticOceanFractal"));
 
 const Education = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
