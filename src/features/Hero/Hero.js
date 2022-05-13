@@ -1,7 +1,6 @@
 import { Box, Container } from "@mui/material";
 import React, { Suspense, lazy, memo } from "react";
 
-import ArcticLandscapeFallback from "components/illustrations/ArcticLandscape/Fallback";
 import DownloadResumeButton from "./DownloadResumeButton";
 import { HOME } from "constants/nav";
 import SocialMedia from "components/SocialMedia";
@@ -16,7 +15,7 @@ const Hero = () => {
   return (
     <Container component="section" sx={sx.container} id={HOME.id}>
       <Box sx={sx.animationWrapper}>
-        <Suspense fallback={<ArcticLandscapeFallback />}>
+        <Suspense>
           <ArcticLandscape />
         </Suspense>
       </Box>

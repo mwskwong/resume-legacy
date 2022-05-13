@@ -15,9 +15,7 @@ const Work = ({ sx: sxProp }) => {
       <Container>
         <Stack spacing={6}>
           <SectionHeader heading="Recent Experiences" />
-          <div>
-            <WorkTimeline />
-          </div>
+          <WorkTimeline />
         </Stack>
       </Container>
     </Box>
