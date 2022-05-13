@@ -9,10 +9,11 @@ const useSx = () => ({
   },
   animationWrapper: {
     width: "100%",
-    maxWidth: 430
+    maxWidth: 430,
+    mb: 2
   },
   socialMedia: {
-    mt: 3
+    mt: 4
   },
   downloadButton: {
     mt: 4

@@ -2,7 +2,7 @@ import { outline } from "../styles";
 import { outlinePaths } from "./pathData";
 
 const SnowHills = () => (
-  <g className={outline}>
+  <g css={outline}>
     {outlinePaths.map((path, index) => <path key={index} d={path} />)}
   </g>
 );

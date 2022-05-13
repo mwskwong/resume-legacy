@@ -1,7 +1,7 @@
 import { outline } from "../styles";
 import { outlinePath } from "./pathData";
 
-const Outline = () => <path d={outlinePath} className={outline} />;
+const Outline = () => <path d={outlinePath} css={outline} />;
 
 Outline.whyDidYouRender = true;
 

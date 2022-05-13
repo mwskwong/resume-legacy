@@ -1,4 +1,4 @@
-import { Box, Container, Toolbar } from "@mui/material";
+import { Box, Container } from "@mui/material";
 
 import ArcticLandscape from "components/illustrations/ArcticLandscape";
 import DownloadResumeButton from "./DownloadResumeButton";
@@ -13,7 +13,6 @@ const Hero = () => {
 
   return (
     <Container component="section" sx={sx.container} id={HOME.id}>
-      <Toolbar />
       <Box sx={sx.animationWrapper}>
         <ArcticLandscape />
       </Box>
