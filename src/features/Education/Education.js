@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Stack } from "@mui/material";
 
-import ArcticOceanFractal from "components/ArcticOceanFractal";
+import ArcticOceanFractal from "components/illustrations/ArcticOceanFractal";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
