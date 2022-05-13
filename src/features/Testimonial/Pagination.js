@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import PaginationItem from "./PaginationItem";
 import PropTypes from "prop-types";
+import React from "react";
 import useSx from "./usePaginationSx";
 
 const Pagination = ({ references, onChangeIndex, index }) => {

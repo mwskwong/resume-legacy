@@ -1,5 +1,6 @@
+import React, { Fragment } from "react";
+
 import Fill from "./Fill";
-import { Fragment } from "react";
 import Outlines from "./Outline";
 
 const AuroraBorealis = () => (

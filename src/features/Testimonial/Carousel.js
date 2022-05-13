@@ -1,11 +1,11 @@
 import { KeyboardArrowLeftRounded as ArrowLeft, KeyboardArrowRightRounded as ArrowRight } from "@mui/icons-material";
 import { Box, Grid, IconButton, Stack } from "@mui/material";
+import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Pagination from "./Pagination";
 import Reference from "./Reference";
 import SwipeableViews from "react-swipeable-views";
-import { useState } from "react";
 import useSx from "./useCarouselSx";
 
 const Carousel = () => {

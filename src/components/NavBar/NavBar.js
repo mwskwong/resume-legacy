@@ -1,6 +1,6 @@
 import { AppBar, Box, Collapse, Container, IconButton, List, Stack, Toolbar, useMediaQuery } from "@mui/material";
 import { CloseRounded as Close, MenuRounded as Menu } from "@mui/icons-material";
-import { memo, useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 
 import { ClickAwayListener } from "@mui/base";
 import Logo from "./Logo";

@@ -1,10 +1,10 @@
 import { Box, Container, Stack } from "@mui/material";
+import React, { memo } from "react";
 
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import { WORK } from "constants/nav";
 import WorkTimeline from "./WorkTimeline";
-import { memo } from "react";
 import useSx from "./useWorkSx";
 
 const Work = ({ sx: sxProp }) => {

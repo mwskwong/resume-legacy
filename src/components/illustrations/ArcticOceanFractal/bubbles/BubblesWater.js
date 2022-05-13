@@ -1,5 +1,6 @@
+import React, { memo } from "react";
+
 import BubbleFloating from "./BubbleFloating";
-import { memo } from "react";
 import { waterCircles } from "./pathData";
 
 const BubblesWater = props => (

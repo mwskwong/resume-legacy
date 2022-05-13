@@ -1,3 +1,4 @@
+import React from "react";
 import { SvgIcon } from "@mui/material";
 import { siStackoverflow } from "simple-icons/icons";
 import useSx from "./useThirdPartyIconSx";

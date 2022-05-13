@@ -7,10 +7,10 @@ import {
   TimelineOppositeContent,
   TimelineSeparator
 } from "@mui/lab";
+import React, { memo } from "react";
 
 import PropTypes from "prop-types";
 import SupportDocumentListItem from "./SupportDocumentListItem";
-import { memo } from "react";
 import useSx from "./useTImelineItemSx";
 
 const dateTimeFormat = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" });

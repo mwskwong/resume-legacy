@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
+import React, { useEffect, useMemo, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { useEffect, useMemo, useRef } from "react";
 
 import Typewriter from "typewriter-effect/dist/core";
 import useSx from "./useTitleSx";

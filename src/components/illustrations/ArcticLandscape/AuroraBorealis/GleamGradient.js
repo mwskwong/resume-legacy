@@ -1,6 +1,7 @@
 import { nord10, nord7, nord8, nord9 } from "nord";
 
 import PropTypes from "prop-types";
+import React from "react";
 
 const GleamGradient = ({ gradientId }) => (
   <defs>

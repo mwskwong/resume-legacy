@@ -2,6 +2,7 @@ import * as styles from "./contact.module.css";
 
 import { Box, Container, Grid, Stack, useMediaQuery } from "@mui/material";
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
+import React, { memo, useState } from "react";
 import { object, string } from "nope-validator";
 
 import { CONTACT } from "constants/nav";
@@ -10,11 +11,9 @@ import PersonalInfo from "./PersonalInfo";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import TextField from "./TextField";
-import { memo } from "react";
 import { nopeResolver } from "@hookform/resolvers/nope";
 import submitContactForm from "./submitContactForm";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 import useSx from "./useContactSx";
 
 const schema = object().shape({

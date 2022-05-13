@@ -1,6 +1,7 @@
 import { nord10, nord13, nord3, nord4, nord7, nord8, nord9 } from "nord";
 
 import LightRing from "./LightRing";
+import React from "react";
 import styled from "@emotion/styled";
 
 const Group = styled.g`

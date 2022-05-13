@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { Button } from "@mui/material";
 import PropTypes from "prop-types";
+import React from "react";
 
 const DownloadResumeButton = ({ sx }) => {
   const { resume } = useStaticQuery(graphql`{

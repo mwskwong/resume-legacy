@@ -1,3 +1,4 @@
+import React from "react";
 import { jellyfishPropTypes } from "../propTypes";
 import styled from "@emotion/styled";
 

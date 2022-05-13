@@ -1,5 +1,6 @@
+import React, { Fragment } from "react";
+
 import Fills from "./Fills";
-import { Fragment } from "react";
 import Outlines from "./Outlines";
 import Peaks from "./Peaks";
 import Shades from "./Shades";

@@ -1,3 +1,4 @@
+import React from "react";
 import { nord6 } from "nord";
 import { peaksPath } from "./pathData";
 

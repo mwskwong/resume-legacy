@@ -1,5 +1,6 @@
 import { Timeline as MuiTimeline } from "@mui/lab";
 import PropTypes from "prop-types";
+import React from "react";
 import TimelineItem from "./TimelineItem";
 
 const Timeline = ({ data }) => (

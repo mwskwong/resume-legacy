@@ -1,6 +1,7 @@
+import React, { memo } from "react";
+
 import BubbleGroundHole from "./BubbleGroundHole";
 import { groundHoleOverflowCircles } from "./pathData";
-import { memo } from "react";
 
 const BubblesGroundHoleOverflow = props => (
   <g>

@@ -1,4 +1,4 @@
-import { Fragment, memo } from "react";
+import React, { Fragment, memo } from "react";
 
 import Anglerfish from "./anglerfish";
 import nord from "nord";

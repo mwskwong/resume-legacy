@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import GitHub from "components/icons/GitHub";
 import LinkedIn from "components/icons/LinkedIn";
 import PropTypes from "prop-types";
+import React from "react";
 import StackOverflow from "components/icons/StackOverflow";
 import camelCase from "camelcase";
 import useSx from "./useSx";

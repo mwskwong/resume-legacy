@@ -1,3 +1,4 @@
+import React from "react";
 import { outline } from "../styles";
 import { outlinePaths } from "./pathData";
 

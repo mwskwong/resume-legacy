@@ -8,6 +8,7 @@ import {
 import { JellyfishCenter, JellyfishLeft, JellyfishLeftSmall, JellyfishRight } from "./jellyfishes";
 
 import IllustrationCanvas from "./IllustrationCanvas";
+import React from "react";
 
 const ArcticOceanFractal = () => {
   return (

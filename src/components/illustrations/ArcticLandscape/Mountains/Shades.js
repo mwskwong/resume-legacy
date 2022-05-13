@@ -1,6 +1,7 @@
 import { nord0, nord1 } from "nord";
 import { shadeLinesPath, shadePaths } from "./pathData";
 
+import React from "react";
 import styled from "@emotion/styled";
 
 const Shade = styled.path`

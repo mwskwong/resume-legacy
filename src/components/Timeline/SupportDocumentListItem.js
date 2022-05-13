@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { ListItem, ListItemAvatar, ListItemButton, ListItemText } from "@mui/material";
 
 import PropTypes from "prop-types";
+import React from "react";
 import useSx from "./useSupportDocumentListItemSx";
 
 const SupportDocumentListItem = ({ supportDocument: { title, url, thumbnail } }) => {

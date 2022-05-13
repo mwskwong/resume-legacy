@@ -1,8 +1,8 @@
+import React, { memo } from "react";
 import { css, keyframes } from "@emotion/react";
 import { leftPaths, leftTentaclePaths } from "./pathData";
 
 import Jellyfish from "./Jellyfish";
-import { memo } from "react";
 
 const animTentacleSwing = keyframes`
   0% { transform: translate3d(0, 0, 0); }

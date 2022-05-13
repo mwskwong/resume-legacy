@@ -1,4 +1,5 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
+
 import GleamGradient from "./GleamGradient";
 import { fillPath } from "./pathData";
 

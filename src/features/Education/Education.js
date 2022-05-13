@@ -1,4 +1,5 @@
 import { Box, Container, Grid, Stack } from "@mui/material";
+import React, { memo } from "react";
 
 import ArcticOceanFractal from "components/illustrations/ArcticOceanFractal";
 import Courses from "./Courses";
@@ -6,7 +7,6 @@ import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
-import { memo } from "react";
 import useSx from "./useEducationSx";
 
 const Education = ({ sx: sxProp }) => {

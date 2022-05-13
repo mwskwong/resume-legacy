@@ -1,9 +1,9 @@
 import { Button, Typography } from "@mui/material";
+import React, { memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { HOME } from "constants/nav";
 import PropTypes from "prop-types";
-import { memo } from "react";
 import useSx from "./useLogoSx";
 
 const Logo = ({ sx: sxProp, onClick }) => {

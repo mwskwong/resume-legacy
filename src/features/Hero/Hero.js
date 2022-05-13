@@ -1,11 +1,11 @@
 import { Box, Container } from "@mui/material";
+import React, { memo } from "react";
 
 import ArcticLandscape from "components/illustrations/ArcticLandscape";
 import DownloadResumeButton from "./DownloadResumeButton";
 import { HOME } from "constants/nav";
 import SocialMedia from "components/SocialMedia";
 import Title from "./Title";
-import { memo } from "react";
 import useSx from "./useHeroSx";
 
 const Hero = () => {

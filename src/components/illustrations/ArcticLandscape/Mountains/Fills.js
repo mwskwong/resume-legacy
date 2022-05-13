@@ -1,3 +1,4 @@
+import React from "react";
 import { fillPaths } from "./pathData";
 import { nord8 } from "nord";
 

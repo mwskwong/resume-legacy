@@ -1,4 +1,5 @@
 import { Box, Container, Stack } from "@mui/material";
+import React, { memo } from "react";
 
 import { ABOUT } from "constants/nav";
 import Message from "./Message";
@@ -6,7 +7,6 @@ import Picture from "./Picture";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import SkillSet from "./SkillSet";
-import { memo } from "react";
 import useSx from "./useAboutSx";
 
 const About = ({ sx: sxProp }) => {
