@@ -7,6 +7,10 @@ const useSx = () => ({
     flex: 1,
     minHeight: "100vh"
   },
+  animationWrapper: {
+    width: "100%",
+    maxWidth: 430
+  },
   socialMedia: {
     mt: 3
   },

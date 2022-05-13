@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
-import styled from "@emotion/styled";
-import { unstable_styleFunctionSx } from "@mui/system";
+import { styled } from "@mui/material";
 import useSx from "./useDividerSvgSx";
 
-const Svg = styled.svg(unstable_styleFunctionSx);
+const Svg = styled("svg")``;
 
 const DividerSvg = ({ sx: sxProp, ...props }) => {
   const sx = useSx({ sxProp });

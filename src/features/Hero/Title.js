@@ -38,9 +38,6 @@ const Title = () => {
 
   return (
     <Box sx={sx.root}>
-      <Typography variant="h4" component="div" gutterBottom>
-        Greetings
-      </Typography>
       <Typography sx={sx.title} variant="h1" component="div" aria-hidden>
         {"I Am "}
         <Box ref={typewriterRef} component="span" />
