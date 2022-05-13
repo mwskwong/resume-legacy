@@ -1,4 +1,4 @@
-import { jellyfishPropTypes } from "../shared/propTypes";
+import { jellyfishPropTypes } from "../propTypes";
 import styled from "@emotion/styled";
 
 const Tentacle = styled.path`
