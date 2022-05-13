@@ -5,9 +5,9 @@ import { HOME } from "constants/nav";
 import SocialMedia from "components/SocialMedia";
 import Title from "./Title";
 import { memo } from "react";
-import useSx from "./useLandingSx";
+import useSx from "./useHeroSx";
 
-const Landing = () => {
+const Hero = () => {
   const sx = useSx();
 
   return (
@@ -20,6 +20,6 @@ const Landing = () => {
   );
 };
 
-Landing.whyDidYouRender = true;
+Hero.whyDidYouRender = true;
 
-export default memo(Landing);
+export default memo(Hero);
