@@ -1,4 +1,5 @@
 import DividerSvg from "./DividerSvg";
+import React from "react";
 
 const WaveSmooth2 = props => (
   <DividerSvg {...props} viewBox="0 0 1920 157.327" xmlns="http://www.w3.org/2000/svg">

@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
+import React, { Fragment } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { Fragment } from "react";
 import useSx from "./useMessageSx";
 
 const Message = () => {

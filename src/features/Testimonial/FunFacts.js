@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
+import React from "react";
 import useSx from "./useFunFactSx";
 
 const FunFacts = () => {

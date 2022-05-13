@@ -1,5 +1,6 @@
 import { ButtonBase } from "@mui/material";
 import PropTypes from "prop-types";
+import React from "react";
 import useSx from "./usePaginationItemSx";
 
 const PaginationItem = ({ active = false, onClick, ...props }) => {

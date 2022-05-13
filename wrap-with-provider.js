@@ -1,6 +1,6 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import React, { StrictMode } from "react";
 
-import { StrictMode } from "react";
 import brandingTheme from "brandingTheme";
 
 export const wrapRootElement = ({ element }) => (

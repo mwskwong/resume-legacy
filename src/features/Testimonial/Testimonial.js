@@ -1,11 +1,11 @@
 import { Box, Container, Grid, Stack } from "@mui/material";
+import React, { memo } from "react";
 
 import Carousel from "./Carousel";
 import FunFacts from "./FunFacts";
 import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import { TESTIMONIAL } from "constants/nav";
-import { memo } from "react";
 import useSx from "./useTestimonialSx";
 
 const Testimonial = ({ sx: sxProp }) => {

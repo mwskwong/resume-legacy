@@ -2,9 +2,9 @@ import * as styles from "./reference.module.css";
 
 import { Box, Typography } from "@mui/material";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React, { memo } from "react";
 
 import PropTypes from "prop-types";
-import { memo } from "react";
 import useSx from "./useReferenceSx";
 
 const Reference = ({ name, jobTitle, refereePicture, company, comment }) => {

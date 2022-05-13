@@ -9,6 +9,7 @@ import { Box, Chip, Grid, Stack, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Database } from "mdi-material-ui";
+import React from "react";
 import camelCase from "camelcase";
 import useSx from "./useSkillSetSx";
 

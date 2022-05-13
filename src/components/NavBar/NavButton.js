@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material";
+import React, { memo } from "react";
 
 import PropTypes from "prop-types";
-import { memo } from "react";
 import useSx from "./useNavButtonSx";
 
 const NavButton = ({ label, id, active }) => {

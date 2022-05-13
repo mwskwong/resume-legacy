@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
+import React from "react";
 import { Typography } from "@mui/material";
 import useSx from "./useCopyrightStatementSx";
 

@@ -1,7 +1,7 @@
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import React, { Fragment } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { Fragment } from "react";
 import Microsoft from "components/icons/Microsoft";
 import Oracle from "components/icons/Oracle";
 import Udemy from "components/icons/Udemy";

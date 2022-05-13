@@ -1,9 +1,9 @@
 import { Box, Container, Grid } from "@mui/material";
+import React, { memo } from "react";
 
 import CopyrightStatement from "./CopyrightStatement";
 import PropTypes from "prop-types";
 import SocialMedia from "components/SocialMedia";
-import { memo } from "react";
 import useSx from "./useFooterSx";
 
 const Footer = ({ sx: sxProp }) => {

@@ -1,3 +1,4 @@
+import React from "react";
 import { SvgIcon } from "@mui/material";
 import { siGithub } from "simple-icons/icons";
 import useSx from "./useThirdPartyIconSx";

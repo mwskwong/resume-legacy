@@ -1,10 +1,11 @@
+import React, { Fragment } from "react";
+
 import About from "features/About";
 import Contact from "features/Contact";
 import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
-import { Fragment } from "react";
-import Landing from "features/Landing";
+import Hero from "features/Hero";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
@@ -17,7 +18,7 @@ import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 import Work from "features/Work";
 
 const bgcolors = {
-  landing: "default",
+  hero: "default",
   about: "sectionSecondary",
   testimonial: "default",
   work: "sectionTertiary",
@@ -72,7 +73,7 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <Landing />
+        <Hero />
         <WaveSmooth sx={sx.waveSmooth} />
         <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />

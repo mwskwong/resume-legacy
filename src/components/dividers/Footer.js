@@ -1,4 +1,5 @@
 import DividerSvg from "./DividerSvg";
+import React from "react";
 import { darken } from "@mui/system";
 import { nord1 } from "nord";
 

@@ -1,8 +1,8 @@
 import { Box, Divider, Typography } from "@mui/material";
+import React, { memo } from "react";
 
 import PropTypes from "prop-types";
 import { AcUnitRounded as Snow } from "@mui/icons-material";
-import { memo } from "react";
 import useSx from "./useSectionHeaderSx";
 
 const SectionHeader = ({ heading }) => {
