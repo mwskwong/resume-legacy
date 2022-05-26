@@ -39,13 +39,6 @@ module.exports = {
     },
     "gatsby-plugin-emotion",
     "gatsby-plugin-material-ui",
-    {
-      resolve: "gatsby-plugin-purgecss",
-      options: {
-        printRejected: true,
-        develop: true
-      }
-    },
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",
