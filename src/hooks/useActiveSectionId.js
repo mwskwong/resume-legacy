@@ -5,12 +5,6 @@ const useActiveSectionId = () => {
   const [, startTransition] = useTransition();
   const [activeSectionId, setActiveSectionId] = useState(HOME.id);
 
-  const isScrollToBottom = () => window.innerHeight + window.scrollY >= document.body.offsetHeight;
-
-  const isSectionActive = section => section
-    && section.offsetTop < document.documentElement.scrollTop
-    + document.documentElement.clientHeight / 8;
-
   useEffect(() => {
     const initId = window.location.hash?.slice(1);
     if (initId) setActiveSectionId(initId);
@@ -18,12 +12,18 @@ const useActiveSectionId = () => {
     const sectionIds = Object.values(nav).map(({ id }) => id).reverse();
 
     const handleScroll = () => {
-      if (isScrollToBottom()) {
+      const scrollBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
+      if (scrollBottom) {
         startTransition(() => setActiveSectionId(sectionIds[0]));
       } else {
         for (const sectionId of sectionIds) {
           const section = document.getElementById(sectionId);
-          if (isSectionActive(section)) {
+          const sectionActive = section
+            && section.offsetTop < document.documentElement.scrollTop
+            + document.documentElement.clientHeight / 8;
+
+          if (sectionActive) {
             startTransition(() => setActiveSectionId(sectionId));
             break;
           }
