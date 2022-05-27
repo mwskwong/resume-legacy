@@ -9,13 +9,11 @@ import Udemy from "components/icons/Udemy";
 import camelCase from "camelcase";
 import useSx from "./useCoursesSx";
 
-console.log(camelCase("EnterpriseDB"));
-
 const Icons = {
   microsoft: Microsoft,
   oracle: Oracle,
   udemy: Udemy,
-  enterpriseDB: EnterpriseDB
+  enterpriseDb: EnterpriseDB
 };
 
 const Courses = () => {
