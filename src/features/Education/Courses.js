@@ -2,6 +2,7 @@ import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography 
 import React, { Fragment } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
+import EnterpriseDB from "components/icons/EnterpriseDB";
 import Microsoft from "components/icons/Microsoft";
 import Oracle from "components/icons/Oracle";
 import Udemy from "components/icons/Udemy";
@@ -11,7 +12,8 @@ import useSx from "./useCoursesSx";
 const Icons = {
   microsoft: Microsoft,
   oracle: Oracle,
-  udemy: Udemy
+  udemy: Udemy,
+  enterpriseDb: EnterpriseDB
 };
 
 const Courses = () => {
