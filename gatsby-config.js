@@ -16,9 +16,6 @@ module.exports = {
   siteMetadata: {
     siteUrl
   },
-  partytownProxiedURLs: [
-    "https://static.cloudflareinsights.com/beacon.min.js"
-  ],
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: true,
