@@ -1,19 +1,19 @@
 import React from "react";
 import { SvgIcon } from "@mui/material";
-import { siEnterprisedb } from "simple-icons/icons";
+import { siGithub } from "simple-icons/icons";
 import useSx from "./useThirdPartyIconSx";
 
-const EnterpriseDB = props => {
+const GitHub = props => {
   const sx = useSx();
 
   return (
     <SvgIcon sx={sx.simpleIcons} {...props}>
-      <path d={siEnterprisedb.path} />
+      <path d={siGithub.path} />
     </SvgIcon>
   );
 };
 
-EnterpriseDB.muiName = SvgIcon.muiName;
-EnterpriseDB.whyDidYouRender = true;
+GitHub.muiName = SvgIcon.muiName;
+GitHub.whyDidYouRender = true;
 
-export default EnterpriseDB;
+export default GitHub;
