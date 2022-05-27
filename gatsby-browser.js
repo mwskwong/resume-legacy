@@ -1,4 +1,4 @@
-export { wrapRootElement } from "./wrap-with-provider";
+export { wrapRootElement } from "./gatsby-shared";
 
 export const onClientEntry = () => {
   if (process.env.NODE_ENV === "development") {
