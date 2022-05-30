@@ -30,17 +30,19 @@ Welcome to the source code of [mwskwong.com](https://mwskwong.com). You can see 
 - CMS - [Contentful](https://www.contentful.com)
 
 ## To Do
-1. Migrate `gatsbyImageData` with `gatsbyImage`
+1. Change "Completed Course" count from constant to dynamic count courses
+
+2. Migrate `gatsbyImageData` with `gatsbyImage`
     
     `gatsbyImage` is not available in `localFile` yet.
 
-2. Migrate MUI theme to css variables 
+3. Migrate MUI theme to css variables 
     
     Too early currently
     
     https://mui.com/experimental-api/css-variables/
 
-3. Add tags to PDF files
+4. Add tags to PDF files
     
     > For PDF files, we recommend embedding an image of the PDF with alternative text, and providing a link to download a tagged PDF.
     
