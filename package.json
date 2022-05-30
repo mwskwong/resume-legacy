@@ -37,13 +37,13 @@
     "gatsby-source-filesystem": "^4.15.0",
     "gatsby-transformer-sharp": "^4.15.0",
     "mdi-material-ui": "^7.3.0",
-    "nope-validator": "^1.0.3",
+    "nope-validator": "^1.0.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.31.3",
     "react-swipeable-views": "^0.14.0",
-    "simple-icons": "^6.23.0",
+    "simple-icons": "^7.0.0",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
