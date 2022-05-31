@@ -6,16 +6,23 @@ import useSx from "./useFunFactSx";
 
 const FunFacts = () => {
   const sx = useSx();
-  const { funFactNodes } = useStaticQuery(graphql`{
-    funFactNodes: allContentfulFunFact(sort: {fields: title}) {
+  const { funFactNodes, completedCourses } = useStaticQuery(graphql`{
+    funFactNodes: allContentfulFunFact {
       nodes {
         title
         value
       }
     }
+    completedCourses: allContentfulCourse {
+      totalCount
+    }
   }`);
 
-  const funFacts = funFactNodes.nodes;
+  const funFacts = [
+    ...funFactNodes.nodes,
+    { title: "Completed Courses", value: completedCourses.totalCount }
+  ]
+    .sort((e1, e2) => e1.title > e2.title ? 1 : e1.title < e2.title ? -1 : 0);
 
   return (
     <Grid item container spacing={2} md={6} xs={12}>
