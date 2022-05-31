@@ -74,9 +74,7 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <LazyHydrate whenVisible>
-          <Hero />
-        </LazyHydrate>
+        <Hero />
         <WaveSmooth sx={sx.waveSmooth} />
         <LazyHydrate whenVisible>
           <About sx={sx.about} />
