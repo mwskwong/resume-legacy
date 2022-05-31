@@ -1,13 +1,12 @@
 import { Box, Container } from "@mui/material";
-import React, { Suspense, lazy, memo } from "react";
+import React, { memo } from "react";
 
+import ArcticLandscape from "components/illustrations/ArcticLandscape";
 import DownloadResumeButton from "./DownloadResumeButton";
 import { HOME } from "constants/nav";
 import SocialMedia from "components/SocialMedia";
 import Title from "./Title";
 import useSx from "./useHeroSx";
-
-const ArcticLandscape = lazy(() => import("components/illustrations/ArcticLandscape"));
 
 const Hero = () => {
   const sx = useSx();
@@ -15,9 +14,7 @@ const Hero = () => {
   return (
     <Container component="section" sx={sx.container} id={HOME.id}>
       <Box sx={sx.animationWrapper}>
-        <Suspense>
-          <ArcticLandscape />
-        </Suspense>
+        <ArcticLandscape />
       </Box>
       <Title />
       <SocialMedia sx={sx.socialMedia} />
