@@ -6,7 +6,6 @@ import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
 import Hero from "features/Hero";
-import LazyHydrate from "react-lazy-hydration";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
@@ -74,34 +73,20 @@ const IndexPage = () => {
       <SEO />
       <NavBar />
       <main>
-        <LazyHydrate whenVisible>
-          <Hero />
-        </LazyHydrate>
+        <Hero />
         <WaveSmooth sx={sx.waveSmooth} />
-        <LazyHydrate whenVisible>
-          <About sx={sx.about} />
-        </LazyHydrate>
+        <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
-        <LazyHydrate whenVisible>
-          <Testimonial />
-        </LazyHydrate>
+        <Testimonial />
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        <LazyHydrate whenVisible>
-          <Work sx={sx.work} />
-        </LazyHydrate>
+        <Work sx={sx.work} />
         <WaveSmooth2 sx={sx.waveSmooth2} />
-        <LazyHydrate whenVisible>
-          <Education sx={sx.education} />
-        </LazyHydrate>
+        <Education sx={sx.education} />
         <WaveRoaring sx={sx.waveRoaring} />
-        <LazyHydrate whenVisible>
-          <Contact />
-        </LazyHydrate>
+        <Contact />
       </main>
       <FooterDivider sx={sx.footerDivider} />
-      <LazyHydrate whenVisible>
-        <Footer sx={sx.footer} />
-      </LazyHydrate>
+      <Footer sx={sx.footer} />
       <ScrollToTopFab />
     </Fragment>
   );
