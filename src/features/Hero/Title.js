@@ -38,7 +38,7 @@ const Title = () => {
 
   return (
     <Box sx={sx.root}>
-      <Typography sx={sx.title} variant="h1" component="div" aria-hidden>
+      <Typography sx={sx.title} variant="h1" component="div" role="presentation">
         {"I Am "}
         <Box ref={typewriterRef} component="span" />
       </Typography>
