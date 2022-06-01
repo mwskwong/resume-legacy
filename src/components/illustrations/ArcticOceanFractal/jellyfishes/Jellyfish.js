@@ -1,5 +1,5 @@
+import PropTypes from "prop-types";
 import React from "react";
-import { jellyfishPropTypes } from "../propTypes";
 import styled from "@emotion/styled";
 
 const Tentacle = styled.path`
@@ -14,10 +14,10 @@ const Group = styled.g`
   transform-style: preserve-3d;
 `;
 
-const Jellyfish = ({ bodyAnimation, bodyPaths, poseTimings, runCSSAnimations, tentaclesAnimation, tentaclePaths }) => (
-  <Group bodyAnimation={bodyAnimation} runCSSAnimations={runCSSAnimations} {...poseTimings}>
+const Jellyfish = ({ bodyAnimation, bodyPaths, tentaclesAnimation, tentaclePaths }) => (
+  <Group bodyAnimation={bodyAnimation}>
     {tentaclePaths.map(({ d, fill }) => (
-      <Tentacle key={d} d={d} fill={fill} runCSSAnimations={runCSSAnimations} tentaclesAnimation={tentaclesAnimation} />
+      <Tentacle key={d} d={d} fill={fill} tentaclesAnimation={tentaclesAnimation} />
     ))}
     {bodyPaths.map(({ d, fill }) => (
       <path key={d} d={d} fill={fill} />
@@ -25,7 +25,19 @@ const Jellyfish = ({ bodyAnimation, bodyPaths, poseTimings, runCSSAnimations, te
   </Group>
 );
 
-Jellyfish.propTypes = jellyfishPropTypes;
+const jellyfishPaths = PropTypes.arrayOf(
+  PropTypes.shape({
+    d: PropTypes.string,
+    fill: PropTypes.string
+  })
+);
+
+Jellyfish.propTypes = {
+  bodyAnimation: PropTypes.object.isRequired,
+  bodyPaths: jellyfishPaths.isRequired,
+  tentaclesAnimation: PropTypes.object.isRequired,
+  tentaclePaths: jellyfishPaths.isRequired
+};
 Jellyfish.whyDidYouRender = true;
 
 export default Jellyfish;
