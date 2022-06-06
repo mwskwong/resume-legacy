@@ -17,7 +17,7 @@ const useSx = () => ({
   },
   typeIt: {
     color: "primary.main",
-    "--ti-cursor-color": "text.primary",
+    "--ti-cursor-color": theme => theme.palette.text.primary,
     "--ti-cursor-margin-left": 0,
     "--ti-cursor-margin-right": 0
   }

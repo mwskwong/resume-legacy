@@ -27,11 +27,12 @@ const Title = () => {
 
   useEffect(() => {
     const typeIt = new TypeIt(typeItRef.current, {
-      // strings,
+      strings,
       startDelete: true,
       breakLines: false,
       loop: true,
-      waitUntilVisible: true
+      waitUntilVisible: true,
+      html: false
     }).go();
 
     return () => typeIt.destroy();
@@ -42,7 +43,7 @@ const Title = () => {
       <Typography sx={sx.title} variant="h1">
         {"I Am "}
         <Box ref={typeItRef} component="span" sx={sx.typeIt}>
-          {/* {strings[0]} */}
+          {strings[0]}
         </Box>
       </Typography>
     </Box>
