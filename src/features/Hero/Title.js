@@ -31,6 +31,7 @@ const Title = () => {
       startDelete: true,
       breakLines: false,
       loop: true,
+      loopDelay: 1500,
       waitUntilVisible: true,
       html: false
     }).go();
