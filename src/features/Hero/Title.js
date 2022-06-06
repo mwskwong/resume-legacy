@@ -21,8 +21,8 @@ const Title = () => {
   }`);
 
   const strings = useMemo(() => [
-    `${name.firstName} ${name.lastName}.`,
-    ...occupationNodes.nodes.map(({ title }) => `A ${title}.`)
+    ...occupationNodes.nodes.map(({ title }) => `A ${title}.`),
+    `${name.firstName} ${name.lastName}.`
   ], [name.firstName, name.lastName, occupationNodes.nodes]);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Title = () => {
       <Typography sx={sx.title} variant="h1">
         {"I Am "}
         <Box ref={typeItRef} component="span" sx={sx.typeIt}>
-          {strings[0]}
+          {strings[strings.length - 1]}
         </Box>
       </Typography>
     </Box>
