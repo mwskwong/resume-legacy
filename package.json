@@ -21,7 +21,7 @@
     "@mui/icons-material": "^5.8.2",
     "@mui/lab": "5.0.0-alpha.84",
     "@mui/material": "^5.8.2",
-    "camelcase": "^6.3.0",
+    "camelcase": "^7.0.0",
     "gatsby": "^4.15.2",
     "gatsby-plugin-emotion": "^7.15.0",
     "gatsby-plugin-image": "^2.15.1",
