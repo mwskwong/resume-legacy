@@ -1,12 +1,13 @@
 import { Box, Typography } from "@mui/material";
-import React, { Fragment, useMemo } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import TypeIt from "typeit-react";
+import TypeIt from "typeit";
 import useSx from "./useTitleSx";
 
 const Title = () => {
   const sx = useSx();
+  const typeItRef = useRef();
   const { name, occupationNodes } = useStaticQuery(graphql`{
     name: contentfulName {
       firstName
@@ -24,24 +25,24 @@ const Title = () => {
     ...occupationNodes.nodes.map(({ title }) => `A ${title}.`)
   ], [name.firstName, name.lastName, occupationNodes.nodes]);
 
-  const typeItOptions = {
-    startDelete: true,
-    breakLines: false,
-    loop: true
-  };
+  useEffect(() => {
+    const typeIt = new TypeIt(typeItRef.current, {
+      strings,
+      startDelete: true,
+      breakLines: false,
+      loop: true
+    });
+
+    return () => typeIt.destroy();
+  }, [strings]);
 
   return (
     <Box sx={sx.root}>
       <Typography sx={sx.title} variant="h1">
         {"I Am "}
-        <TypeIt options={typeItOptions}>
-          {strings.map((string, index) => (
-            <Fragment key={index}>
-              {string}
-              <br />
-            </Fragment>
-          ))}
-        </TypeIt>
+        <Box ref={typeItRef} component="span">
+          {strings[0]}
+        </Box>
       </Typography>
     </Box>
   );
