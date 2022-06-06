@@ -22,10 +22,7 @@ const Title = () => {
   }`);
 
   const occupations = occupationNodes.nodes.map(({ title }) => title);
-  const titleStrings = useMemo(() => [
-    `${name.firstName} ${name.lastName}.`,
-    ...occupations.map(occupation => `a ${occupation}.`)
-  ], [name.firstName, name.lastName, occupations]);
+  const titleStrings = useMemo(() => occupations.map(occupation => `a ${occupation}.`), [occupations]);
 
   useEffect(() => {
     const typewriter = new Typewriter(typewriterRef.current, {
@@ -40,7 +37,9 @@ const Title = () => {
     <Box sx={sx.root}>
       <Typography sx={sx.title} variant="h1" component="div" role="presentation">
         {"I Am "}
-        <Box ref={typewriterRef} component="span" />
+        <Box ref={typewriterRef} component="span">
+          {`${name.firstName} ${name.lastName}.`}
+        </Box>
       </Typography>
       <Typography sx={visuallyHidden} variant="h1">
         I Am {titleStrings.join(" I Am ")}
