@@ -44,7 +44,7 @@
     "react-hook-form": "^7.31.3",
     "react-swipeable-views": "^0.14.0",
     "simple-icons": "^7.0.0",
-    "typeit": "^8.5.4"
+    "typeit-monorepo": "https://gitpkg.now.sh/mwskwong/typeit?master&scripts.postinstall=(cd%20packages%2Ftypeit%20%26%26%20npm%20install)%20%26%26%20(cd%20packages%2Ftypeit-react%20%26%26%20npm%20install)%20%26%26%20(npm%20install%20%26%26%20npm%20build)"
   },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^7.0.1",
