@@ -27,7 +27,7 @@ const Title = () => {
 
   useEffect(() => {
     const typeIt = new TypeIt(typeItRef.current, {
-      strings,
+      // strings,
       startDelete: true,
       breakLines: false,
       loop: true,
@@ -41,8 +41,8 @@ const Title = () => {
     <Box sx={sx.root}>
       <Typography sx={sx.title} variant="h1">
         {"I Am "}
-        <Box ref={typeItRef} component="span">
-          {strings[0]}
+        <Box ref={typeItRef} component="span" sx={sx.typeIt}>
+          {/* {strings[0]} */}
         </Box>
       </Typography>
     </Box>
