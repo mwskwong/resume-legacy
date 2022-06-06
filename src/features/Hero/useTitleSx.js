@@ -7,10 +7,14 @@ const useSx = () => ({
   },
   title: {
     textTransform: "capitalize",
-    textAlign: "center"
-  },
-  name: {
-    color: "primary.main"
+    textAlign: "center",
+    "@media (max-width: 742px)": {
+      height: theme => `${theme.typography.h1.lineHeight * 2}em`
+    },
+    "@media (max-width: 370px)": {
+      height: theme => `${theme.typography.h1.lineHeight * 3}em`
+    },
+    width: "100%"
   }
 });
 
