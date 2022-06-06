@@ -32,8 +32,7 @@ const Title = () => {
       breakLines: false,
       loop: true,
       loopDelay: 1500,
-      waitUntilVisible: true,
-      html: false
+      waitUntilVisible: true
     }).go();
 
     return () => typeIt.destroy();
@@ -44,7 +43,7 @@ const Title = () => {
       <Typography sx={sx.title} variant="h1">
         {"I Am "}
         <Box ref={typeItRef} component="span" sx={sx.typeIt}>
-          {strings[strings.length - 1]}
+          <span>{strings[strings.length - 1]}</span>
         </Box>
       </Typography>
     </Box>
