@@ -21,8 +21,8 @@ const Title = () => {
   }`);
 
   const strings = useMemo(() => [
-    ...occupationNodes.nodes.map(({ title }) => `A ${title}.`),
-    `${name.firstName} ${name.lastName}.`
+    ...occupationNodes.nodes.map(({ title }) => `A ${title}`),
+    `${name.firstName} ${name.lastName}`
   ], [name.firstName, name.lastName, occupationNodes.nodes]);
 
   useEffect(() => {
