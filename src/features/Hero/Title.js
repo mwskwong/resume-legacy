@@ -30,8 +30,9 @@ const Title = () => {
       strings,
       startDelete: true,
       breakLines: false,
-      loop: true
-    });
+      loop: true,
+      waitUntilVisible: true
+    }).go();
 
     return () => typeIt.destroy();
   }, [strings]);

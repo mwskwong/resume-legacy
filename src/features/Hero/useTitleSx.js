@@ -6,7 +6,6 @@ const useSx = () => ({
     width: "100%"
   },
   title: {
-    textTransform: "capitalize",
     textAlign: "center",
     "@media (max-width: 742px)": {
       height: theme => `${theme.typography.h1.lineHeight * 2}em`
