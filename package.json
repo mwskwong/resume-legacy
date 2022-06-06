@@ -16,7 +16,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "@fontsource/rubik": "^4.5.9",
+    "@fontsource/rubik": "^4.5.10",
     "@hookform/resolvers": "^2.9.0",
     "@mui/icons-material": "^5.8.2",
     "@mui/lab": "5.0.0-alpha.84",
@@ -36,7 +36,7 @@
     "gatsby-source-contentful": "^7.13.1",
     "gatsby-source-filesystem": "^4.15.0",
     "gatsby-transformer-sharp": "^4.15.1",
-    "mdi-material-ui": "^7.3.0",
+    "mdi-material-ui": "^7.4.0",
     "nope-validator": "^1.0.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
