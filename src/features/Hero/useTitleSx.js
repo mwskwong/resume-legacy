@@ -13,17 +13,10 @@ const useSx = () => ({
     },
     "@media (max-width: 370px)": {
       height: theme => `${theme.typography.h1.lineHeight * 3}em`
-    },
-    "& .Typewriter": {
-      display: "inline"
-    },
-    "& .Typewriter__wrapper": {
-      color: "primary.main"
-    },
-    "& .Typewriter__cursor": {
-      color: "text.primary"
-    },
-    width: "100%"
+    }
+  },
+  name: {
+    color: "primary.main"
   }
 });
 
