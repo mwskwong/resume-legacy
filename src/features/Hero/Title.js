@@ -21,14 +21,15 @@ const Title = () => {
   }`);
 
   const strings = useMemo(() => [
-    ...occupationNodes.nodes.map(({ title }) => `A ${title}`),
-    `${name.firstName} ${name.lastName}`
+    ...occupationNodes.nodes.map(({ title }) => `A ${title}.`),
+    `${name.firstName} ${name.lastName}.`
   ], [name.firstName, name.lastName, occupationNodes.nodes]);
 
   useEffect(() => {
     const typeIt = new TypeIt(typeItRef.current, {
       strings,
-      startDelete: true,
+      startDelay: 1500,
+      // startDelete: true,
       breakLines: false,
       loop: true,
       loopDelay: 1500,
@@ -43,7 +44,7 @@ const Title = () => {
       <Typography sx={sx.title} variant="h1">
         {"I Am "}
         <Box ref={typeItRef} component="span" sx={sx.typeIt}>
-          <span>{strings[strings.length - 1]}</span>
+          {strings[strings.length - 1]}
         </Box>
       </Typography>
     </Box>
