@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React, { useEffect, useMemo, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import TypeIt from "typeit-monorepo/packages/typeit";
+import TypeIt from "typeit";
 import useSx from "./useTitleSx";
 
 const Title = () => {
