@@ -14,6 +14,12 @@ const useSx = () => ({
       height: theme => `${theme.typography.h1.lineHeight * 3}em`
     },
     width: "100%"
+  },
+  typeIt: {
+    color: "primary.main",
+    "--ti-cursor-color": "text.primary",
+    "--ti-cursor-margin-left": 0,
+    "--ti-cursor-margin-right": 0
   }
 });
 
