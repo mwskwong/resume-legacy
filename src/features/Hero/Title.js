@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import TypeIt from "typeit";
@@ -20,26 +20,30 @@ const Title = () => {
     }
   }`);
 
+  const strings = useMemo(() => [
+    ...occupationNodes.nodes.map(({ title }) => `A ${title}.`),
+    `${name.firstName} ${name.lastName}.`
+  ], [name.firstName, name.lastName, occupationNodes.nodes]);
+
   useEffect(() => {
     const typeIt = new TypeIt(typeItRef.current, {
-      strings: occupationNodes.nodes.map(({ title }) => `A ${title}.`),
-      startDelay: 1500,
+      strings,
       startDelete: true,
       breakLines: false,
       loop: true,
-      nextStringDelay: 1500,
+      nextStringDelay: 3000,
       waitUntilVisible: true
     }).go();
 
     return () => typeIt.destroy();
-  }, [occupationNodes.nodes]);
+  }, [strings]);
 
   return (
     <Box sx={sx.root}>
       <Typography sx={sx.title} variant="h1">
         {"I Am "}
         <Box ref={typeItRef} component="span" sx={sx.typeIt}>
-          {`${name.firstName} ${name.lastName}.`}
+          {strings[strings.length - 1]}
         </Box>
       </Typography>
     </Box>
