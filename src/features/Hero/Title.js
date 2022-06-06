@@ -33,7 +33,7 @@ const Title = () => {
     <Box sx={sx.root}>
       <Typography sx={sx.title} variant="h1">
         {"I Am "}
-        <TypeIt options={typeItOptions} as="span">
+        <TypeIt options={typeItOptions}>
           {typeItOptions.strings[0]}
         </TypeIt>
       </Typography>
