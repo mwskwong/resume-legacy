@@ -44,7 +44,7 @@
     "react-hook-form": "^7.31.3",
     "react-swipeable-views": "^0.14.0",
     "simple-icons": "^7.0.0",
-    "typeit": "^8.5.4"
+    "typeit": "https://gitpkg.now.sh/mwskwong/typeit/packages/typeit?master"
   },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^7.0.1",
