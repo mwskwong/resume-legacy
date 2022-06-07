@@ -31,7 +31,8 @@ const Title = () => {
       startDelete: true,
       breakLines: false,
       loop: true,
-      nextStringDelay: [1500, 375],
+      nextStringDelay: [375, 1500],
+      loopDelay: [375, 1500],
       waitUntilVisible: true
     }).go();
 
