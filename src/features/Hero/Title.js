@@ -32,7 +32,7 @@ const Title = () => {
       breakLines: false,
       loop: true,
       nextStringDelay: [1500, 375],
-      loopDelay: 0,
+      loopDelay: [1500, 375],
       waitUntilVisible: true
     }).go();
 
