@@ -32,7 +32,7 @@ const Title = () => {
     };
 
     const typeIt = new TypeIt(typeItRef.current, {
-      startDelay: delays.beforeTyping,
+      startDelay: delays.afterTyping,
       startDelete: true,
       breakLines: false,
       loop: true,
