@@ -43,7 +43,9 @@ const Title = () => {
 
     for (let i = 0; i < strings.length; i++) {
       typeIt.type(strings[i], { delay: delays.afterTyping });
-      if (i !== strings.length - 1) typeIt.delete(null, { delay: delays.beforeTyping });
+      if (i !== strings.length - 1) {
+        typeIt.delete(null, { delay: delays.beforeTyping });
+      }
     }
 
     typeIt.go();
