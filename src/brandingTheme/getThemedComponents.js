@@ -55,9 +55,6 @@ const getThemedComponents = theme => ({
           },
           paddingTop: theme.spacing(10),
           paddingBottom: theme.spacing(10)
-        },
-        ".Typewriter": {
-          display: "inline"
         }
       }
     },

@@ -6,7 +6,6 @@ const useSx = () => ({
     width: "100%"
   },
   title: {
-    textTransform: "capitalize",
     textAlign: "center",
     "@media (max-width: 742px)": {
       height: theme => `${theme.typography.h1.lineHeight * 2}em`
@@ -14,13 +13,13 @@ const useSx = () => ({
     "@media (max-width: 370px)": {
       height: theme => `${theme.typography.h1.lineHeight * 3}em`
     },
-    "& .Typewriter__wrapper": {
-      color: "primary.main"
-    },
-    "& .Typewriter__cursor": {
-      color: "text.primary"
-    },
     width: "100%"
+  },
+  typeIt: {
+    color: "primary.main",
+    "--ti-cursor-color": theme => theme.palette.text.primary,
+    "--ti-cursor-margin-left": 0,
+    "--ti-cursor-margin-right": 0
   }
 });
 
