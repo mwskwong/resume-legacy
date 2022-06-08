@@ -124,6 +124,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-netlify",
       options: {
+        allPageHeaders: [
+          "Link: <https://static.cloudflareinsights.com>; rel=preconnect"
+        ],
         headers: {
           "/*": [
             "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"

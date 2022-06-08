@@ -1,6 +1,5 @@
- @font-face {
-   font-family: "Riviera";
-   font-display: swap;
-   src: url("fonts/riviera.woff2") format("woff2"),
-     url("fonts/riviera.woff") format("woff");
- }
+@font-face {
+  font-family: "Riviera";
+  font-display: swap;
+  src: url("fonts/riviera.woff2") format("woff2");
+}
