@@ -125,7 +125,7 @@ module.exports = {
       resolve: "gatsby-plugin-netlify",
       options: {
         allPageHeaders: [
-          "Link: https://static.cloudflareinsights.com; rel=preconnect"
+          "Link: <https://static.cloudflareinsights.com>; rel=preconnect"
         ],
         headers: {
           "/*": [
