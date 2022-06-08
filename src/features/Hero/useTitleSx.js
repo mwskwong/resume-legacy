@@ -1,10 +1,4 @@
 const useSx = () => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    width: "100%"
-  },
   title: {
     textAlign: "center",
     "@media (max-width: 742px)": {
