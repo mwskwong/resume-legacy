@@ -54,14 +54,12 @@ const Title = () => {
   }, [strings]);
 
   return (
-    <Box sx={sx.root}>
-      <Typography sx={sx.title} variant="h1">
-        {"I Am "}
-        <Box ref={typeItRef} component="span" sx={sx.typeIt}>
-          {strings[strings.length - 1]}
-        </Box>
-      </Typography>
-    </Box>
+    <Typography sx={sx.title} variant="h1">
+      {"I Am "}
+      <Box ref={typeItRef} component="span" sx={sx.typeIt}>
+        {strings[strings.length - 1]}
+      </Box>
+    </Typography>
   );
 };
 
