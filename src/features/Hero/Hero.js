@@ -1,7 +1,7 @@
 import { Box, Container } from "@mui/material";
 import React, { Suspense, lazy, memo } from "react";
 
-import ArcticLandscape from "components/illustrations/ArcticLandscape";
+import ArcticLandscapeFallback from "components/illustrations/ArcticLandscape/Fallback";
 import DownloadResumeButton from "./DownloadResumeButton";
 import { HOME } from "constants/nav";
 import SocialMedia from "components/SocialMedia";
@@ -9,6 +9,7 @@ import TitleFallback from "./TitleFallback";
 import useSx from "./useHeroSx";
 
 const Title = lazy(() => import("./Title"));
+const ArcticLandscape = lazy(() => import("components/illustrations/ArcticLandscape"));
 
 const Hero = () => {
   const sx = useSx();
@@ -16,7 +17,9 @@ const Hero = () => {
   return (
     <Container component="section" sx={sx.container} id={HOME.id}>
       <Box sx={sx.animationWrapper}>
-        <ArcticLandscape />
+        <Suspense fallback={<ArcticLandscapeFallback />}>
+          <ArcticLandscape />
+        </Suspense>
       </Box>
       <Suspense fallback={<TitleFallback />}>
         <Title />
