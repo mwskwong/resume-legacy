@@ -39,7 +39,7 @@ const Title = () => {
       nextStringDelay: 0,
       loopDelay: 0
     })
-      .delete(typeItRef.current.textContent.length, { delay: delays.beforeTyping }); // workaround: startDelete only deletes one char
+      .delete(null, { delay: delays.beforeTyping });
 
     for (let i = 0; i < strings.length; i++) {
       typeIt.type(strings[i], { delay: delays.afterTyping });
