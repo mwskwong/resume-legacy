@@ -125,20 +125,20 @@ module.exports = {
       resolve: "gatsby-plugin-netlify",
       options: {
         allPageHeaders: [
-          "Link: <https://static.cloudflareinsights.com>; rel=preconnect"
+          "Link: <https://static.cloudflareinsights.com>; rel=\"preconnect\""
         ],
         headers: {
           "/*": [
             "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
           ],
           [`${PREVIEW_URL}/*`]: [
-            `Link: <${PROD_URL}/:splat>; rel=canonical`
+            `Link: <${PROD_URL}/:splat>; rel="canonical"`
           ],
           "https://:project.pages.dev/*": [
-            `Link: <${PROD_URL}/:splat>; rel=canonical`
+            `Link: <${PROD_URL}/:splat>; rel="canonical"`
           ],
           "https://:commit.:project.pages.dev/*": [
-            `Link: <${PROD_URL}/:splat>; rel=canonical`
+            `Link: <${PROD_URL}/:splat>; rel="canonical"`
           ]
         }
       }
