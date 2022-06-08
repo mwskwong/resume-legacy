@@ -26,29 +26,15 @@ const Title = () => {
   ], [name.firstName, name.lastName, occupationNodes.nodes]);
 
   useEffect(() => {
-    const delays = {
-      beforeTyping: 375,
-      afterTyping: 1500
-    };
-
     const typeIt = new TypeIt(typeItRef.current, {
-      startDelay: delays.afterTyping,
+      strings,
+      startDelay: 1500,
       startDelete: true,
       breakLines: false,
       loop: true,
-      nextStringDelay: 0,
-      loopDelay: 0
-    })
-      .delete(typeItRef.current.textContent.length, { delay: delays.beforeTyping }); // workaround: startDelete only deletes one char
-
-    for (let i = 0; i < strings.length; i++) {
-      typeIt.type(strings[i], { delay: delays.afterTyping });
-      if (i !== strings.length - 1) {
-        typeIt.delete(null, { delay: delays.beforeTyping });
-      }
-    }
-
-    typeIt.go();
+      nextStringDelay: [1500, 375],
+      loopDelay: [375, 1500]
+    }).go();
 
     return () => typeIt.destroy();
   }, [strings]);
