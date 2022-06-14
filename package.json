@@ -43,8 +43,8 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.32.0",
     "react-swipeable-views": "^0.14.0",
-    "simple-icons": "^7.0.0",
-    "typeit": "^8.5.5"
+    "simple-icons": "^7.1.0",
+    "typeit": "^8.6.0"
   },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^7.0.1",
