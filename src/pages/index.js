@@ -1,6 +1,7 @@
-import React, { Fragment, Suspense, lazy } from "react";
+import React, { Fragment } from "react";
 
 import About from "features/About";
+import Contact from "features/Contact";
 import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
@@ -15,8 +16,6 @@ import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 import Work from "features/Work";
-
-const Contact = lazy(() => import("features/Contact"));
 
 const bgcolors = {
   hero: "default",
@@ -84,9 +83,7 @@ const IndexPage = () => {
         <WaveSmooth2 sx={sx.waveSmooth2} />
         <Education sx={sx.education} />
         <WaveRoaring sx={sx.waveRoaring} />
-        <Suspense>
-          <Contact />
-        </Suspense>
+        <Contact />
       </main>
       <FooterDivider sx={sx.footerDivider} />
       <Footer sx={sx.footer} />
