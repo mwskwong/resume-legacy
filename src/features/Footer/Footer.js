@@ -26,7 +26,7 @@ const Footer = ({ sx: sxProp }) => {
     <Box component="footer" sx={sx.root}>
       <Container>
         <Grid sx={sx.gridContainer} container spacing={1}>
-          <Grid item sm="auto" xs={12}>
+          <Grid item md="auto" xs={12}>
             <Typography sx={sx.text} variant="body2">
               {`Copyright © ${year} ${name.lastName.toUpperCase()}, ${name.firstName} ${name.middleName}`}
             </Typography>
@@ -36,7 +36,7 @@ const Footer = ({ sx: sxProp }) => {
               {` in ${contact.address}`}
             </Typography>
           </Grid>
-          <Grid item sm="auto" xs={12}>
+          <Grid item md="auto" xs={12}>
             <SocialMedia />
           </Grid>
         </Grid>

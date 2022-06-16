@@ -1,12 +1,12 @@
 const useSx = ({ sxProp }) => ({
   root: {
     color: "text.secondary",
+    py: 4,
     ...sxProp
   },
   gridContainer: {
     alignItems: "center",
-    justifyContent: "space-between",
-    py: 4
+    justifyContent: "space-between"
   },
   text: {
     color: "inherit",
@@ -14,7 +14,7 @@ const useSx = ({ sxProp }) => ({
     width: "100%",
     textAlign: {
       xs: "center",
-      sm: "unset"
+      md: "unset"
     }
   },
   loveIcon: {
