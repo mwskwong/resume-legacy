@@ -7,6 +7,12 @@ const useSx = ({ sxProp }) => ({
     alignItems: "center",
     justifyContent: "space-between",
     py: 4
+  },
+  text: {
+    textAlign: {
+      xs: "center",
+      lg: "unset"
+    }
   }
 });
 
