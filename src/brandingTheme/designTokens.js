@@ -36,8 +36,8 @@ const designTokens = {
     },
     text: {
       primary: nord.nord6,
-      secondary: darken(nord.nord6, .2),
-      disabled: darken(nord.nord6, .4)
+      secondary: darken(nord.nord6, .27),
+      disabled: darken(nord.nord6, .47)
     },
     divider: alpha(nord.nord4, .5),
     background: {
