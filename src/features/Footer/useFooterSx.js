@@ -11,7 +11,7 @@ const useSx = ({ sxProp }) => ({
   text: {
     textAlign: {
       xs: "center",
-      lg: "unset"
+      md: "unset"
     }
   }
 });
