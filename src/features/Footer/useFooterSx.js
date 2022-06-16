@@ -9,10 +9,16 @@ const useSx = ({ sxProp }) => ({
     py: 4
   },
   text: {
+    color: "inherit",
+    fontWeight: "regular",
+    width: "100%",
     textAlign: {
       xs: "center",
       md: "unset"
     }
+  },
+  loveIcon: {
+    verticalAlign: "middle"
   }
 });
 
