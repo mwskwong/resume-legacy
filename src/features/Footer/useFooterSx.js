@@ -14,7 +14,7 @@ const useSx = ({ sxProp }) => ({
     width: "100%",
     textAlign: {
       xs: "center",
-      md: "unset"
+      lg: "unset"
     }
   },
   loveIcon: {
