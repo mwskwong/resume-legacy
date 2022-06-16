@@ -75,7 +75,6 @@ const Carousel = () => {
       </Box>
       <SwipeableViews
         resistance
-        disableLazyLoading
         index={index}
         onChangeIndex={handleChangeIndex}
         containerStyle={swipeableViewsContainerStyle}
