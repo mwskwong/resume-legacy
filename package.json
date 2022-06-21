@@ -43,7 +43,7 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.32.2",
     "react-swipeable-views": "^0.14.0",
-    "simple-icons": "^7.1.0",
+    "simple-icons": "^7.2.0",
     "typeit": "^8.6.0"
   },
   "devDependencies": {
