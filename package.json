@@ -22,7 +22,7 @@
     "@mui/lab": "5.0.0-alpha.88",
     "@mui/material": "^5.8.6",
     "camelcase": "^7.0.0",
-    "gatsby": "^4.17.1",
+    "gatsby": "^4.17.2",
     "gatsby-plugin-emotion": "^7.17.0",
     "gatsby-plugin-image": "^2.17.0",
     "gatsby-plugin-manifest": "^4.17.0",
@@ -41,7 +41,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-hook-form": "^7.33.0",
+    "react-hook-form": "^7.33.1",
     "react-swipeable-views": "^0.14.0",
     "simple-icons": "^7.3.0",
     "typeit": "^8.6.0"
