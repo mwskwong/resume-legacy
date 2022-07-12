@@ -44,7 +44,7 @@
     "react-hook-form": "^7.33.1",
     "react-swipeable-views": "^0.14.0",
     "simple-icons": "^7.4.0",
-    "typeit": "^8.6.2"
+    "typeit": "^8.6.3"
   },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^7.0.1",
