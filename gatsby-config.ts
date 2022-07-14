@@ -1,33 +1,163 @@
-import type { GatsbyConfig } from "gatsby";
+import { GatsbyConfig } from "gatsby";
+import dotenv from "dotenv";
+import { nord0 } from "./src/nord";
+
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
+
+const { CF_PAGES_BRANCH = "main", CONTENTFUL_ACCESS_TOKEN, ANALYZE_BUNDLE } = process.env;
+
+const prod = CF_PAGES_BRANCH === "main";
+const PROD_URL = "https://mwskwong.com";
+const PREVIEW_URL = `https://${CF_PAGES_BRANCH}.mwskwong.com`;
+const siteUrl = prod ? PROD_URL : PREVIEW_URL;
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `resume-ts`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
+  trailingSlash: "always",
   graphqlTypegen: true,
-  plugins: [{
-    resolve: 'gatsby-source-contentful',
-    options: {
-      "accessToken": "",
-      "spaceId": ""
-    }
-  }, "gatsby-plugin-emotion", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  flags: {
+    FAST_DEV: true,
+    DEV_SSR: true,
+    PARALLEL_SOURCING: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true
+  },
+  plugins: [
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "constants",
+        path: `${__dirname}/src/constants`
+      }
     },
-    __key: "images"
-  }]
+    // {
+    //   resolve: "gatsby-source-contentful",
+    //   options: {
+    //     accessToken: CONTENTFUL_ACCESS_TOKEN,
+    //     spaceId: "zz9cwhc5t97i",
+    //     downloadLocal: true
+    //   }
+    // },
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-material-ui",
+    "gatsby-plugin-image",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          formats: ["auto", "webp", "avif"]
+        }
+      }
+    },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
+    // {
+    //   resolve: "gatsby-plugin-sitemap",
+    //   options: {
+    //     query: `
+    //       query SitemapQuery {
+    //         site {
+    //           siteMetadata {
+    //             siteUrl
+    //           }
+    //         }
+    //         allSitePage {
+    //           nodes {
+    //             path
+    //           }
+    //         }
+    //         allPDF(filter: {ext: {eq: ".pdf"}}) {
+    //           nodes {
+    //             publicURL
+    //           }
+    //         }
+    //       }
+    //     `,
+    //     resolvePages: ({
+    //       allSitePage: { nodes: pages },
+    //       allPDF: { nodes: pdfs }
+    //     }: Queries.SitemapQuery) => [
+    //         ...pages,
+    //         ...(pdfs.map(({ publicURL }) => ({ path: publicURL })))
+    //       ]
+    //   }
+    // }
+    "gatsby-plugin-robots-txt",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Matthew Kwong",
+        short_name: "Matthew",
+        start_url: "/",
+        background_color: nord0,
+        theme_color: nord0,
+        cache_busting_mode: "none",
+        display: "standalone",
+        icons: [
+          {
+            src: "/icon-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
+          },
+          {
+            src: "/icon-512x512.png",
+            sizes: "512x512",
+            type: "image/png"
+          },
+          {
+            src: "/icon-maskable-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "maskable"
+          },
+          {
+            src: "/icon-maskable-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "maskable"
+          }
+        ],
+        legacy: false,
+        include_favicon: false
+      }
+    },
+    {
+      resolve: "gatsby-plugin-netlify",
+      options: {
+        allPageHeaders: [
+          "Link: <https://static.cloudflareinsights.com>; rel=\"preconnect\""
+        ],
+        headers: {
+          "/*": [
+            "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload"
+          ],
+          [`${PREVIEW_URL}/*`]: [
+            `Link: <${PROD_URL}/:splat>; rel="canonical"`
+          ],
+          "https://:project.pages.dev/*": [
+            `Link: <${PROD_URL}/:splat>; rel="canonical"`
+          ],
+          "https://:commit.:project.pages.dev/*": [
+            `Link: <${PROD_URL}/:splat>; rel="canonical"`
+          ]
+        }
+      }
+    },
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: [
+            "**/icon-*",
+            "**/favicon.ico"
+          ]
+        }
+      }
+    },
+    ANALYZE_BUNDLE ? "gatsby-plugin-webpack-bundle-analyser-v2" : "",
+    ANALYZE_BUNDLE ? "gatsby-plugin-perf-budgets" : ""
+  ].filter(Boolean)
 };
 
 export default config;
