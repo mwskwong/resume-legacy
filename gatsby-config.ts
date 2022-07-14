@@ -52,37 +52,41 @@ const config: GatsbyConfig = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
-    // {
-    //   resolve: "gatsby-plugin-sitemap",
-    //   options: {
-    //     query: `
-    //       query SitemapQuery {
-    //         site {
-    //           siteMetadata {
-    //             siteUrl
-    //           }
-    //         }
-    //         allSitePage {
-    //           nodes {
-    //             path
-    //           }
-    //         }
-    //         allPDF(filter: {ext: {eq: ".pdf"}}) {
-    //           nodes {
-    //             publicURL
-    //           }
-    //         }
-    //       }
-    //     `,
-    //     resolvePages: ({
-    //       allSitePage: { nodes: pages },
-    //       allPDF: { nodes: pdfs }
-    //     }: Queries.SitemapQuery) => [
-    //         ...pages,
-    //         ...(pdfs.map(({ publicURL }) => ({ path: publicURL })))
-    //       ]
-    //   }
-    // }
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        /*
+        TODO: Include the following when Contentful is accessible
+        allPDF(filter: {ext: {eq: ".pdf"}}) {
+          nodes {
+            publicURL
+          }
+        }
+        */
+        query: `
+          query SitemapQuery {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+          }
+        `,
+        resolvePages: ({
+          allSitePage: { nodes: pages }
+          // allPDF: { nodes: pdfs }
+        }: Queries.SitemapQuery) =>
+          [
+            ...pages
+            // ...(pdfs.map(({ publicURL }) => ({ path: publicURL })))
+          ]
+      }
+    },
     "gatsby-plugin-robots-txt",
     {
       resolve: "gatsby-plugin-manifest",
