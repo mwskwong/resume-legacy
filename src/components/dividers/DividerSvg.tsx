@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import useSx from "./useDividerSvgSx";
 
 const DividerSvg: FC<BoxProps<"svg">> = ({ sx: sxProp, ...props }) => {
-  const sx = useSx({ sx: sxProp });
+  const sx = useSx(sxProp);
 
   return (
     <Box

@@ -1,4 +1,10 @@
-const useSx = ({ active }) => ({
+import { UseSx } from "types";
+
+type UseNavButtonSx = UseSx extends () => infer Return
+  ? (active: boolean) => Return
+  : never;
+
+const useSx: UseNavButtonSx = active => ({
   active: {
     height: 6,
     width: 6,

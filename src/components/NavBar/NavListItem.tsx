@@ -1,11 +1,17 @@
 import { ListItem, ListItemButton, ListItemText } from "@mui/material";
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
 
-import PropTypes from "prop-types";
+import { SectionId } from "types";
 import useSx from "./useNavListItemSx";
 
-const NavListItem = ({ label, id, active }) => {
-  const sx = useSx({ active });
+interface NavListItemProps {
+  label: string,
+  id: SectionId,
+  active: boolean
+}
+
+const NavListItem: FC<NavListItemProps> = ({ label, id, active }) => {
+  const sx = useSx(active);
   const primaryTypographyProps = { sx: sx.textPrimary };
 
   return (
@@ -19,13 +25,6 @@ const NavListItem = ({ label, id, active }) => {
     </ListItem>
   );
 };
-
-NavListItem.propTypes = {
-  label: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired,
-  id: PropTypes.string
-};
-
 NavListItem.whyDidYouRender = true;
 
 export default memo(NavListItem);

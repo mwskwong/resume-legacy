@@ -1,9 +1,16 @@
-export const HOME = { "id": "home", "name": "home" };
-export const ABOUT = { "id": "about", "name": "about" };
-export const WORK = { "id": "work", "name": "work" };
-export const EDUCATION = { "id": "education", "name": "education" };
-export const TESTIMONIAL = { "id": "testimonial", "name": "testimonial" };
-export const CONTACT = { "id": "contact", "name": "contact" };
+import { SectionId } from "types";
+
+interface Section {
+  id: SectionId,
+  name: string
+}
+
+export const HOME: Section = { id: "home", name: "Home" };
+export const ABOUT: Section = { id: "about", name: "About" };
+export const WORK: Section = { id: "work", name: "Work" };
+export const EDUCATION: Section = { id: "education", name: "Education" };
+export const TESTIMONIAL: Section = { id: "testimonial", name: "Testimonial" };
+export const CONTACT: Section = { id: "contact", name: "Contact" };
 
 export default {
   HOME,

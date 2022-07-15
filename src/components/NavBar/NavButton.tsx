@@ -1,11 +1,17 @@
 import { Box, Button } from "@mui/material";
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
 
-import PropTypes from "prop-types";
+import { SectionId } from "types";
 import useSx from "./useNavButtonSx";
 
-const NavButton = ({ label, id, active }) => {
-  const sx = useSx({ active });
+interface NavButtonProps {
+  label: string,
+  id: SectionId,
+  active: boolean
+}
+
+const NavButton: FC<NavButtonProps> = ({ label, id, active }) => {
+  const sx = useSx(active);
 
   return (
     <Button color={active ? "primary" : "inherit"} href={`#${id}`}>
@@ -13,12 +19,6 @@ const NavButton = ({ label, id, active }) => {
       <Box component="span" sx={sx.active} />
     </Button>
   );
-};
-
-NavButton.propTypes = {
-  label: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired
 };
 
 NavButton.whyDidYouRender = true;

@@ -1,6 +1,6 @@
-import { AppBar, Box, Collapse, Container, IconButton, List, Stack, Toolbar, useMediaQuery } from "@mui/material";
+import { AppBar, Box, Collapse, Container, IconButton, List, Stack, Theme, Toolbar, useMediaQuery } from "@mui/material";
 import { CloseRounded as Close, MenuRounded as Menu } from "@mui/icons-material";
-import React, { memo, useEffect, useState } from "react";
+import React, { FC, memo, useEffect, useState } from "react";
 
 import { ClickAwayListener } from "@mui/base";
 import Logo from "./Logo";
@@ -10,9 +10,9 @@ import nav from "constants/nav";
 import useActiveSectionId from "hooks/useActiveSectionId";
 import useSx from "./useNavBarSx";
 
-const NavBar = () => {
+const NavBar: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const mdUp = useMediaQuery(theme => theme.breakpoints.up("md"));
+  const mdUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("md"));
   const activeSectionId = useActiveSectionId();
   const sx = useSx();
 
