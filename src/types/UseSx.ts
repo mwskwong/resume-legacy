@@ -1,7 +1,7 @@
 import { SxProps, Theme } from "@mui/material";
 
 interface UseSx {
-  (args?: { sx: SxProps<Theme> }): {
+  (args?: { sx?: SxProps<Theme> }): {
     [key: string]: SxProps<Theme>
   }
 }

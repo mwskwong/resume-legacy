@@ -1,6 +1,6 @@
 import { UseSx } from "types";
 
-const useSx: UseSx = ({ sx }) => ({
+const useSx: UseSx = arg => ({
   root: {
     display: "block",
     bottom: "-1px",
@@ -12,7 +12,7 @@ const useSx: UseSx = ({ sx }) => ({
     userSelect: "none",
     verticalAlign: "middle",
     overflow: "hidden",
-    ...sx
+    ...arg?.sx
   }
 });
 
