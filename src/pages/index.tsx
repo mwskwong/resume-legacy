@@ -1,6 +1,5 @@
+import { PageProps, graphql } from "gatsby";
 import React, { FC } from "react";
-
-import { PageProps } from "gatsby";
 
 // styles
 const pageStyles = {
@@ -140,7 +139,7 @@ const links = [
 ];
 
 // markup
-const IndexPage: FC<PageProps> = () => {
+const IndexPage: FC<PageProps<Queries.IndexPageQuery>> = () => {
   return (
     <main style={pageStyles}>
       <title>Home Page</title>
@@ -193,5 +192,15 @@ const IndexPage: FC<PageProps> = () => {
     </main>
   );
 };
+
+export const query = graphql`
+  query IndexPage {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
 
 export default IndexPage;
