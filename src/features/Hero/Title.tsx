@@ -1,29 +1,31 @@
 import { Box, Typography } from "@mui/material";
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { FC, useEffect, useMemo, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import TypeIt from "typeit";
 import useSx from "./useTitleSx";
 
-const Title = () => {
+const Title: FC = () => {
   const sx = useSx();
   const typeItRef = useRef();
-  const { name, occupationNodes } = useStaticQuery(graphql`{
-    name: contentfulName {
-      firstName
-      lastName
-    }
-    occupationNodes: allContentfulOccupation(sort: {fields: title}) {
-      nodes {
-        title
+  const { name, allContentfulOccupation: { nodes: occupations } } = useStaticQuery<Queries.HeroTitleQuery>(graphql`
+    query HeroTitle {
+      name: contentfulName {
+        firstName
+        lastName
+      }
+      allContentfulOccupation(sort: {fields: title}) {
+        nodes {
+          title
+        }
       }
     }
-  }`);
+  `);
 
   const strings = useMemo(() => [
-    ...occupationNodes.nodes.map(({ title }) => `A ${title}.`),
-    `${name.firstName} ${name.lastName}.`
-  ], [name.firstName, name.lastName, occupationNodes.nodes]);
+    ...occupations.map(({ title }) => `A ${title}.`),
+    `${name?.firstName} ${name?.lastName}.`
+  ], [name?.firstName, name?.lastName, occupations]);
 
   useEffect(() => {
     const delays = {
@@ -31,6 +33,8 @@ const Title = () => {
       afterTyping: 1500
     };
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore: TypeIt is not working with TS yet
     const typeIt = new TypeIt(typeItRef.current, {
       startDelay: delays.afterTyping,
       startDelete: true,

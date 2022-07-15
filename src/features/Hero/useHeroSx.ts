@@ -1,11 +1,14 @@
-const useSx = () => ({
+import { UseSx } from "types";
+
+const useSx: UseSx = sx => ({
   container: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
-    minHeight: "100vh"
+    minHeight: "100vh",
+    ...sx
   },
   animationWrapper: {
     width: "100%",

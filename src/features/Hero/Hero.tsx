@@ -1,15 +1,16 @@
 import { Box, Container } from "@mui/material";
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
 
 import ArcticLandscape from "components/illustrations/ArcticLandscape";
 import DownloadResumeButton from "./DownloadResumeButton";
 import { HOME } from "constants/nav";
+import { SectionProps } from "types";
 import SocialMedia from "components/SocialMedia";
 import Title from "./Title";
 import useSx from "./useHeroSx";
 
-const Hero = () => {
-  const sx = useSx();
+const Hero: FC<SectionProps> = ({ sx: sxProp }) => {
+  const sx = useSx(sxProp);
 
   return (
     <Container component="section" sx={sx.container} id={HOME.id}>
