@@ -1,11 +1,14 @@
 import { Box, Divider, Typography } from "@mui/material";
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
 
-import PropTypes from "prop-types";
 import { AcUnitRounded as Snow } from "@mui/icons-material";
-import useSx from "./useSectionHeaderSx";
+import useSx from "./useSx";
 
-const SectionHeader = ({ heading }) => {
+interface SectionHeadingProps {
+  heading: string
+}
+
+const SectionHeading: FC<SectionHeadingProps> = ({ heading }) => {
   const sx = useSx();
 
   return (
@@ -22,10 +25,6 @@ const SectionHeader = ({ heading }) => {
   );
 };
 
-SectionHeader.propTypes = {
-  heading: PropTypes.string.isRequired
-};
+SectionHeading.whyDidYouRender = true;
 
-SectionHeader.whyDidYouRender = true;
-
-export default memo(SectionHeader);
+export default memo(SectionHeading);
