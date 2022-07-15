@@ -1,54 +1,50 @@
+import { Box, Button, Container, Typography } from "@mui/material";
+import { FC, UseSx } from "types";
 import { Link, PageProps } from "gatsby";
-import React, { FC } from "react";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif"
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320
-};
+import Arctic404 from "components/illustrations/Arctic404";
+import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
+import React from "react";
+import SEO from "components/SEO";
 
-const paragraphStyles = {
-  marginBottom: 48
-};
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4
-};
+const useSx: UseSx = () => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "100vh",
+    py: 4
+  },
+  animationContainer: {
+    width: "100%",
+    maxWidth: 430
+  },
+  notFound: {
+    my: 4,
+    textAlign: "center"
+  }
+});
 
-// markup
 const NotFoundPage: FC<PageProps> = () => {
+  const sx = useSx();
+
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Container component="main" sx={sx.root}>
+      <SEO title="Not Found" />
+      <Box sx={sx.animationContainer}>
+        <Arctic404 />
+      </Box>
+      <Typography variant="h5" component="h1" sx={sx.notFound}>
+        The page you were looking for does not exist.
+      </Typography>
+      <Button variant="outlined" color="inherit" size="large" startIcon={<ArrowLeft />} component={Link} to="/">
+        back to home
+      </Button>
+    </Container>
   );
 };
+
+NotFoundPage.whyDidYouRender = true;
 
 export default NotFoundPage;

@@ -1,8 +1,10 @@
-import React, { forwardRef } from "react";
+import React, { HTMLAttributes } from "react";
 import { nord4, nord6 } from "nord";
 
-const CloudBottom = forwardRef((props, ref) => (
-  <g ref={ref} {...props}>
+import { FC } from "types";
+
+const CloudBottom: FC<HTMLAttributes<SVGGElement>> = props => (
+  <g  {...props}>
     <path
       d="M140.948 279.726v-.306a6.333 6.333 0 0 1 6.333-6.333h94.625a6.333 6.333 0 0 0 0-12.665h-1.249a6.332 6.332 0 0 1-6.332-6.332v-.306a6.333 6.333 0 0 1 6.332-6.333h72.089a6.333 6.333 0 0 1 6.333 6.333v.306a6.332 6.332 0 0 1-6.333 6.332h-24.622a6.332 6.332 0 1 0 0 12.665h1.345a6.332 6.332 0 0 1 6.332 6.333v.306a6.332 6.332 0 0 1-6.332 6.332h-26.386a6.332 6.332 0 1 0 0 12.665h61.068a6.332 6.332 0 0 1 6.332 6.333v.306a6.332 6.332 0 0 1-6.332 6.332H173.775a6.333 6.333 0 0 1-6.333-6.332v-.306a6.333 6.333 0 0 1 6.333-6.333h4.016a6.332 6.332 0 1 0 0-12.665H147.28a6.332 6.332 0 0 1-6.332-6.332z"
       fill={nord6}
@@ -12,9 +14,8 @@ const CloudBottom = forwardRef((props, ref) => (
       fill={nord4}
     />
   </g>
-));
+);
 
-CloudBottom.displayName = "CloudBottom";
 CloudBottom.whyDidYouRender = true;
 
 export default CloudBottom;
