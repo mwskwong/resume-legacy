@@ -1,8 +1,10 @@
-const useSx = ({ sxProp }) => ({
+import { UseSx } from "types";
+
+const useSx: UseSx = sx => ({
   root: {
     color: "text.secondary",
     py: 4,
-    ...sxProp
+    ...sx
   },
   gridContainer: {
     alignItems: "center",

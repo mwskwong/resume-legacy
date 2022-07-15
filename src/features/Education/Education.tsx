@@ -7,13 +7,10 @@ import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import PropTypes from "prop-types";
 import SectionHeading from "components/SectionHeading";
+import { SectionProps } from "types";
 import useSx from "./useEducationSx";
 
-type EducationProps = {
-  sx: SxProps<Theme>
-}
-
-const Education: FC<EducationProps> = ({ sx: sxProp }) => {
+const Education: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
 
   return (
