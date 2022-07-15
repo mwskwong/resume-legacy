@@ -1,4 +1,6 @@
-// workaround of GraphQL Typegen doesn't work wth query in gatsby-plugin-sitemap
+/// <reference types="@welldone-software/why-did-you-render" />
+
+// workaround of GraphQL Typegen doesn't work wth query in gatsby-
 declare namespace Queries {
   type SitemapQuery = {
     site: {
@@ -12,5 +14,24 @@ declare namespace Queries {
     allPDF: {
       nodes: { publicURL: string }[]
     }
+  }
+}
+
+// Extra fields supported by MUI
+declare namespace React {
+  interface FunctionComponent {
+    muiName?: string
+  }
+
+  interface VoidFunctionComponent {
+    muiName?: string
+  }
+
+  interface ExoticComponent {
+    muiName?: string
+  }
+
+  namespace Component {
+    const muiName: string;
   }
 }
