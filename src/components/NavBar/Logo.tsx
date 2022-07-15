@@ -7,7 +7,7 @@ import useSx from "./useLogoSx";
 
 const Logo: FC = () => {
   const sx = useSx();
-  const { name }: Queries.LogoQuery = useStaticQuery(graphql`
+  const { name } = useStaticQuery<Queries.LogoQuery>(graphql`
     query Logo {
       name: contentfulName {
         firstName
