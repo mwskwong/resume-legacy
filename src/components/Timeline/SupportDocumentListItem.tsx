@@ -1,17 +1,14 @@
 import * as styles from "./support-document-list-item.module.css";
 
-import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { ListItem, ListItemAvatar, ListItemButton, ListItemText } from "@mui/material";
 import React, { FC } from "react";
 
+import SupportDocument from "./SupportDocument";
 import useSx from "./useSupportDocumentListItemSx";
 
-interface SupportDocumentListItemProps {
-  supportDocument: {
-    title: string,
-    url: string,
-    thumbnail: ImageDataLike
-  }
+type SupportDocumentListItemProps = {
+  supportDocument: SupportDocument
 }
 
 const SupportDocumentListItem: FC<SupportDocumentListItemProps> = ({ supportDocument: { title, url, thumbnail } }) => {

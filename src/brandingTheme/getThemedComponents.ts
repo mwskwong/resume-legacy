@@ -4,9 +4,7 @@ import { Theme, ThemeOptions } from "@mui/material";
 
 import { alpha } from "@mui/system";
 
-interface GetThemedComponents {
-  (theme: Theme): ThemeOptions
-}
+type GetThemedComponents = (theme: Theme) => ThemeOptions
 
 const getThemedComponents: GetThemedComponents = theme => ({
   unstable_strictMode: true,

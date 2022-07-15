@@ -1,22 +1,11 @@
 import React, { FC } from "react";
 
-import { ImageDataLike } from "gatsby-plugin-image";
 import { Timeline as MuiTimeline } from "@mui/lab";
 import TimelineItem from "./TimelineItem";
+import TimelineItemProps from "./TimelineItemData";
 
-interface TimelineProps {
-  data: {
-    from: string,
-    to: string,
-    title: string,
-    subtitle: string,
-    contents?: string[],
-    supportDocuments: {
-      title: string,
-      url: string,
-      thumbnail: ImageDataLike
-    }[]
-  }[]
+type TimelineProps = {
+  data: TimelineItemProps[]
 }
 
 const Timeline: FC<TimelineProps> = ({ data }) => (

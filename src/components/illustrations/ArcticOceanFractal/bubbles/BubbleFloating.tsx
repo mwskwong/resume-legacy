@@ -2,7 +2,7 @@ import { keyframes } from "@emotion/react";
 import { nord3 } from "nord";
 import styled from "@emotion/styled";
 
-interface BubbleFloatingProps {
+type BubbleFloatingProps = {
   animDelay: number
 }
 

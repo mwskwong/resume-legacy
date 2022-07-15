@@ -9,23 +9,12 @@ import {
 } from "@mui/lab";
 import React, { FC, memo } from "react";
 
-import { ImageDataLike } from "gatsby-plugin-image";
 import SupportDocumentListItem from "./SupportDocumentListItem";
+import TimelineItemData from "./TimelineItemData";
 import useSx from "./useTImelineItemSx";
 
-interface TimelineItemProps {
-  data: {
-    from: string,
-    to: string,
-    title: string,
-    subtitle: string,
-    contents?: string[],
-    supportDocuments: {
-      title: string,
-      url: string,
-      thumbnail: ImageDataLike
-    }[]
-  }
+type TimelineItemProps = {
+  data: TimelineItemData
 }
 
 const dateTimeFormat = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" });

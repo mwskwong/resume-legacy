@@ -4,7 +4,7 @@ import React, { FC, memo } from "react";
 import { SectionId } from "types";
 import useSx from "./useNavButtonSx";
 
-interface NavButtonProps {
+type NavButtonProps = {
   label: string,
   id: SectionId,
   active: boolean

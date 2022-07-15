@@ -8,7 +8,7 @@ import StackOverflow from "components/icons/StackOverflow";
 import camelCase from "camelcase";
 import useSx from "./useSx";
 
-interface SocialMediaProps {
+type SocialMediaProps = {
   sx?: SxProps<Theme>
 }
 

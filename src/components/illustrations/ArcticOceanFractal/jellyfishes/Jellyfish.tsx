@@ -3,15 +3,15 @@ import React, { FC } from "react";
 import { SerializedStyles } from "@emotion/react";
 import styled from "@emotion/styled";
 
-interface TentacleProps {
+type TentacleProps = {
   animation: SerializedStyles,
 }
 
-interface GProps {
+type GProps = {
   animation: SerializedStyles,
 }
 
-interface JellyfishProps {
+type JellyfishProps = {
   bodyAnimation: SerializedStyles,
   bodyPaths: {
     d: string,

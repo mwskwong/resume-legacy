@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { nord10, nord7, nord8, nord9 } from "nord";
 
-interface GleamGradientProps {
+type GleamGradientProps = {
   gradientId: string
 }
 

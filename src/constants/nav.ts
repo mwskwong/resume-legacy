@@ -1,6 +1,6 @@
 import { SectionId } from "types";
 
-interface Section {
+type Section = {
   id: SectionId,
   name: string
 }

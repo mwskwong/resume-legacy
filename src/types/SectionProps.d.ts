@@ -1,6 +1,6 @@
 import { SxProps, Theme } from "@mui/material";
 
-interface SectionProps {
+type SectionProps = {
   sx: SxProps<Theme>
 }
 

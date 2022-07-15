@@ -4,7 +4,7 @@ import React, { FC, memo } from "react";
 import { SectionId } from "types";
 import useSx from "./useNavListItemSx";
 
-interface NavListItemProps {
+type NavListItemProps = {
   label: string,
   id: SectionId,
   active: boolean

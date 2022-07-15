@@ -4,7 +4,7 @@ import React, { FC, memo } from "react";
 import { AcUnitRounded as Snow } from "@mui/icons-material";
 import useSx from "./useSx";
 
-interface SectionHeadingProps {
+type SectionHeadingProps = {
   heading: string
 }
 
