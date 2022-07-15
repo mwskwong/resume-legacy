@@ -31,14 +31,14 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/constants`
       }
     },
-    // {
-    //   resolve: "gatsby-source-contentful",
-    //   options: {
-    //     accessToken: CONTENTFUL_ACCESS_TOKEN,
-    //     spaceId: "zz9cwhc5t97i",
-    //     downloadLocal: true
-    //   }
-    // },
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        accessToken: CONTENTFUL_ACCESS_TOKEN,
+        spaceId: "zz9cwhc5t97i",
+        downloadLocal: true
+      }
+    },
     "gatsby-plugin-emotion",
     "gatsby-plugin-material-ui",
     "gatsby-plugin-image",
@@ -55,16 +55,8 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        /*
-        TODO: Include the following when Contentful is accessible
-        allPDF(filter: {ext: {eq: ".pdf"}}) {
-          nodes {
-            publicURL
-          }
-        }
-        */
         query: `
-          query SitemapQuery {
+          query Sitemap {
             site {
               siteMetadata {
                 siteUrl
@@ -75,15 +67,20 @@ const config: GatsbyConfig = {
                 path
               }
             }
+            allPDF: allFile(filter: {ext: {eq: ".pdf"}}) {
+              nodes {
+                publicURL
+              }
+            }
           }
         `,
         resolvePages: ({
-          allSitePage: { nodes: pages }
-          // allPDF: { nodes: pdfs }
+          allSitePage: { nodes: pages },
+          allPDF: { nodes: pdfs }
         }: Queries.SitemapQuery) =>
           [
-            ...pages
-            // ...(pdfs.map(({ publicURL }) => ({ path: publicURL })))
+            ...pages,
+            ...(pdfs.map(({ publicURL }) => ({ path: publicURL })))
           ]
       }
     },
