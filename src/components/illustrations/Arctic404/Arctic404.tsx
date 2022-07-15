@@ -1,8 +1,8 @@
+import React, { FC } from "react";
+
 import CloudBottom from "./CloudBottom";
 import CloudTop from "./CloudTop";
-import { FC } from "types";
 import NightSkyCanvas from "./NightSkyCanvas";
-import React from "react";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 

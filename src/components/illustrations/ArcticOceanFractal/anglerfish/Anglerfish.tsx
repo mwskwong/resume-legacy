@@ -1,10 +1,10 @@
+import React, { FC, HTMLAttributes } from "react";
 import { nord10, nord13, nord3, nord4, nord7, nord8, nord9 } from "nord";
 
 import LightRing from "./LightRing";
-import React from "react";
 import styled from "@emotion/styled";
 
-const Group = styled.g`
+const G = styled.g`
   transform: translateX(20px) translateY(8px);
 `;
 
@@ -13,8 +13,8 @@ const EyeLens = styled.path`
   transform-origin: 508.401px 394.359px;
 `;
 
-const Anglerfish = props => (
-  <Group {...props}>
+const Anglerfish: FC<HTMLAttributes<SVGGElement>> = props => (
+  <G {...props}>
     <path
       d="M510.92 373.25c3.66-.656 7.114-2.281 11.008-1.953 1.919.16 3.402.576 4.595 2.109 4.657 5.984 8.696 12.277 10.2 19.873-.471 1.441-1.643 2.094-2.936 2.611-9.708 3.871-19.372 7.854-29.035 11.836-1.344.553-2.747 1.129-4.2.217-.73-.623-1.335-1.361-1.653-2.256-2.376-6.645-1.99-12.734 1.152-19.252.353-.676.662-1.316.938-1.861 2.235-4.717 6.133-7.976 9.931-11.324z"
       fill={nord8}
@@ -46,7 +46,7 @@ const Anglerfish = props => (
       d="M468.611 385.336c.358 1.316.878 2.135 2.146 2.779 1.642.836 2.81 2.359 1.328 4.359-1.141 1.541-2.707 2.156-4.349.996-1.747-1.234-1.71-3.064-.583-4.699.722-1.046 1.497-1.984 1.458-3.435z"
       fill={nord13}
     />
-  </Group>
+  </G>
 );
 
 Anglerfish.whyDidYouRender = true;

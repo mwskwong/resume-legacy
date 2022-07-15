@@ -1,7 +1,5 @@
-import React, { HTMLAttributes } from "react";
+import React, { FC, HTMLAttributes } from "react";
 import { nord4, nord6 } from "nord";
-
-import { FC } from "types";
 
 const CloudTop: FC<HTMLAttributes<SVGGElement>> = props => (
   <g {...props}>

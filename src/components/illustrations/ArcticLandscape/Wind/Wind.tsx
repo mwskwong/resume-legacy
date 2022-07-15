@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { FC } from "types";
+import { FC } from "react";
 import { jsx } from "@emotion/react";
 import { outline } from "../styles";
 import { outlinePath } from "./pathData";

@@ -1,7 +1,6 @@
 import { Box, BoxProps } from "@mui/material";
+import React, { FC } from "react";
 
-import { FC } from "types";
-import React from "react";
 import useSx from "./useDividerSvgSx";
 
 const DividerSvg: FC<BoxProps<"svg">> = ({ sx: sxProp, ...props }) => {

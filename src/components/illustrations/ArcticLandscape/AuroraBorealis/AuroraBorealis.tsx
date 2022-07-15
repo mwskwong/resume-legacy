@@ -1,7 +1,7 @@
-import { FC } from "types";
+import React, { FC } from "react";
+
 import Fill from "./Fill";
 import Outlines from "./Outline";
-import React from "react";
 
 const AuroraBorealis: FC = () => (
   <>

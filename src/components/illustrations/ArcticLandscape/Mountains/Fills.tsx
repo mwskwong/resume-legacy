@@ -1,6 +1,5 @@
-import React, { HTMLAttributes } from "react";
+import React, { FC, HTMLAttributes } from "react";
 
-import { FC } from "types";
 import { fillPaths } from "./pathData";
 import { nord8 } from "nord";
 

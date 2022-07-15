@@ -1,6 +1,5 @@
-import React, { Fragment } from "react";
+import React, { FC } from "react";
 
-import { FC } from "types";
 import GleamGradient from "./GleamGradient";
 import { fillPath } from "./pathData";
 

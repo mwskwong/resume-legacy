@@ -1,7 +1,6 @@
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { FC } from "types";
 import { Helmet } from "react-helmet";
 
 interface SEOProps {

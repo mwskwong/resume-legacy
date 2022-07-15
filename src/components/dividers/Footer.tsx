@@ -1,7 +1,7 @@
+import React, { FC } from "react";
+
 import { BoxProps } from "@mui/material";
 import DividerSvg from "./DividerSvg";
-import { FC } from "types";
-import React from "react";
 import { darken } from "@mui/system";
 import { nord1 } from "nord";
 

@@ -1,6 +1,5 @@
-import React, { Fragment } from "react";
+import React, { FC } from "react";
 
-import { FC } from "types";
 import Fills from "./Fills";
 import Outlines from "./Outlines";
 

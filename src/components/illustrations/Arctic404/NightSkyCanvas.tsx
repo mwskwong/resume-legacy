@@ -1,7 +1,5 @@
-import React, { HTMLAttributes } from "react";
+import React, { FC, HTMLAttributes } from "react";
 import { nord1, nord2, nord3, nord4, nord5, nord6 } from "nord";
-
-import { FC } from "types";
 
 const NightSkyCanvas: FC<HTMLAttributes<SVGGElement>> = props => (
   <g {...props}>

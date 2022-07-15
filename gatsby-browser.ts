@@ -1,3 +1,4 @@
+/// <reference types="@welldone-software/why-did-you-render" />
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 import { GatsbyBrowser } from "gatsby";

@@ -1,5 +1,5 @@
-import { FC } from "types";
-import React from "react";
+import React, { FC } from "react";
+
 import { nord6 } from "nord";
 import { peaksPath } from "./pathData";
 
