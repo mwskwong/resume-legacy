@@ -2,11 +2,11 @@ import SupportDocument from "./SupportDocument";
 
 type TimelineItemData = {
   from: string,
-  to: string,
+  to?: string,
   title: string,
   subtitle: string,
   contents?: string[],
-  supportDocuments: SupportDocument[]
+  supportDocuments?: SupportDocument[]
 }
 
 export default TimelineItemData;

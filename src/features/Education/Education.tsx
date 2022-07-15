@@ -1,5 +1,5 @@
-import { Box, Container, Grid, Stack } from "@mui/material";
-import React, { memo } from "react";
+import { Box, Container, Grid, Stack, SxProps, Theme } from "@mui/material";
+import React, { FC, memo } from "react";
 
 import ArcticOceanFractal from "components/illustrations/ArcticOceanFractal";
 import Courses from "./Courses";
@@ -9,7 +9,11 @@ import PropTypes from "prop-types";
 import SectionHeader from "components/SectionHeader";
 import useSx from "./useEducationSx";
 
-const Education = ({ sx: sxProp }) => {
+type EducationProps = {
+  sx: SxProps<Theme>
+}
+
+const Education: FC<EducationProps> = ({ sx: sxProp }) => {
   const sx = useSx({ sxProp });
 
   return (

@@ -1,5 +1,5 @@
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
-import React, { Fragment } from "react";
+import React, { ElementType, FC } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import EnterpriseDB from "components/icons/EnterpriseDB";
@@ -9,50 +9,52 @@ import Udemy from "components/icons/Udemy";
 import camelCase from "camelcase";
 import useSx from "./useCoursesSx";
 
-const Icons = {
+const Icons: { [key: string]: ElementType } = {
   microsoft: Microsoft,
   oracle: Oracle,
   udemy: Udemy,
   enterpriseDb: EnterpriseDB
 };
 
-const Courses = () => {
+const Courses: FC = () => {
   const sx = useSx();
-  const { courseNodes } = useStaticQuery(graphql`{
-    courseNodes: allContentfulCourse(sort: {fields: name}) {
-      nodes {
-        name
-        institution
-        certification {
-          localFile {
-            publicURL
+  const { allContentfulCourse: { nodes: courseNodes } } = useStaticQuery<Queries.CoursesQuery>(graphql`
+    query Courses {
+      allContentfulCourse(sort: {fields: name}) {
+        nodes {
+          name
+          institution
+          certification {
+            localFile {
+              publicURL
+            }
           }
         }
       }
     }
-  }`);
+  `);
 
-  const courses = courseNodes.nodes.map(({ certification, ...node }) => ({
-    fileUrl: certification ? certification.localFile.publicURL : undefined,
+  const courses = courseNodes.map(({ certification, ...node }) => ({
+    fileUrl: certification?.localFile?.publicURL,
     ...node
   }));
 
   return (
-    <Fragment>
+    <>
       <Typography sx={sx.title} variant="subtitle2" component="h3">
         Courses
       </Typography>
       <List dense>
         {courses.map(({ name, institution, fileUrl }) => {
-          const Icon = Icons[camelCase(institution)];
+          const Icon = Icons[camelCase(institution || "")];
 
           const content = (
-            <Fragment>
+            <>
               <ListItemIcon>
                 <Icon />
               </ListItemIcon>
               <ListItemText primary={name} />
-            </Fragment>
+            </>
           );
 
           if (fileUrl) {
@@ -72,7 +74,7 @@ const Courses = () => {
           }
         })}
       </List>
-    </Fragment>
+    </>
   );
 };
 
