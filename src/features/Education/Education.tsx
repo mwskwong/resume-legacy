@@ -6,7 +6,7 @@ import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import PropTypes from "prop-types";
-import SectionHeader from "components/SectionHeader";
+import SectionHeading from "components/SectionHeading";
 import useSx from "./useEducationSx";
 
 type EducationProps = {
@@ -14,13 +14,13 @@ type EducationProps = {
 }
 
 const Education: FC<EducationProps> = ({ sx: sxProp }) => {
-  const sx = useSx({ sxProp });
+  const sx = useSx(sxProp);
 
   return (
     <Box component="section" id={EDUCATION.id} sx={sx.root}>
       <Container>
         <Stack spacing={6}>
-          <SectionHeader heading="Education" />
+          <SectionHeading heading="Education" />
           <EducationTimeline />
           <div>
             <Grid container spacing={6} sx={sx.gridContainer}>
