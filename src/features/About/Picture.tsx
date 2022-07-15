@@ -17,7 +17,7 @@ const Picture: FC = () => {
     }
   `);
 
-  const image = picture?.gatsbyImage ? getImage(picture) : undefined;
+  const image = picture?.gatsbyImage ? getImage(picture.gatsbyImage) : undefined;
 
   if (image) {
     return (

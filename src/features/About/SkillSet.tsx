@@ -6,14 +6,14 @@ import {
   TerminalRounded as Terminal
 } from "@mui/icons-material";
 import { Box, Chip, Grid, Stack, Typography } from "@mui/material";
-import React, { FC } from "react";
+import React, { ElementType, FC } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Database } from "mdi-material-ui";
 import camelCase from "camelcase";
 import useSx from "./useSkillSetSx";
 
-const Icons = {
+const Icons: { [key: string]: ElementType } = {
   backend: Terminal,
   cloud: Cloud,
   dataOps: AllInclusive,
@@ -45,7 +45,7 @@ const SkillSet: FC = () => {
       </Typography>
       <Grid container spacing={6} sx={sx.gridContainer}>
         {skillNodes.group.map(({ nodes: skills, fieldValue: type }) => {
-          const Icon = Icons[camelCase(type)];
+          const Icon = Icons[camelCase(type || "")];
 
           return (
             <Grid key={type} item lg={4} sm={6} xs={12}>

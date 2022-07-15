@@ -36,8 +36,7 @@ const SocialMedia: FC<SocialMediaProps> = ({ sx: sxProp }) => {
   return (
     <Stack spacing={1} direction="row" sx={sx.root}>
       {socialMedia.map(({ name, link }) => {
-        const key = camelCase(name || "");
-        const Icon = Icons[key];
+        const Icon = Icons[camelCase(name || "")];
 
         return (
           <IconButton key={name} color="inherit" aria-label={name || undefined} component="a" href={link || undefined}>
