@@ -1,9 +1,9 @@
-import React, { memo } from "react";
+import React, { FC, HTMLAttributes, memo } from "react";
 
 import BubbleGroundHole from "./BubbleGroundHole";
 import { groundHoleTopCircles } from "./pathData";
 
-const BubblesGroundHoleTop = props => (
+const BubblesGroundHoleTop: FC<HTMLAttributes<SVGCircleElement>> = props => (
   <g>
     {groundHoleTopCircles.map(({ cx, cy, r }, index) => (
       <BubbleGroundHole key={`${cx}-${cy}-${r}`} animDelay={index} cx={cx} cy={cy} r={r} {...props} />

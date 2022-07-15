@@ -1,6 +1,6 @@
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
 import { css, keyframes } from "@emotion/react";
-import { leftSmallPaths, leftSmallTentaclePaths } from "./pathData";
+import { leftPaths, leftTentaclePaths } from "./pathData";
 
 import Jellyfish from "./Jellyfish";
 
@@ -15,22 +15,22 @@ const animFloat = keyframes`
 `;
 
 const bodyAnimStyle = css`
-  animation: ${animFloat} 8s ease-in-out infinite alternate;
+  animation: ${animFloat} 3s ease-in-out infinite alternate;
 `;
 
 const tentaclesAnimStyle = css`
-  animation: ${animTentacleSwing} 8s linear 1.8s infinite alternate;
+  animation: ${animTentacleSwing} 3s linear 1.8s infinite alternate;
 `;
 
-const JellyfishLeftSmall = () => (
+const JellyfishLeft: FC = () => (
   <Jellyfish
     bodyAnimation={bodyAnimStyle}
-    bodyPaths={leftSmallPaths}
-    tentaclePaths={leftSmallTentaclePaths}
+    bodyPaths={leftPaths}
+    tentaclePaths={leftTentaclePaths}
     tentaclesAnimation={tentaclesAnimStyle}
   />
 );
 
-JellyfishLeftSmall.whiDidYouRender = true;
+JellyfishLeft.whyDidYouRender = true;
 
-export default memo(JellyfishLeftSmall);
+export default memo(JellyfishLeft);

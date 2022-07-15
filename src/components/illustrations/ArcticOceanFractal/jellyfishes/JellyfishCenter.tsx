@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
 import { centerPaths, centerTentaclePaths } from "./pathData";
 import { css, keyframes } from "@emotion/react";
 
@@ -22,7 +22,7 @@ const tentaclesAnimStyle = css`
   animation: ${animTentacleSwing} 4s linear 3s infinite alternate;
 `;
 
-const JellyfishCenter = () => (
+const JellyfishCenter: FC = () => (
   <Jellyfish
     bodyAnimation={bodyAnimStyle}
     bodyPaths={centerPaths}

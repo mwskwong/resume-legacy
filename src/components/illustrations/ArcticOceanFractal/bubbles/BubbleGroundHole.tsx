@@ -2,6 +2,10 @@ import { keyframes } from "@emotion/react";
 import { nord4 } from "nord";
 import styled from "@emotion/styled";
 
+interface BubbleGroundHoleProps {
+  animDelay: number
+}
+
 const animBubbleRiseUp = keyframes`
   0% {
     transform: translate3d(0.2%, 0, 0);
@@ -35,7 +39,7 @@ const animBubbleRiseUp = keyframes`
   }
 `;
 
-const BubbleGroundHole = styled.circle`
+const BubbleGroundHole = styled.circle<BubbleGroundHoleProps>`
   animation: ${animBubbleRiseUp} 5s linear ${({ animDelay }) => animDelay}s infinite;
   fill: ${nord4};
   opacity: 0;
