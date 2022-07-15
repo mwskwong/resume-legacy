@@ -1,7 +1,10 @@
+import { SuccessBody } from "@formspree/core/forms";
 
 const url = "https://formspree.io/f/mrgjykpa";
 
-const submitContactForm = async ({ name, email, subject, message }) => {
+type SubmitContactForm = (arg: { name: string, email: string, subject: string, message: string }) => Promise<SuccessBody>;
+
+const submitContactForm: SubmitContactForm = async ({ name, email, subject, message }) => {
   const response = await fetch(url, {
     method: "POST",
     headers: {

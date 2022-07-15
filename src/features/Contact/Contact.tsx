@@ -1,17 +1,19 @@
-import { Box, Container, Grid, Stack, useMediaQuery } from "@mui/material";
+import { Box, Container, Grid, Stack, Theme, useMediaQuery } from "@mui/material";
 import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
-import React, { memo, useState } from "react";
+import React, { FC, memo, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { object, string } from "nope-validator";
 
 import { CONTACT } from "constants/nav";
+import FormValues from "./FormValues";
 import { LoadingButton } from "@mui/lab";
 import PersonalInfo from "./PersonalInfo";
 import PropTypes from "prop-types";
-import SectionHeader from "components/SectionHeader";
+import SectionHeading from "components/SectionHeading";
+import { SectionProps } from "types";
 import TextField from "./TextField";
 import { nopeResolver } from "@hookform/resolvers/nope";
 import submitContactForm from "./submitContactForm";
-import { useForm } from "react-hook-form";
 import useSx from "./useContactSx";
 
 const schema = object().shape({
@@ -21,17 +23,17 @@ const schema = object().shape({
   message: string().required()
 });
 
-const Contact = ({ sx: sxProp }) => {
-  const sx = useSx({ sxProp });
-  const { control, handleSubmit, reset } = useForm({
+const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
+  const sx = useSx(sxProp);
+  const { control, handleSubmit, reset } = useForm<FormValues>({
     resolver: nopeResolver(schema),
     mode: "onChange",
     defaultValues: { name: "", email: "", subject: "", message: "" }
   });
-  const smDown = useMediaQuery(theme => theme.breakpoints.down("sm"));
-  const [sendEmailStatus, setSendEmailStatus] = useState();
+  const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
+  const [sendEmailStatus, setSendEmailStatus] = useState<"loading" | "success" | "error">();
 
-  const handleFormSubmit = data => {
+  const handleFormSubmit: SubmitHandler<FormValues> = data => {
     setSendEmailStatus("loading");
     submitContactForm(data)
       .then(() => {
@@ -45,7 +47,7 @@ const Contact = ({ sx: sxProp }) => {
     <Box sx={sx.root} component="section" id={CONTACT.id}>
       <Container>
         <Stack spacing={6}>
-          <SectionHeader heading="Get In Touch" />
+          <SectionHeading heading="Get In Touch" />
           <form onSubmit={handleSubmit(handleFormSubmit)}>
             <Grid container spacing={6}>
               <Grid item md={4} xs={12}>
