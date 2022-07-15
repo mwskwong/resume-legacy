@@ -1,19 +1,15 @@
-import { Box, Container, Stack, SxProps, Theme } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
 import React, { FC, memo } from "react";
 
 import { ABOUT } from "constants/nav";
 import Message from "./Message";
 import Picture from "./Picture";
-import PropTypes from "prop-types";
 import SectionHeading from "components/SectionHeading";
+import { SectionProps } from "types";
 import SkillSet from "./SkillSet";
 import useSx from "./useAboutSx";
 
-interface AboutProps {
-  sx: SxProps<Theme>
-}
-
-const About: FC<AboutProps> = ({ sx: sxProp }) => {
+const About: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
 
   return (
@@ -28,10 +24,6 @@ const About: FC<AboutProps> = ({ sx: sxProp }) => {
       </Container>
     </Box>
   );
-};
-
-About.propTypes = {
-  sx: PropTypes.object
 };
 
 About.whyDidYouRender = true;
