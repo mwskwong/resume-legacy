@@ -1,13 +1,20 @@
 import * as styles from "./support-document-list-item.module.css";
 
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
 import { ListItem, ListItemAvatar, ListItemButton, ListItemText } from "@mui/material";
+import React, { FC } from "react";
 
-import PropTypes from "prop-types";
-import React from "react";
 import useSx from "./useSupportDocumentListItemSx";
 
-const SupportDocumentListItem = ({ supportDocument: { title, url, thumbnail } }) => {
+interface SupportDocumentListItemProps {
+  supportDocument: {
+    title: string,
+    url: string,
+    thumbnail: ImageDataLike
+  }
+}
+
+const SupportDocumentListItem: FC<SupportDocumentListItemProps> = ({ supportDocument: { title, url, thumbnail } }) => {
   const image = getImage(thumbnail);
   const sx = useSx();
 
@@ -15,11 +22,16 @@ const SupportDocumentListItem = ({ supportDocument: { title, url, thumbnail } })
     <ListItem disablePadding>
       <ListItemButton component="a" href={url} sx={sx.button}>
         <ListItemAvatar sx={sx.avatar}>
-          <GatsbyImage
-            image={image}
-            alt={`Thumbnail of ${title}`}
-            className={styles.thumbnail}
-          />
+          {
+            image && (
+              <GatsbyImage
+                image={image}
+                alt={`Thumbnail of ${title}`}
+                className={styles.thumbnail}
+              />
+            )
+
+          }
         </ListItemAvatar>
         <ListItemText primary={title} />
       </ListItemButton>
@@ -28,13 +40,6 @@ const SupportDocumentListItem = ({ supportDocument: { title, url, thumbnail } })
 
 };
 
-SupportDocumentListItem.propTypes = {
-  supportDocument: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    thumbnail: PropTypes.object.isRequired
-  })
-};
 SupportDocumentListItem.whyDidYouRender = true;
 
 export default SupportDocumentListItem;

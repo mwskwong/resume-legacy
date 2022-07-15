@@ -7,15 +7,30 @@ import {
   TimelineOppositeContent,
   TimelineSeparator
 } from "@mui/lab";
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
 
-import PropTypes from "prop-types";
+import { ImageDataLike } from "gatsby-plugin-image";
 import SupportDocumentListItem from "./SupportDocumentListItem";
 import useSx from "./useTImelineItemSx";
 
+interface TimelineItemProps {
+  data: {
+    from: string,
+    to: string,
+    title: string,
+    subtitle: string,
+    contents?: string[],
+    supportDocuments: {
+      title: string,
+      url: string,
+      thumbnail: ImageDataLike
+    }[]
+  }
+}
+
 const dateTimeFormat = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" });
 
-const TimelineItem = ({ data }) => {
+const TimelineItem: FC<TimelineItemProps> = ({ data }) => {
   const sx = useSx();
   const from = dateTimeFormat.format(new Date(data.from));
   const to = data.to ? dateTimeFormat.format(new Date(data.to)) : "Present";
@@ -67,22 +82,6 @@ const TimelineItem = ({ data }) => {
   );
 };
 
-TimelineItem.propTypes = {
-  data: PropTypes.shape({
-    from: PropTypes.string.isRequired,
-    to: PropTypes.string,
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string,
-    contents: PropTypes.arrayOf(PropTypes.string),
-    supportDocuments: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-        thumbnail: PropTypes.object.isRequired
-      })
-    )
-  })
-};
 TimelineItem.whyDidYouRender = true;
 
 export default memo(TimelineItem);

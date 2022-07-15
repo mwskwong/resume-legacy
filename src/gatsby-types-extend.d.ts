@@ -35,3 +35,4 @@ declare namespace React {
     const muiName: string;
   }
 }
+
