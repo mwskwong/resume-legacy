@@ -1,8 +1,11 @@
-import React from "react";
+/** @jsx jsx */
+
+import { FC } from "types";
+import { jsx } from "@emotion/react";
 import { outline } from "../styles";
 import { outlinePaths } from "./pathData";
 
-const Outlines = () => (
+const Outlines: FC = () => (
   <g css={outline}>
     {outlinePaths.map((path, index) => <path key={index} d={path} />)}
   </g>

@@ -1,6 +1,7 @@
 import { nord0, nord1 } from "nord";
 import { shadeLinesPath, shadePaths } from "./pathData";
 
+import { FC } from "types";
 import React from "react";
 import styled from "@emotion/styled";
 
@@ -15,7 +16,7 @@ const ShadeLine = styled(Shade)`
   stroke-width: 2;
 `;
 
-const Shades = () => (
+const Shades: FC = () => (
   <g fill={nord0}>
     <ShadeLine d={shadeLinesPath} />
     {shadePaths.map((path, index) => <Shade key={index} d={path} />)}

@@ -1,13 +1,13 @@
-import React, { Fragment } from "react";
-
+import { FC } from "types";
 import Fill from "./Fill";
 import Outlines from "./Outline";
+import React from "react";
 
-const AuroraBorealis = () => (
-  <Fragment>
+const AuroraBorealis: FC = () => (
+  <>
     <Fill />
     <Outlines />
-  </Fragment>
+  </>
 );
 
 AuroraBorealis.whyDidYouRender = true;

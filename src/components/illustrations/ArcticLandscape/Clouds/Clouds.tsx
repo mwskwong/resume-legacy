@@ -1,13 +1,14 @@
 import React, { Fragment } from "react";
 
+import { FC } from "types";
 import Fills from "./Fills";
 import Outlines from "./Outlines";
 
-const Clouds = () => (
-  <Fragment>
+const Clouds: FC = () => (
+  <>
     <Fills />
     <Outlines />
-  </Fragment>
+  </>
 );
 
 Clouds.whyDidYouRender = true;

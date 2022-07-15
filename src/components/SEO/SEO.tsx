@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { FC } from "types";
 import { Helmet } from "react-helmet";
-import PropTypes from "prop-types";
 
 interface SEOProps {
   title?: string
@@ -112,10 +111,6 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
       </script>
     </Helmet>
   );
-};
-
-SEO.propTypes = {
-  title: PropTypes.string
 };
 
 SEO.whyDidYouRender = true;
