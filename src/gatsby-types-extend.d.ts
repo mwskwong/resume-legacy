@@ -10,7 +10,7 @@ declare namespace Queries {
       nodes: string[]
     },
     allPDF: {
-      nodes: { publicURL: string }[]
+      nodes: readonly { publicURL: string }[]
     }
   }
 }

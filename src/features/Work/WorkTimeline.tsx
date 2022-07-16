@@ -3,15 +3,16 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import Timeline from "components/Timeline";
 
-const EducationTimeline: FC = () => {
-  const { allContentfulEducation: { nodes: educationNodes } } = useStaticQuery<Queries.EducationTimelineQuery>(graphql`
-    query EducationTimeline {
-      allContentfulEducation(sort: {fields: from, order: DESC}) {
+const WorkTimeline: FC = () => {
+  const { allContentfulWorkingExperience: { nodes: workNodes } } = useStaticQuery<Queries.WorkTimelineQuery>(graphql`
+    query WorkTimeline {
+      allContentfulWorkingExperience(sort: {order: DESC, fields: from}) {
         nodes {
           from
           to
-          title
-          institution
+          jobTitle
+          company
+          jobDuties
           supportDocuments {
             title
             file {
@@ -26,22 +27,24 @@ const EducationTimeline: FC = () => {
         }
       }
     }
-  `);
+`);
 
-  const educations = educationNodes
-    .map(({ institution, supportDocuments, ...node }) => ({
-      ...node,
-      subtitle: institution,
+  const works = workNodes
+    .map(({ jobTitle, company, jobDuties, supportDocuments, ...node }) => ({
+      title: jobTitle,
+      subtitle: company,
+      contents: jobDuties,
       supportDocuments: supportDocuments?.map(supportDocument => ({
         title: supportDocument?.title,
         url: supportDocument?.file?.localFile?.publicURL,
         thumbnail: supportDocument?.thumbnail?.gatsbyImage
-      }))
+      })),
+      ...node
     }));
 
-  return <Timeline data={educations} />;
+  return <Timeline data={works} />;
 };
 
-EducationTimeline.whyDidYouRender = true;
+WorkTimeline.whyDidYouRender = true;
 
-export default EducationTimeline;
+export default WorkTimeline;

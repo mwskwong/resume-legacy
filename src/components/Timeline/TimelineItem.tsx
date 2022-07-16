@@ -21,7 +21,7 @@ const dateTimeFormat = new Intl.DateTimeFormat("en-US", { month: "short", year: 
 
 const TimelineItem: FC<TimelineItemProps> = ({ data }) => {
   const sx = useSx();
-  const from = dateTimeFormat.format(new Date(data.from));
+  const from = data.from ? dateTimeFormat.format(new Date(data.from)) : "";
   const to = data.to ? dateTimeFormat.format(new Date(data.to)) : "Present";
   const period = `${from} — ${to}`;
   const contents = data.contents || [];
