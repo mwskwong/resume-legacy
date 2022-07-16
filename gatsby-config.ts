@@ -36,7 +36,8 @@ const config: GatsbyConfig = {
       options: {
         accessToken: CONTENTFUL_ACCESS_TOKEN,
         spaceId: "zz9cwhc5t97i",
-        downloadLocal: true
+        downloadLocal: true,
+        enableTags: true
       }
     },
     "gatsby-plugin-emotion",
