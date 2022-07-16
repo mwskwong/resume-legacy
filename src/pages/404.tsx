@@ -1,11 +1,11 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { FC, UseSx } from "types";
 import { Link, PageProps } from "gatsby";
+import React, { FC } from "react";
 
 import Arctic404 from "components/illustrations/Arctic404";
 import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
-import React from "react";
 import SEO from "components/SEO";
+import { UseSx } from "types";
 
 const useSx: UseSx = () => ({
   root: {
