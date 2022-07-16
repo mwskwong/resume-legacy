@@ -12,12 +12,12 @@ type SupportDocumentListItemProps = {
 }
 
 const SupportDocumentListItem: FC<SupportDocumentListItemProps> = ({ supportDocument: { title, url, thumbnail } }) => {
-  const image = getImage(thumbnail);
+  const image = thumbnail && getImage(thumbnail);
   const sx = useSx();
 
   return (
     <ListItem disablePadding>
-      <ListItemButton component="a" href={url} sx={sx.button}>
+      <ListItemButton component="a" href={url ?? undefined} sx={sx.button}>
         <ListItemAvatar sx={sx.avatar}>
           {
             image && (
