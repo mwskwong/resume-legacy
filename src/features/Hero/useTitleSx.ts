@@ -4,10 +4,10 @@ const useSx: UseSx = () => ({
   title: {
     textAlign: "center",
     "@media (max-width: 742px)": {
-      height: theme => `${theme.typography.h1.lineHeight || 1 * 2}em`
+      height: theme => `${Number(theme.typography.h1.lineHeight) * 2}em`
     },
     "@media (max-width: 370px)": {
-      height: theme => `${theme.typography.h1.lineHeight || 1 * 3}em`
+      height: theme => `${Number(theme.typography.h1.lineHeight) * 3}em`
     },
     width: "100%"
   },
