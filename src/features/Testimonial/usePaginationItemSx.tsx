@@ -1,4 +1,11 @@
-const useSx = ({ active }) => ({
+import { UseSx } from "types";
+
+type UsePaginationItemSx = UseSx extends () => infer Return
+  ? (active: boolean) => Return
+  : never;
+
+
+const useSx: UsePaginationItemSx = active => ({
   root: {
     m: .5,
     width: active ? 20 : 8,

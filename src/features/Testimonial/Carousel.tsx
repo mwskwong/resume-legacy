@@ -1,6 +1,6 @@
 import { KeyboardArrowLeftRounded as ArrowLeft, KeyboardArrowRightRounded as ArrowRight } from "@mui/icons-material";
 import { Box, Grid, IconButton, Stack } from "@mui/material";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Pagination from "./Pagination";
@@ -8,33 +8,30 @@ import Reference from "./Reference";
 import SwipeableViews from "react-swipeable-views";
 import useSx from "./useCarouselSx";
 
-const Carousel = () => {
+const Carousel: FC = () => {
   const sx = useSx();
   const [index, setIndex] = useState(0);
-  const { referenceNodes } = useStaticQuery(graphql`{
-    referenceNodes: allContentfulTestimonial(sort: {fields: name}) {
-      nodes {
-        name
-        jobTitle
-        refereePicture {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(aspectRatio: 1, width: 60)
-            }
+  const { allContentfulTestimonial: { nodes: referenceNodes } } = useStaticQuery<Queries.CarouselQuery>(graphql`
+    query Carousel {
+      allContentfulTestimonial(sort: {fields: name}) {
+        nodes {
+          name
+          jobTitle
+          refereePicture {
+            gatsbyImage(aspectRatio: 1, width: 60)
           }
-        }
-        company
-        comment {
-          comment
+          company
+          comment {
+            comment
+          }
         }
       }
     }
-  }
   `);
 
-  const references = referenceNodes.nodes.map(({ comment, ...node }) => ({
+  const references = referenceNodes.map(({ comment, ...node }) => ({
     ...node,
-    comment: comment.comment
+    comment: comment?.comment
   }));
 
   // Workaround of the first mount doesn't animate index change
@@ -42,7 +39,7 @@ const Carousel = () => {
     transition: "transform 0.35s cubic-bezier(0.15, 0.3, 0.25, 1) 0s"
   };
 
-  const handleChangeIndex = index => setIndex(index);
+  const handleChangeIndex = (index: number) => setIndex(index);
   const handlePrev = () => setIndex(index => index - 1);
   const handleNext = () => setIndex(index => index + 1);
 
@@ -80,14 +77,10 @@ const Carousel = () => {
         onChangeIndex={handleChangeIndex}
         containerStyle={swipeableViewsContainerStyle}
       >
-        {references.map(({ name, jobTitle, refereePicture, company, comment }) => (
+        {references.map(reference => (
           <Reference
-            key={name}
-            name={name}
-            jobTitle={jobTitle}
-            refereePicture={refereePicture.localFile.childImageSharp}
-            company={company}
-            comment={comment}
+            key={reference.name}
+            {...reference}
           />
         ))}
       </SwipeableViews>

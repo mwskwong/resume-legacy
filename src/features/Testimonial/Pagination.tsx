@@ -1,12 +1,19 @@
+import React, { FC } from "react";
+
 import { Box } from "@mui/material";
 import PaginationItem from "./PaginationItem";
-import PropTypes from "prop-types";
-import React from "react";
+import ReferenceProps from "./ReferenceProps";
 import useSx from "./usePaginationSx";
 
-const Pagination = ({ references, onChangeIndex, index }) => {
+type PaginationProps = {
+  references?: ReferenceProps[],
+  onChangeIndex: (index: number) => void,
+  index: number
+}
+
+const Pagination: FC<PaginationProps> = ({ references = [], onChangeIndex, index }) => {
   const sx = useSx();
-  const handleChangeIndex = index => () => onChangeIndex && onChangeIndex(index);
+  const handleChangeIndex = (index: number) => () => onChangeIndex && onChangeIndex(index);
 
   return (
     <Box sx={sx.root}>
@@ -15,18 +22,11 @@ const Pagination = ({ references, onChangeIndex, index }) => {
           key={name}
           active={itemIndex === index}
           onClick={handleChangeIndex(itemIndex)}
-          index={itemIndex}
           aria-label={`Testimonial from ${name}`}
         />
       ))}
     </Box>
   );
-};
-
-Pagination.propTypes = {
-  references: PropTypes.array,
-  onChangeIndex: PropTypes.func,
-  index: PropTypes.number
 };
 
 Pagination.whyDidYouRender = true;

@@ -2,12 +2,12 @@ import * as styles from "./reference.module.css";
 
 import { Box, Typography } from "@mui/material";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
 
-import PropTypes from "prop-types";
+import ReferenceProps from "./ReferenceProps";
 import useSx from "./useReferenceSx";
 
-const Reference = ({ name, jobTitle, refereePicture, company, comment }) => {
+const Reference: FC<ReferenceProps> = ({ name, jobTitle, refereePicture, company, comment }) => {
   const sx = useSx();
   const image = getImage(refereePicture);
 
@@ -17,11 +17,15 @@ const Reference = ({ name, jobTitle, refereePicture, company, comment }) => {
         {`"${comment}"`}
       </Typography>
       <Box sx={sx.profileContainer}>
-        <GatsbyImage
-          image={image}
-          alt={`Picture of ${name}`}
-          className={styles.picture}
-        />
+        {
+          image && (
+            <GatsbyImage
+              image={image}
+              alt={`Picture of ${name}`}
+              className={styles.picture}
+            />
+          )
+        }
         <Box sx={sx.refereeInfoContainer}>
           <Typography sx={sx.name} gutterBottom>
             {`${name}, `}
@@ -36,14 +40,6 @@ const Reference = ({ name, jobTitle, refereePicture, company, comment }) => {
       </Box>
     </div>
   );
-};
-
-Reference.propTypes = {
-  name: PropTypes.string,
-  jobTitle: PropTypes.string,
-  refereePicture: PropTypes.object,
-  company: PropTypes.string,
-  comment: PropTypes.string
 };
 
 Reference.whyDidYouRender = true;

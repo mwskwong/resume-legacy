@@ -1,4 +1,6 @@
-const useSx = () => ({
+import { UseSx } from "types";
+
+const useSx: UseSx = () => ({
   comment: {
     mb: 2
   },

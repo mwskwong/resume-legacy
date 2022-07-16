@@ -1,6 +1,7 @@
+import { UseSx } from "types";
 import { alpha } from "@mui/system";
 
-const useSx = () => ({
+const useSx: UseSx = () => ({
   root: {
     height: "100%",
     p: 1,
