@@ -1,54 +1,46 @@
+<!-- markdownlint-disable-next-line -->
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://mwskwong.com" rel="noopener" target="_blank">
+    <img src="https://mwskwong.com/icon-180x180.png" alt="mwskwomg.com logo">
   </a>
 </p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
 
-## 🚀 Quick start
+<h1 align="center">mwskwong.com</h1>
 
-1.  **Create a Gatsby site.**
+<div align="center">
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+  ![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Fmwskwong.com)
+  ![Security Headers](https://img.shields.io/security-headers?style=for-the-badge&url=https%3A%2F%2Fmwskwong.com)
+  ![Chromium HSTS preload](https://img.shields.io/hsts/preload/mwskwong.com?style=for-the-badge)
+  ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/react?style=for-the-badge)
+  ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/gatsby?style=for-the-badge)
+  ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/@mui/material?style=for-the-badge)
+  ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/react-hook-form?style=for-the-badge)
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+</div>
 
-2.  **Start developing.**
 
-    Navigate into your new site’s directory and start it up.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+## Hi 👋.
 
-3.  **Open the code and start customizing!**
+Welcome to the source code of [mwskwong.com](https://mwskwong.com). You can see how I created my own personal site here.
 
-    Your site is now running at http://localhost:8000!
+- Framework - [Gatsby](https://www.gatsbyjs.com)
+- UI library - [MUI](https://mui.com)
+- CMS - [Contentful](https://www.contentful.com)
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+## To Do
+1. Migrate `gatsbyImageData` with `gatsbyImage`
+    
+    `gatsbyImage` is not available in `localFile` yet.
 
-4.  **Learn more**
+2. Migrate MUI theme to css variables 
+    
+    Too early currently
+    
+    https://mui.com/experimental-api/css-variables/
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+3. Add tags to PDF files
+    
+    > For PDF files, we recommend embedding an image of the PDF with alternative text, and providing a link to download a tagged PDF.
+    
