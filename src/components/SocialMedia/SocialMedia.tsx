@@ -20,9 +20,9 @@ const Icons: { [key: string]: ElementType } = {
 
 const SocialMedia: FC<SocialMediaProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
-  const { socialMediaNodes } = useStaticQuery<Queries.SocialMediaQuery>(graphql`
+  const { allContentfulSocialMedia: { nodes: socialMedia } } = useStaticQuery<Queries.SocialMediaQuery>(graphql`
     query SocialMedia {
-      socialMediaNodes: allContentfulSocialMedia(sort: {fields: name}) {
+      allContentfulSocialMedia(sort: {fields: name}) {
         nodes {
           name
           link
@@ -30,8 +30,6 @@ const SocialMedia: FC<SocialMediaProps> = ({ sx: sxProp }) => {
       }
     }
   `);
-
-  const socialMedia = socialMediaNodes.nodes;
 
   return (
     <Stack spacing={1} direction="row" sx={sx.root}>

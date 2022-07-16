@@ -24,9 +24,9 @@ const Icons: { [key: string]: ElementType } = {
 
 const SkillSet: FC = () => {
   const sx = useSx();
-  const { skillNodes } = useStaticQuery<Queries.SkillSetQuery>(graphql`
+  const { allContentfulSkill: { group: skillGroup } } = useStaticQuery<Queries.SkillSetQuery>(graphql`
     query SkillSet {
-      skillNodes: allContentfulSkill(sort: {fields: [type, name]}) {
+      allContentfulSkill(sort: {fields: [type, name]}) {
         group(field: type) {
           nodes {
             name
@@ -44,7 +44,7 @@ const SkillSet: FC = () => {
         Skills
       </Typography>
       <Grid container spacing={6} sx={sx.gridContainer}>
-        {skillNodes.group.map(({ nodes: skills, fieldValue: type }) => {
+        {skillGroup.map(({ nodes: skills, fieldValue: type }) => {
           const Icon = Icons[camelCase(type || "")];
 
           return (
