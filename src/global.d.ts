@@ -1,8 +1,5 @@
 /// <reference types="@welldone-software/why-did-you-render" />
 
-// CSS Module import
-declare module "*.module.css";
-
 // Add extra fields supported by MUI
 declare namespace React {
   interface FunctionComponent {
@@ -17,7 +14,7 @@ declare namespace React {
     muiName?: string
   }
 
-  namespace Component {
-    const muiName: string;
+  interface Component {
+    muiName?: string
   }
 }
