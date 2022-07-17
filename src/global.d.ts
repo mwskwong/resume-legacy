@@ -17,7 +17,7 @@ declare namespace React {
     muiName?: string
   }
 
-  namespace Component {
-    const muiName: string;
+  interface Component {
+    muiName?: string
   }
 }
