@@ -36,9 +36,13 @@ const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
   const handleFormSubmit: SubmitHandler<FormValues> = data => {
     setSendEmailStatus("loading");
     submitContactForm(data)
-      .then(() => {
-        setSendEmailStatus("success");
-        reset();
+      .then(result => {
+        if (result.response?.ok) {
+          setSendEmailStatus("success");
+          reset();
+        } else {
+          throw "";
+        }
       })
       .catch(() => setSendEmailStatus("error"));
   };

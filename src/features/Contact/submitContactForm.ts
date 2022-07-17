@@ -1,8 +1,9 @@
-import { SuccessBody } from "@formspree/core/forms";
+import FormValues from "./FormValues";
+import { SubmissionResponse } from "@formspree/core/forms";
 
 const url = "https://formspree.io/f/mrgjykpa";
 
-type SubmitContactForm = (arg: { name: string, email: string, subject: string, message: string }) => Promise<SuccessBody>;
+type SubmitContactForm = (arg: FormValues) => Promise<SubmissionResponse>;
 
 const submitContactForm: SubmitContactForm = async ({ name, email, subject, message }) => {
   const response = await fetch(url, {
@@ -19,11 +20,9 @@ const submitContactForm: SubmitContactForm = async ({ name, email, subject, mess
     })
   });
 
-  if (!response.ok) throw Error(response.statusText);
-
   const body = await response.json();
-  if (!body?.ok) throw Error(body);
-  return body;
+
+  return { body, response };
 };
 
 export default submitContactForm;
