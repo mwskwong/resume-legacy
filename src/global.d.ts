@@ -1,7 +1,8 @@
 /// <reference types="@welldone-software/why-did-you-render" />
+import "react";
 
 // Add extra fields supported by MUI
-declare namespace React {
+declare module "react" {
   interface FunctionComponent {
     muiName?: string
   }

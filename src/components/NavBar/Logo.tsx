@@ -23,6 +23,7 @@ const Logo: FC = () => {
     </Button>
   );
 };
+
 Logo.whyDidYouRender = true;
 
 export default memo(Logo);
