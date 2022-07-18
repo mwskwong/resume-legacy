@@ -12,9 +12,7 @@ const DownloadResumeButton: FC<DownloadResumeButtonProps> = ({ sx }) => {
   const { resume } = useStaticQuery<Queries.DownloadResumeButtonQuery>(graphql`
     query DownloadResumeButton {
       resume: contentfulAsset(title: {eq: "Resume"}) {
-        localFile {
-          publicURL
-        }
+        publicUrl
       }
     }
   `);
@@ -24,7 +22,7 @@ const DownloadResumeButton: FC<DownloadResumeButtonProps> = ({ sx }) => {
       sx={sx}
       variant="contained"
       size="large"
-      href={resume?.localFile?.publicURL || undefined}
+      href={resume?.publicUrl || undefined}
     >
       Download Resume
     </Button>

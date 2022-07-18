@@ -25,9 +25,7 @@ const Courses: FC = () => {
           name
           institution
           certification {
-            localFile {
-              publicURL
-            }
+            publicUrl
           }
         }
       }
@@ -35,7 +33,7 @@ const Courses: FC = () => {
   `);
 
   const courses = courseNodes.map(({ certification, ...node }) => ({
-    fileUrl: certification?.localFile?.publicURL,
+    fileUrl: certification?.publicUrl,
     ...node
   }));
 
