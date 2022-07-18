@@ -1,9 +1,6 @@
 import { UseSx } from "types";
 
-type UsePaginationItemSx = UseSx extends () => infer Return
-  ? (active: boolean) => Return
-  : never;
-
+type UsePaginationItemSx = (active: boolean) => ReturnType<UseSx>
 
 const useSx: UsePaginationItemSx = active => ({
   root: {

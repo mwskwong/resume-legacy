@@ -1,8 +1,6 @@
 import { UseSx } from "types";
 
-type UseNavButtonSx = UseSx extends () => infer Return
-  ? (active: boolean) => Return
-  : never;
+type UseNavButtonSx = (active: boolean) => ReturnType<UseSx>
 
 const useSx: UseNavButtonSx = active => ({
   active: {

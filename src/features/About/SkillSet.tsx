@@ -13,7 +13,7 @@ import { Database } from "mdi-material-ui";
 import camelCase from "camelcase";
 import useSx from "./useSkillSetSx";
 
-const Icons: { [key: string]: ElementType } = {
+const Icons: Record<string, ElementType> = {
   backend: Terminal,
   cloud: Cloud,
   dataOps: AllInclusive,

@@ -1,8 +1,6 @@
 import { UseSx } from "types";
 
-type UseNavListItemSx = UseSx extends () => infer Return
-  ? (active: boolean) => Return
-  : never;
+type UseNavListItemSx = (active: boolean) => ReturnType<UseSx>
 
 const useSx: UseNavListItemSx = active => ({
   textPrimary: {

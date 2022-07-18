@@ -12,7 +12,7 @@ type SocialMediaProps = {
   sx?: SxProps<Theme>
 }
 
-const Icons: { [key: string]: ElementType } = {
+const Icons: Record<string, ElementType> = {
   stackOverflow: StackOverflow,
   linkedIn: LinkedIn,
   gitHub: GitHub
