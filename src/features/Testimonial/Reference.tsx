@@ -42,6 +42,6 @@ const Reference: FC<ReferenceProps> = ({ name, jobTitle, refereePicture, company
   );
 };
 
-Reference.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Reference.whyDidYouRender = true;
 
 export default memo(Reference);

@@ -21,6 +21,6 @@ const NavButton: FC<NavButtonProps> = ({ label, id, active }) => {
   );
 };
 
-NavButton.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") NavButton.whyDidYouRender = true;
 
 export default memo(NavButton);

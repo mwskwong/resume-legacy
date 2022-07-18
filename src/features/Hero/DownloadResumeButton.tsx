@@ -35,6 +35,6 @@ DownloadResumeButton.propTypes = {
   sx: PropTypes.object
 };
 
-DownloadResumeButton.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") DownloadResumeButton.whyDidYouRender = true;
 
 export default DownloadResumeButton;

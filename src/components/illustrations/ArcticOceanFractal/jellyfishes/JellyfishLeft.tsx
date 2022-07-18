@@ -31,6 +31,6 @@ const JellyfishLeft: FC = () => (
   />
 );
 
-JellyfishLeft.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") JellyfishLeft.whyDidYouRender = true;
 
 export default memo(JellyfishLeft);

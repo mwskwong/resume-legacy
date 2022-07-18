@@ -45,6 +45,6 @@ const BubbleGroundHole = styled.circle<BubbleGroundHoleProps>`
   opacity: 0;
 `;
 
-BubbleGroundHole.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") BubbleGroundHole.whyDidYouRender = true;
 
 export default BubbleGroundHole;

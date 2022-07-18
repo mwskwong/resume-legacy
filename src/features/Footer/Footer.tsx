@@ -52,6 +52,6 @@ Footer.propTypes = {
   sx: PropTypes.object
 };
 
-Footer.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Footer.whyDidYouRender = true;
 
 export default memo(Footer);

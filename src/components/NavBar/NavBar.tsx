@@ -73,6 +73,7 @@ const NavBar: FC = () => {
   );
 };
 
-NavBar.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") NavBar.whyDidYouRender = true;
+
 
 export default memo(NavBar);

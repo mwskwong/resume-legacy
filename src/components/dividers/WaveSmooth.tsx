@@ -12,6 +12,6 @@ const WaveSmooth: FC<BoxProps<"svg">> = props => (
   </DividerSvg>
 );
 
-WaveSmooth.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") WaveSmooth.whyDidYouRender = true;
 
 export default WaveSmooth;

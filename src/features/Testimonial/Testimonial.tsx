@@ -33,6 +33,6 @@ Testimonial.propTypes = {
   sx: PropTypes.object
 };
 
-Testimonial.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Testimonial.whyDidYouRender = true;
 
 export default memo(Testimonial);

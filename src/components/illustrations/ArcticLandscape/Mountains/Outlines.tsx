@@ -11,6 +11,6 @@ const Outlines: FC = () => (
   </g>
 );
 
-Outlines.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Outlines.whyDidYouRender = true;
 
 export default Outlines;

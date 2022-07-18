@@ -57,6 +57,6 @@ const PersonalInfo = () => {
   );
 };
 
-PersonalInfo.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") PersonalInfo.whyDidYouRender = true;
 
 export default memo(PersonalInfo);

@@ -43,6 +43,6 @@ Education.propTypes = {
   sx: PropTypes.object
 };
 
-Education.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Education.whyDidYouRender = true;
 
 export default memo(Education);

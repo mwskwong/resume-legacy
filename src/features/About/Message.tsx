@@ -57,6 +57,6 @@ const Message: FC = () => {
   );
 };
 
-Message.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Message.whyDidYouRender = true;
 
 export default Message;

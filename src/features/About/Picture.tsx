@@ -32,6 +32,6 @@ const Picture: FC = () => {
   return null;
 };
 
-Picture.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Picture.whyDidYouRender = true;
 
 export default Picture;

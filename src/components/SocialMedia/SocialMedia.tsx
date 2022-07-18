@@ -46,6 +46,6 @@ const SocialMedia: FC<SocialMediaProps> = ({ sx: sxProp }) => {
   );
 };
 
-SocialMedia.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") SocialMedia.whyDidYouRender = true;
 
 export default SocialMedia;

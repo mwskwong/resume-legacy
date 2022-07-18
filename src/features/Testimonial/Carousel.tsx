@@ -88,6 +88,6 @@ const Carousel: FC = () => {
   );
 };
 
-Carousel.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Carousel.whyDidYouRender = true;
 
 export default Carousel;

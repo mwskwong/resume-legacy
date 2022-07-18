@@ -44,6 +44,6 @@ const TextField: FC<TextFieldProps> = ({ name, control, label, autoComplete, mul
   );
 };
 
-TextField.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") TextField.whyDidYouRender = true;
 
 export default memo(TextField);

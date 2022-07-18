@@ -112,6 +112,6 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
   );
 };
 
-SEO.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") SEO.whyDidYouRender = true;
 
 export default memo(SEO);

@@ -355,6 +355,6 @@ const IllustrationCanvas: FC = () => (
   </>
 );
 
-IllustrationCanvas.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") IllustrationCanvas.whyDidYouRender = true;
 
 export default memo(IllustrationCanvas);

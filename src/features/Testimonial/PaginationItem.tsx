@@ -18,6 +18,6 @@ const PaginationItem: FC<PaginationItemProps> = ({ active = false, ...props }) =
   );
 };
 
-PaginationItem.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") PaginationItem.whyDidYouRender = true;
 
 export default PaginationItem;

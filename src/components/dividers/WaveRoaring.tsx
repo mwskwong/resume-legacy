@@ -12,6 +12,6 @@ const WaveRoaring: FC<BoxProps<"svg">> = props => (
   </DividerSvg>
 );
 
-WaveRoaring.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") WaveRoaring.whyDidYouRender = true;
 
 export default WaveRoaring;

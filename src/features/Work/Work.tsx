@@ -27,6 +27,6 @@ Work.propTypes = {
   sx: PropTypes.object
 };
 
-Work.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Work.whyDidYouRender = true;
 
 export default memo(Work);

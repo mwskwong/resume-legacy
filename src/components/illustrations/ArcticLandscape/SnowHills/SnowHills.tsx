@@ -11,6 +11,6 @@ const SnowHills: FC = () => (
   </g>
 );
 
-SnowHills.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") SnowHills.whyDidYouRender = true;
 
 export default SnowHills;

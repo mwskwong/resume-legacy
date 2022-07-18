@@ -126,6 +126,6 @@ Contact.propTypes = {
   sx: PropTypes.object
 };
 
-Contact.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Contact.whyDidYouRender = true;
 
 export default memo(Contact);

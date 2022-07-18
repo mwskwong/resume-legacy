@@ -1,9 +1,9 @@
-import React, { FC, HTMLAttributes, memo } from "react";
+import React, { FC, memo, SVGProps } from "react";
 
 import BubbleFloating from "./BubbleFloating";
 import { waterCircles } from "./pathData";
 
-const BubblesWater: FC<HTMLAttributes<SVGCircleElement>> = props => (
+const BubblesWater: FC<SVGProps<SVGCircleElement>> = props => (
   <g>
     {waterCircles.map(({ cx, cy, r }, index) => (
       <BubbleFloating key={`${cx}-${cy}-${r}`} animDelay={index} cx={cx} cy={cy} r={r} {...props} />
@@ -11,6 +11,6 @@ const BubblesWater: FC<HTMLAttributes<SVGCircleElement>> = props => (
   </g>
 );
 
-BubblesWater.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") BubblesWater.whyDidYouRender = true;
 
 export default memo(BubblesWater);

@@ -16,6 +16,6 @@ const ArcticLandscape: FC = () => (
   </svg>
 );
 
-ArcticLandscape.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") ArcticLandscape.whyDidYouRender = true;
 
 export default ArcticLandscape;

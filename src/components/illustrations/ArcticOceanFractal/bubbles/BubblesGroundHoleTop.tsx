@@ -1,9 +1,9 @@
-import React, { FC, HTMLAttributes, memo } from "react";
+import React, { FC, SVGProps, memo } from "react";
 
 import BubbleGroundHole from "./BubbleGroundHole";
 import { groundHoleTopCircles } from "./pathData";
 
-const BubblesGroundHoleTop: FC<HTMLAttributes<SVGCircleElement>> = props => (
+const BubblesGroundHoleTop: FC<SVGProps<SVGCircleElement>> = props => (
   <g>
     {groundHoleTopCircles.map(({ cx, cy, r }, index) => (
       <BubbleGroundHole key={`${cx}-${cy}-${r}`} animDelay={index} cx={cx} cy={cy} r={r} {...props} />
@@ -11,6 +11,6 @@ const BubblesGroundHoleTop: FC<HTMLAttributes<SVGCircleElement>> = props => (
   </g>
 );
 
-BubblesGroundHoleTop.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") BubblesGroundHoleTop.whyDidYouRender = true;
 
 export default memo(BubblesGroundHoleTop);

@@ -15,6 +15,6 @@ const StackOverflow: FC<SvgIconProps> = props => {
 };
 
 StackOverflow.muiName = SvgIcon.muiName;
-StackOverflow.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") StackOverflow.whyDidYouRender = true;
 
 export default StackOverflow;

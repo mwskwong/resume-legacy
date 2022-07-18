@@ -7,6 +7,6 @@ import { outlinePath } from "./pathData";
 
 const Outline: FC = () => <path d={outlinePath} css={outline} />;
 
-Outline.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Outline.whyDidYouRender = true;
 
 export default Outline;

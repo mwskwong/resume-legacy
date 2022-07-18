@@ -14,6 +14,6 @@ const Fill: FC = () => {
   );
 };
 
-Fill.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Fill.whyDidYouRender = true;
 
 export default Fill;

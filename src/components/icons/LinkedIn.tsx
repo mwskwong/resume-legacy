@@ -15,6 +15,6 @@ const LinkedIn: FC<SvgIconProps> = props => {
 };
 
 LinkedIn.muiName = SvgIcon.muiName;
-LinkedIn.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") LinkedIn.whyDidYouRender = true;
 
 export default LinkedIn;
