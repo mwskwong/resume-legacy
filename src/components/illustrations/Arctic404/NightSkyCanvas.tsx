@@ -1,7 +1,7 @@
-import React, { FC, HTMLAttributes } from "react";
+import React, { FC, SVGProps } from "react";
 import { nord1, nord2, nord3, nord4, nord5, nord6 } from "nord";
 
-const NightSkyCanvas: FC<HTMLAttributes<SVGGElement>> = props => (
+const NightSkyCanvas: FC<SVGProps<SVGGElement>> = props => (
   <g {...props}>
     <g strokeMiterlimit="10">
       <path
@@ -155,6 +155,6 @@ const NightSkyCanvas: FC<HTMLAttributes<SVGGElement>> = props => (
   </g>
 );
 
-NightSkyCanvas.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") NightSkyCanvas.whyDidYouRender = true;
 
 export default NightSkyCanvas;

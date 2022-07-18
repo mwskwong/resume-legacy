@@ -3,15 +3,19 @@ import { useEffect, useState, useTransition } from "react";
 
 import { SectionId } from "types";
 
+const isSectionId = (value: string): value is SectionId => {
+  const sectionIds = Object.values(nav).map(({ id }) => id as string);
+  return sectionIds.includes(value);
+};
+
 const useActiveSectionId = (): SectionId => {
   const [, startTransition] = useTransition();
   const [activeSectionId, setActiveSectionId] = useState(HOME.id);
 
   useEffect(() => {
     const initId = window.location.hash?.slice(1);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore: initId can be an invalid section id
-    if (initId) setActiveSectionId(initId);
+
+    if (isSectionId(initId)) setActiveSectionId(initId);
 
     const sectionIds = Object.values(nav).map(({ id }) => id).reverse();
 

@@ -15,6 +15,6 @@ const GitHub: FC<SvgIconProps> = props => {
 };
 
 GitHub.muiName = SvgIcon.muiName;
-GitHub.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") GitHub.whyDidYouRender = true;
 
 export default GitHub;

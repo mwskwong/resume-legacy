@@ -23,6 +23,7 @@ const Logo: FC = () => {
     </Button>
   );
 };
-Logo.whyDidYouRender = true;
+
+if (process.env.NODE_ENV === "development") Logo.whyDidYouRender = true;
 
 export default memo(Logo);

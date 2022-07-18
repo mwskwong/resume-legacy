@@ -20,6 +20,6 @@ const LightRing = styled.path`
   transform-style: preserve-3d;
 `;
 
-LightRing.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") LightRing.whyDidYouRender = true;
 
 export default LightRing;

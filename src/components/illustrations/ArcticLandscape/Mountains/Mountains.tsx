@@ -14,6 +14,6 @@ const Mountains: FC = () => (
   </>
 );
 
-Mountains.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Mountains.whyDidYouRender = true;
 
 export default Mountains;

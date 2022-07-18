@@ -42,6 +42,6 @@ const EducationTimeline: FC = () => {
   return <Timeline data={educations} />;
 };
 
-EducationTimeline.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") EducationTimeline.whyDidYouRender = true;
 
 export default EducationTimeline;

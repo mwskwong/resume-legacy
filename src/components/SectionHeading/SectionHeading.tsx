@@ -25,6 +25,6 @@ const SectionHeading: FC<SectionHeadingProps> = ({ heading }) => {
   );
 };
 
-SectionHeading.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") SectionHeading.whyDidYouRender = true;
 
 export default memo(SectionHeading);

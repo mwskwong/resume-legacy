@@ -37,6 +37,6 @@ const SupportDocumentListItem: FC<SupportDocumentListItemProps> = ({ supportDocu
 
 };
 
-SupportDocumentListItem.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") SupportDocumentListItem.whyDidYouRender = true;
 
 export default SupportDocumentListItem;

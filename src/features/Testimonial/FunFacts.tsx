@@ -51,6 +51,6 @@ const FunFacts: FC = () => {
   );
 };
 
-FunFacts.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") FunFacts.whyDidYouRender = true;
 
 export default FunFacts;

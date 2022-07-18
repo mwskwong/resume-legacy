@@ -36,6 +36,6 @@ const GleamGradient: FC<GleamGradientProps> = ({ gradientId }) => (
   </defs>
 );
 
-GleamGradient.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") GleamGradient.whyDidYouRender = true;
 
 export default GleamGradient;

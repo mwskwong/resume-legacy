@@ -1,7 +1,8 @@
 /// <reference types="@welldone-software/why-did-you-render" />
+import "react";
 
 // Add extra fields supported by MUI
-declare namespace React {
+declare module "react" {
   interface FunctionComponent {
     muiName?: string
   }
@@ -16,5 +17,20 @@ declare namespace React {
 
   interface Component {
     muiName?: string
+  }
+}
+
+// Define process.env
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      NODE_ENV: "production" | "development"
+      CF_PAGES: 1 | 0
+      CF_PAGES_COMMIT_SHA: string
+      CF_PAGES_BRANCH: string
+      CF_PAGES_URL: string
+      CONTENTFUL_ACCESS_TOKEN: string
+      ANALYZE_BUNDLE: 1 | 0
+    }
   }
 }

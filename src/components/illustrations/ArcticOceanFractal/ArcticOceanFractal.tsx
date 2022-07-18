@@ -25,6 +25,6 @@ const ArcticOceanFractal: FC = () => (
   </svg>
 );
 
-ArcticOceanFractal.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") ArcticOceanFractal.whyDidYouRender = true;
 
 export default ArcticOceanFractal;

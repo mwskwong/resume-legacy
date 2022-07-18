@@ -24,6 +24,6 @@ const Hero: FC<SectionProps> = ({ sx: sxProp }) => {
   );
 };
 
-Hero.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Hero.whyDidYouRender = true;
 
 export default memo(Hero);

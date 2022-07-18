@@ -30,15 +30,11 @@ Welcome to the source code of [mwskwong.com](https://mwskwong.com). You can see 
 - CMS - [Contentful](https://www.contentful.com)
 
 ## To Do
-1. Migrate `gatsbyImageData` with `gatsbyImage`
-    
-    `gatsbyImage` is not available in `localFile` yet.
-
-2. Migrate MUI theme to css variables 
+1. Migrate to Joy 
     
     Too early currently
     
-    https://mui.com/experimental-api/css-variables/
+    https://mui.com/joy-ui/getting-started/overview/
 
 3. Add tags to PDF files
     

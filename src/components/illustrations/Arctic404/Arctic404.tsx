@@ -27,6 +27,6 @@ const Animation404: FC = () => (
   </svg>
 );
 
-Animation404.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Animation404.whyDidYouRender = true;
 
 export default Animation404;

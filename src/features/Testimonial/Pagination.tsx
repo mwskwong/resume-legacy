@@ -29,6 +29,6 @@ const Pagination: FC<PaginationProps> = ({ references = [], onChangeIndex, index
   );
 };
 
-Pagination.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Pagination.whyDidYouRender = true;
 
 export default Pagination;

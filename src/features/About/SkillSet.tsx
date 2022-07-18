@@ -74,6 +74,6 @@ const SkillSet: FC = () => {
   );
 };
 
-SkillSet.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") SkillSet.whyDidYouRender = true;
 
 export default SkillSet;

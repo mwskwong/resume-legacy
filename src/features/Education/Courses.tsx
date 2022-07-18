@@ -78,6 +78,6 @@ const Courses: FC = () => {
   );
 };
 
-Courses.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Courses.whyDidYouRender = true;
 
 export default Courses;

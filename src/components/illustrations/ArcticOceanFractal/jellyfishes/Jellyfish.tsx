@@ -47,6 +47,6 @@ const Jellyfish: FC<JellyfishProps> = ({ bodyAnimation, bodyPaths, tentaclesAnim
   </G>
 );
 
-Jellyfish.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Jellyfish.whyDidYouRender = true;
 
 export default Jellyfish;

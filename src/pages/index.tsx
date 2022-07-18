@@ -93,6 +93,6 @@ const IndexPage: FC = () => {
   );
 };
 
-IndexPage.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") IndexPage.whyDidYouRender = true;
 
 export default IndexPage;

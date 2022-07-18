@@ -45,6 +45,6 @@ const NotFoundPage: FC<PageProps> = () => {
   );
 };
 
-NotFoundPage.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") NotFoundPage.whyDidYouRender = true;
 
 export default NotFoundPage;

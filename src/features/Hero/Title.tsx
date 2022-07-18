@@ -67,6 +67,6 @@ const Title: FC = () => {
   );
 };
 
-Title.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Title.whyDidYouRender = true;
 
 export default Title;

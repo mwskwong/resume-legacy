@@ -25,6 +25,6 @@ const NavListItem: FC<NavListItemProps> = ({ label, id, active }) => {
     </ListItem>
   );
 };
-NavListItem.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") NavListItem.whyDidYouRender = true;
 
 export default memo(NavListItem);

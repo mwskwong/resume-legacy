@@ -7,6 +7,6 @@ import { outlinePath } from "./pathData";
 
 const Wind: FC = () => <path css={outline} d={outlinePath} />;
 
-Wind.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Wind.whyDidYouRender = true;
 
 export default Wind;

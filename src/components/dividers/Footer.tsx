@@ -27,6 +27,6 @@ const Footer: FC<BoxProps<"svg">> = props => {
   );
 };
 
-Footer.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Footer.whyDidYouRender = true;
 
 export default Footer;

@@ -45,6 +45,6 @@ const WorkTimeline: FC = () => {
   return <Timeline data={works} />;
 };
 
-WorkTimeline.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") WorkTimeline.whyDidYouRender = true;
 
 export default WorkTimeline;

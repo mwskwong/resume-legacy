@@ -22,6 +22,6 @@ const Shades: FC = () => (
   </g>
 );
 
-Shades.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Shades.whyDidYouRender = true;
 
 export default Shades;

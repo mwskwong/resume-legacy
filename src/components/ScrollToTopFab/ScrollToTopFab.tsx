@@ -18,6 +18,6 @@ const ScrollToTopFab: FC = () => {
   );
 };
 
-ScrollToTopFab.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") ScrollToTopFab.whyDidYouRender = true;
 
 export default memo(ScrollToTopFab);

@@ -10,6 +10,6 @@ const AuroraBorealis: FC = () => (
   </>
 );
 
-AuroraBorealis.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") AuroraBorealis.whyDidYouRender = true;
 
 export default AuroraBorealis;

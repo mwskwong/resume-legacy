@@ -5,6 +5,6 @@ import { peaksPath } from "./pathData";
 
 const Peaks: FC = () => <path fill={nord6} d={peaksPath} />;
 
-Peaks.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Peaks.whyDidYouRender = true;
 
 export default Peaks;

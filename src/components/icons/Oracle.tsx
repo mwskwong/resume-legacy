@@ -15,6 +15,6 @@ const Oracle: FC<SvgIconProps> = props => {
 };
 
 Oracle.muiName = SvgIcon.muiName;
-Oracle.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Oracle.whyDidYouRender = true;
 
 export default Oracle;

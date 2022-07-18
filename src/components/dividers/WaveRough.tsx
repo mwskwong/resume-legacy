@@ -12,6 +12,6 @@ const WaveRough: FC<BoxProps<"svg">> = props => (
   </DividerSvg>
 );
 
-WaveRough.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") WaveRough.whyDidYouRender = true;
 
 export default WaveRough;

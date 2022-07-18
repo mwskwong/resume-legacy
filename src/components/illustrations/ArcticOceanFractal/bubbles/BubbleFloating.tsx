@@ -18,6 +18,6 @@ const BubbleFloating = styled.circle<BubbleFloatingProps>`
   opacity: 0;
 `;
 
-BubbleFloating.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") BubbleFloating.whyDidYouRender = true;
 
 export default BubbleFloating;

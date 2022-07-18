@@ -26,6 +26,6 @@ const About: FC<SectionProps> = ({ sx: sxProp }) => {
   );
 };
 
-About.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") About.whyDidYouRender = true;
 
 export default memo(About);

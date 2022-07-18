@@ -10,6 +10,6 @@ const Clouds: FC = () => (
   </>
 );
 
-Clouds.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Clouds.whyDidYouRender = true;
 
 export default Clouds; 
