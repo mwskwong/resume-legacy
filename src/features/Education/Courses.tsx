@@ -9,7 +9,7 @@ import Udemy from "components/icons/Udemy";
 import camelCase from "camelcase";
 import useSx from "./useCoursesSx";
 
-const Icons: { [key: string]: ElementType } = {
+const Icons: Record<string, ElementType> = {
   microsoft: Microsoft,
   oracle: Oracle,
   udemy: Udemy,
