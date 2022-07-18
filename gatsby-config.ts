@@ -36,7 +36,6 @@ const config: GatsbyConfig = {
       options: {
         accessToken: CONTENTFUL_ACCESS_TOKEN,
         spaceId: "zz9cwhc5t97i",
-        downloadLocal: true,
         enableTags: true
       }
     },
@@ -68,9 +67,9 @@ const config: GatsbyConfig = {
                 path
               }
             }
-            allPDF: allFile(filter: {ext: {eq: ".pdf"}}) {
+            allPDF: allContentfulAsset(filter: {file: {contentType: {eq: "application/pdf"}}}) {
               nodes {
-                publicURL
+                publicUrl
               }
             }
           }
@@ -81,7 +80,7 @@ const config: GatsbyConfig = {
         }: Queries.SitemapQuery) =>
           [
             ...pages,
-            ...(pdfs.map(({ publicURL }) => ({ path: publicURL })))
+            ...(pdfs.map(({ publicUrl }) => ({ path: publicUrl })))
           ]
       }
     },

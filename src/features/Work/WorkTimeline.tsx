@@ -16,9 +16,7 @@ const WorkTimeline: FC = () => {
           supportDocuments {
             title
             file {
-              localFile {
-                publicURL
-              }
+              publicUrl
             }
             thumbnail {
               gatsbyImage(aspectRatio: 1.5, width: 102)
@@ -36,7 +34,7 @@ const WorkTimeline: FC = () => {
       contents: jobDuties,
       supportDocuments: supportDocuments?.map(supportDocument => ({
         title: supportDocument?.title,
-        url: supportDocument?.file?.localFile?.publicURL,
+        url: supportDocument?.file?.publicUrl,
         thumbnail: supportDocument?.thumbnail?.gatsbyImage
       })),
       ...node

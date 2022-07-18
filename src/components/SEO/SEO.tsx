@@ -43,26 +43,22 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
         phone
       }
       ogImage: contentfulAsset(title: {eq: "Open Graph Image"}) {
-        localFile {
-          publicURL
-        }
+        publicUrl
       }
       picture: contentfulAsset(title: {eq: "Personal Photo"}) {
-        localFile {
-          publicURL
-        }
+        publicUrl
       }
     }
   `);
 
-  const url = site?.siteMetadata?.siteUrl ?? "";
+  const url = site?.siteMetadata?.siteUrl ?? undefined;
 
   const fullName = `${name?.firstName} ${name?.lastName}`;
   const jobTitle = occupationNodes.nodes.map(({ title }) => title).join(" & ");
   const defaultTitle = `${fullName} - ${jobTitle}`;
 
   const description = descriptionNode?.content?.content ?? "";
-  const ogImageUrl = `${url}${ogImage?.localFile?.publicURL}`;
+  const ogImageUrl = `${url}${ogImage?.publicUrl}`;
   const title = titleProp ? `${titleProp} | ${fullName}` : defaultTitle;
   const structuredData = {
     "@context": "https://schema.org",
@@ -72,7 +68,7 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
       addressLocality: `${contact?.address}`
     },
     email: `mailto:${contact?.email}`,
-    image: picture?.localFile?.publicURL,
+    image: picture?.publicUrl,
     jobTitle,
     name: fullName,
     telephone: contact?.phone,
