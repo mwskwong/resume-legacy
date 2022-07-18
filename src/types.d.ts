@@ -4,6 +4,4 @@ export type SectionId = "home" | "about" | "work" | "education" | "testimonial" 
 
 export type SectionProps = { sx?: SxProps<Theme> }
 
-export type UseSx = (sx?: SxProps<Theme>) => {
-  [key: string]: SxProps<Theme> | undefined
-}
+export type UseSx = (sx?: SxProps<Theme>) => Record<string, SxProps<Theme> | typeof sx>
