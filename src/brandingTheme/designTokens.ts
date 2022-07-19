@@ -23,7 +23,8 @@ declare module "@mui/material/styles/createTypography" {
   }
 }
 
-const designTokens: ThemeOptions = {
+const designTokens: Omit<ThemeOptions, "components"> = {
+  unstable_strictMode: true,
   palette: {
     mode: "dark",
     common: {

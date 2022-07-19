@@ -4,10 +4,9 @@ import { Theme, ThemeOptions } from "@mui/material";
 
 import { alpha } from "@mui/system";
 
-type GetThemedComponents = (theme: Theme) => ThemeOptions
+type GetThemedComponents = (theme: Theme) => Pick<ThemeOptions, "components">
 
 const getThemedComponents: GetThemedComponents = theme => ({
-  unstable_strictMode: true,
   components: {
     MuiAppBar: {
       styleOverrides: {
@@ -41,6 +40,9 @@ const getThemedComponents: GetThemedComponents = theme => ({
       }
     },
     MuiCssBaseline: {
+      defaultProps: {
+        enableColorScheme: true
+      },
       styleOverrides: {
         "::selection": {
           backgroundColor: theme.palette.text.primary,
