@@ -1,10 +1,10 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { Link, PageProps } from "gatsby";
 import React, { FC } from "react";
 
 import Arctic404 from "components/illustrations/Arctic404";
 import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
-import SEO from "components/SEO";
+import GlobalHead from "components/GlobalHead";
+import { Link } from "gatsby";
 import { UseSx } from "types";
 
 const useSx: UseSx = () => ({
@@ -26,7 +26,7 @@ const useSx: UseSx = () => ({
   }
 });
 
-const NotFoundPage: FC<PageProps> = () => {
+const NotFoundPage: FC = () => {
   const sx = useSx();
 
   return (
@@ -46,6 +46,6 @@ const NotFoundPage: FC<PageProps> = () => {
 
 if (process.env.NODE_ENV === "development") NotFoundPage.whyDidYouRender = true;
 
-export const Head: FC = () => <SEO title="Not Found" />;
+export const Head: FC = () => <GlobalHead title="Not Found" />;
 
 export default NotFoundPage;

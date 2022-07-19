@@ -1,11 +1,11 @@
-import React, { FC, memo } from "react";
+import React, { FC, PropsWithChildren, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-type SEOProps = {
+type GlobalHeadProps = {
   title?: string
 }
 
-const SEO: FC<SEOProps> = ({ title: titleProp }) => {
+const GlobalHead: FC<PropsWithChildren<GlobalHeadProps>> = ({ title: titleProp, children }) => {
   const {
     site,
     name,
@@ -14,8 +14,8 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
     contact,
     ogImage,
     picture
-  } = useStaticQuery<Queries.SEOQuery>(graphql`
-    query SEO {
+  } = useStaticQuery<Queries.GlobalHeadQuery>(graphql`
+    query GlobalHead {
       site {
         siteMetadata {
           siteUrl
@@ -102,10 +102,11 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
       </script>
+      {children}
     </>
   );
 };
 
-if (process.env.NODE_ENV === "development") SEO.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") GlobalHead.whyDidYouRender = true;
 
-export default memo(SEO);
+export default memo(GlobalHead);
