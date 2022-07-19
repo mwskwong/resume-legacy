@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack, SxProps, Theme } from "@mui/material";
+import { Box, Container, Grid, Stack } from "@mui/material";
 import React, { FC, memo } from "react";
 
 import ArcticOceanFractal from "components/illustrations/ArcticOceanFractal";

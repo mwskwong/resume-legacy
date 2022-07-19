@@ -1,21 +1,21 @@
 import React, { FC, PropsWithChildren, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-type GlobalHeadProps = {
+import useStructuredData from "./useStructuredData";
+
+type SEOProps = {
   title?: string
 }
 
-const GlobalHead: FC<PropsWithChildren<GlobalHeadProps>> = ({ title: titleProp, children }) => {
+const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, children }) => {
   const {
     site,
     name,
     allContentfulOccupation: { nodes: occupations },
     descriptionNode,
-    contact,
-    ogImage,
-    picture
-  } = useStaticQuery<Queries.GlobalHeadQuery>(graphql`
-    query GlobalHead {
+    ogImage
+  } = useStaticQuery<Queries.SEOQuery>(graphql`
+    query SEO {
       site {
         siteMetadata {
           siteUrl
@@ -35,15 +35,7 @@ const GlobalHead: FC<PropsWithChildren<GlobalHeadProps>> = ({ title: titleProp, 
           content
         }
       }
-      contact: contentfulContact {
-        address
-        email
-        phone
-      }
       ogImage: contentfulAsset(title: {eq: "Open Graph Image"}) {
-        publicUrl
-      }
-      picture: contentfulAsset(title: {eq: "Personal Photo"}) {
         publicUrl
       }
     }
@@ -58,24 +50,11 @@ const GlobalHead: FC<PropsWithChildren<GlobalHeadProps>> = ({ title: titleProp, 
   const description = descriptionNode?.content?.content ?? "";
   const ogImageUrl = `${url}${ogImage?.publicUrl}`;
   const title = titleProp ? `${titleProp} | ${fullName}` : defaultTitle;
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: `${contact?.address}`
-    },
-    email: `mailto:${contact?.email}`,
-    image: picture?.publicUrl,
-    jobTitle,
-    name: fullName,
-    telephone: contact?.phone,
-    url
-  };
+
+  const structuredData = useStructuredData();
 
   return (
     <>
-      <html lang="en" />
       <title>{title}</title>
 
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -107,6 +86,6 @@ const GlobalHead: FC<PropsWithChildren<GlobalHeadProps>> = ({ title: titleProp, 
   );
 };
 
-if (process.env.NODE_ENV === "development") GlobalHead.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") SEO.whyDidYouRender = true;
 
-export default memo(GlobalHead);
+export default memo(SEO);

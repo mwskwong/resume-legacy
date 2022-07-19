@@ -5,11 +5,12 @@ import Contact from "features/Contact";
 import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
-import GlobalHead from "components/GlobalHead";
 import Hero from "features/Hero";
 import NavBar from "components/NavBar";
+import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
 import Testimonial from "features/Testimonial";
+import { TypeBackground } from "@mui/material";
 import { UseSx } from "types";
 import WaveRoaring from "components/dividers/WaveRoaring";
 import WaveRough from "components/dividers/WaveRough";
@@ -18,7 +19,7 @@ import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 import Work from "features/Work";
 
-const bgcolors = {
+const bgcolors: Record<string, keyof TypeBackground> = {
   hero: "default",
   about: "sectionSecondary",
   testimonial: "default",
@@ -94,6 +95,6 @@ const IndexPage: FC = () => {
 
 if (process.env.NODE_ENV === "development") IndexPage.whyDidYouRender = true;
 
-export const Head: FC = () => <GlobalHead />;
+export const Head: FC = () => <SEO />;
 
 export default IndexPage;

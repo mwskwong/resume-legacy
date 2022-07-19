@@ -3,8 +3,8 @@ import React, { FC } from "react";
 
 import Arctic404 from "components/illustrations/Arctic404";
 import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
-import GlobalHead from "components/GlobalHead";
 import { Link } from "gatsby";
+import SEO from "components/SEO";
 import { UseSx } from "types";
 
 const useSx: UseSx = () => ({
@@ -46,6 +46,6 @@ const NotFoundPage: FC = () => {
 
 if (process.env.NODE_ENV === "development") NotFoundPage.whyDidYouRender = true;
 
-export const Head: FC = () => <GlobalHead title="Not Found" />;
+export const Head: FC = () => <SEO title="Not Found" />;
 
 export default NotFoundPage;
