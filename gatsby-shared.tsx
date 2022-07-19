@@ -6,7 +6,7 @@ import brandingTheme from "brandingTheme";
 
 export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({ element }) => (
   <StrictMode>
-    <ThemeProvider theme={brandingTheme} >
+    <ThemeProvider theme={brandingTheme}>
       <CssBaseline />
       {element}
     </ThemeProvider>
