@@ -1,23 +1,21 @@
-import React, { FC, memo } from "react";
+import React, { FC, PropsWithChildren, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { Helmet } from "react-helmet";
-
-type SEOProps = {
+type GlobalHeadProps = {
   title?: string
 }
 
-const SEO: FC<SEOProps> = ({ title: titleProp }) => {
+const GlobalHead: FC<PropsWithChildren<GlobalHeadProps>> = ({ title: titleProp, children }) => {
   const {
     site,
     name,
-    occupationNodes,
+    allContentfulOccupation: { nodes: occupations },
     descriptionNode,
     contact,
     ogImage,
     picture
-  }: Queries.SEOQuery = useStaticQuery(graphql`
-    query SEO {
+  } = useStaticQuery<Queries.GlobalHeadQuery>(graphql`
+    query GlobalHead {
       site {
         siteMetadata {
           siteUrl
@@ -27,7 +25,7 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
         firstName
         lastName
       }
-      occupationNodes: allContentfulOccupation(sort: {fields: title}) {
+      allContentfulOccupation(sort: {fields: title}) {
         nodes {
           title
         }
@@ -54,7 +52,7 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
   const url = site?.siteMetadata?.siteUrl ?? undefined;
 
   const fullName = `${name?.firstName} ${name?.lastName}`;
-  const jobTitle = occupationNodes.nodes.map(({ title }) => title).join(" & ");
+  const jobTitle = occupations.map(({ title }) => title).join(" & ");
   const defaultTitle = `${fullName} - ${jobTitle}`;
 
   const description = descriptionNode?.content?.content ?? "";
@@ -76,7 +74,7 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
   };
 
   return (
-    <Helmet>
+    <>
       <html lang="en" />
       <title>{title}</title>
 
@@ -104,10 +102,11 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
       </script>
-    </Helmet>
+      {children}
+    </>
   );
 };
 
-if (process.env.NODE_ENV === "development") SEO.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") GlobalHead.whyDidYouRender = true;
 
-export default memo(SEO);
+export default memo(GlobalHead);
