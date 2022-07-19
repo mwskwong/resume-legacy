@@ -1,3 +1,4 @@
+import { Person, WithContext } from "schema-dts";
 import React, { FC, PropsWithChildren, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -58,7 +59,7 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, children }) =>
   const description = descriptionNode?.content?.content ?? "";
   const ogImageUrl = `${url}${ogImage?.publicUrl}`;
   const title = titleProp ? `${titleProp} | ${fullName}` : defaultTitle;
-  const structuredData = {
+  const structuredData: WithContext<Person> = {
     "@context": "https://schema.org",
     "@type": "Person",
     address: {
@@ -69,7 +70,7 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, children }) =>
     image: picture?.publicUrl,
     jobTitle,
     name: fullName,
-    telephone: contact?.phone,
+    telephone: contact?.phone ?? undefined,
     url
   };
 
