@@ -1,8 +1,6 @@
 import React, { FC, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { Helmet } from "react-helmet";
-
 type SEOProps = {
   title?: string
 }
@@ -11,12 +9,12 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
   const {
     site,
     name,
-    occupationNodes,
+    allContentfulOccupation: { nodes: occupations },
     descriptionNode,
     contact,
     ogImage,
     picture
-  }: Queries.SEOQuery = useStaticQuery(graphql`
+  } = useStaticQuery<Queries.SEOQuery>(graphql`
     query SEO {
       site {
         siteMetadata {
@@ -27,7 +25,7 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
         firstName
         lastName
       }
-      occupationNodes: allContentfulOccupation(sort: {fields: title}) {
+      allContentfulOccupation(sort: {fields: title}) {
         nodes {
           title
         }
@@ -54,7 +52,7 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
   const url = site?.siteMetadata?.siteUrl ?? undefined;
 
   const fullName = `${name?.firstName} ${name?.lastName}`;
-  const jobTitle = occupationNodes.nodes.map(({ title }) => title).join(" & ");
+  const jobTitle = occupations.map(({ title }) => title).join(" & ");
   const defaultTitle = `${fullName} - ${jobTitle}`;
 
   const description = descriptionNode?.content?.content ?? "";
@@ -76,7 +74,7 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
   };
 
   return (
-    <Helmet>
+    <>
       <html lang="en" />
       <title>{title}</title>
 
@@ -104,7 +102,7 @@ const SEO: FC<SEOProps> = ({ title: titleProp }) => {
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
       </script>
-    </Helmet>
+    </>
   );
 };
 

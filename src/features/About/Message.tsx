@@ -29,7 +29,7 @@ const Message: FC = () => {
     }
   `);
 
-  const occupationTitles = occupations.map(({ title }) => title);
+  const jobTitles = occupations.map(({ title }) => title);
   const intro = contentfulSelfIntroduction?.content?.content;
 
   return (
@@ -41,7 +41,7 @@ const Message: FC = () => {
         </Box>
       </Typography>
       <Box sx={sx.occupationContainer}>
-        {occupationTitles.map((title, index) => (
+        {jobTitles.map((title, index) => (
           <Fragment key={title}>
             {index !== 0 && <Box sx={sx.dot} />}
             <Typography variant="subtitle1" component="div">

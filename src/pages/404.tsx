@@ -31,7 +31,6 @@ const NotFoundPage: FC<PageProps> = () => {
 
   return (
     <Container component="main" sx={sx.root}>
-      <SEO title="Not Found" />
       <Box sx={sx.animationContainer}>
         <Arctic404 />
       </Box>
@@ -46,5 +45,7 @@ const NotFoundPage: FC<PageProps> = () => {
 };
 
 if (process.env.NODE_ENV === "development") NotFoundPage.whyDidYouRender = true;
+
+export const Head: FC = () => <SEO title="Not Found" />;
 
 export default NotFoundPage;

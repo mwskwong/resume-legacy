@@ -71,7 +71,6 @@ const IndexPage: FC = () => {
 
   return (
     <>
-      <SEO />
       <NavBar />
       <main>
         <Hero />
@@ -94,5 +93,7 @@ const IndexPage: FC = () => {
 };
 
 if (process.env.NODE_ENV === "development") IndexPage.whyDidYouRender = true;
+
+export const Head: FC = () => <SEO />;
 
 export default IndexPage;
