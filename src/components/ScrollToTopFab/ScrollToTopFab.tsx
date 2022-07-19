@@ -1,3 +1,5 @@
+import * as styles from "./styles.module.css";
+
 import { Fab, Zoom } from "@mui/material";
 import React, { FC, memo } from "react";
 
@@ -7,10 +9,9 @@ import useShowScrollToTopFab from "hooks/useShowScrollToTopFab";
 
 const ScrollToTopFab: FC = () => {
   const show = useShowScrollToTopFab();
-  const zoomStyle = { transformOrigin: "bottom right" };
 
   return (
-    <Zoom in={show} style={zoomStyle} mountOnEnter unmountOnExit>
+    <Zoom className={styles.zoom} in={show} mountOnEnter unmountOnExit>
       <Fab aria-label="scroll to top" href={`#${HOME.id}`}>
         <ArrowUp />
       </Fab>
