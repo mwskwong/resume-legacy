@@ -67,7 +67,7 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, children }) =>
       addressLocality: `${contact?.address}`
     },
     email: `mailto:${contact?.email}`,
-    image: picture?.publicUrl,
+    image: ogImageUrl,
     jobTitle,
     name: fullName,
     telephone: contact?.phone ?? undefined,
