@@ -1,6 +1,7 @@
-import { Person, WithContext } from "schema-dts";
 import React, { FC, PropsWithChildren, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
+
+import useStructuredData from "./useStructuredData";
 
 type SEOProps = {
   title?: string
@@ -12,9 +13,7 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, children }) =>
     name,
     allContentfulOccupation: { nodes: occupations },
     descriptionNode,
-    contact,
-    ogImage,
-    picture
+    ogImage
   } = useStaticQuery<Queries.SEOQuery>(graphql`
     query SEO {
       site {
@@ -36,15 +35,7 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, children }) =>
           content
         }
       }
-      contact: contentfulContact {
-        address
-        email
-        phone
-      }
       ogImage: contentfulAsset(title: {eq: "Open Graph Image"}) {
-        publicUrl
-      }
-      picture: contentfulAsset(title: {eq: "Personal Photo"}) {
         publicUrl
       }
     }
@@ -59,20 +50,8 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, children }) =>
   const description = descriptionNode?.content?.content ?? "";
   const ogImageUrl = `${url}${ogImage?.publicUrl}`;
   const title = titleProp ? `${titleProp} | ${fullName}` : defaultTitle;
-  const structuredData: WithContext<Person> = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: `${contact?.address}`
-    },
-    email: `mailto:${contact?.email}`,
-    image: ogImageUrl,
-    jobTitle,
-    name: fullName,
-    telephone: contact?.phone ?? undefined,
-    url
-  };
+
+  const structuredData = useStructuredData();
 
   return (
     <>
