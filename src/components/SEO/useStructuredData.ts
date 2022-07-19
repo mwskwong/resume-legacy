@@ -81,6 +81,7 @@ const useStructuredData = (): Graph => {
 
   const breadcrumbListSchema: BreadcrumbList = {
     "@type": "BreadcrumbList",
+    name: "Breadcrumbs",
     itemListElement: [
       {
         "@type": "ListItem",
