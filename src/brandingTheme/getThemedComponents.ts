@@ -41,6 +41,9 @@ const getThemedComponents: GetThemedComponents = theme => ({
       }
     },
     MuiCssBaseline: {
+      defaultProps: {
+        enableColorScheme: true
+      },
       styleOverrides: {
         "::selection": {
           backgroundColor: theme.palette.text.primary,
