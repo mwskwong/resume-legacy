@@ -24,13 +24,6 @@ const config: GatsbyConfig = {
   },
   plugins: [
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "constants",
-        path: `${__dirname}/src/constants`
-      }
-    },
-    {
       resolve: "gatsby-source-contentful",
       options: {
         accessToken: CONTENTFUL_ACCESS_TOKEN,
