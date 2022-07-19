@@ -5,9 +5,9 @@ import Contact from "features/Contact";
 import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
-import GlobalHead from "components/GlobalHead";
 import Hero from "features/Hero";
 import NavBar from "components/NavBar";
+import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
 import Testimonial from "features/Testimonial";
 import { UseSx } from "types";
@@ -94,6 +94,6 @@ const IndexPage: FC = () => {
 
 if (process.env.NODE_ENV === "development") IndexPage.whyDidYouRender = true;
 
-export const Head: FC = () => <GlobalHead />;
+export const Head: FC = () => <SEO />;
 
 export default IndexPage;
