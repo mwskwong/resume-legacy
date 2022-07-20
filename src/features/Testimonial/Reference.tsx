@@ -1,8 +1,6 @@
-import * as styles from "./reference.module.css";
-
 import { Box, Typography } from "@mui/material";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import React, { FC, memo } from "react";
+import React, { CSSProperties, FC, memo } from "react";
 
 import ReferenceProps from "./ReferenceProps";
 import useSx from "./useReferenceSx";
@@ -10,6 +8,7 @@ import useSx from "./useReferenceSx";
 const Reference: FC<ReferenceProps> = ({ name, jobTitle, refereePicture, company, comment }) => {
   const sx = useSx();
   const image = getImage(refereePicture);
+  const gatsbyImageStyle: CSSProperties = { borderRadius: "25%", minWidth: 60 };
 
   return (
     <div>
@@ -22,7 +21,7 @@ const Reference: FC<ReferenceProps> = ({ name, jobTitle, refereePicture, company
             <GatsbyImage
               image={image}
               alt={`Picture of ${name}`}
-              className={styles.picture}
+              style={gatsbyImageStyle}
             />
           )
         }
