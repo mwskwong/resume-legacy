@@ -46,6 +46,6 @@ const NotFoundPage: FC = () => {
 
 if (process.env.NODE_ENV === "development") NotFoundPage.whyDidYouRender = true;
 
-export const Head: FC = () => <SEO title="Not Found" />;
+export const Head: FC = () => <SEO title="Not Found" description="Sorry, there is nothing at this URL." />;
 
 export default NotFoundPage;

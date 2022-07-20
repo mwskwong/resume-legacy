@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { ABOUT } from "constants/nav";
 
-const useStructuredData = (): Graph => {
+const useStructuredData = (): Record<"indexPage", Graph> => {
   const {
     site,
     name,
@@ -109,12 +109,14 @@ const useStructuredData = (): Graph => {
   };
 
   return {
-    "@context": "https://schema.org",
-    "@graph": [
-      personSchema,
-      webpageSchema,
-      breadcrumbListSchema
-    ]
+    indexPage: {
+      "@context": "https://schema.org",
+      "@graph": [
+        personSchema,
+        webpageSchema,
+        breadcrumbListSchema
+      ]
+    }
   };
 };
 
