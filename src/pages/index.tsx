@@ -18,6 +18,7 @@ import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 import Work from "features/Work";
+import useStructuredData from "hooks/useStructuredData";
 
 const bgcolors: Record<string, keyof TypeBackground> = {
   hero: "default",
@@ -95,6 +96,17 @@ const IndexPage: FC = () => {
 
 if (process.env.NODE_ENV === "development") IndexPage.whyDidYouRender = true;
 
-export const Head: FC = () => <SEO />;
+export const Head: FC = () => {
+  const { indexPage } = useStructuredData();
+
+  return (
+    <SEO>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(indexPage) }}
+      />
+    </SEO>
+  );
+};
 
 export default IndexPage;

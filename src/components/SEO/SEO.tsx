@@ -1,13 +1,12 @@
 import React, { FC, PropsWithChildren, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import useStructuredData from "./useStructuredData";
-
 type SEOProps = {
-  title?: string
+  title?: string,
+  description?: string
 }
 
-const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, children }) => {
+const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, description: descriptionProp, children }) => {
   const {
     site,
     name,
@@ -47,11 +46,9 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, children }) =>
   const jobTitle = occupations.map(({ title }) => title).join(" & ");
   const defaultTitle = `${fullName} - ${jobTitle}`;
 
-  const description = descriptionNode?.content?.content ?? "";
+  const description = descriptionProp ?? descriptionNode?.content?.content ?? undefined;
   const ogImageUrl = `${url}${ogImage?.publicUrl}`;
   const title = titleProp ? `${titleProp} | ${fullName}` : defaultTitle;
-
-  const structuredData = useStructuredData();
 
   return (
     <>
@@ -77,10 +74,6 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, children }) =>
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={ogImageUrl} />
-
-      <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
       {children}
     </>
   );
