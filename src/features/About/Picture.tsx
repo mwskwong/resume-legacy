@@ -16,7 +16,7 @@ const Picture: FC = () => {
   `);
 
   const image = picture?.gatsbyImage ? getImage(picture.gatsbyImage) : undefined;
-  const gatsbyImageStyle: CSSProperties = { borderRadius: "25%" };
+  const gatsbyImageStyle: CSSProperties = { borderRadius: "20%" };
 
   if (image) {
     return (
