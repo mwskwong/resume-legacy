@@ -29,7 +29,8 @@ const useSx: UseSx = () => ({
   },
   listItemNumber: {
     color: "text.secondary",
-    userSelect: "none"
+    userSelect: "none",
+    mt: "2px"
   },
   downloadButton: {
     mt: 1
