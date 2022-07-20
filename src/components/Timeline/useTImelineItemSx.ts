@@ -25,7 +25,6 @@ const useSx: UseSx = () => ({
   listItemIcon: {
     minWidth: "initial",
     mr: "16px",
-    my: "4px",
     alignSelf: "flex-start"
   },
   listItemNumber: {
