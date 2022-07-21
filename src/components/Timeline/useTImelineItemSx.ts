@@ -34,7 +34,7 @@ const useSx: UseSx = () => ({
   listItemNumber: {
     color: "text.secondary",
     userSelect: "none",
-    lineHeight: "inherit"
+    lineHeight: "initial"
   },
   downloadButton: {
     mt: 1
