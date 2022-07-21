@@ -46,7 +46,7 @@ const TimelineItem: FC<TimelineItemProps> = ({ data }) => {
         <Typography sx={sx.subtitle} component="div" gutterBottom>
           {data.subtitle}
         </Typography>
-        <List disablePadding>
+        <List disablePadding component="ol">
           {contents.map((content, index) => (
             <ListItem key={index} disableGutters>
               <ListItemIcon sx={sx.listItemIcon}>
