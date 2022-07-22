@@ -65,9 +65,9 @@ const Carousel: FC = () => {
           </IconButton>
         </Stack>
         <Pagination
-          references={references}
-          onChangeIndex={handleChangeIndex}
+          count={references.length}
           index={index}
+          onChangeIndex={handleChangeIndex}
         />
       </Box>
       <SwipeableViews
