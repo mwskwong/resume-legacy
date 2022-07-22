@@ -16,7 +16,7 @@ const Pagination: FC<PaginationProps> = ({ onChangeIndex, index, count }) => {
 
   return (
     <Box sx={sx.root}>
-      {Array(count).map((_, itemIndex) => (
+      {Array.from(Array(count), (_, itemIndex) => (
         <PaginationItem
           key={itemIndex}
           active={itemIndex === index}
