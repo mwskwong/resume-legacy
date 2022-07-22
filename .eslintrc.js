@@ -45,15 +45,5 @@ module.exports = {
       "error",
       "always"
     ]
-  },
-  "settings": {
-    "jsx-a11y": {
-      "components": {
-        "Button": "a",
-        "IconButton": "a",
-        "Link": "a",
-        "ListItemButton": "a"
-      }
-    }
   }
 };
