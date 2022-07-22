@@ -6,6 +6,7 @@ module.exports = {
   },
   "extends": [
     "react-app",
+    "plugin:jsx-a11y/strict",
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -17,10 +18,12 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": [
-    "react",
+    "jsx-a11y",
     "@typescript-eslint"
   ],
   "rules": {
+    "react/jsx-uses-react": "error",
+    "react/react-in-jsx-scope": "error",
     "comma-dangle": [
       "error",
       "never"
@@ -42,5 +45,15 @@ module.exports = {
       "error",
       "always"
     ]
+  },
+  "settings": {
+    "jsx-a11y": {
+      "components": {
+        "Button": "a",
+        "IconButton": "a",
+        "Link": "a",
+        "ListItemButton": "a"
+      }
+    }
   }
 };
