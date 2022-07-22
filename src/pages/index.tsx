@@ -101,10 +101,9 @@ export const Head: FC = () => {
 
   return (
     <SEO>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(indexPage) }}
-      />
+      <script type="application/ld+json">
+        {JSON.stringify(indexPage)}
+      </script>
     </SEO>
   );
 };

@@ -71,15 +71,14 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, description: d
       <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/icon-180x180.png" />
 
-      <meta name="creator" content={fullName} />
-      <meta name="description" content={seo.description} />
+      <meta name="author" content={fullName} />
       <meta name="format-detection" content="telephone=no" />
 
+      <meta name="title" property="og:title" content={seo.title} />
+      <meta name="description" property="og:description" content={seo.description} />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={seo.url} />
-      <meta property="og:image" content={seo.image} />
+      <meta name="image" property="og:image" content={seo.image} />
       {socialMedia.map(({ link }) =>
         <meta key={link} property="og:see_also" content={link ?? undefined} />
       )}

@@ -5,9 +5,8 @@ module.exports = {
     "node": true
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
+    "react-app",
+    "plugin:jsx-a11y/strict",
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -19,10 +18,12 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": [
-    "react",
+    "jsx-a11y",
     "@typescript-eslint"
   ],
   "rules": {
+    "react/jsx-uses-react": "error",
+    "react/react-in-jsx-scope": "error",
     "comma-dangle": [
       "error",
       "never"
@@ -44,10 +45,5 @@ module.exports = {
       "error",
       "always"
     ]
-  },
-  settings: {
-    react: {
-      version: "detect"
-    }
   }
 };

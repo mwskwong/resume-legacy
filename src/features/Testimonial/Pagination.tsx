@@ -2,27 +2,26 @@ import React, { FC } from "react";
 
 import { Box } from "@mui/material";
 import PaginationItem from "./PaginationItem";
-import ReferenceProps from "./ReferenceProps";
 import useSx from "./usePaginationSx";
 
 type PaginationProps = {
-  references?: ReferenceProps[],
   onChangeIndex: (index: number) => void,
-  index: number
+  index: number,
+  count: number
 }
 
-const Pagination: FC<PaginationProps> = ({ references = [], onChangeIndex, index }) => {
+const Pagination: FC<PaginationProps> = ({ onChangeIndex, index, count }) => {
   const sx = useSx();
   const handleChangeIndex = (index: number) => () => onChangeIndex && onChangeIndex(index);
 
   return (
     <Box sx={sx.root}>
-      {references.map(({ name }, itemIndex) => (
+      {Array.from(Array(count), (_, itemIndex) => (
         <PaginationItem
-          key={name}
+          key={itemIndex}
           active={itemIndex === index}
           onClick={handleChangeIndex(itemIndex)}
-          aria-label={`Testimonial from ${name}`}
+          aria-label={`Go to Page ${itemIndex}`}
         />
       ))}
     </Box>

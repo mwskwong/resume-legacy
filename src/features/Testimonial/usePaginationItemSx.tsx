@@ -12,11 +12,7 @@ const useSx: UsePaginationItemSx = active => ({
     borderRadius: "4px",
     transition: theme => theme.transitions.create(["width", "opacity", "background-color"], {
       duration: theme.transitions.duration.shorter
-    }),
-    "&:hover": {
-      opacity: .5,
-      bgcolor: "primary.main"
-    }
+    })
   }
 });
 
