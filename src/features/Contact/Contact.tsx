@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Stack, Theme, useMediaQuery } from "@mui/material";
-import { ErrorRounded as Error, SendRounded as Send, CheckCircleRounded as Success } from "@mui/icons-material";
+import { ErrorRounded as ErrorIcon, SendRounded as SendIcon, CheckCircleRounded as SuccessIcon } from "@mui/icons-material";
 import React, { FC, memo, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { object, string } from "nope-validator";
@@ -41,7 +41,7 @@ const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
           setSendEmailStatus("success");
           reset();
         } else {
-          throw "";
+          throw new Error();
         }
       })
       .catch(() => setSendEmailStatus("error"));
@@ -102,10 +102,10 @@ const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
               color={sendEmailStatus === "loading" ? undefined : sendEmailStatus}
               endIcon={
                 sendEmailStatus === "success"
-                  ? <Success />
+                  ? <SuccessIcon />
                   : sendEmailStatus === "error"
-                    ? <Error />
-                    : <Send />
+                    ? <ErrorIcon />
+                    : <SendIcon />
               }
               sx={sx.submitButton}
               type="submit"
