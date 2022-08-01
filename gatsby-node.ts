@@ -19,10 +19,6 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       siteUrl: String!
     }
 
-    type ContentfulAsset {
-      gatsbyImage: GatsbyImageData!
-    }
-
     type ContentfulContact {
       phone: String!
       email: String!
@@ -56,12 +52,6 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
 
     type ContentfulPdf {
       title: String!
-      file: ContentfulAsset!
-      thumbnail: ContentfulAsset!
-    }
-
-    type ContentfulSelfIntroduction {
-      content: contentfulSelfIntroductionContentTextNode!
     }
 
     type contentfulSelfIntroductionContentTextNode implements Node {
@@ -82,7 +72,6 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       name: String!
       jobTitle: String!
       company: String!
-      comment: contentfulTestimonialCommentTextNode!
     }
 
     type contentfulTestimonialCommentTextNode implements Node {

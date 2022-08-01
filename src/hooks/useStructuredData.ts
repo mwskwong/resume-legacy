@@ -59,7 +59,7 @@ const useStructuredData = (): Record<"indexPage", Graph> => {
   const jobTitle = occupations.map(({ title }) => title).join(" & ");
   const defaultTitle = `${fullName} - ${jobTitle}`;
 
-  const description = descriptionNode?.content.content;
+  const description = descriptionNode?.content?.content;
   const ogImageUrl = `${url}${ogImage?.publicUrl}`;
 
   const personSchema: Person = {

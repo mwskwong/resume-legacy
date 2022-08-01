@@ -51,7 +51,7 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, description: d
   const jobTitle = occupations.map(({ title }) => title).join(" & ");
 
   const siteTitle = `${fullName} - ${jobTitle}`;
-  const siteDescription = descriptionNode?.content.content;
+  const siteDescription = descriptionNode?.content?.content;
   const siteUrl = site?.siteMetadata.siteUrl;
   const siteImage = ogImage?.publicUrl;
 
@@ -80,7 +80,7 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, description: d
       <meta property="og:url" content={seo.url} />
       <meta name="image" property="og:image" content={seo.image} />
       {socialMedia.map(({ link }) =>
-        <meta key={link} property="og:see_also" content={link ?? undefined} />
+        <meta key={link} property="og:see_also" content={link} />
       )}
 
       <meta property="twitter:card" content="summary_large_image" />

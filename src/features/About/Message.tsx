@@ -30,7 +30,7 @@ const Message: FC = () => {
   `);
 
   const jobTitles = occupations.map(({ title }) => title);
-  const intro = contentfulSelfIntroduction?.content.content;
+  const intro = contentfulSelfIntroduction?.content?.content;
 
   return (
     <div>
