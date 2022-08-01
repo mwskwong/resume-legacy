@@ -31,7 +31,7 @@ const Carousel: FC = () => {
 
   const references = referenceNodes.map(({ comment, ...node }) => ({
     ...node,
-    comment: comment?.comment
+    comment: comment.comment
   }));
 
   // Workaround of the first mount doesn't animate index change

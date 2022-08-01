@@ -22,7 +22,7 @@ const DownloadResumeButton: FC<DownloadResumeButtonProps> = ({ sx }) => {
       sx={sx}
       variant="contained"
       size="large"
-      href={resume?.publicUrl || undefined}
+      href={resume?.publicUrl}
     >
       Download Resume
     </Button>

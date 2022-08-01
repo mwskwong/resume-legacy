@@ -1,10 +1,10 @@
 import SupportDocument from "./SupportDocument";
 
 type TimelineItemData = {
-  from?: string | null,
+  from?: string,
   to?: string | null,
-  title?: string | null,
-  subtitle?: string | null,
+  title?: string,
+  subtitle?: string,
   contents?: readonly (string | null)[] | null,
   supportDocuments?: readonly SupportDocument[] | null
 }

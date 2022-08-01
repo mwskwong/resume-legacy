@@ -51,8 +51,8 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, description: d
   const jobTitle = occupations.map(({ title }) => title).join(" & ");
 
   const siteTitle = `${fullName} - ${jobTitle}`;
-  const siteDescription = descriptionNode?.content?.content ?? undefined;
-  const siteUrl = site?.siteMetadata?.siteUrl ?? undefined;
+  const siteDescription = descriptionNode?.content.content;
+  const siteUrl = site?.siteMetadata.siteUrl;
   const siteImage = ogImage?.publicUrl;
 
   const seo = {
