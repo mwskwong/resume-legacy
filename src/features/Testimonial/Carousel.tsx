@@ -36,7 +36,7 @@ const Carousel: FC = () => {
 
   // Workaround of the first mount doesn't animate index change
   const swipeableViewsContainerStyle = {
-    transition: "transform 0.35s cubic-bezier(0.15, 0.3, 0.25, 1) 0s"
+    transition: "transform .35s cubic-bezier(.15, .3, .25, 1) 0s"
   };
 
   const handleChangeIndex = (index: number) => setIndex(index);

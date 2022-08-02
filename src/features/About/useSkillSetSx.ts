@@ -24,7 +24,7 @@ const useSx: UseSx = () => ({
     flexWrap: "wrap"
   },
   skill: {
-    m: 0.5,
+    m: .5,
     color: "inherit"
   }
 });

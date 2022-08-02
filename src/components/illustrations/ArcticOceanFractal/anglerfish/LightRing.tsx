@@ -5,12 +5,12 @@ import styled from "@emotion/styled";
 
 const animLightRingGlow = keyframes`
   0% {
-    opacity: 0.6;
+    opacity: .6;
     fill: ${nord4};
   }
 
   100% {
-    opacity: 0.9;
+    opacity: .9;
     fill: ${nord6};
   }
 `;

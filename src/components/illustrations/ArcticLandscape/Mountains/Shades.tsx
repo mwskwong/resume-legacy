@@ -5,7 +5,7 @@ import { shadeLinesPath, shadePaths } from "./pathData";
 import styled from "@emotion/styled";
 
 const Shade = styled.path`
-  opacity: 0.1;
+  opacity: .1;
   stroke: ${nord1};
 `;
 
