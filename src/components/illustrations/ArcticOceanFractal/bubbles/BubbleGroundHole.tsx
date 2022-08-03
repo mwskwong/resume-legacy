@@ -8,33 +8,33 @@ interface BubbleGroundHoleProps {
 
 const animBubbleRiseUp = keyframes`
   0% {
-    transform: translate3d(0.2%, 0, 0);
+    transform: translate3d(.2%, 0, 0);
     opacity: 0;
   }
 
   13% {
-    transform: translate3d(0.4%, -1%, 0);
+    transform: translate3d(.4%, -1%, 0);
     opacity: 1;
   }
 
-  20% { transform: translate3d(0.6%, -2%, 0) }
+  20% { transform: translate3d(.6%, -2%, 0) }
   30% { transform: translate3d(0, -3%, 0); }
-  40% { transform: translate3d(0.4%, -4%, 0); }
-  50% { transform: translate3d(0.5%, -5%, 0); }
-  60% { transform: translate3d(0.6%, -6%, 0); }
+  40% { transform: translate3d(.4%, -4%, 0); }
+  50% { transform: translate3d(.5%, -5%, 0); }
+  60% { transform: translate3d(.6%, -6%, 0); }
   70% {
-    transform: translate3d(0.7%, -7%, 0);
-    opacity: 0.4;
+    transform: translate3d(.7%, -7%, 0);
+    opacity: .4;
   }
 
   80% {
-    transform: translate3d(0.4%, -7%, 0);
-    opacity: 0.2;
+    transform: translate3d(.4%, -7%, 0);
+    opacity: .2;
   }
 
   90%,
   100% {
-    transform: translate3d(0.2%, -8%, 0);
+    transform: translate3d(.2%, -8%, 0);
     opacity: 0;
   }
 `;

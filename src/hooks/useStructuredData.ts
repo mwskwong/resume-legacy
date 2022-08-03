@@ -53,13 +53,13 @@ const useStructuredData = (): Record<"indexPage", Graph> => {
     }
   `);
 
-  const url = site?.siteMetadata?.siteUrl ?? undefined;
+  const url = site?.siteMetadata.siteUrl;
 
   const fullName = `${name?.firstName} ${name?.lastName}`;
   const jobTitle = occupations.map(({ title }) => title).join(" & ");
   const defaultTitle = `${fullName} - ${jobTitle}`;
 
-  const description = descriptionNode?.content?.content ?? "";
+  const description = descriptionNode?.content?.content;
   const ogImageUrl = `${url}${ogImage?.publicUrl}`;
 
   const personSchema: Person = {
@@ -72,11 +72,11 @@ const useStructuredData = (): Record<"indexPage", Graph> => {
       "@type": "PostalAddress",
       addressRegion: `${contact?.address}`
     },
-    email: contact?.email ?? undefined,
+    email: contact?.email,
     image: `${url}${picture?.publicUrl}`,
-    telephone: contact?.phone ?? undefined,
+    telephone: contact?.phone,
     url,
-    sameAs: socialMedia.map(({ link }) => link ?? "").filter(Boolean)
+    sameAs: socialMedia.map(({ link }) => link)
   };
 
   const breadcrumbListSchema: BreadcrumbList = {

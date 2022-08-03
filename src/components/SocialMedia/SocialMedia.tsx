@@ -34,10 +34,10 @@ const SocialMedia: FC<SocialMediaProps> = ({ sx: sxProp }) => {
   return (
     <Stack spacing={1} direction="row" sx={sx.root}>
       {socialMedia.map(({ name, link }) => {
-        const Icon = Icons[camelCase(name || "")];
+        const Icon = Icons[camelCase(name)];
 
         return (
-          <IconButton key={name} color="inherit" aria-label={name || undefined} component="a" href={link || undefined}>
+          <IconButton key={name} color="inherit" aria-label={name} component="a" href={link}>
             {Icon && <Icon />}
           </IconButton>
         );

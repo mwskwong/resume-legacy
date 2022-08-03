@@ -88,7 +88,7 @@ const designTokens: Omit<ThemeOptions, "components"> = {
       lineHeight: 78 / 70
     },
     h2: {
-      fontSize: "clamp(1.5rem, 0.9643rem + 1.4286vw, 2.25rem)",
+      fontSize: "clamp(1.5rem, .9643rem + 1.4286vw, 2.25rem)",
       fontWeight: 800,
       lineHeight: 44 / 36
     },

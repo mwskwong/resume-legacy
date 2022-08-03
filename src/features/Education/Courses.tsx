@@ -44,7 +44,7 @@ const Courses: FC = () => {
       </Typography>
       <List dense>
         {courses.map(({ name, institution, fileUrl }) => {
-          const Icon = Icons[camelCase(institution || "")];
+          const Icon = Icons[camelCase(institution)];
 
           const content = (
             <>

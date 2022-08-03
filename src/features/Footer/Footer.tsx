@@ -31,7 +31,7 @@ const Footer: FC<SectionProps> = ({ sx: sxProp }) => {
         <Grid sx={sx.gridContainer} container spacing={1}>
           <Grid item lg="auto" xs={12}>
             <Typography sx={sx.text} variant="body2">
-              {`Copyright © ${year} ${name?.lastName?.toUpperCase()}, ${name?.firstName} ${name?.middleName}`}
+              {`Copyright © ${year} ${name?.lastName.toUpperCase()}, ${name?.firstName} ${name?.middleName}`}
             </Typography>
             <Typography sx={sx.text} variant="caption">
               {"Made with "}

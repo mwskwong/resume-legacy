@@ -1,9 +1,9 @@
 type ReferenceProps = {
-  name: string | null,
-  jobTitle?: string | null,
+  name: string,
+  jobTitle?: string,
   refereePicture?: ImageDataLike | null,
-  company?: string | null,
-  comment?: string | null
+  company?: string,
+  comment?: string
 }
 
 export default ReferenceProps;

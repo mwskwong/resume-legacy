@@ -6,7 +6,7 @@ import Jellyfish from "./Jellyfish";
 
 const animTentacleSwing = keyframes`
   0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-0.25%, -1%, 0); }
+  100% { transform: translate3d(-.25%, -1%, 0); }
 `;
 
 const animFloat = keyframes`

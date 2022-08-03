@@ -9,7 +9,7 @@ const G = styled.g`
 `;
 
 const EyeLens = styled.path`
-  transform: scale(0.7);
+  transform: scale(.7);
   transform-origin: 508.401px 394.359px;
 `;
 
