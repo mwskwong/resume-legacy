@@ -6,4 +6,6 @@ export const outline = css`
   stroke-miterlimit: 10;
   stroke-width: 2;
   stroke: ${nord3};
+  stroke-linejoin: round;
+  stroke-linecap: round;
 `;
