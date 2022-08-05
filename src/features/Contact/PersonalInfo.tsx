@@ -1,5 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { EmailRounded as Email, LocationOnRounded as Location, PhoneAndroidRounded as Mobile } from "@mui/icons-material";
+import { EmailRounded as Email, LocationOnRounded as Location, SmartphoneRounded as Mobile } from "@mui/icons-material";
 import React, { memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
