@@ -36,7 +36,7 @@
     "gatsby-plugin-sitemap": "^5.20.0",
     "gatsby-source-contentful": "^7.18.0",
     "gatsby-transformer-sharp": "^4.20.0",
-    "mdi-material-ui": "^7.4.0",
+    "mdi-material-ui": "^7.5.0",
     "nope-validator": "^1.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -48,7 +48,7 @@
   "devDependencies": {
     "@formspree/core": "^2.7.0",
     "@types/node": "^18.6.4",
-    "@types/react": "^18.0.15",
+    "@types/react": "^18.0.16",
     "@types/react-dom": "^18.0.6",
     "@types/react-helmet": "^6.1.5",
     "@types/react-swipeable-views": "^0.13.1",
