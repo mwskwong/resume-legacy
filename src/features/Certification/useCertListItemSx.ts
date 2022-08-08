@@ -7,9 +7,23 @@ const useSx: UseCertListItemSx = iconColor => ({
     fontSize: "48px",
     color: iconColor
   },
-  organization: {
-    color: "primary.main",
-    display: "block"
+  date: {
+    typography: "body2",
+    color: "text.secondary"
+  },
+  dateMobile: {
+    typography: "body2",
+    color: "text.secondary",
+    display: {
+      xs: "block",
+      sm: "none"
+    }
+  },
+  dateContainer: {
+    display: {
+      xs: "none",
+      sm: "initial"
+    }
   }
 });
 

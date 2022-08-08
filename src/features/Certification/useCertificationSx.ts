@@ -7,7 +7,7 @@ const useSx: UseSx = sx => ({
   },
   list: {
     width: "100%",
-    maxWidth: theme => theme.breakpoints.values.sm
+    maxWidth: theme => theme.breakpoints.values.md
   }
 });
 

@@ -1,4 +1,4 @@
-import { ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, TypographyProps } from "@mui/material";
+import { Box, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, TypographyProps } from "@mui/material";
 import React, { ElementType, FC } from "react";
 
 import MongoDB from "components/icons/MongoDB";
@@ -38,7 +38,7 @@ const CertListItem: FC<CertListItemProps> = ({ name, organization, issuedDate, e
   };
   const secondaryTypographyProps: TypographyProps = {
     variant: "body1",
-    color: "textPrimary"
+    color: "primary"
   };
 
 
@@ -51,15 +51,23 @@ const CertListItem: FC<CertListItemProps> = ({ name, organization, issuedDate, e
         primary={name}
         secondary={
           <>
-            <Typography sx={sx.organization} component="span">
-              {organization}
+            {organization}
+            <Typography sx={sx.dateMobile} component="span">
+              {`${issued}${issuedDate ? ` | ${expire}` : ""}`}
             </Typography>
-            {`${issued}${issuedDate ? ` | ${expire}` : ""}`}
           </>
         }
         primaryTypographyProps={primaryTypographyProps}
         secondaryTypographyProps={secondaryTypographyProps}
       />
+      <Box sx={sx.dateContainer}>
+        <Typography sx={sx.date} component="div">
+          {issued}
+        </Typography>
+        <Typography sx={sx.date} component="div">
+          {issuedDate && expire}
+        </Typography>
+      </Box>
     </>
   );
 
