@@ -21,6 +21,7 @@ const useSx: UseSx = () => ({
     maxWidth: 430
   },
   notFound: {
+    typography: "h5",
     my: 4,
     textAlign: "center"
   }
@@ -34,7 +35,7 @@ const NotFoundPage: FC = () => {
       <Box sx={sx.animationContainer}>
         <Arctic404 />
       </Box>
-      <Typography variant="h5" component="h1" sx={sx.notFound}>
+      <Typography component="h1" sx={sx.notFound}>
         The page you were looking for does not exist.
       </Typography>
       <Button variant="outlined" color="inherit" size="large" startIcon={<ArrowLeft />} component={Link} to="/">

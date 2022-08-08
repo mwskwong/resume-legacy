@@ -41,7 +41,7 @@ const Courses: FC = () => {
 
   return (
     <>
-      <Typography sx={sx.title} variant="subtitle2" component="h3">
+      <Typography sx={sx.title} component="h3">
         Courses
       </Typography>
       <List dense>

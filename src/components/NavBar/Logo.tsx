@@ -17,7 +17,7 @@ const Logo: FC = () => {
 
   return (
     <Button color="inherit" href={`#${HOME.id}`}>
-      <Typography sx={sx.text} variant="h4" component="span">
+      <Typography sx={sx.text} component="span">
         {name?.firstName}
       </Typography>
     </Button>
