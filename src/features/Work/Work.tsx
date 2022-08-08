@@ -15,7 +15,7 @@ const Work: FC<SectionProps> = ({ sx: sxProp }) => {
     <Box sx={sx.root} component="section" id={WORK.id}>
       <Container>
         <Stack spacing={6}>
-          <SectionHeading heading="Recent Experiences" />
+          <SectionHeading heading="Experience" />
           <WorkTimeline />
         </Stack>
       </Container>
