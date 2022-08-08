@@ -1,5 +1,5 @@
-import { Box, Container, Grid, Stack } from "@mui/material";
-import React, { FC, memo } from "react";
+import { Box, Container, Grid, NoSsr, Stack } from "@mui/material";
+import React, { FC, Suspense, lazy, memo } from "react";
 
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
@@ -9,7 +9,8 @@ import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import useSx from "./useEducationSx";
 
-// import ArcticOceanFractal from "components/illustrations/ArcticOceanFractal";
+const ArcticOceanFractal = lazy(() => import("components/illustrations/ArcticOceanFractal"));
+const ArcticOceanFractalFallback = () => <Box sx={{ width: "100%", aspectRatio: "800 / 640.66" }} />;
 
 const Education: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
@@ -28,7 +29,11 @@ const Education: FC<SectionProps> = ({ sx: sxProp }) => {
               <Grid item md={6} xs={12}>
                 <Box sx={sx.animationContainer}>
                   <Box sx={sx.animationWrapper}>
-                    {/* <ArcticOceanFractal /> */}
+                    <NoSsr defer>
+                      <Suspense fallback={<ArcticOceanFractalFallback />}>
+                        <ArcticOceanFractal />
+                      </Suspense>
+                    </NoSsr>
                   </Box>
                 </Box>
               </Grid>
