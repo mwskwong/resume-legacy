@@ -19,6 +19,14 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       siteUrl: String!
     }
 
+    type ContentfulCertification {
+      name: String!
+      organization: String!
+      issuedDate: String
+      expirationDate: String
+      file: ContentfulAsset
+    }
+
     type ContentfulContact {
       phone: String!
       email: String!

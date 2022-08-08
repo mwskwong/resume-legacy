@@ -44,7 +44,7 @@ const Message: FC = () => {
         {jobTitles.map((title, index) => (
           <Fragment key={title}>
             {index !== 0 && <Box sx={sx.dot} />}
-            <Typography variant="subtitle1" component="div">
+            <Typography sx={sx.jobTitle} component="div">
               {title}
             </Typography>
           </Fragment>

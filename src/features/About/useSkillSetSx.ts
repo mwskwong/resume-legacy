@@ -2,6 +2,7 @@ import { UseSx } from "types";
 
 const useSx: UseSx = () => ({
   title: {
+    typography: "subtitle2",
     color: "primary.main",
     textAlign: "center",
     mb: 2
@@ -16,6 +17,7 @@ const useSx: UseSx = () => ({
     fontSize: 60
   },
   subtitle: {
+    typography: "subtitle1",
     color: "primary.main"
   },
   skillsContainer: {

@@ -2,6 +2,7 @@ import { UseSx } from "types";
 
 const useSx: UseSx = () => ({
   comment: {
+    typography: "subtitle1",
     mb: 2
   },
   profileContainer: {

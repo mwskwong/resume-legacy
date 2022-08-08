@@ -2,6 +2,7 @@ import { UseSx } from "types";
 
 const useSx: UseSx = () => ({
   periodDesktop: {
+    typography: "body2",
     color: "text.secondary",
     display: {
       xs: "none",
@@ -14,10 +15,14 @@ const useSx: UseSx = () => ({
     pr: 0
   },
   periodMobile: {
+    typography: "body2",
     color: "text.secondary",
     display: {
       md: "none"
     }
+  },
+  title: {
+    typography: "subtitle1"
   },
   subtitle: {
     color: "primary.main"
@@ -32,6 +37,7 @@ const useSx: UseSx = () => ({
     height: 24
   },
   listItemNumber: {
+    typography: "overline",
     color: "text.secondary",
     userSelect: "none",
     lineHeight: "initial"

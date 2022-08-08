@@ -5,7 +5,6 @@ import ArcticOceanFractal from "components/illustrations/ArcticOceanFractal";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
-import PropTypes from "prop-types";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import useSx from "./useEducationSx";
@@ -37,10 +36,6 @@ const Education: FC<SectionProps> = ({ sx: sxProp }) => {
       </Container>
     </Box>
   );
-};
-
-Education.propTypes = {
-  sx: PropTypes.object
 };
 
 if (process.env.NODE_ENV === "development") Education.whyDidYouRender = true;

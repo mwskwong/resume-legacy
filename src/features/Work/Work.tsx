@@ -1,7 +1,6 @@
 import { Box, Container, Stack } from "@mui/material";
 import React, { FC, memo } from "react";
 
-import PropTypes from "prop-types";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import { WORK } from "constants/nav";
@@ -15,16 +14,12 @@ const Work: FC<SectionProps> = ({ sx: sxProp }) => {
     <Box sx={sx.root} component="section" id={WORK.id}>
       <Container>
         <Stack spacing={6}>
-          <SectionHeading heading="Recent Experiences" />
+          <SectionHeading heading="Experience" />
           <WorkTimeline />
         </Stack>
       </Container>
     </Box>
   );
-};
-
-Work.propTypes = {
-  sx: PropTypes.object
 };
 
 if (process.env.NODE_ENV === "development") Work.whyDidYouRender = true;

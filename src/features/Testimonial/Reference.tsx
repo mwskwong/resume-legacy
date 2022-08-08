@@ -13,7 +13,7 @@ const Reference: FC<ReferenceProps> = ({ name, jobTitle, refereePicture, company
 
   return (
     <div>
-      <Typography variant="subtitle1" component="p" sx={sx.comment}>
+      <Typography sx={sx.comment} component="p">
         {`"${comment}"`}
       </Typography>
       <Box sx={sx.profileContainer}>

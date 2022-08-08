@@ -10,6 +10,7 @@ const useSx: UseSx = () => ({
     borderColor: theme => alpha(theme.palette.primary.main, .25)
   },
   value: {
+    typography: "h3",
     color: "primary.main",
     fontWeight: "bold"
   },

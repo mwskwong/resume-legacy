@@ -40,7 +40,7 @@ const SkillSet: FC = () => {
 
   return (
     <div>
-      <Typography variant="subtitle2" component="h3" sx={sx.title}>
+      <Typography component="h3" sx={sx.title}>
         Skills
       </Typography>
       <Grid container spacing={6} sx={sx.gridContainer}>
@@ -51,7 +51,7 @@ const SkillSet: FC = () => {
             <Grid key={type} item lg={4} sm={6} xs={12}>
               <Stack spacing={2} sx={sx.stack}>
                 <Icon sx={sx.icon} />
-                <Typography variant="subtitle1" component="h4" sx={sx.subtitle}>
+                <Typography component="h4" sx={sx.subtitle}>
                   {type}
                 </Typography>
                 <Box sx={sx.skillsContainer}>
@@ -70,7 +70,7 @@ const SkillSet: FC = () => {
           );
         })}
       </Grid>
-    </div>
+    </div >
   );
 };
 

@@ -4,8 +4,8 @@ import { SvgIcon, SvgIconProps } from "@mui/material";
 import { siEnterprisedb } from "simple-icons/icons";
 import useSx from "./useThirdPartyIconSx";
 
-const EnterpriseDB: FC<SvgIconProps> = props => {
-  const sx = useSx();
+const EnterpriseDB: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
+  const sx = useSx(sxProp);
 
   return (
     <SvgIcon sx={sx.simpleIcons} {...props}>

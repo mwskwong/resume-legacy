@@ -25,6 +25,9 @@ const useSx: UseSx = () => ({
     mx: 2,
     my: 1
   },
+  jobTitle: {
+    typography: "subtitle1"
+  },
   intro: {
     textAlign: "center"
   }

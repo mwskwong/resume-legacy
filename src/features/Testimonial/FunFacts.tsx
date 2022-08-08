@@ -38,7 +38,7 @@ const FunFacts: FC = () => {
       {funFacts.map(({ title, value }) => (
         <Grid key={title} item xs={6}>
           <Box sx={sx.root}>
-            <Typography variant="h3" component="div" sx={sx.value}>
+            <Typography component="div" sx={sx.value}>
               {value}
             </Typography>
             <Typography sx={sx.title}>

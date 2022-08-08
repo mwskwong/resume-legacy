@@ -4,8 +4,8 @@ import { SvgIcon, SvgIconProps } from "@mui/material";
 import { siOracle } from "simple-icons/icons";
 import useSx from "./useThirdPartyIconSx";
 
-const Oracle: FC<SvgIconProps> = props => {
-  const sx = useSx();
+const Oracle: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
+  const sx = useSx(sxProp);
 
   return (
     <SvgIcon sx={sx.simpleIcons} {...props}>

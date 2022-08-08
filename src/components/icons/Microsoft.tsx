@@ -4,8 +4,8 @@ import { SvgIcon, SvgIconProps } from "@mui/material";
 import { siMicrosoft } from "simple-icons/icons";
 import useSx from "./useThirdPartyIconSx";
 
-const Microsoft: FC<SvgIconProps> = props => {
-  const sx = useSx();
+const Microsoft: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
+  const sx = useSx(sxProp);
 
   return (
     <SvgIcon sx={sx.simpleIcons} {...props}>

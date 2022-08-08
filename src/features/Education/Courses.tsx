@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import EnterpriseDB from "components/icons/EnterpriseDB";
 import Microsoft from "components/icons/Microsoft";
+import MongoDB from "components/icons/MongoDB";
 import Oracle from "components/icons/Oracle";
 import Udemy from "components/icons/Udemy";
 import camelCase from "camelcase";
@@ -13,7 +14,8 @@ const Icons: Record<string, ElementType> = {
   microsoft: Microsoft,
   oracle: Oracle,
   udemy: Udemy,
-  enterpriseDb: EnterpriseDB
+  enterpriseDb: EnterpriseDB,
+  mongoDb: MongoDB
 };
 
 const Courses: FC = () => {
@@ -39,7 +41,7 @@ const Courses: FC = () => {
 
   return (
     <>
-      <Typography sx={sx.title} variant="subtitle2" component="h3">
+      <Typography sx={sx.title} component="h3">
         Courses
       </Typography>
       <List dense>

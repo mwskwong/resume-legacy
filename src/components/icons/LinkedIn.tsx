@@ -4,8 +4,8 @@ import { SvgIcon, SvgIconProps } from "@mui/material";
 import { siLinkedin } from "simple-icons/icons";
 import useSx from "./useThirdPartyIconSx";
 
-const LinkedIn: FC<SvgIconProps> = props => {
-  const sx = useSx();
+const LinkedIn: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
+  const sx = useSx(sxProp);
 
   return (
     <SvgIcon sx={sx.simpleIcons} {...props}>

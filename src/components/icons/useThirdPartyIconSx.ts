@@ -1,8 +1,9 @@
 import { UseSx } from "types";
 
-const useSx: UseSx = () => ({
+const useSx: UseSx = sx => ({
   simpleIcons: {
-    p: "2px"
+    p: "2px",
+    ...sx
   }
 });
 

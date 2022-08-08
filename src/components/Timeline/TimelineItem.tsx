@@ -11,13 +11,12 @@ import React, { FC, memo } from "react";
 
 import SupportDocumentListItem from "./SupportDocumentListItem";
 import TimelineItemData from "./TimelineItemData";
+import dateTimeFormat from "utils/dateTimeFormat";
 import useSx from "./useTImelineItemSx";
 
 type TimelineItemProps = {
   data: TimelineItemData
 }
-
-const dateTimeFormat = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" });
 
 const TimelineItem: FC<TimelineItemProps> = ({ data }) => {
   const sx = useSx();
@@ -29,7 +28,7 @@ const TimelineItem: FC<TimelineItemProps> = ({ data }) => {
 
   return (
     <MuiTimelineItem>
-      <TimelineOppositeContent sx={sx.periodDesktop} variant="body2">
+      <TimelineOppositeContent sx={sx.periodDesktop}>
         {period}
       </TimelineOppositeContent>
       <TimelineSeparator>
@@ -37,10 +36,10 @@ const TimelineItem: FC<TimelineItemProps> = ({ data }) => {
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent sx={sx.timelineContent}>
-        <Typography sx={sx.periodMobile} variant="body2" component="div" gutterBottom>
+        <Typography sx={sx.periodMobile} component="div" gutterBottom>
           {period}
         </Typography>
-        <Typography variant="subtitle1" component="div" gutterBottom>
+        <Typography sx={sx.title} component="div" gutterBottom>
           {data.title}
         </Typography>
         <Typography sx={sx.subtitle} component="div" gutterBottom>
@@ -50,7 +49,7 @@ const TimelineItem: FC<TimelineItemProps> = ({ data }) => {
           {contents.map((content, index) => (
             <ListItem key={index} disableGutters>
               <ListItemIcon sx={sx.listItemIcon}>
-                <Typography variant="overline" component="span" sx={sx.listItemNumber}>
+                <Typography component="span" sx={sx.listItemNumber}>
                   {`${index + 1 < 10 ? 0 : ""}${index + 1}`}
                 </Typography>
               </ListItemIcon>
