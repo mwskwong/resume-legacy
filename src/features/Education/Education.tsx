@@ -1,4 +1,4 @@
-import { Box, Container, Grid, NoSsr, Stack } from "@mui/material";
+import { Box, Container, Grid, Stack } from "@mui/material";
 import React, { FC, Suspense, lazy, memo } from "react";
 
 import Courses from "./Courses";
@@ -7,6 +7,7 @@ import EducationTimeline from "./EducationTimeline";
 import PropTypes from "prop-types";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
+import { useInView } from "react-intersection-observer";
 import useSx from "./useEducationSx";
 
 const ArcticOceanFractal = lazy(() => import("components/illustrations/ArcticOceanFractal"));
@@ -14,6 +15,7 @@ const ArcticOceanFractalFallback = () => <Box sx={{ width: "100%", aspectRatio: 
 
 const Education: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
+  const { ref, inView } = useInView({ triggerOnce: true, rootMargin: "50px" });
 
   return (
     <Box component="section" id={EDUCATION.id} sx={sx.root}>
@@ -28,12 +30,16 @@ const Education: FC<SectionProps> = ({ sx: sxProp }) => {
               </Grid>
               <Grid item md={6} xs={12}>
                 <Box sx={sx.animationContainer}>
-                  <Box sx={sx.animationWrapper}>
-                    <NoSsr defer>
-                      <Suspense fallback={<ArcticOceanFractalFallback />}>
-                        <ArcticOceanFractal />
-                      </Suspense>
-                    </NoSsr>
+                  <Box ref={ref} sx={sx.animationWrapper}>
+                    {
+                      inView
+                        ? (
+                          <Suspense fallback={<ArcticOceanFractalFallback />}>
+                            <ArcticOceanFractal />
+                          </Suspense>
+                        )
+                        : <ArcticOceanFractalFallback />
+                    }
                   </Box>
                 </Box>
               </Grid>
