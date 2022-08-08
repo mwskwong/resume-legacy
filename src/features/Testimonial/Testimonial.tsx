@@ -3,7 +3,6 @@ import React, { FC, memo } from "react";
 
 import Carousel from "./Carousel";
 import FunFacts from "./FunFacts";
-import PropTypes from "prop-types";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import { TESTIMONIAL } from "constants/nav";
@@ -27,10 +26,6 @@ const Testimonial: FC<SectionProps> = ({ sx: sxProp }) => {
       </Container>
     </Box>
   );
-};
-
-Testimonial.propTypes = {
-  sx: PropTypes.object
 };
 
 if (process.env.NODE_ENV === "development") Testimonial.whyDidYouRender = true;

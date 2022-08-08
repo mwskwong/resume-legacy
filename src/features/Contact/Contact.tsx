@@ -8,7 +8,6 @@ import { CONTACT } from "constants/nav";
 import FormValues from "./FormValues";
 import { LoadingButton } from "@mui/lab";
 import PersonalInfo from "./PersonalInfo";
-import PropTypes from "prop-types";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import TextField from "./TextField";
@@ -120,10 +119,6 @@ const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
       </Container>
     </Box>
   );
-};
-
-Contact.propTypes = {
-  sx: PropTypes.object
 };
 
 if (process.env.NODE_ENV === "development") Contact.whyDidYouRender = true;

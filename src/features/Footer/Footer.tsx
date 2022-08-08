@@ -3,7 +3,6 @@ import React, { FC, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { FavoriteRounded as Favorite } from "@mui/icons-material";
-import PropTypes from "prop-types";
 import { SectionProps } from "types";
 import SocialMedia from "components/SocialMedia";
 import { Typography } from "@mui/material";
@@ -46,10 +45,6 @@ const Footer: FC<SectionProps> = ({ sx: sxProp }) => {
       </Container>
     </Box>
   );
-};
-
-Footer.propTypes = {
-  sx: PropTypes.object
 };
 
 if (process.env.NODE_ENV === "development") Footer.whyDidYouRender = true;
