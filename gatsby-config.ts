@@ -84,6 +84,7 @@ const config: GatsbyConfig = {
         start_url: "/",
         background_color: nord0,
         theme_color: nord0,
+        cache_busting_mode: "none",
         display: "standalone",
         icons: [
           {
@@ -132,7 +133,17 @@ const config: GatsbyConfig = {
         }
       }
     },
-    "gatsby-plugin-remove-serviceworker",
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: [
+            "**/icon-*",
+            "**/favicon.ico"
+          ]
+        }
+      }
+    },
     ANALYZE_BUNDLE ? "gatsby-plugin-webpack-bundle-analyser-v2" : "",
     ANALYZE_BUNDLE ? "gatsby-plugin-perf-budgets" : ""
   ].filter(Boolean)
