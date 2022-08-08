@@ -4,8 +4,8 @@ import { SvgIcon, SvgIconProps } from "@mui/material";
 import { siStackoverflow } from "simple-icons/icons";
 import useSx from "./useThirdPartyIconSx";
 
-const StackOverflow: FC<SvgIconProps> = props => {
-  const sx = useSx();
+const StackOverflow: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
+  const sx = useSx(sxProp);
 
   return (
     <SvgIcon sx={sx.simpleIcons} {...props}>

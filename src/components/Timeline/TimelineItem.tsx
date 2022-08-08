@@ -11,13 +11,12 @@ import React, { FC, memo } from "react";
 
 import SupportDocumentListItem from "./SupportDocumentListItem";
 import TimelineItemData from "./TimelineItemData";
+import dateTimeFormat from "utils/dateTimeFormat";
 import useSx from "./useTImelineItemSx";
 
 type TimelineItemProps = {
   data: TimelineItemData
 }
-
-const dateTimeFormat = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" });
 
 const TimelineItem: FC<TimelineItemProps> = ({ data }) => {
   const sx = useSx();

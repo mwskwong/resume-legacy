@@ -4,8 +4,8 @@ import { SvgIcon, SvgIconProps } from "@mui/material";
 import { siUdemy } from "simple-icons/icons";
 import useSx from "./useThirdPartyIconSx";
 
-const Udemy: FC<SvgIconProps> = props => {
-  const sx = useSx();
+const Udemy: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
+  const sx = useSx(sxProp);
 
   return (
     <SvgIcon sx={sx.simpleIcons} {...props}>
