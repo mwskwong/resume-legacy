@@ -8,15 +8,18 @@ import useSx from "./usePersonalInfoSx";
 const contactTemplate = {
   phone: {
     Icon: Mobile,
-    title: "Call Me On"
+    title: "Call Me On",
+    urlPrefix: "tel:"
   },
   email: {
     Icon: Email,
-    title: "Email Me At"
+    title: "Email Me At",
+    urlPrefix: "mailto:"
   },
   address: {
     Icon: Location,
-    title: "Find Me At"
+    title: "Find Me At",
+    urlPrefix: undefined
   }
 };
 
@@ -41,13 +44,17 @@ const PersonalInfo = () => {
             keyof typeof contactTemplate,
             typeof contactTemplate[keyof typeof contactTemplate]
           ][]
-        ).map(([key, { Icon, title }]) => (
+        ).map(([key, { Icon, title, urlPrefix }]) => (
           <Box key={key} sx={sx.itemContainer}>
             <Icon fontSize="large" />
             <Typography component="div" sx={sx.title} gutterBottom>
               {title}
             </Typography>
-            <Typography component="div" sx={sx.value}>
+            <Typography
+              sx={sx.value}
+              component={urlPrefix ? "a" : "div"}
+              href={urlPrefix && `${urlPrefix}${contact?.[key]}`}
+            >
               {contact?.[key]}
             </Typography>
           </Box>

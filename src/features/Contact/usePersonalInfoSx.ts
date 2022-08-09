@@ -17,7 +17,8 @@ const useSx: UseSx = () => ({
     mt: 2
   },
   value: {
-    textAlign: "center"
+    textAlign: "center",
+    textDecoration: "none"
   }
 });
 

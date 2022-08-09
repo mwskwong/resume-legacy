@@ -1,5 +1,5 @@
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
-import React, { ElementType, FC } from "react";
+import React, { ElementType, FC, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import EnterpriseDB from "components/icons/EnterpriseDB";
@@ -80,4 +80,4 @@ const Courses: FC = () => {
 
 if (process.env.NODE_ENV === "development") Courses.whyDidYouRender = true;
 
-export default Courses;
+export default memo(Courses);

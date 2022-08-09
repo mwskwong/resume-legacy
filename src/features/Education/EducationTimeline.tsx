@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Timeline from "components/Timeline";
@@ -42,4 +42,4 @@ const EducationTimeline: FC = () => {
 
 if (process.env.NODE_ENV === "development") EducationTimeline.whyDidYouRender = true;
 
-export default EducationTimeline;
+export default memo(EducationTimeline);
