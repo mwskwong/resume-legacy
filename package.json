@@ -47,8 +47,8 @@
   },
   "devDependencies": {
     "@formspree/core": "^2.7.0",
-    "@types/node": "^18.6.4",
-    "@types/react": "^18.0.16",
+    "@types/node": "^18.6.5",
+    "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/react-helmet": "^6.1.5",
     "@types/react-swipeable-views": "^0.13.1",
