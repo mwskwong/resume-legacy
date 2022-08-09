@@ -29,8 +29,8 @@ const Education: FC<SectionProps> = ({ sx: sxProp }) => {
                 <Courses />
               </Grid>
               <Grid item md={6} xs={12}>
-                <Box ref={ref} sx={sx.animationContainer}>
-                  <Box sx={sx.animationWrapper}>
+                <Box sx={sx.animationContainer}>
+                  <Box ref={ref} sx={sx.animationWrapper}>
                     {
                       inView
                         ? (
