@@ -1,5 +1,5 @@
-import { Box, Container, Grid, Stack } from "@mui/material";
-import React, { FC, Suspense, memo } from "react";
+import { Box, Container, Grid, NoSsr, Stack } from "@mui/material";
+import React, { FC, Suspense, lazy, memo } from "react";
 
 import ArcticOceanFractal from "components/illustrations/ArcticOceanFractal";
 import Courses from "./Courses";
@@ -13,6 +13,7 @@ const ArcticOceanFractalFallback = () => <Box sx={{ width: "100%", aspectRatio: 
 
 const Education: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
+  const arcticOceanFractalFallback = <ArcticOceanFractalFallback />;
 
   return (
     <Box component="section" id={EDUCATION.id} sx={sx.root}>
@@ -28,9 +29,11 @@ const Education: FC<SectionProps> = ({ sx: sxProp }) => {
               <Grid item md={6} xs={12}>
                 <Box sx={sx.animationContainer}>
                   <Box sx={sx.animationWrapper}>
-                    <Suspense fallback={<ArcticOceanFractalFallback />}>
-                      <ArcticOceanFractal />
-                    </Suspense>
+                    <NoSsr defer fallback={arcticOceanFractalFallback}>
+                      <Suspense fallback={arcticOceanFractalFallback}>
+                        <ArcticOceanFractal />
+                      </Suspense>
+                    </NoSsr>
                   </Box>
                 </Box>
               </Grid>
