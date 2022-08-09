@@ -13,7 +13,7 @@ const ArcticOceanFractal = lazy(() => import("components/illustrations/ArcticOce
 const ArcticOceanFractalFallback = () => <Box sx={{ width: "100%", aspectRatio: "800 / 640.66" }} />;
 
 const Education: FC<SectionProps> = ({ sx: sxProp }) => {
-  const { ref, inView } = useInView({ triggerOnce: true, rootMargin: "50px" });
+  const { ref, inView } = useInView({ triggerOnce: true, rootMargin: "500px" });
   const sx = useSx(sxProp);
   const arcticOceanFractalFallback = <ArcticOceanFractalFallback />;
 
