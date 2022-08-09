@@ -1,13 +1,14 @@
 import { Box, Container, Grid, NoSsr, Stack } from "@mui/material";
 import React, { FC, Suspense, lazy, memo } from "react";
 
-import ArcticOceanFractal from "components/illustrations/ArcticOceanFractal";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import useSx from "./useEducationSx";
+
+const ArcticOceanFractal = lazy(() => import("components/illustrations/ArcticOceanFractal"));
 
 const ArcticOceanFractalFallback = () => <Box sx={{ width: "100%", aspectRatio: "800 / 640.66" }} />;
 
