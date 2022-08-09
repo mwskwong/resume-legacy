@@ -31,7 +31,7 @@ const config: GatsbyConfig = {
         enableTags: true
       }
     },
-    "gatsby-plugin-emotion",
+    "gatsby-plugin-material-ui",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",
