@@ -6,13 +6,16 @@ import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
+import { useInView } from "react-intersection-observer";
 import useSx from "./useEducationSx";
 
 const ArcticOceanFractal = lazy(() => import("components/illustrations/ArcticOceanFractal"));
 const ArcticOceanFractalFallback = () => <Box sx={{ width: "100%", aspectRatio: "800 / 640.66" }} />;
 
 const Education: FC<SectionProps> = ({ sx: sxProp }) => {
+  const { ref, inView } = useInView({ triggerOnce: true, rootMargin: "50px" });
   const sx = useSx(sxProp);
+  const arcticOceanFractalFallback = <ArcticOceanFractalFallback />;
 
   return (
     <Box component="section" id={EDUCATION.id} sx={sx.root}>
@@ -26,11 +29,17 @@ const Education: FC<SectionProps> = ({ sx: sxProp }) => {
                 <Courses />
               </Grid>
               <Grid item md={6} xs={12}>
-                <Box sx={sx.animationContainer}>
+                <Box ref={ref} sx={sx.animationContainer}>
                   <Box sx={sx.animationWrapper}>
-                    <Suspense fallback={<ArcticOceanFractalFallback />}>
-                      <ArcticOceanFractal />
-                    </Suspense>
+                    {
+                      inView
+                        ? (
+                          <Suspense fallback={arcticOceanFractalFallback}>
+                            <ArcticOceanFractal />
+                          </Suspense>
+                        )
+                        : arcticOceanFractalFallback
+                    }
                   </Box>
                 </Box>
               </Grid>
