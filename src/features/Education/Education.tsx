@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack } from "@mui/material";
+import { Box, Container, Grid, NoSsr, Stack } from "@mui/material";
 import React, { FC, Suspense, lazy, memo } from "react";
 
 import Courses from "./Courses";
@@ -34,9 +34,11 @@ const Education: FC<SectionProps> = ({ sx: sxProp }) => {
               <Grid item md={6} xs={12}>
                 <Box sx={sx.animationContainer}>
                   <Box sx={sx.animationWrapper}>
-                    <Suspense fallback={arcticOceanFractalFallback}>
-                      <ArcticOceanFractal />
-                    </Suspense>
+                    <NoSsr defer fallback={arcticOceanFractalFallback}>
+                      <Suspense fallback={arcticOceanFractalFallback}>
+                        <ArcticOceanFractal />
+                      </Suspense>
+                    </NoSsr>
                   </Box>
                 </Box>
               </Grid>
