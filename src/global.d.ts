@@ -1,4 +1,5 @@
 /// <reference types="@welldone-software/why-did-you-render" />
+// eslint-disable-next-line react/no-typos
 import "react";
 
 // Add extra fields supported by MUI
