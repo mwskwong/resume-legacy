@@ -3,7 +3,6 @@ import React, { ElementType, FC, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { CERTIFICATION } from "constants/nav";
-import { FiberManualRecordRounded as Dot } from "@mui/icons-material";
 import MongoDB from "components/icons/MongoDB";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
