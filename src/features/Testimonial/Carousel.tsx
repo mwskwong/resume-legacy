@@ -1,5 +1,5 @@
 import { KeyboardArrowLeftRounded as ArrowLeft, KeyboardArrowRightRounded as ArrowRight } from "@mui/icons-material";
-import { Box, Grid, IconButton, Stack } from "@mui/material";
+import { Box, Unstable_Grid2 as Grid, IconButton, Stack } from "@mui/material";
 import React, { FC, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -44,7 +44,7 @@ const Carousel: FC = () => {
   const handleNext = () => setIndex(index => index + 1);
 
   return (
-    <Grid item md={6} xs={12}>
+    <Grid md={6} xs={12}>
       <Box sx={sx.actionContainer}>
         <Stack direction="row" spacing={2}>
           <IconButton

@@ -1,12 +1,20 @@
-import { Box, Container, List, Stack } from "@mui/material";
-import React, { FC, memo } from "react";
+import { Box, Card, CardActionArea, CardContent, Container, Unstable_Grid2 as Grid, Stack, SvgIconProps, Typography } from "@mui/material";
+import React, { ElementType, FC, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { CERTIFICATION } from "constants/nav";
-import CertListItem from "./CertListItem";
+import { FiberManualRecordRounded as Dot } from "@mui/icons-material";
+import MongoDB from "components/icons/MongoDB";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
+import camelCase from "camelcase";
+import dateTimeFormat from "utils/dateTimeFormat";
 import useSx from "./useCertificationSx";
+
+const Icons: Record<string, ElementType<SvgIconProps>> = {
+  mongoDb: MongoDB
+};
+
 
 const Certification: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
@@ -29,17 +37,55 @@ const Certification: FC<SectionProps> = ({ sx: sxProp }) => {
   return (
     <Box component="section" id={CERTIFICATION.id} sx={sx.root}>
       <Container>
-        <Stack spacing={6} sx={sx.stack}>
+        <Stack spacing={6}>
           <SectionHeading heading="Certifications" />
-          <List sx={sx.list}>
-            {certifications.map(({ file, ...props }) => (
-              <CertListItem
-                key={props.name}
-                {...props}
-                url={file?.publicUrl}
-              />
-            ))}
-          </List>
+          <div>
+            <Grid container spacing={2} disableEqualOverflow>
+              {certifications
+                .map(({ name, organization, issuedDate, expirationDate, file }) => {
+                  const issued = issuedDate
+                    ? `Issued ${dateTimeFormat.format(new Date(issuedDate))}`
+                    : "In Progress";
+                  const expire = expirationDate
+                    ? `Expires ${dateTimeFormat.format(new Date(expirationDate))}`
+                    : "Never Expire";
+                  const fileUrl = file?.publicUrl;
+
+                  const organizationCamelCase = camelCase(organization);
+                  const Icon = Icons[organizationCamelCase];
+                  const cardContent = (
+                    <CardContent>
+                      <Stack spacing={2} direction="row" sx={sx.cardContentStack}>
+                        <Icon fontSize="large" />
+                        <div>
+                          <Typography>{name}</Typography>
+                          <Typography variant="body2" color={`${organizationCamelCase}.main`}>{organization}</Typography>
+                          <Typography variant="body2" sx={sx.dates}>
+                            {issued}
+                            {issuedDate && ` — ${expire}`}
+                          </Typography>
+                        </div>
+                      </Stack>
+                    </CardContent>
+                  );
+
+                  return (
+                    <Grid key={name} md={6} xs={12}>
+                      <Card>
+                        {fileUrl
+                          ? (
+                            <CardActionArea href={fileUrl}>
+                              {cardContent}
+                            </CardActionArea>
+                          )
+                          : cardContent
+                        }
+                      </Card>
+                    </Grid>
+                  );
+                })}
+            </Grid>
+          </div>
         </Stack>
       </Container>
     </Box>

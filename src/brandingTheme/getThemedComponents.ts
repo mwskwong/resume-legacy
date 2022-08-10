@@ -32,6 +32,20 @@ const getThemedComponents: GetThemedComponents = theme => ({
         }
       }
     },
+    MuiCard: {
+      defaultProps: {
+        elevation: 0
+      }
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          "&:last-child": {
+            paddingBottom: 16
+          }
+        }
+      }
+    },
     MuiChip: {
       styleOverrides: {
         root: {
@@ -55,12 +69,12 @@ const getThemedComponents: GetThemedComponents = theme => ({
           }
         },
         section: {
-          scrollMarginTop: "56px",
+          scrollMarginTop: 56,
           [`@media (min-width: ${theme.breakpoints.values.xs}px) and (orientation: landscape)`]: {
-            scrollMarginTop: "48px"
+            scrollMarginTop: 48
           },
           [`@media (min-width: ${theme.breakpoints.values.sm}px)`]: {
-            scrollMarginTop: "64px"
+            scrollMarginTop: 64
           },
           paddingTop: theme.spacing(10),
           paddingBottom: theme.spacing(10)
@@ -123,6 +137,27 @@ const getThemedComponents: GetThemedComponents = theme => ({
       styleOverrides: {
         root: {
           boxShadow: "none"
+        }
+      }
+    },
+    MuiToggleButtonGroup: {
+      styleOverrides: {
+        root: {
+          flexWrap: "wrap",
+          justifyContent: "center"
+        },
+        grouped: {
+          border: 0,
+          margin: `${theme.spacing(.25)} ${theme.spacing(.5)}`,
+          "&:not(:first-of-type)": {
+            borderRadius: theme.shape.borderRadius
+          },
+          "&:first-of-type": {
+            borderRadius: theme.shape.borderRadius
+          }
+        },
+        disabled: {
+          border: 0
         }
       }
     },

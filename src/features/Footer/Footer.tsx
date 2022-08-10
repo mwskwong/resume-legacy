@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container, Unstable_Grid2 as Grid } from "@mui/material";
 import React, { FC, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -27,8 +27,8 @@ const Footer: FC<SectionProps> = ({ sx: sxProp }) => {
   return (
     <Box component="footer" sx={sx.root}>
       <Container>
-        <Grid sx={sx.gridContainer} container spacing={1}>
-          <Grid item lg="auto" xs={12}>
+        <Grid sx={sx.gridContainer} container spacing={1} disableEqualOverflow>
+          <Grid lg="auto" xs={12}>
             <Typography sx={sx.text} variant="body2">
               {`Copyright © ${year} ${name?.lastName.toUpperCase()}, ${name?.firstName} ${name?.middleName}`}
             </Typography>
@@ -38,7 +38,7 @@ const Footer: FC<SectionProps> = ({ sx: sxProp }) => {
               {` in ${contact?.address}`}
             </Typography>
           </Grid>
-          <Grid item lg="auto" xs={12}>
+          <Grid lg="auto" xs={12}>
             <SocialMedia />
           </Grid>
         </Grid>

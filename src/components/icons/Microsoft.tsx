@@ -8,7 +8,7 @@ const Microsoft: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
   const sx = useSx(sxProp);
 
   return (
-    <SvgIcon sx={sx.simpleIcons} {...props}>
+    <SvgIcon sx={sx.microsoft} {...props}>
       <path d={siMicrosoft.path} />
     </SvgIcon>
   );

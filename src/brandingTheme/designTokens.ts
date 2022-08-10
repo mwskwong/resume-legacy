@@ -6,6 +6,22 @@ import nord from "nord";
 import systemFonts from "./systemFonts";
 
 declare module "@mui/material/styles/createPalette" {
+  interface Palette {
+    microsoft: PaletteColor
+    oracle: PaletteColor
+    udemy: PaletteColor
+    enterpriseDb: PaletteColor
+    mongoDb: PaletteColor
+  }
+
+  interface PaletteOptions {
+    microsoft: PaletteColorOptions
+    oracle: PaletteColorOptions
+    udemy: PaletteColorOptions
+    enterpriseDb: PaletteColorOptions
+    mongoDb: PaletteColorOptions
+  }
+
   interface TypeBackground {
     sectionPrimary: string,
     sectionSecondary: string,
@@ -40,7 +56,7 @@ const designTokens: Omit<ThemeOptions, "components"> = {
     },
     error: {
       main: nord.nord11,
-      contrastText: nord.nord6
+      contrastText: "#fff"
     },
     warning: {
       main: nord.nord13,
@@ -54,6 +70,26 @@ const designTokens: Omit<ThemeOptions, "components"> = {
       main: nord.nord14,
       contrastText: nord.nord1
     },
+    microsoft: {
+      main: nord.nord8,
+      contrastText: nord.nord1
+    },
+    oracle: {
+      main: nord.nord11,
+      contrastText: "#fff"
+    },
+    udemy: {
+      main: nord.nord15,
+      contrastText: nord.nord1
+    },
+    enterpriseDb: {
+      main: nord.nord12,
+      contrastText: nord.nord1
+    },
+    mongoDb: {
+      main: nord.nord14,
+      contrastText: nord.nord1
+    },
     text: {
       primary: nord.nord6,
       secondary: darken(nord.nord6, .27),
@@ -62,6 +98,7 @@ const designTokens: Omit<ThemeOptions, "components"> = {
     divider: alpha(nord.nord4, .5),
     background: {
       default: nord.nord0,
+      paper: nord.nord0,
       sectionPrimary: nord.nord1,
       sectionSecondary: darken(nord.nord0, .1),
       sectionTertiary: darken(nord.nord0, .2)

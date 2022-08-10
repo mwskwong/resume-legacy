@@ -8,7 +8,7 @@ const Udemy: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
   const sx = useSx(sxProp);
 
   return (
-    <SvgIcon sx={sx.simpleIcons} {...props}>
+    <SvgIcon sx={sx.udemy} {...props}>
       <path d={siUdemy.path} />
     </SvgIcon>
   );
