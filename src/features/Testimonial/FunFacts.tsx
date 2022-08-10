@@ -34,7 +34,7 @@ const FunFacts: FC = () => {
     });
 
   return (
-    <Grid container spacing={2} md={6} xs={12}>
+    <Grid container spacing={2} xs={12} md={6}>
       {funFacts.map(({ title, value }) => (
         <Grid key={title} xs={6}>
           <Box sx={sx.root}>

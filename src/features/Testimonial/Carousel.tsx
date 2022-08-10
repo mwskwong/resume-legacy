@@ -44,7 +44,7 @@ const Carousel: FC = () => {
   const handleNext = () => setIndex(index => index + 1);
 
   return (
-    <Grid md={6} xs={12}>
+    <Grid xs={12} md={6}>
       <Box sx={sx.actionContainer}>
         <Stack direction="row" spacing={2}>
           <IconButton

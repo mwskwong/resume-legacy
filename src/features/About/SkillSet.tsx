@@ -48,7 +48,7 @@ const SkillSet: FC = () => {
           const Icon = Icons[camelCase(type || "")];
 
           return (
-            <Grid key={type} lg={4} sm={6} xs={12}>
+            <Grid key={type} xs={12} sm={6} lg={4}>
               <Stack spacing={2} sx={sx.stack}>
                 <Icon sx={sx.icon} />
                 <Typography component="h4" sx={sx.subtitle}>

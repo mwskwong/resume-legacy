@@ -53,11 +53,11 @@ const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
           <SectionHeading heading="Get In Touch" />
           <form onSubmit={handleSubmit(handleFormSubmit)}>
             <Grid container spacing={6} disableEqualOverflow>
-              <Grid md={4} xs={12}>
+              <Grid xs={12} md={4}>
                 <PersonalInfo />
               </Grid>
-              <Grid container spacing={2} md xs={12}>
-                <Grid sm={6} xs={12}>
+              <Grid container spacing={2} xs={12} md>
+                <Grid xs={12} sm={6}>
                   <TextField
                     name="name"
                     control={control}
@@ -66,7 +66,7 @@ const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
                     disabled={sendEmailStatus === "loading"}
                   />
                 </Grid>
-                <Grid sm={6} xs={12}>
+                <Grid xs={12} sm={6}>
                   <TextField
                     name="email"
                     control={control}
