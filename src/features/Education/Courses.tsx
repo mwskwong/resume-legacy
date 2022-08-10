@@ -1,5 +1,5 @@
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
-import React, { ElementType, FC, memo } from "react";
+import { Card, CardActionArea, CardContent, Unstable_Grid2 as Grid, Stack, SvgIconProps, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
+import React, { ElementType, FC, MouseEvent, memo, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import EnterpriseDB from "components/icons/EnterpriseDB";
@@ -10,7 +10,7 @@ import Udemy from "components/icons/Udemy";
 import camelCase from "camelcase";
 import useSx from "./useCoursesSx";
 
-const Icons: Record<string, ElementType> = {
+const Icons: Record<string, ElementType<SvgIconProps>> = {
   microsoft: Microsoft,
   oracle: Oracle,
   udemy: Udemy,
@@ -20,7 +20,8 @@ const Icons: Record<string, ElementType> = {
 
 const Courses: FC = () => {
   const sx = useSx();
-  const { allContentfulCourse: { nodes: courseNodes } } = useStaticQuery<Queries.CoursesQuery>(graphql`
+  const [categorySelected, setCategorySelected] = useState("All");
+  const { allContentfulCourse: { nodes: courses, distinct: categories } } = useStaticQuery<Queries.CoursesQuery>(graphql`
     query Courses {
       allContentfulCourse(sort: {fields: name}) {
         nodes {
@@ -29,52 +30,72 @@ const Courses: FC = () => {
           certification {
             publicUrl
           }
+          category
         }
+        distinct(field: category)
       }
     }
   `);
 
-  const courses = courseNodes.map(({ certification, ...node }) => ({
-    fileUrl: certification?.publicUrl,
-    ...node
-  }));
+  const handleCategoryChange = (_: MouseEvent<HTMLElement>, category: string | null) => category && setCategorySelected(category);
 
   return (
-    <>
+    <Stack spacing={2}>
       <Typography sx={sx.title} component="h3">
         Courses
       </Typography>
-      <List dense>
-        {courses.map(({ name, institution, fileUrl }) => {
-          const Icon = Icons[camelCase(institution)];
+      <ToggleButtonGroup
+        color="primary"
+        size="small"
+        value={categorySelected}
+        onChange={handleCategoryChange}
+        exclusive
+        aria-label="course categories"
+      >
+        <ToggleButton value="All">All</ToggleButton>
+        {categories.map(category =>
+          <ToggleButton key={category} value={category}>{category}</ToggleButton>
+        )}
+      </ToggleButtonGroup>
+      <div>
+        <Grid container spacing={2} disableEqualOverflow>
+          {courses
+            .filter(({ category }) => categorySelected === "All" || category === categorySelected)
+            .map(({ name, institution, certification }) => {
+              const institutionCamelCase = camelCase(institution);
+              const fileUrl = certification?.publicUrl;
+              const Icon = Icons[institutionCamelCase];
 
-          const content = (
-            <>
-              <ListItemIcon>
-                <Icon />
-              </ListItemIcon>
-              <ListItemText primary={name} />
-            </>
-          );
+              const cardContent = (
+                <CardContent>
+                  <Stack spacing={2} direction="row" sx={sx.cardContentStack}>
+                    <Icon fontSize="large" />
+                    <div>
+                      <Typography>{name}</Typography>
+                      <Typography variant="body2" color={`${institutionCamelCase}.main`}>{institution}</Typography>
+                    </div>
+                  </Stack>
+                </CardContent>
+              );
 
-          if (fileUrl) {
-            return (
-              <ListItem key={name} disablePadding>
-                <ListItemButton component="a" href={fileUrl}>
-                  {content}
-                </ListItemButton>
-              </ListItem>
-            );
-          } else {
-            return (
-              <ListItem key={name}>
-                {content}
-              </ListItem>
-            );
-          }
-        })}
-      </List>
-    </>
+              return (
+                <Grid key={name} md={6} xs={12}>
+                  <Card>
+                    {fileUrl
+                      ? (
+                        <CardActionArea href={fileUrl}>
+                          {cardContent}
+                        </CardActionArea>
+                      )
+                      : cardContent
+                    }
+                  </Card>
+                </Grid>
+              );
+            })}
+        </Grid>
+      </div>
+    </Stack>
   );
 };
 

@@ -9,7 +9,7 @@ declare namespace Queries {
     allSitePage: {
       nodes: string[]
     },
-    allPDF: {
+    allDoc: {
       nodes: { publicUrl: string }[]
     }
   }

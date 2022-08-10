@@ -57,20 +57,22 @@ const config: GatsbyConfig = {
                 path
               }
             }
-            allPDF: allContentfulAsset(filter: {file: {contentType: {eq: "application/pdf"}}}) {
+            allDoc: allContentfulAsset(
+              filter: {metadata: {tags: {elemMatch: {contentful_id: {regex: "/supportingDocument.+|resume/"}}}}}
+            ) {
               nodes {
                 publicUrl
               }
             }
-          }
+          }        
         `,
         resolvePages: ({
           allSitePage: { nodes: pages },
-          allPDF: { nodes: pdfs }
+          allDoc: { nodes: docs }
         }: Queries.SitemapQuery) =>
           [
             ...pages,
-            ...(pdfs.map(({ publicUrl }) => ({ path: publicUrl })))
+            ...(docs.map(({ publicUrl }) => ({ path: publicUrl })))
           ]
       }
     },

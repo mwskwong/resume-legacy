@@ -5,7 +5,7 @@ import {
   DevicesOtherRounded as DevicesOther,
   TerminalRounded as Terminal
 } from "@mui/icons-material";
-import { Box, Chip, Grid, Stack, Typography } from "@mui/material";
+import { Box, Chip, Unstable_Grid2 as Grid, Stack, SvgIconProps, Typography } from "@mui/material";
 import React, { ElementType, FC } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -13,7 +13,7 @@ import { Database } from "mdi-material-ui";
 import camelCase from "camelcase";
 import useSx from "./useSkillSetSx";
 
-const Icons: Record<string, ElementType> = {
+const Icons: Record<string, ElementType<SvgIconProps>> = {
   backend: Terminal,
   cloud: Cloud,
   dataOps: AllInclusive,
@@ -43,12 +43,12 @@ const SkillSet: FC = () => {
       <Typography component="h3" sx={sx.title}>
         Skills
       </Typography>
-      <Grid container spacing={6} sx={sx.gridContainer}>
+      <Grid container spacing={6} sx={sx.gridContainer} disableEqualOverflow>
         {skillGroup.map(({ nodes: skills, fieldValue: type }) => {
           const Icon = Icons[camelCase(type || "")];
 
           return (
-            <Grid key={type} item lg={4} sm={6} xs={12}>
+            <Grid key={type} lg={4} sm={6} xs={12}>
               <Stack spacing={2} sx={sx.stack}>
                 <Icon sx={sx.icon} />
                 <Typography component="h4" sx={sx.subtitle}>
@@ -70,7 +70,7 @@ const SkillSet: FC = () => {
           );
         })}
       </Grid>
-    </div >
+    </div>
   );
 };
 

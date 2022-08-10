@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack, Theme, useMediaQuery } from "@mui/material";
+import { Box, Container, Unstable_Grid2 as Grid, Stack, Theme, useMediaQuery } from "@mui/material";
 import { ErrorRounded as ErrorIcon, SendRounded as SendIcon, CheckCircleRounded as SuccessIcon } from "@mui/icons-material";
 import React, { FC, memo, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -52,12 +52,12 @@ const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
         <Stack spacing={6}>
           <SectionHeading heading="Get In Touch" />
           <form onSubmit={handleSubmit(handleFormSubmit)}>
-            <Grid container spacing={6}>
-              <Grid item md={4} xs={12}>
+            <Grid container spacing={6} disableEqualOverflow>
+              <Grid md={4} xs={12}>
                 <PersonalInfo />
               </Grid>
-              <Grid container spacing={2} item md xs={12}>
-                <Grid item sm={6} xs={12}>
+              <Grid container spacing={2} md xs={12}>
+                <Grid sm={6} xs={12}>
                   <TextField
                     name="name"
                     control={control}
@@ -66,7 +66,7 @@ const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
                     disabled={sendEmailStatus === "loading"}
                   />
                 </Grid>
-                <Grid item sm={6} xs={12}>
+                <Grid sm={6} xs={12}>
                   <TextField
                     name="email"
                     control={control}
@@ -75,7 +75,7 @@ const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
                     disabled={sendEmailStatus === "loading"}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid xs={12}>
                   <TextField
                     name="subject"
                     control={control}
@@ -83,7 +83,7 @@ const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
                     disabled={sendEmailStatus === "loading"}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid xs={12}>
                   <TextField
                     name="message"
                     control={control}

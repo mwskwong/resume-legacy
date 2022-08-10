@@ -2,12 +2,14 @@ import { UseSx } from "types";
 
 const useSx: UseSx = sx => ({
   root: sx,
-  stack: {
+  cardContentStack: {
     alignItems: "center"
   },
-  list: {
-    width: "100%",
-    maxWidth: theme => theme.breakpoints.values.md
+  dates: {
+    color: "text.secondary"
+  },
+  dot: {
+    verticalAlign: "middle"
   }
 });
 

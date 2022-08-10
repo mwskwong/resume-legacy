@@ -5,6 +5,9 @@ const useSx: UseSx = () => ({
     typography: "subtitle2",
     color: "primary.main",
     textAlign: "center"
+  },
+  cardContentStack: {
+    alignItems: "center"
   }
 });
 

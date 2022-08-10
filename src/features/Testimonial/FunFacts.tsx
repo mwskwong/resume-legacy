@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Unstable_Grid2 as Grid, Typography } from "@mui/material";
 import React, { FC } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -34,9 +34,9 @@ const FunFacts: FC = () => {
     });
 
   return (
-    <Grid item container spacing={2} md={6} xs={12}>
+    <Grid container spacing={2} md={6} xs={12}>
       {funFacts.map(({ title, value }) => (
-        <Grid key={title} item xs={6}>
+        <Grid key={title} xs={6}>
           <Box sx={sx.root}>
             <Typography component="div" sx={sx.value}>
               {value}

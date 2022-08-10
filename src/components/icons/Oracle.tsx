@@ -8,7 +8,7 @@ const Oracle: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
   const sx = useSx(sxProp);
 
   return (
-    <SvgIcon sx={sx.simpleIcons} {...props}>
+    <SvgIcon sx={sx.oracle} {...props}>
       <path d={siOracle.path} />
     </SvgIcon>
   );

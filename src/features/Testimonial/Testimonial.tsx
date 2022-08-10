@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack } from "@mui/material";
+import { Box, Container, Unstable_Grid2 as Grid, Stack } from "@mui/material";
 import React, { FC, memo } from "react";
 
 import Carousel from "./Carousel";
@@ -17,7 +17,7 @@ const Testimonial: FC<SectionProps> = ({ sx: sxProp }) => {
         <Stack spacing={6}>
           <SectionHeading heading="What People Say" />
           <div>
-            <Grid container spacing={6} sx={sx.contentGrid}>
+            <Grid container spacing={6} sx={sx.contentGrid} disableEqualOverflow>
               <Carousel />
               <FunFacts />
             </Grid>
