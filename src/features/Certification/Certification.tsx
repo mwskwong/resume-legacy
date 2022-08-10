@@ -69,7 +69,7 @@ const Certification: FC<SectionProps> = ({ sx: sxProp }) => {
                   );
 
                   return (
-                    <Grid key={name} md={6} xs={12}>
+                    <Grid key={name} xs={12} md={6}>
                       <Card>
                         {fileUrl
                           ? (
