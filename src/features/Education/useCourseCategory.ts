@@ -12,9 +12,10 @@ const useCourseCategory: UseCourseCategory = initialValue => {
   const [courseCategory, setCourseCategory] = useState(searchParams.get("courseCategory") ?? initialValue);
 
   useEffect(() => {
+    // TODO: This causes hydration errors.
     startTransition(() => {
       searchParams.set("courseCategory", courseCategory);
-      navigate(`${pathname}?${searchParams.toString()}${hash}`, { replace: true });
+      navigate(`${pathname}?${searchParams.toString()}`, { replace: true });
     });
   }, [courseCategory, hash, pathname, searchParams]);
 
