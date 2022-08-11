@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { SvgIcon, SvgIconProps } from "@mui/material";
 
 import { siUdemy } from "simple-icons/icons";
@@ -17,4 +17,4 @@ const Udemy: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
 Udemy.muiName = SvgIcon.muiName;
 if (process.env.NODE_ENV === "development") Udemy.whyDidYouRender = true;
 
-export default Udemy;
+export default memo(Udemy);
