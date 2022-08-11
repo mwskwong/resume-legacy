@@ -12,6 +12,7 @@ const useCourseCategory: UseCourseCategory = initialCourseCategory => {
   const [courseCategory, setCourseCategory] = useState(searchParams.get("courseCategory") ?? initialCourseCategory);
 
   useEffect(() => {
+    // TODO: prevent hydration errors
     startTransition(() => {
       if (courseCategory === "All") {
         navigate(".", { replace: true });

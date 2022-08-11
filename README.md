@@ -30,7 +30,9 @@ Welcome to the source code of [mwskwong.com](https://mwskwong.com). You can see 
 - CMS - [Contentful](https://www.contentful.com)
 
 ## To Do
-1. Migrate to Joy 
+1. Prevent hydration errors when changing course category
+
+2. Migrate to Joy 
     
     Too early currently
     
