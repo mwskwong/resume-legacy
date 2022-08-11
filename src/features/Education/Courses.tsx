@@ -1,5 +1,5 @@
 import { Card, CardActionArea, CardContent, Unstable_Grid2 as Grid, Stack, SvgIconProps, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
-import React, { ElementType, FC, MouseEvent, memo, useState } from "react";
+import React, { ElementType, FC, MouseEvent, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import EnterpriseDB from "components/icons/EnterpriseDB";
