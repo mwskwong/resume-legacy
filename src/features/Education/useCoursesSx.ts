@@ -6,8 +6,12 @@ const useSx: UseSx = () => ({
     color: "primary.main",
     textAlign: "center"
   },
-  cardContentStack: {
+  cardContent: {
+    display: "flex",
     alignItems: "center"
+  },
+  icon: {
+    mr: "16px"
   }
 });
 

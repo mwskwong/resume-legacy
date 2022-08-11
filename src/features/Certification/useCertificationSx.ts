@@ -2,14 +2,15 @@ import { UseSx } from "types";
 
 const useSx: UseSx = sx => ({
   root: sx,
-  cardContentStack: {
+  cardContent: {
+    display: "flex",
     alignItems: "center"
+  },
+  icon: {
+    mr: "16px"
   },
   dates: {
     color: "text.secondary"
-  },
-  dot: {
-    verticalAlign: "middle"
   }
 });
 

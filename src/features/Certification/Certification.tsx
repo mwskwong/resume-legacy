@@ -53,18 +53,16 @@ const Certification: FC<SectionProps> = ({ sx: sxProp }) => {
                   const organizationCamelCase = camelCase(organization);
                   const Icon = Icons[organizationCamelCase];
                   const cardContent = (
-                    <CardContent>
-                      <Stack spacing={2} direction="row" sx={sx.cardContentStack}>
-                        <Icon fontSize="large" />
-                        <div>
-                          <Typography>{name}</Typography>
-                          <Typography variant="body2" color={`${organizationCamelCase}.main`}>{organization}</Typography>
-                          <Typography variant="body2" sx={sx.dates}>
-                            {issued}
-                            {issuedDate && ` — ${expire}`}
-                          </Typography>
-                        </div>
-                      </Stack>
+                    <CardContent sx={sx.cardContent}>
+                      <Icon fontSize="large" sx={sx.icon} />
+                      <div>
+                        <Typography>{name}</Typography>
+                        <Typography variant="body2" color={`${organizationCamelCase}.main`}>{organization}</Typography>
+                        <Typography variant="body2" sx={sx.dates}>
+                          {issued}
+                          {issuedDate && ` — ${expire}`}
+                        </Typography>
+                      </div>
                     </CardContent>
                   );
 
