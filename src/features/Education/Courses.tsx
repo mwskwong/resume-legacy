@@ -8,7 +8,6 @@ import MongoDB from "components/icons/MongoDB";
 import Oracle from "components/icons/Oracle";
 import Udemy from "components/icons/Udemy";
 import camelCase from "camelcase";
-import useCourseCategory from "./useCourseCategory";
 import useSx from "./useCoursesSx";
 
 const Icons: Record<string, ElementType<SvgIconProps>> = {
@@ -21,7 +20,7 @@ const Icons: Record<string, ElementType<SvgIconProps>> = {
 
 const Courses: FC = () => {
   const sx = useSx();
-  const [categorySelected, setCategorySelected] = useCourseCategory("All");
+  const [categorySelected, setCategorySelected] = useState("All");
   const { allContentfulCourse: { nodes: courses, distinct: categories } } = useStaticQuery<Queries.CoursesQuery>(graphql`
     query Courses {
       allContentfulCourse(sort: {fields: name}) {
@@ -38,7 +37,7 @@ const Courses: FC = () => {
     }
   `);
 
-  const handleCategorySelect = (_: MouseEvent<HTMLElement>, category: string | null) => category && setCategorySelected(category);
+  const handleCategoryChange = (_: MouseEvent<HTMLElement>, category: string | null) => category && setCategorySelected(category);
 
   return (
     <Stack spacing={2}>
@@ -49,7 +48,7 @@ const Courses: FC = () => {
         color="primary"
         size="small"
         value={categorySelected}
-        onChange={handleCategorySelect}
+        onChange={handleCategoryChange}
         exclusive
         aria-label="course categories"
       >

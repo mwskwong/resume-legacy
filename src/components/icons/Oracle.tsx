@@ -1,4 +1,4 @@
-import React, { FC, memo } from "react";
+import React, { FC } from "react";
 import { SvgIcon, SvgIconProps } from "@mui/material";
 
 import { siOracle } from "simple-icons/icons";
@@ -17,4 +17,4 @@ const Oracle: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
 Oracle.muiName = SvgIcon.muiName;
 if (process.env.NODE_ENV === "development") Oracle.whyDidYouRender = true;
 
-export default memo(Oracle);
+export default Oracle;
