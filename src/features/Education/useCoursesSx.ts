@@ -1,7 +1,6 @@
 import { UseSx } from "types";
-import { useMemo } from "react";
 
-const useSx: UseSx = () => useMemo(() => ({
+const useSx: UseSx = () => ({
   title: {
     typography: "subtitle2",
     color: "primary.main",
@@ -14,6 +13,6 @@ const useSx: UseSx = () => useMemo(() => ({
   icon: {
     mr: "16px"
   }
-}), []);
+});
 
 export default useSx;

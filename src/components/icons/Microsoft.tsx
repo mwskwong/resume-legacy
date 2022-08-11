@@ -1,4 +1,4 @@
-import React, { FC, memo } from "react";
+import React, { FC } from "react";
 import { SvgIcon, SvgIconProps } from "@mui/material";
 
 import { siMicrosoft } from "simple-icons/icons";
@@ -17,4 +17,4 @@ const Microsoft: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
 Microsoft.muiName = SvgIcon.muiName;
 if (process.env.NODE_ENV === "development") Microsoft.whyDidYouRender = true;
 
-export default memo(Microsoft);
+export default Microsoft;

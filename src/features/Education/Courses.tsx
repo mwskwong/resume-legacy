@@ -1,6 +1,6 @@
 import { Card, CardActionArea, CardContent, Unstable_Grid2 as Grid, Stack, SvgIconProps, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
-import React, { ElementType, FC, MouseEvent, useEffect } from "react";
-import { graphql, navigate, useStaticQuery } from "gatsby";
+import React, { ElementType, FC, MouseEvent, memo, useState } from "react";
+import { graphql, useStaticQuery } from "gatsby";
 
 import EnterpriseDB from "components/icons/EnterpriseDB";
 import Microsoft from "components/icons/Microsoft";
@@ -8,8 +8,6 @@ import MongoDB from "components/icons/MongoDB";
 import Oracle from "components/icons/Oracle";
 import Udemy from "components/icons/Udemy";
 import camelCase from "camelcase";
-import useCourseCategory from "./useCourseCategory";
-import { useLocation } from "@reach/router";
 import useSx from "./useCoursesSx";
 
 const Icons: Record<string, ElementType<SvgIconProps>> = {
@@ -22,7 +20,7 @@ const Icons: Record<string, ElementType<SvgIconProps>> = {
 
 const Courses: FC = () => {
   const sx = useSx();
-  const [categorySelected, setCategorySelected] = useCourseCategory("All");
+  const [categorySelected, setCategorySelected] = useState("All");
   const { allContentfulCourse: { nodes: courses, distinct: categories } } = useStaticQuery<Queries.CoursesQuery>(graphql`
     query Courses {
       allContentfulCourse(sort: {fields: name}) {
@@ -62,7 +60,7 @@ const Courses: FC = () => {
       <div>
         <Grid container spacing={2} disableEqualOverflow>
           {courses
-            .filter(({ category }) => categorySelected === "All" || categorySelected === category)
+            .filter(({ category }) => categorySelected === "All" || category === categorySelected)
             .map(({ name, institution, certification }) => {
               const institutionCamelCase = camelCase(institution);
               const fileUrl = certification?.publicUrl;
@@ -101,4 +99,4 @@ const Courses: FC = () => {
 
 if (process.env.NODE_ENV === "development") Courses.whyDidYouRender = true;
 
-export default Courses;
+export default memo(Courses);
