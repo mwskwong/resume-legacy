@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { SvgIcon, SvgIconProps } from "@mui/material";
 
 import { siMongodb } from "simple-icons/icons";
@@ -17,4 +17,4 @@ const MongoDB: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
 MongoDB.muiName = SvgIcon.muiName;
 if (process.env.NODE_ENV === "development") MongoDB.whyDidYouRender = true;
 
-export default MongoDB;
+export default memo(MongoDB);

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { SvgIcon, SvgIconProps } from "@mui/material";
 
 import { siEnterprisedb } from "simple-icons/icons";
@@ -17,4 +17,4 @@ const EnterpriseDB: FC<SvgIconProps> = ({ sx: sxProp, ...props }) => {
 EnterpriseDB.muiName = SvgIcon.muiName;
 if (process.env.NODE_ENV === "development") EnterpriseDB.whyDidYouRender = true;
 
-export default EnterpriseDB;
+export default memo(EnterpriseDB);
