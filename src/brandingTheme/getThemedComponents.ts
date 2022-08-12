@@ -111,6 +111,13 @@ const getThemedComponents: GetThemedComponents = theme => ({
         color: "primary"
       }
     },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: theme.shape.borderRadius
+        }
+      }
+    },
     MuiInputLabel: {
       styleOverrides: {
         root: {
