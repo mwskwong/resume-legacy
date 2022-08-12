@@ -32,6 +32,11 @@ const getThemedComponents: GetThemedComponents = theme => ({
         }
       }
     },
+    MuiButtonBase: {
+      defaultProps: {
+        disableTouchRipple: true
+      }
+    },
     MuiCard: {
       defaultProps: {
         elevation: 0
