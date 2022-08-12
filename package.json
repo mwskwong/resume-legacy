@@ -45,7 +45,7 @@
     "typeit": "^8.7.0"
   },
   "devDependencies": {
-    "@formspree/core": "^2.7.0",
+    "@formspree/core": "^2.7.1",
     "@types/node": "^18.7.1",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
