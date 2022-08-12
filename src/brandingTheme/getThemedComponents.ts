@@ -32,6 +32,11 @@ const getThemedComponents: GetThemedComponents = theme => ({
         }
       }
     },
+    MuiButtonBase: {
+      defaultProps: {
+        disableTouchRipple: true
+      }
+    },
     MuiCard: {
       defaultProps: {
         elevation: 0
@@ -109,6 +114,13 @@ const getThemedComponents: GetThemedComponents = theme => ({
       defaultProps: {
         variant: "filled",
         color: "primary"
+      }
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: theme.shape.borderRadius
+        }
       }
     },
     MuiInputLabel: {
