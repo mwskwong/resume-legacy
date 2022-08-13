@@ -4,8 +4,10 @@ import React, { FC, memo } from "react";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import { WORK } from "constants/nav";
-import WorkTimeline from "./WorkTimeline";
 import useSx from "./useSx";
+
+// import WorkTimeline from "./WorkTimeline";
+
 
 const Work: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
@@ -15,7 +17,7 @@ const Work: FC<SectionProps> = ({ sx: sxProp }) => {
       <Container>
         <Stack spacing={6}>
           <SectionHeading heading="Experience" />
-          <WorkTimeline />
+          {/* <WorkTimeline /> */}
         </Stack>
       </Container>
     </Box>
