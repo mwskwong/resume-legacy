@@ -1,12 +1,20 @@
 import { Box, Container, Unstable_Grid2 as Grid, Stack } from "@mui/material";
-import React, { FC, memo } from "react";
+import React, { FC, Suspense, lazy, memo } from "react";
 
-import Carousel from "./Carousel";
 import FunFacts from "./FunFacts";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import { TESTIMONIAL } from "constants/nav";
 import useSx from "./useTestimonialSx";
+
+const Carousel = lazy(() => import("./Carousel"));
+const CarouselFallback = () => (
+  <Grid
+    xs={12}
+    md={6}
+    sx={{ height: { xs: 298, sm: 202, md: 274, lg: 226 } }}
+  />
+);
 
 const Testimonial: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
@@ -18,7 +26,9 @@ const Testimonial: FC<SectionProps> = ({ sx: sxProp }) => {
           <SectionHeading heading="What People Say" />
           <div>
             <Grid container spacing={6} sx={sx.contentGrid} disableEqualOverflow>
-              <Carousel />
+              <Suspense fallback={<CarouselFallback />}>
+                <Carousel />
+              </Suspense>
               <FunFacts />
             </Grid>
           </div>
