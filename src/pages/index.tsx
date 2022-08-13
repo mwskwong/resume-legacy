@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 
+import About from "features/About";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
 import Hero from "features/Hero";
@@ -16,7 +17,6 @@ import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 import useStructuredData from "hooks/useStructuredData";
 
-// import About from "features/About";
 // import Certification from "features/Certification";
 // import Contact from "features/Contact";
 // import Education from "features/Education";
@@ -102,7 +102,7 @@ const IndexPage: FC = () => {
       <main>
         <Hero />
         <WaveSmooth sx={sx.waveSmooth} />
-        {/* <About sx={sx.about} /> */}
+        <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
         {/* <Testimonial /> */}
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
