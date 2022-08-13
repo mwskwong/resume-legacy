@@ -2,7 +2,6 @@ import { Box, Typography } from "@mui/material";
 import React, { FC, useEffect, useMemo, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { TypeItInstance } from "typeit/dist/types";
 import useSx from "./useTitleSx";
 
 const Title: FC = () => {
