@@ -3,16 +3,11 @@ import React, { FC, memo } from "react";
 
 import { ABOUT } from "constants/nav";
 import Message from "./Message";
+import Picture from "./Picture";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import SkillSet from "./SkillSet";
 import useSx from "./useAboutSx";
-
-// import Picture from "./Picture";
-
-
-
-
 
 const About: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
@@ -22,7 +17,7 @@ const About: FC<SectionProps> = ({ sx: sxProp }) => {
       <Container>
         <Stack sx={sx.stack} spacing={6}>
           <SectionHeading heading="About Me" />
-          {/* <Picture /> */}
+          <Picture />
           <Message />
           <SkillSet />
         </Stack>
