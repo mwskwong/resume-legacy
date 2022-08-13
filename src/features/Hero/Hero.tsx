@@ -6,10 +6,8 @@ import DownloadResumeButton from "./DownloadResumeButton";
 import { HOME } from "constants/nav";
 import { SectionProps } from "types";
 import SocialMedia from "components/SocialMedia";
+import Title from "./Title";
 import useSx from "./useHeroSx";
-
-// import Title from "./Title";
-
 
 const Hero: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
@@ -19,7 +17,7 @@ const Hero: FC<SectionProps> = ({ sx: sxProp }) => {
       <Box sx={sx.animationWrapper}>
         <ArcticLandscape />
       </Box>
-      {/* <Title /> */}
+      <Title />
       <SocialMedia sx={sx.socialMedia} />
       <DownloadResumeButton sx={sx.downloadButton} />
     </Container>
