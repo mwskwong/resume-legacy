@@ -32,6 +32,7 @@ const config: GatsbyConfig = {
       }
     },
     "gatsby-plugin-material-ui",
+    "gatsby-plugin-emotion",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",

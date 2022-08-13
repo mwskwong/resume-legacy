@@ -25,6 +25,7 @@
     "@mui/material": "^5.10.0",
     "camelcase": "^7.0.0",
     "gatsby": "^4.20.0",
+    "gatsby-plugin-emotion": "^7.20.0",
     "gatsby-plugin-image": "^2.20.0",
     "gatsby-plugin-manifest": "^4.20.0",
     "gatsby-plugin-material-ui": "^4.1.0",
