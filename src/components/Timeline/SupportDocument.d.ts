@@ -1,8 +1,8 @@
 import { ImageDataLike } from "gatsby-plugin-image";
 
 type SupportDocument = {
-  title?: string | null,
-  url?: string | null,
+  title?: string,
+  url?: string,
   thumbnail?: ImageDataLike | null
 }
 

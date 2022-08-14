@@ -10,16 +10,19 @@ const useSx: UseSx = sx => ({
     minHeight: "100vh",
     ...sx
   },
-  animationWrapper: {
+  illustrationWrapper: {
     width: "100%",
     maxWidth: 430,
     mb: 2
   },
-  socialMedia: {
-    mt: 4
+  title: {
+    textAlign: "center"
   },
-  downloadButton: {
-    mt: 4
+  name: {
+    color: "primary.main"
+  },
+  socialMedia: {
+    my: 4
   }
 });
 

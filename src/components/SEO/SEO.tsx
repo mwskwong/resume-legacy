@@ -25,7 +25,7 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, description: d
         firstName
         lastName
       }
-      allContentfulOccupation(sort: {fields: title}) {
+      allContentfulOccupation(sort: {fields: priority}) {
         nodes {
           title
         }

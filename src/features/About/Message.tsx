@@ -16,7 +16,7 @@ const Message: FC = () => {
         firstName
         lastName
       }
-      allContentfulOccupation(sort: {fields: title}) {
+      allContentfulOccupation(sort: {fields: priority}) {
         nodes {
           title
         }

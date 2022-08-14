@@ -17,7 +17,7 @@ const SupportDocumentListItem: FC<SupportDocumentListItemProps> = ({ supportDocu
 
   return (
     <ListItem disablePadding>
-      <ListItemButton component="a" href={url ?? undefined} sx={sx.button}>
+      <ListItemButton component="a" href={url ?? undefined} target="_blank" sx={sx.button}>
         <ListItemAvatar sx={sx.avatar}>
           {
             image && (
