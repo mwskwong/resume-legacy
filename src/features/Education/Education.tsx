@@ -3,10 +3,14 @@ import React, { FC, memo } from "react";
 
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
-import EducationTimeline from "./EducationTimeline";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import useSx from "./useEducationSx";
+
+// import EducationTimeline from "./EducationTimeline";
+
+
+
 
 const Education: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
@@ -16,7 +20,7 @@ const Education: FC<SectionProps> = ({ sx: sxProp }) => {
       <Container>
         <Stack spacing={6}>
           <SectionHeading heading="Education" />
-          <EducationTimeline />
+          {/* <EducationTimeline /> */}
           <Courses />
         </Stack>
       </Container>
