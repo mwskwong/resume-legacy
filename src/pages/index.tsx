@@ -3,7 +3,6 @@ import React, { FC } from "react";
 import About from "features/About";
 import Certification from "features/Certification";
 import Contact from "features/Contact";
-import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
 import Hero from "features/Hero";
@@ -19,8 +18,26 @@ import WaveRough from "components/dividers/WaveRough";
 import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
-import Work from "features/Work";
 import useStructuredData from "hooks/useStructuredData";
+
+// import Education from "features/Education";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import Work from "features/Work";
+
 
 const bgcolors: Record<string, keyof TypeBackground> = {
   hero: "default",
@@ -90,11 +107,11 @@ const IndexPage: FC = () => {
         <WaveRough sx={sx.waveRough} />
         <Testimonial />
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
-        <Work sx={sx.work} />
+        {/* <Work sx={sx.work} /> */}
         <LinesWavyIntersecting sx={sx.linesWavyIntersecting} />
         <Certification sx={sx.certification} />
         <WaveSmooth2 sx={sx.waveSmooth2} />
-        <Education sx={sx.education} />
+        {/* <Education sx={sx.education} /> */}
         <WaveRoaring sx={sx.waveRoaring} />
         <Contact />
       </main>
