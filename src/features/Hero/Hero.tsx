@@ -1,25 +1,48 @@
-import { Box, Container } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import React, { FC, memo } from "react";
+import { graphql, useStaticQuery } from "gatsby";
 
 import ArcticLandscape from "components/illustrations/ArcticLandscape";
-import DownloadResumeButton from "./DownloadResumeButton";
 import { HOME } from "constants/nav";
 import { SectionProps } from "types";
 import SocialMedia from "components/SocialMedia";
-import Title from "./Title";
 import useSx from "./useHeroSx";
 
 const Hero: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
+  const { name, resume } = useStaticQuery<Queries.HeroQuery>(graphql`
+  query Hero {
+    name: contentfulName {
+      firstName
+      lastName
+    }
+    resume: contentfulAsset(title: {eq: "Resume"}) {
+      publicUrl
+    }
+  }
+`);
 
   return (
     <Container component="section" sx={sx.container} id={HOME.id}>
-      <Box sx={sx.animationWrapper}>
+      <Box sx={sx.illustrationWrapper}>
         <ArcticLandscape />
       </Box>
-      <Title />
+      <Typography variant="h1" sx={sx.title}>
+        {"I Am "}
+        <Box component="span" sx={sx.name}>
+          {`${name?.firstName} ${name?.lastName}`}
+        </Box>
+      </Typography>
       <SocialMedia sx={sx.socialMedia} />
-      <DownloadResumeButton sx={sx.downloadButton} />
+      <Button
+        variant="contained"
+        size="large"
+        component="a"
+        href={resume?.publicUrl}
+        target="_blank"
+      >
+        Download Resume
+      </Button>
     </Container>
   );
 };

@@ -42,8 +42,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.34.1",
     "react-swipeable-views": "^0.14.0",
-    "simple-icons": "^7.6.0",
-    "typeit": "^8.7.0"
+    "simple-icons": "^7.6.0"
   },
   "devDependencies": {
     "@formspree/core": "^2.7.1",
