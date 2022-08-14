@@ -10,7 +10,7 @@ type SupportDocumentListItemProps = {
 }
 
 const SupportDocumentListItem: FC<SupportDocumentListItemProps> = ({ supportDocument: { title, url, thumbnail } }) => {
-  const image = getImage(thumbnail);
+  const image = thumbnail && getImage(thumbnail);
   const sx = useSx();
   const theme = useTheme();
   const gatsbyImageStyle: CSSProperties = { borderRadius: theme.shape.borderRadius };
