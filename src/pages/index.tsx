@@ -1,9 +1,6 @@
 import React, { FC } from "react";
 
 import About from "features/About";
-import Certification from "features/Certification";
-import Contact from "features/Contact";
-import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
 import Hero from "features/Hero";
@@ -11,7 +8,6 @@ import LinesWavyIntersecting from "components/dividers/LinesWavyIntersecting";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
-import Testimonial from "features/Testimonial";
 import { TypeBackground } from "@mui/material";
 import { UseSx } from "types";
 import WaveRoaring from "components/dividers/WaveRoaring";
@@ -21,6 +17,27 @@ import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import WaveSmoothFlat from "components/dividers/WaveSmoothFlat";
 import Work from "features/Work";
 import useStructuredData from "hooks/useStructuredData";
+
+// import Certification from "features/Certification";
+// import Contact from "features/Contact";
+// import Education from "features/Education";
+
+
+
+
+
+
+
+// import Testimonial from "features/Testimonial";
+
+
+
+
+
+
+
+
+
 
 const bgcolors: Record<string, keyof TypeBackground> = {
   hero: "default",
@@ -88,15 +105,15 @@ const IndexPage: FC = () => {
         <WaveSmooth sx={sx.waveSmooth} />
         <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
-        <Testimonial />
+        {/* <Testimonial /> */}
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
         <Work sx={sx.work} />
         <LinesWavyIntersecting sx={sx.linesWavyIntersecting} />
-        <Certification sx={sx.certification} />
+        {/* <Certification sx={sx.certification} /> */}
         <WaveSmooth2 sx={sx.waveSmooth2} />
-        <Education sx={sx.education} />
+        {/* <Education sx={sx.education} /> */}
         <WaveRoaring sx={sx.waveRoaring} />
-        <Contact />
+        {/* <Contact /> */}
       </main>
       <FooterDivider sx={sx.footerDivider} />
       <Footer sx={sx.footer} />
