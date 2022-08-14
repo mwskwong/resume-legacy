@@ -1,14 +1,12 @@
 import { Box, Container, Stack } from "@mui/material";
-import React, { FC, Suspense, lazy, memo } from "react";
+import React, { FC, memo } from "react";
 
+import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import useSx from "./useEducationSx";
-
-const Courses = lazy(() => import("./Courses"));
-const CoursesFallback = () => <Box sx={{ height: { xs: 2134.47, sm: 1732.72, md: 1172.72 } }} />;
 
 const Education: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
@@ -18,12 +16,8 @@ const Education: FC<SectionProps> = ({ sx: sxProp }) => {
       <Container>
         <Stack spacing={6}>
           <SectionHeading heading="Education" />
-          <div>
-            <EducationTimeline />
-          </div>
-          <Suspense fallback={<CoursesFallback />}>
-            <Courses />
-          </Suspense>
+          <EducationTimeline />
+          <Courses />
         </Stack>
       </Container>
     </Box>
