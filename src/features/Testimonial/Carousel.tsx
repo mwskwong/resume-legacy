@@ -17,9 +17,9 @@ const Carousel: FC = () => {
         nodes {
           name
           jobTitle
-          refereePicture {
-            gatsbyImage(aspectRatio: 1, width: 60)
-          }
+          # refereePicture {
+          #   gatsbyImage(aspectRatio: 1, width: 60)
+          # }
           company
           comment {
             comment
