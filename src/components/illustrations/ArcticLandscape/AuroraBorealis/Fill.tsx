@@ -1,10 +1,10 @@
-import React, { FC, useId } from "react";
+import React, { FC } from "react";
 
 import GleamGradient from "./GleamGradient";
 import { fillPath } from "./pathData";
 
 const Fill: FC = () => {
-  const gradientId = useId();
+  const gradientId = "gradient-id";
 
   return (
     <>
