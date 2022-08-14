@@ -10,14 +10,14 @@ type SupportDocumentListItemProps = {
 }
 
 const SupportDocumentListItem: FC<SupportDocumentListItemProps> = ({ supportDocument: { title, url, thumbnail } }) => {
-  const image = thumbnail && getImage(thumbnail);
+  const image = getImage(thumbnail);
   const sx = useSx();
   const theme = useTheme();
   const gatsbyImageStyle: CSSProperties = { borderRadius: theme.shape.borderRadius };
 
   return (
     <ListItem disablePadding>
-      <ListItemButton component="a" href={url ?? undefined} sx={sx.button}>
+      <ListItemButton component="a" href={url ?? undefined} target="_blank" sx={sx.button}>
         <ListItemAvatar sx={sx.avatar}>
           {
             image && (

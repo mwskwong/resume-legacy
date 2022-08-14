@@ -1,12 +1,10 @@
 import { UseSx } from "types";
 
 const useSx: UseSx = sx => ({
-  root: sx,
-  contentContainer: {
-    mt: 5
-  },
-  contentGrid: {
-    alignItems: "center"
+  title: {
+    typography: "subtitle2",
+    color: "primary.main",
+    textAlign: "center"
   }
 });
 
