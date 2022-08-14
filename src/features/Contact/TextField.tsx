@@ -1,6 +1,6 @@
 import { Control, useController } from "react-hook-form";
 import { FilledInput, FormControl, FormHelperText, InputLabel, TextFieldProps as MuiTextFieldProps } from "@mui/material";
-import React, { FC, memo } from "react";
+import React, { FC, memo, useId } from "react";
 
 import FormValues from "./FormValues";
 
@@ -24,8 +24,8 @@ const TextField: FC<TextFieldProps> = ({ name, control, label, autoComplete, mul
     fieldState: { error }
   } = useController({ name, control });
 
-  const inputId = `${name}-input`;
-  const helperTextId = `${name}-helper-text`;
+  const inputId = useId();
+  const helperTextId = useId();
 
   return (
     <FormControl fullWidth error={Boolean(error)} disabled={disabled}>

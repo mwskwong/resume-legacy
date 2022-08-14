@@ -23,7 +23,6 @@ const config: GatsbyConfig = {
     PRESERVE_FILE_DOWNLOAD_CACHE: true
   },
   plugins: [
-    "gatsby-plugin-preact",
     {
       resolve: "gatsby-source-contentful",
       options: {
