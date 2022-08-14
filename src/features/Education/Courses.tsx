@@ -1,22 +1,9 @@
-import { Card, CardActionArea, CardContent, Unstable_Grid2 as Grid, Stack, SvgIconProps, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
-import React, { ElementType, FC, MouseEvent, memo, useState } from "react";
+import { Unstable_Grid2 as Grid, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
+import React, { FC, MouseEvent, memo, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import EnterpriseDB from "components/icons/EnterpriseDB";
-import Microsoft from "components/icons/Microsoft";
-import MongoDB from "components/icons/MongoDB";
-import Oracle from "components/icons/Oracle";
-import Udemy from "components/icons/Udemy";
-import camelCase from "camelcase";
+import CertAndCourseCard from "components/CertAndCourseCard";
 import useSx from "./useCoursesSx";
-
-const Icons: Record<string, ElementType<SvgIconProps>> = {
-  microsoft: Microsoft,
-  oracle: Oracle,
-  udemy: Udemy,
-  enterpriseDb: EnterpriseDB,
-  mongoDb: MongoDB
-};
 
 const Courses: FC = () => {
   const sx = useSx();
@@ -61,36 +48,15 @@ const Courses: FC = () => {
         <Grid container spacing={2} disableEqualOverflow>
           {courses
             .filter(({ category }) => categorySelected === "All" || category === categorySelected)
-            .map(({ name, institution, certification }) => {
-              const institutionCamelCase = camelCase(institution);
-              const fileUrl = certification?.publicUrl;
-              const Icon = Icons[institutionCamelCase];
-
-              const cardContent = (
-                <CardContent sx={sx.cardContent}>
-                  <Icon fontSize="large" sx={sx.icon} />
-                  <div>
-                    <Typography>{name}</Typography>
-                    <Typography variant="body2" color={`${institutionCamelCase}.main`}>{institution}</Typography>
-                  </div>
-                </CardContent>
-              );
-
-              return (
-                <Grid key={name} xs={12} md={6}>
-                  <Card>
-                    {fileUrl
-                      ? (
-                        <CardActionArea href={fileUrl}>
-                          {cardContent}
-                        </CardActionArea>
-                      )
-                      : cardContent
-                    }
-                  </Card>
-                </Grid>
-              );
-            })}
+            .map(({ name, institution, certification }) => (
+              <Grid key={name} xs={12} md={6}>
+                <CertAndCourseCard
+                  name={name}
+                  organization={institution}
+                  certificationUrl={certification?.publicUrl}
+                />
+              </Grid>
+            ))}
         </Grid>
       </div>
     </Stack>

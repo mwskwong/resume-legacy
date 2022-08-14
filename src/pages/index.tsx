@@ -1,13 +1,11 @@
 import React, { FC } from "react";
 
 import About from "features/About";
-import Certification from "features/Certification";
 import Contact from "features/Contact";
 import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
 import Hero from "features/Hero";
-import LinesWavyIntersecting from "components/dividers/LinesWavyIntersecting";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
@@ -27,7 +25,6 @@ const bgcolors: Record<string, keyof TypeBackground> = {
   about: "sectionSecondary",
   testimonial: "default",
   work: "sectionTertiary",
-  certification: "sectionTertiary",
   education: "sectionSecondary",
   contact: "default",
   footer: "sectionPrimary"
@@ -39,9 +36,6 @@ const useSx: UseSx = () => ({
   },
   work: {
     bgcolor: `background.${bgcolors.work}`
-  },
-  certification: {
-    bgcolor: `background.${bgcolors.certification}`
   },
   education: {
     bgcolor: `background.${bgcolors.education}`
@@ -59,9 +53,6 @@ const useSx: UseSx = () => ({
   waveSmoothFlat: {
     bgcolor: `background.${bgcolors.testimonial}`,
     color: `background.${bgcolors.work}`
-  },
-  linesWavyIntersecting: {
-    bgcolor: `background.${bgcolors.certification}`
   },
   waveSmooth2: {
     bgcolor: `background.${bgcolors.work}`,
@@ -91,8 +82,6 @@ const IndexPage: FC = () => {
         <Testimonial />
         <WaveSmoothFlat sx={sx.waveSmoothFlat} />
         <Work sx={sx.work} />
-        <LinesWavyIntersecting sx={sx.linesWavyIntersecting} />
-        <Certification sx={sx.certification} />
         <WaveSmooth2 sx={sx.waveSmooth2} />
         <Education sx={sx.education} />
         <WaveRoaring sx={sx.waveRoaring} />

@@ -1,6 +1,6 @@
 import { UseSx } from "types";
 
-const useSx: UseSx = () => ({
+const useSx: UseSx = sx => ({
   title: {
     typography: "subtitle2",
     color: "primary.main",

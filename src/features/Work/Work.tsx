@@ -1,6 +1,7 @@
 import { Box, Container, Stack } from "@mui/material";
 import React, { FC, memo } from "react";
 
+import Certification from "./Certification";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import { WORK } from "constants/nav";
@@ -16,6 +17,7 @@ const Work: FC<SectionProps> = ({ sx: sxProp }) => {
         <Stack spacing={6}>
           <SectionHeading heading="Experience" />
           <WorkTimeline />
+          <Certification />
         </Stack>
       </Container>
     </Box>

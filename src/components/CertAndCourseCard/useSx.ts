@@ -1,7 +1,6 @@
 import { UseSx } from "types";
 
-const useSx: UseSx = sx => ({
-  root: sx,
+const useSx: UseSx = () => ({
   cardContent: {
     display: "flex",
     alignItems: "center"
@@ -9,7 +8,7 @@ const useSx: UseSx = sx => ({
   icon: {
     mr: "16px"
   },
-  dates: {
+  status: {
     color: "text.secondary"
   }
 });
