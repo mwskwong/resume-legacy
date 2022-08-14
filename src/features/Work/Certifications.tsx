@@ -4,12 +4,12 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import CertAndCourseCard from "components/CertAndCourseCard";
 import dateTimeFormat from "utils/dateTimeFormat";
-import useSx from "./useCertificationSx";
+import useSx from "./useCertificationsSx";
 
-const Certification: FC = () => {
+const Certifications: FC = () => {
   const sx = useSx();
-  const { allContentfulCertification: { nodes: certifications } } = useStaticQuery<Queries.CertificationQuery>(graphql`
-    query Certification {
+  const { allContentfulCertification: { nodes: certifications } } = useStaticQuery<Queries.CertificationsQuery>(graphql`
+    query Certifications {
       allContentfulCertification {
         nodes {
           name
@@ -57,6 +57,6 @@ const Certification: FC = () => {
   );
 };
 
-if (process.env.NODE_ENV === "development") Certification.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Certifications.whyDidYouRender = true;
 
-export default memo(Certification);
+export default memo(Certifications);
