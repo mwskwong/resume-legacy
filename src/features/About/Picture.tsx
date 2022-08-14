@@ -4,11 +4,11 @@ import React, { CSSProperties, FC } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 const Picture: FC = () => {
-  const { picture, name } = useStaticQuery<Queries.PersonalPictureQuery>(graphql`
+  const { name } = useStaticQuery<Queries.PersonalPictureQuery>(graphql`
     query PersonalPicture {
-      picture: contentfulAsset(title: {eq: "Personal Photo"}) {
-        gatsbyImage(aspectRatio: 1, width: 200)
-      }
+      # picture: contentfulAsset(title: {eq: "Personal Photo"}) {
+      #   gatsbyImage(aspectRatio: 1, width: 200)
+      # }
       name: contentfulName {
         firstName
         lastName
