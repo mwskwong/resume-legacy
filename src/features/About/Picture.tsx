@@ -1,4 +1,5 @@
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+// import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import React, { CSSProperties, FC } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -15,18 +16,18 @@ const Picture: FC = () => {
     }
   `);
 
-  const image = picture?.gatsbyImage ? getImage(picture.gatsbyImage) : undefined;
+  // const image = picture?.gatsbyImage ? getImage(picture.gatsbyImage) : undefined;
   const gatsbyImageStyle: CSSProperties = { borderRadius: 38 };
 
-  if (image) {
-    return (
-      <GatsbyImage
-        image={image}
-        alt={`Picture of ${name?.firstName} ${name?.lastName}`}
-        style={gatsbyImageStyle}
-      />
-    );
-  }
+  // if (image) {
+  //   return (
+  //     <GatsbyImage
+  //       image={image}
+  //       alt={`Picture of ${name?.firstName} ${name?.lastName}`}
+  //       style={gatsbyImageStyle}
+  //     />
+  //   );
+  // }
 
   return null;
 };

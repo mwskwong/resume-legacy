@@ -1,4 +1,5 @@
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+// import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import { ListItem, ListItemAvatar, ListItemButton, ListItemText, useTheme } from "@mui/material";
 import React, { CSSProperties, FC } from "react";
 
@@ -10,7 +11,7 @@ type SupportDocumentListItemProps = {
 }
 
 const SupportDocumentListItem: FC<SupportDocumentListItemProps> = ({ supportDocument: { title, url, thumbnail } }) => {
-  const image = thumbnail && getImage(thumbnail);
+  // const image = thumbnail && getImage(thumbnail);
   const sx = useSx();
   const theme = useTheme();
   const gatsbyImageStyle: CSSProperties = { borderRadius: theme.shape.borderRadius };
@@ -19,7 +20,7 @@ const SupportDocumentListItem: FC<SupportDocumentListItemProps> = ({ supportDocu
     <ListItem disablePadding>
       <ListItemButton component="a" href={url ?? undefined} sx={sx.button}>
         <ListItemAvatar sx={sx.avatar}>
-          {
+          {/* {
             image && (
               <GatsbyImage
                 image={image}
@@ -28,7 +29,7 @@ const SupportDocumentListItem: FC<SupportDocumentListItemProps> = ({ supportDocu
               />
             )
 
-          }
+          } */}
         </ListItemAvatar>
         <ListItemText primary={title} />
       </ListItemButton>

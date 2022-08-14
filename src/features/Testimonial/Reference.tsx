@@ -1,13 +1,18 @@
 import { Box, Typography, useTheme } from "@mui/material";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { CSSProperties, FC, memo } from "react";
 
 import ReferenceProps from "./ReferenceProps";
 import useSx from "./useReferenceSx";
 
+// import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+
+
+
+
 const Reference: FC<ReferenceProps> = ({ name, jobTitle, refereePicture, company, comment }) => {
   const sx = useSx();
-  const image = getImage(refereePicture);
+  // const image = getImage(refereePicture);
   const theme = useTheme();
   const gatsbyImageStyle: CSSProperties = { borderRadius: theme.shape.borderRadius, minWidth: 60 };
 
@@ -17,7 +22,7 @@ const Reference: FC<ReferenceProps> = ({ name, jobTitle, refereePicture, company
         {`"${comment}"`}
       </Typography>
       <Box sx={sx.profileContainer}>
-        {
+        {/* {
           image && (
             <GatsbyImage
               image={image}
@@ -25,7 +30,7 @@ const Reference: FC<ReferenceProps> = ({ name, jobTitle, refereePicture, company
               style={gatsbyImageStyle}
             />
           )
-        }
+        } */}
         <Box sx={sx.refereeInfoContainer}>
           <Typography sx={sx.name} gutterBottom>
             {`${name}, `}
