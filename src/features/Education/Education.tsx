@@ -18,7 +18,9 @@ const Education: FC<SectionProps> = ({ sx: sxProp }) => {
       <Container>
         <Stack spacing={6}>
           <SectionHeading heading="Education" />
-          <EducationTimeline />
+          <div>
+            <EducationTimeline />
+          </div>
           <Suspense fallback={<CoursesFallback />}>
             <Courses />
           </Suspense>

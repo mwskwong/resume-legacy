@@ -18,9 +18,11 @@ const Work: FC<SectionProps> = ({ sx: sxProp }) => {
       <Container>
         <Stack spacing={6}>
           <SectionHeading heading="Experience" />
-          <Suspense fallback={<WorkTimelineFallback />}>
-            <WorkTimeline />
-          </Suspense>
+          <div>
+            <Suspense fallback={<WorkTimelineFallback />}>
+              <WorkTimeline />
+            </Suspense>
+          </div>
           <Certifications />
         </Stack>
       </Container>

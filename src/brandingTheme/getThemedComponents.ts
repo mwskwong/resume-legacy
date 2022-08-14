@@ -139,7 +139,9 @@ const getThemedComponents: GetThemedComponents = theme => ({
       styleOverrides: {
         root: {
           paddingLeft: 0,
-          paddingRight: 0
+          paddingRight: 0,
+          marginTop: 0,
+          marginBottom: 0
         }
       }
     },
