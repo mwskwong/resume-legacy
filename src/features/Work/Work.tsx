@@ -1,15 +1,14 @@
 import { Box, Container, Stack } from "@mui/material";
 import React, { FC, Suspense, lazy, memo } from "react";
 
+import Certifications from "./Certifications";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
 import { WORK } from "constants/nav";
 import useSx from "./useSx";
 
-// import WorkTimeline from "./WorkTimeline";
-
-const Certifications = lazy(() => import("./Certifications"));
-const CertificationsFallback = () => <Box sx={{ height: 139.97 }} />;
+const WorkTimeline = lazy(() => import("./WorkTimeline"));
+const WorkTimelineFallback = () => <Box sx={{ height: { xs: 3010.69, sm: 2062.69, md: 1979.34, lg: 1835.34 } }} />;
 
 const Work: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
@@ -19,10 +18,10 @@ const Work: FC<SectionProps> = ({ sx: sxProp }) => {
       <Container>
         <Stack spacing={6}>
           <SectionHeading heading="Experience" />
-          {/* <WorkTimeline /> */}
-          <Suspense fallback={<CertificationsFallback />}>
-            <Certifications />
+          <Suspense fallback={<WorkTimelineFallback />}>
+            <WorkTimeline />
           </Suspense>
+          <Certifications />
         </Stack>
       </Container>
     </Box>
