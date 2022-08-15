@@ -17,12 +17,6 @@ import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import Work from "features/Work";
 import useStructuredData from "hooks/useStructuredData";
-import withHydrationOnDemand from "react-hydration-on-demand";
-
-const AboutLazy = withHydrationOnDemand({ on: ["visible"] })(About);
-const WorkLazy = withHydrationOnDemand({ on: ["visible"] })(Work);
-const EducationLazy = withHydrationOnDemand({ on: ["visible"] })(Education);
-const ContactLazy = withHydrationOnDemand({ on: ["visible"] })(Contact);
 
 const bgcolors: Record<string, keyof TypeBackground> = {
   hero: "default",
@@ -69,9 +63,6 @@ const useSx: UseSx = () => ({
 
 const IndexPage: FC = () => {
   const sx = useSx();
-  const lazyWrapperProps = {
-    style: { paddingTop: 0, paddingBottom: 0 }
-  };
 
   return (
     <>
@@ -79,13 +70,13 @@ const IndexPage: FC = () => {
       <main>
         <Hero />
         <WaveSmooth sx={sx.waveSmooth} />
-        <AboutLazy sx={sx.about} wrapperProps={lazyWrapperProps} />
+        <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
-        <WorkLazy sx={sx.work} wrapperProps={lazyWrapperProps} />
+        <Work sx={sx.work} />
         <WaveSmooth2 sx={sx.waveSmooth2} />
-        <EducationLazy sx={sx.education} wrapperProps={lazyWrapperProps} />
+        <Education sx={sx.education} />
         <WaveRoaring sx={sx.waveRoaring} />
-        <ContactLazy wrapperProps={lazyWrapperProps} />
+        <Contact />
       </main>
       <FooterDivider sx={sx.footerDivider} />
       <Footer sx={sx.footer} />
