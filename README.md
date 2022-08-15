@@ -1,7 +1,7 @@
 <!-- markdownlint-disable-next-line -->
 <p align="center">
   <a href="https://mwskwong.com" rel="noopener" target="_blank">
-    <img src="https://mwskwong.com/icon-180x180.png" alt="mwskwomg.com logo">
+    <img src="https://mwskwong.com/icons/icon-192x192.png" alt="mwskwomg.com logo">
   </a>
 </p>
 
