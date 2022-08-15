@@ -61,9 +61,9 @@ const designTokens: Omit<ThemeOptions, "components"> = {
       main: `#${siUdemy.hex}`
     },
     background: {
-      sectionPrimary: darken(defaultTheme.palette.background.default, .02),
-      sectionSecondary: darken(defaultTheme.palette.background.default, .04),
-      sectionTertiary: darken(defaultTheme.palette.background.default, .06)
+      sectionPrimary: darken(defaultTheme.palette.background.default, .015),
+      sectionSecondary: darken(defaultTheme.palette.background.default, .030),
+      sectionTertiary: darken(defaultTheme.palette.background.default, .045)
     },
     action: {
       active: defaultTheme.palette.text.primary

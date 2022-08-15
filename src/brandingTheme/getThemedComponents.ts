@@ -34,7 +34,7 @@ const getThemedComponents: GetThemedComponents = theme => ({
     },
     MuiCard: {
       defaultProps: {
-        elevation: 0
+        variant: "outlined"
       }
     },
     MuiCardContent: {
