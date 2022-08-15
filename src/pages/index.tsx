@@ -6,7 +6,6 @@ import Education from "features/Education";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
 import Hero from "features/Hero";
-import LazyHydrate from "react-lazy-hydration";
 import NavBar from "components/NavBar";
 import SEO from "components/SEO";
 import ScrollToTopFab from "components/ScrollToTopFab";
@@ -18,6 +17,12 @@ import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
 import Work from "features/Work";
 import useStructuredData from "hooks/useStructuredData";
+import withHydrationOnDemand from "react-hydration-on-demand";
+
+const AboutLazy = withHydrationOnDemand({ on: ["visible"] })(About);
+const WorkLazy = withHydrationOnDemand({ on: ["visible"] })(Work);
+const EducationLazy = withHydrationOnDemand({ on: ["visible"] })(Education);
+const ContactLazy = withHydrationOnDemand({ on: ["visible"] })(Contact);
 
 const bgcolors: Record<string, keyof TypeBackground> = {
   hero: "default",
@@ -64,6 +69,9 @@ const useSx: UseSx = () => ({
 
 const IndexPage: FC = () => {
   const sx = useSx();
+  const lazyWrapperProps = {
+    style: { paddingTop: 0, paddingBottom: 0 }
+  };
 
   return (
     <>
@@ -71,21 +79,13 @@ const IndexPage: FC = () => {
       <main>
         <Hero />
         <WaveSmooth sx={sx.waveSmooth} />
-        <LazyHydrate whenVisible>
-          <About sx={sx.about} />
-        </LazyHydrate>
+        <AboutLazy sx={sx.about} wrapperProps={lazyWrapperProps} />
         <WaveRough sx={sx.waveRough} />
-        <LazyHydrate whenVisible>
-          <Work sx={sx.work} />
-        </LazyHydrate>
+        <WorkLazy sx={sx.work} wrapperProps={lazyWrapperProps} />
         <WaveSmooth2 sx={sx.waveSmooth2} />
-        <LazyHydrate whenVisible>
-          <Education sx={sx.education} />
-        </LazyHydrate>
+        <EducationLazy sx={sx.education} wrapperProps={lazyWrapperProps} />
         <WaveRoaring sx={sx.waveRoaring} />
-        <LazyHydrate whenVisible>
-          <Contact />
-        </LazyHydrate>
+        <ContactLazy wrapperProps={lazyWrapperProps} />
       </main>
       <FooterDivider sx={sx.footerDivider} />
       <Footer sx={sx.footer} />
