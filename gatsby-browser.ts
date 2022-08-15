@@ -10,8 +10,7 @@ export const onClientEntry: GatsbyBrowser["onClientEntry"] = () => {
     const whyDidYouRender = require("@welldone-software/why-did-you-render");
 
     whyDidYouRender(React, {
-      trackAllPureComponents: true,
-      exclude: [/RouterImpl/, /SideEffect\(NullComponent\)/]
+      trackAllPureComponents: true
     });
   }
 };
