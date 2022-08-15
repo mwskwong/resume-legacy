@@ -43,7 +43,7 @@ const designTokens: Omit<ThemeOptions, "components"> = {
   unstable_strictMode: true,
   palette: {
     primary: {
-      main: "#0073E6"
+      main: "#006EDB"
     },
     enterpriseDb: {
       main: `#${siEnterprisedb.hex}`
