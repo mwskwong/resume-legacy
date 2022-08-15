@@ -19,10 +19,10 @@ import Work from "features/Work";
 import useStructuredData from "hooks/useStructuredData";
 import withHydrationOnDemand from "react-hydration-on-demand";
 
-const AboutLazy = withHydrationOnDemand({ on: ["visible"] })(About);
-const WorkLazy = withHydrationOnDemand({ on: ["visible"] })(Work);
-const EducationLazy = withHydrationOnDemand({ on: ["visible"] })(Education);
-const ContactLazy = withHydrationOnDemand({ on: ["visible"] })(Contact);
+const AboutLazy = withHydrationOnDemand({ on: ["visible", "idle"] })(About);
+const WorkLazy = withHydrationOnDemand({ on: ["visible", "idle"] })(Work);
+const EducationLazy = withHydrationOnDemand({ on: ["visible", "idle"] })(Education);
+const ContactLazy = withHydrationOnDemand({ on: ["visible", "idle"] })(Contact);
 
 const bgcolors: Record<string, keyof TypeBackground> = {
   hero: "default",
