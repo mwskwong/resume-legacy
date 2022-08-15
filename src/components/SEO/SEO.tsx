@@ -66,11 +66,6 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, description: d
     <>
       <title>{seo.title}</title>
 
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/icon-180x180.png" />
-
       <meta name="author" content={fullName} />
       <meta name="format-detection" content="telephone=no" />
 

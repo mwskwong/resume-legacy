@@ -1,6 +1,5 @@
 import { GatsbyConfig } from "gatsby";
 import dotenv from "dotenv";
-import { nord0 } from "./src/nord";
 
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
@@ -84,36 +83,11 @@ const config: GatsbyConfig = {
         name: "Matthew Kwong",
         short_name: "Matthew",
         start_url: "/",
-        background_color: nord0,
-        theme_color: nord0,
+        background_color: "#fff",
+        theme_color: "#fff",
         cache_busting_mode: "none",
         display: "standalone",
-        icons: [
-          {
-            src: "/icon-192x192.png",
-            sizes: "192x192",
-            type: "image/png"
-          },
-          {
-            src: "/icon-512x512.png",
-            sizes: "512x512",
-            type: "image/png"
-          },
-          {
-            src: "/icon-maskable-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
-            purpose: "maskable"
-          },
-          {
-            src: "/icon-maskable-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "maskable"
-          }
-        ],
-        legacy: false,
-        include_favicon: false
+        icon: "src/assets/images/icon.png"
       }
     },
     {
@@ -139,10 +113,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-offline",
       options: {
         workboxConfig: {
-          globPatterns: [
-            "**/icon-*",
-            "**/favicon.ico"
-          ]
+          globPatterns: ["**/icon-*"]
         }
       }
     },

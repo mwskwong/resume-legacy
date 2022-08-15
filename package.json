@@ -41,7 +41,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.34.1",
-    "react-hydration-on-demand": "^2.1.0",
     "simple-icons": "^7.7.0"
   },
   "devDependencies": {

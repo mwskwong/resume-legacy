@@ -34,7 +34,7 @@ const getThemedComponents: GetThemedComponents = theme => ({
     },
     MuiCard: {
       defaultProps: {
-        elevation: 0
+        variant: "outlined"
       }
     },
     MuiCardContent: {
@@ -92,16 +92,6 @@ const getThemedComponents: GetThemedComponents = theme => ({
           bottom: theme.spacing(2),
           right: theme.spacing(2),
           borderRadius: theme.shape.borderRadius
-        }
-      }
-    },
-    MuiFilledInput: {
-      styleOverrides: {
-        root: {
-          backgroundColor: theme.palette.background.sectionPrimary,
-          "&:hover": {
-            backgroundColor: theme.palette.background.sectionPrimary
-          }
         }
       }
     },

@@ -2,7 +2,6 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import React, { FC, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import ArcticLandscape from "components/illustrations/ArcticLandscape";
 import { HOME } from "constants/nav";
 import { SectionProps } from "types";
 import SocialMedia from "components/SocialMedia";
@@ -24,9 +23,9 @@ const Hero: FC<SectionProps> = ({ sx: sxProp }) => {
 
   return (
     <Container component="section" sx={sx.container} id={HOME.id}>
-      <Box sx={sx.illustrationWrapper}>
-        <ArcticLandscape />
-      </Box>
+      <Typography variant="h4" component="div" sx={sx.greetings}>
+        Greetings
+      </Typography>
       <Typography variant="h1" sx={sx.title}>
         {"I Am "}
         <Box component="span" sx={sx.name}>

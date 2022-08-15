@@ -10,9 +10,7 @@ const useSx: UseSx = sx => ({
     minHeight: "100vh",
     ...sx
   },
-  illustrationWrapper: {
-    width: "100%",
-    maxWidth: 430,
+  greetings: {
     mb: 2
   },
   title: {
