@@ -95,16 +95,6 @@ const getThemedComponents: GetThemedComponents = theme => ({
         }
       }
     },
-    MuiFilledInput: {
-      styleOverrides: {
-        root: {
-          backgroundColor: theme.palette.background.sectionPrimary,
-          "&:hover": {
-            backgroundColor: theme.palette.background.sectionPrimary
-          }
-        }
-      }
-    },
     MuiFormControl: {
       defaultProps: {
         variant: "filled",

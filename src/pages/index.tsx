@@ -26,9 +26,9 @@ const ContactLazy = withHydrationOnDemand({ on: ["visible"] })(Contact);
 
 const bgcolors: Record<string, keyof TypeBackground> = {
   hero: "default",
-  about: "sectionSecondary",
-  work: "sectionTertiary",
-  education: "sectionSecondary",
+  about: "sectionPrimary",
+  work: "sectionSecondary",
+  education: "sectionPrimary",
   contact: "default",
   footer: "sectionPrimary"
 };

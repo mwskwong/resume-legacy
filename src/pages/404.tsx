@@ -1,7 +1,6 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 import React, { FC } from "react";
 
-import Arctic404 from "components/illustrations/Arctic404";
 import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
 import { Link } from "gatsby";
 import SEO from "components/SEO";
@@ -16,9 +15,9 @@ const useSx: UseSx = () => ({
     minHeight: "100vh",
     py: 4
   },
-  animationContainer: {
-    width: "100%",
-    maxWidth: 430
+  404: {
+    color: "primary.main",
+    fontSize: "5rem"
   },
   notFound: {
     typography: "h5",
@@ -32,13 +31,13 @@ const NotFoundPage: FC = () => {
 
   return (
     <Container component="main" sx={sx.root}>
-      <Box sx={sx.animationContainer}>
-        <Arctic404 />
-      </Box>
+      <Typography variant="h1" sx={sx["404"]}>
+        404
+      </Typography>
       <Typography component="h1" sx={sx.notFound}>
         The page you were looking for does not exist.
       </Typography>
-      <Button variant="outlined" color="inherit" size="large" startIcon={<ArrowLeft />} component={Link} to="/">
+      <Button variant="contained" size="large" startIcon={<ArrowLeft />} component={Link} to="/">
         back to home
       </Button>
     </Container>

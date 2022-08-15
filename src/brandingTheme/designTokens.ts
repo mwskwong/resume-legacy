@@ -1,8 +1,8 @@
-import { alpha, darken } from "@mui/system";
+import { siEnterprisedb, siMicrosoft, siMongodb, siOracle, siUdemy } from "simple-icons/icons";
 
 import { ThemeOptions } from "@mui/material";
+import { darken } from "@mui/system";
 import defaultTheme from "./defaultTheme";
-import nord from "nord";
 import systemFonts from "./systemFonts";
 
 declare module "@mui/material/styles/createPalette" {
@@ -42,74 +42,31 @@ declare module "@mui/material/styles/createTypography" {
 const designTokens: Omit<ThemeOptions, "components"> = {
   unstable_strictMode: true,
   palette: {
-    mode: "dark",
-    common: {
-      black: nord.nord0
-    },
     primary: {
-      main: nord.nord8,
-      contrastText: nord.nord1
-    },
-    secondary: {
-      main: nord.nord0,
-      contrastText: nord.nord8
-    },
-    error: {
-      main: nord.nord11,
-      contrastText: "#fff"
-    },
-    warning: {
-      main: nord.nord13,
-      contrastText: nord.nord1
-    },
-    info: {
-      main: nord.nord7,
-      contrastText: nord.nord1
-    },
-    success: {
-      main: nord.nord14,
-      contrastText: nord.nord1
-    },
-    microsoft: {
-      main: nord.nord8,
-      contrastText: nord.nord1
-    },
-    oracle: {
-      main: nord.nord11,
-      contrastText: "#fff"
-    },
-    udemy: {
-      main: nord.nord15,
-      contrastText: nord.nord1
+      main: "#0073E6"
     },
     enterpriseDb: {
-      main: nord.nord12,
-      contrastText: nord.nord1
+      main: `#${siEnterprisedb.hex}`
     },
     mongoDb: {
-      main: nord.nord14,
-      contrastText: nord.nord1
+      main: `#${siMongodb.hex}`
     },
-    text: {
-      primary: nord.nord6,
-      secondary: darken(nord.nord6, .27),
-      disabled: darken(nord.nord6, .47)
+    microsoft: {
+      main: `#${siMicrosoft.hex}`
     },
-    divider: alpha(nord.nord4, .5),
+    oracle: {
+      main: `#${siOracle.hex}`
+    },
+    udemy: {
+      main: `#${siUdemy.hex}`
+    },
     background: {
-      default: nord.nord0,
-      paper: nord.nord0,
-      sectionPrimary: nord.nord1,
-      sectionSecondary: darken(nord.nord0, .1),
-      sectionTertiary: darken(nord.nord0, .2)
+      sectionPrimary: darken(defaultTheme.palette.background.default, .02),
+      sectionSecondary: darken(defaultTheme.palette.background.default, .04),
+      sectionTertiary: darken(defaultTheme.palette.background.default, .06)
     },
     action: {
-      active: nord.nord6,
-      hover: alpha(nord.nord6, .04),
-      selected: alpha(nord.nord6, .08),
-      disabled: alpha(nord.nord6, .26),
-      disabledBackground: alpha(nord.nord6, .12),
-      focus: alpha(nord.nord6, .12)
+      active: defaultTheme.palette.text.primary
     }
   },
   spacing: 10,
