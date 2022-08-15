@@ -1,4 +1,4 @@
-import { siEnterprisedb, siMicrosoft, siMongodb, siOracle, siUdemy } from "simple-icons/icons";
+import { siMicrosoft, siUdemy } from "simple-icons/icons";
 
 import { ThemeOptions } from "@mui/material";
 import { darken } from "@mui/system";
@@ -46,16 +46,16 @@ const designTokens: Omit<ThemeOptions, "components"> = {
       main: "#006EDB"
     },
     enterpriseDb: {
-      main: `#${siEnterprisedb.hex}`
+      main: "#DB3700"
     },
     mongoDb: {
-      main: `#${siMongodb.hex}`
+      main: "#3A833C"
     },
     microsoft: {
       main: `#${siMicrosoft.hex}`
     },
     oracle: {
-      main: `#${siOracle.hex}`
+      main: "#EB0000"
     },
     udemy: {
       main: `#${siUdemy.hex}`
