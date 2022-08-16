@@ -41,6 +41,9 @@ declare module "@mui/material/styles/createTypography" {
 const designTokens: Omit<ThemeOptions, "components"> = {
   unstable_strictMode: true,
   palette: {
+    common: {
+      black: "#1D1D1D"
+    },
     primary: {
       main: "#006EDB"
     },
@@ -65,8 +68,12 @@ const designTokens: Omit<ThemeOptions, "components"> = {
       sectionTertiary: darken("#F3F6F9", .02),
       paper: darken("#F3F6F9", .02)
     },
+    text: {
+      primary: "#1A2027",
+      secondary: "#3E5060"
+    },
     action: {
-      active: defaultTheme.palette.text.primary
+      active: "#1A2027"
     }
   },
   spacing: 10,
