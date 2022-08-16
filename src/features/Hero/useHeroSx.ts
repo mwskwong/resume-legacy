@@ -20,7 +20,8 @@ const useSx: UseSx = sx => ({
     },
     "@media (max-width: 370px)": {
       height: theme => `${Number(theme.typography.h1.lineHeight) * 3}em`
-    }
+    },
+    width: "100%"
   },
   typeIt: {
     color: "primary.main",
