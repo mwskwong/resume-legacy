@@ -1,7 +1,6 @@
+import { ThemeOptions, darken, lighten } from "@mui/material";
 import { siEnterprisedb, siMicrosoft, siMongodb, siOracle, siUdemy } from "simple-icons/icons";
 
-import { ThemeOptions } from "@mui/material";
-import { darken } from "@mui/system";
 import defaultTheme from "./defaultTheme";
 import systemFonts from "./systemFonts";
 
@@ -42,31 +41,39 @@ declare module "@mui/material/styles/createTypography" {
 const designTokens: Omit<ThemeOptions, "components"> = {
   unstable_strictMode: true,
   palette: {
+    common: {
+      black: "#1D1D1D"
+    },
     primary: {
       main: "#006EDB"
     },
     enterpriseDb: {
-      main: darken(`#${siEnterprisedb.hex}`, .125)
+      main: darken(`#${siEnterprisedb.hex}`, .19)
     },
     mongoDb: {
-      main: darken(`#${siMongodb.hex}`, .17)
+      main: darken(`#${siMongodb.hex}`, .23)
     },
     microsoft: {
       main: `#${siMicrosoft.hex}`
     },
     oracle: {
-      main: darken(`#${siOracle.hex}`, .04)
+      main: darken(`#${siOracle.hex}`, .11)
     },
     udemy: {
-      main: `#${siUdemy.hex}`
+      main: darken(`#${siUdemy.hex}`, .03)
     },
     background: {
-      sectionPrimary: darken(defaultTheme.palette.background.default, .015),
-      sectionSecondary: darken(defaultTheme.palette.background.default, .030),
-      sectionTertiary: darken(defaultTheme.palette.background.default, .045)
+      sectionPrimary: lighten("#F3F6F9", .5),
+      sectionSecondary: "#F3F6F9",
+      sectionTertiary: darken("#F3F6F9", .02),
+      paper: darken("#F3F6F9", .02)
+    },
+    text: {
+      primary: "#1A2027",
+      secondary: "#3E5060"
     },
     action: {
-      active: defaultTheme.palette.text.primary
+      active: "#1A2027"
     }
   },
   spacing: 10,
