@@ -45,19 +45,19 @@ const designTokens: Omit<ThemeOptions, "components"> = {
       main: "#006EDB"
     },
     enterpriseDb: {
-      main: darken(`#${siEnterprisedb.hex}`, .125)
+      main: darken(`#${siEnterprisedb.hex}`, .19)
     },
     mongoDb: {
-      main: darken(`#${siMongodb.hex}`, .17)
+      main: darken(`#${siMongodb.hex}`, .23)
     },
     microsoft: {
       main: `#${siMicrosoft.hex}`
     },
     oracle: {
-      main: darken(`#${siOracle.hex}`, .04)
+      main: darken(`#${siOracle.hex}`, .11)
     },
     udemy: {
-      main: `#${siUdemy.hex}`
+      main: darken(`#${siUdemy.hex}`, .03)
     },
     background: {
       sectionPrimary: lighten("#F3F6F9", .5),
