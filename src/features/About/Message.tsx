@@ -35,7 +35,7 @@ const Message: FC = () => {
   return (
     <div>
       <Typography sx={sx.hello} variant="h3">
-        {"Hello! "}
+        {"Hello again! "}
         <Box sx={sx.name} component="span">
           {`I'm ${name?.firstName} ${name?.lastName}.`}
         </Box>
