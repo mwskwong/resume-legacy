@@ -34,7 +34,7 @@ const getThemedComponents: GetThemedComponents = theme => ({
     },
     MuiCard: {
       defaultProps: {
-        variant: "outlined"
+        elevation: 0
       }
     },
     MuiCardContent: {
@@ -92,6 +92,14 @@ const getThemedComponents: GetThemedComponents = theme => ({
           bottom: theme.spacing(2),
           right: theme.spacing(2),
           borderRadius: theme.shape.borderRadius
+        }
+      }
+    },
+    MuiFilledInput: {
+      styleOverrides: {
+        root: {
+          // Workaround of focused style doesn't pass to the component
+          backgroundColor: `${theme.palette.background.paper} !important`
         }
       }
     },

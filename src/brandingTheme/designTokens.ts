@@ -1,7 +1,6 @@
+import { ThemeOptions, darken, lighten } from "@mui/material";
 import { siEnterprisedb, siMicrosoft, siMongodb, siOracle, siUdemy } from "simple-icons/icons";
 
-import { ThemeOptions } from "@mui/material";
-import { darken } from "@mui/system";
 import defaultTheme from "./defaultTheme";
 import systemFonts from "./systemFonts";
 
@@ -61,9 +60,10 @@ const designTokens: Omit<ThemeOptions, "components"> = {
       main: `#${siUdemy.hex}`
     },
     background: {
-      sectionPrimary: darken(defaultTheme.palette.background.default, .015),
-      sectionSecondary: darken(defaultTheme.palette.background.default, .030),
-      sectionTertiary: darken(defaultTheme.palette.background.default, .045)
+      sectionPrimary: lighten("#F3F6F9", .5),
+      sectionSecondary: "#F3F6F9",
+      sectionTertiary: darken("#F3F6F9", .02),
+      paper: darken("#F3F6F9", .02)
     },
     action: {
       active: defaultTheme.palette.text.primary
