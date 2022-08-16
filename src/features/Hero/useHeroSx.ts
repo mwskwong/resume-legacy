@@ -11,6 +11,7 @@ const useSx: UseSx = sx => ({
     ...sx
   },
   greetings: {
+    typography: "h5",
     mb: 2
   },
   title: {
