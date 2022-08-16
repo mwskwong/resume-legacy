@@ -87,7 +87,10 @@ const config: GatsbyConfig = {
         theme_color: "#fff",
         cache_busting_mode: "none",
         display: "standalone",
-        icon: "src/assets/images/icon.png"
+        icon: "src/assets/images/icon.png",
+        icon_options: {
+          purpose: "any monochrome"
+        }
       }
     },
     {
