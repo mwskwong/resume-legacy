@@ -2,21 +2,21 @@ import { Box, Container, Stack } from "@mui/material";
 import React, { FC, memo } from "react";
 
 import Certifications from "./Certifications";
+import { EXPERIENCE } from "constants/nav";
+import ExperienceTimeline from "./ExperienceTimeline";
 import SectionHeading from "components/SectionHeading";
 import { SectionProps } from "types";
-import { WORK } from "constants/nav";
-import WorkTimeline from "./WorkTimeline";
 import useSx from "./useSx";
 
-const Work: FC<SectionProps> = ({ sx: sxProp }) => {
+const Experience: FC<SectionProps> = ({ sx: sxProp }) => {
   const sx = useSx(sxProp);
 
   return (
-    <Box sx={sx.root} component="section" id={WORK.id}>
+    <Box sx={sx.root} component="section" id={EXPERIENCE.id}>
       <Container>
         <Stack spacing={6}>
           <SectionHeading heading="Experience" />
-          <WorkTimeline />
+          <ExperienceTimeline />
           <Certifications />
         </Stack>
       </Container>
@@ -24,6 +24,6 @@ const Work: FC<SectionProps> = ({ sx: sxProp }) => {
   );
 };
 
-if (process.env.NODE_ENV === "development") Work.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Experience.whyDidYouRender = true;
 
-export default memo(Work);
+export default memo(Experience);
