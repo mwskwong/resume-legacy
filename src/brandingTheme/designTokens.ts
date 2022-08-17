@@ -38,6 +38,19 @@ declare module "@mui/material/styles/createTypography" {
   }
 }
 
+const grey = {
+  50: "#F3F6F9",
+  100: "#E7EBF0",
+  200: "#E0E3E7",
+  300: "#CDD2D7",
+  400: "#B2BAC2",
+  500: "#A0AAB4",
+  600: "#6F7E8C",
+  700: "#3E5060",
+  800: "#2D3843",
+  900: "#1A2027"
+};
+
 const designTokens: Omit<ThemeOptions, "components"> = {
   unstable_strictMode: true,
   palette: {
@@ -46,6 +59,15 @@ const designTokens: Omit<ThemeOptions, "components"> = {
     },
     primary: {
       main: "#006EDB"
+    },
+    error: {
+      main: "#EB0014"
+    },
+    warning: {
+      main: "#DEA500"
+    },
+    success: {
+      main: "#1AA251"
     },
     enterpriseDb: {
       main: darken(`#${siEnterprisedb.hex}`, .19)
@@ -62,30 +84,20 @@ const designTokens: Omit<ThemeOptions, "components"> = {
     udemy: {
       main: darken(`#${siUdemy.hex}`, .03)
     },
-    grey: {
-      50: "#F3F6F9",
-      100: "#E7EBF0",
-      200: "#E0E3E7",
-      300: "#CDD2D7",
-      400: "#B2BAC2",
-      500: "#A0AAB4",
-      600: "#6F7E8C",
-      700: "#3E5060",
-      800: "#2D3843",
-      900: "#1A2027"
-    },
+    grey,
     text: {
-      primary: "#1A2027",
-      secondary: "#3E5060"
+      primary: grey[900],
+      secondary: grey[700]
     },
+    divider: grey[100],
     background: {
-      sectionPrimary: lighten("#F3F6F9", .5),
-      sectionSecondary: "#F3F6F9",
-      sectionTertiary: darken("#F3F6F9", .02),
-      paper: darken("#F3F6F9", .02)
+      sectionPrimary: lighten(grey[50], .5),
+      sectionSecondary: grey[50],
+      sectionTertiary: darken(grey[50], .02),
+      paper: darken(grey[50], .02)
     },
     action: {
-      active: "#1A2027"
+      active: grey[900]
     }
   },
   spacing: 10,
@@ -108,22 +120,21 @@ const designTokens: Omit<ThemeOptions, "components"> = {
     h3: {
       fontSize: defaultTheme.typography.pxToRem(36),
       lineHeight: 44 / 36,
-      letterSpacing: 0
+      letterSpacing: 0.2
     },
     h4: {
       fontSize: defaultTheme.typography.pxToRem(28),
       lineHeight: 42 / 28,
-      letterSpacing: 0
+      letterSpacing: 0.2
     },
     h5: {
       fontSize: defaultTheme.typography.pxToRem(24),
       lineHeight: 36 / 24,
-      letterSpacing: 0
+      letterSpacing: 0.1
     },
     h6: {
       fontSize: defaultTheme.typography.pxToRem(20),
-      lineHeight: 30 / 20,
-      letterSpacing: 0
+      lineHeight: 30 / 20
     },
     button: {
       textTransform: "capitalize",
