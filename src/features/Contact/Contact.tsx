@@ -50,7 +50,7 @@ const Contact: FC<SectionProps> = ({ sx: sxProp }) => {
     <Box sx={sx.root} component="section" id={CONTACT.id}>
       <Container>
         <Stack spacing={6}>
-          <SectionHeading heading="Get In Touch" />
+          <SectionHeading heading="Contact" />
           <form onSubmit={handleSubmit(handleFormSubmit)}>
             <Grid container spacing={6} disableEqualOverflow>
               <Grid xs={12} md={4}>
