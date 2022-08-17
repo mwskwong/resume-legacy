@@ -68,7 +68,7 @@ const Hero: FC<SectionProps> = ({ sx: sxProp }) => {
 
   return (
     <Container component="section" sx={sx.container} id={HOME.id}>
-      <Typography variant="h4" component="div" sx={sx.greetings}>
+      <Typography component="div" sx={sx.greetings}>
         Greetings
       </Typography>
       <Typography variant="h1" sx={sx.title}>
