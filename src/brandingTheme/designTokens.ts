@@ -89,7 +89,7 @@ const designTokens: Omit<ThemeOptions, "components"> = {
       primary: grey[900],
       secondary: grey[700]
     },
-    divider: grey[100],
+    divider: grey[300],
     background: {
       sectionPrimary: lighten(grey[50], .5),
       sectionSecondary: grey[50],
