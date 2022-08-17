@@ -62,15 +62,27 @@ const designTokens: Omit<ThemeOptions, "components"> = {
     udemy: {
       main: darken(`#${siUdemy.hex}`, .03)
     },
+    grey: {
+      50: "#F3F6F9",
+      100: "#E7EBF0",
+      200: "#E0E3E7",
+      300: "#CDD2D7",
+      400: "#B2BAC2",
+      500: "#A0AAB4",
+      600: "#6F7E8C",
+      700: "#3E5060",
+      800: "#2D3843",
+      900: "#1A2027"
+    },
+    text: {
+      primary: "#1A2027",
+      secondary: "#3E5060"
+    },
     background: {
       sectionPrimary: lighten("#F3F6F9", .5),
       sectionSecondary: "#F3F6F9",
       sectionTertiary: darken("#F3F6F9", .02),
       paper: darken("#F3F6F9", .02)
-    },
-    text: {
-      primary: "#1A2027",
-      secondary: "#3E5060"
     },
     action: {
       active: "#1A2027"
