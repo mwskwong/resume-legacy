@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import About from "features/About";
 import Contact from "features/Contact";
 import Education from "features/Education";
+import Experience from "features/Experience";
 import Footer from "features/Footer";
 import FooterDivider from "components/dividers/Footer";
 import Hero from "features/Hero";
@@ -15,13 +16,12 @@ import WaveRoaring from "components/dividers/WaveRoaring";
 import WaveRough from "components/dividers/WaveRough";
 import WaveSmooth from "components/dividers/WaveSmooth";
 import WaveSmooth2 from "components/dividers/WaveSmooth2";
-import Work from "features/Work";
 import useStructuredData from "hooks/useStructuredData";
 
 const bgcolors: Record<string, keyof TypeBackground> = {
   hero: "default",
   about: "sectionPrimary",
-  work: "sectionSecondary",
+  experience: "sectionSecondary",
   education: "sectionPrimary",
   contact: "default",
   footer: "sectionPrimary"
@@ -31,8 +31,8 @@ const useSx: UseSx = () => ({
   about: {
     bgcolor: `background.${bgcolors.about}`
   },
-  work: {
-    bgcolor: `background.${bgcolors.work}`
+  experience: {
+    bgcolor: `background.${bgcolors.experience}`
   },
   education: {
     bgcolor: `background.${bgcolors.education}`
@@ -45,10 +45,10 @@ const useSx: UseSx = () => ({
   },
   waveRough: {
     bgcolor: `background.${bgcolors.about}`,
-    color: `background.${bgcolors.work}`
+    color: `background.${bgcolors.experience}`
   },
   waveSmooth2: {
-    bgcolor: `background.${bgcolors.work}`,
+    bgcolor: `background.${bgcolors.experience}`,
     color: `background.${bgcolors.education}`
   },
   waveRoaring: {
@@ -72,7 +72,7 @@ const IndexPage: FC = () => {
         <WaveSmooth sx={sx.waveSmooth} />
         <About sx={sx.about} />
         <WaveRough sx={sx.waveRough} />
-        <Work sx={sx.work} />
+        <Experience sx={sx.experience} />
         <WaveSmooth2 sx={sx.waveSmooth2} />
         <Education sx={sx.education} />
         <WaveRoaring sx={sx.waveRoaring} />

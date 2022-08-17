@@ -16,7 +16,7 @@ const About: FC<SectionProps> = ({ sx: sxProp }) => {
     <Box sx={sx.root} component="section" id={ABOUT.id}>
       <Container>
         <Stack sx={sx.stack} spacing={6}>
-          <SectionHeading heading="About Me" />
+          <SectionHeading heading="About" />
           <Picture />
           <Message />
           <SkillSet />

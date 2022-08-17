@@ -2,7 +2,7 @@
 
 import { SxProps, Theme } from "@mui/material";
 
-export type SectionId = "home" | "about" | "work" | "education" | "contact"
+export type SectionId = "home" | "about" | "experience" | "education" | "contact"
 
 export type SectionProps = { sx?: SxProps<Theme> }
 

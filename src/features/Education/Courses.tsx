@@ -29,7 +29,7 @@ const Courses: FC = () => {
   return (
     <Stack spacing={2}>
       <Typography sx={sx.title} component="h3">
-        Courses
+        Courses & Training
       </Typography>
       <ToggleButtonGroup
         color="primary"

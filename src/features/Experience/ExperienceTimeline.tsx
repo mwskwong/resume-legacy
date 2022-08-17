@@ -3,9 +3,9 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import Timeline from "components/Timeline";
 
-const WorkTimeline: FC = () => {
-  const { allContentfulWorkingExperience: { nodes: workNodes } } = useStaticQuery<Queries.WorkTimelineQuery>(graphql`
-    query WorkTimeline {
+const Experienceimeline: FC = () => {
+  const { allContentfulWorkingExperience: { nodes: experienceNodes } } = useStaticQuery<Queries.ExperienceTimelineQuery>(graphql`
+    query ExperienceTimeline {
       allContentfulWorkingExperience(sort: {order: DESC, fields: from}) {
         nodes {
           from
@@ -25,9 +25,9 @@ const WorkTimeline: FC = () => {
         }
       }
     }
-`);
+  `);
 
-  const works = workNodes
+  const experiences = experienceNodes
     .map(({ jobTitle, company, jobDuties, supportDocuments, ...node }) => ({
       title: jobTitle,
       subtitle: company,
@@ -40,9 +40,9 @@ const WorkTimeline: FC = () => {
       ...node
     }));
 
-  return <Timeline data={works} />;
+  return <Timeline data={experiences} />;
 };
 
-if (process.env.NODE_ENV === "development") WorkTimeline.whyDidYouRender = true;
+if (process.env.NODE_ENV === "development") Experienceimeline.whyDidYouRender = true;
 
-export default WorkTimeline;
+export default Experienceimeline;
