@@ -47,6 +47,7 @@ const Certifications: FC = () => {
                     organization={organization}
                     status={issuedDate ? `${issued} — ${expire}` : issued}
                     certificationUrl={file?.publicUrl}
+                    sx={sx.card}
                   />
                 </Grid>
               );
