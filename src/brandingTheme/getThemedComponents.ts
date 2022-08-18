@@ -99,7 +99,7 @@ const getThemedComponents: GetThemedComponents = theme => ({
       styleOverrides: {
         root: {
           // Workaround of focused style doesn't pass to the component
-          backgroundColor: `${theme.palette.background.paper} !important`
+          backgroundColor: `${theme.palette.background.sectionPrimary} !important`
         }
       }
     },
