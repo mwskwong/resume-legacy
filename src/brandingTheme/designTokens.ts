@@ -93,8 +93,7 @@ const designTokens: Omit<ThemeOptions, "components"> = {
     background: {
       sectionPrimary: lighten(grey[50], .5),
       sectionSecondary: grey[50],
-      sectionTertiary: darken(grey[50], .02),
-      paper: darken(grey[50], .02)
+      sectionTertiary: darken(grey[50], .02)
     },
     action: {
       active: grey[900]

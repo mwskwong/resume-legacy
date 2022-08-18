@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardContent, SvgIconProps, Typography } from "@mui/material";
+import { Card, CardActionArea, CardContent, CardProps, SvgIconProps, Typography } from "@mui/material";
 import React, { ElementType, FC, memo } from "react";
 
 import EnterpriseDB from "components/icons/EnterpriseDB";
@@ -9,7 +9,7 @@ import Udemy from "components/icons/Udemy";
 import camelCase from "camelcase";
 import useSx from "./useSx";
 
-type CertAndCourseCardProps = {
+type CertAndCourseCardProps = CardProps & {
   name: string,
   organization: string,
   status?: string,
@@ -24,7 +24,7 @@ const Icons: Record<string, ElementType<SvgIconProps>> = {
   mongoDb: MongoDB
 };
 
-const CertAndCourseCard: FC<CertAndCourseCardProps> = ({ name, organization, status, certificationUrl }) => {
+const CertAndCourseCard: FC<CertAndCourseCardProps> = ({ name, organization, status, certificationUrl, ...props }) => {
   const sx = useSx();
   const organizationCamelCase = camelCase(organization);
   const Icon = Icons[organizationCamelCase];
@@ -40,7 +40,7 @@ const CertAndCourseCard: FC<CertAndCourseCardProps> = ({ name, organization, sta
   );
 
   return (
-    <Card>
+    <Card {...props}>
       {certificationUrl
         ? (
           <CardActionArea href={certificationUrl} target="_blank">
