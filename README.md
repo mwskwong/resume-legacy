@@ -1,15 +1,3 @@
-<style>
-  .icon {
-    width: 24px;
-    color: #fff;
-  }
-  @media (prefers-color-scheme: dark) {
-    .icon {
-      fill: #fff;
-    }
-  }
-</style>
-
 <p align="center">
   <a href="https://mwskwong.com" rel="noopener" target="_blank">
     <img src="https://mwskwong.com/icons/icon-192x192.png" alt="mwskwomg.com logo">
