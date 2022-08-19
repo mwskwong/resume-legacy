@@ -1,6 +1,0 @@
-/* Only works on letters M, a, t, h, e, w */
-@font-face {
-  font-family: "Riviera";
-  font-display: swap;
-  src: url("assets/fonts/riviera.woff2") format("woff2");
-}
