@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
-const { CF_PAGES_BRANCH = "main", CONTENTFUL_ACCESS_TOKEN, ANALYZE_BUNDLE } = process.env;
+const { CF_PAGES_BRANCH = "main", CONTENTFUL_ACCESS_TOKEN, ANALYZE_BUNDLE, NODE_ENV } = process.env;
 
 const prod = CF_PAGES_BRANCH === "main";
 const PROD_URL = "https://mwskwong.com";
@@ -25,6 +25,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-contentful",
       options: {
+        host: NODE_ENV === "production" && prod ? "cdn.contentful.com" : "preview.contentful.com",
         accessToken: CONTENTFUL_ACCESS_TOKEN,
         spaceId: "zz9cwhc5t97i",
         enableTags: true
