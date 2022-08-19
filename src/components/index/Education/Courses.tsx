@@ -2,7 +2,7 @@ import { Unstable_Grid2 as Grid, Stack, ToggleButton, ToggleButtonGroup, Typogra
 import React, { FC, MouseEvent, memo, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import CertAndCourseCard from "components/CertAndCourseCard";
+import CertAndCourseCard from "components/common/CertAndCourseCard";
 import useSx from "./useCoursesSx";
 
 const Courses: FC = () => {

@@ -2,7 +2,7 @@ import { Unstable_Grid2 as Grid, Stack, Typography } from "@mui/material";
 import React, { FC, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import CertAndCourseCard from "components/CertAndCourseCard";
+import CertAndCourseCard from "components/common/CertAndCourseCard";
 import dateTimeFormat from "utils/dateTimeFormat";
 import useSx from "./useCertificationsSx";
 

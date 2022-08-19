@@ -4,7 +4,7 @@ import React, { FC, memo } from "react";
 import Courses from "./Courses";
 import { EDUCATION } from "constants/nav";
 import EducationTimeline from "./EducationTimeline";
-import SectionHeading from "components/SectionHeading";
+import SectionHeading from "components/common/SectionHeading";
 import { SectionProps } from "types";
 import useSx from "./useEducationSx";
 

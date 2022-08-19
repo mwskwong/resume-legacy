@@ -4,7 +4,7 @@ import React, { FC, memo } from "react";
 import { ABOUT } from "constants/nav";
 import Message from "./Message";
 import Picture from "./Picture";
-import SectionHeading from "components/SectionHeading";
+import SectionHeading from "components/common/SectionHeading";
 import { SectionProps } from "types";
 import SkillSet from "./SkillSet";
 import useSx from "./useAboutSx";

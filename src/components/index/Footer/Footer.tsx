@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { FavoriteRounded as Favorite } from "@mui/icons-material";
 import { SectionProps } from "types";
-import SocialMedia from "components/SocialMedia";
+import SocialMedia from "components/common/SocialMedia";
 import { Typography } from "@mui/material";
 import useSx from "./useFooterSx";
 

@@ -1,21 +1,21 @@
 import React, { FC } from "react";
 
-import About from "features/About";
-import Contact from "features/Contact";
-import Education from "features/Education";
-import Experience from "features/Experience";
-import Footer from "features/Footer";
-import FooterDivider from "components/dividers/Footer";
-import Hero from "features/Hero";
-import NavBar from "components/NavBar";
-import SEO from "components/SEO";
-import ScrollToTopFab from "components/ScrollToTopFab";
+import About from "components/index/About";
+import Contact from "components/index/Contact";
+import Education from "components/index/Education";
+import Experience from "components/index/Experience";
+import Footer from "components/index/Footer";
+import FooterDivider from "components/common/dividers/Footer";
+import Hero from "components/index/Hero";
+import NavBar from "components/common/NavBar";
+import SEO from "components/common/SEO";
+import ScrollToTopFab from "components/common/ScrollToTopFab";
 import { TypeBackground } from "@mui/material";
 import { UseSx } from "types";
-import WaveRoaring from "components/dividers/WaveRoaring";
-import WaveRough from "components/dividers/WaveRough";
-import WaveSmooth from "components/dividers/WaveSmooth";
-import WaveSmooth2 from "components/dividers/WaveSmooth2";
+import WaveRoaring from "components/common/dividers/WaveRoaring";
+import WaveRough from "components/common/dividers/WaveRough";
+import WaveSmooth from "components/common/dividers/WaveSmooth";
+import WaveSmooth2 from "components/common/dividers/WaveSmooth2";
 import useStructuredData from "hooks/useStructuredData";
 
 const bgcolors: Record<string, keyof TypeBackground> = {
