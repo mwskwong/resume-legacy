@@ -66,6 +66,8 @@ const SEO: FC<PropsWithChildren<SEOProps>> = ({ title: titleProp, description: d
     <>
       <title>{seo.title}</title>
 
+      <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+
       <meta name="author" content={fullName} />
       <meta name="format-detection" content="telephone=no" />
 
