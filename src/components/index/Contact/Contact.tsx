@@ -8,7 +8,7 @@ import { CONTACT } from "constants/nav";
 import FormValues from "./FormValues";
 import { LoadingButton } from "@mui/lab";
 import PersonalInfo from "./PersonalInfo";
-import SectionHeading from "components/SectionHeading";
+import SectionHeading from "components/common/SectionHeading";
 import { SectionProps } from "types";
 import TextField from "./TextField";
 import { nopeResolver } from "@hookform/resolvers/nope";

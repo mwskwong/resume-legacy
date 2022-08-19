@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import { HOME } from "constants/nav";
 import { SectionProps } from "types";
-import SocialMedia from "components/SocialMedia";
+import SocialMedia from "components/common/SocialMedia";
 import TypeIt from "typeit";
 import useSx from "./useHeroSx";
 

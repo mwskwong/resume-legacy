@@ -1,4 +1,4 @@
-import { ThemeOptions, darken, lighten } from "@mui/material";
+import { ThemeOptions, alpha, darken, lighten } from "@mui/material";
 import { siEnterprisedb, siMicrosoft, siMongodb, siOracle, siUdemy } from "simple-icons/icons";
 
 import defaultTheme from "./defaultTheme";
@@ -55,7 +55,7 @@ const designTokens: Omit<ThemeOptions, "components"> = {
   unstable_strictMode: true,
   palette: {
     common: {
-      black: "#1D1D1D"
+      black: grey[900]
     },
     primary: {
       main: "#006EDB"
@@ -96,7 +96,12 @@ const designTokens: Omit<ThemeOptions, "components"> = {
       sectionTertiary: darken(grey[50], .02)
     },
     action: {
-      active: grey[900]
+      active: grey[900],
+      hover: alpha(grey[900], .04),
+      selected: alpha(grey[900], .08),
+      disabled: alpha(grey[900], .26),
+      disabledBackground: alpha(grey[900], .12),
+      focus: alpha(grey[900], .12)
     }
   },
   spacing: 10,

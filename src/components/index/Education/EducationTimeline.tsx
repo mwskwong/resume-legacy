@@ -1,7 +1,7 @@
 import React, { FC, memo } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import Timeline from "components/Timeline";
+import Timeline from "components/common/Timeline";
 
 const EducationTimeline: FC = () => {
   const { allContentfulEducation: { nodes: educationNodes } } = useStaticQuery<Queries.EducationTimelineQuery>(graphql`

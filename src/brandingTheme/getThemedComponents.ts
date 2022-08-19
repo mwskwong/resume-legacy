@@ -98,8 +98,17 @@ const getThemedComponents: GetThemedComponents = theme => ({
     MuiFilledInput: {
       styleOverrides: {
         root: {
-          // Workaround of focused style doesn't pass to the component
-          backgroundColor: `${theme.palette.background.sectionPrimary} !important`
+          backgroundColor: theme.palette.background.sectionPrimary,
+          "&:hover": {
+            backgroundColor: theme.palette.background.sectionPrimary
+          },
+          // Workaround: focused and disabled style not working
+          "&.Mui-focused": {
+            backgroundColor: theme.palette.background.sectionPrimary
+          },
+          "&.Mui-disabled": {
+            backgroundColor: theme.palette.action.disabledBackground
+          }
         }
       }
     },
@@ -158,7 +167,7 @@ const getThemedComponents: GetThemedComponents = theme => ({
         },
         grouped: {
           border: 0,
-          margin: `${theme.spacing(.25)} ${theme.spacing(.5)}`,
+          margin: `${theme.spacing(.25)} ${theme.spacing(.5)} `,
           "&:not(:first-of-type)": {
             borderRadius: theme.shape.borderRadius
           },

@@ -3,7 +3,7 @@ import React, { FC } from "react";
 
 import { KeyboardArrowLeftRounded as ArrowLeft } from "@mui/icons-material";
 import { Link } from "gatsby";
-import SEO from "components/SEO";
+import SEO from "components/common/SEO";
 import { UseSx } from "types";
 
 const useSx: UseSx = () => ({

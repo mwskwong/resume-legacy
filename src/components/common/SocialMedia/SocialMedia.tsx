@@ -2,9 +2,9 @@ import { IconButton, Stack, SxProps, Theme } from "@mui/material";
 import React, { ElementType, FC } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import GitHub from "components/icons/GitHub";
-import LinkedIn from "components/icons/LinkedIn";
-import StackOverflow from "components/icons/StackOverflow";
+import GitHub from "../icons/GitHub";
+import LinkedIn from "../icons/LinkedIn";
+import StackOverflow from "../icons/StackOverflow";
 import camelCase from "camelcase";
 import useSx from "./useSx";
 

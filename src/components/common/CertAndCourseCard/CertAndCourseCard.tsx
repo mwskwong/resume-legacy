@@ -1,11 +1,11 @@
 import { Card, CardActionArea, CardContent, CardProps, SvgIconProps, Typography } from "@mui/material";
 import React, { ElementType, FC, memo } from "react";
 
-import EnterpriseDB from "components/icons/EnterpriseDB";
-import Microsoft from "components/icons/Microsoft";
-import MongoDB from "components/icons/MongoDB";
-import Oracle from "components/icons/Oracle";
-import Udemy from "components/icons/Udemy";
+import EnterpriseDB from "../icons/EnterpriseDB";
+import Microsoft from "../icons/Microsoft";
+import MongoDB from "../icons/MongoDB";
+import Oracle from "../icons/Oracle";
+import Udemy from "../icons/Udemy";
 import camelCase from "camelcase";
 import useSx from "./useSx";
 

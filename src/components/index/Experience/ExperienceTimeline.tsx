@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import Timeline from "components/Timeline";
+import Timeline from "components/common/Timeline";
 
 const Experienceimeline: FC = () => {
   const { allContentfulWorkingExperience: { nodes: experienceNodes } } = useStaticQuery<Queries.ExperienceTimelineQuery>(graphql`
