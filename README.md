@@ -1,7 +1,6 @@
 <p align="center">
   <a href="https://mwskwong.com" rel="noopener" target="_blank">
-    <img src="https://raw.githubusercontent.com/mwskwong/resume/next/src/assets/images/icon.svg#gh-light-mode-only" alt="mwskwomg.com logo" width="192">
-    <img src="https://raw.githubusercontent.com/mwskwong/resume/next/static/favicon-dark.svg#gh-dark-mode-only" alt="mwskwomg.com logo" width="192">
+    <img src="https://raw.githubusercontent.com/mwskwong/resume/next/src/assets/images/icon.svg#gh-light-mode-only" alt="mwskwomg.com logo" width="192"><img src="https://raw.githubusercontent.com/mwskwong/resume/next/static/favicon-dark.svg#gh-dark-mode-only" alt="mwskwomg.com logo" width="192">
   </a>
 </p>
 
@@ -20,8 +19,6 @@
   ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/react-hook-form?style=for-the-badge)
 
 </div>
-
- <img src="https://raw.githubusercontent.com/mwskwong/resume/next/src/assets/images/icon.svg#gh-light-mode-only" alt="mwskwomg.com logo" width="192"><img src="https://raw.githubusercontent.com/mwskwong/resume/next/static/favicon-dark.svg#gh-dark-mode-only" alt="mwskwomg.com logo" width="192">
 
 ## Greetings 👋.
 
