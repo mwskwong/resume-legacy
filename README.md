@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">mwskwong.com</h1>
-
+    <img src="https://raw.githubusercontent.com/mwskwong/resume/next/src/assets/images/icon.svg#gh-light-mode-only" alt="mwskwomg.com logo" width="192"><img src="https://raw.githubusercontent.com/mwskwong/resume/next/static/favicon-dark.svg#gh-dark-mode-only" alt="mwskwomg.com logo" width="192">
 <div align="center">
 
   ![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Fmwskwong.com)
