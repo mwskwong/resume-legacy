@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://mwskwong.com" rel="noopener" target="_blank">
-    <img src="https://mwskwong.com/favicon.svg#gh-light-mode-only" alt="mwskwomg.com logo" width="192">
-    <img src="https://mwskwong.com/favicon-dark.svg#gh-dark-mode-only" alt="mwskwomg.com logo" width="192">
+    <img src="https://raw.githubusercontent.com/mwskwong/resume/next/src/assets/images/icon.svg#gh-light-mode-only" alt="mwskwomg.com logo" width="192">
+    <img src="https://raw.githubusercontent.com/mwskwong/resume/next/static/favicon-dark.svg#gh-dark-mode-only" alt="mwskwomg.com logo" width="192">
   </a>
 </p>
 
