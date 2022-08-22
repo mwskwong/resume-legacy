@@ -1,6 +1,11 @@
 <p align="center">
-  <img src="https://mwskwong.com/favicon.svg#gh-light-mode-only" alt="mwskwomg.com logo" width="192">
-  <img src="https://mwskwong.com/favicon-dark.svg#gh-dark-mode-only" alt="mwskwomg.com logo" width="192">
+  <a href="https://mwskwong.com" rel="noopener" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://mwskwong.com/favicon-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://mwskwong.com/favicon.svg">
+      <img src="https://mwskwong.com/favicon.svg" alt="mwskwomg.com logo" width="150">
+    </picture>
+  </a>
 </p>
 
 <h1 align="center">mwskwong.com</h1>
