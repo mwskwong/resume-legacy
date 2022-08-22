@@ -99,11 +99,7 @@ const getThemedComponents: GetThemedComponents = theme => ({
       styleOverrides: {
         root: {
           backgroundColor: theme.palette.background.sectionPrimary,
-          "&:hover": {
-            backgroundColor: theme.palette.background.sectionPrimary
-          },
-          // Workaround: focused and disabled style not working
-          "&.Mui-focused": {
+          "&:hover, &.Mui-focused": {
             backgroundColor: theme.palette.background.sectionPrimary
           },
           "&.Mui-disabled": {
@@ -168,10 +164,7 @@ const getThemedComponents: GetThemedComponents = theme => ({
         grouped: {
           border: 0,
           margin: `${theme.spacing(.25)} ${theme.spacing(.5)} `,
-          "&:not(:first-of-type)": {
-            borderRadius: theme.shape.borderRadius
-          },
-          "&:first-of-type": {
+          "&:not(:first-of-type), &:first-of-type": {
             borderRadius: theme.shape.borderRadius
           }
         },
