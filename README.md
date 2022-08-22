@@ -1,6 +1,11 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mwskwong/resume/next/src/assets/images/icon.svg#gh-light-mode-only" alt="mwskwomg.com logo" width="192">
-  <img src="https://raw.githubusercontent.com/mwskwong/resume/next/static/favicon-dark.svg#gh-dark-mode-only" alt="mwskwomg.com logo" width="192">
+  <a href="https://mwskwong.com" rel="noopener" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://mwskwong.com/favicon-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://mwskwong.com/favicon.svg">
+      <img src="https://mwskwong.com/favicon.svg" alt="mwskwomg.com logo" width="150">
+    </picture>
+  </a>
 </p>
 
 <h1 align="center">mwskwong.com</h1>
@@ -10,8 +15,7 @@
   ![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Fmwskwong.com)
   ![Security Headers](https://img.shields.io/security-headers?style=for-the-badge&url=https%3A%2F%2Fmwskwong.com)
   ![Chromium HSTS preload](https://img.shields.io/hsts/preload/mwskwong.com?style=for-the-badge)
-  ![GitHub](https://img.shields.io/github/license/mwskwong/resume?label=license&style=for-the-badge)
-    
+  ![GitHub](https://img.shields.io/github/license/mwskwong/resume?label=license&style=for-the-badge)    
   ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/react?style=for-the-badge)
   ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/gatsby?style=for-the-badge)
   ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/mwskwong/resume/@mui/material?style=for-the-badge)
