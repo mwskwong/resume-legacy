@@ -55,6 +55,6 @@
     "gatsby-plugin-perf-budgets": "^0.0.18",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
     "schema-dts": "^1.1.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.2"
   }
 }
